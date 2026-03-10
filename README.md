@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Torchlight Infinite Crafting Calculator
 
-## Getting Started
+A Next.js + Prisma + PostgreSQL project that calculates crafting outcomes for Torchlight Infinite gear.
 
-First, run the development server:
+Project Stack
 
-```bash
+Next.js – frontend
+
+Prisma – ORM
+
+PostgreSQL – database
+
+TypeScript
+
+Node scripts – data scraping / importing
+
+Start Development Server
+
+Run the app locally:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+http://localhost:3000
+Database Commands
+Generate Prisma Client
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Run this whenever the schema changes.
 
-## Learn More
+npx prisma generate
+Run Database Migrations
+npx prisma migrate dev
 
-To learn more about Next.js, take a look at the following resources:
+Example:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+npx prisma migrate dev --name add_new_table
+Open Database GUI
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This opens a browser database viewer.
 
-## Deploy on Vercel
+npx prisma studio
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Data Import Scripts
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+These scripts import affix data into the database.
+
+Import Crafted Affix Pools
+npx tsx scripts/import-crafted-pools.ts
+
+Reads JSON files from:
+
+data/crafted/pools
+
+Populates:
+
+CraftedItemPool
+
+CraftedAffixGroup
+
+CraftedAffix
+
+CraftedAffixTier
+
+CraftedAffixTierStat
