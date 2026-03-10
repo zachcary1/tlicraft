@@ -34,6 +34,7 @@ enum AffixGroupType {
 }
 
 enum TierName {
+  T0_PLUS
   T0
   T1
   T2
@@ -116,7 +117,6 @@ model CraftedAffixTier {
   id           String @id
   affixId      String
   tier         TierName
-  probability  Float
 
   affix        CraftedAffix @relation(fields: [affixId], references: [id], onDelete: Cascade)
   stats        CraftedAffixTierStat[]

@@ -1,6 +1,7 @@
 import "dotenv/config";
 import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
+import { TierName } from "@prisma/client";
 import prisma from "../src/db/prisma";
 
 type StatUnit = "PERCENT" | "FLAT" | "NONE";
@@ -15,13 +16,16 @@ type PoolFileStat = {
 
 type PoolFileTier = {
   tier: string;
-  probability: number;
   stats: PoolFileStat[];
+  rawModifier?: string;
 };
 
 type PoolFileAffix = {
-  id: string;
+  affixId?: string;
+  id?: string;
   name: string;
+  side?: "PREFIX" | "SUFFIX";
+  library?: string;
   tiers: PoolFileTier[];
 };
 
@@ -72,6 +76,46 @@ function isJsonFile(fileName: string) {
   return fileName.endsWith(".json");
 }
 
+function normalizeTierForDb(tier: string): TierName {
+  switch (tier) {
+    case "0+":
+    case "T0_PLUS":
+      return TierName.T0_PLUS;
+    case "0":
+    case "T0":
+      return TierName.T0;
+    case "1":
+    case "T1":
+      return TierName.T1;
+    case "2":
+    case "T2":
+      return TierName.T2;
+    case "3":
+    case "T3":
+      return TierName.T3;
+    case "4":
+    case "T4":
+      return TierName.T4;
+    case "5":
+    case "T5":
+      return TierName.T5;
+    case "6":
+    case "T6":
+      return TierName.T6;
+    case "7":
+    case "T7":
+      return TierName.T7;
+    default:
+      throw new Error(`Unknown tier: ${tier}`);
+  }
+}
+
+function normalizeAffixId(affix: PoolFileAffix) {
+  if (affix.affixId) return affix.affixId;
+  if (affix.id) return affix.id;
+  throw new Error(`Affix is missing both "affixId" and "id": ${affix.name}`);
+}
+
 async function readPoolFile(filePath: string): Promise<PoolFile> {
   const raw = await readFile(filePath, "utf8");
   return JSON.parse(raw) as PoolFile;
@@ -118,57 +162,41 @@ async function importPool(pool: PoolFile) {
     const affixes = pool.groups[groupType] ?? [];
 
     for (const affix of affixes) {
+      const affixId = normalizeAffixId(affix);
+
       await prisma.craftedAffix.upsert({
-        where: { id: affix.id },
+        where: { id: affixId },
         update: {
           name: affix.name,
           groupId,
         },
         create: {
-          id: affix.id,
+          id: affixId,
           name: affix.name,
           groupId,
         },
       });
 
       for (const tier of affix.tiers) {
-        const tierId = `${affix.id}__${tier.tier.toLowerCase()}`;
+        const normalizedTier = normalizeTierForDb(tier.tier);
+        const tierId = `${affixId}__${String(normalizedTier).toLowerCase()}`;
 
         await prisma.craftedAffixTier.upsert({
           where: {
             affixId_tier: {
-              affixId: affix.id,
-              tier: tier.tier as
-                | "T0"
-                | "T1"
-                | "T2"
-                | "T3"
-                | "T4"
-                | "T5"
-                | "T6"
-                | "T7",
+              affixId,
+              tier: normalizedTier,
             },
           },
-          update: {
-            probability: tier.probability,
-          },
+          update: {},
           create: {
             id: tierId,
-            affixId: affix.id,
-            tier: tier.tier as
-              | "T0"
-              | "T1"
-              | "T2"
-              | "T3"
-              | "T4"
-              | "T5"
-              | "T6"
-              | "T7",
-            probability: tier.probability,
+            affixId,
+            tier: normalizedTier,
           },
         });
 
-        for (const stat of tier.stats) {
+        for (const stat of tier.stats ?? []) {
           const statRowId = `${tierId}__${stat.statId}`;
 
           await prisma.craftedAffixTierStat.upsert({
@@ -202,7 +230,7 @@ async function main() {
   const jsonFiles = files.filter(isJsonFile);
 
   if (jsonFiles.length === 0) {
-    console.log("No crafted pool JSON files found.");
+    console.log("No crafted pool JSON files found in:", poolsDir);
     return;
   }
 

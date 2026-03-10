@@ -359,13 +359,11 @@ for (const groupType of craftedStrHelmetGroups) {
           },
         },
         update: {
-          probability: tier.probability,
         },
         create: {
           id: tier.id,
           affixId: affix.id,
           tier: tier.tier,
-          probability: tier.probability,
         },
       });
 
