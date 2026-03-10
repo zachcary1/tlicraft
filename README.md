@@ -1,4 +1,4 @@
-# Torchlight Infinite Crafting Calculator
+# Torchlight Infinite Crafting Simulator
 
 A **Next.js + Prisma + PostgreSQL** application that calculates crafting outcomes for **Torchlight Infinite** gear.
 
