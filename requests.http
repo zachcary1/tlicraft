@@ -1,0 +1,23 @@
+POST http://localhost:3000/api/craft/estimate
+Content-Type: application/json
+
+{
+  "poolId": "crafted_str_helmet",
+  "costPerAttempt": 5,
+  "targets": [
+    {
+      "group": "basicPrefixes",
+      "affixId": "crafted_str_helmet__basic_prefix__max_life",
+      "tier": "T1"
+    },
+    {
+      "group": "basicSuffixes",
+      "affixId": "crafted_str_helmet__basic_suffix__fire_resistance",
+      "tier": "T2"
+    }
+  ]
+}
+
+
+### Get selectable affixes for a pool
+GET http://localhost:3000/api/pools/crafted_str_helmet/affixes

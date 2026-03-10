@@ -1,0 +1,143 @@
+{
+  "id": "crafted_str_helmet",
+  "name": "Crafted STR Helmet",
+  "baseItemCategoryId": "helmet",
+  "weaponTypeId": null,
+  "attributeType": "STR",
+  "isPriceless": false,
+  "groups": {
+    "BASIC_PREFIXES": [
+      {
+        "id": "crafted_str_helmet__basic_prefix__armor",
+        "name": "Armor",
+        "tiers": [
+          {
+            "tier": "T1",
+            "probability": 0.015,
+            "stats": [
+              {
+                "statId": "armor",
+                "label": "Armor",
+                "minValue": 81,
+                "maxValue": 100,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T2",
+            "probability": 0.07,
+            "stats": [
+              {
+                "statId": "armor",
+                "label": "Armor",
+                "minValue": 61,
+                "maxValue": 80,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T3",
+            "probability": 0.18,
+            "stats": [
+              {
+                "statId": "armor",
+                "label": "Armor",
+                "minValue": 45,
+                "maxValue": 60,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_str_helmet__basic_prefix__max_life",
+        "name": "Max Life",
+        "tiers": [
+          {
+            "tier": "T1",
+            "probability": 0.02,
+            "stats": [
+              {
+                "statId": "max_life",
+                "label": "Max Life",
+                "minValue": 73,
+                "maxValue": 90,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T2",
+            "probability": 0.08,
+            "stats": [
+              {
+                "statId": "max_life",
+                "label": "Max Life",
+                "minValue": 56,
+                "maxValue": 72,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T3",
+            "probability": 0.20,
+            "stats": [
+              {
+                "statId": "max_life",
+                "label": "Max Life",
+                "minValue": 40,
+                "maxValue": 55,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+
+    "BASIC_SUFFIXES": [
+      {
+        "id": "crafted_str_helmet__basic_suffix__cold_resistance",
+        "name": "Cold Resistance",
+        "tiers": [
+          {
+            "tier": "T1",
+            "probability": 0.02,
+            "stats": [
+              {
+                "statId": "cold_resistance",
+                "label": "Cold Resistance",
+                "minValue": 22,
+                "maxValue": 26,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_str_helmet__basic_suffix__fire_resistance",
+        "name": "Fire Resistance",
+        "tiers": [
+          {
+            "tier": "T1",
+            "probability": 0.02,
+            "stats": [
+              {
+                "statId": "fire_resistance",
+                "label": "Fire Resistance",
+                "minValue": 22,
+                "maxValue": 26,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
