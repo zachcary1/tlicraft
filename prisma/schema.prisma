@@ -1,0 +1,141 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum GearType {
+  CRAFTED
+  VORAX
+  LEGENDARY
+}
+
+enum AttributeType {
+  STR
+  DEX
+  INT
+}
+
+enum AffixGroupType {
+  BASE_AFFIXES
+  CORROSION_BASE_AFFIXES
+  SWEET_DREAM_AFFIXES
+  NIGHTMARE_AFFIXES
+  INTERMEDIATE_SEQUENCES
+  ADVANCED_SEQUENCES
+  BASIC_PREFIXES
+  ADVANCED_PREFIXES
+  ULTIMATE_PREFIXES
+  BASIC_SUFFIXES
+  ADVANCED_SUFFIXES
+  ULTIMATE_SUFFIXES
+}
+
+enum TierName {
+  T0
+  T1
+  T2
+  T3
+  T4
+  T5
+  T6
+  T7
+}
+
+enum StatUnit {
+  PERCENT
+  FLAT
+  NONE
+}
+
+model BaseItemCategory {
+  id    String @id
+  name  String
+
+  craftedPools CraftedItemPool[]
+  weaponTypes  WeaponType[]
+}
+
+model WeaponType {
+  id                 String @id
+  name               String
+  baseItemCategoryId String
+  baseItemCategory   BaseItemCategory @relation(fields: [baseItemCategoryId], references: [id])
+
+  craftedPools CraftedItemPool[]
+}
+
+model CraftedItemPool {
+  id                 String @id
+  name               String
+  gearType           GearType @default(CRAFTED)
+
+  baseItemCategoryId String
+  baseItemCategory   BaseItemCategory @relation(fields: [baseItemCategoryId], references: [id])
+
+  weaponTypeId       String?
+  weaponType         WeaponType? @relation(fields: [weaponTypeId], references: [id])
+
+  attributeType      AttributeType?
+  isPriceless        Boolean @default(false)
+
+  affixGroups        CraftedAffixGroup[]
+
+  @@index([baseItemCategoryId])
+  @@index([weaponTypeId])
+  @@index([attributeType])
+  @@index([isPriceless])
+}
+
+model CraftedAffixGroup {
+  id         String @id
+  poolId     String
+  groupType  AffixGroupType
+
+  pool       CraftedItemPool @relation(fields: [poolId], references: [id], onDelete: Cascade)
+  affixes    CraftedAffix[]
+
+  @@unique([poolId, groupType])
+  @@index([poolId])
+}
+
+model CraftedAffix {
+  id        String @id
+  groupId   String
+  name      String
+
+  group      CraftedAffixGroup @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  tiers      CraftedAffixTier[]
+
+  @@index([groupId])
+}
+
+model CraftedAffixTier {
+  id           String @id
+  affixId      String
+  tier         TierName
+  probability  Float
+
+  affix        CraftedAffix @relation(fields: [affixId], references: [id], onDelete: Cascade)
+  stats        CraftedAffixTierStat[]
+
+  @@unique([affixId, tier])
+  @@index([affixId])
+}
+
+model CraftedAffixTierStat {
+  id        String @id
+  tierId    String
+  statId    String
+  label     String
+  minValue  Float
+  maxValue  Float
+  unit      StatUnit
+
+  tier      CraftedAffixTier @relation(fields: [tierId], references: [id], onDelete: Cascade)
+
+  @@index([tierId])
+  @@index([statId])
+}
