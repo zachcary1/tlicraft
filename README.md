@@ -2,7 +2,7 @@
 
 A **Next.js + Prisma + PostgreSQL** application that simulates crafting outcomes and price estimation for **Torchlight Infinite** gear.
 
-This project includes tools to **scrape, transform, and import affix data** from TLIDB and store it in a structured database for fast crafting simulations and price estimations.
+This project includes tools to **scrape, transform, and import affix data** from TLIDB and store it in a structured database.
 
 ---
 
