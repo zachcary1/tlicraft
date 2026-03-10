@@ -1,15 +1,24 @@
 **Torchlight Infinite Crafting Calculator**
+
 A Next.js + Prisma + PostgreSQL project that calculates crafting outcomes for Torchlight Infinite gear.
 
 
 Project Stack
+
 Next.js – frontend
+
 Prisma – ORM
+
 PostgreSQL – database
+
 TypeScript
+
 Node scripts – data scraping / importing
 
+
+
 Start Development Server
+
 Run the app locally:
 npm run dev
 Then open:
