@@ -854,7 +854,516 @@
         ]
       }
     ],
-    "NIGHTMARE_AFFIXES": [],
+    "NIGHTMARE_AFFIXES": [
+      {
+        "id": "crafted_str_helmet_nightmare_damage",
+        "name": "Damage",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "damage",
+                "label": "+(min-max)% Damage",
+                "minValue": 49,
+                "maxValue": 72,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_str_helmet_nightmare_attack_and_cast_speed",
+        "name": "Attack and Cast Speed",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "attack_and_cast_speed",
+                "label": "+(min-max)% Attack and Cast Speed",
+                "minValue": 12,
+                "maxValue": 16,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_str_helmet_nightmare_minion_damage",
+        "name": "Minion Damage",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "minion_damage",
+                "label": "+(min-max)% Minion Damage",
+                "minValue": 49,
+                "maxValue": 72,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_str_helmet_nightmare_minion_attack_and_cast_speed",
+        "name": "Minion Attack and Cast Speed",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "minion_attack_and_cast_speed",
+                "label": "+(min-max)% Minion Attack and Cast Speed",
+                "minValue": 12,
+                "maxValue": 16,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_str_helmet_nightmare_attack_and_spell_critical_strike_rating",
+        "name": "Attack and Spell Critical Strike Rating",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "attack_and_spell_critical_strike_rating",
+                "label": "+(min-max) Attack and Spell Critical Strike Rating",
+                "minValue": 77,
+                "maxValue": 100,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_str_helmet_nightmare_skill_area",
+        "name": "Skill Area",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "skill_area",
+                "label": "+(min-max)% Skill Area",
+                "minValue": 18,
+                "maxValue": 21,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_str_helmet_nightmare_minion_critical_strike_rating",
+        "name": "Minion Critical Strike Rating",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "minion_critical_strike_rating",
+                "label": "+(min-max) Minion Critical Strike Rating",
+                "minValue": 77,
+                "maxValue": 100,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_str_helmet_nightmare_minion_skill_area",
+        "name": "Minion Skill Area",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "minion_skill_area",
+                "label": "+(min-max)% Minion Skill Area",
+                "minValue": 18,
+                "maxValue": 21,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_str_helmet_nightmare_max_life",
+        "name": "Max Life",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "max_life",
+                "label": "+(min-max) Max Life",
+                "minValue": 100,
+                "maxValue": 150,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_str_helmet_nightmare_max_energy_shield",
+        "name": "Max Energy Shield",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "max_energy_shield",
+                "label": "+(min-max) Max Energy Shield",
+                "minValue": 320,
+                "maxValue": 400,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_str_helmet_nightmare_cold_resistance",
+        "name": "Cold Resistance",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "cold_resistance",
+                "label": "+(min-max)% Cold Resistance",
+                "minValue": 21,
+                "maxValue": 24,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_str_helmet_nightmare_erosion_resistance",
+        "name": "Erosion Resistance",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "erosion_resistance",
+                "label": "+(min-max)% Erosion Resistance",
+                "minValue": 21,
+                "maxValue": 24,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_str_helmet_nightmare_max_mana",
+        "name": "Max Mana",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "max_mana",
+                "label": "+(min-max) Max Mana",
+                "minValue": 96,
+                "maxValue": 120,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_str_helmet_nightmare_fire_resistance",
+        "name": "Fire Resistance",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "fire_resistance",
+                "label": "+(min-max)% Fire Resistance",
+                "minValue": 21,
+                "maxValue": 24,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_str_helmet_nightmare_lightning_resistance",
+        "name": "Lightning Resistance",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "lightning_resistance",
+                "label": "+(min-max)% Lightning Resistance",
+                "minValue": 21,
+                "maxValue": 24,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_str_helmet_nightmare_elemental_resistance",
+        "name": "Elemental Resistance",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "elemental_resistance",
+                "label": "+(min-max)% Elemental Resistance",
+                "minValue": 9,
+                "maxValue": 10,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_str_helmet_nightmare_strength",
+        "name": "Strength",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "strength",
+                "label": "+(min-max) Strength",
+                "minValue": 51,
+                "maxValue": 60,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_str_helmet_nightmare_intelligence",
+        "name": "Intelligence",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "intelligence",
+                "label": "+(min-max) Intelligence",
+                "minValue": 51,
+                "maxValue": 60,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_str_helmet_nightmare_movement_speed",
+        "name": "Movement Speed",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "movement_speed",
+                "label": "+(min-max)% Movement Speed",
+                "minValue": 12,
+                "maxValue": 16,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_str_helmet_nightmare_skill_effect_duration",
+        "name": "Skill Effect Duration",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "skill_effect_duration",
+                "label": "+(min-max)% Skill Effect Duration",
+                "minValue": 14,
+                "maxValue": 20,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_str_helmet_nightmare_dexterity",
+        "name": "Dexterity",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "dexterity",
+                "label": "+(min-max) Dexterity",
+                "minValue": 51,
+                "maxValue": 60,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_str_helmet_nightmare_aura_effect",
+        "name": "Aura Effect",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "aura_effect",
+                "label": "+(min-max)% Aura Effect",
+                "minValue": 12,
+                "maxValue": 16,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_str_helmet_nightmare_cooldown_recovery_speed",
+        "name": "Cooldown Recovery Speed",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "cooldown_recovery_speed",
+                "label": "+(min-max)% Cooldown Recovery Speed",
+                "minValue": 13,
+                "maxValue": 15,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_str_helmet_nightmare_max_tenacity_blessing_stacks",
+        "name": "Max Tenacity Blessing Stacks",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": []
+          }
+        ]
+      },
+      {
+        "id": "crafted_str_helmet_nightmare_max_focus_blessing_stacks",
+        "name": "Max Focus Blessing Stacks",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": []
+          }
+        ]
+      },
+      {
+        "id": "crafted_str_helmet_nightmare_fervor_effect",
+        "name": "Fervor Effect",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "fervor_effect",
+                "label": "+(min-max)% Fervor Effect",
+                "minValue": 15,
+                "maxValue": 20,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_str_helmet_nightmare_projectile_quantity",
+        "name": "Projectile Quantity",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": []
+          }
+        ]
+      },
+      {
+        "id": "crafted_str_helmet_nightmare_max_agility_blessing_stacks",
+        "name": "Max Agility Blessing Stacks",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": []
+          }
+        ]
+      },
+      {
+        "id": "crafted_str_helmet_nightmare_sealed_mana_compensation",
+        "name": "Sealed Mana Compensation",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "sealed_mana_compensation",
+                "label": "+(min-max)% Sealed Mana Compensation",
+                "minValue": 5,
+                "maxValue": 10,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_str_helmet_nightmare_max_elemental_resistance",
+        "name": "Max Elemental Resistance",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "max_elemental_resistance",
+                "label": "+(min-max)% Max Elemental Resistance",
+                "minValue": 1,
+                "maxValue": 2,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      }
+    ],
     "INTERMEDIATE_SEQUENCES": [],
     "ADVANCED_SEQUENCES": [],
     "BASIC_PREFIXES": [
