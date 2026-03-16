@@ -1,0 +1,3014 @@
+{
+  "id": "crafted_int_helmet",
+  "name": "Crafted INT Helmet",
+  "baseItemCategoryId": "helmet",
+  "weaponTypeId": null,
+  "attributeType": "INT",
+  "isPriceless": true,
+  "groups": {
+    "BASE_AFFIXES": [
+      {
+        "id": "crafted_int_helmet_base_max_energy_shield",
+        "name": "+(min-max) Max Energy Shield",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "max_energy_shield",
+                "label": "+(min-max) Max Energy Shield",
+                "minValue": 87,
+                "maxValue": 117,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_base_energy_shield_charge_speed",
+        "name": "+(min-max)% Energy Shield Charge Speed",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "energy_shield_charge_speed",
+                "label": "+(min-max)% Energy Shield Charge Speed",
+                "minValue": 4,
+                "maxValue": 6,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_base_fire_resistance",
+        "name": "+(min-max)% Fire Resistance",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "fire_resistance",
+                "label": "+(min-max) Fire Resistance",
+                "minValue": 5,
+                "maxValue": 10,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_base_cold_resistance",
+        "name": "+(min-max)% Cold Resistance",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "cold_resistance",
+                "label": "+(min-max) Cold Resistance",
+                "minValue": 5,
+                "maxValue": 10,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_base_lightning_resistance",
+        "name": "+(min-max)% Lightning Resistance",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "lightning_resistance",
+                "label": "+(min-max) Lightning Resistance",
+                "minValue": 5,
+                "maxValue": 10,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_base_erosion_resistance",
+        "name": "+(min-max)% Erosion Resistance",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "erosion_resistance",
+                "label": "+(min-max) Erosion Resistance",
+                "minValue": 5,
+                "maxValue": 10,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_base_strength",
+        "name": "+(min-max) Strength",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "strength",
+                "label": "+(min-max) Strength",
+                "minValue": 15,
+                "maxValue": 20,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_base_dexterity",
+        "name": "+(min-max) Dexterity",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "dexterity",
+                "label": "+(min-max) Dexterity",
+                "minValue": 15,
+                "maxValue": 20,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_base_intelligence",
+        "name": "+(min-max) Intelligence",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "intelligence",
+                "label": "+(min-max) Intelligence",
+                "minValue": 15,
+                "maxValue": 20,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_base_skill_area",
+        "name": "+(min-max)% Skill Area",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "skill_area",
+                "label": "+(min-max)% Skill Area",
+                "minValue": 20,
+                "maxValue": 24,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_base_elemental_and_erosion_resistance_penetration_minions",
+        "name": "+(min-max)% Elemental and Erosion Resistance Penetration +(min-max)% Elemental and Erosion Resistance Penetration for Minions",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "elemental_and_erosion_resistance_penetration_minions",
+                "label": "+(min-max)% Elemental and Erosion Resistance Penetration +(min-max)% Elemental and Erosion Resistance Penetration for Minions",
+                "minValue": 6,
+                "maxValue": 8,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_base_armor_dmg_mitigation_penetration_minions",
+        "name": "+(min-max)% Armor DMG Mitigation Penetration +(min-max)% Armor DMG Mitigation Penetration for Minions",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "armor_dmg_mitigation_penetration_minions",
+                "label": "+(min-max)% Armor DMG Mitigation Penetration +(min-max)% Armor DMG Mitigation Penetration for Minions",
+                "minValue": 5,
+                "maxValue": 7,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_base_sealed_mana_compensation",
+        "name": "+(min-max)% Sealed Mana Compensation",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "sealed_mana_compensation",
+                "label": "+(min-max)% Sealed Mana Compensation",
+                "minValue": 6,
+                "maxValue": 8,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_base_aura_effect",
+        "name": "+(min-max)% Aura Effect",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "aura_effect",
+                "label": "+(min-max)% Aura Effect",
+                "minValue": 7,
+                "maxValue": 8,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_base_max_elemental_resistance",
+        "name": "+(min-max)% Max Elemental Resistance",
+        "tiers": [
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "max_elemental_resistance",
+                "label": "+(min-max)% Max Elemental Resistance",
+                "minValue": 3,
+                "maxValue": 5,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_base_converts_physical_damage_taken_to_cold_damage",
+        "name": "Converts (min-max)% of Physical Damage taken to Cold Damage",
+        "tiers": [
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "converts_physical_damage_taken_to_cold_damage",
+                "label": "Converts (min-max)% of Physical Damage taken to Cold Damage",
+                "minValue": 16,
+                "maxValue": 20,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_base_converts_erosion_damage_taken_to_cold_damage",
+        "name": "Converts (min-max)% of Erosion Damage taken to Cold Damage",
+        "tiers": [
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "converts_erosion_damage_taken_to_cold_damage",
+                "label": "Converts (min-max)% of Erosion Damage taken to Cold Damage",
+                "minValue": 36,
+                "maxValue": 45,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_base_when_dealing_damage_inflicts_cold_infiltration",
+        "name": "When dealing damage, inflicts Cold Infiltration. Interval for each enemy: 1s When minions deal damage, inflicts Cold Infiltration. Interval for each enemy: 1s",
+        "tiers": [
+          {
+            "tier": "T0",
+            "stats": []
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_base_has_profane",
+        "name": "Has Profane. Minions have Profane",
+        "tiers": [
+          {
+            "tier": "T0",
+            "stats": []
+          }
+        ]
+      }
+    ],
+    "CORROSION_BASE_AFFIXES": [
+      {
+        "id": "crafted_int_helmet_corrosion_base_max_focus_blessing_stacks",
+        "name": "+min Max Focus Blessing Stacks",
+        "tiers": [
+          {
+            "tier": "T0",
+            "stats": []
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_corrosion_base_sealed_mana_compensation",
+        "name": "+(min-max)% Sealed Mana Compensation",
+        "tiers": [
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "sealed_mana_compensation",
+                "label": "+(min-max)% Sealed Mana Compensation",
+                "minValue": 10,
+                "maxValue": 15,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_corrosion_base_triggers_timid_curse",
+        "name": "Triggers Lv. (min-max) Timid Curse upon inflicting damage. Cooldown: 0.3s",
+        "tiers": [
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "triggers_timid_curse",
+                "label": "Triggers Lv. (min-max) Timid Curse upon inflicting damage. Cooldown: 0.3s",
+                "minValue": 15,
+                "maxValue": 20,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_corrosion_base_triggers_entangled_pain_curse",
+        "name": "Triggers Lv. (min-max) Entangled Pain Curse upon inflicting damage. Cooldown: 0.3s",
+        "tiers": [
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "triggers_entangled_pain_curse",
+                "label": "Triggers Lv. (min-max) Entangled Pain Curse upon inflicting damage. Cooldown: 0.3s",
+                "minValue": 15,
+                "maxValue": 20,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_corrosion_base_immune_to_blinding_immune_to_paralysis",
+        "name": "Immune to Blinding Immune to Paralysis",
+        "tiers": [
+          {
+            "tier": "T0",
+            "stats": []
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_corrosion_base_max_energy_shield",
+        "name": "+(min-max)% Max Energy Shield",
+        "tiers": [
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "max_energy_shield",
+                "label": "+(min-max)% Max Energy Shield",
+                "minValue": 15,
+                "maxValue": 20,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_corrosion_base_max_life",
+        "name": "+(min-max)% Max Life",
+        "tiers": [
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "max_life",
+                "label": "+(min-max)% Max Life",
+                "minValue": 15,
+                "maxValue": 20,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_corrosion_base_curse_effect_against_you",
+        "name": "(min-max)% Curse effect against you",
+        "tiers": [
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "curse_effect_against_you",
+                "label": "+(min-max)% Curse effect against you",
+                "minValue": -50,
+                "maxValue": -30,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_corrosion_base_gear_energy_shield",
+        "name": "(min-max)% Gear Energy Shield",
+        "tiers": [
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "gear_energy_shield",
+                "label": "+(min-max)% Gear Energy Shield",
+                "minValue": 30,
+                "maxValue": 50,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_corrosion_base_damage",
+        "name": "(min-max)% Damage",
+        "tiers": [
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "damage",
+                "label": "+(min-max)% Damage",
+                "minValue": 50,
+                "maxValue": 70,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "SWEET_DREAM_AFFIXES": [
+      {
+        "id": "crafted_int_helmet_sweet_dream_max_energy_shield",
+        "name": "+(min-max) Max Energy Shield",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "max_energy_shield",
+                "label": "+(min-max) Max Energy Shield",
+                "minValue": 87,
+                "maxValue": 117,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_sweet_dream_energy_shield_charge_speed",
+        "name": "+(min-max)% Energy Shield Charge Speed",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "energy_shield_charge_speed",
+                "label": "+(min-max)% Energy Shield Charge Speed",
+                "minValue": 4,
+                "maxValue": 6,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_sweet_dream_fire_resistance",
+        "name": "+(min-max)% Fire Resistance",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "fire_resistance",
+                "label": "+(min-max) Fire Resistance",
+                "minValue": 5,
+                "maxValue": 10,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_sweet_dream_cold_resistance",
+        "name": "+(min-max)% Cold Resistance",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "cold_resistance",
+                "label": "+(min-max) Cold Resistance",
+                "minValue": 5,
+                "maxValue": 10,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_sweet_dream_lightning_resistance",
+        "name": "+(min-max)% Lightning Resistance",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "lightning_resistance",
+                "label": "+(min-max) Lightning Resistance",
+                "minValue": 5,
+                "maxValue": 10,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_sweet_dream_erosion_resistance",
+        "name": "+(min-max)% Erosion Resistance",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "erosion_resistance",
+                "label": "+(min-max) Erosion Resistance",
+                "minValue": 5,
+                "maxValue": 10,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_sweet_dream_strength",
+        "name": "+(min-max) Strength",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "strength",
+                "label": "+(min-max) Strength",
+                "minValue": 15,
+                "maxValue": 20,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_sweet_dream_dexterity",
+        "name": "+(min-max) Dexterity",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "dexterity",
+                "label": "+(min-max) Dexterity",
+                "minValue": 15,
+                "maxValue": 20,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_sweet_dream_intelligence",
+        "name": "+(min-max) Intelligence",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "intelligence",
+                "label": "+(min-max) Intelligence",
+                "minValue": 15,
+                "maxValue": 20,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_sweet_dream_skill_area",
+        "name": "+(min-max)% Skill Area",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "skill_area",
+                "label": "+(min-max)% Skill Area",
+                "minValue": 20,
+                "maxValue": 24,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_sweet_dream_elemental_and_erosion_resistance_penetration_minions",
+        "name": "+(min-max)% Elemental and Erosion Resistance Penetration +(min-max)% Elemental and Erosion Resistance Penetration for Minions",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "elemental_and_erosion_resistance_penetration_minions",
+                "label": "+(min-max)% Elemental and Erosion Resistance Penetration +(min-max)% Elemental and Erosion Resistance Penetration for Minions",
+                "minValue": 6,
+                "maxValue": 8,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_sweet_dream_armor_dmg_mitigation_penetration_minions",
+        "name": "+(min-max)% Armor DMG Mitigation Penetration +(min-max)% Armor DMG Mitigation Penetration for Minions",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "armor_dmg_mitigation_penetration_minions",
+                "label": "+(min-max)% Armor DMG Mitigation Penetration +(min-max)% Armor DMG Mitigation Penetration for Minions",
+                "minValue": 5,
+                "maxValue": 7,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_sweet_dream_sealed_mana_compensation",
+        "name": "+(min-max)% Sealed Mana Compensation",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "sealed_mana_compensation",
+                "label": "+(min-max)% Sealed Mana Compensation",
+                "minValue": 6,
+                "maxValue": 8,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_sweet_dream_aura_effect",
+        "name": "+(min-max)% Aura Effect",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "aura_effect",
+                "label": "+(min-max)% Aura Effect",
+                "minValue": 7,
+                "maxValue": 8,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_sweet_dream_max_elemental_resistance",
+        "name": "+(min-max)% Max Elemental Resistance",
+        "tiers": [
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "max_elemental_resistance",
+                "label": "+(min-max)% Max Elemental Resistance",
+                "minValue": 3,
+                "maxValue": 5,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_sweet_dream_converts_physical_damage_taken_to_cold_damage",
+        "name": "Converts (min-max)% of Physical Damage taken to Cold Damage",
+        "tiers": [
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "converts_physical_damage_taken_to_cold_damage",
+                "label": "Converts (min-max)% of Physical Damage taken to Cold Damage",
+                "minValue": 16,
+                "maxValue": 20,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_sweet_dream_converts_erosion_damage_taken_to_cold_damage",
+        "name": "Converts (min-max)% of Erosion Damage taken to Cold Damage",
+        "tiers": [
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "converts_erosion_damage_taken_to_cold_damage",
+                "label": "Converts (min-max)% of Erosion Damage taken to Cold Damage",
+                "minValue": 36,
+                "maxValue": 45,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_sweet_dream_nearby_enemies_have_frail",
+        "name": "Nearby enemies within 15m have Frail",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": []
+          }
+        ]
+      }
+    ],
+    "NIGHTMARE_AFFIXES": [
+      {
+        "id": "crafted_int_helmet_nightmare_damage",
+        "name": "Damage",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "damage",
+                "label": "+(min-max)% Damage",
+                "minValue": 49,
+                "maxValue": 72,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_nightmare_attack_and_cast_speed",
+        "name": "Attack and Cast Speed",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "attack_and_cast_speed",
+                "label": "+(min-max)% Attack and Cast Speed",
+                "minValue": 12,
+                "maxValue": 16,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_nightmare_minion_damage",
+        "name": "Minion Damage",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "minion_damage",
+                "label": "+(min-max)% Minion Damage",
+                "minValue": 49,
+                "maxValue": 72,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_nightmare_minion_attack_and_cast_speed",
+        "name": "Minion Attack and Cast Speed",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "minion_attack_and_cast_speed",
+                "label": "+(min-max)% Minion Attack and Cast Speed",
+                "minValue": 12,
+                "maxValue": 16,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_nightmare_attack_and_spell_critical_strike_rating",
+        "name": "Attack and Spell Critical Strike Rating",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "attack_and_spell_critical_strike_rating",
+                "label": "+(min-max) Attack and Spell Critical Strike Rating",
+                "minValue": 77,
+                "maxValue": 100,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_nightmare_skill_area",
+        "name": "Skill Area",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "skill_area",
+                "label": "+(min-max)% Skill Area",
+                "minValue": 18,
+                "maxValue": 21,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_nightmare_minion_critical_strike_rating",
+        "name": "Minion Critical Strike Rating",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "minion_critical_strike_rating",
+                "label": "+(min-max) Minion Critical Strike Rating",
+                "minValue": 77,
+                "maxValue": 100,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_nightmare_minion_skill_area",
+        "name": "Minion Skill Area",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "minion_skill_area",
+                "label": "+(min-max)% Minion Skill Area",
+                "minValue": 18,
+                "maxValue": 21,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_nightmare_max_life",
+        "name": "Max Life",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "max_life",
+                "label": "+(min-max) Max Life",
+                "minValue": 100,
+                "maxValue": 150,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_nightmare_max_energy_shield",
+        "name": "Max Energy Shield",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "max_energy_shield",
+                "label": "+(min-max) Max Energy Shield",
+                "minValue": 320,
+                "maxValue": 400,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_nightmare_cold_resistance",
+        "name": "Cold Resistance",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "cold_resistance",
+                "label": "+(min-max)% Cold Resistance",
+                "minValue": 21,
+                "maxValue": 24,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_nightmare_erosion_resistance",
+        "name": "Erosion Resistance",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "erosion_resistance",
+                "label": "+(min-max)% Erosion Resistance",
+                "minValue": 21,
+                "maxValue": 24,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_nightmare_max_mana",
+        "name": "Max Mana",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "max_mana",
+                "label": "+(min-max) Max Mana",
+                "minValue": 96,
+                "maxValue": 120,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_nightmare_fire_resistance",
+        "name": "Fire Resistance",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "fire_resistance",
+                "label": "+(min-max)% Fire Resistance",
+                "minValue": 21,
+                "maxValue": 24,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_nightmare_lightning_resistance",
+        "name": "Lightning Resistance",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "lightning_resistance",
+                "label": "+(min-max)% Lightning Resistance",
+                "minValue": 21,
+                "maxValue": 24,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_nightmare_elemental_resistance",
+        "name": "Elemental Resistance",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "elemental_resistance",
+                "label": "+(min-max)% Elemental Resistance",
+                "minValue": 9,
+                "maxValue": 10,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_nightmare_strength",
+        "name": "Strength",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "strength",
+                "label": "+(min-max) Strength",
+                "minValue": 51,
+                "maxValue": 60,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_nightmare_intelligence",
+        "name": "Intelligence",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "intelligence",
+                "label": "+(min-max) Intelligence",
+                "minValue": 51,
+                "maxValue": 60,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_nightmare_movement_speed",
+        "name": "Movement Speed",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "movement_speed",
+                "label": "+(min-max)% Movement Speed",
+                "minValue": 12,
+                "maxValue": 16,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_nightmare_skill_effect_duration",
+        "name": "Skill Effect Duration",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "skill_effect_duration",
+                "label": "+(min-max)% Skill Effect Duration",
+                "minValue": 14,
+                "maxValue": 20,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_nightmare_dexterity",
+        "name": "Dexterity",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "dexterity",
+                "label": "+(min-max) Dexterity",
+                "minValue": 51,
+                "maxValue": 60,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_nightmare_aura_effect",
+        "name": "Aura Effect",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "aura_effect",
+                "label": "+(min-max)% Aura Effect",
+                "minValue": 12,
+                "maxValue": 16,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_nightmare_cooldown_recovery_speed",
+        "name": "Cooldown Recovery Speed",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "cooldown_recovery_speed",
+                "label": "+(min-max)% Cooldown Recovery Speed",
+                "minValue": 13,
+                "maxValue": 15,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_nightmare_max_tenacity_blessing_stacks",
+        "name": "Max Tenacity Blessing Stacks",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": []
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_nightmare_max_focus_blessing_stacks",
+        "name": "Max Focus Blessing Stacks",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": []
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_nightmare_fervor_effect",
+        "name": "Fervor Effect",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "fervor_effect",
+                "label": "+(min-max)% Fervor Effect",
+                "minValue": 15,
+                "maxValue": 20,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_nightmare_projectile_quantity",
+        "name": "Projectile Quantity",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": []
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_nightmare_max_agility_blessing_stacks",
+        "name": "Max Agility Blessing Stacks",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": []
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_nightmare_sealed_mana_compensation",
+        "name": "Sealed Mana Compensation",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "sealed_mana_compensation",
+                "label": "+(min-max)% Sealed Mana Compensation",
+                "minValue": 5,
+                "maxValue": 10,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_nightmare_max_elemental_resistance",
+        "name": "Max Elemental Resistance",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "max_elemental_resistance",
+                "label": "+(min-max)% Max Elemental Resistance",
+                "minValue": 1,
+                "maxValue": 2,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "INTERMEDIATE_SEQUENCES": [],
+    "ADVANCED_SEQUENCES": [],
+    "BASIC_PREFIXES": [
+      {
+        "id": "crafted_int_helmet_basic_prefix_max_mana",
+        "name": "Max Mana",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "max_mana",
+                "label": "+(min-max) Max Mana",
+                "minValue": 157,
+                "maxValue": 203,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "max_mana",
+                "label": "+(min-max) Max Mana",
+                "minValue": 121,
+                "maxValue": 156,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "max_mana",
+                "label": "+(min-max) Max Mana",
+                "minValue": 85,
+                "maxValue": 120,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_basic_prefix_gear_energy_shield",
+        "name": "Gear Energy Shield",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "gear_energy_shield",
+                "label": "+(min-max) Gear Energy Shield",
+                "minValue": 447,
+                "maxValue": 575,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "gear_energy_shield",
+                "label": "+(min-max) Gear Energy Shield",
+                "minValue": 341,
+                "maxValue": 442,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "gear_energy_shield",
+                "label": "+(min-max) Gear Energy Shield",
+                "minValue": 239,
+                "maxValue": 340,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_basic_prefix_gear_energy_shield_percent",
+        "name": "Gear Energy Shield",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "gear_energy_shield",
+                "label": "+(min-max)% Gear Energy Shield",
+                "minValue": 87,
+                "maxValue": 112,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "gear_energy_shield",
+                "label": "+(min-max)% Gear Energy Shield",
+                "minValue": 61,
+                "maxValue": 86,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "gear_energy_shield",
+                "label": "+(min-max)% Gear Energy Shield",
+                "minValue": 47,
+                "maxValue": 66,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_basic_prefix_damage",
+        "name": "damage",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "damage",
+                "label": "+(min-max)% damage",
+                "minValue": 95,
+                "maxValue": 122,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "damage",
+                "label": "+(min-max)% damage",
+                "minValue": 73,
+                "maxValue": 94,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "damage",
+                "label": "+(min-max)% damage",
+                "minValue": 51,
+                "maxValue": 72,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_basic_prefix_minion_damage",
+        "name": "Minion Damage",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "minion_damage",
+                "label": "+(min-max)% Minion Damage",
+                "minValue": 95,
+                "maxValue": 122,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "minion_damage",
+                "label": "+(min-max)% Minion Damage",
+                "minValue": 73,
+                "maxValue": 94,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "minion_damage",
+                "label": "+(min-max)% Minion Damage",
+                "minValue": 51,
+                "maxValue": 72,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_basic_prefix_max_mana",
+        "name": "Max Mana",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "max_mana",
+                "label": "+(min-max) Max Mana",
+                "minValue": 157,
+                "maxValue": 203,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "max_mana",
+                "label": "+(min-max) Max Mana",
+                "minValue": 121,
+                "maxValue": 156,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "max_mana",
+                "label": "+(min-max) Max Mana",
+                "minValue": 85,
+                "maxValue": 120,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "ADVANCED_PREFIXES": [
+      {
+        "id": "crafted_int_helmet_advanced_prefix_block_ratio",
+        "name": "Block Ratio",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "block_ratio",
+                "label": "+(min-max)% Block Ratio",
+                "minValue": 18,
+                "maxValue": 22,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "block_ratio",
+                "label": "+(min-max)% Block Ratio",
+                "minValue": 14,
+                "maxValue": 17,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "block_ratio",
+                "label": "+(min-max)% Block Ratio",
+                "minValue": 10,
+                "maxValue": 13,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_advanced_prefix_strength",
+        "name": "Strength",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "strength",
+                "label": "+(min-max) Strength",
+                "minValue": 79,
+                "maxValue": 101,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "strength",
+                "label": "+(min-max) Strength",
+                "minValue": 61,
+                "maxValue": 78,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "strength",
+                "label": "+(min-max) Strength",
+                "minValue": 43,
+                "maxValue": 60,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_advanced_prefix_intelligence",
+        "name": "Intelligence",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "intelligence",
+                "label": "+(min-max) Intelligence",
+                "minValue": 79,
+                "maxValue": 101,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "intelligence",
+                "label": "+(min-max) Intelligence",
+                "minValue": 61,
+                "maxValue": 78,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "intelligence",
+                "label": "+(min-max) Intelligence",
+                "minValue": 43,
+                "maxValue": 60,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_advanced_prefix_dexterity",
+        "name": "Dexterity",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "dexterity",
+                "label": "+(min-max) Dexterity",
+                "minValue": 79,
+                "maxValue": 101,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "dexterity",
+                "label": "+(min-max) Dexterity",
+                "minValue": 61,
+                "maxValue": 78,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "dexterity",
+                "label": "+(min-max) Dexterity",
+                "minValue": 43,
+                "maxValue": 60,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_advanced_prefix_projectile_speed",
+        "name": "Projectile Speed",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "projectile_speed",
+                "label": "+(min-max)% Projectile Speed",
+                "minValue": 60,
+                "maxValue": 76,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "projectile_speed",
+                "label": "+(min-max)% Projectile Speed",
+                "minValue": 46,
+                "maxValue": 59,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "projectile_speed",
+                "label": "+(min-max)% Projectile Speed",
+                "minValue": 33,
+                "maxValue": 45,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_advanced_prefix_chance_to_gain_1_stack_of_focus_blessing_on_defeat",
+        "name": "chance to gain 1 stack of Focus Blessing on defeat",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "chance_to_gain_1_stack_of_focus_blessing_on_defeat",
+                "label": "+(min-max)% chance to gain 1 stack of Focus Blessing on defeat",
+                "minValue": 66,
+                "maxValue": 85,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "chance_to_gain_1_stack_of_focus_blessing_on_defeat",
+                "label": "+(min-max)% chance to gain 1 stack of Focus Blessing on defeat",
+                "minValue": 51,
+                "maxValue": 65,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "chance_to_gain_1_stack_of_focus_blessing_on_defeat",
+                "label": "+(min-max)% chance to gain 1 stack of Focus Blessing on defeat",
+                "minValue": 37,
+                "maxValue": 50,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_advanced_prefix_barrier_shield",
+        "name": "+(min-max)% Barrier Shield",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "barrier_shield",
+                "label": "+(min-max)% Barrier Shield",
+                "minValue": 79,
+                "maxValue": 101,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "barrier_shield",
+                "label": "+(min-max)% Barrier Shield",
+                "minValue": 61,
+                "maxValue": 78,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "barrier_shield",
+                "label": "+(min-max)% Barrier Shield",
+                "minValue": 43,
+                "maxValue": 60,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "ULTIMATE_PREFIXES": [
+      {
+        "id": "crafted_int_helmet_ultimate_prefix_converts_physical_damage_taken_to_cold_damage",
+        "name": "Converts (min-max)% of Physical Damage taken to Cold Damage",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "converts_physical_damage_taken_to_cold_damage",
+                "label": "Converts (min-max)% of Physical Damage taken to Cold Damage",
+                "minValue": 27,
+                "maxValue": 35,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "converts_physical_damage_taken_to_cold_damage",
+                "label": "Converts (min-max)% of Physical Damage taken to Cold Damage",
+                "minValue": 21,
+                "maxValue": 26,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "converts_physical_damage_taken_to_cold_damage",
+                "label": "Converts (min-max)% of Physical Damage taken to Cold Damage",
+                "minValue": 16,
+                "maxValue": 20,
+                "unit": "PERCENT"
+              }              
+            ]
+          }               
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_ultimate_prefix_max_spell_burst_additional_hit_damage_for_skills_cast_by_spell_burst",
+        "name": "+1 Max Spell Burst +(min-max)% additional Hit Damage for skills cast by Spell Burst",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "max_spell_burst_additional_hit_damage_for_skills_cast_by_spell_burst",
+                "label": "+1 Max Spell Burst +13% additional Hit Damage for skills cast by Spell Burst",
+                "minValue": 13,
+                "maxValue": 13,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "max_spell_burst_additional_hit_damage_for_skills_cast_by_spell_burst",
+                "label": "+1 Max Spell Burst +10% additional Hit Damage for skills cast by Spell Burst",
+                "minValue": 10,
+                "maxValue": 10,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "max_spell_burst_additional_hit_damage_for_skills_cast_by_spell_burst",
+                "label": "+1 Max Spell Burst +0% additional Hit Damage for skills cast by Spell Burst",
+                "minValue": 0,
+                "maxValue": 0,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_ultimate_prefix_max_terra_charge_stacks_terra_charge_recovery_speed",
+        "name": "Max Terra Charge Stacks +1 +(min-max)% Terra Charge Recovery Speed",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "max_terra_charge_stacks_terra_charge_recovery_speed",
+                "label": "Max Terra Charge Stacks +1 +69% Terra Charge Recovery Speed",
+                "minValue": 69,
+                "maxValue": 69,
+                "unit": "PERCENT"
+              }              
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "max_terra_charge_stacks_terra_charge_recovery_speed",
+                "label": "Max Terra Charge Stacks +1 +30% Terra Charge Recovery Speed",
+                "minValue": 30,
+                "maxValue": 30,
+                "unit": "PERCENT"
+              }              
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "max_terra_charge_stacks_terra_charge_recovery_speed",
+                "label": "Max Terra Charge Stacks +1 +0% Terra Charge Recovery Speed",
+                "minValue": 0,
+                "maxValue": 0,
+                "unit": "PERCENT"
+              }              
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_ultimate_prefix_sealed_mana_compensation",
+        "name": "Sealed Mana Compensation",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "sealed_mana_compensation",
+                "label": "+(min-max) Sealed Mana Compensation",
+                "minValue": 27,
+                "maxValue": 34,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "sealed_mana_compensation",
+                "label": "+(min-max) Sealed Mana Compensation",
+                "minValue": 21,
+                "maxValue": 26,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "sealed_mana_compensation",
+                "label": "+(min-max) Sealed Mana Compensation",
+                "minValue": 15,
+                "maxValue": 20,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_ultimate_prefix_additional_damage_dealt_by_nearby_enemies",
+        "name": "additional Damage dealt by Nearby enemies",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "additional_damage_dealt_by_nearby_enemies",
+                "label": "(min-max) additional Damage dealt by Nearby enemies",
+                "minValue": -25,
+                "maxValue": -21,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "additional_damage_dealt_by_nearby_enemies",
+                "label": "(min-max) additional Damage dealt by Nearby enemies",
+                "minValue": -20,
+                "maxValue": -16,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "additional_damage_dealt_by_nearby_enemies",
+                "label": "(min-max) additional Damage dealt by Nearby enemies",
+                "minValue": -15,
+                "maxValue": -12,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_ultimate_prefix_converts_erosion_damage_taken_to_cold_damage",
+        "name": "Converts % of Erosion Damage taken to Cold Damage",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "converts_erosion_damage_taken_to_cold_damage",
+                "label": "Converts (min-max)% of Erosion Damage taken to Cold Damage",
+                "minValue": 63,
+                "maxValue": 77,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "converts_erosion_damage_taken_to_cold_damage",
+                "label": "Converts (min-max)% of Erosion Damage taken to Cold Damage",
+                "minValue": 46,
+                "maxValue": 60,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "converts_erosion_damage_taken_to_cold_damage",
+                "label": "Converts (min-max)% of Erosion Damage taken to Cold Damage",
+                "minValue": 36,
+                "maxValue": 45,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_ultimate_prefix_additional_damage_over_time_taken_when_having_at_least_8000_energy_shield",
+        "name": "% additional Damage Over Time taken when having at least 8000 Energy Shield",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "additional_damage_over_time_taken_when_having_at_least_8000_energy_shield",
+                "label": "min% additional Damage Over Time taken when having at least 8000 Energy Shield",
+                "minValue": -50,
+                "maxValue": -50,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "additional_damage_over_time_taken_when_having_at_least_8000_energy_shield",
+                "label": "min% additional Damage Over Time taken when having at least 8000 Energy Shield",
+                "minValue": -45,
+                "maxValue": -45,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "additional_damage_over_time_taken_when_having_at_least_8000_energy_shield",
+                "label": "min% additional Damage Over Time taken when having at least 8000 Energy Shield",
+                "minValue": -40,
+                "maxValue": -40,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_ultimate_prefix_of_damage_is_taken_from_mana_before_life",
+        "name": "of damage is taken from Mana before life",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "of_damage_is_taken_from_mana_before_life",
+                "label": "(min-max)% of damage is taken from Mana before life",
+                "minValue": 27,
+                "maxValue": 34,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "of_damage_is_taken_from_mana_before_life",
+                "label": "(min-max)% of damage is taken from Mana before life",
+                "minValue": 21,
+                "maxValue": 26,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "of_damage_is_taken_from_mana_before_life",
+                "label": "(min-max)% of damage is taken from Mana before life",
+                "minValue": 15,
+                "maxValue": 20,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "BASIC_SUFFIXES": [
+      {
+        "id": "crafted_int_helmet_basic_suffix_mana_regeneration_speed",
+        "name": "+(min-max)% Mana Regeneration Speed",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "mana_regeneration_speed",
+                "label": "+(min-max)% Mana Regeneration Speed",
+                "minValue": 79,
+                "maxValue": 101,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "mana_regeneration_speed",
+                "label": "+(min-max)% Mana Regeneration Speed",
+                "minValue": 55,
+                "maxValue": 78,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "mana_regeneration_speed",
+                "label": "+(min-max)% Mana Regeneration Speed",
+                "minValue": 42,
+                "maxValue": 60,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_basic_suffix_fire_resistance",
+        "name": "+(min-max)% Fire Resistance",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "fire_resistance",
+                "label": "+(min-max)% Fire Resistance",
+                "minValue": 36,
+                "maxValue": 46,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "fire_resistance",
+                "label": "+(min-max)% Fire Resistance",
+                "minValue": 25,
+                "maxValue": 35,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "fire_resistance",
+                "label": "+(min-max)% Fire Resistance",
+                "minValue": 19,
+                "maxValue": 27,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_basic_suffix_cold_resistance",
+        "name": "+(min-max)% Cold Resistance",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "cold_resistance",
+                "label": "+(min-max)% Cold Resistance",
+                "minValue": 36,
+                "maxValue": 46,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "cold_resistance",
+                "label": "+(min-max)% Cold Resistance",
+                "minValue": 25,
+                "maxValue": 35,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "cold_resistance",
+                "label": "+(min-max)% Cold Resistance",
+                "minValue": 19,
+                "maxValue": 27,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_basic_suffix_lightning_resistance",
+        "name": "+(min-max)% Lightning Resistance",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "lightning_resistance",
+                "label": "+(min-max)% Lightning Resistance",
+                "minValue": 36,
+                "maxValue": 46,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "lightning_resistance",
+                "label": "+(min-max)% Lightning Resistance",
+                "minValue": 25,
+                "maxValue": 35,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "lightning_resistance",
+                "label": "+(min-max)% Lightning Resistance",
+                "minValue": 19,
+                "maxValue": 27,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_basic_suffixe_erosion_resistance",
+        "name": "+(min-max)% Erosion Resistance",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "erosion_resistance",
+                "label": "+(min-max)% Erosion Resistance",
+                "minValue": 36,
+                "maxValue": 46,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "erosion_resistance",
+                "label": "+(min-max)% Erosion Resistance",
+                "minValue": 25,
+                "maxValue": 35,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "erosion_resistance",
+                "label": "+(min-max)% Erosion Resistance",
+                "minValue": 19,
+                "maxValue": 27,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_basic_suffix_critical_strike_rating",
+        "name": "Critical Strike Rating",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "critical_strike_rating",
+                "label": "+(min-max)% Critical Strike Rating",
+                "minValue": 157,
+                "maxValue": 203,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "critical_strike_rating",
+                "label": "+(min-max)% Critical Strike Rating",
+                "minValue": 121,
+                "maxValue": 156,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "critical_strike_rating",
+                "label": "+(min-max)% Critical Strike Rating",
+                "minValue": 87,
+                "maxValue": 120,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_basic_suffix_affliction_effect",
+        "name": "+(min-max)% Affliction Effect",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "affliction_effect",
+                "label": "+(min-max)% Affliction Effect",
+                "minValue": 66,
+                "maxValue": 85,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "affliction_effect",
+                "label": "+(min-max)% Affliction Effect",
+                "minValue": 51,
+                "maxValue": 65,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "affliction_effect",
+                "label": "+(min-max)% Affliction Effect",
+                "minValue": 36,
+                "maxValue": 50,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "ADVANCED_SUFFIXES": [
+      {
+        "id": "crafted_int_helmet_advanced_suffix_critical_strike_damage",
+        "name": "+(min-max)% Critical Strike Damage",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "critical_strike_damage",
+                "label": "+(min-max)% Critical Strike Damage",
+                "minValue": 79,
+                "maxValue": 101,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "critical_strike_damage",
+                "label": "+(min-max)% Critical Strike Damage",
+                "minValue": 61,
+                "maxValue": 78,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "critical_strike_damage",
+                "label": "+(min-max)% Critical Strike Damage",
+                "minValue": 44,
+                "maxValue": 60,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_advanced_suffix_skill_area_minion_skill_area",
+        "name": "+(min-max)% Skill Area +(min-max)% Minion Skill Area",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "skill_area_minion_skill_area",
+                "label": "+(min-max)% Skill Area +(min-max)% Minion Skill Area",
+                "minValue": 63,
+                "maxValue": 81,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "skill_area_minion_skill_area",
+                "label": "+(min-max)% Skill Area +(min-max)% Minion Skill Area",
+                "minValue": 49,
+                "maxValue": 62,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "skill_area_minion_skill_area",
+                "label": "+(min-max)% Skill Area +(min-max)% Minion Skill Area",
+                "minValue": 35,
+                "maxValue": 48,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_advanced_suffix_chance_to_gain_a_barrier_on_defeat",
+        "name": "chance to gain a Barrier on defeat",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "chance_to_gain_a_barrier_on_defeat",
+                "label": "+(min-max)% chance to gain a Barrier on defeat",
+                "minValue": 16,
+                "maxValue": 20,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "chance_to_gain_a_barrier_on_defeat",
+                "label": "+(min-max)% chance to gain a Barrier on defeat",
+                "minValue": 11,
+                "maxValue": 15,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_advanced_suffix_attack_and_cast_speed_minion_attack_and_cast_speed",
+        "name": "+(min-max)% Attack and Cast Speed +(min-max)% Minion Attack and Cast Speed",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "attack_and_cast_speed_minion_attack_and_cast_speed",
+                "label": "+(min-max)% Attack and Cast Speed +(min-max)% Minion Attack and Cast Speed",
+                "minValue": 32,
+                "maxValue": 41,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "attack_and_cast_speed_minion_attack_and_cast_speed",
+                "label": "+(min-max)% Attack and Cast Speed +(min-max)% Minion Attack and Cast Speed",
+                "minValue": 25,
+                "maxValue": 31,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "attack_and_cast_speed_minion_attack_and_cast_speed",
+                "label": "+(min-max)% Attack and Cast Speed +(min-max)% Minion Attack and Cast Speed",
+                "minValue": 18,
+                "maxValue": 24,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_advanced_suffix_reaping_duration",
+        "name": "+(min-max)% Reaping Duration",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "reaping_duration",
+                "label": "+(min-max)% Reaping Duration",
+                "minValue": 66,
+                "maxValue": 85,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "reaping_duration",
+                "label": "+(min-max)% Reaping Duration",
+                "minValue": 51,
+                "maxValue": 65,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "reaping_duration",
+                "label": "+(min-max)% Reaping Duration",
+                "minValue": 36,
+                "maxValue": 50,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_advanced_suffix_max_energy_shield",
+        "name": "+(min-max)% Evasion +(min-max) Max Life",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "max_energy_shield",
+                "label": "+(min-max)% Max Energy Shield",
+                "minValue": 22,
+                "maxValue": 27,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "max_energy_shield",
+                "label": "+(min-max)% Max Energy Shield",
+                "minValue": 17,
+                "maxValue": 21,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "max_energy_shield",
+                "label": "+(min-max)% Max Energy Shield",
+                "minValue": 12,
+                "maxValue": 16,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_advanced_suffix_focus_speed",
+        "name": "+(min-max)% Focus Speed",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "focus_speed",
+                "label": "+(min-max)% Focus Speed",
+                "minValue": 48,
+                "maxValue": 61,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "focus_speed",
+                "label": "+(min-max)% Focus Speed",
+                "minValue": 37,
+                "maxValue": 47,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "focus_speed",
+                "label": "+(min-max)% Focus Speed",
+                "minValue": 26,
+                "maxValue": 36,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "ULTIMATE_SUFFIXES": [
+      {
+        "id": "crafted_int_helmet_ultimate_suffix_support_skill_level",
+        "name": "+(min-max) Support Skill Level",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "support_skill_level",
+                "label": "+(min-max) Support Skill Level",
+                "minValue": 12,
+                "maxValue": 13,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "support_skill_level",
+                "label": "+(min-max) Support Skill Level",
+                "minValue": 10,
+                "maxValue": 11,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "support_skill_level",
+                "label": "+(min-max) Support Skill Level",
+                "minValue": 6,
+                "maxValue": 9,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_ultimate_suffix_additional_damage_taken_by_nearby_enemies",
+        "name": "+(min-max)% additional damage taken by Nearby enemies",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "additional_damage_taken_by_nearby_enemies",
+                "label": "+(min-max)% additional damage taken by Nearby enemies",
+                "minValue": 32,
+                "maxValue": 41,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "additional_damage_taken_by_nearby_enemies",
+                "label": "+(min-max)% additional damage taken by Nearby enemies",
+                "minValue": 25,
+                "maxValue": 31,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "additional_damage_taken_by_nearby_enemies",
+                "label": "+(min-max)% additional damage taken by Nearby enemies",
+                "minValue": 18,
+                "maxValue": 24,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_ultimate_suffix_reaping_recovery_speed",
+        "name": "+(min-max)% Reaping Recovery Speed",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "reaping_recovery_speed",
+                "label": "+(min-max)% Reaping Recovery Speed",
+                "minValue": 109,
+                "maxValue": 140,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "reaping_recovery_speed",
+                "label": "+(min-max)% Reaping Recovery Speed",
+                "minValue": 84,
+                "maxValue": 108,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "reaping_recovery_speed",
+                "label": "+(min-max)% Reaping Recovery Speed",
+                "minValue": 59,
+                "maxValue": 83,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_ultimate_suffix_numbed_effect",
+        "name": "+(min-max)% Numbed Effect",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "numbed_effect",
+                "label": "+(min-max)% Numbed Effect",
+                "minValue": 66,
+                "maxValue": 80,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "numbed_effect",
+                "label": "+(min-max)% Numbed Effect",
+                "minValue": 51,
+                "maxValue": 65,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "numbed_effect",
+                "label": "+(min-max)% Numbed Effect",
+                "minValue": 40,
+                "maxValue": 50,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_int_helmet_ultimate_suffix_chance_to_avoid_elemental_ailments",
+        "name": "+(min-max)% chance to avoid Elemental Ailments",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "chance_to_avoid_elemental_ailments",
+                "label": "+(min-max)% chance to avoid Elemental Ailments",
+                "minValue": 71,
+                "maxValue": 85,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "chance_to_avoid_elemental_ailments",
+                "label": "+(min-max)% chance to avoid Elemental Ailments",
+                "minValue": 50,
+                "maxValue": 68,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "chance_to_avoid_elemental_ailments",
+                "label": "+(min-max)% chance to avoid Elemental Ailments",
+                "minValue": 30,
+                "maxValue": 45,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
