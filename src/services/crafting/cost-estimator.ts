@@ -7,7 +7,7 @@ export type CostEstimate = {
   affixId: string;
   affixName: string;
   tier: string;
-  probability: number;
+  probability?: number;
   expectedAttempts: number;
   costPerAttempt: number;
   expectedCost: number;
@@ -27,7 +27,7 @@ export function estimateAffixCost(
   costPerAttempt: number,
 ): CostEstimate {
   const found = findTierProbability(pool, target);
-  const expectedAttempts = estimateExpectedAttempts(found.probability);
+  const expectedAttempts = estimateExpectedAttempts(found.probability ?? 0);
 
   return {
     group: found.group,
@@ -50,6 +50,8 @@ export function estimateMultipleAffixCosts(
     estimateAffixCost(pool, target, costPerAttempt),
   );
 
+  // Each target is treated as an independent roll. If the game rolls multiple
+  // affixes in a single attempt, this overstates the total attempts needed.
   const totalExpectedCost = estimates.reduce(
     (sum, estimate) => sum + estimate.expectedCost,
     0,

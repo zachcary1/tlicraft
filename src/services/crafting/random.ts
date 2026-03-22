@@ -8,7 +8,7 @@ export function rollCandidateByProbability(
   }
 
   const totalProbability = candidates.reduce(
-    (sum, candidate) => sum + candidate.probability,
+    (sum, candidate) => sum + (candidate.probability ?? 0),
     0,
   );
 
@@ -20,7 +20,7 @@ export function rollCandidateByProbability(
   let runningTotal = 0;
 
   for (const candidate of candidates) {
-    runningTotal += candidate.probability;
+    runningTotal += candidate.probability ?? 0;
 
     if (roll <= runningTotal) {
       return candidate;

@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(du:*)",
+      "Bash(npx tsc:*)",
+      "WebFetch(domain:tlidb.com)",
+      "Bash(node:*)",
+      "Bash(powershell -Command \"Get-Content 'data/crafted/pools/crafted_str_chest_armor.json' | Select-Object -First 930 | Set-Content 'data/crafted/pools/crafted_str_chest_armor.json'\")",
+      "Bash(powershell -Command \"\n\\\\$lines = Get-Content 'data/crafted/pools/crafted_str_chest_armor.json'\n\\\\$first930 = \\\\$lines | Select-Object -First 930\n\\\\$first930 | Out-File -FilePath 'data/crafted/pools/crafted_str_chest_armor_temp.json' -Encoding UTF8\nMove-Item -Force 'data/crafted/pools/crafted_str_chest_armor_temp.json' 'data/crafted/pools/crafted_str_chest_armor.json'\n\")"
+    ]
+  }
+}

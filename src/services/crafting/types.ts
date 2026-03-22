@@ -1,3 +1,7 @@
+import { AffixGroupType } from "@prisma/client";
+
+export { AffixGroupType };
+
 export type StatUnit = "PERCENT" | "FLAT" | "NONE";
 
 export type PoolStat = {
@@ -10,7 +14,7 @@ export type PoolStat = {
 
 export type PoolTier = {
   tier: string;
-  probability: number;
+  probability?: number;
   stats: PoolStat[];
 };
 
@@ -20,20 +24,7 @@ export type PoolAffix = {
   tiers: PoolTier[];
 };
 
-export type CraftedPoolGroups = {
-  baseAffixes: PoolAffix[];
-  corrosionBaseAffixes: PoolAffix[];
-  sweetDreamAffixes: PoolAffix[];
-  nightmareAffixes: PoolAffix[];
-  intermediateSequences: PoolAffix[];
-  advancedSequences: PoolAffix[];
-  basicPrefixes: PoolAffix[];
-  advancedPrefixes: PoolAffix[];
-  ultimatePrefixes: PoolAffix[];
-  basicSuffixes: PoolAffix[];
-  advancedSuffixes: PoolAffix[];
-  ultimateSuffixes: PoolAffix[];
-};
+export type CraftedPoolGroups = Record<AffixGroupType, PoolAffix[]>;
 
 export type CraftedPool = {
   id: string;
@@ -55,6 +46,6 @@ export type RollCandidate = {
   affixId: string;
   affixName: string;
   tier: string;
-  probability: number;
+  probability?: number;
   stats: PoolStat[];
 };

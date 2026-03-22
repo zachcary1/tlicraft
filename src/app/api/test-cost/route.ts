@@ -16,12 +16,12 @@ export async function GET() {
     pool,
     [
       {
-        group: "basicPrefixes",
+        group: "BASIC_PREFIXES",
         affixId: "crafted_str_helmet__basic_prefix__max_life",
         tier: "T1",
       },
       {
-        group: "basicSuffixes",
+        group: "BASIC_SUFFIXES",
         affixId: "crafted_str_helmet__basic_suffix__fire_resistance",
         tier: "T2",
       },

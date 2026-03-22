@@ -1,12 +1,15 @@
+import { AffixGroupType } from "@prisma/client";
 import type { CraftedPool, PoolAffix } from "./types";
 
-export type CraftingGroupKey =
-  | "basicPrefixes"
-  | "advancedPrefixes"
-  | "ultimatePrefixes"
-  | "basicSuffixes"
-  | "advancedSuffixes"
-  | "ultimateSuffixes";
+export type CraftingGroupKey = Extract<
+  AffixGroupType,
+  | "BASIC_PREFIXES"
+  | "ADVANCED_PREFIXES"
+  | "ULTIMATE_PREFIXES"
+  | "BASIC_SUFFIXES"
+  | "ADVANCED_SUFFIXES"
+  | "ULTIMATE_SUFFIXES"
+>;
 
 export type AffixTarget = {
   group: CraftingGroupKey;
@@ -19,7 +22,7 @@ export type FoundTargetProbability = {
   affixId: string;
   affixName: string;
   tier: string;
-  probability: number;
+  probability?: number;
 };
 
 function findAffixById(affixes: PoolAffix[], affixId: string) {

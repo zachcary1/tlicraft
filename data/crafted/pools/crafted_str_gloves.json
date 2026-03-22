@@ -1,0 +1,890 @@
+{
+  "id": "crafted_str_gloves",
+  "name": "Crafted STR Gloves",
+  "baseItemCategoryId": "gloves",
+  "weaponTypeId": null,
+  "attributeType": "STR",
+  "isPriceless": true,
+  "groups": {
+    "BASE_AFFIXES": [
+      {
+        "id": "crafted_str_gloves_base_max_life",
+        "name": "+(min-max) Max Life",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 54, "maxValue": 74, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_base_armor",
+        "name": "+(min-max) Armor",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "armor", "label": "+(min-max) Armor", "minValue": 760, "maxValue": 960, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_base_fire_resistance",
+        "name": "+(min-max)% Fire Resistance",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "fire_resistance", "label": "+(min-max)% Fire Resistance", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_base_cold_resistance",
+        "name": "+(min-max)% Cold Resistance",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "cold_resistance", "label": "+(min-max)% Cold Resistance", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_base_lightning_resistance",
+        "name": "+(min-max)% Lightning Resistance",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "lightning_resistance", "label": "+(min-max)% Lightning Resistance", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_base_erosion_resistance",
+        "name": "+(min-max)% Erosion Resistance",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "erosion_resistance", "label": "+(min-max)% Erosion Resistance", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_base_strength",
+        "name": "+(min-max) Strength",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 15, "maxValue": 20, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_base_dexterity",
+        "name": "+(min-max) Dexterity",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 15, "maxValue": 20, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_base_intelligence",
+        "name": "+(min-max) Intelligence",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 15, "maxValue": 20, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_base_skill_area",
+        "name": "+(min-max)% Skill Area",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "skill_area", "label": "+(min-max)% Skill Area", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_base_paralyze_on_hit",
+        "name": "+min% chance to Paralyze the target on hit",
+        "tiers": [
+          { "tier": "T1", "stats": [{ "statId": "paralyze_on_hit", "label": "+min% chance to Paralyze the target on hit", "minValue": 100, "maxValue": 100, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_base_elemental_and_erosion_resistance_penetration_minions",
+        "name": "+(min-max)% Elemental and Erosion Resistance Penetration +(min-max)% Elemental and Erosion Resistance Penetration for Minions",
+        "tiers": [
+          { "tier": "T1", "stats": [{ "statId": "elemental_and_erosion_resistance_penetration_minions", "label": "+(min-max)% Elemental and Erosion Resistance Penetration +(min-max)% Elemental and Erosion Resistance Penetration for Minions", "minValue": 6, "maxValue": 8, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_base_armor_dmg_mitigation_penetration_minions",
+        "name": "+(min-max)% Armor DMG Mitigation Penetration +(min-max)% Armor DMG Mitigation Penetration for Minions",
+        "tiers": [
+          { "tier": "T1", "stats": [{ "statId": "armor_dmg_mitigation_penetration_minions", "label": "+(min-max)% Armor DMG Mitigation Penetration +(min-max)% Armor DMG Mitigation Penetration for Minions", "minValue": 5, "maxValue": 7, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_base_sealed_mana_compensation",
+        "name": "+(min-max)% Sealed Mana Compensation",
+        "tiers": [
+          { "tier": "T1", "stats": [{ "statId": "sealed_mana_compensation", "label": "+(min-max)% Sealed Mana Compensation", "minValue": 6, "maxValue": 8, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_base_aura_effect",
+        "name": "+(min-max)% Aura Effect",
+        "tiers": [
+          { "tier": "T1", "stats": [{ "statId": "aura_effect", "label": "+(min-max)% Aura Effect", "minValue": 7, "maxValue": 8, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_base_max_elemental_resistance",
+        "name": "+(min-max)% Max Elemental Resistance",
+        "tiers": [
+          { "tier": "T0", "stats": [{ "statId": "max_elemental_resistance", "label": "+(min-max)% Max Elemental Resistance", "minValue": 3, "maxValue": 5, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_base_critical_strike_damage_mitigation",
+        "name": "+(min-max)% Critical Strike Damage Mitigation",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "critical_strike_damage_mitigation", "label": "+(min-max)% Critical Strike Damage Mitigation", "minValue": 12, "maxValue": 20, "unit": "PERCENT" }] }
+        ]
+      }
+    ],
+    "CORROSION_BASE_AFFIXES": [
+      {
+        "id": "crafted_str_gloves_corrosion_base_max_tenacity_blessing_stacks",
+        "name": "+1 Max Tenacity Blessing Stacks",
+        "tiers": [
+          { "tier": "T0", "stats": [{ "statId": "max_tenacity_blessing_stacks", "label": "+min Max Tenacity Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_corrosion_base_attack_speed",
+        "name": "+(min-max)% Attack Speed",
+        "tiers": [
+          { "tier": "T0", "stats": [{ "statId": "attack_speed", "label": "+(min-max)% Attack Speed", "minValue": 12, "maxValue": 15, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_corrosion_base_cast_speed",
+        "name": "+(min-max)% Cast Speed",
+        "tiers": [
+          { "tier": "T0", "stats": [{ "statId": "cast_speed", "label": "+(min-max)% Cast Speed", "minValue": 12, "maxValue": 15, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_corrosion_base_blind_on_hit",
+        "name": "+(min-max)% chance to Blind the target on hit",
+        "tiers": [
+          { "tier": "T0", "stats": [{ "statId": "blind_on_hit", "label": "+(min-max)% chance to Blind the target on hit", "minValue": 15, "maxValue": 20, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_corrosion_base_mark_on_hit",
+        "name": "+(min-max)% chance to Mark the target on hit",
+        "tiers": [
+          { "tier": "T0", "stats": [{ "statId": "mark_on_hit", "label": "+(min-max)% chance to Mark the target on hit", "minValue": 15, "maxValue": 20, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_corrosion_base_paralyze_on_hit",
+        "name": "+(min-max)% chance to inflict Paralysis on hit",
+        "tiers": [
+          { "tier": "T0", "stats": [{ "statId": "paralyze_on_hit", "label": "+(min-max)% chance to inflict Paralysis on hit", "minValue": 15, "maxValue": 20, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_corrosion_base_execute",
+        "name": "Eliminates enemies under 15% Life upon inflicting damage",
+        "tiers": [
+          { "tier": "T0", "stats": [{ "statId": "execute", "label": "Eliminates enemies under min% Life upon inflicting damage", "minValue": 15, "maxValue": 15, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_corrosion_base_lucky_critical_strike",
+        "name": "Lucky Critical Strike (min-max) Critical Strike Rating",
+        "tiers": [
+          { "tier": "T0", "stats": [{ "statId": "lucky_critical_strike", "label": "Lucky Critical Strike (min-max) Critical Strike Rating", "minValue": -150, "maxValue": -120, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_corrosion_base_gear_armor",
+        "name": "+(min-max)% Gear Armor",
+        "tiers": [
+          { "tier": "T0", "stats": [{ "statId": "gear_armor", "label": "+(min-max)% Gear Armor", "minValue": 30, "maxValue": 50, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_corrosion_base_damage",
+        "name": "+(min-max)% Damage",
+        "tiers": [
+          { "tier": "T0", "stats": [{ "statId": "damage", "label": "+(min-max)% Damage", "minValue": 50, "maxValue": 70, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_corrosion_base_fortitude_on_melee_skill",
+        "name": "Gains a stack of Fortitude when using a Melee Skill",
+        "tiers": [
+          { "tier": "T0", "stats": [] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_corrosion_base_frail_on_spell_damage",
+        "name": "Inflicts Frail when dealing Spell Damage",
+        "tiers": [
+          { "tier": "T0", "stats": [] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_corrosion_base_torment_on_reaping",
+        "name": "Gains a stack of Torment when Reaping",
+        "tiers": [
+          { "tier": "T0", "stats": [] }
+        ]
+      }
+    ],
+    "SWEET_DREAM_AFFIXES": [
+      {
+        "id": "crafted_str_gloves_sweet_dream_max_life",
+        "name": "+(min-max) Max Life",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 54, "maxValue": 74, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_sweet_dream_armor",
+        "name": "+(min-max) Armor",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "armor", "label": "+(min-max) Armor", "minValue": 760, "maxValue": 960, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_sweet_dream_fire_resistance",
+        "name": "+(min-max)% Fire Resistance",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "fire_resistance", "label": "+(min-max)% Fire Resistance", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_sweet_dream_cold_resistance",
+        "name": "+(min-max)% Cold Resistance",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "cold_resistance", "label": "+(min-max)% Cold Resistance", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_sweet_dream_lightning_resistance",
+        "name": "+(min-max)% Lightning Resistance",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "lightning_resistance", "label": "+(min-max)% Lightning Resistance", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_sweet_dream_erosion_resistance",
+        "name": "+(min-max)% Erosion Resistance",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "erosion_resistance", "label": "+(min-max)% Erosion Resistance", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_sweet_dream_strength",
+        "name": "+(min-max) Strength",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 15, "maxValue": 20, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_sweet_dream_dexterity",
+        "name": "+(min-max) Dexterity",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 15, "maxValue": 20, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_sweet_dream_intelligence",
+        "name": "+(min-max) Intelligence",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 15, "maxValue": 20, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_sweet_dream_skill_area",
+        "name": "+(min-max)% Skill Area",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "skill_area", "label": "+(min-max)% Skill Area", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_sweet_dream_paralyze_on_hit",
+        "name": "+min% chance to Paralyze the target on hit",
+        "tiers": [
+          { "tier": "T1", "stats": [{ "statId": "paralyze_on_hit", "label": "+min% chance to Paralyze the target on hit", "minValue": 100, "maxValue": 100, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_sweet_dream_elemental_and_erosion_resistance_penetration_minions",
+        "name": "+(min-max)% Elemental and Erosion Resistance Penetration +(min-max)% Elemental and Erosion Resistance Penetration for Minions",
+        "tiers": [
+          { "tier": "T1", "stats": [{ "statId": "elemental_and_erosion_resistance_penetration_minions", "label": "+(min-max)% Elemental and Erosion Resistance Penetration +(min-max)% Elemental and Erosion Resistance Penetration for Minions", "minValue": 6, "maxValue": 8, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_sweet_dream_armor_dmg_mitigation_penetration_minions",
+        "name": "+(min-max)% Armor DMG Mitigation Penetration +(min-max)% Armor DMG Mitigation Penetration for Minions",
+        "tiers": [
+          { "tier": "T1", "stats": [{ "statId": "armor_dmg_mitigation_penetration_minions", "label": "+(min-max)% Armor DMG Mitigation Penetration +(min-max)% Armor DMG Mitigation Penetration for Minions", "minValue": 5, "maxValue": 7, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_sweet_dream_sealed_mana_compensation",
+        "name": "+(min-max)% Sealed Mana Compensation",
+        "tiers": [
+          { "tier": "T1", "stats": [{ "statId": "sealed_mana_compensation", "label": "+(min-max)% Sealed Mana Compensation", "minValue": 6, "maxValue": 8, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_sweet_dream_aura_effect",
+        "name": "+(min-max)% Aura Effect",
+        "tiers": [
+          { "tier": "T1", "stats": [{ "statId": "aura_effect", "label": "+(min-max)% Aura Effect", "minValue": 7, "maxValue": 8, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_sweet_dream_max_elemental_resistance",
+        "name": "+(min-max)% Max Elemental Resistance",
+        "tiers": [
+          { "tier": "T0", "stats": [{ "statId": "max_elemental_resistance", "label": "+(min-max)% Max Elemental Resistance", "minValue": 3, "maxValue": 5, "unit": "PERCENT" }] }
+        ]
+      }
+    ],
+    "NIGHTMARE_AFFIXES": [
+      {
+        "id": "crafted_str_gloves_nightmare_damage",
+        "name": "Damage",
+        "tiers": [{ "tier": "T1", "stats": [{ "statId": "damage", "label": "+(min-max)% Damage", "minValue": 49, "maxValue": 72, "unit": "PERCENT" }] }]
+      },
+      {
+        "id": "crafted_str_gloves_nightmare_attack_and_cast_speed",
+        "name": "Attack and Cast Speed",
+        "tiers": [{ "tier": "T1", "stats": [{ "statId": "attack_and_cast_speed", "label": "+(min-max)% Attack and Cast Speed", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }]
+      },
+      {
+        "id": "crafted_str_gloves_nightmare_minion_damage",
+        "name": "Minion Damage",
+        "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_damage", "label": "+(min-max)% Minion Damage", "minValue": 49, "maxValue": 72, "unit": "PERCENT" }] }]
+      },
+      {
+        "id": "crafted_str_gloves_nightmare_minion_attack_and_cast_speed",
+        "name": "Minion Attack and Cast Speed",
+        "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_attack_and_cast_speed", "label": "+(min-max)% Minion Attack and Cast Speed", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }]
+      },
+      {
+        "id": "crafted_str_gloves_nightmare_attack_and_spell_critical_strike_rating",
+        "name": "Attack and Spell Critical Strike Rating",
+        "tiers": [{ "tier": "T1", "stats": [{ "statId": "attack_and_spell_critical_strike_rating", "label": "+(min-max) Attack and Spell Critical Strike Rating", "minValue": 77, "maxValue": 100, "unit": "FLAT" }] }]
+      },
+      {
+        "id": "crafted_str_gloves_nightmare_skill_area",
+        "name": "Skill Area",
+        "tiers": [{ "tier": "T1", "stats": [{ "statId": "skill_area", "label": "+(min-max)% Skill Area", "minValue": 18, "maxValue": 21, "unit": "PERCENT" }] }]
+      },
+      {
+        "id": "crafted_str_gloves_nightmare_minion_critical_strike_rating",
+        "name": "Minion Critical Strike Rating",
+        "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_critical_strike_rating", "label": "+(min-max) Minion Critical Strike Rating", "minValue": 77, "maxValue": 100, "unit": "FLAT" }] }]
+      },
+      {
+        "id": "crafted_str_gloves_nightmare_minion_skill_area",
+        "name": "Minion Skill Area",
+        "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_skill_area", "label": "+(min-max)% Minion Skill Area", "minValue": 18, "maxValue": 21, "unit": "PERCENT" }] }]
+      },
+      {
+        "id": "crafted_str_gloves_nightmare_max_life",
+        "name": "Max Life",
+        "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 100, "maxValue": 150, "unit": "FLAT" }] }]
+      },
+      {
+        "id": "crafted_str_gloves_nightmare_max_energy_shield",
+        "name": "Max Energy Shield",
+        "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_energy_shield", "label": "+(min-max) Max Energy Shield", "minValue": 320, "maxValue": 400, "unit": "FLAT" }] }]
+      },
+      {
+        "id": "crafted_str_gloves_nightmare_cold_resistance",
+        "name": "Cold Resistance",
+        "tiers": [{ "tier": "T1", "stats": [{ "statId": "cold_resistance", "label": "+(min-max)% Cold Resistance", "minValue": 21, "maxValue": 24, "unit": "PERCENT" }] }]
+      },
+      {
+        "id": "crafted_str_gloves_nightmare_erosion_resistance",
+        "name": "Erosion Resistance",
+        "tiers": [{ "tier": "T1", "stats": [{ "statId": "erosion_resistance", "label": "+(min-max)% Erosion Resistance", "minValue": 21, "maxValue": 24, "unit": "PERCENT" }] }]
+      },
+      {
+        "id": "crafted_str_gloves_nightmare_max_mana",
+        "name": "Max Mana",
+        "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_mana", "label": "+(min-max) Max Mana", "minValue": 96, "maxValue": 120, "unit": "FLAT" }] }]
+      },
+      {
+        "id": "crafted_str_gloves_nightmare_fire_resistance",
+        "name": "Fire Resistance",
+        "tiers": [{ "tier": "T1", "stats": [{ "statId": "fire_resistance", "label": "+(min-max)% Fire Resistance", "minValue": 21, "maxValue": 24, "unit": "PERCENT" }] }]
+      },
+      {
+        "id": "crafted_str_gloves_nightmare_lightning_resistance",
+        "name": "Lightning Resistance",
+        "tiers": [{ "tier": "T1", "stats": [{ "statId": "lightning_resistance", "label": "+(min-max)% Lightning Resistance", "minValue": 21, "maxValue": 24, "unit": "PERCENT" }] }]
+      },
+      {
+        "id": "crafted_str_gloves_nightmare_elemental_resistance",
+        "name": "Elemental Resistance",
+        "tiers": [{ "tier": "T1", "stats": [{ "statId": "elemental_resistance", "label": "+(min-max)% Elemental Resistance", "minValue": 9, "maxValue": 10, "unit": "PERCENT" }] }]
+      },
+      {
+        "id": "crafted_str_gloves_nightmare_strength",
+        "name": "Strength",
+        "tiers": [{ "tier": "T1", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 51, "maxValue": 60, "unit": "FLAT" }] }]
+      },
+      {
+        "id": "crafted_str_gloves_nightmare_intelligence",
+        "name": "Intelligence",
+        "tiers": [{ "tier": "T1", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 51, "maxValue": 60, "unit": "FLAT" }] }]
+      },
+      {
+        "id": "crafted_str_gloves_nightmare_movement_speed",
+        "name": "Movement Speed",
+        "tiers": [{ "tier": "T1", "stats": [{ "statId": "movement_speed", "label": "+(min-max)% Movement Speed", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }]
+      },
+      {
+        "id": "crafted_str_gloves_nightmare_skill_effect_duration",
+        "name": "Skill Effect Duration",
+        "tiers": [{ "tier": "T1", "stats": [{ "statId": "skill_effect_duration", "label": "+(min-max)% Skill Effect Duration", "minValue": 14, "maxValue": 20, "unit": "PERCENT" }] }]
+      },
+      {
+        "id": "crafted_str_gloves_nightmare_dexterity",
+        "name": "Dexterity",
+        "tiers": [{ "tier": "T1", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 51, "maxValue": 60, "unit": "FLAT" }] }]
+      },
+      {
+        "id": "crafted_str_gloves_nightmare_aura_effect",
+        "name": "Aura Effect",
+        "tiers": [{ "tier": "T1", "stats": [{ "statId": "aura_effect", "label": "+(min-max)% Aura Effect", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }]
+      },
+      {
+        "id": "crafted_str_gloves_nightmare_cooldown_recovery_speed",
+        "name": "Cooldown Recovery Speed",
+        "tiers": [{ "tier": "T1", "stats": [{ "statId": "cooldown_recovery_speed", "label": "+(min-max)% Cooldown Recovery Speed", "minValue": 13, "maxValue": 15, "unit": "PERCENT" }] }]
+      },
+      {
+        "id": "crafted_str_gloves_nightmare_max_tenacity_blessing_stacks",
+        "name": "Max Tenacity Blessing Stacks",
+        "tiers": [{ "tier": "T1", "stats": [] }]
+      },
+      {
+        "id": "crafted_str_gloves_nightmare_max_focus_blessing_stacks",
+        "name": "Max Focus Blessing Stacks",
+        "tiers": [{ "tier": "T1", "stats": [] }]
+      },
+      {
+        "id": "crafted_str_gloves_nightmare_fervor_effect",
+        "name": "Fervor Effect",
+        "tiers": [{ "tier": "T1", "stats": [{ "statId": "fervor_effect", "label": "+(min-max)% Fervor Effect", "minValue": 15, "maxValue": 20, "unit": "PERCENT" }] }]
+      },
+      {
+        "id": "crafted_str_gloves_nightmare_projectile_quantity",
+        "name": "Projectile Quantity",
+        "tiers": [{ "tier": "T1", "stats": [] }]
+      },
+      {
+        "id": "crafted_str_gloves_nightmare_max_agility_blessing_stacks",
+        "name": "Max Agility Blessing Stacks",
+        "tiers": [{ "tier": "T1", "stats": [] }]
+      },
+      {
+        "id": "crafted_str_gloves_nightmare_sealed_mana_compensation",
+        "name": "Sealed Mana Compensation",
+        "tiers": [{ "tier": "T1", "stats": [{ "statId": "sealed_mana_compensation", "label": "+(min-max)% Sealed Mana Compensation", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }]
+      },
+      {
+        "id": "crafted_str_gloves_nightmare_max_elemental_resistance",
+        "name": "Max Elemental Resistance",
+        "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_elemental_resistance", "label": "+(min-max)% Max Elemental Resistance", "minValue": 1, "maxValue": 2, "unit": "PERCENT" }] }]
+      }
+    ],
+    "INTERMEDIATE_SEQUENCES": [],
+    "ADVANCED_SEQUENCES": [],
+    "BASIC_PREFIXES": [
+      {
+        "id": "crafted_str_gloves_basic_prefix_max_life",
+        "name": "Max Life",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 287, "maxValue": 372, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 221, "maxValue": 286, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 155, "maxValue": 220, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_basic_prefix_gear_armor",
+        "name": "Gear Armor",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "gear_armor", "label": "+(min-max) Gear Armor", "minValue": 3745, "maxValue": 4867, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "gear_armor", "label": "+(min-max) Gear Armor", "minValue": 2881, "maxValue": 3744, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "gear_armor", "label": "+(min-max) Gear Armor", "minValue": 2017, "maxValue": 2880, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_basic_prefix_damage",
+        "name": "Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "damage", "label": "+(min-max)% Damage", "minValue": 95, "maxValue": 122, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "damage", "label": "+(min-max)% Damage", "minValue": 73, "maxValue": 94, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "damage", "label": "+(min-max)% Damage", "minValue": 51, "maxValue": 72, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_basic_prefix_minion_damage",
+        "name": "Minion Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "minion_damage", "label": "+(min-max)% Minion Damage", "minValue": 95, "maxValue": 122, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "minion_damage", "label": "+(min-max)% Minion Damage", "minValue": 73, "maxValue": 94, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "minion_damage", "label": "+(min-max)% Minion Damage", "minValue": 51, "maxValue": 72, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_basic_prefix_critical_strike_damage_mitigation",
+        "name": "Critical Strike Damage Mitigation",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "critical_strike_damage_mitigation", "label": "+(min-max)% Critical Strike Damage Mitigation", "minValue": 79, "maxValue": 100, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "critical_strike_damage_mitigation", "label": "+(min-max)% Critical Strike Damage Mitigation", "minValue": 61, "maxValue": 78, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "critical_strike_damage_mitigation", "label": "+(min-max)% Critical Strike Damage Mitigation", "minValue": 43, "maxValue": 60, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_basic_prefix_max_mana",
+        "name": "Max Mana",
+        "tiers": [
+          { "tier": "T0", "stats": [{ "statId": "max_mana", "label": "+(min-max) Max Mana", "minValue": 121, "maxValue": 156, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "max_mana", "label": "+(min-max) Max Mana", "minValue": 85, "maxValue": 120, "unit": "FLAT" }] }
+        ]
+      }
+    ],
+    "ADVANCED_PREFIXES": [
+      {
+        "id": "crafted_str_gloves_advanced_prefix_physical_damage_added",
+        "name": "Physical Damage Added",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "physical_damage_added_min", "label": "Adds (min-max) - (min-max) Physical Damage to Attacks and Spells", "minValue": 76, "maxValue": 95, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "physical_damage_added_min", "label": "Adds (min-max) - (min-max) Physical Damage to Attacks and Spells", "minValue": 58, "maxValue": 73, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "physical_damage_added_min", "label": "Adds (min-max) - (min-max) Physical Damage to Attacks and Spells", "minValue": 44, "maxValue": 56, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_advanced_prefix_fire_damage_added",
+        "name": "Fire Damage Added",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "fire_damage_added_min", "label": "Adds (min-max) - (min-max) Fire Damage to Attacks and Spells", "minValue": 71, "maxValue": 99, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "fire_damage_added_min", "label": "Adds (min-max) - (min-max) Fire Damage to Attacks and Spells", "minValue": 54, "maxValue": 76, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "fire_damage_added_min", "label": "Adds (min-max) - (min-max) Fire Damage to Attacks and Spells", "minValue": 42, "maxValue": 59, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_advanced_prefix_cold_damage_added",
+        "name": "Cold Damage Added",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "cold_damage_added_min", "label": "Adds (min-max) - (min-max) Cold Damage to Attacks and Spells", "minValue": 72, "maxValue": 98, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "cold_damage_added_min", "label": "Adds (min-max) - (min-max) Cold Damage to Attacks and Spells", "minValue": 55, "maxValue": 75, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "cold_damage_added_min", "label": "Adds (min-max) - (min-max) Cold Damage to Attacks and Spells", "minValue": 42, "maxValue": 58, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_advanced_prefix_lightning_damage_added",
+        "name": "Lightning Damage Added",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "lightning_damage_added_min", "label": "Adds (min-max) - (min-max) Lightning Damage to Attacks and Spells", "minValue": 8, "maxValue": 163, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "lightning_damage_added_min", "label": "Adds (min-max) - (min-max) Lightning Damage to Attacks and Spells", "minValue": 6, "maxValue": 125, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "lightning_damage_added_min", "label": "Adds (min-max) - (min-max) Lightning Damage to Attacks and Spells", "minValue": 4, "maxValue": 96, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_advanced_prefix_physical_as_fire",
+        "name": "Physical Damage as Fire",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "physical_as_fire", "label": "Adds (min-max)% of Physical Damage as Fire Damage", "minValue": 17, "maxValue": 20, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "physical_as_fire", "label": "Adds (min-max)% of Physical Damage as Fire Damage", "minValue": 13, "maxValue": 16, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "physical_as_fire", "label": "Adds (min-max)% of Physical Damage as Fire Damage", "minValue": 9, "maxValue": 12, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_advanced_prefix_fire_as_erosion",
+        "name": "Fire Damage as Erosion",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "fire_as_erosion", "label": "Adds (min-max)% of Fire Damage as Erosion Damage", "minValue": 17, "maxValue": 20, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "fire_as_erosion", "label": "Adds (min-max)% of Fire Damage as Erosion Damage", "minValue": 13, "maxValue": 16, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "fire_as_erosion", "label": "Adds (min-max)% of Fire Damage as Erosion Damage", "minValue": 9, "maxValue": 12, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_advanced_prefix_erosion_damage_added",
+        "name": "Erosion Damage Added",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "erosion_damage_added_min", "label": "Adds (min-max) - (min-max) Erosion Damage to Attacks and Spells", "minValue": 72, "maxValue": 98, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "erosion_damage_added_min", "label": "Adds (min-max) - (min-max) Erosion Damage to Attacks and Spells", "minValue": 55, "maxValue": 75, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "erosion_damage_added_min", "label": "Adds (min-max) - (min-max) Erosion Damage to Attacks and Spells", "minValue": 42, "maxValue": 58, "unit": "FLAT" }] }
+        ]
+      }
+    ],
+    "ULTIMATE_PREFIXES": [
+      {
+        "id": "crafted_str_gloves_ultimate_prefix_active_skill_level",
+        "name": "Active Skill Level",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "active_skill_level", "label": "+min Active Skill Level", "minValue": 4, "maxValue": 4, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "active_skill_level", "label": "+min Active Skill Level", "minValue": 3, "maxValue": 3, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "active_skill_level", "label": "+min Active Skill Level", "minValue": 2, "maxValue": 2, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_ultimate_prefix_tenacity_fire_damage_penetration",
+        "name": "Fire Damage and Penetration (Tenacity)",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              { "statId": "fire_damage_conditional", "label": "+(min-max)% additional Fire Damage when having at least 8 Tenacity Blessing stacks", "minValue": 11, "maxValue": 12, "unit": "PERCENT" },
+              { "statId": "fire_penetration_conditional", "label": "+(min-max)% Fire Penetration when having at least 8 Tenacity Blessing stacks", "minValue": 19, "maxValue": 20, "unit": "PERCENT" }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              { "statId": "fire_damage_conditional", "label": "+(min-max)% additional Fire Damage when having at least 8 Tenacity Blessing stacks", "minValue": 9, "maxValue": 10, "unit": "PERCENT" },
+              { "statId": "fire_penetration_conditional", "label": "+(min-max)% Fire Penetration when having at least 8 Tenacity Blessing stacks", "minValue": 16, "maxValue": 18, "unit": "PERCENT" }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              { "statId": "fire_damage_conditional", "label": "+(min-max)% additional Fire Damage when having at least 8 Tenacity Blessing stacks", "minValue": 6, "maxValue": 8, "unit": "PERCENT" },
+              { "statId": "fire_penetration_conditional", "label": "+(min-max)% Fire Penetration when having at least 8 Tenacity Blessing stacks", "minValue": 12, "maxValue": 15, "unit": "PERCENT" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_ultimate_prefix_agility_lightning_damage_penetration",
+        "name": "Lightning Damage and Penetration (Agility)",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              { "statId": "lightning_damage_conditional", "label": "+(min-max)% additional Lightning Damage when having at least 8 Agility Blessing stacks", "minValue": 11, "maxValue": 12, "unit": "PERCENT" },
+              { "statId": "lightning_penetration_conditional", "label": "+(min-max)% Lightning Penetration when having at least 8 Agility Blessing stacks", "minValue": 19, "maxValue": 20, "unit": "PERCENT" }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              { "statId": "lightning_damage_conditional", "label": "+(min-max)% additional Lightning Damage when having at least 8 Agility Blessing stacks", "minValue": 9, "maxValue": 10, "unit": "PERCENT" },
+              { "statId": "lightning_penetration_conditional", "label": "+(min-max)% Lightning Penetration when having at least 8 Agility Blessing stacks", "minValue": 16, "maxValue": 18, "unit": "PERCENT" }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              { "statId": "lightning_damage_conditional", "label": "+(min-max)% additional Lightning Damage when having at least 8 Agility Blessing stacks", "minValue": 6, "maxValue": 8, "unit": "PERCENT" },
+              { "statId": "lightning_penetration_conditional", "label": "+(min-max)% Lightning Penetration when having at least 8 Agility Blessing stacks", "minValue": 12, "maxValue": 15, "unit": "PERCENT" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_ultimate_prefix_focus_cold_damage_penetration",
+        "name": "Cold Damage and Penetration (Focus)",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              { "statId": "cold_damage_conditional", "label": "+(min-max)% additional Cold Damage when having at least 8 Focus Blessing stacks", "minValue": 11, "maxValue": 12, "unit": "PERCENT" },
+              { "statId": "cold_penetration_conditional", "label": "+(min-max)% Cold Penetration when having at least 8 Focus Blessing stacks", "minValue": 19, "maxValue": 20, "unit": "PERCENT" }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              { "statId": "cold_damage_conditional", "label": "+(min-max)% additional Cold Damage when having at least 8 Focus Blessing stacks", "minValue": 9, "maxValue": 10, "unit": "PERCENT" },
+              { "statId": "cold_penetration_conditional", "label": "+(min-max)% Cold Penetration when having at least 8 Focus Blessing stacks", "minValue": 16, "maxValue": 18, "unit": "PERCENT" }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              { "statId": "cold_damage_conditional", "label": "+(min-max)% additional Cold Damage when having at least 8 Focus Blessing stacks", "minValue": 6, "maxValue": 8, "unit": "PERCENT" },
+              { "statId": "cold_penetration_conditional", "label": "+(min-max)% Cold Penetration when having at least 8 Focus Blessing stacks", "minValue": 12, "maxValue": 15, "unit": "PERCENT" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_ultimate_prefix_minion_damage_conditional",
+        "name": "Minion Damage (conditional)",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "minion_damage_conditional", "label": "+(min-max)% additional Minion Damage when you have (1-8) Minions", "minValue": 31, "maxValue": 36, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "minion_damage_conditional", "label": "+(min-max)% additional Minion Damage when you have (1-8) Minions", "minValue": 26, "maxValue": 30, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "minion_damage_conditional", "label": "+(min-max)% additional Minion Damage when you have (1-8) Minions", "minValue": 21, "maxValue": 25, "unit": "PERCENT" }] }
+        ]
+      }
+    ],
+    "BASIC_SUFFIXES": [
+      {
+        "id": "crafted_str_gloves_basic_suffix_life_regeneration_flat",
+        "name": "Life Regeneration (flat)",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "life_regeneration_flat", "label": "Regenerates (min-max) Life per second", "minValue": 157, "maxValue": 203, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "life_regeneration_flat", "label": "Regenerates (min-max) Life per second", "minValue": 121, "maxValue": 156, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "life_regeneration_flat", "label": "Regenerates (min-max) Life per second", "minValue": 85, "maxValue": 120, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_basic_suffix_fire_resistance",
+        "name": "Fire Resistance",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "fire_resistance", "label": "+(min-max)% Fire Resistance", "minValue": 36, "maxValue": 46, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "fire_resistance", "label": "+(min-max)% Fire Resistance", "minValue": 25, "maxValue": 35, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "fire_resistance", "label": "+(min-max)% Fire Resistance", "minValue": 19, "maxValue": 27, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_basic_suffix_cold_resistance",
+        "name": "Cold Resistance",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "cold_resistance", "label": "+(min-max)% Cold Resistance", "minValue": 36, "maxValue": 46, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "cold_resistance", "label": "+(min-max)% Cold Resistance", "minValue": 25, "maxValue": 35, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "cold_resistance", "label": "+(min-max)% Cold Resistance", "minValue": 19, "maxValue": 27, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_basic_suffix_lightning_resistance",
+        "name": "Lightning Resistance",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "lightning_resistance", "label": "+(min-max)% Lightning Resistance", "minValue": 36, "maxValue": 46, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "lightning_resistance", "label": "+(min-max)% Lightning Resistance", "minValue": 25, "maxValue": 35, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "lightning_resistance", "label": "+(min-max)% Lightning Resistance", "minValue": 19, "maxValue": 27, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_basic_suffix_erosion_resistance",
+        "name": "Erosion Resistance",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "erosion_resistance", "label": "+(min-max)% Erosion Resistance", "minValue": 36, "maxValue": 46, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "erosion_resistance", "label": "+(min-max)% Erosion Resistance", "minValue": 25, "maxValue": 35, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "erosion_resistance", "label": "+(min-max)% Erosion Resistance", "minValue": 19, "maxValue": 27, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_basic_suffix_critical_strike_rating_percent",
+        "name": "Critical Strike Rating %",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "critical_strike_rating_percent", "label": "+(min-max)% Critical Strike Rating", "minValue": 157, "maxValue": 203, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "critical_strike_rating_percent", "label": "+(min-max)% Critical Strike Rating", "minValue": 111, "maxValue": 156, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "critical_strike_rating_percent", "label": "+(min-max)% Critical Strike Rating", "minValue": 85, "maxValue": 120, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_basic_suffix_affliction_effect",
+        "name": "Affliction Effect",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "affliction_effect", "label": "+(min-max)% Affliction Effect", "minValue": 66, "maxValue": 85, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "affliction_effect", "label": "+(min-max)% Affliction Effect", "minValue": 51, "maxValue": 65, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "affliction_effect", "label": "+(min-max)% Affliction Effect", "minValue": 36, "maxValue": 50, "unit": "PERCENT" }] }
+        ]
+      }
+    ],
+    "ADVANCED_SUFFIXES": [
+      {
+        "id": "crafted_str_gloves_advanced_suffix_critical_strike_damage",
+        "name": "Critical Strike Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "critical_strike_damage", "label": "+(min-max)% Critical Strike Damage", "minValue": 79, "maxValue": 101, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "critical_strike_damage", "label": "+(min-max)% Critical Strike Damage", "minValue": 61, "maxValue": 78, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "critical_strike_damage", "label": "+(min-max)% Critical Strike Damage", "minValue": 44, "maxValue": 60, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_advanced_suffix_attack_and_cast_speed_minion_attack_and_cast_speed",
+        "name": "Attack and Cast Speed / Minion Attack and Cast Speed",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "attack_and_cast_speed_minion_attack_and_cast_speed", "label": "+(min-max)% Attack and Cast Speed +(min-max)% Minion Attack and Cast Speed", "minValue": 32, "maxValue": 41, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "attack_and_cast_speed_minion_attack_and_cast_speed", "label": "+(min-max)% Attack and Cast Speed +(min-max)% Minion Attack and Cast Speed", "minValue": 22, "maxValue": 31, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "attack_and_cast_speed_minion_attack_and_cast_speed", "label": "+(min-max)% Attack and Cast Speed +(min-max)% Minion Attack and Cast Speed", "minValue": 17, "maxValue": 24, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_advanced_suffix_reaping_duration",
+        "name": "Reaping Duration",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "reaping_duration", "label": "+(min-max)% Reaping Duration", "minValue": 66, "maxValue": 85, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "reaping_duration", "label": "+(min-max)% Reaping Duration", "minValue": 51, "maxValue": 65, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "reaping_duration", "label": "+(min-max)% Reaping Duration", "minValue": 37, "maxValue": 50, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_advanced_suffix_skill_area_minion_skill_area",
+        "name": "Skill Area / Minion Skill Area",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "skill_area_minion_skill_area", "label": "+(min-max)% Skill Area +(min-max)% Minion Skill Area", "minValue": 63, "maxValue": 81, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "skill_area_minion_skill_area", "label": "+(min-max)% Skill Area +(min-max)% Minion Skill Area", "minValue": 49, "maxValue": 62, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "skill_area_minion_skill_area", "label": "+(min-max)% Skill Area +(min-max)% Minion Skill Area", "minValue": 35, "maxValue": 48, "unit": "PERCENT" }] }
+        ]
+      }
+    ],
+    "ULTIMATE_SUFFIXES": [
+      {
+        "id": "crafted_str_gloves_ultimate_suffix_reaping_recovery_speed",
+        "name": "Reaping Recovery Speed",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "reaping_recovery_speed", "label": "+(min-max)% Reaping Recovery Speed", "minValue": 109, "maxValue": 140, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "reaping_recovery_speed", "label": "+(min-max)% Reaping Recovery Speed", "minValue": 84, "maxValue": 108, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "reaping_recovery_speed", "label": "+(min-max)% Reaping Recovery Speed", "minValue": 59, "maxValue": 83, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_ultimate_suffix_jumps_and_damage",
+        "name": "Jumps and Damage per Jump",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              { "statId": "additional_jumps", "label": "+min Jumps", "minValue": 1, "maxValue": 1, "unit": "FLAT" },
+              { "statId": "damage_per_jump", "label": "+(min)% additional damage for every Jump (multiplies)", "minValue": 7, "maxValue": 7, "unit": "PERCENT" }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              { "statId": "additional_jumps", "label": "+min Jumps", "minValue": 1, "maxValue": 1, "unit": "FLAT" },
+              { "statId": "damage_per_jump", "label": "+(min)% additional damage for every Jump (multiplies)", "minValue": 6, "maxValue": 6, "unit": "PERCENT" }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              { "statId": "additional_jumps", "label": "+min Jumps", "minValue": 1, "maxValue": 1, "unit": "FLAT" },
+              { "statId": "damage_per_jump", "label": "+(min-max)% additional damage for every Jump (multiplies)", "minValue": 4, "maxValue": 5, "unit": "PERCENT" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_ultimate_suffix_fervor_damage",
+        "name": "Damage while having Fervor",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "fervor_damage", "label": "+(min-max)% additional damage while having Fervor", "minValue": 31, "maxValue": 36, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "fervor_damage", "label": "+(min-max)% additional damage while having Fervor", "minValue": 26, "maxValue": 30, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "fervor_damage", "label": "+(min-max)% additional damage while having Fervor", "minValue": 21, "maxValue": 25, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_gloves_ultimate_suffix_blur_effect",
+        "name": "Blur Effect",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              { "statId": "blur_effect", "label": "+(min-max)% Blur Effect", "minValue": 21, "maxValue": 25, "unit": "PERCENT" },
+              { "statId": "blur_on_blur_loss", "label": "Gains Blur for 1s after losing Blur", "minValue": 1, "maxValue": 1, "unit": "NONE" }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              { "statId": "blur_effect", "label": "+(min-max)% Blur Effect", "minValue": 16, "maxValue": 20, "unit": "PERCENT" },
+              { "statId": "blur_on_blur_loss", "label": "Gains Blur for 1s after losing Blur", "minValue": 1, "maxValue": 1, "unit": "NONE" }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              { "statId": "blur_effect", "label": "+(min-max)% Blur Effect", "minValue": 12, "maxValue": 15, "unit": "PERCENT" },
+              { "statId": "blur_on_blur_loss", "label": "Gains Blur for 1s after losing Blur", "minValue": 1, "maxValue": 1, "unit": "NONE" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

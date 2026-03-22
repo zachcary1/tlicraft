@@ -16,9 +16,17 @@ export async function POST(req: Request) {
 
     const { poolId, costPerAttempt, targets } = body;
 
-    if (!poolId || !targets || !costPerAttempt) {
+    if (
+      typeof poolId !== "string" ||
+      !poolId ||
+      !Array.isArray(targets) ||
+      targets.length === 0 ||
+      typeof costPerAttempt !== "number" ||
+      costPerAttempt <= 0 ||
+      !isFinite(costPerAttempt)
+    ) {
       return NextResponse.json(
-        { error: "Missing required fields." },
+        { error: "Invalid request fields." },
         { status: 400 },
       );
     }

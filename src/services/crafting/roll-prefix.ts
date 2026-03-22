@@ -3,7 +3,7 @@ import { rollCandidateByProbability } from "./random";
 import type { CraftedPool, RollCandidate } from "./types";
 
 export function rollBasicPrefix(pool: CraftedPool): RollCandidate {
-  const candidates = flattenAffixesToCandidates(pool.groups.basicPrefixes);
+  const candidates = flattenAffixesToCandidates(pool.groups.BASIC_PREFIXES);
 
   return rollCandidateByProbability(candidates);
 }
