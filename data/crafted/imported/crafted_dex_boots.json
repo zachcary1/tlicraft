@@ -1,0 +1,767 @@
+{
+  "id": "crafted_dex_boots",
+  "name": "Crafted DEX Boots",
+  "baseItemCategoryId": "boots",
+  "weaponTypeId": null,
+  "attributeType": "DEX",
+  "isPriceless": true,
+  "groups": {
+    "BASE_AFFIXES": [
+      {
+        "id": "crafted_dex_boots_base_max_life",
+        "name": "+(min-max) Max Life",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 54, "maxValue": 74, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_base_evasion",
+        "name": "+(min-max) Evasion",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "evasion", "label": "+(min-max) Evasion", "minValue": 760, "maxValue": 960, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_base_fire_resistance",
+        "name": "+(min-max)% Fire Resistance",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "fire_resistance", "label": "+(min-max)% Fire Resistance", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_base_cold_resistance",
+        "name": "+(min-max)% Cold Resistance",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "cold_resistance", "label": "+(min-max)% Cold Resistance", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_base_lightning_resistance",
+        "name": "+(min-max)% Lightning Resistance",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "lightning_resistance", "label": "+(min-max)% Lightning Resistance", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_base_erosion_resistance",
+        "name": "+(min-max)% Erosion Resistance",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "erosion_resistance", "label": "+(min-max)% Erosion Resistance", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_base_strength",
+        "name": "+(min-max) Strength",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 15, "maxValue": 20, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_base_dexterity",
+        "name": "+(min-max) Dexterity",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 15, "maxValue": 20, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_base_intelligence",
+        "name": "+(min-max) Intelligence",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 15, "maxValue": 20, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_base_skill_area",
+        "name": "+(min-max)% Skill Area",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "skill_area", "label": "+(min-max)% Skill Area", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_base_elemental_and_erosion_resistance_penetration_minions",
+        "name": "+(min-max)% Elemental and Erosion Resistance Penetration +(min-max)% Elemental and Erosion Resistance Penetration for Minions",
+        "tiers": [
+          { "tier": "T1", "stats": [{ "statId": "elemental_and_erosion_resistance_penetration_minions", "label": "+(min-max)% Elemental and Erosion Resistance Penetration +(min-max)% Elemental and Erosion Resistance Penetration for Minions", "minValue": 6, "maxValue": 8, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_base_armor_dmg_mitigation_penetration_minions",
+        "name": "+(min-max)% Armor DMG Mitigation Penetration +(min-max)% Armor DMG Mitigation Penetration for Minions",
+        "tiers": [
+          { "tier": "T1", "stats": [{ "statId": "armor_dmg_mitigation_penetration_minions", "label": "+(min-max)% Armor DMG Mitigation Penetration +(min-max)% Armor DMG Mitigation Penetration for Minions", "minValue": 5, "maxValue": 7, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_base_movement_speed",
+        "name": "+(min-max)% Movement Speed",
+        "tiers": [
+          { "tier": "T0", "stats": [{ "statId": "movement_speed", "label": "+(min-max)% Movement Speed", "minValue": 20, "maxValue": 25, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_base_converts_erosion_damage_taken_to_lightning_damage",
+        "name": "Converts (min-max)% of Erosion Damage taken to Lightning Damage",
+        "tiers": [
+          { "tier": "T0", "stats": [{ "statId": "converts_erosion_damage_taken_to_lightning_damage", "label": "Converts (min-max)% of Erosion Damage taken to Lightning Damage", "minValue": 36, "maxValue": 45, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_base_cooldown_recovery_speed",
+        "name": "+(min-max)% Cooldown Recovery Speed",
+        "tiers": [
+          { "tier": "T0", "stats": [{ "statId": "cooldown_recovery_speed", "label": "+(min-max)% Cooldown Recovery Speed", "minValue": 17, "maxValue": 24, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_base_max_elemental_resistance",
+        "name": "+(min-max)% Max Elemental Resistance",
+        "tiers": [
+          { "tier": "T0", "stats": [{ "statId": "max_elemental_resistance", "label": "+(min-max)% Max Elemental Resistance", "minValue": 3, "maxValue": 5, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_base_critical_strike_damage_mitigation",
+        "name": "+(min-max)% Critical Strike Damage Mitigation",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "critical_strike_damage_mitigation", "label": "+(min-max)% Critical Strike Damage Mitigation", "minValue": 12, "maxValue": 20, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_base_converts_physical_damage_taken_to_lightning_damage",
+        "name": "Converts (min-max)% of Physical Damage taken to Lightning Damage",
+        "tiers": [
+          { "tier": "T0", "stats": [{ "statId": "converts_physical_damage_taken_to_lightning_damage", "label": "Converts (min-max)% of Physical Damage taken to Lightning Damage", "minValue": 16, "maxValue": 20, "unit": "PERCENT" }] }
+        ]
+      }
+    ],
+    "CORROSION_BASE_AFFIXES": [
+      {
+        "id": "crafted_dex_boots_corrosion_base_movement_speed",
+        "name": "+(min-max)% Movement Speed",
+        "tiers": [
+          { "tier": "T0", "stats": [{ "statId": "movement_speed", "label": "+(min-max)% Movement Speed", "minValue": 15, "maxValue": 20, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_corrosion_base_max_agility_blessing_stacks",
+        "name": "+min to Max Agility Blessing Stacks",
+        "tiers": [
+          { "tier": "T0", "stats": [{ "statId": "max_agility_blessing_stacks", "label": "+min to Max Agility Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_corrosion_base_cooldown_recovery_speed_for_mobility_skills",
+        "name": "+(min-max)% Cooldown Recovery Speed for Mobility Skills",
+        "tiers": [
+          { "tier": "T0", "stats": [{ "statId": "cooldown_recovery_speed_for_mobility_skills", "label": "+(min-max)% Cooldown Recovery Speed for Mobility Skills", "minValue": 30, "maxValue": 40, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_corrosion_base_mobility_skill_level",
+        "name": "+min Mobility Skill Level",
+        "tiers": [
+          { "tier": "T0", "stats": [{ "statId": "mobility_skill_level", "label": "+min Mobility Skill Level", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_corrosion_base_mana_regeneration_while_moving",
+        "name": "Regenerates min% Mana per second while moving",
+        "tiers": [
+          { "tier": "T0", "stats": [{ "statId": "mana_regeneration_while_moving", "label": "Regenerates min% Mana per second while moving", "minValue": 1, "maxValue": 1, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_corrosion_base_life_regeneration_while_moving",
+        "name": "Regenerates min% of Life per second while moving",
+        "tiers": [
+          { "tier": "T0", "stats": [{ "statId": "life_regeneration_while_moving", "label": "Regenerates min% of Life per second while moving", "minValue": 1, "maxValue": 1, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_corrosion_base_max_energy_shield",
+        "name": "+(min-max)% Max Energy Shield",
+        "tiers": [
+          { "tier": "T0", "stats": [{ "statId": "max_energy_shield", "label": "+(min-max)% Max Energy Shield", "minValue": 15, "maxValue": 20, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_corrosion_base_max_life",
+        "name": "+(min-max)% Max Life",
+        "tiers": [
+          { "tier": "T0", "stats": [{ "statId": "max_life", "label": "+(min-max)% Max Life", "minValue": 15, "maxValue": 20, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_corrosion_base_gear_evasion",
+        "name": "+(min-max)% Gear Evasion",
+        "tiers": [
+          { "tier": "T0", "stats": [{ "statId": "gear_evasion", "label": "+(min-max)% Gear Evasion", "minValue": 30, "maxValue": 50, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_corrosion_base_damage",
+        "name": "+(min-max)% Damage",
+        "tiers": [
+          { "tier": "T0", "stats": [{ "statId": "damage", "label": "+(min-max)% Damage", "minValue": 50, "maxValue": 70, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_corrosion_base_cooldown_recovery_speed",
+        "name": "+(min-max)% Cooldown Recovery Speed",
+        "tiers": [
+          { "tier": "T0", "stats": [{ "statId": "cooldown_recovery_speed", "label": "+(min-max)% Cooldown Recovery Speed", "minValue": 15, "maxValue": 20, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_corrosion_base_stoneskin_when_moving",
+        "name": "Triggers Lv. 20 Stoneskin when moving. Interval: 2 s",
+        "tiers": [
+          { "tier": "T0", "stats": [] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_corrosion_base_has_hasten",
+        "name": "Has Hasten",
+        "tiers": [
+          { "tier": "T0", "stats": [] }
+        ]
+      }
+    ],
+    "SWEET_DREAM_AFFIXES": [
+      {
+        "id": "crafted_dex_boots_sweet_dream_max_life",
+        "name": "+(min-max) Max Life",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 54, "maxValue": 74, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_sweet_dream_evasion",
+        "name": "+(min-max) Evasion",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "evasion", "label": "+(min-max) Evasion", "minValue": 760, "maxValue": 960, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_sweet_dream_fire_resistance",
+        "name": "+(min-max)% Fire Resistance",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "fire_resistance", "label": "+(min-max)% Fire Resistance", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_sweet_dream_cold_resistance",
+        "name": "+(min-max)% Cold Resistance",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "cold_resistance", "label": "+(min-max)% Cold Resistance", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_sweet_dream_lightning_resistance",
+        "name": "+(min-max)% Lightning Resistance",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "lightning_resistance", "label": "+(min-max)% Lightning Resistance", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_sweet_dream_erosion_resistance",
+        "name": "+(min-max)% Erosion Resistance",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "erosion_resistance", "label": "+(min-max)% Erosion Resistance", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_sweet_dream_strength",
+        "name": "+(min-max) Strength",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 15, "maxValue": 20, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_sweet_dream_dexterity",
+        "name": "+(min-max) Dexterity",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 15, "maxValue": 20, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_sweet_dream_intelligence",
+        "name": "+(min-max) Intelligence",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 15, "maxValue": 20, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_sweet_dream_skill_area",
+        "name": "+(min-max)% Skill Area",
+        "tiers": [
+          { "tier": "T2", "stats": [{ "statId": "skill_area", "label": "+(min-max)% Skill Area", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_sweet_dream_elemental_and_erosion_resistance_penetration_minions",
+        "name": "+(min-max)% Elemental and Erosion Resistance Penetration +(min-max)% Elemental and Erosion Resistance Penetration for Minions",
+        "tiers": [
+          { "tier": "T1", "stats": [{ "statId": "elemental_and_erosion_resistance_penetration_minions", "label": "+(min-max)% Elemental and Erosion Resistance Penetration +(min-max)% Elemental and Erosion Resistance Penetration for Minions", "minValue": 6, "maxValue": 8, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_sweet_dream_armor_dmg_mitigation_penetration_minions",
+        "name": "+(min-max)% Armor DMG Mitigation Penetration +(min-max)% Armor DMG Mitigation Penetration for Minions",
+        "tiers": [
+          { "tier": "T1", "stats": [{ "statId": "armor_dmg_mitigation_penetration_minions", "label": "+(min-max)% Armor DMG Mitigation Penetration +(min-max)% Armor DMG Mitigation Penetration for Minions", "minValue": 5, "maxValue": 7, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_sweet_dream_movement_speed",
+        "name": "+(min-max)% Movement Speed",
+        "tiers": [
+          { "tier": "T0", "stats": [{ "statId": "movement_speed", "label": "+(min-max)% Movement Speed", "minValue": 20, "maxValue": 25, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_sweet_dream_converts_erosion_damage_taken_to_lightning_damage",
+        "name": "Converts (min-max)% of Erosion Damage taken to Lightning Damage",
+        "tiers": [
+          { "tier": "T0", "stats": [{ "statId": "converts_erosion_damage_taken_to_lightning_damage", "label": "Converts (min-max)% of Erosion Damage taken to Lightning Damage", "minValue": 36, "maxValue": 45, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_sweet_dream_cooldown_recovery_speed",
+        "name": "+(min-max)% Cooldown Recovery Speed",
+        "tiers": [
+          { "tier": "T0", "stats": [{ "statId": "cooldown_recovery_speed", "label": "+(min-max)% Cooldown Recovery Speed", "minValue": 17, "maxValue": 24, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_sweet_dream_max_elemental_resistance",
+        "name": "+(min-max)% Max Elemental Resistance",
+        "tiers": [
+          { "tier": "T0", "stats": [{ "statId": "max_elemental_resistance", "label": "+(min-max)% Max Elemental Resistance", "minValue": 3, "maxValue": 5, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_sweet_dream_converts_physical_damage_taken_to_lightning_damage",
+        "name": "Converts (min-max)% of Physical Damage taken to Lightning Damage",
+        "tiers": [
+          { "tier": "T0", "stats": [{ "statId": "converts_physical_damage_taken_to_lightning_damage", "label": "Converts (min-max)% of Physical Damage taken to Lightning Damage", "minValue": 16, "maxValue": 20, "unit": "PERCENT" }] }
+        ]
+      }
+    ],
+    "NIGHTMARE_AFFIXES": [
+      { "id": "crafted_dex_boots_nightmare_damage", "name": "Damage", "tiers": [{ "tier": "T1", "stats": [{ "statId": "damage", "label": "+(min-max)% Damage", "minValue": 49, "maxValue": 72, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dex_boots_nightmare_attack_and_cast_speed", "name": "Attack and Cast Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "attack_and_cast_speed", "label": "+(min-max)% Attack and Cast Speed", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dex_boots_nightmare_minion_damage", "name": "Minion Damage", "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_damage", "label": "+(min-max)% Minion Damage", "minValue": 49, "maxValue": 72, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dex_boots_nightmare_minion_attack_and_cast_speed", "name": "Minion Attack and Cast Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_attack_and_cast_speed", "label": "+(min-max)% Minion Attack and Cast Speed", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dex_boots_nightmare_attack_and_spell_critical_strike_rating", "name": "Attack and Spell Critical Strike Rating", "tiers": [{ "tier": "T1", "stats": [{ "statId": "attack_and_spell_critical_strike_rating", "label": "+(min-max) Attack and Spell Critical Strike Rating", "minValue": 77, "maxValue": 100, "unit": "FLAT" }] }] },
+      { "id": "crafted_dex_boots_nightmare_skill_area", "name": "Skill Area", "tiers": [{ "tier": "T1", "stats": [{ "statId": "skill_area", "label": "+(min-max)% Skill Area", "minValue": 18, "maxValue": 21, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dex_boots_nightmare_minion_critical_strike_rating", "name": "Minion Critical Strike Rating", "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_critical_strike_rating", "label": "+(min-max) Minion Critical Strike Rating", "minValue": 77, "maxValue": 100, "unit": "FLAT" }] }] },
+      { "id": "crafted_dex_boots_nightmare_minion_skill_area", "name": "Minion Skill Area", "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_skill_area", "label": "+(min-max)% Minion Skill Area", "minValue": 18, "maxValue": 21, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dex_boots_nightmare_max_life", "name": "Max Life", "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 100, "maxValue": 150, "unit": "FLAT" }] }] },
+      { "id": "crafted_dex_boots_nightmare_max_energy_shield", "name": "Max Energy Shield", "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_energy_shield", "label": "+(min-max) Max Energy Shield", "minValue": 320, "maxValue": 400, "unit": "FLAT" }] }] },
+      { "id": "crafted_dex_boots_nightmare_cold_resistance", "name": "Cold Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "cold_resistance", "label": "+(min-max)% Cold Resistance", "minValue": 21, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dex_boots_nightmare_erosion_resistance", "name": "Erosion Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "erosion_resistance", "label": "+(min-max)% Erosion Resistance", "minValue": 21, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dex_boots_nightmare_max_mana", "name": "Max Mana", "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_mana", "label": "+(min-max) Max Mana", "minValue": 96, "maxValue": 120, "unit": "FLAT" }] }] },
+      { "id": "crafted_dex_boots_nightmare_fire_resistance", "name": "Fire Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "fire_resistance", "label": "+(min-max)% Fire Resistance", "minValue": 21, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dex_boots_nightmare_lightning_resistance", "name": "Lightning Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "lightning_resistance", "label": "+(min-max)% Lightning Resistance", "minValue": 21, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dex_boots_nightmare_elemental_resistance", "name": "Elemental Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "elemental_resistance", "label": "+(min-max)% Elemental Resistance", "minValue": 9, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dex_boots_nightmare_strength", "name": "Strength", "tiers": [{ "tier": "T1", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 51, "maxValue": 60, "unit": "FLAT" }] }] },
+      { "id": "crafted_dex_boots_nightmare_intelligence", "name": "Intelligence", "tiers": [{ "tier": "T1", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 51, "maxValue": 60, "unit": "FLAT" }] }] },
+      { "id": "crafted_dex_boots_nightmare_movement_speed", "name": "Movement Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "movement_speed", "label": "+(min-max)% Movement Speed", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dex_boots_nightmare_skill_effect_duration", "name": "Skill Effect Duration", "tiers": [{ "tier": "T1", "stats": [{ "statId": "skill_effect_duration", "label": "+(min-max)% Skill Effect Duration", "minValue": 14, "maxValue": 20, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dex_boots_nightmare_dexterity", "name": "Dexterity", "tiers": [{ "tier": "T1", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 51, "maxValue": 60, "unit": "FLAT" }] }] },
+      { "id": "crafted_dex_boots_nightmare_aura_effect", "name": "Aura Effect", "tiers": [{ "tier": "T1", "stats": [{ "statId": "aura_effect", "label": "+(min-max)% Aura Effect", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dex_boots_nightmare_cooldown_recovery_speed", "name": "Cooldown Recovery Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "cooldown_recovery_speed", "label": "+(min-max)% Cooldown Recovery Speed", "minValue": 13, "maxValue": 15, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dex_boots_nightmare_max_tenacity_blessing_stacks", "name": "Max Tenacity Blessing Stacks", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_dex_boots_nightmare_max_focus_blessing_stacks", "name": "Max Focus Blessing Stacks", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_dex_boots_nightmare_fervor_effect", "name": "Fervor Effect", "tiers": [{ "tier": "T1", "stats": [{ "statId": "fervor_effect", "label": "+(min-max)% Fervor Effect", "minValue": 15, "maxValue": 20, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dex_boots_nightmare_projectile_quantity", "name": "Projectile Quantity", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_dex_boots_nightmare_max_agility_blessing_stacks", "name": "Max Agility Blessing Stacks", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_dex_boots_nightmare_sealed_mana_compensation", "name": "Sealed Mana Compensation", "tiers": [{ "tier": "T1", "stats": [{ "statId": "sealed_mana_compensation", "label": "+(min-max)% Sealed Mana Compensation", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dex_boots_nightmare_max_elemental_resistance", "name": "Max Elemental Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_elemental_resistance", "label": "+(min-max)% Max Elemental Resistance", "minValue": 1, "maxValue": 2, "unit": "PERCENT" }] }] }
+    ],
+    "INTERMEDIATE_SEQUENCES": [],
+    "ADVANCED_SEQUENCES": [],
+    "BASIC_PREFIXES": [
+      {
+        "id": "crafted_dex_boots_basic_prefix_max_life",
+        "name": "Max Life",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 287, "maxValue": 372, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 221, "maxValue": 286, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 154, "maxValue": 220, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_basic_prefix_gear_evasion",
+        "name": "Gear Evasion",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "gear_evasion", "label": "+(min-max) Gear Evasion", "minValue": 3745, "maxValue": 4867, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "gear_evasion", "label": "+(min-max) Gear Evasion", "minValue": 2881, "maxValue": 3744, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "gear_evasion", "label": "+(min-max) Gear Evasion", "minValue": 2017, "maxValue": 2880, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_basic_prefix_damage",
+        "name": "Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "damage", "label": "+(min-max)% Damage", "minValue": 95, "maxValue": 122, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "damage", "label": "+(min-max)% Damage", "minValue": 73, "maxValue": 94, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "damage", "label": "+(min-max)% Damage", "minValue": 51, "maxValue": 72, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_basic_prefix_minion_damage",
+        "name": "Minion Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "minion_damage", "label": "+(min-max)% Minion Damage", "minValue": 95, "maxValue": 122, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "minion_damage", "label": "+(min-max)% Minion Damage", "minValue": 73, "maxValue": 94, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "minion_damage", "label": "+(min-max)% Minion Damage", "minValue": 51, "maxValue": 72, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_basic_prefix_critical_strike_damage_mitigation",
+        "name": "Critical Strike Damage Mitigation",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "critical_strike_damage_mitigation", "label": "+(min-max)% Critical Strike Damage Mitigation", "minValue": 79, "maxValue": 100, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "critical_strike_damage_mitigation", "label": "+(min-max)% Critical Strike Damage Mitigation", "minValue": 61, "maxValue": 78, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "critical_strike_damage_mitigation", "label": "+(min-max)% Critical Strike Damage Mitigation", "minValue": 43, "maxValue": 60, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_basic_prefix_max_mana",
+        "name": "Max Mana",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "max_mana", "label": "+(min-max) Max Mana", "minValue": 157, "maxValue": 203, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "max_mana", "label": "+(min-max) Max Mana", "minValue": 121, "maxValue": 156, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "max_mana", "label": "+(min-max) Max Mana", "minValue": 85, "maxValue": 120, "unit": "FLAT" }] }
+        ]
+      }
+    ],
+    "ADVANCED_PREFIXES": [
+      {
+        "id": "crafted_dex_boots_advanced_prefix_attack_and_spell_block_chance",
+        "name": "Attack and Spell Block Chance",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "attack_and_spell_block_chance", "label": "+(min-max)% Attack and Spell Block Chance", "minValue": 21, "maxValue": 25, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "attack_and_spell_block_chance", "label": "+(min-max)% Attack and Spell Block Chance", "minValue": 16, "maxValue": 20, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "attack_and_spell_block_chance", "label": "+(min-max)% Attack and Spell Block Chance", "minValue": 12, "maxValue": 15, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_advanced_prefix_physical_skill_level",
+        "name": "Physical Skill Level",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "physical_skill_level", "label": "+min Physical Skill Level", "minValue": 3, "maxValue": 3, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "physical_skill_level", "label": "+min Physical Skill Level", "minValue": 2, "maxValue": 2, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "physical_skill_level", "label": "+min Physical Skill Level", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_advanced_prefix_fire_skill_level",
+        "name": "Fire Skill Level",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "fire_skill_level", "label": "+min Fire Skill Level", "minValue": 3, "maxValue": 3, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "fire_skill_level", "label": "+min Fire Skill Level", "minValue": 2, "maxValue": 2, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "fire_skill_level", "label": "+min Fire Skill Level", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_advanced_prefix_projectile_speed",
+        "name": "Projectile Speed",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "projectile_speed", "label": "+(min-max)% Projectile Speed", "minValue": 60, "maxValue": 76, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "projectile_speed", "label": "+(min-max)% Projectile Speed", "minValue": 46, "maxValue": 59, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "projectile_speed", "label": "+(min-max)% Projectile Speed", "minValue": 33, "maxValue": 45, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_advanced_prefix_cold_skill_level",
+        "name": "Cold Skill Level",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "cold_skill_level", "label": "+min Cold Skill Level", "minValue": 3, "maxValue": 3, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "cold_skill_level", "label": "+min Cold Skill Level", "minValue": 2, "maxValue": 2, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "cold_skill_level", "label": "+min Cold Skill Level", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_advanced_prefix_lightning_skill_level",
+        "name": "Lightning Skill Level",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "lightning_skill_level", "label": "+min Lightning Skill Level", "minValue": 3, "maxValue": 3, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "lightning_skill_level", "label": "+min Lightning Skill Level", "minValue": 2, "maxValue": 2, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "lightning_skill_level", "label": "+min Lightning Skill Level", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_advanced_prefix_erosion_skill_level",
+        "name": "Erosion Skill Level",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "erosion_skill_level", "label": "+min Erosion Skill Level", "minValue": 3, "maxValue": 3, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "erosion_skill_level", "label": "+min Erosion Skill Level", "minValue": 2, "maxValue": 2, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "erosion_skill_level", "label": "+min Erosion Skill Level", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_advanced_prefix_minion_skill_level",
+        "name": "Minion Skill Level",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "minion_skill_level", "label": "+min Minion Skill Level", "minValue": 3, "maxValue": 3, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "minion_skill_level", "label": "+min Minion Skill Level", "minValue": 2, "maxValue": 2, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "minion_skill_level", "label": "+min Minion Skill Level", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }
+        ]
+      }
+    ],
+    "ULTIMATE_PREFIXES": [
+      {
+        "id": "crafted_dex_boots_ultimate_prefix_additional_max_life",
+        "name": "Additional Max Life %",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "additional_max_life", "label": "+(min-max)% additional Max Life", "minValue": 21, "maxValue": 25, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "additional_max_life", "label": "+(min-max)% additional Max Life", "minValue": 16, "maxValue": 20, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "additional_max_life", "label": "+(min-max)% additional Max Life", "minValue": 12, "maxValue": 15, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_ultimate_prefix_blur_per_m",
+        "name": "Chance to Gain Blur per m Moved",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "blur_per_m_moved", "label": "min% chance to gain Blur per (5-10) m you move", "minValue": 100, "maxValue": 100, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "blur_per_m_moved", "label": "min% chance to gain Blur per (5-10) m you move", "minValue": 70, "maxValue": 70, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "blur_per_m_moved", "label": "min% chance to gain Blur per (5-10) m you move", "minValue": 50, "maxValue": 50, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_ultimate_prefix_chance_to_avoid_spell_damage",
+        "name": "Chance to Avoid Spell Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "chance_to_avoid_spell_damage", "label": "+(min-max)% chance to avoid Spell Damage", "minValue": 41, "maxValue": 50, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "chance_to_avoid_spell_damage", "label": "+(min-max)% chance to avoid Spell Damage", "minValue": 31, "maxValue": 40, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "chance_to_avoid_spell_damage", "label": "+(min-max)% chance to avoid Spell Damage", "minValue": 26, "maxValue": 30, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_ultimate_prefix_dot_reduction_evasion_threshold",
+        "name": "DoT Reduction (Evasion Threshold)",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "dot_reduction_evasion_threshold", "label": "min% additional Damage Over Time taken when having at least 50000 Evasion", "minValue": -50, "maxValue": -50, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "dot_reduction_evasion_threshold", "label": "min% additional Damage Over Time taken when having at least 50000 Evasion", "minValue": -45, "maxValue": -45, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "dot_reduction_evasion_threshold", "label": "min% additional Damage Over Time taken when having at least 50000 Evasion", "minValue": -40, "maxValue": -40, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_ultimate_prefix_spell_burst_charge_speed",
+        "name": "Spell Burst Charge Speed",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "spell_burst_charge_speed", "label": "+(min-max)% Spell Burst Charge Speed +10% chance to immediately gain 1 stack(s) of Spell Burst Charge when using a skill. Interval: 0.03s", "minValue": 41, "maxValue": 50, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "spell_burst_charge_speed", "label": "+(min-max)% Spell Burst Charge Speed +10% chance to immediately gain 1 stack(s) of Spell Burst Charge when using a skill. Interval: 0.03s", "minValue": 31, "maxValue": 40, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "spell_burst_charge_speed", "label": "+(min-max)% Spell Burst Charge Speed +10% chance to immediately gain 1 stack(s) of Spell Burst Charge when using a skill. Interval: 0.03s", "minValue": 21, "maxValue": 30, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_ultimate_prefix_aim_trigger",
+        "name": "Triggers Aim while Standing Still",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "aim_trigger", "label": "Triggers Lv. (min-max) Aim while standing still. Interval: 1 s", "minValue": 21, "maxValue": 30, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "aim_trigger", "label": "Triggers Lv. (min-max) Aim while standing still. Interval: 1 s", "minValue": 11, "maxValue": 20, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "aim_trigger", "label": "Triggers Lv. (min-max) Aim while standing still. Interval: 1 s", "minValue": 6, "maxValue": 10, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_ultimate_prefix_converts_physical_to_lightning",
+        "name": "Converts Physical Damage Taken to Lightning Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "converts_physical_damage_taken_to_lightning_damage", "label": "Converts (min-max)% of Physical Damage taken to Lightning Damage", "minValue": 27, "maxValue": 35, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "converts_physical_damage_taken_to_lightning_damage", "label": "Converts (min-max)% of Physical Damage taken to Lightning Damage", "minValue": 21, "maxValue": 26, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "converts_physical_damage_taken_to_lightning_damage", "label": "Converts (min-max)% of Physical Damage taken to Lightning Damage", "minValue": 16, "maxValue": 20, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_ultimate_prefix_converts_erosion_to_lightning",
+        "name": "Converts Erosion Damage Taken to Lightning Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "converts_erosion_damage_taken_to_lightning_damage", "label": "Converts (min-max)% of Erosion Damage taken to Lightning Damage", "minValue": 63, "maxValue": 77, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "converts_erosion_damage_taken_to_lightning_damage", "label": "Converts (min-max)% of Erosion Damage taken to Lightning Damage", "minValue": 46, "maxValue": 60, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "converts_erosion_damage_taken_to_lightning_damage", "label": "Converts (min-max)% of Erosion Damage taken to Lightning Damage", "minValue": 36, "maxValue": 45, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_ultimate_prefix_mana_before_life",
+        "name": "% of Damage Taken from Mana before Life",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "mana_before_life", "label": "(min-max)% of damage is taken from Mana before life", "minValue": 27, "maxValue": 34, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "mana_before_life", "label": "(min-max)% of damage is taken from Mana before life", "minValue": 21, "maxValue": 26, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "mana_before_life", "label": "(min-max)% of damage is taken from Mana before life", "minValue": 15, "maxValue": 20, "unit": "PERCENT" }] }
+        ]
+      }
+    ],
+    "BASIC_SUFFIXES": [
+      {
+        "id": "crafted_dex_boots_basic_suffix_life_regeneration_while_moving",
+        "name": "Life Regeneration while Moving",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "life_regeneration_while_moving", "label": "Regenerates min% of Life per second while moving", "minValue": 5, "maxValue": 5, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "life_regeneration_while_moving", "label": "Regenerates min% of Life per second while moving", "minValue": 4, "maxValue": 4, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "life_regeneration_while_moving", "label": "Regenerates min% of Life per second while moving", "minValue": 3, "maxValue": 3, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_basic_suffix_fire_resistance",
+        "name": "Fire Resistance",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "fire_resistance", "label": "+(min-max)% Fire Resistance", "minValue": 36, "maxValue": 46, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "fire_resistance", "label": "+(min-max)% Fire Resistance", "minValue": 25, "maxValue": 35, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "fire_resistance", "label": "+(min-max)% Fire Resistance", "minValue": 19, "maxValue": 27, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_basic_suffix_cold_resistance",
+        "name": "Cold Resistance",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "cold_resistance", "label": "+(min-max)% Cold Resistance", "minValue": 36, "maxValue": 46, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "cold_resistance", "label": "+(min-max)% Cold Resistance", "minValue": 25, "maxValue": 35, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "cold_resistance", "label": "+(min-max)% Cold Resistance", "minValue": 19, "maxValue": 27, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_basic_suffix_lightning_resistance",
+        "name": "Lightning Resistance",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "lightning_resistance", "label": "+(min-max)% Lightning Resistance", "minValue": 36, "maxValue": 46, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "lightning_resistance", "label": "+(min-max)% Lightning Resistance", "minValue": 25, "maxValue": 35, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "lightning_resistance", "label": "+(min-max)% Lightning Resistance", "minValue": 19, "maxValue": 27, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_basic_suffix_erosion_resistance",
+        "name": "Erosion Resistance",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "erosion_resistance", "label": "+(min-max)% Erosion Resistance", "minValue": 36, "maxValue": 46, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "erosion_resistance", "label": "+(min-max)% Erosion Resistance", "minValue": 25, "maxValue": 35, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "erosion_resistance", "label": "+(min-max)% Erosion Resistance", "minValue": 19, "maxValue": 27, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_basic_suffix_affliction_effect",
+        "name": "Affliction Effect",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "affliction_effect", "label": "+(min-max)% Affliction Effect", "minValue": 66, "maxValue": 85, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "affliction_effect", "label": "+(min-max)% Affliction Effect", "minValue": 51, "maxValue": 65, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "affliction_effect", "label": "+(min-max)% Affliction Effect", "minValue": 36, "maxValue": 50, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_basic_suffix_critical_strike_rating_percent",
+        "name": "Critical Strike Rating %",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "critical_strike_rating_percent", "label": "+(min-max)% Critical Strike Rating", "minValue": 157, "maxValue": 203, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "critical_strike_rating_percent", "label": "+(min-max)% Critical Strike Rating", "minValue": 121, "maxValue": 156, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "critical_strike_rating_percent", "label": "+(min-max)% Critical Strike Rating", "minValue": 87, "maxValue": 120, "unit": "PERCENT" }] }
+        ]
+      }
+    ],
+    "ADVANCED_SUFFIXES": [
+      {
+        "id": "crafted_dex_boots_advanced_suffix_movement_speed",
+        "name": "Movement Speed",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "movement_speed", "label": "+(min-max)% Movement Speed", "minValue": 53, "maxValue": 68, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "movement_speed", "label": "+(min-max)% Movement Speed", "minValue": 41, "maxValue": 52, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "movement_speed", "label": "+(min-max)% Movement Speed", "minValue": 29, "maxValue": 40, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_advanced_suffix_attack_and_cast_speed_minion_attack_and_cast_speed",
+        "name": "Attack and Cast Speed / Minion Attack and Cast Speed",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "attack_and_cast_speed_minion_attack_and_cast_speed", "label": "+(min-max)% Attack and Cast Speed +(min-max)% Minion Attack and Cast Speed", "minValue": 32, "maxValue": 41, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "attack_and_cast_speed_minion_attack_and_cast_speed", "label": "+(min-max)% Attack and Cast Speed +(min-max)% Minion Attack and Cast Speed", "minValue": 25, "maxValue": 31, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "attack_and_cast_speed_minion_attack_and_cast_speed", "label": "+(min-max)% Attack and Cast Speed +(min-max)% Minion Attack and Cast Speed", "minValue": 18, "maxValue": 24, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_advanced_suffix_critical_strike_damage",
+        "name": "Critical Strike Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "critical_strike_damage", "label": "+(min-max)% Critical Strike Damage", "minValue": 79, "maxValue": 101, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "critical_strike_damage", "label": "+(min-max)% Critical Strike Damage", "minValue": 61, "maxValue": 78, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "critical_strike_damage", "label": "+(min-max)% Critical Strike Damage", "minValue": 44, "maxValue": 60, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_advanced_suffix_reaping_duration",
+        "name": "Reaping Duration",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "reaping_duration", "label": "+(min-max)% Reaping Duration", "minValue": 66, "maxValue": 85, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "reaping_duration", "label": "+(min-max)% Reaping Duration", "minValue": 51, "maxValue": 65, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "reaping_duration", "label": "+(min-max)% Reaping Duration", "minValue": 36, "maxValue": 50, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_advanced_suffix_hasten",
+        "name": "Has Hasten / Attack, Cast, and Movement Speed when having Hasten",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "has_hasten_attack_cast_movement_speed", "label": "Has Hasten +(min-max)% Attack Speed, Cast Speed, and Movement Speed when having Hasten", "minValue": 15, "maxValue": 18, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "has_hasten_attack_cast_movement_speed", "label": "Has Hasten +(min-max)% Attack Speed, Cast Speed, and Movement Speed when having Hasten", "minValue": 9, "maxValue": 12, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "has_hasten_attack_cast_movement_speed", "label": "Has Hasten +(min-max)% Attack Speed, Cast Speed, and Movement Speed when having Hasten", "minValue": 5, "maxValue": 8, "unit": "PERCENT" }] }
+        ]
+      }
+    ],
+    "ULTIMATE_SUFFIXES": [
+      {
+        "id": "crafted_dex_boots_ultimate_suffix_cooldown_recovery_speed",
+        "name": "Cooldown Recovery Speed",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "cooldown_recovery_speed", "label": "+(min-max)% Cooldown Recovery Speed", "minValue": 35, "maxValue": 44, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "cooldown_recovery_speed", "label": "+(min-max)% Cooldown Recovery Speed", "minValue": 27, "maxValue": 34, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "cooldown_recovery_speed", "label": "+(min-max)% Cooldown Recovery Speed", "minValue": 19, "maxValue": 26, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_ultimate_suffix_reaping_recovery_speed",
+        "name": "Reaping Recovery Speed",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "reaping_recovery_speed", "label": "+(min-max)% Reaping Recovery Speed", "minValue": 109, "maxValue": 140, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "reaping_recovery_speed", "label": "+(min-max)% Reaping Recovery Speed", "minValue": 84, "maxValue": 108, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "reaping_recovery_speed", "label": "+(min-max)% Reaping Recovery Speed", "minValue": 59, "maxValue": 83, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_ultimate_suffix_deflection_per_m",
+        "name": "Deflection Stacks per m Moved",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "deflection_per_m", "label": "For every min m moved, gains 1 stack(s) of Deflection", "minValue": 4, "maxValue": 4, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "deflection_per_m", "label": "For every min m moved, gains 1 stack(s) of Deflection", "minValue": 5, "maxValue": 5, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "deflection_per_m", "label": "For every min m moved, gains 1 stack(s) of Deflection", "minValue": 6, "maxValue": 6, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_ultimate_suffix_additional_evasion_while_moving",
+        "name": "Additional Evasion while Moving",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "additional_evasion_while_moving", "label": "+(min-max)% additional Evasion while moving", "minValue": 30, "maxValue": 37, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "additional_evasion_while_moving", "label": "+(min-max)% additional Evasion while moving", "minValue": 23, "maxValue": 29, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "additional_evasion_while_moving", "label": "+(min-max)% additional Evasion while moving", "minValue": 17, "maxValue": 22, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_ultimate_suffix_blurry_steps_trigger",
+        "name": "Triggers Blurry Steps upon Starting to Move",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "blurry_steps_trigger", "label": "Triggers Lv. (min-max) Blurry Steps upon starting to move. Interval: 1 s", "minValue": 21, "maxValue": 30, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "blurry_steps_trigger", "label": "Triggers Lv. (min-max) Blurry Steps upon starting to move. Interval: 1 s", "minValue": 11, "maxValue": 20, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "blurry_steps_trigger", "label": "Triggers Lv. (min-max) Blurry Steps upon starting to move. Interval: 1 s", "minValue": 6, "maxValue": 10, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dex_boots_ultimate_suffix_chance_to_avoid_elemental_ailments",
+        "name": "Chance to Avoid Elemental Ailments",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "chance_to_avoid_elemental_ailments", "label": "+(min-max)% chance to avoid Elemental Ailments", "minValue": 71, "maxValue": 85, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "chance_to_avoid_elemental_ailments", "label": "+(min-max)% chance to avoid Elemental Ailments", "minValue": 50, "maxValue": 68, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "chance_to_avoid_elemental_ailments", "label": "+(min-max)% chance to avoid Elemental Ailments", "minValue": 30, "maxValue": 45, "unit": "PERCENT" }] }
+        ]
+      }
+    ]
+  }
+}

@@ -9,6 +9,7 @@ async function main() {
     { id: "belt", name: "Belt" },
     { id: "boots", name: "Boots" },
     { id: "ring", name: "Ring" },
+    { id: "spirit_ring", name: "Spirit Ring" },
     { id: "one_hand_weapon", name: "One-Handed Weapon" },
     { id: "two_hand_weapon", name: "Two-Handed Weapon" },
     { id: "shield", name: "Shield" },

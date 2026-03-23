@@ -1,0 +1,656 @@
+{
+  "id": "crafted_ring",
+  "name": "Crafted Ring",
+  "baseItemCategoryId": "ring",
+  "weaponTypeId": null,
+  "attributeType": null,
+  "isPriceless": true,
+  "groups": {
+    "BASE_AFFIXES": [
+      { "id": "crafted_ring_base_max_life", "name": "+(min-max) Max Life", "tiers": [{ "tier": "T2", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 54, "maxValue": 74, "unit": "FLAT" }] }] },
+      { "id": "crafted_ring_base_max_energy_shield", "name": "+(min-max) Max Energy Shield", "tiers": [{ "tier": "T2", "stats": [{ "statId": "max_energy_shield", "label": "+(min-max) Max Energy Shield", "minValue": 87, "maxValue": 117, "unit": "FLAT" }] }] },
+      { "id": "crafted_ring_base_fire_resistance", "name": "+(min-max)% Fire Resistance", "tiers": [{ "tier": "T2", "stats": [{ "statId": "fire_resistance", "label": "+(min-max)% Fire Resistance", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_base_cold_resistance", "name": "+(min-max)% Cold Resistance", "tiers": [{ "tier": "T2", "stats": [{ "statId": "cold_resistance", "label": "+(min-max)% Cold Resistance", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_base_lightning_resistance", "name": "+(min-max)% Lightning Resistance", "tiers": [{ "tier": "T2", "stats": [{ "statId": "lightning_resistance", "label": "+(min-max)% Lightning Resistance", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_base_erosion_resistance", "name": "+(min-max)% Erosion Resistance", "tiers": [{ "tier": "T2", "stats": [{ "statId": "erosion_resistance", "label": "+(min-max)% Erosion Resistance", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_base_strength", "name": "+(min-max) Strength", "tiers": [{ "tier": "T2", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 15, "maxValue": 20, "unit": "FLAT" }] }] },
+      { "id": "crafted_ring_base_dexterity", "name": "+(min-max) Dexterity", "tiers": [{ "tier": "T2", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 15, "maxValue": 20, "unit": "FLAT" }] }] },
+      { "id": "crafted_ring_base_intelligence", "name": "+(min-max) Intelligence", "tiers": [{ "tier": "T2", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 15, "maxValue": 20, "unit": "FLAT" }] }] },
+      { "id": "crafted_ring_base_attack_and_cast_speed", "name": "+(min-max)% Attack and Cast Speed", "tiers": [{ "tier": "T2", "stats": [{ "statId": "attack_and_cast_speed", "label": "+(min-max)% Attack and Cast Speed", "minValue": 6, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_base_movement_speed", "name": "+(min-max)% Movement Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "movement_speed", "label": "+(min-max)% Movement Speed", "minValue": 8, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_base_barrage_additional_wave_chance", "name": "+(min-max)% Chance to Launch an Additional Barrage Wave", "tiers": [{ "tier": "T1", "stats": [{ "statId": "barrage_additional_wave_chance", "label": "+(min-max)% Chance to Launch an Additional Barrage Wave", "minValue": 20, "maxValue": 25, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_base_fervor_effect", "name": "+(min-max)% Fervor Effect", "tiers": [{ "tier": "T1", "stats": [{ "statId": "fervor_effect", "label": "+(min-max)% Fervor Effect", "minValue": 15, "maxValue": 20, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_base_immune_to_trauma", "name": "Immune to Trauma", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_ring_base_immune_to_wilt", "name": "Immune to Wilt", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_ring_base_immune_to_curse", "name": "Immune to Curse", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_ring_base_converts_physical_to_fire", "name": "+(min-max)% Physical Damage Converted to Fire Damage", "tiers": [{ "tier": "T1", "stats": [{ "statId": "converts_physical_damage_to_fire_damage", "label": "+(min-max)% Physical Damage Converted to Fire Damage", "minValue": 18, "maxValue": 20, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_base_converts_physical_to_cold", "name": "+(min-max)% Physical Damage Converted to Cold Damage", "tiers": [{ "tier": "T1", "stats": [{ "statId": "converts_physical_damage_to_cold_damage", "label": "+(min-max)% Physical Damage Converted to Cold Damage", "minValue": 18, "maxValue": 20, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_base_converts_physical_to_lightning", "name": "+(min-max)% Physical Damage Converted to Lightning Damage", "tiers": [{ "tier": "T1", "stats": [{ "statId": "converts_physical_damage_to_lightning_damage", "label": "+(min-max)% Physical Damage Converted to Lightning Damage", "minValue": 18, "maxValue": 20, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_base_converts_physical_to_erosion", "name": "+(min-max)% Physical Damage Converted to Erosion Damage", "tiers": [{ "tier": "T1", "stats": [{ "statId": "converts_physical_damage_to_erosion_damage", "label": "+(min-max)% Physical Damage Converted to Erosion Damage", "minValue": 18, "maxValue": 20, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_base_gains_spell_aggression_when_casting", "name": "Gains Spell Aggression when Casting", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_ring_base_gains_attack_aggression_when_casting", "name": "Gains Attack Aggression when Casting", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_ring_base_max_tenacity_blessing_stacks", "name": "+min to Max Tenacity Blessing Stacks", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_tenacity_blessing_stacks", "label": "+min to Max Tenacity Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }] },
+      { "id": "crafted_ring_base_max_agility_blessing_stacks", "name": "+min to Max Agility Blessing Stacks", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_agility_blessing_stacks", "label": "+min to Max Agility Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }] },
+      { "id": "crafted_ring_base_max_focus_blessing_stacks", "name": "+min to Max Focus Blessing Stacks", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_focus_blessing_stacks", "label": "+min to Max Focus Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }] },
+      { "id": "crafted_ring_base_triggers_dazzled_curse", "name": "Triggers Lv. 20 Dazzled Curse. Cooldown: 0.2s", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_ring_base_triggers_timid_curse", "name": "Triggers Lv. 20 Timid Curse. Cooldown: 0.2s", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_ring_base_triggers_entangled_pain_curse", "name": "Triggers Lv. 20 Entangled Pain Curse. Cooldown: 0.2s", "tiers": [{ "tier": "T0", "stats": [] }] }
+    ],
+    "CORROSION_BASE_AFFIXES": [
+      { "id": "crafted_ring_corrosion_base_xp_earned", "name": "+min% XP Earned", "tiers": [{ "tier": "T0", "stats": [{ "statId": "xp_earned", "label": "+min% XP Earned", "minValue": 5, "maxValue": 5, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_corrosion_base_movement_speed", "name": "+min% Movement Speed", "tiers": [{ "tier": "T0", "stats": [{ "statId": "movement_speed", "label": "+min% Movement Speed", "minValue": 5, "maxValue": 5, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_corrosion_base_immune_to_trauma_and_wilt", "name": "Immune to Trauma and Immune to Wilt", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_ring_corrosion_base_immune_to_curse", "name": "Immune to Curse", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_ring_corrosion_base_elemental_resistance", "name": "+(min-max)% Elemental Resistance", "tiers": [{ "tier": "T0", "stats": [{ "statId": "elemental_resistance", "label": "+(min-max)% Elemental Resistance", "minValue": 5, "maxValue": 6, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_corrosion_base_strength_percent", "name": "+(min-max)% Strength", "tiers": [{ "tier": "T0", "stats": [{ "statId": "strength_percent", "label": "+(min-max)% Strength", "minValue": 8, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_corrosion_base_dexterity_percent", "name": "+(min-max)% Dexterity", "tiers": [{ "tier": "T0", "stats": [{ "statId": "dexterity_percent", "label": "+(min-max)% Dexterity", "minValue": 8, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_corrosion_base_intelligence_percent", "name": "+(min-max)% Intelligence", "tiers": [{ "tier": "T0", "stats": [{ "statId": "intelligence_percent", "label": "+(min-max)% Intelligence", "minValue": 8, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_corrosion_base_attack_speed", "name": "+(min-max)% Attack Speed", "tiers": [{ "tier": "T0", "stats": [{ "statId": "attack_speed", "label": "+(min-max)% Attack Speed", "minValue": 6, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_corrosion_base_cast_speed", "name": "+(min-max)% Cast Speed", "tiers": [{ "tier": "T0", "stats": [{ "statId": "cast_speed", "label": "+(min-max)% Cast Speed", "minValue": 6, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_corrosion_base_damage", "name": "+(min-max)% Damage", "tiers": [{ "tier": "T0", "stats": [{ "statId": "damage", "label": "+(min-max)% Damage", "minValue": 50, "maxValue": 70, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_corrosion_base_max_life_percent", "name": "+(min-max)% Max Life", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_life_percent", "label": "+(min-max)% Max Life", "minValue": 15, "maxValue": 25, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_corrosion_base_max_energy_shield_percent", "name": "+(min-max)% Max Energy Shield", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_energy_shield_percent", "label": "+(min-max)% Max Energy Shield", "minValue": 15, "maxValue": 25, "unit": "PERCENT" }] }] }
+    ],
+    "SWEET_DREAM_AFFIXES": [
+      { "id": "crafted_ring_sweet_dream_max_life", "name": "+(min-max) Max Life", "tiers": [{ "tier": "T2", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 54, "maxValue": 74, "unit": "FLAT" }] }] },
+      { "id": "crafted_ring_sweet_dream_max_energy_shield", "name": "+(min-max) Max Energy Shield", "tiers": [{ "tier": "T2", "stats": [{ "statId": "max_energy_shield", "label": "+(min-max) Max Energy Shield", "minValue": 87, "maxValue": 117, "unit": "FLAT" }] }] },
+      { "id": "crafted_ring_sweet_dream_fire_resistance", "name": "+(min-max)% Fire Resistance", "tiers": [{ "tier": "T2", "stats": [{ "statId": "fire_resistance", "label": "+(min-max)% Fire Resistance", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_sweet_dream_cold_resistance", "name": "+(min-max)% Cold Resistance", "tiers": [{ "tier": "T2", "stats": [{ "statId": "cold_resistance", "label": "+(min-max)% Cold Resistance", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_sweet_dream_lightning_resistance", "name": "+(min-max)% Lightning Resistance", "tiers": [{ "tier": "T2", "stats": [{ "statId": "lightning_resistance", "label": "+(min-max)% Lightning Resistance", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_sweet_dream_erosion_resistance", "name": "+(min-max)% Erosion Resistance", "tiers": [{ "tier": "T2", "stats": [{ "statId": "erosion_resistance", "label": "+(min-max)% Erosion Resistance", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_sweet_dream_strength", "name": "+(min-max) Strength", "tiers": [{ "tier": "T2", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 15, "maxValue": 20, "unit": "FLAT" }] }] },
+      { "id": "crafted_ring_sweet_dream_dexterity", "name": "+(min-max) Dexterity", "tiers": [{ "tier": "T2", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 15, "maxValue": 20, "unit": "FLAT" }] }] },
+      { "id": "crafted_ring_sweet_dream_intelligence", "name": "+(min-max) Intelligence", "tiers": [{ "tier": "T2", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 15, "maxValue": 20, "unit": "FLAT" }] }] },
+      { "id": "crafted_ring_sweet_dream_attack_and_cast_speed", "name": "+(min-max)% Attack and Cast Speed", "tiers": [{ "tier": "T2", "stats": [{ "statId": "attack_and_cast_speed", "label": "+(min-max)% Attack and Cast Speed", "minValue": 6, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_sweet_dream_movement_speed", "name": "+(min-max)% Movement Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "movement_speed", "label": "+(min-max)% Movement Speed", "minValue": 8, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_sweet_dream_barrage_additional_wave_chance", "name": "+(min-max)% Chance to Launch an Additional Barrage Wave", "tiers": [{ "tier": "T1", "stats": [{ "statId": "barrage_additional_wave_chance", "label": "+(min-max)% Chance to Launch an Additional Barrage Wave", "minValue": 20, "maxValue": 25, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_sweet_dream_fervor_effect", "name": "+(min-max)% Fervor Effect", "tiers": [{ "tier": "T1", "stats": [{ "statId": "fervor_effect", "label": "+(min-max)% Fervor Effect", "minValue": 15, "maxValue": 20, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_sweet_dream_immune_to_trauma", "name": "Immune to Trauma", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_ring_sweet_dream_immune_to_wilt", "name": "Immune to Wilt", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_ring_sweet_dream_immune_to_curse", "name": "Immune to Curse", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_ring_sweet_dream_converts_physical_to_fire", "name": "+(min-max)% Physical Damage Converted to Fire Damage", "tiers": [{ "tier": "T1", "stats": [{ "statId": "converts_physical_damage_to_fire_damage", "label": "+(min-max)% Physical Damage Converted to Fire Damage", "minValue": 18, "maxValue": 20, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_sweet_dream_converts_physical_to_cold", "name": "+(min-max)% Physical Damage Converted to Cold Damage", "tiers": [{ "tier": "T1", "stats": [{ "statId": "converts_physical_damage_to_cold_damage", "label": "+(min-max)% Physical Damage Converted to Cold Damage", "minValue": 18, "maxValue": 20, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_sweet_dream_converts_physical_to_lightning", "name": "+(min-max)% Physical Damage Converted to Lightning Damage", "tiers": [{ "tier": "T1", "stats": [{ "statId": "converts_physical_damage_to_lightning_damage", "label": "+(min-max)% Physical Damage Converted to Lightning Damage", "minValue": 18, "maxValue": 20, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_sweet_dream_converts_physical_to_erosion", "name": "+(min-max)% Physical Damage Converted to Erosion Damage", "tiers": [{ "tier": "T1", "stats": [{ "statId": "converts_physical_damage_to_erosion_damage", "label": "+(min-max)% Physical Damage Converted to Erosion Damage", "minValue": 18, "maxValue": 20, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_sweet_dream_gains_spell_aggression_when_casting", "name": "Gains Spell Aggression when Casting", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_ring_sweet_dream_gains_attack_aggression_when_casting", "name": "Gains Attack Aggression when Casting", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_ring_sweet_dream_max_tenacity_blessing_stacks", "name": "+min to Max Tenacity Blessing Stacks", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_tenacity_blessing_stacks", "label": "+min to Max Tenacity Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }] },
+      { "id": "crafted_ring_sweet_dream_max_agility_blessing_stacks", "name": "+min to Max Agility Blessing Stacks", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_agility_blessing_stacks", "label": "+min to Max Agility Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }] },
+      { "id": "crafted_ring_sweet_dream_max_focus_blessing_stacks", "name": "+min to Max Focus Blessing Stacks", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_focus_blessing_stacks", "label": "+min to Max Focus Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }] },
+      { "id": "crafted_ring_sweet_dream_triggers_dazzled_curse", "name": "Triggers Lv. 20 Dazzled Curse. Cooldown: 0.2s", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_ring_sweet_dream_triggers_timid_curse", "name": "Triggers Lv. 20 Timid Curse. Cooldown: 0.2s", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_ring_sweet_dream_triggers_entangled_pain_curse", "name": "Triggers Lv. 20 Entangled Pain Curse. Cooldown: 0.2s", "tiers": [{ "tier": "T0", "stats": [] }] }
+    ],
+    "NIGHTMARE_AFFIXES": [
+      { "id": "crafted_ring_nightmare_damage", "name": "Damage", "tiers": [{ "tier": "T1", "stats": [{ "statId": "damage", "label": "+(min-max)% Damage", "minValue": 49, "maxValue": 72, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_nightmare_attack_and_cast_speed", "name": "Attack and Cast Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "attack_and_cast_speed", "label": "+(min-max)% Attack and Cast Speed", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_nightmare_minion_damage", "name": "Minion Damage", "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_damage", "label": "+(min-max)% Minion Damage", "minValue": 49, "maxValue": 72, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_nightmare_minion_attack_and_cast_speed", "name": "Minion Attack and Cast Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_attack_and_cast_speed", "label": "+(min-max)% Minion Attack and Cast Speed", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_nightmare_attack_and_spell_critical_strike_rating", "name": "Attack and Spell Critical Strike Rating", "tiers": [{ "tier": "T1", "stats": [{ "statId": "attack_and_spell_critical_strike_rating", "label": "+(min-max) Attack and Spell Critical Strike Rating", "minValue": 77, "maxValue": 100, "unit": "FLAT" }] }] },
+      { "id": "crafted_ring_nightmare_skill_area", "name": "Skill Area", "tiers": [{ "tier": "T1", "stats": [{ "statId": "skill_area", "label": "+(min-max)% Skill Area", "minValue": 18, "maxValue": 21, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_nightmare_minion_critical_strike_rating", "name": "Minion Critical Strike Rating", "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_critical_strike_rating", "label": "+(min-max) Minion Critical Strike Rating", "minValue": 77, "maxValue": 100, "unit": "FLAT" }] }] },
+      { "id": "crafted_ring_nightmare_minion_skill_area", "name": "Minion Skill Area", "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_skill_area", "label": "+(min-max)% Minion Skill Area", "minValue": 18, "maxValue": 21, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_nightmare_max_life", "name": "Max Life", "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 100, "maxValue": 150, "unit": "FLAT" }] }] },
+      { "id": "crafted_ring_nightmare_max_energy_shield", "name": "Max Energy Shield", "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_energy_shield", "label": "+(min-max) Max Energy Shield", "minValue": 320, "maxValue": 400, "unit": "FLAT" }] }] },
+      { "id": "crafted_ring_nightmare_cold_resistance", "name": "Cold Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "cold_resistance", "label": "+(min-max)% Cold Resistance", "minValue": 21, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_nightmare_erosion_resistance", "name": "Erosion Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "erosion_resistance", "label": "+(min-max)% Erosion Resistance", "minValue": 21, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_nightmare_max_mana", "name": "Max Mana", "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_mana", "label": "+(min-max) Max Mana", "minValue": 96, "maxValue": 120, "unit": "FLAT" }] }] },
+      { "id": "crafted_ring_nightmare_fire_resistance", "name": "Fire Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "fire_resistance", "label": "+(min-max)% Fire Resistance", "minValue": 21, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_nightmare_lightning_resistance", "name": "Lightning Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "lightning_resistance", "label": "+(min-max)% Lightning Resistance", "minValue": 21, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_nightmare_elemental_resistance", "name": "Elemental Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "elemental_resistance", "label": "+(min-max)% Elemental Resistance", "minValue": 9, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_nightmare_strength", "name": "Strength", "tiers": [{ "tier": "T1", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 51, "maxValue": 60, "unit": "FLAT" }] }] },
+      { "id": "crafted_ring_nightmare_intelligence", "name": "Intelligence", "tiers": [{ "tier": "T1", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 51, "maxValue": 60, "unit": "FLAT" }] }] },
+      { "id": "crafted_ring_nightmare_movement_speed", "name": "Movement Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "movement_speed", "label": "+(min-max)% Movement Speed", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_nightmare_skill_effect_duration", "name": "Skill Effect Duration", "tiers": [{ "tier": "T1", "stats": [{ "statId": "skill_effect_duration", "label": "+(min-max)% Skill Effect Duration", "minValue": 14, "maxValue": 20, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_nightmare_dexterity", "name": "Dexterity", "tiers": [{ "tier": "T1", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 51, "maxValue": 60, "unit": "FLAT" }] }] },
+      { "id": "crafted_ring_nightmare_aura_effect", "name": "Aura Effect", "tiers": [{ "tier": "T1", "stats": [{ "statId": "aura_effect", "label": "+(min-max)% Aura Effect", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_nightmare_cooldown_recovery_speed", "name": "Cooldown Recovery Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "cooldown_recovery_speed", "label": "+(min-max)% Cooldown Recovery Speed", "minValue": 13, "maxValue": 15, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_nightmare_max_tenacity_blessing_stacks", "name": "Max Tenacity Blessing Stacks", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_ring_nightmare_max_focus_blessing_stacks", "name": "Max Focus Blessing Stacks", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_ring_nightmare_fervor_effect", "name": "Fervor Effect", "tiers": [{ "tier": "T1", "stats": [{ "statId": "fervor_effect", "label": "+(min-max)% Fervor Effect", "minValue": 15, "maxValue": 20, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_nightmare_projectile_quantity", "name": "Projectile Quantity", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_ring_nightmare_max_agility_blessing_stacks", "name": "Max Agility Blessing Stacks", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_ring_nightmare_sealed_mana_compensation", "name": "Sealed Mana Compensation", "tiers": [{ "tier": "T1", "stats": [{ "statId": "sealed_mana_compensation", "label": "+(min-max)% Sealed Mana Compensation", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_ring_nightmare_max_elemental_resistance", "name": "Max Elemental Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_elemental_resistance", "label": "+(min-max)% Max Elemental Resistance", "minValue": 1, "maxValue": 2, "unit": "PERCENT" }] }] }
+    ],
+    "BASIC_PREFIXES": [
+      {
+        "id": "crafted_ring_basic_prefix_max_life",
+        "name": "Max Life",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 287, "maxValue": 372, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 221, "maxValue": 286, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 155, "maxValue": 220, "unit": "FLAT" }] },
+          { "tier": "T2", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 111, "maxValue": 154, "unit": "FLAT" }] },
+          { "tier": "T3", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 89, "maxValue": 110, "unit": "FLAT" }] },
+          { "tier": "T4", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 71, "maxValue": 88, "unit": "FLAT" }] },
+          { "tier": "T5", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 58, "maxValue": 70, "unit": "FLAT" }] },
+          { "tier": "T6", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 45, "maxValue": 57, "unit": "FLAT" }] },
+          { "tier": "T7", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 34, "maxValue": 44, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_ring_basic_prefix_max_energy_shield",
+        "name": "Max Energy Shield",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "max_energy_shield", "label": "+(min-max) Max Energy Shield", "minValue": 456, "maxValue": 592, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "max_energy_shield", "label": "+(min-max) Max Energy Shield", "minValue": 319, "maxValue": 455, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "max_energy_shield", "label": "+(min-max) Max Energy Shield", "minValue": 245, "maxValue": 350, "unit": "FLAT" }] },
+          { "tier": "T2", "stats": [{ "statId": "max_energy_shield", "label": "+(min-max) Max Energy Shield", "minValue": 206, "maxValue": 244, "unit": "FLAT" }] },
+          { "tier": "T3", "stats": [{ "statId": "max_energy_shield", "label": "+(min-max) Max Energy Shield", "minValue": 147, "maxValue": 175, "unit": "FLAT" }] },
+          { "tier": "T4", "stats": [{ "statId": "max_energy_shield", "label": "+(min-max) Max Energy Shield", "minValue": 118, "maxValue": 140, "unit": "FLAT" }] },
+          { "tier": "T5", "stats": [{ "statId": "max_energy_shield", "label": "+(min-max) Max Energy Shield", "minValue": 93, "maxValue": 112, "unit": "FLAT" }] },
+          { "tier": "T6", "stats": [{ "statId": "max_energy_shield", "label": "+(min-max) Max Energy Shield", "minValue": 76, "maxValue": 91, "unit": "FLAT" }] },
+          { "tier": "T7", "stats": [{ "statId": "max_energy_shield", "label": "+(min-max) Max Energy Shield", "minValue": 59, "maxValue": 70, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_ring_basic_prefix_armor",
+        "name": "Armor",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "armor", "label": "+(min-max)% Armor", "minValue": 48, "maxValue": 61, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "armor", "label": "+(min-max)% Armor", "minValue": 37, "maxValue": 47, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "armor", "label": "+(min-max)% Armor", "minValue": 27, "maxValue": 36, "unit": "PERCENT" }] },
+          { "tier": "T2", "stats": [{ "statId": "armor", "label": "+(min-max)% Armor", "minValue": 19, "maxValue": 26, "unit": "PERCENT" }] },
+          { "tier": "T3", "stats": [{ "statId": "armor", "label": "+(min-max)% Armor", "minValue": 14, "maxValue": 18, "unit": "PERCENT" }] },
+          { "tier": "T4", "stats": [{ "statId": "armor", "label": "+(min-max)% Armor", "minValue": 10, "maxValue": 13, "unit": "PERCENT" }] },
+          { "tier": "T5", "stats": [{ "statId": "armor", "label": "+(min-max)% Armor", "minValue": 7, "maxValue": 9, "unit": "PERCENT" }] },
+          { "tier": "T6", "stats": [{ "statId": "armor", "label": "+(min-max)% Armor", "minValue": 5, "maxValue": 6, "unit": "PERCENT" }] },
+          { "tier": "T7", "stats": [{ "statId": "armor", "label": "+(min-max)% Armor", "minValue": 3, "maxValue": 4, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_ring_basic_prefix_evasion",
+        "name": "Evasion",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "evasion", "label": "+(min-max)% Evasion", "minValue": 48, "maxValue": 61, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "evasion", "label": "+(min-max)% Evasion", "minValue": 37, "maxValue": 47, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "evasion", "label": "+(min-max)% Evasion", "minValue": 27, "maxValue": 36, "unit": "PERCENT" }] },
+          { "tier": "T2", "stats": [{ "statId": "evasion", "label": "+(min-max)% Evasion", "minValue": 19, "maxValue": 26, "unit": "PERCENT" }] },
+          { "tier": "T3", "stats": [{ "statId": "evasion", "label": "+(min-max)% Evasion", "minValue": 14, "maxValue": 18, "unit": "PERCENT" }] },
+          { "tier": "T4", "stats": [{ "statId": "evasion", "label": "+(min-max)% Evasion", "minValue": 10, "maxValue": 13, "unit": "PERCENT" }] },
+          { "tier": "T5", "stats": [{ "statId": "evasion", "label": "+(min-max)% Evasion", "minValue": 7, "maxValue": 9, "unit": "PERCENT" }] },
+          { "tier": "T6", "stats": [{ "statId": "evasion", "label": "+(min-max)% Evasion", "minValue": 5, "maxValue": 6, "unit": "PERCENT" }] },
+          { "tier": "T7", "stats": [{ "statId": "evasion", "label": "+(min-max)% Evasion", "minValue": 3, "maxValue": 4, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_ring_basic_prefix_damage",
+        "name": "Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "damage", "label": "+(min-max)% Damage", "minValue": 95, "maxValue": 122, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "damage", "label": "+(min-max)% Damage", "minValue": 73, "maxValue": 94, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "damage", "label": "+(min-max)% Damage", "minValue": 51, "maxValue": 72, "unit": "PERCENT" }] },
+          { "tier": "T2", "stats": [{ "statId": "damage", "label": "+(min-max)% Damage", "minValue": 37, "maxValue": 50, "unit": "PERCENT" }] },
+          { "tier": "T3", "stats": [{ "statId": "damage", "label": "+(min-max)% Damage", "minValue": 30, "maxValue": 36, "unit": "PERCENT" }] },
+          { "tier": "T4", "stats": [{ "statId": "damage", "label": "+(min-max)% Damage", "minValue": 24, "maxValue": 29, "unit": "PERCENT" }] },
+          { "tier": "T5", "stats": [{ "statId": "damage", "label": "+(min-max)% Damage", "minValue": 20, "maxValue": 23, "unit": "PERCENT" }] },
+          { "tier": "T6", "stats": [{ "statId": "damage", "label": "+(min-max)% Damage", "minValue": 15, "maxValue": 19, "unit": "PERCENT" }] },
+          { "tier": "T7", "stats": [{ "statId": "damage", "label": "+(min-max)% Damage", "minValue": 12, "maxValue": 14, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_ring_basic_prefix_max_mana",
+        "name": "Max Mana",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "max_mana", "label": "+(min-max) Max Mana", "minValue": 157, "maxValue": 203, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "max_mana", "label": "+(min-max) Max Mana", "minValue": 121, "maxValue": 156, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "max_mana", "label": "+(min-max) Max Mana", "minValue": 85, "maxValue": 120, "unit": "FLAT" }] },
+          { "tier": "T2", "stats": [{ "statId": "max_mana", "label": "+(min-max) Max Mana", "minValue": 61, "maxValue": 84, "unit": "FLAT" }] },
+          { "tier": "T3", "stats": [{ "statId": "max_mana", "label": "+(min-max) Max Mana", "minValue": 49, "maxValue": 60, "unit": "FLAT" }] },
+          { "tier": "T4", "stats": [{ "statId": "max_mana", "label": "+(min-max) Max Mana", "minValue": 39, "maxValue": 48, "unit": "FLAT" }] },
+          { "tier": "T5", "stats": [{ "statId": "max_mana", "label": "+(min-max) Max Mana", "minValue": 32, "maxValue": 38, "unit": "FLAT" }] },
+          { "tier": "T6", "stats": [{ "statId": "max_mana", "label": "+(min-max) Max Mana", "minValue": 25, "maxValue": 31, "unit": "FLAT" }] },
+          { "tier": "T7", "stats": [{ "statId": "max_mana", "label": "+(min-max) Max Mana", "minValue": 19, "maxValue": 24, "unit": "FLAT" }] }
+        ]
+      }
+    ],
+    "ADVANCED_PREFIXES": [
+      {
+        "id": "crafted_ring_advanced_prefix_attack_and_spell_block_chance",
+        "name": "Attack and Spell Block Chance",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "attack_and_spell_block_chance", "label": "+(min-max)% Attack and Spell Block Chance", "minValue": 21, "maxValue": 25, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "attack_and_spell_block_chance", "label": "+(min-max)% Attack and Spell Block Chance", "minValue": 16, "maxValue": 20, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "attack_and_spell_block_chance", "label": "+(min-max)% Attack and Spell Block Chance", "minValue": 12, "maxValue": 15, "unit": "PERCENT" }] },
+          { "tier": "T2", "stats": [{ "statId": "attack_and_spell_block_chance", "label": "+(min-max)% Attack and Spell Block Chance", "minValue": 9, "maxValue": 11, "unit": "PERCENT" }] },
+          { "tier": "T3", "stats": [{ "statId": "attack_and_spell_block_chance", "label": "+(min-max)% Attack and Spell Block Chance", "minValue": 7, "maxValue": 8, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_ring_advanced_prefix_physical_damage_added",
+        "name": "Physical Damage Added",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "physical_damage_added_min", "label": "Adds (min-max)-(min-max) Physical Damage", "minValue": 44, "maxValue": 46, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "physical_damage_added_min", "label": "Adds (min-max)-(min-max) Physical Damage", "minValue": 33, "maxValue": 35, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "physical_damage_added_min", "label": "Adds (min-max)-(min-max) Physical Damage", "minValue": 22, "maxValue": 24, "unit": "FLAT" }] },
+          { "tier": "T2", "stats": [{ "statId": "physical_damage_added_min", "label": "Adds (min-max)-(min-max) Physical Damage", "minValue": 14, "maxValue": 16, "unit": "FLAT" }] },
+          { "tier": "T3", "stats": [{ "statId": "physical_damage_added_min", "label": "Adds (min-max)-(min-max) Physical Damage", "minValue": 10, "maxValue": 12, "unit": "FLAT" }] },
+          { "tier": "T4", "stats": [{ "statId": "physical_damage_added_min", "label": "Adds (min-max)-(min-max) Physical Damage", "minValue": 7, "maxValue": 9, "unit": "FLAT" }] },
+          { "tier": "T5", "stats": [{ "statId": "physical_damage_added_min", "label": "Adds (min-max)-(min-max) Physical Damage", "minValue": 4, "maxValue": 6, "unit": "FLAT" }] },
+          { "tier": "T6", "stats": [{ "statId": "physical_damage_added_min", "label": "Adds (min-max)-(min-max) Physical Damage", "minValue": 3, "maxValue": 5, "unit": "FLAT" }] },
+          { "tier": "T7", "stats": [{ "statId": "physical_damage_added_min", "label": "Adds (min-max)-(min-max) Physical Damage", "minValue": 2, "maxValue": 3, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_ring_advanced_prefix_fire_damage_added",
+        "name": "Fire Damage Added",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "fire_damage_added_min", "label": "Adds (min-max)-(min-max) Fire Damage", "minValue": 42, "maxValue": 44, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "fire_damage_added_min", "label": "Adds (min-max)-(min-max) Fire Damage", "minValue": 31, "maxValue": 33, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "fire_damage_added_min", "label": "Adds (min-max)-(min-max) Fire Damage", "minValue": 21, "maxValue": 23, "unit": "FLAT" }] },
+          { "tier": "T2", "stats": [{ "statId": "fire_damage_added_min", "label": "Adds (min-max)-(min-max) Fire Damage", "minValue": 13, "maxValue": 15, "unit": "FLAT" }] },
+          { "tier": "T3", "stats": [{ "statId": "fire_damage_added_min", "label": "Adds (min-max)-(min-max) Fire Damage", "minValue": 10, "maxValue": 12, "unit": "FLAT" }] },
+          { "tier": "T4", "stats": [{ "statId": "fire_damage_added_min", "label": "Adds (min-max)-(min-max) Fire Damage", "minValue": 7, "maxValue": 9, "unit": "FLAT" }] },
+          { "tier": "T5", "stats": [{ "statId": "fire_damage_added_min", "label": "Adds (min-max)-(min-max) Fire Damage", "minValue": 4, "maxValue": 6, "unit": "FLAT" }] },
+          { "tier": "T6", "stats": [{ "statId": "fire_damage_added_min", "label": "Adds (min-max)-(min-max) Fire Damage", "minValue": 3, "maxValue": 5, "unit": "FLAT" }] },
+          { "tier": "T7", "stats": [{ "statId": "fire_damage_added_min", "label": "Adds (min-max)-(min-max) Fire Damage", "minValue": 2, "maxValue": 3, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_ring_advanced_prefix_cold_damage_added",
+        "name": "Cold Damage Added",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "cold_damage_added_min", "label": "Adds (min-max)-(min-max) Cold Damage", "minValue": 42, "maxValue": 44, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "cold_damage_added_min", "label": "Adds (min-max)-(min-max) Cold Damage", "minValue": 31, "maxValue": 33, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "cold_damage_added_min", "label": "Adds (min-max)-(min-max) Cold Damage", "minValue": 21, "maxValue": 23, "unit": "FLAT" }] },
+          { "tier": "T2", "stats": [{ "statId": "cold_damage_added_min", "label": "Adds (min-max)-(min-max) Cold Damage", "minValue": 13, "maxValue": 15, "unit": "FLAT" }] },
+          { "tier": "T3", "stats": [{ "statId": "cold_damage_added_min", "label": "Adds (min-max)-(min-max) Cold Damage", "minValue": 10, "maxValue": 12, "unit": "FLAT" }] },
+          { "tier": "T4", "stats": [{ "statId": "cold_damage_added_min", "label": "Adds (min-max)-(min-max) Cold Damage", "minValue": 7, "maxValue": 9, "unit": "FLAT" }] },
+          { "tier": "T5", "stats": [{ "statId": "cold_damage_added_min", "label": "Adds (min-max)-(min-max) Cold Damage", "minValue": 4, "maxValue": 6, "unit": "FLAT" }] },
+          { "tier": "T6", "stats": [{ "statId": "cold_damage_added_min", "label": "Adds (min-max)-(min-max) Cold Damage", "minValue": 3, "maxValue": 5, "unit": "FLAT" }] },
+          { "tier": "T7", "stats": [{ "statId": "cold_damage_added_min", "label": "Adds (min-max)-(min-max) Cold Damage", "minValue": 2, "maxValue": 3, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_ring_advanced_prefix_lightning_damage_added",
+        "name": "Lightning Damage Added",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "lightning_damage_added_min", "label": "Adds (min-max)-(min-max) Lightning Damage", "minValue": 8, "maxValue": 10, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "lightning_damage_added_min", "label": "Adds (min-max)-(min-max) Lightning Damage", "minValue": 6, "maxValue": 8, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "lightning_damage_added_min", "label": "Adds (min-max)-(min-max) Lightning Damage", "minValue": 4, "maxValue": 6, "unit": "FLAT" }] },
+          { "tier": "T2", "stats": [{ "statId": "lightning_damage_added_min", "label": "Adds (min-max)-(min-max) Lightning Damage", "minValue": 2, "maxValue": 4, "unit": "FLAT" }] },
+          { "tier": "T3", "stats": [{ "statId": "lightning_damage_added_min", "label": "Adds (min-max)-(min-max) Lightning Damage", "minValue": 1, "maxValue": 3, "unit": "FLAT" }] },
+          { "tier": "T4", "stats": [{ "statId": "lightning_damage_added_min", "label": "Adds (min-max)-(min-max) Lightning Damage", "minValue": 1, "maxValue": 3, "unit": "FLAT" }] },
+          { "tier": "T5", "stats": [{ "statId": "lightning_damage_added_min", "label": "Adds (min-max)-(min-max) Lightning Damage", "minValue": 1, "maxValue": 2, "unit": "FLAT" }] },
+          { "tier": "T6", "stats": [{ "statId": "lightning_damage_added_min", "label": "Adds (min-max)-(min-max) Lightning Damage", "minValue": 1, "maxValue": 2, "unit": "FLAT" }] },
+          { "tier": "T7", "stats": [{ "statId": "lightning_damage_added_min", "label": "Adds (min-max)-(min-max) Lightning Damage", "minValue": 1, "maxValue": 2, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_ring_advanced_prefix_erosion_damage_added",
+        "name": "Erosion Damage Added",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "erosion_damage_added_min", "label": "Adds (min-max)-(min-max) Erosion Damage", "minValue": 76, "maxValue": 78, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "erosion_damage_added_min", "label": "Adds (min-max)-(min-max) Erosion Damage", "minValue": 57, "maxValue": 59, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "erosion_damage_added_min", "label": "Adds (min-max)-(min-max) Erosion Damage", "minValue": 38, "maxValue": 40, "unit": "FLAT" }] },
+          { "tier": "T2", "stats": [{ "statId": "erosion_damage_added_min", "label": "Adds (min-max)-(min-max) Erosion Damage", "minValue": 25, "maxValue": 27, "unit": "FLAT" }] },
+          { "tier": "T3", "stats": [{ "statId": "erosion_damage_added_min", "label": "Adds (min-max)-(min-max) Erosion Damage", "minValue": 18, "maxValue": 20, "unit": "FLAT" }] },
+          { "tier": "T4", "stats": [{ "statId": "erosion_damage_added_min", "label": "Adds (min-max)-(min-max) Erosion Damage", "minValue": 13, "maxValue": 15, "unit": "FLAT" }] },
+          { "tier": "T5", "stats": [{ "statId": "erosion_damage_added_min", "label": "Adds (min-max)-(min-max) Erosion Damage", "minValue": 8, "maxValue": 10, "unit": "FLAT" }] },
+          { "tier": "T6", "stats": [{ "statId": "erosion_damage_added_min", "label": "Adds (min-max)-(min-max) Erosion Damage", "minValue": 5, "maxValue": 7, "unit": "FLAT" }] },
+          { "tier": "T7", "stats": [{ "statId": "erosion_damage_added_min", "label": "Adds (min-max)-(min-max) Erosion Damage", "minValue": 3, "maxValue": 5, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_ring_advanced_prefix_strength",
+        "name": "Strength",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 79, "maxValue": 101, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 61, "maxValue": 78, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 43, "maxValue": 60, "unit": "FLAT" }] },
+          { "tier": "T2", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 31, "maxValue": 42, "unit": "FLAT" }] },
+          { "tier": "T3", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 25, "maxValue": 30, "unit": "FLAT" }] },
+          { "tier": "T4", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 20, "maxValue": 24, "unit": "FLAT" }] },
+          { "tier": "T5", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 17, "maxValue": 19, "unit": "FLAT" }] },
+          { "tier": "T6", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 13, "maxValue": 16, "unit": "FLAT" }] },
+          { "tier": "T7", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 10, "maxValue": 12, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_ring_advanced_prefix_dexterity",
+        "name": "Dexterity",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 79, "maxValue": 101, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 61, "maxValue": 78, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 43, "maxValue": 60, "unit": "FLAT" }] },
+          { "tier": "T2", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 31, "maxValue": 42, "unit": "FLAT" }] },
+          { "tier": "T3", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 25, "maxValue": 30, "unit": "FLAT" }] },
+          { "tier": "T4", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 20, "maxValue": 24, "unit": "FLAT" }] },
+          { "tier": "T5", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 17, "maxValue": 19, "unit": "FLAT" }] },
+          { "tier": "T6", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 13, "maxValue": 16, "unit": "FLAT" }] },
+          { "tier": "T7", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 10, "maxValue": 12, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_ring_advanced_prefix_intelligence",
+        "name": "Intelligence",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 79, "maxValue": 101, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 61, "maxValue": 78, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 43, "maxValue": 60, "unit": "FLAT" }] },
+          { "tier": "T2", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 31, "maxValue": 42, "unit": "FLAT" }] },
+          { "tier": "T3", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 25, "maxValue": 30, "unit": "FLAT" }] },
+          { "tier": "T4", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 20, "maxValue": 24, "unit": "FLAT" }] },
+          { "tier": "T5", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 17, "maxValue": 19, "unit": "FLAT" }] },
+          { "tier": "T6", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 13, "maxValue": 16, "unit": "FLAT" }] },
+          { "tier": "T7", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 10, "maxValue": 12, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_ring_advanced_prefix_deterioration_chance",
+        "name": "Deterioration Chance",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "deterioration_chance", "label": "+(min-max)% Deterioration Chance", "minValue": 43, "maxValue": 54, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "deterioration_chance", "label": "+(min-max)% Deterioration Chance", "minValue": 33, "maxValue": 42, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "deterioration_chance", "label": "+(min-max)% Deterioration Chance", "minValue": 23, "maxValue": 32, "unit": "PERCENT" }] },
+          { "tier": "T2", "stats": [{ "statId": "deterioration_chance", "label": "+(min-max)% Deterioration Chance", "minValue": 17, "maxValue": 22, "unit": "PERCENT" }] },
+          { "tier": "T3", "stats": [{ "statId": "deterioration_chance", "label": "+(min-max)% Deterioration Chance", "minValue": 14, "maxValue": 16, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_ring_advanced_prefix_max_tenacity_blessing_stacks",
+        "name": "Max Tenacity Blessing Stacks",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "max_tenacity_blessing_stacks", "label": "+min to Max Tenacity Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }, { "statId": "damage", "label": "+(min)% Additional Damage", "minValue": 13, "maxValue": 13, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "max_tenacity_blessing_stacks", "label": "+min to Max Tenacity Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }, { "statId": "damage", "label": "+(min)% Additional Damage", "minValue": 5, "maxValue": 5, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "max_tenacity_blessing_stacks", "label": "+min to Max Tenacity Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_ring_advanced_prefix_max_agility_blessing_stacks",
+        "name": "Max Agility Blessing Stacks",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "max_agility_blessing_stacks", "label": "+min to Max Agility Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }, { "statId": "damage", "label": "+(min)% Additional Damage", "minValue": 13, "maxValue": 13, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "max_agility_blessing_stacks", "label": "+min to Max Agility Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }, { "statId": "damage", "label": "+(min)% Additional Damage", "minValue": 5, "maxValue": 5, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "max_agility_blessing_stacks", "label": "+min to Max Agility Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_ring_advanced_prefix_max_focus_blessing_stacks",
+        "name": "Max Focus Blessing Stacks",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "max_focus_blessing_stacks", "label": "+min to Max Focus Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }, { "statId": "damage", "label": "+(min)% Additional Damage", "minValue": 13, "maxValue": 13, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "max_focus_blessing_stacks", "label": "+min to Max Focus Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }, { "statId": "damage", "label": "+(min)% Additional Damage", "minValue": 5, "maxValue": 5, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "max_focus_blessing_stacks", "label": "+min to Max Focus Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }
+        ]
+      }
+    ],
+    "ULTIMATE_PREFIXES": [
+      {
+        "id": "crafted_ring_ultimate_prefix_elemental_erosion_resistance_penetration",
+        "name": "Elemental and Erosion Resistance Penetration",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "elemental_erosion_resistance_penetration", "label": "+(min-max)% Elemental and Erosion Resistance Penetration", "minValue": 27, "maxValue": 34, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "elemental_erosion_resistance_penetration", "label": "+(min-max)% Elemental and Erosion Resistance Penetration", "minValue": 21, "maxValue": 26, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "elemental_erosion_resistance_penetration", "label": "+(min-max)% Elemental and Erosion Resistance Penetration", "minValue": 15, "maxValue": 20, "unit": "PERCENT" }] },
+          { "tier": "T2", "stats": [{ "statId": "elemental_erosion_resistance_penetration", "label": "+(min-max)% Elemental and Erosion Resistance Penetration", "minValue": 11, "maxValue": 14, "unit": "PERCENT" }] },
+          { "tier": "T3", "stats": [{ "statId": "elemental_erosion_resistance_penetration", "label": "+(min-max)% Elemental and Erosion Resistance Penetration", "minValue": 9, "maxValue": 10, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_ring_ultimate_prefix_armor_dmg_mitigation_penetration",
+        "name": "Armor DMG Mitigation Penetration",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "armor_dmg_mitigation_penetration", "label": "+(min-max)% Armor DMG Mitigation Penetration", "minValue": 23, "maxValue": 29, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "armor_dmg_mitigation_penetration", "label": "+(min-max)% Armor DMG Mitigation Penetration", "minValue": 18, "maxValue": 22, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "armor_dmg_mitigation_penetration", "label": "+(min-max)% Armor DMG Mitigation Penetration", "minValue": 13, "maxValue": 17, "unit": "PERCENT" }] },
+          { "tier": "T2", "stats": [{ "statId": "armor_dmg_mitigation_penetration", "label": "+(min-max)% Armor DMG Mitigation Penetration", "minValue": 10, "maxValue": 12, "unit": "PERCENT" }] },
+          { "tier": "T3", "stats": [{ "statId": "armor_dmg_mitigation_penetration", "label": "+(min-max)% Armor DMG Mitigation Penetration", "minValue": 8, "maxValue": 9, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_ring_ultimate_prefix_max_mana_and_skill_cost",
+        "name": "+10% Max Mana, +80 Skill Cost",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "max_mana_percent", "label": "+(min)% Max Mana", "minValue": 10, "maxValue": 10, "unit": "PERCENT" }, { "statId": "skill_cost_flat", "label": "+(min) Skill Cost", "minValue": 80, "maxValue": 80, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_ring_ultimate_prefix_deterioration_damage",
+        "name": "Deterioration Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "deterioration_damage", "label": "+(min-max)% Deterioration Damage", "minValue": 66, "maxValue": 85, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "deterioration_damage", "label": "+(min-max)% Deterioration Damage", "minValue": 51, "maxValue": 65, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "deterioration_damage", "label": "+(min-max)% Deterioration Damage", "minValue": 36, "maxValue": 50, "unit": "PERCENT" }] },
+          { "tier": "T2", "stats": [{ "statId": "deterioration_damage", "label": "+(min-max)% Deterioration Damage", "minValue": 26, "maxValue": 35, "unit": "PERCENT" }] },
+          { "tier": "T3", "stats": [{ "statId": "deterioration_damage", "label": "+(min-max)% Deterioration Damage", "minValue": 21, "maxValue": 25, "unit": "PERCENT" }] }
+        ]
+      }
+    ],
+    "BASIC_SUFFIXES": [
+      {
+        "id": "crafted_ring_basic_suffix_fire_resistance",
+        "name": "Fire Resistance",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "fire_resistance", "label": "+(min-max)% Fire Resistance", "minValue": 36, "maxValue": 46, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "fire_resistance", "label": "+(min-max)% Fire Resistance", "minValue": 25, "maxValue": 35, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "fire_resistance", "label": "+(min-max)% Fire Resistance", "minValue": 19, "maxValue": 27, "unit": "PERCENT" }] },
+          { "tier": "T2", "stats": [{ "statId": "fire_resistance", "label": "+(min-max)% Fire Resistance", "minValue": 16, "maxValue": 19, "unit": "PERCENT" }] },
+          { "tier": "T3", "stats": [{ "statId": "fire_resistance", "label": "+(min-max)% Fire Resistance", "minValue": 11, "maxValue": 14, "unit": "PERCENT" }] },
+          { "tier": "T4", "stats": [{ "statId": "fire_resistance", "label": "+(min-max)% Fire Resistance", "minValue": 9, "maxValue": 11, "unit": "PERCENT" }] },
+          { "tier": "T5", "stats": [{ "statId": "fire_resistance", "label": "+(min-max)% Fire Resistance", "minValue": 7, "maxValue": 9, "unit": "PERCENT" }] },
+          { "tier": "T6", "stats": [{ "statId": "fire_resistance", "label": "+(min-max)% Fire Resistance", "minValue": 6, "maxValue": 7, "unit": "PERCENT" }] },
+          { "tier": "T7", "stats": [{ "statId": "fire_resistance", "label": "+(min-max)% Fire Resistance", "minValue": 5, "maxValue": 5, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_ring_basic_suffix_cold_resistance",
+        "name": "Cold Resistance",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "cold_resistance", "label": "+(min-max)% Cold Resistance", "minValue": 36, "maxValue": 46, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "cold_resistance", "label": "+(min-max)% Cold Resistance", "minValue": 25, "maxValue": 35, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "cold_resistance", "label": "+(min-max)% Cold Resistance", "minValue": 19, "maxValue": 27, "unit": "PERCENT" }] },
+          { "tier": "T2", "stats": [{ "statId": "cold_resistance", "label": "+(min-max)% Cold Resistance", "minValue": 16, "maxValue": 19, "unit": "PERCENT" }] },
+          { "tier": "T3", "stats": [{ "statId": "cold_resistance", "label": "+(min-max)% Cold Resistance", "minValue": 11, "maxValue": 14, "unit": "PERCENT" }] },
+          { "tier": "T4", "stats": [{ "statId": "cold_resistance", "label": "+(min-max)% Cold Resistance", "minValue": 9, "maxValue": 11, "unit": "PERCENT" }] },
+          { "tier": "T5", "stats": [{ "statId": "cold_resistance", "label": "+(min-max)% Cold Resistance", "minValue": 7, "maxValue": 9, "unit": "PERCENT" }] },
+          { "tier": "T6", "stats": [{ "statId": "cold_resistance", "label": "+(min-max)% Cold Resistance", "minValue": 6, "maxValue": 7, "unit": "PERCENT" }] },
+          { "tier": "T7", "stats": [{ "statId": "cold_resistance", "label": "+(min-max)% Cold Resistance", "minValue": 5, "maxValue": 5, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_ring_basic_suffix_lightning_resistance",
+        "name": "Lightning Resistance",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "lightning_resistance", "label": "+(min-max)% Lightning Resistance", "minValue": 36, "maxValue": 46, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "lightning_resistance", "label": "+(min-max)% Lightning Resistance", "minValue": 25, "maxValue": 35, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "lightning_resistance", "label": "+(min-max)% Lightning Resistance", "minValue": 19, "maxValue": 27, "unit": "PERCENT" }] },
+          { "tier": "T2", "stats": [{ "statId": "lightning_resistance", "label": "+(min-max)% Lightning Resistance", "minValue": 16, "maxValue": 19, "unit": "PERCENT" }] },
+          { "tier": "T3", "stats": [{ "statId": "lightning_resistance", "label": "+(min-max)% Lightning Resistance", "minValue": 11, "maxValue": 14, "unit": "PERCENT" }] },
+          { "tier": "T4", "stats": [{ "statId": "lightning_resistance", "label": "+(min-max)% Lightning Resistance", "minValue": 9, "maxValue": 11, "unit": "PERCENT" }] },
+          { "tier": "T5", "stats": [{ "statId": "lightning_resistance", "label": "+(min-max)% Lightning Resistance", "minValue": 7, "maxValue": 9, "unit": "PERCENT" }] },
+          { "tier": "T6", "stats": [{ "statId": "lightning_resistance", "label": "+(min-max)% Lightning Resistance", "minValue": 6, "maxValue": 7, "unit": "PERCENT" }] },
+          { "tier": "T7", "stats": [{ "statId": "lightning_resistance", "label": "+(min-max)% Lightning Resistance", "minValue": 5, "maxValue": 5, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_ring_basic_suffix_erosion_resistance",
+        "name": "Erosion Resistance",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "erosion_resistance", "label": "+(min-max)% Erosion Resistance", "minValue": 36, "maxValue": 46, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "erosion_resistance", "label": "+(min-max)% Erosion Resistance", "minValue": 25, "maxValue": 35, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "erosion_resistance", "label": "+(min-max)% Erosion Resistance", "minValue": 19, "maxValue": 27, "unit": "PERCENT" }] },
+          { "tier": "T2", "stats": [{ "statId": "erosion_resistance", "label": "+(min-max)% Erosion Resistance", "minValue": 16, "maxValue": 19, "unit": "PERCENT" }] },
+          { "tier": "T3", "stats": [{ "statId": "erosion_resistance", "label": "+(min-max)% Erosion Resistance", "minValue": 11, "maxValue": 14, "unit": "PERCENT" }] },
+          { "tier": "T4", "stats": [{ "statId": "erosion_resistance", "label": "+(min-max)% Erosion Resistance", "minValue": 9, "maxValue": 11, "unit": "PERCENT" }] },
+          { "tier": "T5", "stats": [{ "statId": "erosion_resistance", "label": "+(min-max)% Erosion Resistance", "minValue": 7, "maxValue": 9, "unit": "PERCENT" }] },
+          { "tier": "T6", "stats": [{ "statId": "erosion_resistance", "label": "+(min-max)% Erosion Resistance", "minValue": 6, "maxValue": 7, "unit": "PERCENT" }] },
+          { "tier": "T7", "stats": [{ "statId": "erosion_resistance", "label": "+(min-max)% Erosion Resistance", "minValue": 5, "maxValue": 5, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_ring_basic_suffix_critical_strike_rating",
+        "name": "Critical Strike Rating",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "critical_strike_rating", "label": "+(min-max)% Critical Strike Rating", "minValue": 157, "maxValue": 203, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "critical_strike_rating", "label": "+(min-max)% Critical Strike Rating", "minValue": 121, "maxValue": 156, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "critical_strike_rating", "label": "+(min-max)% Critical Strike Rating", "minValue": 87, "maxValue": 120, "unit": "PERCENT" }] },
+          { "tier": "T2", "stats": [{ "statId": "critical_strike_rating", "label": "+(min-max)% Critical Strike Rating", "minValue": 62, "maxValue": 86, "unit": "PERCENT" }] },
+          { "tier": "T3", "stats": [{ "statId": "critical_strike_rating", "label": "+(min-max)% Critical Strike Rating", "minValue": 45, "maxValue": 61, "unit": "PERCENT" }] },
+          { "tier": "T4", "stats": [{ "statId": "critical_strike_rating", "label": "+(min-max)% Critical Strike Rating", "minValue": 30, "maxValue": 44, "unit": "PERCENT" }] },
+          { "tier": "T5", "stats": [{ "statId": "critical_strike_rating", "label": "+(min-max)% Critical Strike Rating", "minValue": 20, "maxValue": 29, "unit": "PERCENT" }] },
+          { "tier": "T6", "stats": [{ "statId": "critical_strike_rating", "label": "+(min-max)% Critical Strike Rating", "minValue": 14, "maxValue": 19, "unit": "PERCENT" }] },
+          { "tier": "T7", "stats": [{ "statId": "critical_strike_rating", "label": "+(min-max)% Critical Strike Rating", "minValue": 9, "maxValue": 13, "unit": "PERCENT" }] }
+        ]
+      }
+    ],
+    "ADVANCED_SUFFIXES": [
+      {
+        "id": "crafted_ring_advanced_suffix_reaping_duration",
+        "name": "Reaping Duration",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "reaping_duration", "label": "+(min-max)% Reaping Duration", "minValue": 66, "maxValue": 85, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "reaping_duration", "label": "+(min-max)% Reaping Duration", "minValue": 51, "maxValue": 65, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "reaping_duration", "label": "+(min-max)% Reaping Duration", "minValue": 35, "maxValue": 50, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_ring_advanced_suffix_affliction_effect",
+        "name": "Affliction Effect",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "affliction_effect", "label": "+(min-max)% Affliction Effect", "minValue": 66, "maxValue": 85, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "affliction_effect", "label": "+(min-max)% Affliction Effect", "minValue": 51, "maxValue": 65, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "affliction_effect", "label": "+(min-max)% Affliction Effect", "minValue": 36, "maxValue": 50, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_ring_advanced_suffix_terra_charge_recovery_speed",
+        "name": "Terra Charge Recovery Speed",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "terra_charge_recovery_speed", "label": "+(min-max)% Terra Charge Recovery Speed", "minValue": 66, "maxValue": 85, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "terra_charge_recovery_speed", "label": "+(min-max)% Terra Charge Recovery Speed", "minValue": 51, "maxValue": 65, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "terra_charge_recovery_speed", "label": "+(min-max)% Terra Charge Recovery Speed", "minValue": 37, "maxValue": 50, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_ring_advanced_suffix_critical_strike_damage",
+        "name": "Critical Strike Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "critical_strike_damage", "label": "+(min-max)% Critical Strike Damage", "minValue": 79, "maxValue": 101, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "critical_strike_damage", "label": "+(min-max)% Critical Strike Damage", "minValue": 61, "maxValue": 78, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "critical_strike_damage", "label": "+(min-max)% Critical Strike Damage", "minValue": 42, "maxValue": 60, "unit": "PERCENT" }] },
+          { "tier": "T2", "stats": [{ "statId": "critical_strike_damage", "label": "+(min-max)% Critical Strike Damage", "minValue": 32, "maxValue": 43, "unit": "PERCENT" }] },
+          { "tier": "T3", "stats": [{ "statId": "critical_strike_damage", "label": "+(min-max)% Critical Strike Damage", "minValue": 23, "maxValue": 31, "unit": "PERCENT" }] },
+          { "tier": "T4", "stats": [{ "statId": "critical_strike_damage", "label": "+(min-max)% Critical Strike Damage", "minValue": 16, "maxValue": 22, "unit": "PERCENT" }] },
+          { "tier": "T5", "stats": [{ "statId": "critical_strike_damage", "label": "+(min-max)% Critical Strike Damage", "minValue": 11, "maxValue": 15, "unit": "PERCENT" }] },
+          { "tier": "T6", "stats": [{ "statId": "critical_strike_damage", "label": "+(min-max)% Critical Strike Damage", "minValue": 7, "maxValue": 10, "unit": "PERCENT" }] },
+          { "tier": "T7", "stats": [{ "statId": "critical_strike_damage", "label": "+(min-max)% Critical Strike Damage", "minValue": 5, "maxValue": 6, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_ring_advanced_suffix_focus_speed",
+        "name": "Focus Speed",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "focus_speed", "label": "+(min-max)% Focus Speed", "minValue": 48, "maxValue": 61, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "focus_speed", "label": "+(min-max)% Focus Speed", "minValue": 37, "maxValue": 47, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "focus_speed", "label": "+(min-max)% Focus Speed", "minValue": 26, "maxValue": 36, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_ring_advanced_suffix_combo_starter_bonus",
+        "name": "Combo Points from Combo Starters",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "combo_points_from_combo_starters", "label": "+min Combo Points from Combo Starters", "minValue": 1, "maxValue": 1, "unit": "FLAT" }, { "statId": "damage", "label": "+(min-max)% Additional Damage", "minValue": 2, "maxValue": 2, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "combo_points_from_combo_starters", "label": "+min Combo Points from Combo Starters", "minValue": 1, "maxValue": 1, "unit": "FLAT" }, { "statId": "damage", "label": "+(min-max)% Additional Damage", "minValue": 1, "maxValue": 2, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "combo_points_from_combo_starters", "label": "+min Combo Points from Combo Starters", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_ring_advanced_suffix_max_frostbite_rating",
+        "name": "Max Frostbite Rating",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "max_frostbite_rating", "label": "+(min-max) Max Frostbite Rating", "minValue": 27, "maxValue": 34, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "max_frostbite_rating", "label": "+(min-max) Max Frostbite Rating", "minValue": 21, "maxValue": 26, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "max_frostbite_rating", "label": "+(min-max) Max Frostbite Rating", "minValue": 15, "maxValue": 20, "unit": "FLAT" }] },
+          { "tier": "T2", "stats": [{ "statId": "max_frostbite_rating", "label": "+(min-max) Max Frostbite Rating", "minValue": 11, "maxValue": 14, "unit": "FLAT" }] },
+          { "tier": "T3", "stats": [{ "statId": "max_frostbite_rating", "label": "+(min-max) Max Frostbite Rating", "minValue": 8, "maxValue": 10, "unit": "FLAT" }] },
+          { "tier": "T4", "stats": [{ "statId": "max_frostbite_rating", "label": "+(min-max) Max Frostbite Rating", "minValue": 6, "maxValue": 7, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_ring_advanced_suffix_max_mana_percent",
+        "name": "Max Mana",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "max_mana_percent", "label": "+(min-max)% Max Mana", "minValue": 43, "maxValue": 54, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "max_mana_percent", "label": "+(min-max)% Max Mana", "minValue": 33, "maxValue": 42, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "max_mana_percent", "label": "+(min-max)% Max Mana", "minValue": 23, "maxValue": 32, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_ring_advanced_suffix_barrier_per_5m",
+        "name": "Barrier per 5m Moved",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [] },
+          { "tier": "T0", "stats": [] },
+          { "tier": "T1", "stats": [] }
+        ]
+      },
+      {
+        "id": "crafted_ring_advanced_suffix_reaping_recovery_speed",
+        "name": "Reaping Recovery Speed",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "reaping_recovery_speed", "label": "+(min-max)% Reaping Recovery Speed", "minValue": 109, "maxValue": 141, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "reaping_recovery_speed", "label": "+(min-max)% Reaping Recovery Speed", "minValue": 84, "maxValue": 108, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "reaping_recovery_speed", "label": "+(min-max)% Reaping Recovery Speed", "minValue": 59, "maxValue": 83, "unit": "PERCENT" }] }
+        ]
+      }
+    ],
+    "ULTIMATE_SUFFIXES": [
+      {
+        "id": "crafted_ring_ultimate_suffix_elemental_erosion_resistance",
+        "name": "Elemental and Erosion Resistance",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "elemental_resistance", "label": "+(min-max)% Elemental and Erosion Resistance", "minValue": 17, "maxValue": 20, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "elemental_resistance", "label": "+(min-max)% Elemental and Erosion Resistance", "minValue": 13, "maxValue": 16, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "elemental_resistance", "label": "+(min-max)% Elemental and Erosion Resistance", "minValue": 9, "maxValue": 12, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_ring_ultimate_suffix_fervor_effect",
+        "name": "Fervor Effect",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "fervor_effect", "label": "+(min-max)% Fervor Effect", "minValue": 66, "maxValue": 85, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "fervor_effect", "label": "+(min-max)% Fervor Effect", "minValue": 51, "maxValue": 65, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "fervor_effect", "label": "+(min-max)% Fervor Effect", "minValue": 36, "maxValue": 50, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_ring_ultimate_suffix_double_damage_chance",
+        "name": "Double Damage Chance",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "double_damage_chance", "label": "+(min-max)% Double Damage Chance", "minValue": 35, "maxValue": 44, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "double_damage_chance", "label": "+(min-max)% Double Damage Chance", "minValue": 27, "maxValue": 34, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "double_damage_chance", "label": "+(min-max)% Double Damage Chance", "minValue": 19, "maxValue": 26, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_ring_ultimate_suffix_additional_damage_main_hand",
+        "name": "Additional Damage for Main-Hand Weapons",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "additional_damage_main_hand", "label": "+(min-max)% Additional Damage for Main-Hand Weapons", "minValue": 30, "maxValue": 38, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "additional_damage_main_hand", "label": "+(min-max)% Additional Damage for Main-Hand Weapons", "minValue": 24, "maxValue": 29, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "additional_damage_main_hand", "label": "+(min-max)% Additional Damage for Main-Hand Weapons", "minValue": 18, "maxValue": 23, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_ring_ultimate_suffix_additional_damage_frozen",
+        "name": "Additional Damage Against Frozen Enemies",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "additional_damage_against_frozen", "label": "+(min-max)% Additional Damage Against Frozen Enemies", "minValue": 30, "maxValue": 38, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "additional_damage_against_frozen", "label": "+(min-max)% Additional Damage Against Frozen Enemies", "minValue": 24, "maxValue": 29, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "additional_damage_against_frozen", "label": "+(min-max)% Additional Damage Against Frozen Enemies", "minValue": 18, "maxValue": 23, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_ring_ultimate_suffix_deterioration_duration",
+        "name": "Deterioration Duration",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "deterioration_duration", "label": "+(min-max)% Deterioration Duration", "minValue": 43, "maxValue": 54, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "deterioration_duration", "label": "+(min-max)% Deterioration Duration", "minValue": 33, "maxValue": 42, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "deterioration_duration", "label": "+(min-max)% Deterioration Duration", "minValue": 23, "maxValue": 32, "unit": "PERCENT" }] }
+        ]
+      }
+    ]
+  }
+}
