@@ -1,0 +1,2997 @@
+{
+  "id": "crafted_necklace",
+  "name": "Crafted Necklace",
+  "baseItemCategoryId": "necklace",
+  "weaponTypeId": null,
+  "attributeType": null,
+  "isPriceless": true,
+  "groups": {
+    "BASE_AFFIXES": [
+      {
+        "id": "crafted_necklace_base_max_life",
+        "name": "+(min-max) Max Life",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "max_life",
+                "label": "+(min-max) Max Life",
+                "minValue": 54,
+                "maxValue": 74,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_base_max_energy_shield",
+        "name": "+(min-max) Max Energy Shield",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "max_energy_shield",
+                "label": "+(min-max) Max Energy Shield",
+                "minValue": 87,
+                "maxValue": 117,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_base_fire_resistance",
+        "name": "+(min-max)% Fire Resistance",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "fire_resistance",
+                "label": "+(min-max)% Fire Resistance",
+                "minValue": 5,
+                "maxValue": 10,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_base_cold_resistance",
+        "name": "+(min-max)% Cold Resistance",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "cold_resistance",
+                "label": "+(min-max)% Cold Resistance",
+                "minValue": 5,
+                "maxValue": 10,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_base_lightning_resistance",
+        "name": "+(min-max)% Lightning Resistance",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "lightning_resistance",
+                "label": "+(min-max)% Lightning Resistance",
+                "minValue": 5,
+                "maxValue": 10,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_base_erosion_resistance",
+        "name": "+(min-max)% Erosion Resistance",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "erosion_resistance",
+                "label": "+(min-max)% Erosion Resistance",
+                "minValue": 5,
+                "maxValue": 10,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_base_elemental_resistance",
+        "name": "+(min-max)% Elemental Resistance",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "elemental_resistance",
+                "label": "+(min-max)% Elemental Resistance",
+                "minValue": 3,
+                "maxValue": 4,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_base_strength",
+        "name": "+(min-max) Strength",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "strength",
+                "label": "+(min-max) Strength",
+                "minValue": 15,
+                "maxValue": 20,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_base_dexterity",
+        "name": "+(min-max) Dexterity",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "dexterity",
+                "label": "+(min-max) Dexterity",
+                "minValue": 15,
+                "maxValue": 20,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_base_intelligence",
+        "name": "+(min-max) Intelligence",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "intelligence",
+                "label": "+(min-max) Intelligence",
+                "minValue": 15,
+                "maxValue": 20,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_base_damage",
+        "name": "+(min-max)% Damage",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "damage",
+                "label": "+(min-max)% Damage",
+                "minValue": 20,
+                "maxValue": 24,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_base_minion_damage",
+        "name": "+(min-max)% Minion Damage",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "minion_damage",
+                "label": "+(min-max)% Minion Damage",
+                "minValue": 20,
+                "maxValue": 24,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_base_movement_speed",
+        "name": "+(min-max)% Movement Speed",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "movement_speed",
+                "label": "+(min-max)% Movement Speed",
+                "minValue": 8,
+                "maxValue": 10,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_base_damage_per_blessing",
+        "name": "+(min-max)% Damage per Blessing Stack",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "damage_per_blessing_stack",
+                "label": "+(min-max)% Damage per Blessing Stack",
+                "minValue": 2,
+                "maxValue": 3,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_base_sealed_mana_compensation",
+        "name": "+(min-max)% Sealed Mana Compensation",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "sealed_mana_compensation",
+                "label": "+(min-max)% Sealed Mana Compensation",
+                "minValue": 6,
+                "maxValue": 8,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_base_elemental_ailment_avoidance",
+        "name": "+(min-max)% Elemental Ailment Avoidance",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "elemental_ailment_avoidance",
+                "label": "+(min-max)% Elemental Ailment Avoidance",
+                "minValue": 26,
+                "maxValue": 30,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_base_base_ailment_damage",
+        "name": "+min Base Ailment Damage",
+        "tiers": [
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "base_ailment_damage",
+                "label": "+min Base Ailment Damage",
+                "minValue": 10,
+                "maxValue": 10,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_base_damage_per_stats",
+        "name": "+1% Damage per min Stats",
+        "tiers": [
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "damage_per_stats_threshold",
+                "label": "+1% Damage per min Stats",
+                "minValue": 27,
+                "maxValue": 27,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_base_profane_effect",
+        "name": "Profane Effect",
+        "tiers": [
+          {
+            "tier": "T0",
+            "stats": []
+          }
+        ]
+      }
+    ],
+    "CORROSION_BASE_AFFIXES": [
+      {
+        "id": "crafted_necklace_corrosion_base_additional_curses",
+        "name": "+1 to Maximum Curses",
+        "tiers": [
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "additional_curses",
+                "label": "+min to Maximum Curses",
+                "minValue": 1,
+                "maxValue": 1,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_corrosion_base_elemental_ailment_immunity",
+        "name": "Immune to Elemental Ailments",
+        "tiers": [
+          {
+            "tier": "T0",
+            "stats": []
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_corrosion_base_critical_strike_rating",
+        "name": "+(min-max) Critical Strike Rating",
+        "tiers": [
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "critical_strike_rating",
+                "label": "+(min-max) Critical Strike Rating",
+                "minValue": 60,
+                "maxValue": 80,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_corrosion_base_damage",
+        "name": "+(min-max)% Damage",
+        "tiers": [
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "damage",
+                "label": "+(min-max)% Damage",
+                "minValue": 50,
+                "maxValue": 70,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_corrosion_base_elemental_resistance",
+        "name": "+(min-max)% Elemental Resistance",
+        "tiers": [
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "elemental_resistance",
+                "label": "+(min-max)% Elemental Resistance",
+                "minValue": 8,
+                "maxValue": 10,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_corrosion_base_skill_area",
+        "name": "+(min-max)% Skill Area",
+        "tiers": [
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "skill_area",
+                "label": "+(min-max)% Skill Area",
+                "minValue": 30,
+                "maxValue": 40,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_corrosion_base_skill_effect_duration",
+        "name": "+(min-max)% Skill Effect Duration",
+        "tiers": [
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "skill_effect_duration",
+                "label": "+(min-max)% Skill Effect Duration",
+                "minValue": 15,
+                "maxValue": 20,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "SWEET_DREAM_AFFIXES": [
+      {
+        "id": "crafted_necklace_sweet_dream_max_life",
+        "name": "+(min-max) Max Life",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "max_life",
+                "label": "+(min-max) Max Life",
+                "minValue": 54,
+                "maxValue": 74,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_sweet_dream_max_energy_shield",
+        "name": "+(min-max) Max Energy Shield",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "max_energy_shield",
+                "label": "+(min-max) Max Energy Shield",
+                "minValue": 87,
+                "maxValue": 117,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_sweet_dream_fire_resistance",
+        "name": "+(min-max)% Fire Resistance",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "fire_resistance",
+                "label": "+(min-max)% Fire Resistance",
+                "minValue": 5,
+                "maxValue": 10,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_sweet_dream_cold_resistance",
+        "name": "+(min-max)% Cold Resistance",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "cold_resistance",
+                "label": "+(min-max)% Cold Resistance",
+                "minValue": 5,
+                "maxValue": 10,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_sweet_dream_lightning_resistance",
+        "name": "+(min-max)% Lightning Resistance",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "lightning_resistance",
+                "label": "+(min-max)% Lightning Resistance",
+                "minValue": 5,
+                "maxValue": 10,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_sweet_dream_erosion_resistance",
+        "name": "+(min-max)% Erosion Resistance",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "erosion_resistance",
+                "label": "+(min-max)% Erosion Resistance",
+                "minValue": 5,
+                "maxValue": 10,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_sweet_dream_elemental_resistance",
+        "name": "+(min-max)% Elemental Resistance",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "elemental_resistance",
+                "label": "+(min-max)% Elemental Resistance",
+                "minValue": 3,
+                "maxValue": 4,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_sweet_dream_strength",
+        "name": "+(min-max) Strength",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "strength",
+                "label": "+(min-max) Strength",
+                "minValue": 15,
+                "maxValue": 20,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_sweet_dream_dexterity",
+        "name": "+(min-max) Dexterity",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "dexterity",
+                "label": "+(min-max) Dexterity",
+                "minValue": 15,
+                "maxValue": 20,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_sweet_dream_intelligence",
+        "name": "+(min-max) Intelligence",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "intelligence",
+                "label": "+(min-max) Intelligence",
+                "minValue": 15,
+                "maxValue": 20,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_sweet_dream_damage",
+        "name": "+(min-max)% Damage",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "damage",
+                "label": "+(min-max)% Damage",
+                "minValue": 20,
+                "maxValue": 24,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_sweet_dream_minion_damage",
+        "name": "+(min-max)% Minion Damage",
+        "tiers": [
+          {
+            "tier": "T2",
+            "stats": [
+              {
+                "statId": "minion_damage",
+                "label": "+(min-max)% Minion Damage",
+                "minValue": 20,
+                "maxValue": 24,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_sweet_dream_movement_speed",
+        "name": "+(min-max)% Movement Speed",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "movement_speed",
+                "label": "+(min-max)% Movement Speed",
+                "minValue": 8,
+                "maxValue": 10,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_sweet_dream_damage_per_blessing",
+        "name": "+(min-max)% Damage per Blessing Stack",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "damage_per_blessing_stack",
+                "label": "+(min-max)% Damage per Blessing Stack",
+                "minValue": 2,
+                "maxValue": 3,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_sweet_dream_sealed_mana_compensation",
+        "name": "+(min-max)% Sealed Mana Compensation",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "sealed_mana_compensation",
+                "label": "+(min-max)% Sealed Mana Compensation",
+                "minValue": 6,
+                "maxValue": 8,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_sweet_dream_elemental_ailment_avoidance",
+        "name": "+(min-max)% Elemental Ailment Avoidance",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "elemental_ailment_avoidance",
+                "label": "+(min-max)% Elemental Ailment Avoidance",
+                "minValue": 26,
+                "maxValue": 30,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_sweet_dream_base_ailment_damage",
+        "name": "+min Base Ailment Damage",
+        "tiers": [
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "base_ailment_damage",
+                "label": "+min Base Ailment Damage",
+                "minValue": 10,
+                "maxValue": 10,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_sweet_dream_damage_per_stats",
+        "name": "+1% Damage per min Stats",
+        "tiers": [
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "damage_per_stats_threshold",
+                "label": "+1% Damage per min Stats",
+                "minValue": 27,
+                "maxValue": 27,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_sweet_dream_profane_effect",
+        "name": "Profane Effect",
+        "tiers": [
+          {
+            "tier": "T0",
+            "stats": []
+          }
+        ]
+      }
+    ],
+    "NIGHTMARE_AFFIXES": [
+      {
+        "id": "crafted_necklace_nightmare_damage",
+        "name": "Damage",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "damage",
+                "label": "+(min-max)% Damage",
+                "minValue": 49,
+                "maxValue": 72,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_nightmare_attack_and_cast_speed",
+        "name": "Attack and Cast Speed",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "attack_and_cast_speed",
+                "label": "+(min-max)% Attack and Cast Speed",
+                "minValue": 12,
+                "maxValue": 16,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_nightmare_minion_damage",
+        "name": "Minion Damage",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "minion_damage",
+                "label": "+(min-max)% Minion Damage",
+                "minValue": 49,
+                "maxValue": 72,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_nightmare_minion_attack_and_cast_speed",
+        "name": "Minion Attack and Cast Speed",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "minion_attack_and_cast_speed",
+                "label": "+(min-max)% Minion Attack and Cast Speed",
+                "minValue": 12,
+                "maxValue": 16,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_nightmare_attack_and_spell_critical_strike_rating",
+        "name": "Attack and Spell Critical Strike Rating",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "attack_and_spell_critical_strike_rating",
+                "label": "+(min-max) Attack and Spell Critical Strike Rating",
+                "minValue": 77,
+                "maxValue": 100,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_nightmare_skill_area",
+        "name": "Skill Area",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "skill_area",
+                "label": "+(min-max)% Skill Area",
+                "minValue": 18,
+                "maxValue": 21,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_nightmare_minion_critical_strike_rating",
+        "name": "Minion Critical Strike Rating",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "minion_critical_strike_rating",
+                "label": "+(min-max) Minion Critical Strike Rating",
+                "minValue": 77,
+                "maxValue": 100,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_nightmare_minion_skill_area",
+        "name": "Minion Skill Area",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "minion_skill_area",
+                "label": "+(min-max)% Minion Skill Area",
+                "minValue": 18,
+                "maxValue": 21,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_nightmare_max_life",
+        "name": "Max Life",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "max_life",
+                "label": "+(min-max) Max Life",
+                "minValue": 100,
+                "maxValue": 150,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_nightmare_max_energy_shield",
+        "name": "Max Energy Shield",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "max_energy_shield",
+                "label": "+(min-max) Max Energy Shield",
+                "minValue": 320,
+                "maxValue": 400,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_nightmare_cold_resistance",
+        "name": "Cold Resistance",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "cold_resistance",
+                "label": "+(min-max)% Cold Resistance",
+                "minValue": 21,
+                "maxValue": 24,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_nightmare_erosion_resistance",
+        "name": "Erosion Resistance",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "erosion_resistance",
+                "label": "+(min-max)% Erosion Resistance",
+                "minValue": 21,
+                "maxValue": 24,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_nightmare_max_mana",
+        "name": "Max Mana",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "max_mana",
+                "label": "+(min-max) Max Mana",
+                "minValue": 96,
+                "maxValue": 120,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_nightmare_fire_resistance",
+        "name": "Fire Resistance",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "fire_resistance",
+                "label": "+(min-max)% Fire Resistance",
+                "minValue": 21,
+                "maxValue": 24,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_nightmare_lightning_resistance",
+        "name": "Lightning Resistance",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "lightning_resistance",
+                "label": "+(min-max)% Lightning Resistance",
+                "minValue": 21,
+                "maxValue": 24,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_nightmare_elemental_resistance",
+        "name": "Elemental Resistance",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "elemental_resistance",
+                "label": "+(min-max)% Elemental Resistance",
+                "minValue": 9,
+                "maxValue": 10,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_nightmare_strength",
+        "name": "Strength",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "strength",
+                "label": "+(min-max) Strength",
+                "minValue": 51,
+                "maxValue": 60,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_nightmare_intelligence",
+        "name": "Intelligence",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "intelligence",
+                "label": "+(min-max) Intelligence",
+                "minValue": 51,
+                "maxValue": 60,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_nightmare_movement_speed",
+        "name": "Movement Speed",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "movement_speed",
+                "label": "+(min-max)% Movement Speed",
+                "minValue": 12,
+                "maxValue": 16,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_nightmare_skill_effect_duration",
+        "name": "Skill Effect Duration",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "skill_effect_duration",
+                "label": "+(min-max)% Skill Effect Duration",
+                "minValue": 14,
+                "maxValue": 20,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_nightmare_dexterity",
+        "name": "Dexterity",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "dexterity",
+                "label": "+(min-max) Dexterity",
+                "minValue": 51,
+                "maxValue": 60,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_nightmare_aura_effect",
+        "name": "Aura Effect",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "aura_effect",
+                "label": "+(min-max)% Aura Effect",
+                "minValue": 12,
+                "maxValue": 16,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_nightmare_cooldown_recovery_speed",
+        "name": "Cooldown Recovery Speed",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "cooldown_recovery_speed",
+                "label": "+(min-max)% Cooldown Recovery Speed",
+                "minValue": 13,
+                "maxValue": 15,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_nightmare_max_tenacity_blessing_stacks",
+        "name": "Max Tenacity Blessing Stacks",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": []
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_nightmare_max_focus_blessing_stacks",
+        "name": "Max Focus Blessing Stacks",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": []
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_nightmare_fervor_effect",
+        "name": "Fervor Effect",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "fervor_effect",
+                "label": "+(min-max)% Fervor Effect",
+                "minValue": 15,
+                "maxValue": 20,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_nightmare_projectile_quantity",
+        "name": "Projectile Quantity",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": []
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_nightmare_max_agility_blessing_stacks",
+        "name": "Max Agility Blessing Stacks",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": []
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_nightmare_sealed_mana_compensation",
+        "name": "Sealed Mana Compensation",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "sealed_mana_compensation",
+                "label": "+(min-max)% Sealed Mana Compensation",
+                "minValue": 5,
+                "maxValue": 10,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_nightmare_max_elemental_resistance",
+        "name": "Max Elemental Resistance",
+        "tiers": [
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "max_elemental_resistance",
+                "label": "+(min-max)% Max Elemental Resistance",
+                "minValue": 1,
+                "maxValue": 2,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "BASIC_PREFIXES": [
+      {
+        "id": "crafted_necklace_basic_prefix_max_life",
+        "name": "Max Life",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "max_life",
+                "label": "+(min-max) Max Life",
+                "minValue": 287,
+                "maxValue": 372,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "max_life",
+                "label": "+(min-max) Max Life",
+                "minValue": 221,
+                "maxValue": 286,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "max_life",
+                "label": "+(min-max) Max Life",
+                "minValue": 155,
+                "maxValue": 220,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_basic_prefix_max_energy_shield",
+        "name": "Max Energy Shield",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "max_energy_shield",
+                "label": "+(min-max) Max Energy Shield",
+                "minValue": 456,
+                "maxValue": 592,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "max_energy_shield",
+                "label": "+(min-max) Max Energy Shield",
+                "minValue": 319,
+                "maxValue": 455,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "max_energy_shield",
+                "label": "+(min-max) Max Energy Shield",
+                "minValue": 245,
+                "maxValue": 350,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_basic_prefix_armor",
+        "name": "Armor",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "armor",
+                "label": "+(min-max)% Armor",
+                "minValue": 48,
+                "maxValue": 61,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "armor",
+                "label": "+(min-max)% Armor",
+                "minValue": 37,
+                "maxValue": 47,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "armor",
+                "label": "+(min-max)% Armor",
+                "minValue": 27,
+                "maxValue": 36,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_basic_prefix_evasion",
+        "name": "Evasion",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "evasion",
+                "label": "+(min-max)% Evasion",
+                "minValue": 48,
+                "maxValue": 61,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "evasion",
+                "label": "+(min-max)% Evasion",
+                "minValue": 37,
+                "maxValue": 47,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "evasion",
+                "label": "+(min-max)% Evasion",
+                "minValue": 27,
+                "maxValue": 36,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_basic_prefix_damage",
+        "name": "Damage",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "damage",
+                "label": "+(min-max)% Damage",
+                "minValue": 95,
+                "maxValue": 122,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "damage",
+                "label": "+(min-max)% Damage",
+                "minValue": 73,
+                "maxValue": 94,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "damage",
+                "label": "+(min-max)% Damage",
+                "minValue": 51,
+                "maxValue": 72,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_basic_prefix_minion_damage",
+        "name": "Minion Damage",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "minion_damage",
+                "label": "+(min-max)% Minion Damage",
+                "minValue": 95,
+                "maxValue": 122,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "minion_damage",
+                "label": "+(min-max)% Minion Damage",
+                "minValue": 73,
+                "maxValue": 94,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "minion_damage",
+                "label": "+(min-max)% Minion Damage",
+                "minValue": 51,
+                "maxValue": 72,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_basic_prefix_max_mana",
+        "name": "Max Mana",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "max_mana",
+                "label": "+(min-max) Max Mana",
+                "minValue": 157,
+                "maxValue": 203,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "max_mana",
+                "label": "+(min-max) Max Mana",
+                "minValue": 121,
+                "maxValue": 156,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "max_mana",
+                "label": "+(min-max) Max Mana",
+                "minValue": 85,
+                "maxValue": 120,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "ADVANCED_PREFIXES": [
+      {
+        "id": "crafted_necklace_advanced_prefix_strength",
+        "name": "Strength",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "strength",
+                "label": "+(min-max) Strength",
+                "minValue": 79,
+                "maxValue": 101,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "strength",
+                "label": "+(min-max) Strength",
+                "minValue": 61,
+                "maxValue": 78,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "strength",
+                "label": "+(min-max) Strength",
+                "minValue": 43,
+                "maxValue": 60,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_advanced_prefix_dexterity",
+        "name": "Dexterity",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "dexterity",
+                "label": "+(min-max) Dexterity",
+                "minValue": 79,
+                "maxValue": 101,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "dexterity",
+                "label": "+(min-max) Dexterity",
+                "minValue": 61,
+                "maxValue": 78,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "dexterity",
+                "label": "+(min-max) Dexterity",
+                "minValue": 43,
+                "maxValue": 60,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_advanced_prefix_intelligence",
+        "name": "Intelligence",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "intelligence",
+                "label": "+(min-max) Intelligence",
+                "minValue": 79,
+                "maxValue": 101,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "intelligence",
+                "label": "+(min-max) Intelligence",
+                "minValue": 61,
+                "maxValue": 78,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "intelligence",
+                "label": "+(min-max) Intelligence",
+                "minValue": 43,
+                "maxValue": 60,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_advanced_prefix_spirit_magi_growth",
+        "name": "Spirit Magi Growth Speed",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "spirit_magi_growth_speed",
+                "label": "+(min-max) Spirit Magi Growth Speed",
+                "minValue": 63,
+                "maxValue": 81,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "spirit_magi_growth_speed",
+                "label": "+(min-max) Spirit Magi Growth Speed",
+                "minValue": 49,
+                "maxValue": 62,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "spirit_magi_growth_speed",
+                "label": "+(min-max) Spirit Magi Growth Speed",
+                "minValue": 35,
+                "maxValue": 48,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_advanced_prefix_defense",
+        "name": "Defense",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "defense",
+                "label": "+(min-max)% Defense",
+                "minValue": 27,
+                "maxValue": 34,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "defense",
+                "label": "+(min-max)% Defense",
+                "minValue": 21,
+                "maxValue": 26,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "defense",
+                "label": "+(min-max)% Defense",
+                "minValue": 15,
+                "maxValue": 20,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_advanced_prefix_sealed_mana",
+        "name": "Sealed Mana Compensation",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "sealed_mana_compensation",
+                "label": "+(min-max)% Sealed Mana Compensation",
+                "minValue": 40,
+                "maxValue": 51,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "sealed_mana_compensation",
+                "label": "+(min-max)% Sealed Mana Compensation",
+                "minValue": 31,
+                "maxValue": 39,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "sealed_mana_compensation",
+                "label": "+(min-max)% Sealed Mana Compensation",
+                "minValue": 22,
+                "maxValue": 30,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_advanced_prefix_attack_aggression_effect",
+        "name": "Attack Aggression Effect",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "attack_aggression_effect",
+                "label": "+(min-max)% Attack Aggression Effect",
+                "minValue": 70,
+                "maxValue": 100,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "attack_aggression_effect",
+                "label": "+(min-max)% Attack Aggression Effect",
+                "minValue": 40,
+                "maxValue": 60,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "attack_aggression_effect",
+                "label": "+(min-max)% Attack Aggression Effect",
+                "minValue": 10,
+                "maxValue": 30,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_advanced_prefix_spell_aggression_effect",
+        "name": "Spell Aggression Effect",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "spell_aggression_effect",
+                "label": "+(min-max)% Spell Aggression Effect",
+                "minValue": 70,
+                "maxValue": 100,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "spell_aggression_effect",
+                "label": "+(min-max)% Spell Aggression Effect",
+                "minValue": 40,
+                "maxValue": 60,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "spell_aggression_effect",
+                "label": "+(min-max)% Spell Aggression Effect",
+                "minValue": 10,
+                "maxValue": 30,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_advanced_prefix_erosion_damage",
+        "name": "Erosion Damage",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "erosion_damage",
+                "label": "+(min-max)% Erosion Damage",
+                "minValue": 60,
+                "maxValue": 80,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "erosion_damage",
+                "label": "+(min-max)% Erosion Damage",
+                "minValue": 40,
+                "maxValue": 50,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "erosion_damage",
+                "label": "+(min-max)% Erosion Damage",
+                "minValue": 20,
+                "maxValue": 30,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_advanced_prefix_deterioration_chance",
+        "name": "Deterioration Chance",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "deterioration_chance",
+                "label": "+(min-max)% Deterioration Chance",
+                "minValue": 43,
+                "maxValue": 54,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "deterioration_chance",
+                "label": "+(min-max)% Deterioration Chance",
+                "minValue": 33,
+                "maxValue": 42,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "deterioration_chance",
+                "label": "+(min-max)% Deterioration Chance",
+                "minValue": 23,
+                "maxValue": 32,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "ULTIMATE_PREFIXES": [
+      {
+        "id": "crafted_necklace_ultimate_prefix_minion_skill_level",
+        "name": "Minion Skill Level",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "minion_skill_level",
+                "label": "+min Minion Skill Level",
+                "minValue": 3,
+                "maxValue": 4,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "minion_skill_level",
+                "label": "+min Minion Skill Level",
+                "minValue": 3,
+                "maxValue": 3,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "minion_skill_level",
+                "label": "+min Minion Skill Level",
+                "minValue": 2,
+                "maxValue": 2,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_ultimate_prefix_max_spell_burst",
+        "name": "Max Spell Burst",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "max_spell_burst",
+                "label": "+min Max Spell Burst",
+                "minValue": 2,
+                "maxValue": 2,
+                "unit": "FLAT"
+              },
+              {
+                "statId": "damage",
+                "label": "+(min-max)% Damage",
+                "minValue": 8,
+                "maxValue": 8,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "max_spell_burst",
+                "label": "+min Max Spell Burst",
+                "minValue": 2,
+                "maxValue": 2,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "max_spell_burst",
+                "label": "+min Max Spell Burst",
+                "minValue": 1,
+                "maxValue": 1,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_ultimate_prefix_active_skill_level",
+        "name": "Active Skill Level",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "active_skill_level",
+                "label": "+min Active Skill Level",
+                "minValue": 4,
+                "maxValue": 4,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "active_skill_level",
+                "label": "+min Active Skill Level",
+                "minValue": 3,
+                "maxValue": 3,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "active_skill_level",
+                "label": "+(min-max) Active Skill Level",
+                "minValue": 1,
+                "maxValue": 2,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_ultimate_prefix_fervor",
+        "name": "Fervor",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "fervor_effect",
+                "label": "+(min-max)% Fervor Effect",
+                "minValue": 12,
+                "maxValue": 12,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "fervor_effect",
+                "label": "+(min-max)% Fervor Effect",
+                "minValue": 5,
+                "maxValue": 5,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": []
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_ultimate_prefix_multistrike_damage",
+        "name": "Multistrike Damage",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "multistrike_damage",
+                "label": "+(min-max)% Multistrike Damage",
+                "minValue": 53,
+                "maxValue": 68,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "multistrike_damage",
+                "label": "+(min-max)% Multistrike Damage",
+                "minValue": 42,
+                "maxValue": 52,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "multistrike_damage",
+                "label": "+(min-max)% Multistrike Damage",
+                "minValue": 36,
+                "maxValue": 52,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_ultimate_prefix_tangle_quantity_damage",
+        "name": "Tangle Quantity and Damage",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "tangle_quantity_damage",
+                "label": "+(min-max)% Tangle Quantity and Damage",
+                "minValue": 20,
+                "maxValue": 25,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "tangle_quantity_damage",
+                "label": "+(min-max)% Tangle Quantity and Damage",
+                "minValue": 12,
+                "maxValue": 15,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "tangle_quantity_damage",
+                "label": "+(min-max)% Tangle Quantity and Damage",
+                "minValue": 5,
+                "maxValue": 8,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_ultimate_prefix_deterioration_damage",
+        "name": "Deterioration Damage",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "deterioration_damage",
+                "label": "+(min-max)% Deterioration Damage",
+                "minValue": 66,
+                "maxValue": 85,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "deterioration_damage",
+                "label": "+(min-max)% Deterioration Damage",
+                "minValue": 51,
+                "maxValue": 65,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "deterioration_damage",
+                "label": "+(min-max)% Deterioration Damage",
+                "minValue": 36,
+                "maxValue": 50,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "BASIC_SUFFIXES": [
+      {
+        "id": "crafted_necklace_basic_suffix_fire_resistance",
+        "name": "Fire Resistance",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "fire_resistance",
+                "label": "+(min-max)% Fire Resistance",
+                "minValue": 36,
+                "maxValue": 46,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "fire_resistance",
+                "label": "+(min-max)% Fire Resistance",
+                "minValue": 25,
+                "maxValue": 35,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "fire_resistance",
+                "label": "+(min-max)% Fire Resistance",
+                "minValue": 19,
+                "maxValue": 27,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_basic_suffix_cold_resistance",
+        "name": "Cold Resistance",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "cold_resistance",
+                "label": "+(min-max)% Cold Resistance",
+                "minValue": 36,
+                "maxValue": 46,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "cold_resistance",
+                "label": "+(min-max)% Cold Resistance",
+                "minValue": 25,
+                "maxValue": 35,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "cold_resistance",
+                "label": "+(min-max)% Cold Resistance",
+                "minValue": 19,
+                "maxValue": 27,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_basic_suffix_lightning_resistance",
+        "name": "Lightning Resistance",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "lightning_resistance",
+                "label": "+(min-max)% Lightning Resistance",
+                "minValue": 36,
+                "maxValue": 46,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "lightning_resistance",
+                "label": "+(min-max)% Lightning Resistance",
+                "minValue": 25,
+                "maxValue": 35,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "lightning_resistance",
+                "label": "+(min-max)% Lightning Resistance",
+                "minValue": 19,
+                "maxValue": 27,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_basic_suffix_erosion_resistance",
+        "name": "Erosion Resistance",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "erosion_resistance",
+                "label": "+(min-max)% Erosion Resistance",
+                "minValue": 36,
+                "maxValue": 46,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "erosion_resistance",
+                "label": "+(min-max)% Erosion Resistance",
+                "minValue": 25,
+                "maxValue": 35,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "erosion_resistance",
+                "label": "+(min-max)% Erosion Resistance",
+                "minValue": 19,
+                "maxValue": 27,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_basic_suffix_projectile_speed",
+        "name": "Projectile Speed",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "projectile_speed",
+                "label": "+(min-max)% Projectile Speed",
+                "minValue": 60,
+                "maxValue": 76,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "projectile_speed",
+                "label": "+(min-max)% Projectile Speed",
+                "minValue": 46,
+                "maxValue": 59,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "projectile_speed",
+                "label": "+(min-max)% Projectile Speed",
+                "minValue": 33,
+                "maxValue": 45,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "ADVANCED_SUFFIXES": [
+      {
+        "id": "crafted_necklace_advanced_suffix_critical_strike_damage",
+        "name": "Critical Strike Damage",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "critical_strike_damage",
+                "label": "+(min-max)% Critical Strike Damage",
+                "minValue": 95,
+                "maxValue": 122,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "critical_strike_damage",
+                "label": "+(min-max)% Critical Strike Damage",
+                "minValue": 73,
+                "maxValue": 94,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "critical_strike_damage",
+                "label": "+(min-max)% Critical Strike Damage",
+                "minValue": 51,
+                "maxValue": 72,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_advanced_suffix_attack_and_cast_speed",
+        "name": "Attack and Cast Speed",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "attack_and_cast_speed",
+                "label": "+(min-max)% Attack and Cast Speed",
+                "minValue": 16,
+                "maxValue": 19,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "attack_and_cast_speed",
+                "label": "+(min-max)% Attack and Cast Speed",
+                "minValue": 12,
+                "maxValue": 15,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "attack_and_cast_speed",
+                "label": "+(min-max)% Attack and Cast Speed",
+                "minValue": 9,
+                "maxValue": 11,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_advanced_suffix_terra_skill_chance",
+        "name": "Terra Skill Chance",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": []
+          },
+          {
+            "tier": "T0",
+            "stats": []
+          },
+          {
+            "tier": "T1",
+            "stats": []
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_advanced_suffix_elemental_resistance",
+        "name": "Elemental Resistance",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "elemental_resistance",
+                "label": "+(min-max)% Elemental Resistance",
+                "minValue": 14,
+                "maxValue": 17,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "elemental_resistance",
+                "label": "+(min-max)% Elemental Resistance",
+                "minValue": 11,
+                "maxValue": 13,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "elemental_resistance",
+                "label": "+(min-max)% Elemental Resistance",
+                "minValue": 8,
+                "maxValue": 10,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_advanced_suffix_blessing_duration",
+        "name": "Blessing Duration",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "blessing_duration",
+                "label": "+(min-max)% Blessing Duration",
+                "minValue": 24,
+                "maxValue": 30,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "blessing_duration",
+                "label": "+(min-max)% Blessing Duration",
+                "minValue": 19,
+                "maxValue": 23,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "blessing_duration",
+                "label": "+(min-max)% Blessing Duration",
+                "minValue": 14,
+                "maxValue": 18,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_advanced_suffix_all_stats",
+        "name": "All Stats",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "all_stats",
+                "label": "+(min-max)% All Stats",
+                "minValue": 14,
+                "maxValue": 17,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "all_stats",
+                "label": "+(min-max)% All Stats",
+                "minValue": 11,
+                "maxValue": 13,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "all_stats",
+                "label": "+(min-max)% All Stats",
+                "minValue": 8,
+                "maxValue": 10,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_advanced_suffix_barrier_gain",
+        "name": "Barrier Gain",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": []
+          },
+          {
+            "tier": "T0",
+            "stats": []
+          },
+          {
+            "tier": "T1",
+            "stats": []
+          }
+        ]
+      }
+    ],
+    "ULTIMATE_SUFFIXES": [
+      {
+        "id": "crafted_necklace_ultimate_suffix_damage_per_blessing_stack",
+        "name": "Damage per Blessing Stack",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "damage_per_blessing_stack",
+                "label": "+(min-max)% Damage per Blessing Stack",
+                "minValue": 9,
+                "maxValue": 10,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "damage_per_blessing_stack",
+                "label": "+(min-max)% Damage per Blessing Stack",
+                "minValue": 7,
+                "maxValue": 8,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "damage_per_blessing_stack",
+                "label": "+(min-max)% Damage per Blessing Stack",
+                "minValue": 5,
+                "maxValue": 6,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_ultimate_suffix_sealed_mana_compensation",
+        "name": "Sealed Mana Compensation",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "sealed_mana_compensation",
+                "label": "+(min-max)% Sealed Mana Compensation",
+                "minValue": 27,
+                "maxValue": 34,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "sealed_mana_compensation",
+                "label": "+(min-max)% Sealed Mana Compensation",
+                "minValue": 21,
+                "maxValue": 26,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "sealed_mana_compensation",
+                "label": "+(min-max)% Sealed Mana Compensation",
+                "minValue": 15,
+                "maxValue": 20,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_ultimate_suffix_aura_effect",
+        "name": "Aura Effect",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "aura_effect",
+                "label": "+(min-max)% Aura Effect",
+                "minValue": 27,
+                "maxValue": 34,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "aura_effect",
+                "label": "+(min-max)% Aura Effect",
+                "minValue": 21,
+                "maxValue": 26,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "aura_effect",
+                "label": "+(min-max)% Aura Effect",
+                "minValue": 15,
+                "maxValue": 20,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_ultimate_suffix_damage_per_stats",
+        "name": "Damage per Stats",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "damage_per_stats_threshold",
+                "label": "+1% Damage per min Stats",
+                "minValue": 6,
+                "maxValue": 6,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "damage_per_stats_threshold",
+                "label": "+1% Damage per min Stats",
+                "minValue": 8,
+                "maxValue": 8,
+                "unit": "FLAT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "damage_per_stats_threshold",
+                "label": "+1% Damage per min Stats",
+                "minValue": 12,
+                "maxValue": 12,
+                "unit": "FLAT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "crafted_necklace_ultimate_suffix_deterioration_duration",
+        "name": "Deterioration Duration",
+        "tiers": [
+          {
+            "tier": "T0_PLUS",
+            "stats": [
+              {
+                "statId": "deterioration_duration",
+                "label": "+(min-max)% Deterioration Duration",
+                "minValue": 43,
+                "maxValue": 54,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T0",
+            "stats": [
+              {
+                "statId": "deterioration_duration",
+                "label": "+(min-max)% Deterioration Duration",
+                "minValue": 33,
+                "maxValue": 42,
+                "unit": "PERCENT"
+              }
+            ]
+          },
+          {
+            "tier": "T1",
+            "stats": [
+              {
+                "statId": "deterioration_duration",
+                "label": "+(min-max)% Deterioration Duration",
+                "minValue": 23,
+                "maxValue": 32,
+                "unit": "PERCENT"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
