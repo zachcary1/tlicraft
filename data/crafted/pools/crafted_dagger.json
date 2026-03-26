@@ -1,0 +1,450 @@
+{
+  "id": "crafted_dagger",
+  "name": "Crafted Dagger",
+  "baseItemCategoryId": "one_hand_weapon",
+  "weaponTypeId": "dagger",
+  "attributeType": null,
+  "isPriceless": true,
+  "groups": {
+    "BASE_AFFIXES": [
+      { "id": "crafted_dagger_base_physical_damage_to_attacks", "name": "Adds (min-max)-(min-max) Physical Damage to Attacks", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_physical_damage_to_attacks_min", "label": "Adds (min-max) min Physical Damage to Attacks", "minValue": 10, "maxValue": 13, "unit": "FLAT" }, { "statId": "added_physical_damage_to_attacks_max", "label": "Adds (min-max) max Physical Damage to Attacks", "minValue": 14, "maxValue": 19, "unit": "FLAT" }] }] },
+      { "id": "crafted_dagger_base_fire_damage_to_attacks", "name": "Adds (min-max)-(min-max) Fire Damage to Attacks", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_fire_damage_to_attacks_min", "label": "Adds (min-max) min Fire Damage to Attacks", "minValue": 9, "maxValue": 14, "unit": "FLAT" }, { "statId": "added_fire_damage_to_attacks_max", "label": "Adds (min-max) max Fire Damage to Attacks", "minValue": 15, "maxValue": 20, "unit": "FLAT" }] }] },
+      { "id": "crafted_dagger_base_cold_damage_to_attacks", "name": "Adds (min-max)-(min-max) Cold Damage to Attacks", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_cold_damage_to_attacks_min", "label": "Adds (min-max) min Cold Damage to Attacks", "minValue": 10, "maxValue": 13, "unit": "FLAT" }, { "statId": "added_cold_damage_to_attacks_max", "label": "Adds (min-max) max Cold Damage to Attacks", "minValue": 14, "maxValue": 19, "unit": "FLAT" }] }] },
+      { "id": "crafted_dagger_base_lightning_damage_to_attacks", "name": "Adds (min-max)-(min-max) Lightning Damage to Attacks", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_lightning_damage_to_attacks_min", "label": "Adds (min-max) min Lightning Damage to Attacks", "minValue": 1, "maxValue": 2, "unit": "FLAT" }, { "statId": "added_lightning_damage_to_attacks_max", "label": "Adds (min-max) max Lightning Damage to Attacks", "minValue": 28, "maxValue": 32, "unit": "FLAT" }] }] },
+      { "id": "crafted_dagger_base_erosion_damage_to_attacks", "name": "Adds (min-max)-(min-max) Erosion Damage to Attacks", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_erosion_damage_to_attacks_min", "label": "Adds (min-max) min Erosion Damage to Attacks", "minValue": 11, "maxValue": 13, "unit": "FLAT" }, { "statId": "added_erosion_damage_to_attacks_max", "label": "Adds (min-max) max Erosion Damage to Attacks", "minValue": 15, "maxValue": 18, "unit": "FLAT" }] }] },
+      { "id": "crafted_dagger_base_physical_damage", "name": "+(min-max)% Physical Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "physical_damage", "label": "+(min-max)% Physical Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_base_elemental_damage", "name": "+(min-max)% Elemental Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "elemental_damage", "label": "+(min-max)% Elemental Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_base_erosion_damage", "name": "+(min-max)% Erosion Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "erosion_damage", "label": "+(min-max)% Erosion Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_base_melee_damage", "name": "+(min-max)% Melee Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "melee_damage", "label": "+(min-max)% Melee Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_base_attack_speed", "name": "+(min-max)% Attack Speed", "tiers": [{ "tier": "T2", "stats": [{ "statId": "attack_speed", "label": "+(min-max)% Attack Speed", "minValue": 6, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_base_shadow_quantity", "name": "Shadow Quantity +1", "tiers": [{ "tier": "T1", "stats": [{ "statId": "shadow_quantity", "label": "Shadow Quantity +(min-max)", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }] },
+      { "id": "crafted_dagger_base_additional_attack_damage", "name": "+(min-max)% additional Attack Damage", "tiers": [{ "tier": "T1", "stats": [{ "statId": "additional_attack_damage", "label": "+(min-max)% additional Attack Damage", "minValue": 6, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_base_elemental_erosion_resistance_penetration", "name": "+(min-max)% Elemental and Erosion Resistance Penetration", "tiers": [{ "tier": "T1", "stats": [{ "statId": "elemental_and_erosion_resistance_penetration", "label": "+(min-max)% Elemental and Erosion Resistance Penetration", "minValue": 6, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_base_armor_dmg_mitigation_penetration", "name": "+(min-max)% Armor DMG Mitigation Penetration", "tiers": [{ "tier": "T1", "stats": [{ "statId": "armor_dmg_mitigation_penetration", "label": "+(min-max)% Armor DMG Mitigation Penetration", "minValue": 5, "maxValue": 7, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_base_max_tenacity_blessing_stacks", "name": "+1 to Max Tenacity Blessing Stacks", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_tenacity_blessing_stacks", "label": "+(min-max) to Max Tenacity Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }] },
+      { "id": "crafted_dagger_base_max_agility_blessing_stacks", "name": "+1 to Max Agility Blessing Stacks", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_agility_blessing_stacks", "label": "+(min-max) to Max Agility Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }] },
+      { "id": "crafted_dagger_base_max_focus_blessing_stacks", "name": "+1 to Max Focus Blessing Stacks", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_focus_blessing_stacks", "label": "+(min-max) to Max Focus Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }] }
+    ],
+    "CORROSION_BASE_AFFIXES": [
+      { "id": "crafted_dagger_corrosion_base_focus_blessing_on_defeat", "name": "+(min-max)% chance to gain 1 stack of Focus Blessing on defeat", "tiers": [{ "tier": "T0", "stats": [{ "statId": "focus_blessing_on_defeat", "label": "+(min-max)% chance to gain 1 stack of Focus Blessing on defeat", "minValue": 4, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_corrosion_base_affliction_per_second", "name": "+(min-max) Affliction inflicted per second", "tiers": [{ "tier": "T0", "stats": [{ "statId": "affliction_per_second", "label": "+(min-max) Affliction inflicted per second", "minValue": 5, "maxValue": 10, "unit": "FLAT" }] }] },
+      { "id": "crafted_dagger_corrosion_base_physical_damage_to_gear", "name": "Adds (min-max)-(min-max) Physical Damage to the gear", "tiers": [{ "tier": "T0", "stats": [{ "statId": "added_physical_damage_to_gear_min", "label": "Adds (min-max) min Physical Damage to the gear", "minValue": 2, "maxValue": 4, "unit": "FLAT" }, { "statId": "added_physical_damage_to_gear_max", "label": "Adds (min-max) max Physical Damage to the gear", "minValue": 8, "maxValue": 10, "unit": "FLAT" }] }] },
+      { "id": "crafted_dagger_corrosion_base_gear_physical_damage", "name": "+(min-max)% Gear Physical Damage", "tiers": [{ "tier": "T0", "stats": [{ "statId": "gear_physical_damage", "label": "+(min-max)% Gear Physical Damage", "minValue": 15, "maxValue": 25, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_corrosion_base_gear_attack_speed", "name": "+(min-max)% gear Attack Speed", "tiers": [{ "tier": "T0", "stats": [{ "statId": "gear_attack_speed", "label": "+(min-max)% gear Attack Speed", "minValue": 5, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_corrosion_base_attack_critical_strike_rating", "name": "+(min-max)% Attack Critical Strike Rating for this gear", "tiers": [{ "tier": "T0", "stats": [{ "statId": "gear_attack_critical_strike_rating", "label": "+(min-max)% Attack Critical Strike Rating for this gear", "minValue": 3, "maxValue": 6, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_corrosion_base_wilt_stacks_chance", "name": "(min-max)% chance to inflict 1 additional stack(s) of Wilt", "tiers": [{ "tier": "T0", "stats": [{ "statId": "wilt_stacks_chance", "label": "(min-max)% chance to inflict 1 additional stack(s) of Wilt", "minValue": 5, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_corrosion_base_elemental_damage", "name": "+(min-max)% Elemental Damage", "tiers": [{ "tier": "T0", "stats": [{ "statId": "elemental_damage", "label": "+(min-max)% Elemental Damage", "minValue": 25, "maxValue": 30, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_corrosion_base_wilted_enemy_explosion", "name": "Wilted enemies defeated by you will explode, dealing True Damage equal to (min-max)% of their Max Life", "tiers": [{ "tier": "T0", "stats": [{ "statId": "wilted_enemy_explosion_true_damage_percent", "label": "Wilted enemies defeated by you will explode, dealing True Damage equal to (min-max)% of their Max Life", "minValue": 50, "maxValue": 100, "unit": "PERCENT" }] }] }
+    ],
+    "SWEET_DREAM_AFFIXES": [
+      { "id": "crafted_dagger_sweet_dream_physical_damage_to_attacks", "name": "Adds (min-max)-(min-max) Physical Damage to Attacks", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_physical_damage_to_attacks_min", "label": "Adds (min-max) min Physical Damage to Attacks", "minValue": 10, "maxValue": 13, "unit": "FLAT" }, { "statId": "added_physical_damage_to_attacks_max", "label": "Adds (min-max) max Physical Damage to Attacks", "minValue": 14, "maxValue": 19, "unit": "FLAT" }] }] },
+      { "id": "crafted_dagger_sweet_dream_fire_damage_to_attacks", "name": "Adds (min-max)-(min-max) Fire Damage to Attacks", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_fire_damage_to_attacks_min", "label": "Adds (min-max) min Fire Damage to Attacks", "minValue": 9, "maxValue": 14, "unit": "FLAT" }, { "statId": "added_fire_damage_to_attacks_max", "label": "Adds (min-max) max Fire Damage to Attacks", "minValue": 15, "maxValue": 20, "unit": "FLAT" }] }] },
+      { "id": "crafted_dagger_sweet_dream_cold_damage_to_attacks", "name": "Adds (min-max)-(min-max) Cold Damage to Attacks", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_cold_damage_to_attacks_min", "label": "Adds (min-max) min Cold Damage to Attacks", "minValue": 10, "maxValue": 13, "unit": "FLAT" }, { "statId": "added_cold_damage_to_attacks_max", "label": "Adds (min-max) max Cold Damage to Attacks", "minValue": 14, "maxValue": 19, "unit": "FLAT" }] }] },
+      { "id": "crafted_dagger_sweet_dream_lightning_damage_to_attacks", "name": "Adds (min-max)-(min-max) Lightning Damage to Attacks", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_lightning_damage_to_attacks_min", "label": "Adds (min-max) min Lightning Damage to Attacks", "minValue": 1, "maxValue": 2, "unit": "FLAT" }, { "statId": "added_lightning_damage_to_attacks_max", "label": "Adds (min-max) max Lightning Damage to Attacks", "minValue": 28, "maxValue": 32, "unit": "FLAT" }] }] },
+      { "id": "crafted_dagger_sweet_dream_erosion_damage_to_attacks", "name": "Adds (min-max)-(min-max) Erosion Damage to Attacks", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_erosion_damage_to_attacks_min", "label": "Adds (min-max) min Erosion Damage to Attacks", "minValue": 11, "maxValue": 13, "unit": "FLAT" }, { "statId": "added_erosion_damage_to_attacks_max", "label": "Adds (min-max) max Erosion Damage to Attacks", "minValue": 15, "maxValue": 18, "unit": "FLAT" }] }] },
+      { "id": "crafted_dagger_sweet_dream_physical_damage", "name": "+(min-max)% Physical Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "physical_damage", "label": "+(min-max)% Physical Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_sweet_dream_elemental_damage", "name": "+(min-max)% Elemental Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "elemental_damage", "label": "+(min-max)% Elemental Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_sweet_dream_erosion_damage", "name": "+(min-max)% Erosion Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "erosion_damage", "label": "+(min-max)% Erosion Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_sweet_dream_melee_damage", "name": "+(min-max)% Melee Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "melee_damage", "label": "+(min-max)% Melee Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_sweet_dream_attack_speed", "name": "+(min-max)% Attack Speed", "tiers": [{ "tier": "T2", "stats": [{ "statId": "attack_speed", "label": "+(min-max)% Attack Speed", "minValue": 6, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_sweet_dream_shadow_quantity", "name": "Shadow Quantity +1", "tiers": [{ "tier": "T1", "stats": [{ "statId": "shadow_quantity", "label": "Shadow Quantity +(min-max)", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }] },
+      { "id": "crafted_dagger_sweet_dream_additional_attack_damage", "name": "+(min-max)% additional Attack Damage", "tiers": [{ "tier": "T1", "stats": [{ "statId": "additional_attack_damage", "label": "+(min-max)% additional Attack Damage", "minValue": 6, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_sweet_dream_elemental_erosion_resistance_penetration", "name": "+(min-max)% Elemental and Erosion Resistance Penetration", "tiers": [{ "tier": "T1", "stats": [{ "statId": "elemental_and_erosion_resistance_penetration", "label": "+(min-max)% Elemental and Erosion Resistance Penetration", "minValue": 6, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_sweet_dream_armor_dmg_mitigation_penetration", "name": "+(min-max)% Armor DMG Mitigation Penetration", "tiers": [{ "tier": "T1", "stats": [{ "statId": "armor_dmg_mitigation_penetration", "label": "+(min-max)% Armor DMG Mitigation Penetration", "minValue": 5, "maxValue": 7, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_sweet_dream_max_tenacity_blessing_stacks", "name": "+1 to Max Tenacity Blessing Stacks", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_tenacity_blessing_stacks", "label": "+(min-max) to Max Tenacity Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }] },
+      { "id": "crafted_dagger_sweet_dream_max_agility_blessing_stacks", "name": "+1 to Max Agility Blessing Stacks", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_agility_blessing_stacks", "label": "+(min-max) to Max Agility Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }] },
+      { "id": "crafted_dagger_sweet_dream_max_focus_blessing_stacks", "name": "+1 to Max Focus Blessing Stacks", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_focus_blessing_stacks", "label": "+(min-max) to Max Focus Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }] }
+    ],
+    "NIGHTMARE_AFFIXES": [
+      { "id": "crafted_dagger_nightmare_damage", "name": "Damage", "tiers": [{ "tier": "T1", "stats": [{ "statId": "damage", "label": "+(min-max)% Damage", "minValue": 49, "maxValue": 72, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_nightmare_attack_and_cast_speed", "name": "Attack and Cast Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "attack_and_cast_speed", "label": "+(min-max)% Attack and Cast Speed", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_nightmare_minion_damage", "name": "Minion Damage", "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_damage", "label": "+(min-max)% Minion Damage", "minValue": 49, "maxValue": 72, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_nightmare_minion_attack_and_cast_speed", "name": "Minion Attack and Cast Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_attack_and_cast_speed", "label": "+(min-max)% Minion Attack and Cast Speed", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_nightmare_attack_and_spell_critical_strike_rating", "name": "Attack and Spell Critical Strike Rating", "tiers": [{ "tier": "T1", "stats": [{ "statId": "attack_and_spell_critical_strike_rating", "label": "+(min-max) Attack and Spell Critical Strike Rating", "minValue": 77, "maxValue": 100, "unit": "FLAT" }] }] },
+      { "id": "crafted_dagger_nightmare_skill_area", "name": "Skill Area", "tiers": [{ "tier": "T1", "stats": [{ "statId": "skill_area", "label": "+(min-max)% Skill Area", "minValue": 18, "maxValue": 21, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_nightmare_minion_critical_strike_rating", "name": "Minion Critical Strike Rating", "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_critical_strike_rating", "label": "+(min-max) Minion Critical Strike Rating", "minValue": 77, "maxValue": 100, "unit": "FLAT" }] }] },
+      { "id": "crafted_dagger_nightmare_minion_skill_area", "name": "Minion Skill Area", "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_skill_area", "label": "+(min-max)% Minion Skill Area", "minValue": 18, "maxValue": 21, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_nightmare_max_life", "name": "Max Life", "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 100, "maxValue": 150, "unit": "FLAT" }] }] },
+      { "id": "crafted_dagger_nightmare_max_energy_shield", "name": "Max Energy Shield", "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_energy_shield", "label": "+(min-max) Max Energy Shield", "minValue": 320, "maxValue": 400, "unit": "FLAT" }] }] },
+      { "id": "crafted_dagger_nightmare_cold_resistance", "name": "Cold Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "cold_resistance", "label": "+(min-max)% Cold Resistance", "minValue": 21, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_nightmare_erosion_resistance", "name": "Erosion Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "erosion_resistance", "label": "+(min-max)% Erosion Resistance", "minValue": 21, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_nightmare_max_mana", "name": "Max Mana", "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_mana", "label": "+(min-max) Max Mana", "minValue": 96, "maxValue": 120, "unit": "FLAT" }] }] },
+      { "id": "crafted_dagger_nightmare_fire_resistance", "name": "Fire Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "fire_resistance", "label": "+(min-max)% Fire Resistance", "minValue": 21, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_nightmare_lightning_resistance", "name": "Lightning Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "lightning_resistance", "label": "+(min-max)% Lightning Resistance", "minValue": 21, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_nightmare_elemental_resistance", "name": "Elemental Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "elemental_resistance", "label": "+(min-max)% Elemental Resistance", "minValue": 9, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_nightmare_strength", "name": "Strength", "tiers": [{ "tier": "T1", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 51, "maxValue": 60, "unit": "FLAT" }] }] },
+      { "id": "crafted_dagger_nightmare_intelligence", "name": "Intelligence", "tiers": [{ "tier": "T1", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 51, "maxValue": 60, "unit": "FLAT" }] }] },
+      { "id": "crafted_dagger_nightmare_movement_speed", "name": "Movement Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "movement_speed", "label": "+(min-max)% Movement Speed", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_nightmare_skill_effect_duration", "name": "Skill Effect Duration", "tiers": [{ "tier": "T1", "stats": [{ "statId": "skill_effect_duration", "label": "+(min-max)% Skill Effect Duration", "minValue": 14, "maxValue": 20, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_nightmare_dexterity", "name": "Dexterity", "tiers": [{ "tier": "T1", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 51, "maxValue": 60, "unit": "FLAT" }] }] },
+      { "id": "crafted_dagger_nightmare_aura_effect", "name": "Aura Effect", "tiers": [{ "tier": "T1", "stats": [{ "statId": "aura_effect", "label": "+(min-max)% Aura Effect", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_nightmare_cooldown_recovery_speed", "name": "Cooldown Recovery Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "cooldown_recovery_speed", "label": "+(min-max)% Cooldown Recovery Speed", "minValue": 13, "maxValue": 15, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_nightmare_max_tenacity_blessing_stacks", "name": "Max Tenacity Blessing Stacks", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_dagger_nightmare_max_focus_blessing_stacks", "name": "Max Focus Blessing Stacks", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_dagger_nightmare_fervor_effect", "name": "Fervor Effect", "tiers": [{ "tier": "T1", "stats": [{ "statId": "fervor_effect", "label": "+(min-max)% Fervor Effect", "minValue": 15, "maxValue": 20, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_nightmare_projectile_quantity", "name": "Projectile Quantity", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_dagger_nightmare_max_agility_blessing_stacks", "name": "Max Agility Blessing Stacks", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_dagger_nightmare_sealed_mana_compensation", "name": "Sealed Mana Compensation", "tiers": [{ "tier": "T1", "stats": [{ "statId": "sealed_mana_compensation", "label": "+(min-max)% Sealed Mana Compensation", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_dagger_nightmare_max_elemental_resistance", "name": "Max Elemental Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_elemental_resistance", "label": "+(min-max)% Max Elemental Resistance", "minValue": 1, "maxValue": 2, "unit": "PERCENT" }] }] }
+    ],
+    "INTERMEDIATE_SEQUENCES": [
+      { "id": "crafted_dagger_intermediate_sequence_additional_damage_main_hand", "name": "+8% additional damage for Main-Hand Weapons", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_dagger_intermediate_sequence_armor_dmg_mitigation_penetration", "name": "+6% Armor DMG Mitigation Penetration", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_dagger_intermediate_sequence_fire_penetration", "name": "+8% Fire Penetration", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_dagger_intermediate_sequence_cold_penetration", "name": "+8% Cold Penetration", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_dagger_intermediate_sequence_lightning_penetration", "name": "+8% Lightning Penetration", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_dagger_intermediate_sequence_erosion_resistance_penetration", "name": "+8% Erosion Resistance Penetration", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_dagger_intermediate_sequence_gear_attack_speed", "name": "+8% gear Attack Speed", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_dagger_intermediate_sequence_gear_attack_critical_strike_rating", "name": "+20% Attack Critical Strike Rating for this gear", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_dagger_intermediate_sequence_additional_damage_on_critical_strike", "name": "+10% additional damage on Critical Strike", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_dagger_intermediate_sequence_all_stats", "name": "+10% all stats", "tiers": [{ "tier": "T1", "stats": [] }] }
+    ],
+    "ADVANCED_SEQUENCES": [
+      { "id": "crafted_dagger_advanced_sequence_enemy_explosion", "name": "Enemies have a 15% chance to explode when defeated by an Attack or Spell, dealing True Damage equal to 250% of their Max Life", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_dagger_advanced_sequence_lightning_damage_per_dexterity", "name": "Adds 1 - 3 Lightning Damage to Attacks per 10 Dexterity", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_dagger_advanced_sequence_fire_damage_per_strength", "name": "Adds 2 - 2 Fire Damage to Attacks per 10 Strength", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_dagger_advanced_sequence_steamroll_support", "name": "Main Skill is supported by Lv. 25 Steamroll", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_dagger_advanced_sequence_physical_damage_per_armor", "name": "Adds 1 - 1 Physical Damage to Attacks per 2260 Armor", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_dagger_advanced_sequence_fearless_aura", "name": "+120% Fearless Aura -20% additional Fearless Sealed Mana Compensation", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_dagger_advanced_sequence_gear_physical_damage", "name": "+80% Gear Physical Damage -20% Attack Critical Strike Rating for this gear", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_dagger_advanced_sequence_deterioration_damage", "name": "+15% additional Deterioration Damage, 10% chance to inflict 1 additional stack(s) of Deterioration", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_dagger_advanced_sequence_elemental_vs_physical", "name": "+25% Gear Elemental Damage -25% Gear Physical Damage", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_dagger_advanced_sequence_gear_physical_damage_bonus", "name": "+(120-140)% Gear Physical Damage", "tiers": [{ "tier": "T0", "stats": [] }] }
+    ],
+    "BASIC_PREFIXES": [
+      {
+        "id": "crafted_dagger_basic_prefix_physical_damage_to_gear",
+        "name": "Adds (min-max)-(min-max) Physical Damage to the gear",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "added_physical_damage_to_gear_min", "label": "Adds (min-max) min Physical Damage to the gear", "minValue": 61, "maxValue": 63, "unit": "FLAT" }, { "statId": "added_physical_damage_to_gear_max", "label": "Adds (min-max) max Physical Damage to the gear", "minValue": 75, "maxValue": 77, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "added_physical_damage_to_gear_min", "label": "Adds (min-max) min Physical Damage to the gear", "minValue": 47, "maxValue": 49, "unit": "FLAT" }, { "statId": "added_physical_damage_to_gear_max", "label": "Adds (min-max) max Physical Damage to the gear", "minValue": 57, "maxValue": 59, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "added_physical_damage_to_gear_min", "label": "Adds (min-max) min Physical Damage to the gear", "minValue": 36, "maxValue": 38, "unit": "FLAT" }, { "statId": "added_physical_damage_to_gear_max", "label": "Adds (min-max) max Physical Damage to the gear", "minValue": 44, "maxValue": 46, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dagger_basic_prefix_fire_damage_to_gear",
+        "name": "Adds (min-max)-(min-max) Fire Damage to the gear",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "added_fire_damage_to_gear_min", "label": "Adds (min-max) min Fire Damage to the gear", "minValue": 209, "maxValue": 211, "unit": "FLAT" }, { "statId": "added_fire_damage_to_gear_max", "label": "Adds (min-max) max Fire Damage to the gear", "minValue": 271, "maxValue": 285, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "added_fire_damage_to_gear_min", "label": "Adds (min-max) min Fire Damage to the gear", "minValue": 161, "maxValue": 163, "unit": "FLAT" }, { "statId": "added_fire_damage_to_gear_max", "label": "Adds (min-max) max Fire Damage to the gear", "minValue": 208, "maxValue": 220, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "added_fire_damage_to_gear_min", "label": "Adds (min-max) min Fire Damage to the gear", "minValue": 123, "maxValue": 125, "unit": "FLAT" }, { "statId": "added_fire_damage_to_gear_max", "label": "Adds (min-max) max Fire Damage to the gear", "minValue": 160, "maxValue": 169, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dagger_basic_prefix_cold_damage_to_gear",
+        "name": "Adds (min-max)-(min-max) Cold Damage to the gear",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "added_cold_damage_to_gear_min", "label": "Adds (min-max) min Cold Damage to the gear", "minValue": 209, "maxValue": 211, "unit": "FLAT" }, { "statId": "added_cold_damage_to_gear_max", "label": "Adds (min-max) max Cold Damage to the gear", "minValue": 271, "maxValue": 285, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "added_cold_damage_to_gear_min", "label": "Adds (min-max) min Cold Damage to the gear", "minValue": 162, "maxValue": 164, "unit": "FLAT" }, { "statId": "added_cold_damage_to_gear_max", "label": "Adds (min-max) max Cold Damage to the gear", "minValue": 216, "maxValue": 218, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "added_cold_damage_to_gear_min", "label": "Adds (min-max) min Cold Damage to the gear", "minValue": 125, "maxValue": 127, "unit": "FLAT" }, { "statId": "added_cold_damage_to_gear_max", "label": "Adds (min-max) max Cold Damage to the gear", "minValue": 165, "maxValue": 167, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dagger_basic_prefix_lightning_damage_to_gear",
+        "name": "Adds (min-max)-(min-max) Lightning Damage to the gear",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "added_lightning_damage_to_gear_min", "label": "Adds (min-max) min Lightning Damage to the gear", "minValue": 24, "maxValue": 26, "unit": "FLAT" }, { "statId": "added_lightning_damage_to_gear_max", "label": "Adds (min-max) max Lightning Damage to the gear", "minValue": 468, "maxValue": 470, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "added_lightning_damage_to_gear_min", "label": "Adds (min-max) min Lightning Damage to the gear", "minValue": 18, "maxValue": 20, "unit": "FLAT" }, { "statId": "added_lightning_damage_to_gear_max", "label": "Adds (min-max) max Lightning Damage to the gear", "minValue": 360, "maxValue": 362, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "added_lightning_damage_to_gear_min", "label": "Adds (min-max) min Lightning Damage to the gear", "minValue": 14, "maxValue": 16, "unit": "FLAT" }, { "statId": "added_lightning_damage_to_gear_max", "label": "Adds (min-max) max Lightning Damage to the gear", "minValue": 276, "maxValue": 278, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dagger_basic_prefix_erosion_damage_to_gear",
+        "name": "Adds (min-max)-(min-max) Erosion Damage to the gear",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "added_erosion_damage_to_gear_min", "label": "Adds (min-max) min Erosion Damage to the gear", "minValue": 226, "maxValue": 228, "unit": "FLAT" }, { "statId": "added_erosion_damage_to_gear_max", "label": "Adds (min-max) max Erosion Damage to the gear", "minValue": 266, "maxValue": 268, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "added_erosion_damage_to_gear_min", "label": "Adds (min-max) min Erosion Damage to the gear", "minValue": 174, "maxValue": 176, "unit": "FLAT" }, { "statId": "added_erosion_damage_to_gear_max", "label": "Adds (min-max) max Erosion Damage to the gear", "minValue": 204, "maxValue": 206, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "added_erosion_damage_to_gear_min", "label": "Adds (min-max) min Erosion Damage to the gear", "minValue": 133, "maxValue": 135, "unit": "FLAT" }, { "statId": "added_erosion_damage_to_gear_max", "label": "Adds (min-max) max Erosion Damage to the gear", "minValue": 157, "maxValue": 159, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dagger_basic_prefix_melee_damage",
+        "name": "+(min-max)% Melee Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "melee_damage", "label": "+(min-max)% Melee Damage", "minValue": 141, "maxValue": 183, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "melee_damage", "label": "+(min-max)% Melee Damage", "minValue": 109, "maxValue": 140, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "melee_damage", "label": "+(min-max)% Melee Damage", "minValue": 77, "maxValue": 108, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dagger_basic_prefix_base_wilt_damage",
+        "name": "Adds (min-max) Base Wilt Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "base_wilt_damage", "label": "Adds (min-max) Base Wilt Damage", "minValue": 95, "maxValue": 115, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "base_wilt_damage", "label": "Adds (min-max) Base Wilt Damage", "minValue": 72, "maxValue": 88, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "base_wilt_damage", "label": "Adds (min-max) Base Wilt Damage", "minValue": 56, "maxValue": 67, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dagger_basic_prefix_wilt_reap",
+        "name": "Reaps (min-max) s of Wilt Damage when dealing Damage Over Time",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "wilt_reap_duration", "label": "Reaps (min-max) s of Wilt Damage when dealing Damage Over Time", "minValue": 0.25, "maxValue": 0.30, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "wilt_reap_duration", "label": "Reaps (min-max) s of Wilt Damage when dealing Damage Over Time", "minValue": 0.19, "maxValue": 0.24, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "wilt_reap_duration", "label": "Reaps (min-max) s of Wilt Damage when dealing Damage Over Time", "minValue": 0.13, "maxValue": 0.18, "unit": "FLAT" }] }
+        ]
+      }
+    ],
+    "ADVANCED_PREFIXES": [
+      {
+        "id": "crafted_dagger_advanced_prefix_gear_physical_damage",
+        "name": "+(min-max)% Gear Physical Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "gear_physical_damage", "label": "+(min-max)% Gear Physical Damage", "minValue": 131, "maxValue": 169, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "gear_physical_damage", "label": "+(min-max)% Gear Physical Damage", "minValue": 101, "maxValue": 130, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "gear_physical_damage", "label": "+(min-max)% Gear Physical Damage", "minValue": 56, "maxValue": 100, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dagger_advanced_prefix_intelligence",
+        "name": "+(min-max) Intelligence",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 118, "maxValue": 152, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 91, "maxValue": 117, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 64, "maxValue": 90, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dagger_advanced_prefix_dexterity",
+        "name": "+(min-max) Dexterity",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 118, "maxValue": 152, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 91, "maxValue": 117, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 64, "maxValue": 90, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dagger_advanced_prefix_strength",
+        "name": "+(min-max) Strength",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 118, "maxValue": 152, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 91, "maxValue": 117, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 64, "maxValue": 90, "unit": "FLAT" }] }
+        ]
+      }
+    ],
+    "ULTIMATE_PREFIXES": [
+      {
+        "id": "crafted_dagger_ultimate_prefix_armor_dmg_mitigation_penetration",
+        "name": "+(min-max)% Armor DMG Mitigation Penetration",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "armor_dmg_mitigation_penetration", "label": "+(min-max)% Armor DMG Mitigation Penetration", "minValue": 34, "maxValue": 42, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "armor_dmg_mitigation_penetration", "label": "+(min-max)% Armor DMG Mitigation Penetration", "minValue": 26, "maxValue": 32, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "armor_dmg_mitigation_penetration", "label": "+(min-max)% Armor DMG Mitigation Penetration", "minValue": 18, "maxValue": 25, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dagger_ultimate_prefix_elemental_erosion_resistance_penetration",
+        "name": "+(min-max)% Elemental and Erosion Resistance Penetration",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "elemental_and_erosion_resistance_penetration", "label": "+(min-max)% Elemental and Erosion Resistance Penetration", "minValue": 40, "maxValue": 51, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "elemental_and_erosion_resistance_penetration", "label": "+(min-max)% Elemental and Erosion Resistance Penetration", "minValue": 28, "maxValue": 39, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "elemental_and_erosion_resistance_penetration", "label": "+(min-max)% Elemental and Erosion Resistance Penetration", "minValue": 22, "maxValue": 30, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dagger_ultimate_prefix_multistrike_damage",
+        "name": "Multistrikes deal (min-max)% increasing damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "multistrike_increasing_damage", "label": "Multistrikes deal (min-max)% increasing damage", "minValue": 79, "maxValue": 101, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "multistrike_increasing_damage", "label": "Multistrikes deal (min-max)% increasing damage", "minValue": 61, "maxValue": 78, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "multistrike_increasing_damage", "label": "Multistrikes deal (min-max)% increasing damage", "minValue": 43, "maxValue": 60, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dagger_ultimate_prefix_attack_skill_level",
+        "name": "+(min-max) to Attack Skill Level",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "attack_skill_level", "label": "+(min-max) to Attack Skill Level", "minValue": 4, "maxValue": 5, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "attack_skill_level", "label": "+(min-max) to Attack Skill Level", "minValue": 3, "maxValue": 4, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "attack_skill_level", "label": "+(min-max) to Attack Skill Level", "minValue": 3, "maxValue": 3, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dagger_ultimate_prefix_elemental_damage_to_gear",
+        "name": "Adds (min-max)-(min-max) Elemental Damage to the gear -100% Gear Physical Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "added_elemental_damage_to_gear_min", "label": "Adds (min-max) min Elemental Damage to the gear", "minValue": 81, "maxValue": 83, "unit": "FLAT" }, { "statId": "added_elemental_damage_to_gear_max", "label": "Adds (min-max) max Elemental Damage to the gear", "minValue": 463, "maxValue": 465, "unit": "FLAT" }, { "statId": "gear_physical_damage_penalty", "label": "(min-max)% Gear Physical Damage", "minValue": -100, "maxValue": -100, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "added_elemental_damage_to_gear_min", "label": "Adds (min-max) min Elemental Damage to the gear", "minValue": 62, "maxValue": 64, "unit": "FLAT" }, { "statId": "added_elemental_damage_to_gear_max", "label": "Adds (min-max) max Elemental Damage to the gear", "minValue": 356, "maxValue": 358, "unit": "FLAT" }, { "statId": "gear_physical_damage_penalty", "label": "(min-max)% Gear Physical Damage", "minValue": -100, "maxValue": -100, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "added_elemental_damage_to_gear_min", "label": "Adds (min-max) min Elemental Damage to the gear", "minValue": 47, "maxValue": 49, "unit": "FLAT" }, { "statId": "added_elemental_damage_to_gear_max", "label": "Adds (min-max) max Elemental Damage to the gear", "minValue": 272, "maxValue": 274, "unit": "FLAT" }, { "statId": "gear_physical_damage_penalty", "label": "(min-max)% Gear Physical Damage", "minValue": -100, "maxValue": -100, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dagger_ultimate_prefix_additional_wilt_damage",
+        "name": "+(min-max)% additional Wilt Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "additional_wilt_damage", "label": "+(min-max)% additional Wilt Damage", "minValue": 40, "maxValue": 50, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "additional_wilt_damage", "label": "+(min-max)% additional Wilt Damage", "minValue": 31, "maxValue": 39, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "additional_wilt_damage", "label": "+(min-max)% additional Wilt Damage", "minValue": 22, "maxValue": 30, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dagger_ultimate_prefix_attack_and_spell_block_chance",
+        "name": "+(min-max)% Attack and Spell Block Chance",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "attack_and_spell_block_chance", "label": "+(min-max)% Attack and Spell Block Chance", "minValue": 30, "maxValue": 37, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "attack_and_spell_block_chance", "label": "+(min-max)% Attack and Spell Block Chance", "minValue": 23, "maxValue": 29, "unit": "PERCENT" }] }
+        ]
+      }
+    ],
+    "BASIC_SUFFIXES": [
+      {
+        "id": "crafted_dagger_basic_suffix_gear_attack_speed",
+        "name": "+(min-max)% Gear Attack Speed",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "gear_attack_speed", "label": "+(min-max)% Gear Attack Speed", "minValue": 43, "maxValue": 54, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "gear_attack_speed", "label": "+(min-max)% Gear Attack Speed", "minValue": 29, "maxValue": 41, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "gear_attack_speed", "label": "+(min-max)% Gear Attack Speed", "minValue": 23, "maxValue": 32, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dagger_basic_suffix_life_regain",
+        "name": "+(min-max)% Life Regain",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "life_regain", "label": "+(min-max)% Life Regain", "minValue": 24, "maxValue": 30, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "life_regain", "label": "+(min-max)% Life Regain", "minValue": 19, "maxValue": 23, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "life_regain", "label": "+(min-max)% Life Regain", "minValue": 14, "maxValue": 18, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dagger_basic_suffix_energy_shield_regain",
+        "name": "+(min-max)% Energy Shield Regain",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "energy_shield_regain", "label": "+(min-max)% Energy Shield Regain", "minValue": 24, "maxValue": 30, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "energy_shield_regain", "label": "+(min-max)% Energy Shield Regain", "minValue": 19, "maxValue": 23, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "energy_shield_regain", "label": "+(min-max)% Energy Shield Regain", "minValue": 14, "maxValue": 18, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dagger_basic_suffix_physical_damage",
+        "name": "+(min-max)% Physical Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "physical_damage", "label": "+(min-max)% Physical Damage", "minValue": 141, "maxValue": 183, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "physical_damage", "label": "+(min-max)% Physical Damage", "minValue": 109, "maxValue": 140, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "physical_damage", "label": "+(min-max)% Physical Damage", "minValue": 77, "maxValue": 108, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dagger_basic_suffix_elemental_damage",
+        "name": "+(min-max)% Elemental Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "elemental_damage", "label": "+(min-max)% Elemental Damage", "minValue": 141, "maxValue": 183, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "elemental_damage", "label": "+(min-max)% Elemental Damage", "minValue": 109, "maxValue": 140, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "elemental_damage", "label": "+(min-max)% Elemental Damage", "minValue": 77, "maxValue": 108, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dagger_basic_suffix_erosion_damage",
+        "name": "+(min-max)% Erosion Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "erosion_damage", "label": "+(min-max)% Erosion Damage", "minValue": 141, "maxValue": 183, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "erosion_damage", "label": "+(min-max)% Erosion Damage", "minValue": 109, "maxValue": 140, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "erosion_damage", "label": "+(min-max)% Erosion Damage", "minValue": 77, "maxValue": 108, "unit": "PERCENT" }] }
+        ]
+      }
+    ],
+    "ADVANCED_SUFFIXES": [
+      {
+        "id": "crafted_dagger_advanced_suffix_attack_critical_strike_rating",
+        "name": "+(min-max)% Attack Critical Strike Rating for this gear",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "gear_attack_critical_strike_rating", "label": "+(min-max)% Attack Critical Strike Rating for this gear", "minValue": 66, "maxValue": 85, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "gear_attack_critical_strike_rating", "label": "+(min-max)% Attack Critical Strike Rating for this gear", "minValue": 47, "maxValue": 64, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "gear_attack_critical_strike_rating", "label": "+(min-max)% Attack Critical Strike Rating for this gear", "minValue": 36, "maxValue": 50, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dagger_advanced_suffix_critical_strike_rating",
+        "name": "+(min-max)% Critical Strike Rating",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "critical_strike_rating", "label": "+(min-max)% Critical Strike Rating", "minValue": 235, "maxValue": 304, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "critical_strike_rating", "label": "+(min-max)% Critical Strike Rating", "minValue": 166, "maxValue": 234, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "critical_strike_rating", "label": "+(min-max)% Critical Strike Rating", "minValue": 128, "maxValue": 180, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dagger_advanced_suffix_attack_and_cast_speed",
+        "name": "+(min-max)% Attack and Cast Speed +(min-max)% Minion Attack and Cast Speed",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "attack_and_cast_speed", "label": "+(min-max)% Attack and Cast Speed", "minValue": 48, "maxValue": 61, "unit": "PERCENT" }, { "statId": "minion_attack_and_cast_speed", "label": "+(min-max)% Minion Attack and Cast Speed", "minValue": 48, "maxValue": 61, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "attack_and_cast_speed", "label": "+(min-max)% Attack and Cast Speed", "minValue": 33, "maxValue": 47, "unit": "PERCENT" }, { "statId": "minion_attack_and_cast_speed", "label": "+(min-max)% Minion Attack and Cast Speed", "minValue": 33, "maxValue": 47, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "attack_and_cast_speed", "label": "+(min-max)% Attack and Cast Speed", "minValue": 26, "maxValue": 36, "unit": "PERCENT" }, { "statId": "minion_attack_and_cast_speed", "label": "+(min-max)% Minion Attack and Cast Speed", "minValue": 26, "maxValue": 36, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dagger_advanced_suffix_critical_strike_damage",
+        "name": "+(min-max)% Critical Strike Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "critical_strike_damage", "label": "+(min-max)% Critical Strike Damage", "minValue": 118, "maxValue": 152, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "critical_strike_damage", "label": "+(min-max)% Critical Strike Damage", "minValue": 91, "maxValue": 117, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "critical_strike_damage", "label": "+(min-max)% Critical Strike Damage", "minValue": 64, "maxValue": 90, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dagger_advanced_suffix_affliction_effect",
+        "name": "+(min-max)% Affliction Effect",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "affliction_effect", "label": "+(min-max)% Affliction Effect", "minValue": 99, "maxValue": 127, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "affliction_effect", "label": "+(min-max)% Affliction Effect", "minValue": 76, "maxValue": 98, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "affliction_effect", "label": "+(min-max)% Affliction Effect", "minValue": 54, "maxValue": 75, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dagger_advanced_suffix_multistrike_chance",
+        "name": "+(min-max)% chance to Multistrike",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "multistrike_chance", "label": "+(min-max)% chance to Multistrike", "minValue": 95, "maxValue": 122, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "multistrike_chance", "label": "+(min-max)% chance to Multistrike", "minValue": 74, "maxValue": 94, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "multistrike_chance", "label": "+(min-max)% chance to Multistrike", "minValue": 57, "maxValue": 72, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dagger_advanced_suffix_focus_speed",
+        "name": "+(min-max)% Focus Speed",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "focus_speed", "label": "+(min-max)% Focus Speed", "minValue": 75, "maxValue": 90, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "focus_speed", "label": "+(min-max)% Focus Speed", "minValue": 60, "maxValue": 70, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "focus_speed", "label": "+(min-max)% Focus Speed", "minValue": 45, "maxValue": 54, "unit": "PERCENT" }] }
+        ]
+      }
+    ],
+    "ULTIMATE_SUFFIXES": [
+      {
+        "id": "crafted_dagger_ultimate_suffix_double_damage_chance",
+        "name": "+(min-max)% chance to deal Double Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "double_damage_chance", "label": "+(min-max)% chance to deal Double Damage", "minValue": 53, "maxValue": 68, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "double_damage_chance", "label": "+(min-max)% chance to deal Double Damage", "minValue": 41, "maxValue": 52, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "double_damage_chance", "label": "+(min-max)% chance to deal Double Damage", "minValue": 29, "maxValue": 40, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dagger_ultimate_suffix_shadow_quantity",
+        "name": "Shadow Quantity +2 (min-max)% additional Shadow Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "shadow_quantity", "label": "Shadow Quantity +(min-max)", "minValue": 2, "maxValue": 2, "unit": "FLAT" }, { "statId": "additional_shadow_damage", "label": "+(min-max)% additional Shadow Damage", "minValue": 30, "maxValue": 40, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "shadow_quantity", "label": "Shadow Quantity +(min-max)", "minValue": 2, "maxValue": 2, "unit": "FLAT" }, { "statId": "additional_shadow_damage", "label": "+(min-max)% additional Shadow Damage", "minValue": 10, "maxValue": 15, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "shadow_quantity", "label": "Shadow Quantity +(min-max)", "minValue": 2, "maxValue": 2, "unit": "FLAT" }, { "statId": "additional_shadow_damage", "label": "(min-max)% additional Shadow Damage", "minValue": -5, "maxValue": -5, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dagger_ultimate_suffix_focus_damage_enhancement",
+        "name": "+(min-max)% Focus Damage Enhancement",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "focus_damage_enhancement", "label": "+(min-max)% Focus Damage Enhancement", "minValue": 65, "maxValue": 80, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "focus_damage_enhancement", "label": "+(min-max)% Focus Damage Enhancement", "minValue": 48, "maxValue": 60, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "focus_damage_enhancement", "label": "+(min-max)% Focus Damage Enhancement", "minValue": 35, "maxValue": 45, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_dagger_ultimate_suffix_ailment_damage_enhancement",
+        "name": "+(min-max)% Ailment Damage Enhancement",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "ailment_damage_enhancement", "label": "+(min-max)% Ailment Damage Enhancement", "minValue": 70, "maxValue": 85, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "ailment_damage_enhancement", "label": "+(min-max)% Ailment Damage Enhancement", "minValue": 55, "maxValue": 65, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "ailment_damage_enhancement", "label": "+(min-max)% Ailment Damage Enhancement", "minValue": 40, "maxValue": 50, "unit": "PERCENT" }] }
+        ]
+      }
+    ]
+  }
+}
