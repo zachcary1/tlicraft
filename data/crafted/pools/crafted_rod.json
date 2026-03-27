@@ -1,0 +1,393 @@
+{
+  "id": "crafted_rod",
+  "name": "Crafted Rod",
+  "baseItemCategoryId": "one_hand_weapon",
+  "weaponTypeId": "rod",
+  "attributeType": null,
+  "isPriceless": true,
+  "groups": {
+    "BASE_AFFIXES": [
+      { "id": "crafted_rod_base_physical_damage_to_minions", "name": "Adds (min-max)-(min-max) Physical Damage to Minions", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_physical_damage_to_minions_min", "label": "Adds (min-max) min Physical Damage to Minions", "minValue": 10, "maxValue": 13, "unit": "FLAT" }, { "statId": "added_physical_damage_to_minions_max", "label": "Adds (min-max) max Physical Damage to Minions", "minValue": 14, "maxValue": 19, "unit": "FLAT" }] }] },
+      { "id": "crafted_rod_base_fire_damage_to_minions", "name": "Adds (min-max)-(min-max) Fire Damage to Minions", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_fire_damage_to_minions_min", "label": "Adds (min-max) min Fire Damage to Minions", "minValue": 9, "maxValue": 14, "unit": "FLAT" }, { "statId": "added_fire_damage_to_minions_max", "label": "Adds (min-max) max Fire Damage to Minions", "minValue": 15, "maxValue": 20, "unit": "FLAT" }] }] },
+      { "id": "crafted_rod_base_cold_damage_to_minions", "name": "Adds (min-max)-(min-max) Cold Damage to Minions", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_cold_damage_to_minions_min", "label": "Adds (min-max) min Cold Damage to Minions", "minValue": 10, "maxValue": 13, "unit": "FLAT" }, { "statId": "added_cold_damage_to_minions_max", "label": "Adds (min-max) max Cold Damage to Minions", "minValue": 14, "maxValue": 19, "unit": "FLAT" }] }] },
+      { "id": "crafted_rod_base_lightning_damage_to_minions", "name": "Adds (min-max)-(min-max) Lightning Damage to Minions", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_lightning_damage_to_minions_min", "label": "Adds (min-max) min Lightning Damage to Minions", "minValue": 1, "maxValue": 2, "unit": "FLAT" }, { "statId": "added_lightning_damage_to_minions_max", "label": "Adds (min-max) max Lightning Damage to Minions", "minValue": 28, "maxValue": 32, "unit": "FLAT" }] }] },
+      { "id": "crafted_rod_base_erosion_damage_to_minions", "name": "Adds (min-max)-(min-max) Erosion Damage to Minions", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_erosion_damage_to_minions_min", "label": "Adds (min-max) min Erosion Damage to Minions", "minValue": 11, "maxValue": 13, "unit": "FLAT" }, { "statId": "added_erosion_damage_to_minions_max", "label": "Adds (min-max) max Erosion Damage to Minions", "minValue": 15, "maxValue": 18, "unit": "FLAT" }] }] },
+      { "id": "crafted_rod_base_physical_damage", "name": "+(min-max)% Physical Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "physical_damage", "label": "+(min-max)% Physical Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_base_elemental_damage", "name": "+(min-max)% Elemental Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "elemental_damage", "label": "+(min-max)% Elemental Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_base_erosion_damage", "name": "+(min-max)% Erosion Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "erosion_damage", "label": "+(min-max)% Erosion Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_base_minion_damage", "name": "+(min-max)% Minion Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "minion_damage", "label": "+(min-max)% Minion Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_base_attack_speed", "name": "+(min-max)% Attack Speed", "tiers": [{ "tier": "T2", "stats": [{ "statId": "attack_speed", "label": "+(min-max)% Attack Speed", "minValue": 6, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_base_additional_minion_damage", "name": "+(min-max)% additional Minion Damage", "tiers": [{ "tier": "T1", "stats": [{ "statId": "additional_minion_damage", "label": "+(min-max)% additional Minion Damage", "minValue": 6, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_base_minion_elemental_resistance_penetration", "name": "Minion Damage Penetrates (min-max)% Elemental Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_elemental_resistance_penetration", "label": "Minion Damage Penetrates (min-max)% Elemental Resistance", "minValue": 6, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_base_minion_armor_dmg_mitigation_penetration", "name": "+(min-max)% Minion Armor DMG Mitigation Penetration", "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_armor_dmg_mitigation_penetration", "label": "+(min-max)% Minion Armor DMG Mitigation Penetration", "minValue": 5, "maxValue": 7, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_base_max_tenacity_blessing_stacks", "name": "+1 to Max Tenacity Blessing Stacks", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_tenacity_blessing_stacks", "label": "+(min-max) to Max Tenacity Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }] },
+      { "id": "crafted_rod_base_max_agility_blessing_stacks", "name": "+1 to Max Agility Blessing Stacks", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_agility_blessing_stacks", "label": "+(min-max) to Max Agility Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }] },
+      { "id": "crafted_rod_base_max_focus_blessing_stacks", "name": "+1 to Max Focus Blessing Stacks", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_focus_blessing_stacks", "label": "+(min-max) to Max Focus Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }] }
+    ],
+    "CORROSION_BASE_AFFIXES": [
+      { "id": "crafted_rod_corrosion_base_agility_blessing_on_defeat", "name": "+(min-max)% chance to gain 1 stack of Agility Blessing on defeat", "tiers": [{ "tier": "T0", "stats": [{ "statId": "agility_blessing_on_defeat", "label": "+(min-max)% chance to gain 1 stack of Agility Blessing on defeat", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_corrosion_base_tenacity_blessing_on_defeat", "name": "+(min-max)% chance to gain 1 stack of Tenacity Blessing on defeat", "tiers": [{ "tier": "T0", "stats": [{ "statId": "tenacity_blessing_on_defeat", "label": "+(min-max)% chance to gain 1 stack of Tenacity Blessing on defeat", "minValue": 4, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_corrosion_base_physical_damage_to_gear", "name": "Adds (min-max)-(min-max) Physical Damage to the gear", "tiers": [{ "tier": "T0", "stats": [{ "statId": "added_physical_damage_to_gear_min", "label": "Adds (min-max) min Physical Damage to the gear", "minValue": 2, "maxValue": 4, "unit": "FLAT" }, { "statId": "added_physical_damage_to_gear_max", "label": "Adds (min-max) max Physical Damage to the gear", "minValue": 8, "maxValue": 10, "unit": "FLAT" }] }] },
+      { "id": "crafted_rod_corrosion_base_gear_physical_damage", "name": "+(min-max)% Gear Physical Damage", "tiers": [{ "tier": "T0", "stats": [{ "statId": "gear_physical_damage", "label": "+(min-max)% Gear Physical Damage", "minValue": 15, "maxValue": 25, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_corrosion_base_gear_attack_speed", "name": "+(min-max)% gear Attack Speed", "tiers": [{ "tier": "T0", "stats": [{ "statId": "gear_attack_speed", "label": "+(min-max)% gear Attack Speed", "minValue": 5, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_corrosion_base_attack_critical_strike_rating", "name": "+(min-max)% Attack Critical Strike Rating for this gear", "tiers": [{ "tier": "T0", "stats": [{ "statId": "gear_attack_critical_strike_rating", "label": "+(min-max)% Attack Critical Strike Rating for this gear", "minValue": 3, "maxValue": 6, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_corrosion_base_attack_skill_level", "name": "+1 Attack Skill Level", "tiers": [{ "tier": "T0", "stats": [{ "statId": "attack_skill_level", "label": "+(min-max) Attack Skill Level", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }] },
+      { "id": "crafted_rod_corrosion_base_skill_area", "name": "+(min-max)% Skill Area", "tiers": [{ "tier": "T0", "stats": [{ "statId": "skill_area", "label": "+(min-max)% Skill Area", "minValue": 10, "maxValue": 15, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_corrosion_base_elemental_resistance_penetration", "name": "Damage Penetrates (min-max)% Elemental Resistance", "tiers": [{ "tier": "T0", "stats": [{ "statId": "elemental_resistance_penetration", "label": "Damage Penetrates (min-max)% Elemental Resistance", "minValue": 5, "maxValue": 8, "unit": "PERCENT" }] }] }
+    ],
+    "SWEET_DREAM_AFFIXES": [
+      { "id": "crafted_rod_sweet_dream_physical_damage_to_minions", "name": "Adds (min-max)-(min-max) Physical Damage to Minions", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_physical_damage_to_minions_min", "label": "Adds (min-max) min Physical Damage to Minions", "minValue": 10, "maxValue": 13, "unit": "FLAT" }, { "statId": "added_physical_damage_to_minions_max", "label": "Adds (min-max) max Physical Damage to Minions", "minValue": 14, "maxValue": 19, "unit": "FLAT" }] }] },
+      { "id": "crafted_rod_sweet_dream_fire_damage_to_minions", "name": "Adds (min-max)-(min-max) Fire Damage to Minions", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_fire_damage_to_minions_min", "label": "Adds (min-max) min Fire Damage to Minions", "minValue": 9, "maxValue": 14, "unit": "FLAT" }, { "statId": "added_fire_damage_to_minions_max", "label": "Adds (min-max) max Fire Damage to Minions", "minValue": 15, "maxValue": 20, "unit": "FLAT" }] }] },
+      { "id": "crafted_rod_sweet_dream_cold_damage_to_minions", "name": "Adds (min-max)-(min-max) Cold Damage to Minions", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_cold_damage_to_minions_min", "label": "Adds (min-max) min Cold Damage to Minions", "minValue": 10, "maxValue": 13, "unit": "FLAT" }, { "statId": "added_cold_damage_to_minions_max", "label": "Adds (min-max) max Cold Damage to Minions", "minValue": 14, "maxValue": 19, "unit": "FLAT" }] }] },
+      { "id": "crafted_rod_sweet_dream_lightning_damage_to_minions", "name": "Adds (min-max)-(min-max) Lightning Damage to Minions", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_lightning_damage_to_minions_min", "label": "Adds (min-max) min Lightning Damage to Minions", "minValue": 1, "maxValue": 2, "unit": "FLAT" }, { "statId": "added_lightning_damage_to_minions_max", "label": "Adds (min-max) max Lightning Damage to Minions", "minValue": 28, "maxValue": 32, "unit": "FLAT" }] }] },
+      { "id": "crafted_rod_sweet_dream_erosion_damage_to_minions", "name": "Adds (min-max)-(min-max) Erosion Damage to Minions", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_erosion_damage_to_minions_min", "label": "Adds (min-max) min Erosion Damage to Minions", "minValue": 11, "maxValue": 13, "unit": "FLAT" }, { "statId": "added_erosion_damage_to_minions_max", "label": "Adds (min-max) max Erosion Damage to Minions", "minValue": 15, "maxValue": 18, "unit": "FLAT" }] }] },
+      { "id": "crafted_rod_sweet_dream_physical_damage", "name": "+(min-max)% Physical Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "physical_damage", "label": "+(min-max)% Physical Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_sweet_dream_elemental_damage", "name": "+(min-max)% Elemental Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "elemental_damage", "label": "+(min-max)% Elemental Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_sweet_dream_erosion_damage", "name": "+(min-max)% Erosion Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "erosion_damage", "label": "+(min-max)% Erosion Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_sweet_dream_minion_damage", "name": "+(min-max)% Minion Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "minion_damage", "label": "+(min-max)% Minion Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_sweet_dream_attack_speed", "name": "+(min-max)% Attack Speed", "tiers": [{ "tier": "T2", "stats": [{ "statId": "attack_speed", "label": "+(min-max)% Attack Speed", "minValue": 6, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_sweet_dream_additional_minion_damage", "name": "+(min-max)% additional Minion Damage", "tiers": [{ "tier": "T1", "stats": [{ "statId": "additional_minion_damage", "label": "+(min-max)% additional Minion Damage", "minValue": 6, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_sweet_dream_minion_elemental_resistance_penetration", "name": "Minion Damage Penetrates (min-max)% Elemental Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_elemental_resistance_penetration", "label": "Minion Damage Penetrates (min-max)% Elemental Resistance", "minValue": 6, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_sweet_dream_minion_armor_dmg_mitigation_penetration", "name": "+(min-max)% Minion Armor DMG Mitigation Penetration", "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_armor_dmg_mitigation_penetration", "label": "+(min-max)% Minion Armor DMG Mitigation Penetration", "minValue": 5, "maxValue": 7, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_sweet_dream_max_tenacity_blessing_stacks", "name": "+1 to Max Tenacity Blessing Stacks", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_tenacity_blessing_stacks", "label": "+(min-max) to Max Tenacity Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }] },
+      { "id": "crafted_rod_sweet_dream_max_agility_blessing_stacks", "name": "+1 to Max Agility Blessing Stacks", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_agility_blessing_stacks", "label": "+(min-max) to Max Agility Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }] },
+      { "id": "crafted_rod_sweet_dream_max_focus_blessing_stacks", "name": "+1 to Max Focus Blessing Stacks", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_focus_blessing_stacks", "label": "+(min-max) to Max Focus Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }] }
+    ],
+    "NIGHTMARE_AFFIXES": [
+      { "id": "crafted_rod_nightmare_damage", "name": "Damage", "tiers": [{ "tier": "T1", "stats": [{ "statId": "damage", "label": "+(min-max)% Damage", "minValue": 49, "maxValue": 72, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_nightmare_attack_and_cast_speed", "name": "Attack and Cast Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "attack_and_cast_speed", "label": "+(min-max)% Attack and Cast Speed", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_nightmare_minion_damage", "name": "Minion Damage", "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_damage", "label": "+(min-max)% Minion Damage", "minValue": 49, "maxValue": 72, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_nightmare_minion_attack_and_cast_speed", "name": "Minion Attack and Cast Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_attack_and_cast_speed", "label": "+(min-max)% Minion Attack and Cast Speed", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_nightmare_attack_and_spell_critical_strike_rating", "name": "Attack and Spell Critical Strike Rating", "tiers": [{ "tier": "T1", "stats": [{ "statId": "attack_and_spell_critical_strike_rating", "label": "+(min-max) Attack and Spell Critical Strike Rating", "minValue": 77, "maxValue": 100, "unit": "FLAT" }] }] },
+      { "id": "crafted_rod_nightmare_skill_area", "name": "Skill Area", "tiers": [{ "tier": "T1", "stats": [{ "statId": "skill_area", "label": "+(min-max)% Skill Area", "minValue": 18, "maxValue": 21, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_nightmare_minion_critical_strike_rating", "name": "Minion Critical Strike Rating", "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_critical_strike_rating", "label": "+(min-max) Minion Critical Strike Rating", "minValue": 77, "maxValue": 100, "unit": "FLAT" }] }] },
+      { "id": "crafted_rod_nightmare_minion_skill_area", "name": "Minion Skill Area", "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_skill_area", "label": "+(min-max)% Minion Skill Area", "minValue": 18, "maxValue": 21, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_nightmare_max_life", "name": "Max Life", "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 100, "maxValue": 150, "unit": "FLAT" }] }] },
+      { "id": "crafted_rod_nightmare_max_energy_shield", "name": "Max Energy Shield", "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_energy_shield", "label": "+(min-max) Max Energy Shield", "minValue": 320, "maxValue": 400, "unit": "FLAT" }] }] },
+      { "id": "crafted_rod_nightmare_cold_resistance", "name": "Cold Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "cold_resistance", "label": "+(min-max)% Cold Resistance", "minValue": 21, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_nightmare_erosion_resistance", "name": "Erosion Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "erosion_resistance", "label": "+(min-max)% Erosion Resistance", "minValue": 21, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_nightmare_max_mana", "name": "Max Mana", "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_mana", "label": "+(min-max) Max Mana", "minValue": 96, "maxValue": 120, "unit": "FLAT" }] }] },
+      { "id": "crafted_rod_nightmare_fire_resistance", "name": "Fire Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "fire_resistance", "label": "+(min-max)% Fire Resistance", "minValue": 21, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_nightmare_lightning_resistance", "name": "Lightning Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "lightning_resistance", "label": "+(min-max)% Lightning Resistance", "minValue": 21, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_nightmare_elemental_resistance", "name": "Elemental Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "elemental_resistance", "label": "+(min-max)% Elemental Resistance", "minValue": 9, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_nightmare_strength", "name": "Strength", "tiers": [{ "tier": "T1", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 51, "maxValue": 60, "unit": "FLAT" }] }] },
+      { "id": "crafted_rod_nightmare_intelligence", "name": "Intelligence", "tiers": [{ "tier": "T1", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 51, "maxValue": 60, "unit": "FLAT" }] }] },
+      { "id": "crafted_rod_nightmare_movement_speed", "name": "Movement Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "movement_speed", "label": "+(min-max)% Movement Speed", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_nightmare_skill_effect_duration", "name": "Skill Effect Duration", "tiers": [{ "tier": "T1", "stats": [{ "statId": "skill_effect_duration", "label": "+(min-max)% Skill Effect Duration", "minValue": 14, "maxValue": 20, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_nightmare_dexterity", "name": "Dexterity", "tiers": [{ "tier": "T1", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 51, "maxValue": 60, "unit": "FLAT" }] }] },
+      { "id": "crafted_rod_nightmare_aura_effect", "name": "Aura Effect", "tiers": [{ "tier": "T1", "stats": [{ "statId": "aura_effect", "label": "+(min-max)% Aura Effect", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_nightmare_cooldown_recovery_speed", "name": "Cooldown Recovery Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "cooldown_recovery_speed", "label": "+(min-max)% Cooldown Recovery Speed", "minValue": 13, "maxValue": 15, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_nightmare_max_tenacity_blessing_stacks", "name": "Max Tenacity Blessing Stacks", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_rod_nightmare_max_focus_blessing_stacks", "name": "Max Focus Blessing Stacks", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_rod_nightmare_fervor_effect", "name": "Fervor Effect", "tiers": [{ "tier": "T1", "stats": [{ "statId": "fervor_effect", "label": "+(min-max)% Fervor Effect", "minValue": 15, "maxValue": 20, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_nightmare_projectile_quantity", "name": "Projectile Quantity", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_rod_nightmare_max_agility_blessing_stacks", "name": "Max Agility Blessing Stacks", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_rod_nightmare_sealed_mana_compensation", "name": "Sealed Mana Compensation", "tiers": [{ "tier": "T1", "stats": [{ "statId": "sealed_mana_compensation", "label": "+(min-max)% Sealed Mana Compensation", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_rod_nightmare_max_elemental_resistance", "name": "Max Elemental Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_elemental_resistance", "label": "+(min-max)% Max Elemental Resistance", "minValue": 1, "maxValue": 2, "unit": "PERCENT" }] }] }
+    ],
+    "INTERMEDIATE_SEQUENCES": [
+      { "id": "crafted_rod_intermediate_sequence_additional_minion_damage", "name": "+8% additional Minion Damage", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_rod_intermediate_sequence_armor_dmg_mitigation_penetration_for_minions", "name": "+6% Armor DMG Mitigation Penetration for Minions", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_rod_intermediate_sequence_minion_fire_penetration", "name": "+8% Minion Fire Penetration", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_rod_intermediate_sequence_cold_penetration_for_minions", "name": "+8% Cold Penetration for Minions", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_rod_intermediate_sequence_lightning_penetration_for_minions", "name": "+8% Lightning Penetration for Minions", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_rod_intermediate_sequence_erosion_penetration_for_minions", "name": "+8% Erosion Penetration for Minions", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_rod_intermediate_sequence_minion_attack_and_cast_speed", "name": "+16% Minion Attack and Cast Speed", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_rod_intermediate_sequence_minion_critical_strike_rating", "name": "+55 Minion Critical Strike Rating", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_rod_intermediate_sequence_minion_critical_strike_damage", "name": "+40% Minion Critical Strike Damage", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_rod_intermediate_sequence_all_stats", "name": "+8% all stats", "tiers": [{ "tier": "T1", "stats": [] }] }
+    ],
+    "ADVANCED_SEQUENCES": [
+      { "id": "crafted_rod_advanced_sequence_block_ratio", "name": "+8% Block Ratio Upper limit", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_rod_advanced_sequence_command_per_second", "name": "+10 Command per second", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_rod_advanced_sequence_entangled_pain_curse", "name": "Triggers Lv. 10 Entangled Pain Curse and Timid Curse when a Minion deals damage", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_rod_advanced_sequence_servant_damage_support", "name": "The Main Skill is supported by a Lv. 25 Servant Damage", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_rod_advanced_sequence_minion_crit_tradeoff", "name": "-80 Minion Critical Strike Rating +200% Minion Critical Strike Damage", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_rod_advanced_sequence_radical_order_aura", "name": "+120% Radical Order Aura Effect -20% additional Sealed Mana Compensation", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_rod_advanced_sequence_dark_gate", "name": "Triggers Lv. 20 Dark Gate when moving. Interval: 4 s", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_rod_advanced_sequence_minion_infiltration", "name": "When Minions deal damage, inflicts Fire/Lightning/Cold Infiltration", "tiers": [{ "tier": "T0", "stats": [] }] }
+    ],
+    "BASIC_PREFIXES": [
+      {
+        "id": "crafted_rod_basic_prefix_physical_damage_to_minions",
+        "name": "Adds (min-max)-(min-max) Physical Damage to Minions",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "added_physical_damage_to_minions_min", "label": "Adds (min-max) min Physical Damage to Minions", "minValue": 113, "maxValue": 115, "unit": "FLAT" }, { "statId": "added_physical_damage_to_minions_max", "label": "Adds (min-max) max Physical Damage to Minions", "minValue": 138, "maxValue": 140, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "added_physical_damage_to_minions_min", "label": "Adds (min-max) min Physical Damage to Minions", "minValue": 87, "maxValue": 89, "unit": "FLAT" }, { "statId": "added_physical_damage_to_minions_max", "label": "Adds (min-max) max Physical Damage to Minions", "minValue": 106, "maxValue": 108, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "added_physical_damage_to_minions_min", "label": "Adds (min-max) min Physical Damage to Minions", "minValue": 67, "maxValue": 69, "unit": "FLAT" }, { "statId": "added_physical_damage_to_minions_max", "label": "Adds (min-max) max Physical Damage to Minions", "minValue": 82, "maxValue": 84, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_rod_basic_prefix_fire_damage_to_minions",
+        "name": "Adds (min-max)-(min-max) Fire Damage to Minions",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "added_fire_damage_to_minions_min", "label": "Adds (min-max) min Fire Damage to Minions", "minValue": 107, "maxValue": 109, "unit": "FLAT" }, { "statId": "added_fire_damage_to_minions_max", "label": "Adds (min-max) max Fire Damage to Minions", "minValue": 139, "maxValue": 147, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "added_fire_damage_to_minions_min", "label": "Adds (min-max) min Fire Damage to Minions", "minValue": 82, "maxValue": 84, "unit": "FLAT" }, { "statId": "added_fire_damage_to_minions_max", "label": "Adds (min-max) max Fire Damage to Minions", "minValue": 106, "maxValue": 113, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "added_fire_damage_to_minions_min", "label": "Adds (min-max) min Fire Damage to Minions", "minValue": 63, "maxValue": 65, "unit": "FLAT" }, { "statId": "added_fire_damage_to_minions_max", "label": "Adds (min-max) max Fire Damage to Minions", "minValue": 82, "maxValue": 87, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_rod_basic_prefix_cold_damage_to_minions",
+        "name": "Adds (min-max)-(min-max) Cold Damage to Minions",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "added_cold_damage_to_minions_min", "label": "Adds (min-max) min Cold Damage to Minions", "minValue": 108, "maxValue": 110, "unit": "FLAT" }, { "statId": "added_cold_damage_to_minions_max", "label": "Adds (min-max) max Cold Damage to Minions", "minValue": 144, "maxValue": 146, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "added_cold_damage_to_minions_min", "label": "Adds (min-max) min Cold Damage to Minions", "minValue": 83, "maxValue": 85, "unit": "FLAT" }, { "statId": "added_cold_damage_to_minions_max", "label": "Adds (min-max) max Cold Damage to Minions", "minValue": 110, "maxValue": 112, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "added_cold_damage_to_minions_min", "label": "Adds (min-max) min Cold Damage to Minions", "minValue": 64, "maxValue": 66, "unit": "FLAT" }, { "statId": "added_cold_damage_to_minions_max", "label": "Adds (min-max) max Cold Damage to Minions", "minValue": 85, "maxValue": 87, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_rod_basic_prefix_lightning_damage_to_minions",
+        "name": "Adds (min-max)-(min-max) Lightning Damage to Minions",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "added_lightning_damage_to_minions_min", "label": "Adds (min-max) min Lightning Damage to Minions", "minValue": 12, "maxValue": 14, "unit": "FLAT" }, { "statId": "added_lightning_damage_to_minions_max", "label": "Adds (min-max) max Lightning Damage to Minions", "minValue": 240, "maxValue": 242, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "added_lightning_damage_to_minions_min", "label": "Adds (min-max) min Lightning Damage to Minions", "minValue": 9, "maxValue": 11, "unit": "FLAT" }, { "statId": "added_lightning_damage_to_minions_max", "label": "Adds (min-max) max Lightning Damage to Minions", "minValue": 184, "maxValue": 186, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "added_lightning_damage_to_minions_min", "label": "Adds (min-max) min Lightning Damage to Minions", "minValue": 7, "maxValue": 9, "unit": "FLAT" }, { "statId": "added_lightning_damage_to_minions_max", "label": "Adds (min-max) max Lightning Damage to Minions", "minValue": 142, "maxValue": 144, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_rod_basic_prefix_erosion_damage_to_minions",
+        "name": "Adds (min-max)-(min-max) Erosion Damage to Minions",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "added_erosion_damage_to_minions_min", "label": "Adds (min-max) min Erosion Damage to Minions", "minValue": 116, "maxValue": 118, "unit": "FLAT" }, { "statId": "added_erosion_damage_to_minions_max", "label": "Adds (min-max) max Erosion Damage to Minions", "minValue": 136, "maxValue": 138, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "added_erosion_damage_to_minions_min", "label": "Adds (min-max) min Erosion Damage to Minions", "minValue": 87, "maxValue": 89, "unit": "FLAT" }, { "statId": "added_erosion_damage_to_minions_max", "label": "Adds (min-max) max Erosion Damage to Minions", "minValue": 106, "maxValue": 108, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "added_erosion_damage_to_minions_min", "label": "Adds (min-max) min Erosion Damage to Minions", "minValue": 67, "maxValue": 69, "unit": "FLAT" }, { "statId": "added_erosion_damage_to_minions_max", "label": "Adds (min-max) max Erosion Damage to Minions", "minValue": 82, "maxValue": 84, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_rod_basic_prefix_minion_damage",
+        "name": "+(min-max)% Minion Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "minion_damage", "label": "+(min-max)% Minion Damage", "minValue": 141, "maxValue": 183, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "minion_damage", "label": "+(min-max)% Minion Damage", "minValue": 109, "maxValue": 140, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "minion_damage", "label": "+(min-max)% Minion Damage", "minValue": 77, "maxValue": 108, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_rod_basic_prefix_minion_max_life",
+        "name": "+(min-max)% Minion Max Life",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "minion_max_life", "label": "+(min-max)% Minion Max Life", "minValue": 56, "maxValue": 76, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "minion_max_life", "label": "+(min-max)% Minion Max Life", "minValue": 43, "maxValue": 59, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "minion_max_life", "label": "+(min-max)% Minion Max Life", "minValue": 33, "maxValue": 45, "unit": "PERCENT" }] }
+        ]
+      }
+    ],
+    "ADVANCED_PREFIXES": [
+      {
+        "id": "crafted_rod_advanced_prefix_strength",
+        "name": "+(min-max) Strength",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 118, "maxValue": 152, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 91, "maxValue": 117, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 64, "maxValue": 90, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_rod_advanced_prefix_dexterity",
+        "name": "+(min-max) Dexterity",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 118, "maxValue": 152, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 91, "maxValue": 117, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 64, "maxValue": 90, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_rod_advanced_prefix_intelligence",
+        "name": "+(min-max) Intelligence",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 118, "maxValue": 152, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 91, "maxValue": 117, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 64, "maxValue": 90, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_rod_advanced_prefix_spirit_magi_enhanced_skill_chance",
+        "name": "+(min-max)% Spirit Magi Enhanced Skill Chance",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "spirit_magi_enhanced_skill_chance", "label": "+(min-max)% Spirit Magi Enhanced Skill Chance", "minValue": 37, "maxValue": 51, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "spirit_magi_enhanced_skill_chance", "label": "+(min-max)% Spirit Magi Enhanced Skill Chance", "minValue": 29, "maxValue": 39, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "spirit_magi_enhanced_skill_chance", "label": "+(min-max)% Spirit Magi Enhanced Skill Chance", "minValue": 22, "maxValue": 30, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_rod_advanced_prefix_synthetic_troops_minion_damage",
+        "name": "+1 Synthetic Troops +(min-max)% additional Synthetic Troop Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "synthetic_troops", "label": "+(min-max) Synthetic Troops", "minValue": 1, "maxValue": 1, "unit": "FLAT" }, { "statId": "additional_synthetic_troop_damage", "label": "+(min-max)% additional Synthetic Troop Damage", "minValue": 10, "maxValue": 13, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "synthetic_troops", "label": "+(min-max) Synthetic Troops", "minValue": 1, "maxValue": 1, "unit": "FLAT" }, { "statId": "additional_synthetic_troop_damage", "label": "+(min-max)% additional Synthetic Troop Damage", "minValue": 7, "maxValue": 9, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "synthetic_troops", "label": "+(min-max) Synthetic Troops", "minValue": 1, "maxValue": 1, "unit": "FLAT" }, { "statId": "additional_synthetic_troop_damage", "label": "+(min-max)% additional Synthetic Troop Damage", "minValue": 6, "maxValue": 8, "unit": "PERCENT" }] }
+        ]
+      }
+    ],
+    "ULTIMATE_PREFIXES": [
+      {
+        "id": "crafted_rod_ultimate_prefix_minion_skill_level",
+        "name": "+(min-max) to Minion Skill Level",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "minion_skill_level", "label": "+(min-max) to Minion Skill Level", "minValue": 4, "maxValue": 5, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "minion_skill_level", "label": "+(min-max) to Minion Skill Level", "minValue": 3, "maxValue": 4, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "minion_skill_level", "label": "+(min-max) to Minion Skill Level", "minValue": 3, "maxValue": 3, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_rod_ultimate_prefix_minion_armor_dmg_mitigation_penetration",
+        "name": "+(min-max)% Minion Armor DMG Mitigation Penetration",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "minion_armor_dmg_mitigation_penetration", "label": "+(min-max)% Minion Armor DMG Mitigation Penetration", "minValue": 30, "maxValue": 42, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "minion_armor_dmg_mitigation_penetration", "label": "+(min-max)% Minion Armor DMG Mitigation Penetration", "minValue": 23, "maxValue": 32, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "minion_armor_dmg_mitigation_penetration", "label": "+(min-max)% Minion Armor DMG Mitigation Penetration", "minValue": 18, "maxValue": 25, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_rod_ultimate_prefix_main_skill_level",
+        "name": "+(min-max) to Main Skill Level",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "main_skill_level", "label": "+(min-max) to Main Skill Level", "minValue": 4, "maxValue": 5, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "main_skill_level", "label": "+(min-max) to Main Skill Level", "minValue": 3, "maxValue": 4, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "main_skill_level", "label": "+(min-max) to Main Skill Level", "minValue": 3, "maxValue": 3, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_rod_ultimate_prefix_minion_elemental_erosion_resistance_penetration",
+        "name": "+(min-max)% Minion Elemental and Erosion Resistance Penetration",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "minion_elemental_and_erosion_resistance_penetration", "label": "+(min-max)% Minion Elemental and Erosion Resistance Penetration", "minValue": 40, "maxValue": 51, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "minion_elemental_and_erosion_resistance_penetration", "label": "+(min-max)% Minion Elemental and Erosion Resistance Penetration", "minValue": 31, "maxValue": 39, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "minion_elemental_and_erosion_resistance_penetration", "label": "+(min-max)% Minion Elemental and Erosion Resistance Penetration", "minValue": 22, "maxValue": 30, "unit": "PERCENT" }] }
+        ]
+      }
+    ],
+    "BASIC_SUFFIXES": [
+      {
+        "id": "crafted_rod_basic_suffix_physical_damage_for_minions",
+        "name": "+(min-max)% Physical Damage for Minions",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "physical_damage_for_minions", "label": "+(min-max)% Physical Damage for Minions", "minValue": 141, "maxValue": 183, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "physical_damage_for_minions", "label": "+(min-max)% Physical Damage for Minions", "minValue": 109, "maxValue": 140, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "physical_damage_for_minions", "label": "+(min-max)% Physical Damage for Minions", "minValue": 77, "maxValue": 108, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_rod_basic_suffix_elemental_damage_for_minions",
+        "name": "+(min-max)% Elemental Damage for Minions",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "elemental_damage_for_minions", "label": "+(min-max)% Elemental Damage for Minions", "minValue": 141, "maxValue": 183, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "elemental_damage_for_minions", "label": "+(min-max)% Elemental Damage for Minions", "minValue": 109, "maxValue": 140, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "elemental_damage_for_minions", "label": "+(min-max)% Elemental Damage for Minions", "minValue": 77, "maxValue": 108, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_rod_basic_suffix_erosion_damage_for_minions",
+        "name": "+(min-max)% Erosion Damage for Minions",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "erosion_damage_for_minions", "label": "+(min-max)% Erosion Damage for Minions", "minValue": 141, "maxValue": 183, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "erosion_damage_for_minions", "label": "+(min-max)% Erosion Damage for Minions", "minValue": 109, "maxValue": 140, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "erosion_damage_for_minions", "label": "+(min-max)% Erosion Damage for Minions", "minValue": 77, "maxValue": 108, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_rod_basic_suffix_attack_and_cast_speed",
+        "name": "+(min-max)% Attack and Cast Speed +(min-max)% Minion Attack and Cast Speed",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "attack_and_cast_speed", "label": "+(min-max)% Attack and Cast Speed", "minValue": 48, "maxValue": 61, "unit": "PERCENT" }, { "statId": "minion_attack_and_cast_speed", "label": "+(min-max)% Minion Attack and Cast Speed", "minValue": 48, "maxValue": 61, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "attack_and_cast_speed", "label": "+(min-max)% Attack and Cast Speed", "minValue": 33, "maxValue": 47, "unit": "PERCENT" }, { "statId": "minion_attack_and_cast_speed", "label": "+(min-max)% Minion Attack and Cast Speed", "minValue": 33, "maxValue": 47, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "attack_and_cast_speed", "label": "+(min-max)% Attack and Cast Speed", "minValue": 27, "maxValue": 36, "unit": "PERCENT" }, { "statId": "minion_attack_and_cast_speed", "label": "+(min-max)% Minion Attack and Cast Speed", "minValue": 27, "maxValue": 36, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_rod_basic_suffix_life_regen_per_sec",
+        "name": "+(min-max) Life Regeneration per Second",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "life_regen_per_sec", "label": "+(min-max) Life Regeneration per Second", "minValue": 222, "maxValue": 304, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "life_regen_per_sec", "label": "+(min-max) Life Regeneration per Second", "minValue": 170, "maxValue": 234, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "life_regen_per_sec", "label": "+(min-max) Life Regeneration per Second", "minValue": 130, "maxValue": 180, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_rod_basic_suffix_energy_shield_charge_speed",
+        "name": "+(min-max)% Energy Shield Charge Speed",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "energy_shield_charge_speed", "label": "+(min-max)% Energy Shield Charge Speed", "minValue": 30, "maxValue": 39, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "energy_shield_charge_speed", "label": "+(min-max)% Energy Shield Charge Speed", "minValue": 23, "maxValue": 30, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "energy_shield_charge_speed", "label": "+(min-max)% Energy Shield Charge Speed", "minValue": 18, "maxValue": 24, "unit": "PERCENT" }] }
+        ]
+      }
+    ],
+    "ADVANCED_SUFFIXES": [
+      {
+        "id": "crafted_rod_advanced_suffix_minion_critical_strike_rating_percent",
+        "name": "+(min-max)% Minion Critical Strike Rating",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "minion_critical_strike_rating_percent", "label": "+(min-max)% Minion Critical Strike Rating", "minValue": 216, "maxValue": 304, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "minion_critical_strike_rating_percent", "label": "+(min-max)% Minion Critical Strike Rating", "minValue": 166, "maxValue": 234, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "minion_critical_strike_rating_percent", "label": "+(min-max)% Minion Critical Strike Rating", "minValue": 127, "maxValue": 180, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_rod_advanced_suffix_minion_critical_strike_rating_flat",
+        "name": "+(min-max) Minion Critical Strike Rating",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "minion_critical_strike_rating", "label": "+(min-max) Minion Critical Strike Rating", "minValue": 150, "maxValue": 211, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "minion_critical_strike_rating", "label": "+(min-max) Minion Critical Strike Rating", "minValue": 116, "maxValue": 163, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "minion_critical_strike_rating", "label": "+(min-max) Minion Critical Strike Rating", "minValue": 89, "maxValue": 125, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_rod_advanced_suffix_minion_skill_area",
+        "name": "+(min-max)% Minion Skill Area",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "minion_skill_area", "label": "+(min-max)% Minion Skill Area", "minValue": 86, "maxValue": 122, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "minion_skill_area", "label": "+(min-max)% Minion Skill Area", "minValue": 66, "maxValue": 94, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "minion_skill_area", "label": "+(min-max)% Minion Skill Area", "minValue": 51, "maxValue": 72, "unit": "PERCENT" }] }
+        ]
+      }
+    ],
+    "ULTIMATE_SUFFIXES": [
+      {
+        "id": "crafted_rod_ultimate_suffix_minion_critical_strike_damage",
+        "name": "+(min-max)% Minion Critical Strike Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "minion_critical_strike_damage", "label": "+(min-max)% Minion Critical Strike Damage", "minValue": 179, "maxValue": 253, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "minion_critical_strike_damage", "label": "+(min-max)% Minion Critical Strike Damage", "minValue": 138, "maxValue": 195, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "minion_critical_strike_damage", "label": "+(min-max)% Minion Critical Strike Damage", "minValue": 106, "maxValue": 150, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_rod_ultimate_suffix_spirit_magus_enhanced_skill_damage",
+        "name": "+(min-max)% Spirit Magus Enhanced Skill Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "spirit_magus_enhanced_skill_damage", "label": "+(min-max)% Spirit Magus Enhanced Skill Damage", "minValue": 49, "maxValue": 68, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "spirit_magus_enhanced_skill_damage", "label": "+(min-max)% Spirit Magus Enhanced Skill Damage", "minValue": 38, "maxValue": 52, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "spirit_magus_enhanced_skill_damage", "label": "+(min-max)% Spirit Magus Enhanced Skill Damage", "minValue": 29, "maxValue": 40, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_rod_ultimate_suffix_spirit_magus_ultimate_damage",
+        "name": "+(min-max)% Spirit Magus Ultimate Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "spirit_magus_ultimate_damage", "label": "+(min-max)% Spirit Magus Ultimate Damage", "minValue": 73, "maxValue": 101, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "spirit_magus_ultimate_damage", "label": "+(min-max)% Spirit Magus Ultimate Damage", "minValue": 56, "maxValue": 78, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "spirit_magus_ultimate_damage", "label": "+(min-max)% Spirit Magus Ultimate Damage", "minValue": 43, "maxValue": 60, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_rod_ultimate_suffix_minions_double_damage",
+        "name": "+(min-max)% Minions Double Damage Chance",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "minions_double_damage_chance", "label": "+(min-max)% Minions Double Damage Chance", "minValue": 49, "maxValue": 68, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "minions_double_damage_chance", "label": "+(min-max)% Minions Double Damage Chance", "minValue": 38, "maxValue": 52, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "minions_double_damage_chance", "label": "+(min-max)% Minions Double Damage Chance", "minValue": 29, "maxValue": 40, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_rod_ultimate_suffix_synthetic_troop_damage",
+        "name": "+(min-max)% Synthetic Troop Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "synthetic_troop_damage", "label": "+(min-max)% Synthetic Troop Damage", "minValue": 44, "maxValue": 59, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "synthetic_troop_damage", "label": "+(min-max)% Synthetic Troop Damage", "minValue": 34, "maxValue": 46, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "synthetic_troop_damage", "label": "+(min-max)% Synthetic Troop Damage", "minValue": 26, "maxValue": 35, "unit": "PERCENT" }] }
+        ]
+      }
+    ]
+  }
+}

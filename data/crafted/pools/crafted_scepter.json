@@ -1,0 +1,438 @@
+{
+  "id": "crafted_scepter",
+  "name": "Crafted Scepter",
+  "baseItemCategoryId": "one_hand_weapon",
+  "weaponTypeId": "scepter",
+  "attributeType": null,
+  "isPriceless": true,
+  "groups": {
+    "BASE_AFFIXES": [
+      { "id": "crafted_scepter_base_physical_damage_to_spells", "name": "Adds (min-max)-(min-max) Physical Damage to Spells", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_physical_damage_to_spells_min", "label": "Adds (min-max) min Physical Damage to Spells", "minValue": 10, "maxValue": 13, "unit": "FLAT" }, { "statId": "added_physical_damage_to_spells_max", "label": "Adds (min-max) max Physical Damage to Spells", "minValue": 14, "maxValue": 19, "unit": "FLAT" }] }] },
+      { "id": "crafted_scepter_base_fire_damage_to_spells", "name": "Adds (min-max)-(min-max) Fire Damage to Spells", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_fire_damage_to_spells_min", "label": "Adds (min-max) min Fire Damage to Spells", "minValue": 9, "maxValue": 14, "unit": "FLAT" }, { "statId": "added_fire_damage_to_spells_max", "label": "Adds (min-max) max Fire Damage to Spells", "minValue": 15, "maxValue": 20, "unit": "FLAT" }] }] },
+      { "id": "crafted_scepter_base_cold_damage_to_spells", "name": "Adds (min-max)-(min-max) Cold Damage to Spells", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_cold_damage_to_spells_min", "label": "Adds (min-max) min Cold Damage to Spells", "minValue": 10, "maxValue": 13, "unit": "FLAT" }, { "statId": "added_cold_damage_to_spells_max", "label": "Adds (min-max) max Cold Damage to Spells", "minValue": 14, "maxValue": 19, "unit": "FLAT" }] }] },
+      { "id": "crafted_scepter_base_lightning_damage_to_spells", "name": "Adds (min-max)-(min-max) Lightning Damage to Spells", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_lightning_damage_to_spells_min", "label": "Adds (min-max) min Lightning Damage to Spells", "minValue": 1, "maxValue": 2, "unit": "FLAT" }, { "statId": "added_lightning_damage_to_spells_max", "label": "Adds (min-max) max Lightning Damage to Spells", "minValue": 28, "maxValue": 32, "unit": "FLAT" }] }] },
+      { "id": "crafted_scepter_base_erosion_damage_to_spells", "name": "Adds (min-max)-(min-max) Erosion Damage to Spells", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_erosion_damage_to_spells_min", "label": "Adds (min-max) min Erosion Damage to Spells", "minValue": 11, "maxValue": 13, "unit": "FLAT" }, { "statId": "added_erosion_damage_to_spells_max", "label": "Adds (min-max) max Erosion Damage to Spells", "minValue": 15, "maxValue": 18, "unit": "FLAT" }] }] },
+      { "id": "crafted_scepter_base_physical_damage", "name": "+(min-max)% Physical Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "physical_damage", "label": "+(min-max)% Physical Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_base_elemental_damage", "name": "+(min-max)% Elemental Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "elemental_damage", "label": "+(min-max)% Elemental Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_base_erosion_damage", "name": "+(min-max)% Erosion Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "erosion_damage", "label": "+(min-max)% Erosion Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_base_spell_damage", "name": "+(min-max)% Spell Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "spell_damage", "label": "+(min-max)% Spell Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_base_attack_speed", "name": "+(min-max)% Attack Speed", "tiers": [{ "tier": "T2", "stats": [{ "statId": "attack_speed", "label": "+(min-max)% Attack Speed", "minValue": 6, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_base_reaping_recovery_speed", "name": "+(min-max)% Reaping Recovery Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "reaping_recovery_speed", "label": "+(min-max)% Reaping Recovery Speed", "minValue": 15, "maxValue": 20, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_base_additional_damage_over_time", "name": "+(min-max)% additional Damage Over Time", "tiers": [{ "tier": "T1", "stats": [{ "statId": "additional_damage_over_time", "label": "+(min-max)% additional Damage Over Time", "minValue": 6, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_base_elemental_erosion_resistance_penetration", "name": "+(min-max)% Elemental and Erosion Resistance Penetration", "tiers": [{ "tier": "T1", "stats": [{ "statId": "elemental_and_erosion_resistance_penetration", "label": "+(min-max)% Elemental and Erosion Resistance Penetration", "minValue": 6, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_base_max_tenacity_blessing_stacks", "name": "+1 to Max Tenacity Blessing Stacks", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_tenacity_blessing_stacks", "label": "+(min-max) to Max Tenacity Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }] },
+      { "id": "crafted_scepter_base_max_agility_blessing_stacks", "name": "+1 to Max Agility Blessing Stacks", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_agility_blessing_stacks", "label": "+(min-max) to Max Agility Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }] },
+      { "id": "crafted_scepter_base_max_focus_blessing_stacks", "name": "+1 to Max Focus Blessing Stacks", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_focus_blessing_stacks", "label": "+(min-max) to Max Focus Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }] }
+    ],
+    "CORROSION_BASE_AFFIXES": [
+      { "id": "crafted_scepter_corrosion_base_agility_blessing_on_defeat", "name": "+(min-max)% chance to gain 1 stack of Agility Blessing on defeat", "tiers": [{ "tier": "T0", "stats": [{ "statId": "agility_blessing_on_defeat", "label": "+(min-max)% chance to gain 1 stack of Agility Blessing on defeat", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_corrosion_base_tenacity_blessing_on_defeat", "name": "+(min-max)% chance to gain 1 stack of Tenacity Blessing on defeat", "tiers": [{ "tier": "T0", "stats": [{ "statId": "tenacity_blessing_on_defeat", "label": "+(min-max)% chance to gain 1 stack of Tenacity Blessing on defeat", "minValue": 4, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_corrosion_base_physical_damage_to_gear", "name": "Adds (min-max)-(min-max) Physical Damage to the gear", "tiers": [{ "tier": "T0", "stats": [{ "statId": "added_physical_damage_to_gear_min", "label": "Adds (min-max) min Physical Damage to the gear", "minValue": 2, "maxValue": 4, "unit": "FLAT" }, { "statId": "added_physical_damage_to_gear_max", "label": "Adds (min-max) max Physical Damage to the gear", "minValue": 8, "maxValue": 10, "unit": "FLAT" }] }] },
+      { "id": "crafted_scepter_corrosion_base_gear_physical_damage", "name": "+(min-max)% Gear Physical Damage", "tiers": [{ "tier": "T0", "stats": [{ "statId": "gear_physical_damage", "label": "+(min-max)% Gear Physical Damage", "minValue": 15, "maxValue": 25, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_corrosion_base_gear_attack_speed", "name": "+(min-max)% gear Attack Speed", "tiers": [{ "tier": "T0", "stats": [{ "statId": "gear_attack_speed", "label": "+(min-max)% gear Attack Speed", "minValue": 5, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_corrosion_base_spell_critical_strike_rating", "name": "+(min-max)% Spell Critical Strike Rating for this gear", "tiers": [{ "tier": "T0", "stats": [{ "statId": "gear_spell_critical_strike_rating", "label": "+(min-max)% Spell Critical Strike Rating for this gear", "minValue": 3, "maxValue": 6, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_corrosion_base_spell_skill_level", "name": "+1 Spell Skill Level", "tiers": [{ "tier": "T0", "stats": [{ "statId": "spell_skill_level", "label": "+(min-max) Spell Skill Level", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }] },
+      { "id": "crafted_scepter_corrosion_base_skill_area", "name": "+(min-max)% Skill Area", "tiers": [{ "tier": "T0", "stats": [{ "statId": "skill_area", "label": "+(min-max)% Skill Area", "minValue": 10, "maxValue": 15, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_corrosion_base_elemental_resistance_penetration", "name": "Damage Penetrates (min-max)% Elemental Resistance", "tiers": [{ "tier": "T0", "stats": [{ "statId": "elemental_resistance_penetration", "label": "Damage Penetrates (min-max)% Elemental Resistance", "minValue": 5, "maxValue": 8, "unit": "PERCENT" }] }] }
+    ],
+    "SWEET_DREAM_AFFIXES": [
+      { "id": "crafted_scepter_sweet_dream_physical_damage_to_spells", "name": "Adds (min-max)-(min-max) Physical Damage to Spells", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_physical_damage_to_spells_min", "label": "Adds (min-max) min Physical Damage to Spells", "minValue": 10, "maxValue": 13, "unit": "FLAT" }, { "statId": "added_physical_damage_to_spells_max", "label": "Adds (min-max) max Physical Damage to Spells", "minValue": 14, "maxValue": 19, "unit": "FLAT" }] }] },
+      { "id": "crafted_scepter_sweet_dream_fire_damage_to_spells", "name": "Adds (min-max)-(min-max) Fire Damage to Spells", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_fire_damage_to_spells_min", "label": "Adds (min-max) min Fire Damage to Spells", "minValue": 9, "maxValue": 14, "unit": "FLAT" }, { "statId": "added_fire_damage_to_spells_max", "label": "Adds (min-max) max Fire Damage to Spells", "minValue": 15, "maxValue": 20, "unit": "FLAT" }] }] },
+      { "id": "crafted_scepter_sweet_dream_cold_damage_to_spells", "name": "Adds (min-max)-(min-max) Cold Damage to Spells", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_cold_damage_to_spells_min", "label": "Adds (min-max) min Cold Damage to Spells", "minValue": 10, "maxValue": 13, "unit": "FLAT" }, { "statId": "added_cold_damage_to_spells_max", "label": "Adds (min-max) max Cold Damage to Spells", "minValue": 14, "maxValue": 19, "unit": "FLAT" }] }] },
+      { "id": "crafted_scepter_sweet_dream_lightning_damage_to_spells", "name": "Adds (min-max)-(min-max) Lightning Damage to Spells", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_lightning_damage_to_spells_min", "label": "Adds (min-max) min Lightning Damage to Spells", "minValue": 1, "maxValue": 2, "unit": "FLAT" }, { "statId": "added_lightning_damage_to_spells_max", "label": "Adds (min-max) max Lightning Damage to Spells", "minValue": 28, "maxValue": 32, "unit": "FLAT" }] }] },
+      { "id": "crafted_scepter_sweet_dream_erosion_damage_to_spells", "name": "Adds (min-max)-(min-max) Erosion Damage to Spells", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_erosion_damage_to_spells_min", "label": "Adds (min-max) min Erosion Damage to Spells", "minValue": 11, "maxValue": 13, "unit": "FLAT" }, { "statId": "added_erosion_damage_to_spells_max", "label": "Adds (min-max) max Erosion Damage to Spells", "minValue": 15, "maxValue": 18, "unit": "FLAT" }] }] },
+      { "id": "crafted_scepter_sweet_dream_physical_damage", "name": "+(min-max)% Physical Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "physical_damage", "label": "+(min-max)% Physical Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_sweet_dream_elemental_damage", "name": "+(min-max)% Elemental Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "elemental_damage", "label": "+(min-max)% Elemental Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_sweet_dream_erosion_damage", "name": "+(min-max)% Erosion Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "erosion_damage", "label": "+(min-max)% Erosion Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_sweet_dream_spell_damage", "name": "+(min-max)% Spell Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "spell_damage", "label": "+(min-max)% Spell Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_sweet_dream_attack_speed", "name": "+(min-max)% Attack Speed", "tiers": [{ "tier": "T2", "stats": [{ "statId": "attack_speed", "label": "+(min-max)% Attack Speed", "minValue": 6, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_sweet_dream_reaping_recovery_speed", "name": "+(min-max)% Reaping Recovery Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "reaping_recovery_speed", "label": "+(min-max)% Reaping Recovery Speed", "minValue": 15, "maxValue": 20, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_sweet_dream_additional_damage_over_time", "name": "+(min-max)% additional Damage Over Time", "tiers": [{ "tier": "T1", "stats": [{ "statId": "additional_damage_over_time", "label": "+(min-max)% additional Damage Over Time", "minValue": 6, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_sweet_dream_elemental_erosion_resistance_penetration", "name": "+(min-max)% Elemental and Erosion Resistance Penetration", "tiers": [{ "tier": "T1", "stats": [{ "statId": "elemental_and_erosion_resistance_penetration", "label": "+(min-max)% Elemental and Erosion Resistance Penetration", "minValue": 6, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_sweet_dream_max_tenacity_blessing_stacks", "name": "+1 to Max Tenacity Blessing Stacks", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_tenacity_blessing_stacks", "label": "+(min-max) to Max Tenacity Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }] },
+      { "id": "crafted_scepter_sweet_dream_max_agility_blessing_stacks", "name": "+1 to Max Agility Blessing Stacks", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_agility_blessing_stacks", "label": "+(min-max) to Max Agility Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }] },
+      { "id": "crafted_scepter_sweet_dream_max_focus_blessing_stacks", "name": "+1 to Max Focus Blessing Stacks", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_focus_blessing_stacks", "label": "+(min-max) to Max Focus Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }] }
+    ],
+    "NIGHTMARE_AFFIXES": [
+      { "id": "crafted_scepter_nightmare_damage", "name": "Damage", "tiers": [{ "tier": "T1", "stats": [{ "statId": "damage", "label": "+(min-max)% Damage", "minValue": 49, "maxValue": 72, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_nightmare_attack_and_cast_speed", "name": "Attack and Cast Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "attack_and_cast_speed", "label": "+(min-max)% Attack and Cast Speed", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_nightmare_minion_damage", "name": "Minion Damage", "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_damage", "label": "+(min-max)% Minion Damage", "minValue": 49, "maxValue": 72, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_nightmare_minion_attack_and_cast_speed", "name": "Minion Attack and Cast Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_attack_and_cast_speed", "label": "+(min-max)% Minion Attack and Cast Speed", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_nightmare_attack_and_spell_critical_strike_rating", "name": "Attack and Spell Critical Strike Rating", "tiers": [{ "tier": "T1", "stats": [{ "statId": "attack_and_spell_critical_strike_rating", "label": "+(min-max) Attack and Spell Critical Strike Rating", "minValue": 77, "maxValue": 100, "unit": "FLAT" }] }] },
+      { "id": "crafted_scepter_nightmare_skill_area", "name": "Skill Area", "tiers": [{ "tier": "T1", "stats": [{ "statId": "skill_area", "label": "+(min-max)% Skill Area", "minValue": 18, "maxValue": 21, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_nightmare_minion_critical_strike_rating", "name": "Minion Critical Strike Rating", "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_critical_strike_rating", "label": "+(min-max) Minion Critical Strike Rating", "minValue": 77, "maxValue": 100, "unit": "FLAT" }] }] },
+      { "id": "crafted_scepter_nightmare_minion_skill_area", "name": "Minion Skill Area", "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_skill_area", "label": "+(min-max)% Minion Skill Area", "minValue": 18, "maxValue": 21, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_nightmare_max_life", "name": "Max Life", "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 100, "maxValue": 150, "unit": "FLAT" }] }] },
+      { "id": "crafted_scepter_nightmare_max_energy_shield", "name": "Max Energy Shield", "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_energy_shield", "label": "+(min-max) Max Energy Shield", "minValue": 320, "maxValue": 400, "unit": "FLAT" }] }] },
+      { "id": "crafted_scepter_nightmare_cold_resistance", "name": "Cold Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "cold_resistance", "label": "+(min-max)% Cold Resistance", "minValue": 21, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_nightmare_erosion_resistance", "name": "Erosion Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "erosion_resistance", "label": "+(min-max)% Erosion Resistance", "minValue": 21, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_nightmare_max_mana", "name": "Max Mana", "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_mana", "label": "+(min-max) Max Mana", "minValue": 96, "maxValue": 120, "unit": "FLAT" }] }] },
+      { "id": "crafted_scepter_nightmare_fire_resistance", "name": "Fire Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "fire_resistance", "label": "+(min-max)% Fire Resistance", "minValue": 21, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_nightmare_lightning_resistance", "name": "Lightning Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "lightning_resistance", "label": "+(min-max)% Lightning Resistance", "minValue": 21, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_nightmare_elemental_resistance", "name": "Elemental Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "elemental_resistance", "label": "+(min-max)% Elemental Resistance", "minValue": 9, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_nightmare_strength", "name": "Strength", "tiers": [{ "tier": "T1", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 51, "maxValue": 60, "unit": "FLAT" }] }] },
+      { "id": "crafted_scepter_nightmare_intelligence", "name": "Intelligence", "tiers": [{ "tier": "T1", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 51, "maxValue": 60, "unit": "FLAT" }] }] },
+      { "id": "crafted_scepter_nightmare_movement_speed", "name": "Movement Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "movement_speed", "label": "+(min-max)% Movement Speed", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_nightmare_skill_effect_duration", "name": "Skill Effect Duration", "tiers": [{ "tier": "T1", "stats": [{ "statId": "skill_effect_duration", "label": "+(min-max)% Skill Effect Duration", "minValue": 14, "maxValue": 20, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_nightmare_dexterity", "name": "Dexterity", "tiers": [{ "tier": "T1", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 51, "maxValue": 60, "unit": "FLAT" }] }] },
+      { "id": "crafted_scepter_nightmare_aura_effect", "name": "Aura Effect", "tiers": [{ "tier": "T1", "stats": [{ "statId": "aura_effect", "label": "+(min-max)% Aura Effect", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_nightmare_cooldown_recovery_speed", "name": "Cooldown Recovery Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "cooldown_recovery_speed", "label": "+(min-max)% Cooldown Recovery Speed", "minValue": 13, "maxValue": 15, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_nightmare_max_tenacity_blessing_stacks", "name": "Max Tenacity Blessing Stacks", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_scepter_nightmare_max_focus_blessing_stacks", "name": "Max Focus Blessing Stacks", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_scepter_nightmare_fervor_effect", "name": "Fervor Effect", "tiers": [{ "tier": "T1", "stats": [{ "statId": "fervor_effect", "label": "+(min-max)% Fervor Effect", "minValue": 15, "maxValue": 20, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_nightmare_projectile_quantity", "name": "Projectile Quantity", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_scepter_nightmare_max_agility_blessing_stacks", "name": "Max Agility Blessing Stacks", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_scepter_nightmare_sealed_mana_compensation", "name": "Sealed Mana Compensation", "tiers": [{ "tier": "T1", "stats": [{ "statId": "sealed_mana_compensation", "label": "+(min-max)% Sealed Mana Compensation", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_scepter_nightmare_max_elemental_resistance", "name": "Max Elemental Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_elemental_resistance", "label": "+(min-max)% Max Elemental Resistance", "minValue": 1, "maxValue": 2, "unit": "PERCENT" }] }] }
+    ],
+    "INTERMEDIATE_SEQUENCES": [
+      { "id": "crafted_scepter_intermediate_sequence_additional_damage_over_time", "name": "+8% additional damage over time", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_scepter_intermediate_sequence_affliction_per_second", "name": "+16 Affliction inflicted per second +24% Affliction Effect", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_scepter_intermediate_sequence_reaping_recovery_speed", "name": "+25% Reaping Recovery Speed", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_scepter_intermediate_sequence_reaping_duration", "name": "+30% Reaping Duration", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_scepter_intermediate_sequence_movement_speed", "name": "+10% Movement Speed", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_scepter_intermediate_sequence_ailment_duration", "name": "+12% Ailment Duration", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_scepter_intermediate_sequence_terra_charge_stacks", "name": "Max Terra Charge Stacks -1 Max Terra Quantity +1", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_scepter_intermediate_sequence_blur_effect", "name": "+8% Blur Effect", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_scepter_intermediate_sequence_all_resistance_on_max_affliction", "name": "-10% All Resistance when the enemy has max Affliction", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_scepter_intermediate_sequence_all_stats", "name": "+8% all stats", "tiers": [{ "tier": "T1", "stats": [] }] }
+    ],
+    "ADVANCED_SEQUENCES": [
+      { "id": "crafted_scepter_advanced_sequence_black_hole", "name": "Triggers Lv. 30 Black Hole when moving. Interval: 1.5 s", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_scepter_advanced_sequence_cataclysm_support", "name": "Main Skill is supported by Lv. 25 Cataclysm", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_scepter_advanced_sequence_ailment_damage_per_type", "name": "Upon inflicting damage, +8% additional Ailment Damage for every Ailment type", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_scepter_advanced_sequence_deep_pain_aura", "name": "+120% Deep Pain Aura -20% additional Sealed Mana Compensation", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_scepter_advanced_sequence_movement_and_skill_area_on_terra", "name": "+20% Movement Speed when standing on Terra Skill +100% Skill Area", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_scepter_advanced_sequence_affliction_per_second", "name": "+160 Affliction inflicted per second", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_scepter_advanced_sequence_blessing_stacks_swap", "name": "+1 to Max Tenacity Blessing Stacks -1 to Max Focus +1 to Max Agility", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_scepter_advanced_sequence_spirit_magi_growth", "name": "+80 initial Growth for Spirit Magi", "tiers": [{ "tier": "T0", "stats": [] }] }
+    ],
+    "BASIC_PREFIXES": [
+      {
+        "id": "crafted_scepter_basic_prefix_max_mana",
+        "name": "+(min-max) Max Mana",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "max_mana", "label": "+(min-max) Max Mana", "minValue": 235, "maxValue": 304, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "max_mana", "label": "+(min-max) Max Mana", "minValue": 181, "maxValue": 234, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "max_mana", "label": "+(min-max) Max Mana", "minValue": 127, "maxValue": 180, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_scepter_basic_prefix_damage_over_time",
+        "name": "+(min-max)% Damage Over Time",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "damage_over_time", "label": "+(min-max)% Damage Over Time", "minValue": 141, "maxValue": 183, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "damage_over_time", "label": "+(min-max)% Damage Over Time", "minValue": 109, "maxValue": 140, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "damage_over_time", "label": "+(min-max)% Damage Over Time", "minValue": 77, "maxValue": 108, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_scepter_basic_prefix_affliction_per_sec",
+        "name": "+(min-max) Affliction per Second",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "affliction_per_sec", "label": "+(min-max) Affliction per Second", "minValue": 187, "maxValue": 243, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "affliction_per_sec", "label": "+(min-max) Affliction per Second", "minValue": 143, "maxValue": 186, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "affliction_per_sec", "label": "+(min-max) Affliction per Second", "minValue": 120, "maxValue": 144, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_scepter_basic_prefix_reaps_dot_duration",
+        "name": "+(min-max)s Reaps DoT Duration",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "reaps_dot_duration", "label": "+(min-max)s Reaps DoT Duration", "minValue": 0.25, "maxValue": 0.3, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "reaps_dot_duration", "label": "+(min-max)s Reaps DoT Duration", "minValue": 0.19, "maxValue": 0.24, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "reaps_dot_duration", "label": "+(min-max)s Reaps DoT Duration", "minValue": 0.13, "maxValue": 0.18, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_scepter_basic_prefix_max_life",
+        "name": "+(min-max) Max Life",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 429, "maxValue": 555, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 330, "maxValue": 428, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 232, "maxValue": 330, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_scepter_basic_prefix_max_energy_shield",
+        "name": "+(min-max) Max Energy Shield",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "max_energy_shield", "label": "+(min-max) Max Energy Shield", "minValue": 685, "maxValue": 968, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "max_energy_shield", "label": "+(min-max) Max Energy Shield", "minValue": 526, "maxValue": 743, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "max_energy_shield", "label": "+(min-max) Max Energy Shield", "minValue": 369, "maxValue": 525, "unit": "FLAT" }] }
+        ]
+      }
+    ],
+    "ADVANCED_PREFIXES": [
+      {
+        "id": "crafted_scepter_advanced_prefix_strength",
+        "name": "+(min-max) Strength",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 118, "maxValue": 152, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 91, "maxValue": 117, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 64, "maxValue": 90, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_scepter_advanced_prefix_dexterity",
+        "name": "+(min-max) Dexterity",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 118, "maxValue": 152, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 91, "maxValue": 117, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 64, "maxValue": 90, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_scepter_advanced_prefix_intelligence",
+        "name": "+(min-max) Intelligence",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 118, "maxValue": 152, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 91, "maxValue": 117, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 64, "maxValue": 90, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_scepter_advanced_prefix_physical_skill_level",
+        "name": "+(min-max) to Physical Skill Level",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "physical_skill_level", "label": "+(min-max) to Physical Skill Level", "minValue": 3, "maxValue": 4, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "physical_skill_level", "label": "+(min-max) to Physical Skill Level", "minValue": 2, "maxValue": 3, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "physical_skill_level", "label": "+(min-max) to Physical Skill Level", "minValue": 2, "maxValue": 2, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_scepter_advanced_prefix_lightning_skill_level",
+        "name": "+(min-max) to Lightning Skill Level",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "lightning_skill_level", "label": "+(min-max) to Lightning Skill Level", "minValue": 3, "maxValue": 4, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "lightning_skill_level", "label": "+(min-max) to Lightning Skill Level", "minValue": 2, "maxValue": 3, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "lightning_skill_level", "label": "+(min-max) to Lightning Skill Level", "minValue": 2, "maxValue": 2, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_scepter_advanced_prefix_cold_skill_level",
+        "name": "+(min-max) to Cold Skill Level",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "cold_skill_level", "label": "+(min-max) to Cold Skill Level", "minValue": 3, "maxValue": 4, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "cold_skill_level", "label": "+(min-max) to Cold Skill Level", "minValue": 2, "maxValue": 3, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "cold_skill_level", "label": "+(min-max) to Cold Skill Level", "minValue": 2, "maxValue": 2, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_scepter_advanced_prefix_fire_skill_level",
+        "name": "+(min-max) to Fire Skill Level",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "fire_skill_level", "label": "+(min-max) to Fire Skill Level", "minValue": 3, "maxValue": 4, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "fire_skill_level", "label": "+(min-max) to Fire Skill Level", "minValue": 2, "maxValue": 3, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "fire_skill_level", "label": "+(min-max) to Fire Skill Level", "minValue": 2, "maxValue": 2, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_scepter_advanced_prefix_erosion_skill_level",
+        "name": "+(min-max) to Erosion Skill Level",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "erosion_skill_level", "label": "+(min-max) to Erosion Skill Level", "minValue": 3, "maxValue": 4, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "erosion_skill_level", "label": "+(min-max) to Erosion Skill Level", "minValue": 2, "maxValue": 3, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "erosion_skill_level", "label": "+(min-max) to Erosion Skill Level", "minValue": 2, "maxValue": 2, "unit": "FLAT" }] }
+        ]
+      }
+    ],
+    "ULTIMATE_PREFIXES": [
+      {
+        "id": "crafted_scepter_ultimate_prefix_max_terra_charge_stacks",
+        "name": "+(min-max) Max Terra Charge Stacks",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "max_terra_charge_stacks", "label": "+(min-max) Max Terra Charge Stacks", "minValue": 4, "maxValue": 5, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "max_terra_charge_stacks", "label": "+(min-max) Max Terra Charge Stacks", "minValue": 3, "maxValue": 4, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "max_terra_charge_stacks", "label": "+(min-max) Max Terra Charge Stacks", "minValue": 2, "maxValue": 2, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_scepter_ultimate_prefix_spell_skill_level",
+        "name": "+(min-max) to Spell Skill Level",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "spell_skill_level", "label": "+(min-max) to Spell Skill Level", "minValue": 4, "maxValue": 5, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "spell_skill_level", "label": "+(min-max) to Spell Skill Level", "minValue": 3, "maxValue": 4, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "spell_skill_level", "label": "+(min-max) to Spell Skill Level", "minValue": 3, "maxValue": 3, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_scepter_ultimate_prefix_elemental_erosion_resistance_penetration",
+        "name": "+(min-max)% Elemental and Erosion Resistance Penetration",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "elemental_and_erosion_resistance_penetration", "label": "+(min-max)% Elemental and Erosion Resistance Penetration", "minValue": 40, "maxValue": 51, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "elemental_and_erosion_resistance_penetration", "label": "+(min-max)% Elemental and Erosion Resistance Penetration", "minValue": 31, "maxValue": 39, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "elemental_and_erosion_resistance_penetration", "label": "+(min-max)% Elemental and Erosion Resistance Penetration", "minValue": 22, "maxValue": 30, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_scepter_ultimate_prefix_additional_damage_to_life",
+        "name": "+(min-max)% additional Damage to Life",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "additional_damage_to_life", "label": "+(min-max)% additional Damage to Life", "minValue": 40, "maxValue": 51, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "additional_damage_to_life", "label": "+(min-max)% additional Damage to Life", "minValue": 31, "maxValue": 39, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "additional_damage_to_life", "label": "+(min-max)% additional Damage to Life", "minValue": 22, "maxValue": 30, "unit": "PERCENT" }] }
+        ]
+      }
+    ],
+    "BASIC_SUFFIXES": [
+      {
+        "id": "crafted_scepter_basic_suffix_energy_shield_charge_speed",
+        "name": "+(min-max)% Energy Shield Charge Speed",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "energy_shield_charge_speed", "label": "+(min-max)% Energy Shield Charge Speed", "minValue": 30, "maxValue": 39, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "energy_shield_charge_speed", "label": "+(min-max)% Energy Shield Charge Speed", "minValue": 23, "maxValue": 30, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "energy_shield_charge_speed", "label": "+(min-max)% Energy Shield Charge Speed", "minValue": 18, "maxValue": 24, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_scepter_basic_suffix_wilt_base_damage",
+        "name": "+(min-max) Wilt Base Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "wilt_base_damage", "label": "+(min-max) Wilt Base Damage", "minValue": 95, "maxValue": 115, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "wilt_base_damage", "label": "+(min-max) Wilt Base Damage", "minValue": 72, "maxValue": 88, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "wilt_base_damage", "label": "+(min-max) Wilt Base Damage", "minValue": 56, "maxValue": 67, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_scepter_basic_suffix_affliction_effect",
+        "name": "+(min-max)% Affliction Effect",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "affliction_effect", "label": "+(min-max)% Affliction Effect", "minValue": 99, "maxValue": 127, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "affliction_effect", "label": "+(min-max)% Affliction Effect", "minValue": 76, "maxValue": 98, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "affliction_effect", "label": "+(min-max)% Affliction Effect", "minValue": 54, "maxValue": 75, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_scepter_basic_suffix_trauma_base_damage",
+        "name": "+(min-max) Trauma Base Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "trauma_base_damage", "label": "+(min-max) Trauma Base Damage", "minValue": 1460, "maxValue": 3400, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "trauma_base_damage", "label": "+(min-max) Trauma Base Damage", "minValue": 1120, "maxValue": 2610, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "trauma_base_damage", "label": "+(min-max) Trauma Base Damage", "minValue": 480, "maxValue": 1120, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_scepter_basic_suffix_ignite_base_damage",
+        "name": "+(min-max) Ignite Base Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "ignite_base_damage", "label": "+(min-max) Ignite Base Damage", "minValue": 1063, "maxValue": 1975, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "ignite_base_damage", "label": "+(min-max) Ignite Base Damage", "minValue": 817, "maxValue": 1518, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "ignite_base_damage", "label": "+(min-max) Ignite Base Damage", "minValue": 350, "maxValue": 650, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_scepter_basic_suffix_physical_damage",
+        "name": "+(min-max)% Physical Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "physical_damage", "label": "+(min-max)% Physical Damage", "minValue": 141, "maxValue": 183, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "physical_damage", "label": "+(min-max)% Physical Damage", "minValue": 109, "maxValue": 140, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "physical_damage", "label": "+(min-max)% Physical Damage", "minValue": 78, "maxValue": 108, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_scepter_basic_suffix_elemental_damage",
+        "name": "+(min-max)% Elemental Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "elemental_damage", "label": "+(min-max)% Elemental Damage", "minValue": 141, "maxValue": 183, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "elemental_damage", "label": "+(min-max)% Elemental Damage", "minValue": 109, "maxValue": 140, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "elemental_damage", "label": "+(min-max)% Elemental Damage", "minValue": 78, "maxValue": 108, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_scepter_basic_suffix_erosion_damage",
+        "name": "+(min-max)% Erosion Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "erosion_damage", "label": "+(min-max)% Erosion Damage", "minValue": 141, "maxValue": 183, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "erosion_damage", "label": "+(min-max)% Erosion Damage", "minValue": 109, "maxValue": 140, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "erosion_damage", "label": "+(min-max)% Erosion Damage", "minValue": 77, "maxValue": 108, "unit": "PERCENT" }] }
+        ]
+      }
+    ],
+    "ADVANCED_SUFFIXES": [
+      {
+        "id": "crafted_scepter_advanced_suffix_cast_speed",
+        "name": "+(min-max)% Cast Speed +(min-max)% Minion Cast Speed",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "cast_speed", "label": "+(min-max)% Cast Speed", "minValue": 48, "maxValue": 61, "unit": "PERCENT" }, { "statId": "minion_cast_speed", "label": "+(min-max)% Minion Cast Speed", "minValue": 48, "maxValue": 61, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "cast_speed", "label": "+(min-max)% Cast Speed", "minValue": 33, "maxValue": 47, "unit": "PERCENT" }, { "statId": "minion_cast_speed", "label": "+(min-max)% Minion Cast Speed", "minValue": 33, "maxValue": 47, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "cast_speed", "label": "+(min-max)% Cast Speed", "minValue": 26, "maxValue": 36, "unit": "PERCENT" }, { "statId": "minion_cast_speed", "label": "+(min-max)% Minion Cast Speed", "minValue": 26, "maxValue": 36, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_scepter_advanced_suffix_ignite_trauma_wilt_duration",
+        "name": "+(min-max)% Ignite Duration +(min-max)% Trauma Duration +(min-max)% Wilt Duration",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "ignite_duration", "label": "+(min-max)% Ignite Duration", "minValue": 75, "maxValue": 97, "unit": "PERCENT" }, { "statId": "trauma_duration", "label": "+(min-max)% Trauma Duration", "minValue": 75, "maxValue": 97, "unit": "PERCENT" }, { "statId": "wilt_duration", "label": "+(min-max)% Wilt Duration", "minValue": 75, "maxValue": 97, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "ignite_duration", "label": "+(min-max)% Ignite Duration", "minValue": 55, "maxValue": 74, "unit": "PERCENT" }, { "statId": "trauma_duration", "label": "+(min-max)% Trauma Duration", "minValue": 55, "maxValue": 74, "unit": "PERCENT" }, { "statId": "wilt_duration", "label": "+(min-max)% Wilt Duration", "minValue": 55, "maxValue": 74, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "ignite_duration", "label": "+(min-max)% Ignite Duration", "minValue": 36, "maxValue": 48, "unit": "PERCENT" }, { "statId": "trauma_duration", "label": "+(min-max)% Trauma Duration", "minValue": 36, "maxValue": 48, "unit": "PERCENT" }, { "statId": "wilt_duration", "label": "+(min-max)% Wilt Duration", "minValue": 36, "maxValue": 48, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_scepter_advanced_suffix_reaping_duration",
+        "name": "+(min-max)% Reaping Duration",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "reaping_duration", "label": "+(min-max)% Reaping Duration", "minValue": 99, "maxValue": 127, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "reaping_duration", "label": "+(min-max)% Reaping Duration", "minValue": 76, "maxValue": 98, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "reaping_duration", "label": "+(min-max)% Reaping Duration", "minValue": 54, "maxValue": 75, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_scepter_advanced_suffix_focus_speed",
+        "name": "+(min-max)% Focus Speed",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "focus_speed", "label": "+(min-max)% Focus Speed", "minValue": 75, "maxValue": 90, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "focus_speed", "label": "+(min-max)% Focus Speed", "minValue": 60, "maxValue": 70, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "focus_speed", "label": "+(min-max)% Focus Speed", "minValue": 45, "maxValue": 54, "unit": "PERCENT" }] }
+        ]
+      }
+    ],
+    "ULTIMATE_SUFFIXES": [
+      {
+        "id": "crafted_scepter_ultimate_suffix_reaping_recovery_speed",
+        "name": "+(min-max)% Reaping Recovery Speed",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "reaping_recovery_speed", "label": "+(min-max)% Reaping Recovery Speed", "minValue": 163, "maxValue": 229, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "reaping_recovery_speed", "label": "+(min-max)% Reaping Recovery Speed", "minValue": 116, "maxValue": 163, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "reaping_recovery_speed", "label": "+(min-max)% Reaping Recovery Speed", "minValue": 89, "maxValue": 125, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_scepter_ultimate_suffix_terra_quantity_and_damage",
+        "name": "+1 Terra Quantity +(min-max)% additional Terra Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "terra_quantity", "label": "+(min-max) Terra Quantity", "minValue": 1, "maxValue": 1, "unit": "FLAT" }, { "statId": "additional_terra_damage", "label": "+(min-max)% additional Terra Damage", "minValue": 3, "maxValue": 3, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "terra_quantity", "label": "+(min-max) Terra Quantity", "minValue": 1, "maxValue": 1, "unit": "FLAT" }, { "statId": "additional_terra_damage", "label": "+(min-max)% additional Terra Damage", "minValue": 2, "maxValue": 2, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "terra_quantity", "label": "+(min-max) Terra Quantity", "minValue": 1, "maxValue": 1, "unit": "FLAT" }, { "statId": "additional_terra_damage", "label": "+(min-max)% additional Terra Damage", "minValue": 1, "maxValue": 1, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_scepter_ultimate_suffix_focus_damage_enhancement",
+        "name": "+(min-max)% Focus Damage Enhancement",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "focus_damage_enhancement", "label": "+(min-max)% Focus Damage Enhancement", "minValue": 65, "maxValue": 80, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "focus_damage_enhancement", "label": "+(min-max)% Focus Damage Enhancement", "minValue": 48, "maxValue": 60, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "focus_damage_enhancement", "label": "+(min-max)% Focus Damage Enhancement", "minValue": 35, "maxValue": 45, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_scepter_ultimate_suffix_combo_damage_enhancement",
+        "name": "+(min-max)% Combo Damage Enhancement",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "combo_damage_enhancement", "label": "+(min-max)% Combo Damage Enhancement", "minValue": 65, "maxValue": 80, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "combo_damage_enhancement", "label": "+(min-max)% Combo Damage Enhancement", "minValue": 48, "maxValue": 60, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "combo_damage_enhancement", "label": "+(min-max)% Combo Damage Enhancement", "minValue": 40, "maxValue": 50, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_scepter_ultimate_suffix_ailment_damage_enhancement",
+        "name": "+(min-max)% Ailment Damage Enhancement",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "ailment_damage_enhancement", "label": "+(min-max)% Ailment Damage Enhancement", "minValue": 65, "maxValue": 80, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "ailment_damage_enhancement", "label": "+(min-max)% Ailment Damage Enhancement", "minValue": 48, "maxValue": 60, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "ailment_damage_enhancement", "label": "+(min-max)% Ailment Damage Enhancement", "minValue": 40, "maxValue": 50, "unit": "PERCENT" }] }
+        ]
+      }
+    ]
+  }
+}

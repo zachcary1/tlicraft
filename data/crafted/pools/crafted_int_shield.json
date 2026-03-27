@@ -1,0 +1,41 @@
+{
+  "id": "crafted_int_shield",
+  "name": "Crafted INT Shield",
+  "baseItemCategoryId": "shield",
+  "weaponTypeId": null,
+  "attributeType": "INT",
+  "isPriceless": true,
+  "groups": {
+    "BASE_AFFIXES": [],
+    "CORROSION_BASE_AFFIXES": [],
+    "SWEET_DREAM_AFFIXES": [],
+    "NIGHTMARE_AFFIXES": [],
+    "INTERMEDIATE_SEQUENCES": [
+      { "id": "crafted_int_shield_intermediate_sequence_elemental_resistance", "name": "+8% Elemental Resistance", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_int_shield_intermediate_sequence_max_life_and_mana", "name": "+15% Max Life and Max Mana", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_int_shield_intermediate_sequence_defense_from_shield", "name": "+40% Defense from Shield", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_int_shield_intermediate_sequence_attack_and_spell_block_chance", "name": "+10% Attack and Spell Block Chance", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_int_shield_intermediate_sequence_movement_speed", "name": "+10% Movement Speed", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_int_shield_intermediate_sequence_critical_strike_rating", "name": "+80% Critical Strike Rating", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_int_shield_intermediate_sequence_critical_strike_damage", "name": "+40% Critical Strike Damage", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_int_shield_intermediate_sequence_life_on_block", "name": "Restores 3% Life on Block. Interval: 0.3s", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_int_shield_intermediate_sequence_energy_shield_on_block", "name": "Restores 3% Energy Shield on Block. Interval: 0.3s", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_int_shield_intermediate_sequence_all_stats", "name": "+8% all stats", "tiers": [{ "tier": "T1", "stats": [] }] }
+    ],
+    "ADVANCED_SEQUENCES": [
+      { "id": "crafted_int_shield_advanced_sequence_block_ratio_upper_limit", "name": "+8% Block Ratio Upper limit", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_int_shield_advanced_sequence_passive_skill_precise_restrain", "name": "All Passive Skill slots are supported by Lv. 30 Precise: Restrain", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_int_shield_advanced_sequence_immune_to_crowd_control", "name": "Immune to crowd control effects", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_int_shield_advanced_sequence_physical_to_elemental_damage", "name": "Converts 25% of Physical Damage taken to random Elemental Damage -25% Defense", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_int_shield_advanced_sequence_armor_effective_rate", "name": "+15% Armor Effective Rate for Non-Physical Damage +2400 Gear Armor", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_int_shield_advanced_sequence_spell_damage_evasion", "name": "Spell Damage will not further reduce Evasion by default +1680 gear Evasion", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_int_shield_advanced_sequence_energy_shield_on_blocking", "name": "Energy Shield starts to Charge when Blocking +40% Energy Shield Charge Speed", "tiers": [{ "tier": "T0", "stats": [] }] }
+    ],
+    "BASIC_PREFIXES": [],
+    "ADVANCED_PREFIXES": [],
+    "ULTIMATE_PREFIXES": [],
+    "BASIC_SUFFIXES": [],
+    "ADVANCED_SUFFIXES": [],
+    "ULTIMATE_SUFFIXES": []
+  }
+}

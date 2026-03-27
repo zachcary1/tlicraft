@@ -1,0 +1,423 @@
+{
+  "id": "crafted_str_shield",
+  "name": "Crafted STR Shield",
+  "baseItemCategoryId": "shield",
+  "weaponTypeId": null,
+  "attributeType": "STR",
+  "isPriceless": true,
+  "groups": {
+    "BASE_AFFIXES": [
+      { "id": "crafted_str_shield_base_max_life", "name": "Max Life", "tiers": [{ "tier": "T2", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 54, "maxValue": 74, "unit": "FLAT" }] }] },
+      { "id": "crafted_str_shield_base_gear_armor", "name": "Gear Armor", "tiers": [{ "tier": "T2", "stats": [{ "statId": "gear_armor_percent", "label": "+(min-max)% Gear Armor", "minValue": 10, "maxValue": 14, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_base_fire_resistance", "name": "Fire Resistance", "tiers": [{ "tier": "T2", "stats": [{ "statId": "fire_resistance", "label": "+(min-max)% Fire Resistance", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_base_cold_resistance", "name": "Cold Resistance", "tiers": [{ "tier": "T2", "stats": [{ "statId": "cold_resistance", "label": "+(min-max)% Cold Resistance", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_base_lightning_resistance", "name": "Lightning Resistance", "tiers": [{ "tier": "T2", "stats": [{ "statId": "lightning_resistance", "label": "+(min-max)% Lightning Resistance", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_base_erosion_resistance", "name": "Erosion Resistance", "tiers": [{ "tier": "T2", "stats": [{ "statId": "erosion_resistance", "label": "+(min-max)% Erosion Resistance", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_base_physical_damage", "name": "Physical Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "physical_damage", "label": "+(min-max)% Physical Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_base_elemental_damage", "name": "Elemental Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "elemental_damage", "label": "+(min-max)% Elemental Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_base_erosion_damage", "name": "Erosion Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "erosion_damage", "label": "+(min-max)% Erosion Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_base_attack_and_spell_block_chance", "name": "Attack and Spell Block Chance", "tiers": [{ "tier": "T2", "stats": [{ "statId": "attack_and_spell_block_chance", "label": "+(min-max)% Attack and Spell Block Chance", "minValue": 8, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_base_additional_damage", "name": "Additional Damage", "tiers": [{ "tier": "T1", "stats": [{ "statId": "additional_damage", "label": "+(min-max)% Additional Damage", "minValue": 6, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_base_strength", "name": "Strength", "tiers": [{ "tier": "T1", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 35, "maxValue": 40, "unit": "FLAT" }] }] },
+      { "id": "crafted_str_shield_base_dexterity", "name": "Dexterity", "tiers": [{ "tier": "T1", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 35, "maxValue": 40, "unit": "FLAT" }] }] },
+      { "id": "crafted_str_shield_base_intelligence", "name": "Intelligence", "tiers": [{ "tier": "T1", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 35, "maxValue": 40, "unit": "FLAT" }] }] },
+      { "id": "crafted_str_shield_base_max_elemental_and_erosion_resistance", "name": "Max Elemental and Erosion Resistance", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_elemental_and_erosion_resistance", "label": "+(min-max)% Max Elemental and Erosion Resistance", "minValue": 4, "maxValue": 5, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_base_physical_damage_conversion_to_fire", "name": "Physical Damage Conversion to Fire", "tiers": [{ "tier": "T0", "stats": [{ "statId": "physical_damage_conversion_to_fire", "label": "Converts (min-max)% Physical Damage to Fire Damage", "minValue": 16, "maxValue": 20, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_base_erosion_damage_conversion_to_fire", "name": "Erosion Damage Conversion to Fire", "tiers": [{ "tier": "T0", "stats": [{ "statId": "erosion_damage_conversion_to_fire", "label": "Converts (min-max)% Erosion Damage to Fire Damage", "minValue": 36, "maxValue": 45, "unit": "PERCENT" }] }] }
+    ],
+    "CORROSION_BASE_AFFIXES": [
+      { "id": "crafted_str_shield_corrosion_base_max_fire_resistance", "name": "Max Fire Resistance", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_fire_resistance", "label": "+(min-max)% Max Fire Resistance", "minValue": 1, "maxValue": 2, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_corrosion_base_max_cold_resistance", "name": "Max Cold Resistance", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_cold_resistance", "label": "+(min-max)% Max Cold Resistance", "minValue": 1, "maxValue": 2, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_corrosion_base_max_lightning_resistance", "name": "Max Lightning Resistance", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_lightning_resistance", "label": "+(min-max)% Max Lightning Resistance", "minValue": 1, "maxValue": 2, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_corrosion_base_avoid_blocked_damage_chance", "name": "Avoid Blocked Damage Chance", "tiers": [{ "tier": "T0", "stats": [{ "statId": "avoid_blocked_damage_chance", "label": "(min-max)% Avoid Blocked Damage Chance", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_corrosion_base_block_ratio", "name": "Block Ratio", "tiers": [{ "tier": "T0", "stats": [{ "statId": "block_ratio", "label": "+(min-max)% Block Ratio", "minValue": 5, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_corrosion_base_attack_block_chance", "name": "Attack Block Chance", "tiers": [{ "tier": "T0", "stats": [{ "statId": "attack_block_chance", "label": "+(min-max)% Attack Block Chance", "minValue": 8, "maxValue": 12, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_corrosion_base_spell_block_chance", "name": "Spell Block Chance", "tiers": [{ "tier": "T0", "stats": [{ "statId": "spell_block_chance", "label": "+(min-max)% Spell Block Chance", "minValue": 12, "maxValue": 15, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_corrosion_base_max_energy_shield", "name": "Max Energy Shield", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_energy_shield_percent", "label": "+(min-max)% Max Energy Shield", "minValue": 3, "maxValue": 5, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_corrosion_base_max_life", "name": "Max Life", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_life_percent", "label": "+(min-max)% Max Life", "minValue": 3, "maxValue": 5, "unit": "PERCENT" }] }] }
+    ],
+    "SWEET_DREAM_AFFIXES": [
+      { "id": "crafted_str_shield_sweet_dream_max_life", "name": "Max Life", "tiers": [{ "tier": "T2", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 54, "maxValue": 74, "unit": "FLAT" }] }] },
+      { "id": "crafted_str_shield_sweet_dream_gear_armor", "name": "Gear Armor", "tiers": [{ "tier": "T2", "stats": [{ "statId": "gear_armor_percent", "label": "+(min-max)% Gear Armor", "minValue": 10, "maxValue": 14, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_sweet_dream_fire_resistance", "name": "Fire Resistance", "tiers": [{ "tier": "T2", "stats": [{ "statId": "fire_resistance", "label": "+(min-max)% Fire Resistance", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_sweet_dream_cold_resistance", "name": "Cold Resistance", "tiers": [{ "tier": "T2", "stats": [{ "statId": "cold_resistance", "label": "+(min-max)% Cold Resistance", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_sweet_dream_lightning_resistance", "name": "Lightning Resistance", "tiers": [{ "tier": "T2", "stats": [{ "statId": "lightning_resistance", "label": "+(min-max)% Lightning Resistance", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_sweet_dream_erosion_resistance", "name": "Erosion Resistance", "tiers": [{ "tier": "T2", "stats": [{ "statId": "erosion_resistance", "label": "+(min-max)% Erosion Resistance", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_sweet_dream_physical_damage", "name": "Physical Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "physical_damage", "label": "+(min-max)% Physical Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_sweet_dream_elemental_damage", "name": "Elemental Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "elemental_damage", "label": "+(min-max)% Elemental Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_sweet_dream_erosion_damage", "name": "Erosion Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "erosion_damage", "label": "+(min-max)% Erosion Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_sweet_dream_attack_and_spell_block_chance", "name": "Attack and Spell Block Chance", "tiers": [{ "tier": "T2", "stats": [{ "statId": "attack_and_spell_block_chance", "label": "+(min-max)% Attack and Spell Block Chance", "minValue": 8, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_sweet_dream_additional_damage", "name": "Additional Damage", "tiers": [{ "tier": "T1", "stats": [{ "statId": "additional_damage", "label": "+(min-max)% Additional Damage", "minValue": 6, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_sweet_dream_strength", "name": "Strength", "tiers": [{ "tier": "T1", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 35, "maxValue": 40, "unit": "FLAT" }] }] },
+      { "id": "crafted_str_shield_sweet_dream_dexterity", "name": "Dexterity", "tiers": [{ "tier": "T1", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 35, "maxValue": 40, "unit": "FLAT" }] }] },
+      { "id": "crafted_str_shield_sweet_dream_intelligence", "name": "Intelligence", "tiers": [{ "tier": "T1", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 35, "maxValue": 40, "unit": "FLAT" }] }] },
+      { "id": "crafted_str_shield_sweet_dream_max_elemental_and_erosion_resistance", "name": "Max Elemental and Erosion Resistance", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_elemental_and_erosion_resistance", "label": "+(min-max)% Max Elemental and Erosion Resistance", "minValue": 4, "maxValue": 5, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_sweet_dream_physical_damage_conversion_to_fire", "name": "Physical Damage Conversion to Fire", "tiers": [{ "tier": "T0", "stats": [{ "statId": "physical_damage_conversion_to_fire", "label": "Converts (min-max)% Physical Damage to Fire Damage", "minValue": 16, "maxValue": 20, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_sweet_dream_erosion_damage_conversion_to_fire", "name": "Erosion Damage Conversion to Fire", "tiers": [{ "tier": "T0", "stats": [{ "statId": "erosion_damage_conversion_to_fire", "label": "Converts (min-max)% Erosion Damage to Fire Damage", "minValue": 36, "maxValue": 45, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_sweet_dream_fortitude_on_melee_skill", "name": "+100% chance to gain 1 stack of Fortitude when using a Melee Skill", "tiers": [{ "tier": "T0", "stats": [{ "statId": "fortitude_on_melee_skill_chance", "label": "+(min-max)% chance to gain 1 stack of Fortitude when using a Melee Skill", "minValue": 100, "maxValue": 100, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_sweet_dream_elemental_resistance", "name": "Elemental Resistance", "tiers": [{ "tier": "T0", "stats": [{ "statId": "elemental_resistance", "label": "+(min-max)% Elemental Resistance", "minValue": 8, "maxValue": 8, "unit": "PERCENT" }] }] }
+    ],
+    "NIGHTMARE_AFFIXES": [
+      { "id": "crafted_str_shield_nightmare_damage", "name": "Damage", "tiers": [{ "tier": "T1", "stats": [{ "statId": "damage", "label": "+(min-max)% Damage", "minValue": 49, "maxValue": 72, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_nightmare_attack_and_cast_speed", "name": "Attack and Cast Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "attack_and_cast_speed", "label": "+(min-max)% Attack and Cast Speed", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_nightmare_minion_damage", "name": "Minion Damage", "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_damage", "label": "+(min-max)% Minion Damage", "minValue": 49, "maxValue": 72, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_nightmare_minion_attack_and_cast_speed", "name": "Minion Attack and Cast Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_attack_and_cast_speed", "label": "+(min-max)% Minion Attack and Cast Speed", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_nightmare_attack_and_spell_critical_strike_rating", "name": "Attack and Spell Critical Strike Rating", "tiers": [{ "tier": "T1", "stats": [{ "statId": "attack_and_spell_critical_strike_rating", "label": "+(min-max) Attack and Spell Critical Strike Rating", "minValue": 77, "maxValue": 100, "unit": "FLAT" }] }] },
+      { "id": "crafted_str_shield_nightmare_skill_area", "name": "Skill Area", "tiers": [{ "tier": "T1", "stats": [{ "statId": "skill_area", "label": "+(min-max)% Skill Area", "minValue": 18, "maxValue": 21, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_nightmare_minion_critical_strike_rating", "name": "Minion Critical Strike Rating", "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_critical_strike_rating", "label": "+(min-max) Minion Critical Strike Rating", "minValue": 77, "maxValue": 100, "unit": "FLAT" }] }] },
+      { "id": "crafted_str_shield_nightmare_minion_skill_area", "name": "Minion Skill Area", "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_skill_area", "label": "+(min-max)% Minion Skill Area", "minValue": 18, "maxValue": 21, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_nightmare_max_life", "name": "Max Life", "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 100, "maxValue": 150, "unit": "FLAT" }] }] },
+      { "id": "crafted_str_shield_nightmare_max_energy_shield", "name": "Max Energy Shield", "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_energy_shield", "label": "+(min-max) Max Energy Shield", "minValue": 320, "maxValue": 400, "unit": "FLAT" }] }] },
+      { "id": "crafted_str_shield_nightmare_cold_resistance", "name": "Cold Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "cold_resistance", "label": "+(min-max)% Cold Resistance", "minValue": 21, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_nightmare_erosion_resistance", "name": "Erosion Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "erosion_resistance", "label": "+(min-max)% Erosion Resistance", "minValue": 21, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_nightmare_max_mana", "name": "Max Mana", "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_mana", "label": "+(min-max) Max Mana", "minValue": 96, "maxValue": 120, "unit": "FLAT" }] }] },
+      { "id": "crafted_str_shield_nightmare_fire_resistance", "name": "Fire Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "fire_resistance", "label": "+(min-max)% Fire Resistance", "minValue": 21, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_nightmare_lightning_resistance", "name": "Lightning Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "lightning_resistance", "label": "+(min-max)% Lightning Resistance", "minValue": 21, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_nightmare_elemental_resistance", "name": "Elemental Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "elemental_resistance", "label": "+(min-max)% Elemental Resistance", "minValue": 9, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_nightmare_strength", "name": "Strength", "tiers": [{ "tier": "T1", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 51, "maxValue": 60, "unit": "FLAT" }] }] },
+      { "id": "crafted_str_shield_nightmare_intelligence", "name": "Intelligence", "tiers": [{ "tier": "T1", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 51, "maxValue": 60, "unit": "FLAT" }] }] },
+      { "id": "crafted_str_shield_nightmare_movement_speed", "name": "Movement Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "movement_speed", "label": "+(min-max)% Movement Speed", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_nightmare_skill_effect_duration", "name": "Skill Effect Duration", "tiers": [{ "tier": "T1", "stats": [{ "statId": "skill_effect_duration", "label": "+(min-max)% Skill Effect Duration", "minValue": 14, "maxValue": 20, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_nightmare_dexterity", "name": "Dexterity", "tiers": [{ "tier": "T1", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 51, "maxValue": 60, "unit": "FLAT" }] }] },
+      { "id": "crafted_str_shield_nightmare_aura_effect", "name": "Aura Effect", "tiers": [{ "tier": "T1", "stats": [{ "statId": "aura_effect", "label": "+(min-max)% Aura Effect", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_nightmare_cooldown_recovery_speed", "name": "Cooldown Recovery Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "cooldown_recovery_speed", "label": "+(min-max)% Cooldown Recovery Speed", "minValue": 13, "maxValue": 15, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_nightmare_max_tenacity_blessing_stacks", "name": "Max Tenacity Blessing Stacks", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_str_shield_nightmare_max_focus_blessing_stacks", "name": "Max Focus Blessing Stacks", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_str_shield_nightmare_fervor_effect", "name": "Fervor Effect", "tiers": [{ "tier": "T1", "stats": [{ "statId": "fervor_effect", "label": "+(min-max)% Fervor Effect", "minValue": 15, "maxValue": 20, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_nightmare_projectile_quantity", "name": "Projectile Quantity", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_str_shield_nightmare_max_agility_blessing_stacks", "name": "Max Agility Blessing Stacks", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_str_shield_nightmare_sealed_mana_compensation", "name": "Sealed Mana Compensation", "tiers": [{ "tier": "T1", "stats": [{ "statId": "sealed_mana_compensation", "label": "+(min-max)% Sealed Mana Compensation", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_str_shield_nightmare_max_elemental_resistance", "name": "Max Elemental Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_elemental_resistance", "label": "+(min-max)% Max Elemental Resistance", "minValue": 1, "maxValue": 2, "unit": "PERCENT" }] }] }
+    ],
+    "INTERMEDIATE_SEQUENCES": [
+      { "id": "crafted_str_shield_intermediate_sequence_elemental_resistance", "name": "+8% Elemental Resistance", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_str_shield_intermediate_sequence_max_life_and_mana", "name": "+15% Max Life and Max Mana", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_str_shield_intermediate_sequence_defense_from_shield", "name": "+40% Defense from Shield", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_str_shield_intermediate_sequence_attack_and_spell_block_chance", "name": "+10% Attack and Spell Block Chance", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_str_shield_intermediate_sequence_movement_speed", "name": "+10% Movement Speed", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_str_shield_intermediate_sequence_critical_strike_rating", "name": "+80% Critical Strike Rating", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_str_shield_intermediate_sequence_critical_strike_damage", "name": "+40% Critical Strike Damage", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_str_shield_intermediate_sequence_life_on_block", "name": "Restores 3% Life on Block. Interval: 0.3s", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_str_shield_intermediate_sequence_energy_shield_on_block", "name": "Restores 3% Energy Shield on Block. Interval: 0.3s", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_str_shield_intermediate_sequence_all_stats", "name": "+8% all stats", "tiers": [{ "tier": "T1", "stats": [] }] }
+    ],
+    "ADVANCED_SEQUENCES": [
+      { "id": "crafted_str_shield_advanced_sequence_block_ratio_upper_limit", "name": "+8% Block Ratio Upper limit", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_str_shield_advanced_sequence_passive_skill_precise_restrain", "name": "All Passive Skill slots are supported by Lv. 30 Precise: Restrain", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_str_shield_advanced_sequence_immune_to_crowd_control", "name": "Immune to crowd control effects", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_str_shield_advanced_sequence_physical_to_elemental_damage", "name": "Converts 25% of Physical Damage taken to random Elemental Damage -25% Defense", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_str_shield_advanced_sequence_armor_effective_rate", "name": "+15% Armor Effective Rate for Non-Physical Damage +2400 Gear Armor", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_str_shield_advanced_sequence_spell_damage_evasion", "name": "Spell Damage will not further reduce Evasion by default +1680 gear Evasion", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_str_shield_advanced_sequence_energy_shield_on_blocking", "name": "Energy Shield starts to Charge when Blocking +40% Energy Shield Charge Speed", "tiers": [{ "tier": "T0", "stats": [] }] }
+    ],
+    "BASIC_PREFIXES": [
+      {
+        "id": "crafted_str_shield_basic_prefix_max_life",
+        "name": "Max Life",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 430, "maxValue": 558, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 331, "maxValue": 429, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 232, "maxValue": 330, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_shield_basic_prefix_gear_armor",
+        "name": "Gear Armor",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "gear_armor", "label": "+(min-max) Gear Armor", "minValue": 5617, "maxValue": 7301, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "gear_armor", "label": "+(min-max) Gear Armor", "minValue": 4321, "maxValue": 5616, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "gear_armor", "label": "+(min-max) Gear Armor", "minValue": 3025, "maxValue": 4320, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_shield_basic_prefix_attack_and_spell_block_chance",
+        "name": "Attack and Spell Block Chance",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "attack_and_spell_block_chance", "label": "+(min-max)% Attack and Spell Block Chance", "minValue": 26, "maxValue": 32, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "attack_and_spell_block_chance", "label": "+(min-max)% Attack and Spell Block Chance", "minValue": 20, "maxValue": 25, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "attack_and_spell_block_chance", "label": "+(min-max)% Attack and Spell Block Chance", "minValue": 14, "maxValue": 19, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_shield_basic_prefix_physical_damage_taken",
+        "name": "Physical Damage Taken",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "physical_damage_taken", "label": "(min-max)% Physical Damage Taken", "minValue": -18, "maxValue": -16, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "physical_damage_taken", "label": "(min-max)% Physical Damage Taken", "minValue": -15, "maxValue": -13, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "physical_damage_taken", "label": "(min-max)% Physical Damage Taken", "minValue": -12, "maxValue": -10, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_shield_basic_prefix_damage",
+        "name": "Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "damage", "label": "+(min-max)% Damage", "minValue": 141, "maxValue": 183, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "damage", "label": "+(min-max)% Damage", "minValue": 109, "maxValue": 140, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "damage", "label": "+(min-max)% Damage", "minValue": 77, "maxValue": 108, "unit": "PERCENT" }] }
+        ]
+      }
+    ],
+    "ADVANCED_PREFIXES": [
+      {
+        "id": "crafted_str_shield_advanced_prefix_max_life_percent",
+        "name": "Max Life",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "max_life_percent", "label": "+(min-max)% Max Life", "minValue": 32, "maxValue": 41, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "max_life_percent", "label": "+(min-max)% Max Life", "minValue": 25, "maxValue": 31, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "max_life_percent", "label": "+(min-max)% Max Life", "minValue": 18, "maxValue": 24, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_shield_advanced_prefix_block_ratio",
+        "name": "Block Ratio",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "block_ratio", "label": "+(min-max)% Block Ratio", "minValue": 21, "maxValue": 25, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "block_ratio", "label": "+(min-max)% Block Ratio", "minValue": 16, "maxValue": 20, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "block_ratio", "label": "+(min-max)% Block Ratio", "minValue": 12, "maxValue": 15, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_shield_advanced_prefix_strength",
+        "name": "Strength",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 118, "maxValue": 152, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 91, "maxValue": 117, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 64, "maxValue": 90, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_shield_advanced_prefix_intelligence",
+        "name": "Intelligence",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 118, "maxValue": 152, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 91, "maxValue": 117, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 64, "maxValue": 90, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_shield_advanced_prefix_dexterity",
+        "name": "Dexterity",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 118, "maxValue": 152, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 91, "maxValue": 117, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 64, "maxValue": 90, "unit": "FLAT" }] }
+        ]
+      }
+    ],
+    "ULTIMATE_PREFIXES": [
+      {
+        "id": "crafted_str_shield_ultimate_prefix_elemental_and_erosion_resistance_penetration",
+        "name": "Elemental and Erosion Resistance Penetration",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "elemental_and_erosion_resistance_penetration", "label": "+(min-max)% Elemental and Erosion Resistance Penetration", "minValue": 40, "maxValue": 51, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "elemental_and_erosion_resistance_penetration", "label": "+(min-max)% Elemental and Erosion Resistance Penetration", "minValue": 29, "maxValue": 39, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "elemental_and_erosion_resistance_penetration", "label": "+(min-max)% Elemental and Erosion Resistance Penetration", "minValue": 22, "maxValue": 30, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_shield_ultimate_prefix_active_skill_level",
+        "name": "Active Skill Level",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "active_skill_level", "label": "+(min-max) Active Skill Level", "minValue": 4, "maxValue": 5, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "active_skill_level", "label": "+(min-max) Active Skill Level", "minValue": 3, "maxValue": 4, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "active_skill_level", "label": "+(min-max) Active Skill Level", "minValue": 3, "maxValue": 3, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_shield_ultimate_prefix_armor_dmg_mitigation_penetration",
+        "name": "Armor DMG Mitigation Penetration",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "armor_dmg_mitigation_penetration", "label": "+(min-max)% Armor DMG Mitigation Penetration", "minValue": 34, "maxValue": 42, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "armor_dmg_mitigation_penetration", "label": "+(min-max)% Armor DMG Mitigation Penetration", "minValue": 26, "maxValue": 33, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "armor_dmg_mitigation_penetration", "label": "+(min-max)% Armor DMG Mitigation Penetration", "minValue": 19, "maxValue": 25, "unit": "PERCENT" }] }
+        ]
+      }
+    ],
+    "BASIC_SUFFIXES": [
+      {
+        "id": "crafted_str_shield_basic_suffix_life_regeneration_per_second",
+        "name": "Life Regeneration per second",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "life_regeneration_per_second", "label": "Regenerates (min-max) Life per second", "minValue": 235, "maxValue": 304, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "life_regeneration_per_second", "label": "Regenerates (min-max) Life per second", "minValue": 177, "maxValue": 234, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "life_regeneration_per_second", "label": "Regenerates (min-max) Life per second", "minValue": 136, "maxValue": 180, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_shield_basic_suffix_fire_resistance",
+        "name": "Fire Resistance",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "fire_resistance", "label": "+(min-max)% Fire Resistance", "minValue": 46, "maxValue": 50, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "fire_resistance", "label": "+(min-max)% Fire Resistance", "minValue": 41, "maxValue": 45, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "fire_resistance", "label": "+(min-max)% Fire Resistance", "minValue": 29, "maxValue": 40, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_shield_basic_suffix_cold_resistance",
+        "name": "Cold Resistance",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "cold_resistance", "label": "+(min-max)% Cold Resistance", "minValue": 46, "maxValue": 50, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "cold_resistance", "label": "+(min-max)% Cold Resistance", "minValue": 41, "maxValue": 45, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "cold_resistance", "label": "+(min-max)% Cold Resistance", "minValue": 29, "maxValue": 40, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_shield_basic_suffix_lightning_resistance",
+        "name": "Lightning Resistance",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "lightning_resistance", "label": "+(min-max)% Lightning Resistance", "minValue": 46, "maxValue": 50, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "lightning_resistance", "label": "+(min-max)% Lightning Resistance", "minValue": 41, "maxValue": 45, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "lightning_resistance", "label": "+(min-max)% Lightning Resistance", "minValue": 29, "maxValue": 40, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_shield_basic_suffix_erosion_resistance",
+        "name": "Erosion Resistance",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "erosion_resistance", "label": "+(min-max)% Erosion Resistance", "minValue": 46, "maxValue": 50, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "erosion_resistance", "label": "+(min-max)% Erosion Resistance", "minValue": 41, "maxValue": 45, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "erosion_resistance", "label": "+(min-max)% Erosion Resistance", "minValue": 29, "maxValue": 40, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_shield_basic_suffix_life_on_block",
+        "name": "Life on Block",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "life_on_block", "label": "Restores (min-max)% Life on Block", "minValue": 7, "maxValue": 8, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "life_on_block", "label": "Restores (min-max)% Life on Block", "minValue": 5, "maxValue": 6, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "life_on_block", "label": "Restores (min-max)% Life on Block", "minValue": 4, "maxValue": 4, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_shield_basic_suffix_elemental_resistance",
+        "name": "Elemental Resistance",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "elemental_resistance", "label": "+(min-max)% Elemental Resistance", "minValue": 19, "maxValue": 24, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "elemental_resistance", "label": "+(min-max)% Elemental Resistance", "minValue": 15, "maxValue": 18, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "elemental_resistance", "label": "+(min-max)% Elemental Resistance", "minValue": 10, "maxValue": 14, "unit": "PERCENT" }] }
+        ]
+      }
+    ],
+    "ADVANCED_SUFFIXES": [
+      {
+        "id": "crafted_str_shield_advanced_suffix_attack_and_cast_speed",
+        "name": "Attack and Cast Speed",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "attack_and_cast_speed", "label": "+(min-max)% Attack and Cast Speed", "minValue": 48, "maxValue": 61, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "attack_and_cast_speed", "label": "+(min-max)% Attack and Cast Speed", "minValue": 34, "maxValue": 47, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "attack_and_cast_speed", "label": "+(min-max)% Attack and Cast Speed", "minValue": 26, "maxValue": 36, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_shield_advanced_suffix_critical_strike_rating",
+        "name": "Critical Strike Rating",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "critical_strike_rating", "label": "+(min-max)% Critical Strike Rating", "minValue": 235, "maxValue": 304, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "critical_strike_rating", "label": "+(min-max)% Critical Strike Rating", "minValue": 165, "maxValue": 234, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "critical_strike_rating", "label": "+(min-max)% Critical Strike Rating", "minValue": 127, "maxValue": 180, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_shield_advanced_suffix_critical_strike_damage",
+        "name": "Critical Strike Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "critical_strike_damage", "label": "+(min-max)% Critical Strike Damage", "minValue": 118, "maxValue": 152, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "critical_strike_damage", "label": "+(min-max)% Critical Strike Damage", "minValue": 83, "maxValue": 117, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "critical_strike_damage", "label": "+(min-max)% Critical Strike Damage", "minValue": 64, "maxValue": 90, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_shield_advanced_suffix_max_warcry_skill_charges",
+        "name": "Max Warcry Skill Charges",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "max_warcry_skill_charges", "label": "+(min-max) Max Warcry Skill Charges", "minValue": 3, "maxValue": 3, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "max_warcry_skill_charges", "label": "+(min-max) Max Warcry Skill Charges", "minValue": 2, "maxValue": 2, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "max_warcry_skill_charges", "label": "+(min-max) Max Warcry Skill Charges", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_shield_advanced_suffix_warcry_effect",
+        "name": "Warcry Effect",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "warcry_effect", "label": "+(min-max)% Warcry Effect", "minValue": 63, "maxValue": 81, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "warcry_effect", "label": "+(min-max)% Warcry Effect", "minValue": 49, "maxValue": 72, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "warcry_effect", "label": "+(min-max)% Warcry Effect", "minValue": 37, "maxValue": 48, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_shield_advanced_suffix_focus_speed",
+        "name": "Focus Speed",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "focus_speed", "label": "+(min-max)% Focus Speed", "minValue": 75, "maxValue": 90, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "focus_speed", "label": "+(min-max)% Focus Speed", "minValue": 60, "maxValue": 70, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "focus_speed", "label": "+(min-max)% Focus Speed", "minValue": 45, "maxValue": 54, "unit": "PERCENT" }] }
+        ]
+      }
+    ],
+    "ULTIMATE_SUFFIXES": [
+      {
+        "id": "crafted_str_shield_ultimate_suffix_max_sentry_quantity",
+        "name": "Max Sentry Quantity",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "max_sentry_quantity", "label": "+(min-max) Max Sentry Quantity", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "max_sentry_quantity", "label": "+(min-max) Max Sentry Quantity", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "max_sentry_quantity", "label": "+(min-max) Max Sentry Quantity", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_shield_ultimate_suffix_defense_from_shield",
+        "name": "Additional Defense from Shield",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "defense_from_shield", "label": "+(min-max)% Additional Defense from Shield", "minValue": 40, "maxValue": 51, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "defense_from_shield", "label": "+(min-max)% Additional Defense from Shield", "minValue": 31, "maxValue": 39, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "defense_from_shield", "label": "+(min-max)% Additional Defense from Shield", "minValue": 22, "maxValue": 30, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_shield_ultimate_suffix_max_elemental_resistance",
+        "name": "Max Elemental Resistance",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "max_elemental_resistance", "label": "+(min-max)% Max Elemental Resistance", "minValue": 11, "maxValue": 12, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "max_elemental_resistance", "label": "+(min-max)% Max Elemental Resistance", "minValue": 9, "maxValue": 10, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "max_elemental_resistance", "label": "+(min-max)% Max Elemental Resistance", "minValue": 7, "maxValue": 8, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_shield_ultimate_suffix_critical_strike_per_block",
+        "name": "Critical Strike Rating/Damage per Block Chance",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "critical_strike_per_block", "label": "+(min-max)% Critical Strike Rating and Damage per 1% Block Chance", "minValue": 5, "maxValue": 6, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "critical_strike_per_block", "label": "+(min-max)% Critical Strike Rating and Damage per 1% Block Chance", "minValue": 4, "maxValue": 5, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "critical_strike_per_block", "label": "+(min-max)% Critical Strike Rating and Damage per 1% Block Chance", "minValue": 3, "maxValue": 4, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_shield_ultimate_suffix_focus_damage_enhancement",
+        "name": "Focus Damage Enhancement",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "focus_damage_enhancement", "label": "+(min-max)% Focus Damage Enhancement", "minValue": 65, "maxValue": 80, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "focus_damage_enhancement", "label": "+(min-max)% Focus Damage Enhancement", "minValue": 48, "maxValue": 60, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "focus_damage_enhancement", "label": "+(min-max)% Focus Damage Enhancement", "minValue": 35, "maxValue": 45, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_shield_ultimate_suffix_combo_damage_enhancement",
+        "name": "Combo Damage Enhancement",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "combo_damage_enhancement", "label": "+(min-max)% Combo Damage Enhancement", "minValue": 70, "maxValue": 85, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "combo_damage_enhancement", "label": "+(min-max)% Combo Damage Enhancement", "minValue": 55, "maxValue": 65, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "combo_damage_enhancement", "label": "+(min-max)% Combo Damage Enhancement", "minValue": 40, "maxValue": 50, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_str_shield_ultimate_suffix_ailment_damage_enhancement",
+        "name": "Ailment Damage Enhancement",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "ailment_damage_enhancement", "label": "+(min-max)% Ailment Damage Enhancement", "minValue": 70, "maxValue": 85, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "ailment_damage_enhancement", "label": "+(min-max)% Ailment Damage Enhancement", "minValue": 55, "maxValue": 65, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "ailment_damage_enhancement", "label": "+(min-max)% Ailment Damage Enhancement", "minValue": 40, "maxValue": 50, "unit": "PERCENT" }] }
+        ]
+      }
+    ]
+  }
+}

@@ -108,8 +108,7 @@
       { "id": "crafted_dagger_advanced_sequence_fearless_aura", "name": "+120% Fearless Aura -20% additional Fearless Sealed Mana Compensation", "tiers": [{ "tier": "T0", "stats": [] }] },
       { "id": "crafted_dagger_advanced_sequence_gear_physical_damage", "name": "+80% Gear Physical Damage -20% Attack Critical Strike Rating for this gear", "tiers": [{ "tier": "T0", "stats": [] }] },
       { "id": "crafted_dagger_advanced_sequence_deterioration_damage", "name": "+15% additional Deterioration Damage, 10% chance to inflict 1 additional stack(s) of Deterioration", "tiers": [{ "tier": "T0", "stats": [] }] },
-      { "id": "crafted_dagger_advanced_sequence_elemental_vs_physical", "name": "+25% Gear Elemental Damage -25% Gear Physical Damage", "tiers": [{ "tier": "T0", "stats": [] }] },
-      { "id": "crafted_dagger_advanced_sequence_gear_physical_damage_bonus", "name": "+(120-140)% Gear Physical Damage", "tiers": [{ "tier": "T0", "stats": [] }] }
+      { "id": "crafted_dagger_advanced_sequence_elemental_vs_physical", "name": "+25% Gear Elemental Damage -25% Gear Physical Damage", "tiers": [{ "tier": "T0", "stats": [] }] }
     ],
     "BASIC_PREFIXES": [
       {
