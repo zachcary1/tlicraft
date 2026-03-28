@@ -1,0 +1,474 @@
+{
+  "id": "crafted_tin_staff",
+  "name": "Crafted Tin Staff",
+  "baseItemCategoryId": "two_hand_weapon",
+  "weaponTypeId": "tin_staff",
+  "attributeType": null,
+  "isPriceless": true,
+  "groups": {
+    "BASE_AFFIXES": [
+      { "id": "crafted_tin_staff_base_physical_damage_to_spells", "name": "Adds (min-max)-(min-max) Physical Damage to Spells", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_physical_damage_to_spells_min", "label": "Adds (min-max) min Physical Damage to Spells", "minValue": 25, "maxValue": 30, "unit": "FLAT" }, { "statId": "added_physical_damage_to_spells_max", "label": "Adds (min-max) max Physical Damage to Spells", "minValue": 33, "maxValue": 38, "unit": "FLAT" }] }] },
+      { "id": "crafted_tin_staff_base_fire_damage_to_spells", "name": "Adds (min-max)-(min-max) Fire Damage to Spells", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_fire_damage_to_spells_min", "label": "Adds (min-max) min Fire Damage to Spells", "minValue": 24, "maxValue": 29, "unit": "FLAT" }, { "statId": "added_fire_damage_to_spells_max", "label": "Adds (min-max) max Fire Damage to Spells", "minValue": 34, "maxValue": 39, "unit": "FLAT" }] }] },
+      { "id": "crafted_tin_staff_base_cold_damage_to_spells", "name": "Adds (min-max)-(min-max) Cold Damage to Spells", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_cold_damage_to_spells_min", "label": "Adds (min-max) min Cold Damage to Spells", "minValue": 24, "maxValue": 29, "unit": "FLAT" }, { "statId": "added_cold_damage_to_spells_max", "label": "Adds (min-max) max Cold Damage to Spells", "minValue": 34, "maxValue": 39, "unit": "FLAT" }] }] },
+      { "id": "crafted_tin_staff_base_lightning_damage_to_spells", "name": "Adds (min-max)-(min-max) Lightning Damage to Spells", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_lightning_damage_to_spells_min", "label": "Adds (min-max) min Lightning Damage to Spells", "minValue": 1, "maxValue": 3, "unit": "FLAT" }, { "statId": "added_lightning_damage_to_spells_max", "label": "Adds (min-max) max Lightning Damage to Spells", "minValue": 60, "maxValue": 65, "unit": "FLAT" }] }] },
+      { "id": "crafted_tin_staff_base_erosion_damage_to_spells", "name": "Adds (min-max)-(min-max) Erosion Damage to Spells", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_erosion_damage_to_spells_min", "label": "Adds (min-max) min Erosion Damage to Spells", "minValue": 26, "maxValue": 31, "unit": "FLAT" }, { "statId": "added_erosion_damage_to_spells_max", "label": "Adds (min-max) max Erosion Damage to Spells", "minValue": 32, "maxValue": 37, "unit": "FLAT" }] }] },
+      { "id": "crafted_tin_staff_base_physical_damage", "name": "+(min-max)% Physical Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "physical_damage", "label": "+(min-max)% Physical Damage", "minValue": 40, "maxValue": 48, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_base_elemental_damage", "name": "+(min-max)% Elemental Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "elemental_damage", "label": "+(min-max)% Elemental Damage", "minValue": 40, "maxValue": 48, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_base_erosion_damage", "name": "+(min-max)% Erosion Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "erosion_damage", "label": "+(min-max)% Erosion Damage", "minValue": 40, "maxValue": 48, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_base_spell_damage", "name": "+(min-max)% Spell Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "spell_damage", "label": "+(min-max)% Spell Damage", "minValue": 40, "maxValue": 48, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_base_cast_speed", "name": "+(min-max)% Cast Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "cast_speed", "label": "+(min-max)% Cast Speed", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_base_additional_spell_damage", "name": "+(min-max)% additional Spell Damage", "tiers": [{ "tier": "T1", "stats": [{ "statId": "additional_spell_damage", "label": "+(min-max)% additional Spell Damage", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_base_additional_damage_when_channeling", "name": "+(min-max)% additional damage when Channeling", "tiers": [{ "tier": "T1", "stats": [{ "statId": "additional_damage_when_channeling", "label": "+(min-max)% additional damage when Channeling", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_base_elemental_erosion_resistance_penetration", "name": "+(min-max)% Elemental and Erosion Resistance Penetration", "tiers": [{ "tier": "T1", "stats": [{ "statId": "elemental_and_erosion_resistance_penetration", "label": "+(min-max)% Elemental and Erosion Resistance Penetration", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_base_armor_dmg_mitigation_penetration", "name": "+(min-max)% Armor DMG Mitigation Penetration", "tiers": [{ "tier": "T1", "stats": [{ "statId": "armor_dmg_mitigation_penetration", "label": "+(min-max)% Armor DMG Mitigation Penetration", "minValue": 10, "maxValue": 14, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_base_max_tenacity_blessing_stacks", "name": "+2 to Max Tenacity Blessing Stacks", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_tenacity_blessing_stacks", "label": "+(min-max) to Max Tenacity Blessing Stacks", "minValue": 2, "maxValue": 2, "unit": "FLAT" }] }] },
+      { "id": "crafted_tin_staff_base_max_agility_blessing_stacks", "name": "+2 to Max Agility Blessing Stacks", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_agility_blessing_stacks", "label": "+(min-max) to Max Agility Blessing Stacks", "minValue": 2, "maxValue": 2, "unit": "FLAT" }] }] },
+      { "id": "crafted_tin_staff_base_max_focus_blessing_stacks", "name": "+2 to Max Focus Blessing Stacks", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_focus_blessing_stacks", "label": "+(min-max) to Max Focus Blessing Stacks", "minValue": 2, "maxValue": 2, "unit": "FLAT" }] }] },
+      { "id": "crafted_tin_staff_base_enemy_explosion", "name": "+(min-max)% chance for enemies to explode on defeat, dealing (min-max)% of their Max Life as True Damage", "tiers": [{ "tier": "T1", "stats": [{ "statId": "enemy_explode_chance_on_defeat", "label": "+(min-max)% chance for enemies to explode on defeat", "minValue": 20, "maxValue": 25, "unit": "PERCENT" }, { "statId": "enemy_explode_on_defeat_true_damage", "label": "Enemies explode dealing (min-max)% of their Max Life as True Damage", "minValue": 250, "maxValue": 300, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_base_projectile_quantity", "name": "+(min-max) Projectile Quantity", "tiers": [{ "tier": "T1", "stats": [{ "statId": "projectile_quantity", "label": "+(min-max) Projectile Quantity", "minValue": 2, "maxValue": 2, "unit": "FLAT" }] }] }
+    ],
+    "CORROSION_BASE_AFFIXES": [
+      { "id": "crafted_tin_staff_corrosion_base_focus_blessing_on_defeat", "name": "+(min-max)% chance to gain 1 stack of Focus Blessing on defeat", "tiers": [{ "tier": "T0", "stats": [{ "statId": "focus_blessing_on_defeat", "label": "+(min-max)% chance to gain 1 stack of Focus Blessing on defeat", "minValue": 6, "maxValue": 12, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_corrosion_base_elemental_resistance_penetration", "name": "Damage Penetrates (min-max)% Elemental Resistance", "tiers": [{ "tier": "T0", "stats": [{ "statId": "elemental_resistance_penetration", "label": "Damage Penetrates (min-max)% Elemental Resistance", "minValue": 8, "maxValue": 12, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_corrosion_base_cast_speed", "name": "+(min-max)% Cast Speed", "tiers": [{ "tier": "T0", "stats": [{ "statId": "cast_speed", "label": "+(min-max)% Cast Speed", "minValue": 18, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_corrosion_base_spell_damage", "name": "+(min-max)% Spell Damage", "tiers": [{ "tier": "T0", "stats": [{ "statId": "spell_damage", "label": "+(min-max)% Spell Damage", "minValue": 35, "maxValue": 45, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_corrosion_base_spell_critical_strike_rating", "name": "+(min-max)% Spell Critical Strike Rating", "tiers": [{ "tier": "T0", "stats": [{ "statId": "spell_critical_strike_rating", "label": "+(min-max)% Spell Critical Strike Rating", "minValue": 50, "maxValue": 60, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_corrosion_base_critical_strike_damage", "name": "+(min-max)% Critical Strike Damage", "tiers": [{ "tier": "T0", "stats": [{ "statId": "critical_strike_damage", "label": "+(min-max)% Critical Strike Damage", "minValue": 40, "maxValue": 48, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_corrosion_base_cooldown_recovery_speed", "name": "+(min-max)% Cooldown Recovery Speed", "tiers": [{ "tier": "T0", "stats": [{ "statId": "cooldown_recovery_speed", "label": "+(min-max)% Cooldown Recovery Speed", "minValue": 8, "maxValue": 15, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_corrosion_base_elemental_damage_as_erosion", "name": "+(min-max)% of Elemental Damage dealt as Erosion Damage", "tiers": [{ "tier": "T0", "stats": [{ "statId": "elemental_damage_as_erosion", "label": "+(min-max)% of Elemental Damage dealt as Erosion Damage", "minValue": 7, "maxValue": 12, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_corrosion_base_support_skill_level", "name": "+(min-max) Support Skill Level", "tiers": [{ "tier": "T0", "stats": [{ "statId": "support_skill_level", "label": "+(min-max) Support Skill Level", "minValue": 1, "maxValue": 2, "unit": "FLAT" }] }] }
+    ],
+    "SWEET_DREAM_AFFIXES": [
+      { "id": "crafted_tin_staff_sweet_dream_physical_damage_to_spells", "name": "Adds (min-max)-(min-max) Physical Damage to Spells", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_physical_damage_to_spells_min", "label": "Adds (min-max) min Physical Damage to Spells", "minValue": 10, "maxValue": 13, "unit": "FLAT" }, { "statId": "added_physical_damage_to_spells_max", "label": "Adds (min-max) max Physical Damage to Spells", "minValue": 14, "maxValue": 19, "unit": "FLAT" }] }] },
+      { "id": "crafted_tin_staff_sweet_dream_fire_damage_to_spells", "name": "Adds (min-max)-(min-max) Fire Damage to Spells", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_fire_damage_to_spells_min", "label": "Adds (min-max) min Fire Damage to Spells", "minValue": 9, "maxValue": 14, "unit": "FLAT" }, { "statId": "added_fire_damage_to_spells_max", "label": "Adds (min-max) max Fire Damage to Spells", "minValue": 15, "maxValue": 20, "unit": "FLAT" }] }] },
+      { "id": "crafted_tin_staff_sweet_dream_cold_damage_to_spells", "name": "Adds (min-max)-(min-max) Cold Damage to Spells", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_cold_damage_to_spells_min", "label": "Adds (min-max) min Cold Damage to Spells", "minValue": 10, "maxValue": 13, "unit": "FLAT" }, { "statId": "added_cold_damage_to_spells_max", "label": "Adds (min-max) max Cold Damage to Spells", "minValue": 14, "maxValue": 19, "unit": "FLAT" }] }] },
+      { "id": "crafted_tin_staff_sweet_dream_lightning_damage_to_spells", "name": "Adds (min-max)-(min-max) Lightning Damage to Spells", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_lightning_damage_to_spells_min", "label": "Adds (min-max) min Lightning Damage to Spells", "minValue": 1, "maxValue": 2, "unit": "FLAT" }, { "statId": "added_lightning_damage_to_spells_max", "label": "Adds (min-max) max Lightning Damage to Spells", "minValue": 28, "maxValue": 32, "unit": "FLAT" }] }] },
+      { "id": "crafted_tin_staff_sweet_dream_erosion_damage_to_spells", "name": "Adds (min-max)-(min-max) Erosion Damage to Spells", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_erosion_damage_to_spells_min", "label": "Adds (min-max) min Erosion Damage to Spells", "minValue": 11, "maxValue": 13, "unit": "FLAT" }, { "statId": "added_erosion_damage_to_spells_max", "label": "Adds (min-max) max Erosion Damage to Spells", "minValue": 15, "maxValue": 18, "unit": "FLAT" }] }] },
+      { "id": "crafted_tin_staff_sweet_dream_physical_damage", "name": "+(min-max)% Physical Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "physical_damage", "label": "+(min-max)% Physical Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_sweet_dream_elemental_damage", "name": "+(min-max)% Elemental Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "elemental_damage", "label": "+(min-max)% Elemental Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_sweet_dream_erosion_damage", "name": "+(min-max)% Erosion Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "erosion_damage", "label": "+(min-max)% Erosion Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_sweet_dream_spell_damage", "name": "+(min-max)% Spell Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "spell_damage", "label": "+(min-max)% Spell Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_sweet_dream_cast_speed", "name": "+(min-max)% Cast Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "cast_speed", "label": "+(min-max)% Cast Speed", "minValue": 6, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_sweet_dream_additional_spell_damage", "name": "+(min-max)% additional Spell Damage", "tiers": [{ "tier": "T1", "stats": [{ "statId": "additional_spell_damage", "label": "+(min-max)% additional Spell Damage", "minValue": 6, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_sweet_dream_additional_damage_when_channeling", "name": "+(min-max)% additional damage when Channeling", "tiers": [{ "tier": "T1", "stats": [{ "statId": "additional_damage_when_channeling", "label": "+(min-max)% additional damage when Channeling", "minValue": 6, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_sweet_dream_elemental_erosion_resistance_penetration", "name": "+(min-max)% Elemental and Erosion Resistance Penetration", "tiers": [{ "tier": "T1", "stats": [{ "statId": "elemental_and_erosion_resistance_penetration", "label": "+(min-max)% Elemental and Erosion Resistance Penetration", "minValue": 6, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_sweet_dream_armor_dmg_mitigation_penetration", "name": "+(min-max)% Armor DMG Mitigation Penetration", "tiers": [{ "tier": "T1", "stats": [{ "statId": "armor_dmg_mitigation_penetration", "label": "+(min-max)% Armor DMG Mitigation Penetration", "minValue": 5, "maxValue": 7, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_sweet_dream_max_tenacity_blessing_stacks", "name": "+1 to Max Tenacity Blessing Stacks", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_tenacity_blessing_stacks", "label": "+(min-max) to Max Tenacity Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }] },
+      { "id": "crafted_tin_staff_sweet_dream_max_agility_blessing_stacks", "name": "+1 to Max Agility Blessing Stacks", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_agility_blessing_stacks", "label": "+(min-max) to Max Agility Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }] },
+      { "id": "crafted_tin_staff_sweet_dream_max_focus_blessing_stacks", "name": "+1 to Max Focus Blessing Stacks", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_focus_blessing_stacks", "label": "+(min-max) to Max Focus Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }] },
+      { "id": "crafted_tin_staff_sweet_dream_physical_damage_to_gear", "name": "Adds (min-max)-(min-max) Physical Damage to the gear", "tiers": [{ "tier": "T1", "stats": [{ "statId": "added_physical_damage_to_gear_min", "label": "Adds (min-max) min Physical Damage to the gear", "minValue": 32, "maxValue": 34, "unit": "FLAT" }, { "statId": "added_physical_damage_to_gear_max", "label": "Adds (min-max) max Physical Damage to the gear", "minValue": 40, "maxValue": 42, "unit": "FLAT" }] }] },
+      { "id": "crafted_tin_staff_sweet_dream_lucky_critical_strike", "name": "Lucky Critical Strike", "tiers": [{ "tier": "T1", "stats": [{ "statId": "lucky_critical_strike_rating", "label": "(min-max)% Critical Strike Rating for Lucky Critical Strike", "minValue": -80, "maxValue": -50, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_sweet_dream_gear_physical_damage", "name": "+(min-max)% Gear Physical Damage", "tiers": [{ "tier": "T1", "stats": [{ "statId": "gear_physical_damage", "label": "+(min-max)% Gear Physical Damage", "minValue": 24, "maxValue": 32, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_sweet_dream_projectile_quantity", "name": "+1 Projectile Quantity", "tiers": [{ "tier": "T0", "stats": [{ "statId": "projectile_quantity", "label": "+(min-max) Projectile Quantity", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }] },
+      { "id": "crafted_tin_staff_sweet_dream_enemy_explosion", "name": "Enemies explode on defeat, dealing (min-max)% of their Max Life as True Damage", "tiers": [{ "tier": "T1", "stats": [{ "statId": "enemy_explode_chance_on_defeat", "label": "+(min-max)% chance for enemies to explode on defeat", "minValue": 20, "maxValue": 25, "unit": "PERCENT" }, { "statId": "enemy_explode_on_defeat_true_damage", "label": "Enemies explode dealing (min-max)% of their Max Life as True Damage", "minValue": 250, "maxValue": 300, "unit": "PERCENT" }] }] }
+    ],
+    "NIGHTMARE_AFFIXES": [
+      { "id": "crafted_tin_staff_nightmare_damage", "name": "Damage", "tiers": [{ "tier": "T1", "stats": [{ "statId": "damage", "label": "+(min-max)% Damage", "minValue": 49, "maxValue": 72, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_nightmare_attack_and_cast_speed", "name": "Attack and Cast Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "attack_and_cast_speed", "label": "+(min-max)% Attack and Cast Speed", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_nightmare_minion_damage", "name": "Minion Damage", "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_damage", "label": "+(min-max)% Minion Damage", "minValue": 49, "maxValue": 72, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_nightmare_minion_attack_and_cast_speed", "name": "Minion Attack and Cast Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_attack_and_cast_speed", "label": "+(min-max)% Minion Attack and Cast Speed", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_nightmare_attack_and_spell_critical_strike_rating", "name": "Attack and Spell Critical Strike Rating", "tiers": [{ "tier": "T1", "stats": [{ "statId": "attack_and_spell_critical_strike_rating", "label": "+(min-max) Attack and Spell Critical Strike Rating", "minValue": 77, "maxValue": 100, "unit": "FLAT" }] }] },
+      { "id": "crafted_tin_staff_nightmare_skill_area", "name": "Skill Area", "tiers": [{ "tier": "T1", "stats": [{ "statId": "skill_area", "label": "+(min-max)% Skill Area", "minValue": 18, "maxValue": 21, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_nightmare_minion_critical_strike_rating", "name": "Minion Critical Strike Rating", "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_critical_strike_rating", "label": "+(min-max) Minion Critical Strike Rating", "minValue": 77, "maxValue": 100, "unit": "FLAT" }] }] },
+      { "id": "crafted_tin_staff_nightmare_minion_skill_area", "name": "Minion Skill Area", "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_skill_area", "label": "+(min-max)% Minion Skill Area", "minValue": 18, "maxValue": 21, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_nightmare_max_life", "name": "Max Life", "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 100, "maxValue": 150, "unit": "FLAT" }] }] },
+      { "id": "crafted_tin_staff_nightmare_max_energy_shield", "name": "Max Energy Shield", "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_energy_shield", "label": "+(min-max) Max Energy Shield", "minValue": 320, "maxValue": 400, "unit": "FLAT" }] }] },
+      { "id": "crafted_tin_staff_nightmare_cold_resistance", "name": "Cold Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "cold_resistance", "label": "+(min-max)% Cold Resistance", "minValue": 21, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_nightmare_erosion_resistance", "name": "Erosion Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "erosion_resistance", "label": "+(min-max)% Erosion Resistance", "minValue": 21, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_nightmare_max_mana", "name": "Max Mana", "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_mana", "label": "+(min-max) Max Mana", "minValue": 96, "maxValue": 120, "unit": "FLAT" }] }] },
+      { "id": "crafted_tin_staff_nightmare_fire_resistance", "name": "Fire Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "fire_resistance", "label": "+(min-max)% Fire Resistance", "minValue": 21, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_nightmare_lightning_resistance", "name": "Lightning Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "lightning_resistance", "label": "+(min-max)% Lightning Resistance", "minValue": 21, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_nightmare_elemental_resistance", "name": "Elemental Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "elemental_resistance", "label": "+(min-max)% Elemental Resistance", "minValue": 9, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_nightmare_strength", "name": "Strength", "tiers": [{ "tier": "T1", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 51, "maxValue": 60, "unit": "FLAT" }] }] },
+      { "id": "crafted_tin_staff_nightmare_intelligence", "name": "Intelligence", "tiers": [{ "tier": "T1", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 51, "maxValue": 60, "unit": "FLAT" }] }] },
+      { "id": "crafted_tin_staff_nightmare_movement_speed", "name": "Movement Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "movement_speed", "label": "+(min-max)% Movement Speed", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_nightmare_skill_effect_duration", "name": "Skill Effect Duration", "tiers": [{ "tier": "T1", "stats": [{ "statId": "skill_effect_duration", "label": "+(min-max)% Skill Effect Duration", "minValue": 14, "maxValue": 20, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_nightmare_dexterity", "name": "Dexterity", "tiers": [{ "tier": "T1", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 51, "maxValue": 60, "unit": "FLAT" }] }] },
+      { "id": "crafted_tin_staff_nightmare_aura_effect", "name": "Aura Effect", "tiers": [{ "tier": "T1", "stats": [{ "statId": "aura_effect", "label": "+(min-max)% Aura Effect", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_nightmare_cooldown_recovery_speed", "name": "Cooldown Recovery Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "cooldown_recovery_speed", "label": "+(min-max)% Cooldown Recovery Speed", "minValue": 13, "maxValue": 15, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_nightmare_max_tenacity_blessing_stacks", "name": "Max Tenacity Blessing Stacks", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_tin_staff_nightmare_max_focus_blessing_stacks", "name": "Max Focus Blessing Stacks", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_tin_staff_nightmare_fervor_effect", "name": "Fervor Effect", "tiers": [{ "tier": "T1", "stats": [{ "statId": "fervor_effect", "label": "+(min-max)% Fervor Effect", "minValue": 15, "maxValue": 20, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_nightmare_projectile_quantity", "name": "Projectile Quantity", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_tin_staff_nightmare_max_agility_blessing_stacks", "name": "Max Agility Blessing Stacks", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_tin_staff_nightmare_sealed_mana_compensation", "name": "Sealed Mana Compensation", "tiers": [{ "tier": "T1", "stats": [{ "statId": "sealed_mana_compensation", "label": "+(min-max)% Sealed Mana Compensation", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_tin_staff_nightmare_max_elemental_resistance", "name": "Max Elemental Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_elemental_resistance", "label": "+(min-max)% Max Elemental Resistance", "minValue": 1, "maxValue": 2, "unit": "PERCENT" }] }] }
+    ],
+    "INTERMEDIATE_SEQUENCES": [
+      { "id": "crafted_tin_staff_intermediate_sequence_additional_spell_damage", "name": "+16% additional Spell Damage", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_tin_staff_intermediate_sequence_armor_dmg_mitigation_penetration", "name": "+12% Armor DMG Mitigation Penetration", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_tin_staff_intermediate_sequence_fire_penetration", "name": "+16% Fire Penetration", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_tin_staff_intermediate_sequence_cold_penetration", "name": "+16% Cold Penetration", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_tin_staff_intermediate_sequence_lightning_penetration", "name": "+16% Lightning Penetration", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_tin_staff_intermediate_sequence_erosion_resistance_penetration", "name": "+16% Erosion Resistance Penetration", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_tin_staff_intermediate_sequence_cast_speed", "name": "+32% Cast Speed", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_tin_staff_intermediate_sequence_spell_critical_strike_rating", "name": "+110 Spell Critical Strike Rating", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_tin_staff_intermediate_sequence_additional_damage_on_critical_strike", "name": "+20% additional damage on Critical Strike", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_tin_staff_intermediate_sequence_all_stats", "name": "+16% all stats", "tiers": [{ "tier": "T1", "stats": [] }] }
+    ],
+    "ADVANCED_SEQUENCES": [
+      { "id": "crafted_tin_staff_advanced_sequence_enemy_explosion", "name": "Enemies have a 30% chance to explode when defeated by an Attack or Spell, dealing True Damage equal to 250% of their Max Life to enemies within a 6 m radius", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_tin_staff_advanced_sequence_spell_burst_hit_damage", "name": "+50% Hit Damage from Spell Burst", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_tin_staff_advanced_sequence_cold_damage_per_intelligence", "name": "Adds 420-440 Cold Damage to Spells per 800 Intelligence", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_tin_staff_advanced_sequence_control_support", "name": "Main Skill is supported by Lv. 25 Control +25% Spell Damage", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_tin_staff_advanced_sequence_spell_amplification_aura", "name": "+200% Spell Amplification Aura -30% additional Spell Amplification Sealed Mana Compensation", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_tin_staff_advanced_sequence_additional_damage", "name": "+70% additional damage -10% Cast Speed", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_tin_staff_advanced_sequence_deterioration_damage", "name": "+30% additional Deterioration Damage, 10% chance to inflict 2 additional stack(s) of Deterioration", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_tin_staff_advanced_sequence_blessing_stack_adjustment", "name": "-2 to Max Tenacity Blessing Stacks +2 to Max Focus Blessing Stacks +2 to Max Agility Blessing Stacks", "tiers": [{ "tier": "T0", "stats": [] }] }
+    ],
+    "BASIC_PREFIXES": [
+      {
+        "id": "crafted_tin_staff_basic_prefix_max_mana",
+        "name": "+(min-max) Max Mana",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "max_mana", "label": "+(min-max) Max Mana", "minValue": 469, "maxValue": 608, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "max_mana", "label": "+(min-max) Max Mana", "minValue": 361, "maxValue": 468, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "max_mana", "label": "+(min-max) Max Mana", "minValue": 253, "maxValue": 360, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_tin_staff_basic_prefix_fire_damage_to_spells",
+        "name": "Adds (min-max)-(min-max) Fire Damage to Spells",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "added_fire_damage_to_spells_min", "label": "Adds (min-max) min Fire Damage to Spells", "minValue": 215, "maxValue": 217, "unit": "FLAT" }, { "statId": "added_fire_damage_to_spells_max", "label": "Adds (min-max) max Fire Damage to Spells", "minValue": 278, "maxValue": 293, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "added_fire_damage_to_spells_min", "label": "Adds (min-max) min Fire Damage to Spells", "minValue": 166, "maxValue": 168, "unit": "FLAT" }, { "statId": "added_fire_damage_to_spells_max", "label": "Adds (min-max) max Fire Damage to Spells", "minValue": 215, "maxValue": 226, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "added_fire_damage_to_spells_min", "label": "Adds (min-max) min Fire Damage to Spells", "minValue": 127, "maxValue": 129, "unit": "FLAT" }, { "statId": "added_fire_damage_to_spells_max", "label": "Adds (min-max) max Fire Damage to Spells", "minValue": 164, "maxValue": 174, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_tin_staff_basic_prefix_cold_damage_to_spells",
+        "name": "Adds (min-max)-(min-max) Cold Damage to Spells",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "added_cold_damage_to_spells_min", "label": "Adds (min-max) min Cold Damage to Spells", "minValue": 217, "maxValue": 219, "unit": "FLAT" }, { "statId": "added_cold_damage_to_spells_max", "label": "Adds (min-max) max Cold Damage to Spells", "minValue": 289, "maxValue": 291, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "added_cold_damage_to_spells_min", "label": "Adds (min-max) min Cold Damage to Spells", "minValue": 168, "maxValue": 170, "unit": "FLAT" }, { "statId": "added_cold_damage_to_spells_max", "label": "Adds (min-max) max Cold Damage to Spells", "minValue": 222, "maxValue": 224, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "added_cold_damage_to_spells_min", "label": "Adds (min-max) min Cold Damage to Spells", "minValue": 128, "maxValue": 130, "unit": "FLAT" }, { "statId": "added_cold_damage_to_spells_max", "label": "Adds (min-max) max Cold Damage to Spells", "minValue": 170, "maxValue": 172, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_tin_staff_basic_prefix_lightning_damage_to_spells",
+        "name": "Adds (min-max)-(min-max) Lightning Damage to Spells",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "added_lightning_damage_to_spells_min", "label": "Adds (min-max) min Lightning Damage to Spells", "minValue": 24, "maxValue": 26, "unit": "FLAT" }, { "statId": "added_lightning_damage_to_spells_max", "label": "Adds (min-max) max Lightning Damage to Spells", "minValue": 482, "maxValue": 484, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "added_lightning_damage_to_spells_min", "label": "Adds (min-max) min Lightning Damage to Spells", "minValue": 19, "maxValue": 21, "unit": "FLAT" }, { "statId": "added_lightning_damage_to_spells_max", "label": "Adds (min-max) max Lightning Damage to Spells", "minValue": 371, "maxValue": 373, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "added_lightning_damage_to_spells_min", "label": "Adds (min-max) min Lightning Damage to Spells", "minValue": 14, "maxValue": 16, "unit": "FLAT" }, { "statId": "added_lightning_damage_to_spells_max", "label": "Adds (min-max) max Lightning Damage to Spells", "minValue": 284, "maxValue": 286, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_tin_staff_basic_prefix_erosion_damage_to_spells",
+        "name": "Adds (min-max)-(min-max) Erosion Damage to Spells",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "added_erosion_damage_to_spells_min", "label": "Adds (min-max) min Erosion Damage to Spells", "minValue": 233, "maxValue": 235, "unit": "FLAT" }, { "statId": "added_erosion_damage_to_spells_max", "label": "Adds (min-max) max Erosion Damage to Spells", "minValue": 273, "maxValue": 275, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "added_erosion_damage_to_spells_min", "label": "Adds (min-max) min Erosion Damage to Spells", "minValue": 179, "maxValue": 181, "unit": "FLAT" }, { "statId": "added_erosion_damage_to_spells_max", "label": "Adds (min-max) max Erosion Damage to Spells", "minValue": 211, "maxValue": 213, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "added_erosion_damage_to_spells_min", "label": "Adds (min-max) min Erosion Damage to Spells", "minValue": 137, "maxValue": 139, "unit": "FLAT" }, { "statId": "added_erosion_damage_to_spells_max", "label": "Adds (min-max) max Erosion Damage to Spells", "minValue": 161, "maxValue": 163, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_tin_staff_basic_prefix_spell_damage",
+        "name": "+(min-max)% Spell Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "spell_damage", "label": "+(min-max)% Spell Damage", "minValue": 282, "maxValue": 365, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "spell_damage", "label": "+(min-max)% Spell Damage", "minValue": 217, "maxValue": 281, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "spell_damage", "label": "+(min-max)% Spell Damage", "minValue": 152, "maxValue": 216, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_tin_staff_basic_prefix_physical_damage_to_spells",
+        "name": "Adds (min-max)-(min-max) Physical Damage to Spells",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "added_physical_damage_to_spells_min", "label": "Adds (min-max) min Physical Damage to Spells", "minValue": 233, "maxValue": 235, "unit": "FLAT" }, { "statId": "added_physical_damage_to_spells_max", "label": "Adds (min-max) max Physical Damage to Spells", "minValue": 273, "maxValue": 275, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "added_physical_damage_to_spells_min", "label": "Adds (min-max) min Physical Damage to Spells", "minValue": 179, "maxValue": 181, "unit": "FLAT" }, { "statId": "added_physical_damage_to_spells_max", "label": "Adds (min-max) max Physical Damage to Spells", "minValue": 211, "maxValue": 213, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "added_physical_damage_to_spells_min", "label": "Adds (min-max) min Physical Damage to Spells", "minValue": 137, "maxValue": 139, "unit": "FLAT" }, { "statId": "added_physical_damage_to_spells_max", "label": "Adds (min-max) max Physical Damage to Spells", "minValue": 161, "maxValue": 163, "unit": "FLAT" }] }
+        ]
+      }
+    ],
+    "ADVANCED_PREFIXES": [
+      {
+        "id": "crafted_tin_staff_advanced_prefix_intelligence",
+        "name": "+(min-max) Intelligence",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 235, "maxValue": 304, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 181, "maxValue": 234, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 127, "maxValue": 180, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_tin_staff_advanced_prefix_dexterity",
+        "name": "+(min-max) Dexterity",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 235, "maxValue": 304, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 181, "maxValue": 234, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 127, "maxValue": 180, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_tin_staff_advanced_prefix_strength",
+        "name": "+(min-max) Strength",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 235, "maxValue": 304, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 181, "maxValue": 234, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 127, "maxValue": 180, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_tin_staff_advanced_prefix_main_skill_level",
+        "name": "+(min-max) to Main Skill Level",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "main_skill_level", "label": "+(min-max) to Main Skill Level", "minValue": 6, "maxValue": 6, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "main_skill_level", "label": "+(min-max) to Main Skill Level", "minValue": 4, "maxValue": 5, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "main_skill_level", "label": "+(min-max) to Main Skill Level", "minValue": 4, "maxValue": 4, "unit": "FLAT" }] }
+        ]
+      }
+    ],
+    "ULTIMATE_PREFIXES": [
+      {
+        "id": "crafted_tin_staff_ultimate_prefix_armor_dmg_mitigation_penetration",
+        "name": "+(min-max)% Armor DMG Mitigation Penetration",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "armor_dmg_mitigation_penetration", "label": "+(min-max)% Armor DMG Mitigation Penetration", "minValue": 66, "maxValue": 85, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "armor_dmg_mitigation_penetration", "label": "+(min-max)% Armor DMG Mitigation Penetration", "minValue": 51, "maxValue": 65, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "armor_dmg_mitigation_penetration", "label": "+(min-max)% Armor DMG Mitigation Penetration", "minValue": 36, "maxValue": 50, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_tin_staff_ultimate_prefix_min_channeled_stacks",
+        "name": "+(min-max) Min Channeled Stacks",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "min_channeled_stacks", "label": "+(min-max) Min Channeled Stacks", "minValue": 6, "maxValue": 6, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "min_channeled_stacks", "label": "+(min-max) Min Channeled Stacks", "minValue": 5, "maxValue": 5, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "min_channeled_stacks", "label": "+(min-max) Min Channeled Stacks", "minValue": 4, "maxValue": 4, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_tin_staff_ultimate_prefix_max_channeled_stacks",
+        "name": "+(min-max) Max Channeled Stacks",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "max_channeled_stacks", "label": "+(min-max) Max Channeled Stacks", "minValue": 6, "maxValue": 6, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "max_channeled_stacks", "label": "+(min-max) Max Channeled Stacks", "minValue": 5, "maxValue": 5, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "max_channeled_stacks", "label": "+(min-max) Max Channeled Stacks", "minValue": 4, "maxValue": 4, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_tin_staff_ultimate_prefix_elemental_erosion_resistance_penetration",
+        "name": "+(min-max)% Elemental and Erosion Resistance Penetration",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "elemental_and_erosion_resistance_penetration", "label": "+(min-max)% Elemental and Erosion Resistance Penetration", "minValue": 79, "maxValue": 101, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "elemental_and_erosion_resistance_penetration", "label": "+(min-max)% Elemental and Erosion Resistance Penetration", "minValue": 61, "maxValue": 78, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "elemental_and_erosion_resistance_penetration", "label": "+(min-max)% Elemental and Erosion Resistance Penetration", "minValue": 44, "maxValue": 60, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_tin_staff_ultimate_prefix_spell_skill_level",
+        "name": "+(min-max) to Spell Skill Level",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "spell_skill_level", "label": "+(min-max) to Spell Skill Level", "minValue": 9, "maxValue": 10, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "spell_skill_level", "label": "+(min-max) to Spell Skill Level", "minValue": 7, "maxValue": 8, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "spell_skill_level", "label": "+(min-max) to Spell Skill Level", "minValue": 6, "maxValue": 6, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_tin_staff_ultimate_prefix_max_terra_charge_stacks",
+        "name": "+(min-max) Max Terra Charge Stacks",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "max_terra_charge_stacks", "label": "+(min-max) Max Terra Charge Stacks", "minValue": 7, "maxValue": 8, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "max_terra_charge_stacks", "label": "+(min-max) Max Terra Charge Stacks", "minValue": 5, "maxValue": 6, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "max_terra_charge_stacks", "label": "+(min-max) Max Terra Charge Stacks", "minValue": 3, "maxValue": 4, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_tin_staff_ultimate_prefix_jumps_with_damage_bonus",
+        "name": "+(min-max) Jumps +(min-max)% Jump Damage Bonus",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "jump_count", "label": "+(min-max) Jumps", "minValue": 4, "maxValue": 4, "unit": "FLAT" }, { "statId": "jump_damage_bonus", "label": "+(min-max)% Jump Damage Bonus", "minValue": 36, "maxValue": 45, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "jump_count", "label": "+(min-max) Jumps", "minValue": 4, "maxValue": 4, "unit": "FLAT" }, { "statId": "jump_damage_bonus", "label": "+(min-max)% Jump Damage Bonus", "minValue": 25, "maxValue": 30, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "jump_count", "label": "+(min-max) Jumps", "minValue": 4, "maxValue": 4, "unit": "FLAT" }, { "statId": "jump_damage_bonus", "label": "+(min-max)% Jump Damage Bonus", "minValue": 18, "maxValue": 20, "unit": "PERCENT" }] }
+        ]
+      }
+    ],
+    "BASIC_SUFFIXES": [
+      {
+        "id": "crafted_tin_staff_basic_suffix_cast_speed",
+        "name": "+(min-max)% Cast Speed +(min-max)% Minion Cast Speed",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "cast_speed", "label": "+(min-max)% Cast Speed", "minValue": 95, "maxValue": 122, "unit": "PERCENT" }, { "statId": "minion_cast_speed", "label": "+(min-max)% Minion Cast Speed", "minValue": 95, "maxValue": 122, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "cast_speed", "label": "+(min-max)% Cast Speed", "minValue": 73, "maxValue": 94, "unit": "PERCENT" }, { "statId": "minion_cast_speed", "label": "+(min-max)% Minion Cast Speed", "minValue": 73, "maxValue": 94, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "cast_speed", "label": "+(min-max)% Cast Speed", "minValue": 51, "maxValue": 72, "unit": "PERCENT" }, { "statId": "minion_cast_speed", "label": "+(min-max)% Minion Cast Speed", "minValue": 51, "maxValue": 72, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_tin_staff_basic_suffix_life_regain",
+        "name": "+(min-max)% Life Regain",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "life_regain", "label": "+(min-max)% Life Regain", "minValue": 40, "maxValue": 51, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "life_regain", "label": "+(min-max)% Life Regain", "minValue": 31, "maxValue": 39, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "life_regain", "label": "+(min-max)% Life Regain", "minValue": 22, "maxValue": 30, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_tin_staff_basic_suffix_energy_shield_regain",
+        "name": "+(min-max)% Energy Shield Regain",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "energy_shield_regain", "label": "+(min-max)% Energy Shield Regain", "minValue": 40, "maxValue": 51, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "energy_shield_regain", "label": "+(min-max)% Energy Shield Regain", "minValue": 31, "maxValue": 39, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "energy_shield_regain", "label": "+(min-max)% Energy Shield Regain", "minValue": 22, "maxValue": 30, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_tin_staff_basic_suffix_physical_damage",
+        "name": "+(min-max)% Physical Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "physical_damage", "label": "+(min-max)% Physical Damage", "minValue": 282, "maxValue": 365, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "physical_damage", "label": "+(min-max)% Physical Damage", "minValue": 197, "maxValue": 281, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "physical_damage", "label": "+(min-max)% Physical Damage", "minValue": 152, "maxValue": 216, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_tin_staff_basic_suffix_elemental_damage",
+        "name": "+(min-max)% Elemental Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "elemental_damage", "label": "+(min-max)% Elemental Damage", "minValue": 282, "maxValue": 365, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "elemental_damage", "label": "+(min-max)% Elemental Damage", "minValue": 197, "maxValue": 281, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "elemental_damage", "label": "+(min-max)% Elemental Damage", "minValue": 152, "maxValue": 216, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_tin_staff_basic_suffix_erosion_damage",
+        "name": "+(min-max)% Erosion Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "erosion_damage", "label": "+(min-max)% Erosion Damage", "minValue": 282, "maxValue": 365, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "erosion_damage", "label": "+(min-max)% Erosion Damage", "minValue": 217, "maxValue": 281, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "erosion_damage", "label": "+(min-max)% Erosion Damage", "minValue": 152, "maxValue": 216, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_tin_staff_basic_suffix_spell_burst_charge_speed",
+        "name": "+(min-max)% Spell Burst Charge Speed",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "spell_burst_charge_speed", "label": "+(min-max)% Spell Burst Charge Speed", "minValue": 135, "maxValue": 170, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "spell_burst_charge_speed", "label": "+(min-max)% Spell Burst Charge Speed", "minValue": 100, "maxValue": 130, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "spell_burst_charge_speed", "label": "+(min-max)% Spell Burst Charge Speed", "minValue": 76, "maxValue": 95, "unit": "PERCENT" }] }
+        ]
+      }
+    ],
+    "ADVANCED_SUFFIXES": [
+      {
+        "id": "crafted_tin_staff_advanced_suffix_mana_regeneration_speed",
+        "name": "+(min-max)% Mana Regeneration Speed",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "mana_regeneration_speed", "label": "+(min-max)% Mana Regeneration Speed", "minValue": 235, "maxValue": 304, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "mana_regeneration_speed", "label": "+(min-max)% Mana Regeneration Speed", "minValue": 181, "maxValue": 234, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "mana_regeneration_speed", "label": "+(min-max)% Mana Regeneration Speed", "minValue": 127, "maxValue": 180, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_tin_staff_advanced_suffix_max_mana_percent",
+        "name": "+(min-max)% Max Mana",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "max_mana_percent", "label": "+(min-max)% Max Mana", "minValue": 126, "maxValue": 162, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "max_mana_percent", "label": "+(min-max)% Max Mana", "minValue": 88, "maxValue": 125, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "max_mana_percent", "label": "+(min-max)% Max Mana", "minValue": 68, "maxValue": 96, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_tin_staff_advanced_suffix_spell_critical_strike_rating",
+        "name": "+(min-max) Spell Critical Strike Rating",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "spell_critical_strike_rating", "label": "+(min-max) Spell Critical Strike Rating", "minValue": 326, "maxValue": 423, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "spell_critical_strike_rating", "label": "+(min-max) Spell Critical Strike Rating", "minValue": 251, "maxValue": 325, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "spell_critical_strike_rating", "label": "+(min-max) Spell Critical Strike Rating", "minValue": 176, "maxValue": 250, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_tin_staff_advanced_suffix_spell_critical_strike_damage",
+        "name": "+(min-max)% Spell Critical Strike Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "spell_critical_strike_damage", "label": "+(min-max)% Spell Critical Strike Damage", "minValue": 235, "maxValue": 304, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "spell_critical_strike_damage", "label": "+(min-max)% Spell Critical Strike Damage", "minValue": 181, "maxValue": 234, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "spell_critical_strike_damage", "label": "+(min-max)% Spell Critical Strike Damage", "minValue": 127, "maxValue": 180, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_tin_staff_advanced_suffix_critical_strike_rating",
+        "name": "+(min-max)% Critical Strike Rating",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "critical_strike_rating", "label": "+(min-max)% Critical Strike Rating", "minValue": 469, "maxValue": 608, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "critical_strike_rating", "label": "+(min-max)% Critical Strike Rating", "minValue": 361, "maxValue": 468, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "critical_strike_rating", "label": "+(min-max)% Critical Strike Rating", "minValue": 253, "maxValue": 360, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_tin_staff_advanced_suffix_focus_speed",
+        "name": "+(min-max)% Focus Speed",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "focus_speed", "label": "+(min-max)% Focus Speed", "minValue": 150, "maxValue": 180, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "focus_speed", "label": "+(min-max)% Focus Speed", "minValue": 120, "maxValue": 140, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "focus_speed", "label": "+(min-max)% Focus Speed", "minValue": 90, "maxValue": 110, "unit": "PERCENT" }] }
+        ]
+      }
+    ],
+    "ULTIMATE_SUFFIXES": [
+      {
+        "id": "crafted_tin_staff_ultimate_suffix_beams_with_damage_bonus",
+        "name": "+(min-max) Beams +(min-max)% Beam Damage Bonus",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "beam_count", "label": "+(min-max) Beams", "minValue": 4, "maxValue": 4, "unit": "FLAT" }, { "statId": "beam_damage_bonus", "label": "+(min-max)% Beam Damage Bonus", "minValue": 40, "maxValue": 50, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "beam_count", "label": "+(min-max) Beams", "minValue": 4, "maxValue": 4, "unit": "FLAT" }, { "statId": "beam_damage_bonus", "label": "+(min-max)% Beam Damage Bonus", "minValue": 20, "maxValue": 30, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "beam_count", "label": "+(min-max) Beams", "minValue": 4, "maxValue": 4, "unit": "FLAT" }, { "statId": "beam_damage_bonus", "label": "+(min-max)% Beam Damage Bonus", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_tin_staff_ultimate_suffix_damage_applied_to_life",
+        "name": "+(min-max)% Damage Applied to Life",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "damage_applied_to_life", "label": "+(min-max)% Damage Applied to Life", "minValue": 79, "maxValue": 101, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "damage_applied_to_life", "label": "+(min-max)% Damage Applied to Life", "minValue": 61, "maxValue": 78, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "damage_applied_to_life", "label": "+(min-max)% Damage Applied to Life", "minValue": 43, "maxValue": 60, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_tin_staff_ultimate_suffix_additional_damage_when_channeling",
+        "name": "+(min-max)% additional damage when Channeling",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "additional_damage_when_channeling", "label": "+(min-max)% additional damage when Channeling", "minValue": 79, "maxValue": 101, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "additional_damage_when_channeling", "label": "+(min-max)% additional damage when Channeling", "minValue": 61, "maxValue": 78, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "additional_damage_when_channeling", "label": "+(min-max)% additional damage when Channeling", "minValue": 44, "maxValue": 60, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_tin_staff_ultimate_suffix_max_terra_quantity_with_damage_bonus",
+        "name": "+(min-max) Max Terra Quantity +(min-max)% Terra Quantity Damage Bonus",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "max_terra_quantity", "label": "+(min-max) Max Terra Quantity", "minValue": 2, "maxValue": 2, "unit": "FLAT" }, { "statId": "terra_quantity_damage_bonus", "label": "+(min-max)% Terra Quantity Damage Bonus", "minValue": 20, "maxValue": 20, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "max_terra_quantity", "label": "+(min-max) Max Terra Quantity", "minValue": 2, "maxValue": 2, "unit": "FLAT" }, { "statId": "terra_quantity_damage_bonus", "label": "+(min-max)% Terra Quantity Damage Bonus", "minValue": 10, "maxValue": 10, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "max_terra_quantity", "label": "+(min-max) Max Terra Quantity", "minValue": 2, "maxValue": 2, "unit": "FLAT" }, { "statId": "terra_quantity_damage_bonus", "label": "+(min-max)% Terra Quantity Damage Bonus", "minValue": 1, "maxValue": 1, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_tin_staff_ultimate_suffix_focus_damage_enhancement",
+        "name": "+(min-max)% Focus Damage Enhancement",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "focus_damage_enhancement", "label": "+(min-max)% Focus Damage Enhancement", "minValue": 130, "maxValue": 160, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "focus_damage_enhancement", "label": "+(min-max)% Focus Damage Enhancement", "minValue": 96, "maxValue": 120, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "focus_damage_enhancement", "label": "+(min-max)% Focus Damage Enhancement", "minValue": 70, "maxValue": 90, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_tin_staff_ultimate_suffix_combo_damage_enhancement",
+        "name": "+(min-max)% Combo Damage Enhancement if the Combo Finisher cast recently consumes at least 8 Combo Point(s)",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "combo_damage_enhancement", "label": "+(min-max)% Combo Damage Enhancement", "minValue": 140, "maxValue": 170, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "combo_damage_enhancement", "label": "+(min-max)% Combo Damage Enhancement", "minValue": 110, "maxValue": 130, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "combo_damage_enhancement", "label": "+(min-max)% Combo Damage Enhancement", "minValue": 80, "maxValue": 100, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_tin_staff_ultimate_suffix_tangle_damage_enhancement",
+        "name": "+(min-max)% Tangle Damage Enhancement",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "tangle_damage_enhancement", "label": "+(min-max)% Tangle Damage Enhancement", "minValue": 180, "maxValue": 200, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "tangle_damage_enhancement", "label": "+(min-max)% Tangle Damage Enhancement", "minValue": 150, "maxValue": 170, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "tangle_damage_enhancement", "label": "+(min-max)% Tangle Damage Enhancement", "minValue": 120, "maxValue": 140, "unit": "PERCENT" }] }
+        ]
+      }
+    ]
+  }
+}
