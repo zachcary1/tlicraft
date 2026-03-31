@@ -1,0 +1,438 @@
+{
+  "id": "crafted_crossbow",
+  "name": "Crafted Crossbow",
+  "baseItemCategoryId": "two_hand_weapon",
+  "weaponTypeId": "crossbow",
+  "attributeType": null,
+  "isPriceless": true,
+  "groups": {
+    "BASE_AFFIXES": [
+      { "id": "crafted_crossbow_base_physical_damage_to_attacks", "name": "Adds (min-max)-(min-max) Physical Damage to Attacks", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_physical_damage_to_attacks_min", "label": "Adds (min-max) min Physical Damage to Attacks", "minValue": 25, "maxValue": 30, "unit": "FLAT" }, { "statId": "added_physical_damage_to_attacks_max", "label": "Adds (min-max) max Physical Damage to Attacks", "minValue": 33, "maxValue": 38, "unit": "FLAT" }] }] },
+      { "id": "crafted_crossbow_base_fire_damage_to_attacks", "name": "Adds (min-max)-(min-max) Fire Damage to Attacks", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_fire_damage_to_attacks_min", "label": "Adds (min-max) min Fire Damage to Attacks", "minValue": 24, "maxValue": 29, "unit": "FLAT" }, { "statId": "added_fire_damage_to_attacks_max", "label": "Adds (min-max) max Fire Damage to Attacks", "minValue": 34, "maxValue": 39, "unit": "FLAT" }] }] },
+      { "id": "crafted_crossbow_base_cold_damage_to_attacks", "name": "Adds (min-max)-(min-max) Cold Damage to Attacks", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_cold_damage_to_attacks_min", "label": "Adds (min-max) min Cold Damage to Attacks", "minValue": 24, "maxValue": 29, "unit": "FLAT" }, { "statId": "added_cold_damage_to_attacks_max", "label": "Adds (min-max) max Cold Damage to Attacks", "minValue": 34, "maxValue": 39, "unit": "FLAT" }] }] },
+      { "id": "crafted_crossbow_base_lightning_damage_to_attacks", "name": "Adds (min-max)-(min-max) Lightning Damage to Attacks", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_lightning_damage_to_attacks_min", "label": "Adds (min-max) min Lightning Damage to Attacks", "minValue": 1, "maxValue": 3, "unit": "FLAT" }, { "statId": "added_lightning_damage_to_attacks_max", "label": "Adds (min-max) max Lightning Damage to Attacks", "minValue": 60, "maxValue": 65, "unit": "FLAT" }] }] },
+      { "id": "crafted_crossbow_base_erosion_damage_to_attacks", "name": "Adds (min-max)-(min-max) Erosion Damage to Attacks", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_erosion_damage_to_attacks_min", "label": "Adds (min-max) min Erosion Damage to Attacks", "minValue": 26, "maxValue": 31, "unit": "FLAT" }, { "statId": "added_erosion_damage_to_attacks_max", "label": "Adds (min-max) max Erosion Damage to Attacks", "minValue": 32, "maxValue": 37, "unit": "FLAT" }] }] },
+      { "id": "crafted_crossbow_base_physical_damage", "name": "+(min-max)% Physical Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "physical_damage", "label": "+(min-max)% Physical Damage", "minValue": 40, "maxValue": 48, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_base_elemental_damage", "name": "+(min-max)% Elemental Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "elemental_damage", "label": "+(min-max)% Elemental Damage", "minValue": 40, "maxValue": 48, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_base_erosion_damage", "name": "+(min-max)% Erosion Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "erosion_damage", "label": "+(min-max)% Erosion Damage", "minValue": 40, "maxValue": 48, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_base_ranged_damage", "name": "+(min-max)% Ranged Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "ranged_damage", "label": "+(min-max)% Ranged Damage", "minValue": 40, "maxValue": 48, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_base_gear_physical_damage", "name": "+(min-max)% Gear Physical Damage", "tiers": [{ "tier": "T1", "stats": [{ "statId": "gear_physical_damage", "label": "+(min-max)% Gear Physical Damage", "minValue": 48, "maxValue": 64, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_base_attack_speed", "name": "+(min-max)% Attack Speed", "tiers": [{ "tier": "T2", "stats": [{ "statId": "attack_speed", "label": "+(min-max)% Attack Speed", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_base_projectile_quantity", "name": "Projectile Quantity +2", "tiers": [{ "tier": "T1", "stats": [{ "statId": "projectile_quantity", "label": "Projectile Quantity +(min-max)", "minValue": 2, "maxValue": 2, "unit": "FLAT" }] }] },
+      { "id": "crafted_crossbow_base_horizontal_projectile_penetration", "name": "+2 Horizontal Projectile Penetration(s)", "tiers": [{ "tier": "T1", "stats": [{ "statId": "horizontal_projectile_penetration", "label": "+(min-max) Horizontal Projectile Penetration(s)", "minValue": 2, "maxValue": 2, "unit": "FLAT" }] }] },
+      { "id": "crafted_crossbow_base_elemental_erosion_resistance_penetration", "name": "+(min-max)% Elemental and Erosion Resistance Penetration", "tiers": [{ "tier": "T2", "stats": [{ "statId": "elemental_and_erosion_resistance_penetration", "label": "+(min-max)% Elemental and Erosion Resistance Penetration", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_base_armor_dmg_mitigation_penetration", "name": "+(min-max)% Armor DMG Mitigation Penetration", "tiers": [{ "tier": "T1", "stats": [{ "statId": "armor_dmg_mitigation_penetration", "label": "+(min-max)% Armor DMG Mitigation Penetration", "minValue": 10, "maxValue": 14, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_base_max_tenacity_blessing_stacks", "name": "+2 to Max Tenacity Blessing Stacks", "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_tenacity_blessing_stacks", "label": "+(min-max) to Max Tenacity Blessing Stacks", "minValue": 2, "maxValue": 2, "unit": "FLAT" }] }] },
+      { "id": "crafted_crossbow_base_max_agility_blessing_stacks", "name": "+2 to Max Agility Blessing Stacks", "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_agility_blessing_stacks", "label": "+(min-max) to Max Agility Blessing Stacks", "minValue": 2, "maxValue": 2, "unit": "FLAT" }] }] },
+      { "id": "crafted_crossbow_base_max_focus_blessing_stacks", "name": "+2 to Max Focus Blessing Stacks", "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_focus_blessing_stacks", "label": "+(min-max) to Max Focus Blessing Stacks", "minValue": 2, "maxValue": 2, "unit": "FLAT" }] }] },
+      { "id": "crafted_crossbow_base_physical_damage_to_gear", "name": "Adds (min-max)-(min-max) Physical Damage to the gear", "tiers": [{ "tier": "T1", "stats": [{ "statId": "added_physical_damage_to_gear_min", "label": "Adds (min-max) min Physical Damage to the gear", "minValue": 64, "maxValue": 68, "unit": "FLAT" }, { "statId": "added_physical_damage_to_gear_max", "label": "Adds (min-max) max Physical Damage to the gear", "minValue": 80, "maxValue": 84, "unit": "FLAT" }] }] },
+      { "id": "crafted_crossbow_base_lucky_critical_strike", "name": "Lucky Critical Strike", "tiers": [{ "tier": "T1", "stats": [{ "statId": "lucky_critical_strike_rating", "label": "(min-max)% Critical Strike Rating for Lucky Critical Strike", "minValue": -50, "maxValue": -40, "unit": "PERCENT" }] }] }
+    ],
+    "CORROSION_BASE_AFFIXES": [
+      { "id": "crafted_crossbow_corrosion_base_enemy_explosion", "name": "Enemies have a 30% chance to explode when defeated, dealing True Damage equal to (min-max)% of their Max Life to enemies within a 6 m radius", "tiers": [{ "tier": "T0", "stats": [{ "statId": "enemy_explosion_chance", "label": "Enemies have a (min-max)% chance to explode", "minValue": 30, "maxValue": 30, "unit": "FLAT" }, { "statId": "enemy_explosion_damage", "label": "(min-max)% of Max Life True Damage on explosion", "minValue": 50, "maxValue": 100, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_corrosion_base_tenacity_blessing_on_defeat", "name": "+(min-max)% chance to gain 1 stack of Tenacity Blessing on defeat", "tiers": [{ "tier": "T0", "stats": [{ "statId": "tenacity_blessing_on_defeat", "label": "+(min-max)% chance to gain 1 stack of Tenacity Blessing on defeat", "minValue": 6, "maxValue": 12, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_corrosion_base_physical_damage_to_gear", "name": "Adds (min-max)-(min-max) Physical Damage to the gear", "tiers": [{ "tier": "T0", "stats": [{ "statId": "added_physical_damage_to_gear_min", "label": "Adds (min-max) min Physical Damage to the gear", "minValue": 7, "maxValue": 10, "unit": "FLAT" }, { "statId": "added_physical_damage_to_gear_max", "label": "Adds (min-max) max Physical Damage to the gear", "minValue": 14, "maxValue": 17, "unit": "FLAT" }] }] },
+      { "id": "crafted_crossbow_corrosion_base_gear_physical_damage", "name": "+(min-max)% Gear Physical Damage", "tiers": [{ "tier": "T0", "stats": [{ "statId": "gear_physical_damage", "label": "+(min-max)% Gear Physical Damage", "minValue": 15, "maxValue": 25, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_corrosion_base_gear_attack_speed", "name": "+(min-max)% gear Attack Speed", "tiers": [{ "tier": "T0", "stats": [{ "statId": "gear_attack_speed", "label": "+(min-max)% gear Attack Speed", "minValue": 5, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_corrosion_base_attack_critical_strike_rating", "name": "+(min-max)% Attack Critical Strike Rating for this gear", "tiers": [{ "tier": "T0", "stats": [{ "statId": "gear_attack_critical_strike_rating", "label": "+(min-max)% Attack Critical Strike Rating for this gear", "minValue": 3, "maxValue": 6, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_corrosion_base_eliminate_enemies_below_life", "name": "Eliminates enemies under (min-max)% Life upon inflicting damage", "tiers": [{ "tier": "T0", "stats": [{ "statId": "eliminate_enemies_below_life", "label": "Eliminates enemies under (min-max)% Life upon inflicting damage", "minValue": 5, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_corrosion_base_elemental_damage", "name": "+(min-max)% Elemental Damage", "tiers": [{ "tier": "T0", "stats": [{ "statId": "elemental_damage", "label": "+(min-max)% Elemental Damage", "minValue": 40, "maxValue": 45, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_corrosion_base_double_trauma_damage_chance", "name": "+(min-max)% chance to deal double Trauma Damage", "tiers": [{ "tier": "T0", "stats": [{ "statId": "double_trauma_damage_chance", "label": "+(min-max)% chance to deal double Trauma Damage", "minValue": 8, "maxValue": 12, "unit": "PERCENT" }] }] }
+    ],
+    "SWEET_DREAM_AFFIXES": [
+      { "id": "crafted_crossbow_sweet_dream_physical_damage_to_attacks", "name": "Adds (min-max)-(min-max) Physical Damage to Attacks", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_physical_damage_to_attacks_min", "label": "Adds (min-max) min Physical Damage to Attacks", "minValue": 10, "maxValue": 13, "unit": "FLAT" }, { "statId": "added_physical_damage_to_attacks_max", "label": "Adds (min-max) max Physical Damage to Attacks", "minValue": 14, "maxValue": 19, "unit": "FLAT" }] }] },
+      { "id": "crafted_crossbow_sweet_dream_fire_damage_to_attacks", "name": "Adds (min-max)-(min-max) Fire Damage to Attacks", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_fire_damage_to_attacks_min", "label": "Adds (min-max) min Fire Damage to Attacks", "minValue": 9, "maxValue": 14, "unit": "FLAT" }, { "statId": "added_fire_damage_to_attacks_max", "label": "Adds (min-max) max Fire Damage to Attacks", "minValue": 15, "maxValue": 20, "unit": "FLAT" }] }] },
+      { "id": "crafted_crossbow_sweet_dream_cold_damage_to_attacks", "name": "Adds (min-max)-(min-max) Cold Damage to Attacks", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_cold_damage_to_attacks_min", "label": "Adds (min-max) min Cold Damage to Attacks", "minValue": 10, "maxValue": 13, "unit": "FLAT" }, { "statId": "added_cold_damage_to_attacks_max", "label": "Adds (min-max) max Cold Damage to Attacks", "minValue": 14, "maxValue": 19, "unit": "FLAT" }] }] },
+      { "id": "crafted_crossbow_sweet_dream_lightning_damage_to_attacks", "name": "Adds (min-max)-(min-max) Lightning Damage to Attacks", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_lightning_damage_to_attacks_min", "label": "Adds (min-max) min Lightning Damage to Attacks", "minValue": 1, "maxValue": 2, "unit": "FLAT" }, { "statId": "added_lightning_damage_to_attacks_max", "label": "Adds (min-max) max Lightning Damage to Attacks", "minValue": 28, "maxValue": 32, "unit": "FLAT" }] }] },
+      { "id": "crafted_crossbow_sweet_dream_erosion_damage_to_attacks", "name": "Adds (min-max)-(min-max) Erosion Damage to Attacks", "tiers": [{ "tier": "T2", "stats": [{ "statId": "added_erosion_damage_to_attacks_min", "label": "Adds (min-max) min Erosion Damage to Attacks", "minValue": 11, "maxValue": 13, "unit": "FLAT" }, { "statId": "added_erosion_damage_to_attacks_max", "label": "Adds (min-max) max Erosion Damage to Attacks", "minValue": 15, "maxValue": 18, "unit": "FLAT" }] }] },
+      { "id": "crafted_crossbow_sweet_dream_physical_damage", "name": "+(min-max)% Physical Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "physical_damage", "label": "+(min-max)% Physical Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_sweet_dream_elemental_damage", "name": "+(min-max)% Elemental Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "elemental_damage", "label": "+(min-max)% Elemental Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_sweet_dream_erosion_damage", "name": "+(min-max)% Erosion Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "erosion_damage", "label": "+(min-max)% Erosion Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_sweet_dream_ranged_damage", "name": "+(min-max)% Ranged Damage", "tiers": [{ "tier": "T2", "stats": [{ "statId": "ranged_damage", "label": "+(min-max)% Ranged Damage", "minValue": 20, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_sweet_dream_attack_speed", "name": "+(min-max)% Attack Speed", "tiers": [{ "tier": "T2", "stats": [{ "statId": "attack_speed", "label": "+(min-max)% Attack Speed", "minValue": 6, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_sweet_dream_projectile_quantity", "name": "Projectile Quantity +1", "tiers": [{ "tier": "T1", "stats": [{ "statId": "projectile_quantity", "label": "Projectile Quantity +(min-max)", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }] },
+      { "id": "crafted_crossbow_sweet_dream_horizontal_projectile_penetration", "name": "+1 Horizontal Projectile Penetration(s)", "tiers": [{ "tier": "T1", "stats": [{ "statId": "horizontal_projectile_penetration", "label": "+(min-max) Horizontal Projectile Penetration(s)", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }] },
+      { "id": "crafted_crossbow_sweet_dream_elemental_erosion_resistance_penetration", "name": "+(min-max)% Elemental and Erosion Resistance Penetration", "tiers": [{ "tier": "T1", "stats": [{ "statId": "elemental_and_erosion_resistance_penetration", "label": "+(min-max)% Elemental and Erosion Resistance Penetration", "minValue": 6, "maxValue": 8, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_sweet_dream_armor_dmg_mitigation_penetration", "name": "+(min-max)% Armor DMG Mitigation Penetration", "tiers": [{ "tier": "T1", "stats": [{ "statId": "armor_dmg_mitigation_penetration", "label": "+(min-max)% Armor DMG Mitigation Penetration", "minValue": 5, "maxValue": 7, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_sweet_dream_max_tenacity_blessing_stacks", "name": "+1 to Max Tenacity Blessing Stacks", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_tenacity_blessing_stacks", "label": "+(min-max) to Max Tenacity Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }] },
+      { "id": "crafted_crossbow_sweet_dream_max_agility_blessing_stacks", "name": "+1 to Max Agility Blessing Stacks", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_agility_blessing_stacks", "label": "+(min-max) to Max Agility Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }] },
+      { "id": "crafted_crossbow_sweet_dream_max_focus_blessing_stacks", "name": "+1 to Max Focus Blessing Stacks", "tiers": [{ "tier": "T0", "stats": [{ "statId": "max_focus_blessing_stacks", "label": "+(min-max) to Max Focus Blessing Stacks", "minValue": 1, "maxValue": 1, "unit": "FLAT" }] }] },
+      { "id": "crafted_crossbow_sweet_dream_gear_physical_damage", "name": "+(min-max)% Gear Physical Damage", "tiers": [{ "tier": "T1", "stats": [{ "statId": "gear_physical_damage", "label": "+(min-max)% Gear Physical Damage", "minValue": 24, "maxValue": 32, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_sweet_dream_physical_damage_to_gear", "name": "Adds (min-max)-(min-max) Physical Damage to the gear", "tiers": [{ "tier": "T1", "stats": [{ "statId": "added_physical_damage_to_gear_min", "label": "Adds (min-max) min Physical Damage to the gear", "minValue": 32, "maxValue": 34, "unit": "FLAT" }, { "statId": "added_physical_damage_to_gear_max", "label": "Adds (min-max) max Physical Damage to the gear", "minValue": 40, "maxValue": 42, "unit": "FLAT" }] }] },
+      { "id": "crafted_crossbow_sweet_dream_lucky_critical_strike", "name": "Lucky Critical Strike", "tiers": [{ "tier": "T0", "stats": [{ "statId": "lucky_critical_strike_rating", "label": "(min-max)% Critical Strike Rating for Lucky Critical Strike", "minValue": -80, "maxValue": -50, "unit": "PERCENT" }] }] }
+    ],
+    "NIGHTMARE_AFFIXES": [
+      { "id": "crafted_crossbow_nightmare_damage", "name": "Damage", "tiers": [{ "tier": "T1", "stats": [{ "statId": "damage", "label": "+(min-max)% Damage", "minValue": 49, "maxValue": 72, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_nightmare_attack_and_cast_speed", "name": "Attack and Cast Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "attack_and_cast_speed", "label": "+(min-max)% Attack and Cast Speed", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_nightmare_minion_damage", "name": "Minion Damage", "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_damage", "label": "+(min-max)% Minion Damage", "minValue": 49, "maxValue": 72, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_nightmare_minion_attack_and_cast_speed", "name": "Minion Attack and Cast Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_attack_and_cast_speed", "label": "+(min-max)% Minion Attack and Cast Speed", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_nightmare_attack_and_spell_critical_strike_rating", "name": "Attack and Spell Critical Strike Rating", "tiers": [{ "tier": "T1", "stats": [{ "statId": "attack_and_spell_critical_strike_rating", "label": "+(min-max) Attack and Spell Critical Strike Rating", "minValue": 77, "maxValue": 100, "unit": "FLAT" }] }] },
+      { "id": "crafted_crossbow_nightmare_skill_area", "name": "Skill Area", "tiers": [{ "tier": "T1", "stats": [{ "statId": "skill_area", "label": "+(min-max)% Skill Area", "minValue": 18, "maxValue": 21, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_nightmare_minion_critical_strike_rating", "name": "Minion Critical Strike Rating", "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_critical_strike_rating", "label": "+(min-max) Minion Critical Strike Rating", "minValue": 77, "maxValue": 100, "unit": "FLAT" }] }] },
+      { "id": "crafted_crossbow_nightmare_minion_skill_area", "name": "Minion Skill Area", "tiers": [{ "tier": "T1", "stats": [{ "statId": "minion_skill_area", "label": "+(min-max)% Minion Skill Area", "minValue": 18, "maxValue": 21, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_nightmare_max_life", "name": "Max Life", "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_life", "label": "+(min-max) Max Life", "minValue": 100, "maxValue": 150, "unit": "FLAT" }] }] },
+      { "id": "crafted_crossbow_nightmare_max_energy_shield", "name": "Max Energy Shield", "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_energy_shield", "label": "+(min-max) Max Energy Shield", "minValue": 320, "maxValue": 400, "unit": "FLAT" }] }] },
+      { "id": "crafted_crossbow_nightmare_cold_resistance", "name": "Cold Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "cold_resistance", "label": "+(min-max)% Cold Resistance", "minValue": 21, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_nightmare_erosion_resistance", "name": "Erosion Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "erosion_resistance", "label": "+(min-max)% Erosion Resistance", "minValue": 21, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_nightmare_max_mana", "name": "Max Mana", "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_mana", "label": "+(min-max) Max Mana", "minValue": 96, "maxValue": 120, "unit": "FLAT" }] }] },
+      { "id": "crafted_crossbow_nightmare_fire_resistance", "name": "Fire Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "fire_resistance", "label": "+(min-max)% Fire Resistance", "minValue": 21, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_nightmare_lightning_resistance", "name": "Lightning Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "lightning_resistance", "label": "+(min-max)% Lightning Resistance", "minValue": 21, "maxValue": 24, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_nightmare_elemental_resistance", "name": "Elemental Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "elemental_resistance", "label": "+(min-max)% Elemental Resistance", "minValue": 9, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_nightmare_strength", "name": "Strength", "tiers": [{ "tier": "T1", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 51, "maxValue": 60, "unit": "FLAT" }] }] },
+      { "id": "crafted_crossbow_nightmare_intelligence", "name": "Intelligence", "tiers": [{ "tier": "T1", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 51, "maxValue": 60, "unit": "FLAT" }] }] },
+      { "id": "crafted_crossbow_nightmare_movement_speed", "name": "Movement Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "movement_speed", "label": "+(min-max)% Movement Speed", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_nightmare_skill_effect_duration", "name": "Skill Effect Duration", "tiers": [{ "tier": "T1", "stats": [{ "statId": "skill_effect_duration", "label": "+(min-max)% Skill Effect Duration", "minValue": 14, "maxValue": 20, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_nightmare_dexterity", "name": "Dexterity", "tiers": [{ "tier": "T1", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 51, "maxValue": 60, "unit": "FLAT" }] }] },
+      { "id": "crafted_crossbow_nightmare_aura_effect", "name": "Aura Effect", "tiers": [{ "tier": "T1", "stats": [{ "statId": "aura_effect", "label": "+(min-max)% Aura Effect", "minValue": 12, "maxValue": 16, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_nightmare_cooldown_recovery_speed", "name": "Cooldown Recovery Speed", "tiers": [{ "tier": "T1", "stats": [{ "statId": "cooldown_recovery_speed", "label": "+(min-max)% Cooldown Recovery Speed", "minValue": 13, "maxValue": 15, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_nightmare_max_tenacity_blessing_stacks", "name": "Max Tenacity Blessing Stacks", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_crossbow_nightmare_max_focus_blessing_stacks", "name": "Max Focus Blessing Stacks", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_crossbow_nightmare_fervor_effect", "name": "Fervor Effect", "tiers": [{ "tier": "T1", "stats": [{ "statId": "fervor_effect", "label": "+(min-max)% Fervor Effect", "minValue": 15, "maxValue": 20, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_nightmare_projectile_quantity", "name": "Projectile Quantity", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_crossbow_nightmare_max_agility_blessing_stacks", "name": "Max Agility Blessing Stacks", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_crossbow_nightmare_sealed_mana_compensation", "name": "Sealed Mana Compensation", "tiers": [{ "tier": "T1", "stats": [{ "statId": "sealed_mana_compensation", "label": "+(min-max)% Sealed Mana Compensation", "minValue": 5, "maxValue": 10, "unit": "PERCENT" }] }] },
+      { "id": "crafted_crossbow_nightmare_max_elemental_resistance", "name": "Max Elemental Resistance", "tiers": [{ "tier": "T1", "stats": [{ "statId": "max_elemental_resistance", "label": "+(min-max)% Max Elemental Resistance", "minValue": 1, "maxValue": 2, "unit": "PERCENT" }] }] }
+    ],
+    "INTERMEDIATE_SEQUENCES": [
+      { "id": "crafted_crossbow_intermediate_sequence_additional_damage_main_hand", "name": "+16% additional damage for Main-Hand Weapons", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_crossbow_intermediate_sequence_armor_dmg_mitigation_penetration", "name": "+12% Armor DMG Mitigation Penetration", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_crossbow_intermediate_sequence_fire_penetration", "name": "+16% Fire Penetration", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_crossbow_intermediate_sequence_cold_penetration", "name": "+16% Cold Penetration", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_crossbow_intermediate_sequence_lightning_penetration", "name": "+16% Lightning Penetration", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_crossbow_intermediate_sequence_erosion_resistance_penetration", "name": "+16% Erosion Resistance Penetration", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_crossbow_intermediate_sequence_gear_attack_speed", "name": "+8% gear Attack Speed", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_crossbow_intermediate_sequence_gear_attack_critical_strike_rating", "name": "+20% Attack Critical Strike Rating for this gear", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_crossbow_intermediate_sequence_additional_damage_on_critical_strike", "name": "+20% additional damage on Critical Strike", "tiers": [{ "tier": "T1", "stats": [] }] },
+      { "id": "crafted_crossbow_intermediate_sequence_all_stats", "name": "+16% all stats", "tiers": [{ "tier": "T1", "stats": [] }] }
+    ],
+    "ADVANCED_SEQUENCES": [
+      { "id": "crafted_crossbow_advanced_sequence_enemy_explosion", "name": "Enemies have a 30% chance to explode when defeated by an Attack or Spell, dealing True Damage equal to 250% of their Max Life to enemies within a 6 m radius", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_crossbow_advanced_sequence_lightning_damage_per_dexterity", "name": "Adds 1 - 7 Lightning Damage to Attacks per 10 Dexterity", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_crossbow_advanced_sequence_fire_damage_per_strength", "name": "Adds 3 - 5 Fire Damage to Attacks per 10 Strength", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_crossbow_advanced_sequence_multiple_projectiles_support", "name": "Main Skill is supported by Lv. 25 Multiple Projectiles +25% additional Projectile Damage", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_crossbow_advanced_sequence_projectile_return", "name": "Attack Horizontal Projectiles will return after reaching their max range and will hit enemies on their path again -30% additional Projectile Damage", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_crossbow_advanced_sequence_precise_projectiles_aura", "name": "+200% Precise Projectiles Aura effect -30% additional Precise Projectiles Sealed Mana Compensation", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_crossbow_advanced_sequence_gear_physical_damage", "name": "+80% Gear Physical Damage -20% Attack Critical Strike Rating for this gear", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_crossbow_advanced_sequence_deterioration_damage", "name": "+30% additional Deterioration Damage, 10% chance to inflict 2 additional stack(s) of Deterioration", "tiers": [{ "tier": "T0", "stats": [] }] },
+      { "id": "crafted_crossbow_advanced_sequence_elemental_vs_physical", "name": "+50% Gear Elemental Damage -25% Gear Physical Damage", "tiers": [{ "tier": "T0", "stats": [] }] }
+    ],
+    "BASIC_PREFIXES": [
+      {
+        "id": "crafted_crossbow_basic_prefix_physical_damage_to_gear",
+        "name": "Adds (min-max)-(min-max) Physical Damage to the gear",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "added_physical_damage_to_gear_min", "label": "Adds (min-max) min Physical Damage to the gear", "minValue": 121, "maxValue": 123, "unit": "FLAT" }, { "statId": "added_physical_damage_to_gear_max", "label": "Adds (min-max) max Physical Damage to the gear", "minValue": 149, "maxValue": 151, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "added_physical_damage_to_gear_min", "label": "Adds (min-max) min Physical Damage to the gear", "minValue": 93, "maxValue": 95, "unit": "FLAT" }, { "statId": "added_physical_damage_to_gear_max", "label": "Adds (min-max) max Physical Damage to the gear", "minValue": 113, "maxValue": 115, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "added_physical_damage_to_gear_min", "label": "Adds (min-max) min Physical Damage to the gear", "minValue": 71, "maxValue": 73, "unit": "FLAT" }, { "statId": "added_physical_damage_to_gear_max", "label": "Adds (min-max) max Physical Damage to the gear", "minValue": 87, "maxValue": 89, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_crossbow_basic_prefix_fire_damage_to_gear",
+        "name": "Adds (min-max)-(min-max) Fire Damage to the gear",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "added_fire_damage_to_gear_min", "label": "Adds (min-max) min Fire Damage to the gear", "minValue": 257, "maxValue": 259, "unit": "FLAT" }, { "statId": "added_fire_damage_to_gear_max", "label": "Adds (min-max) max Fire Damage to the gear", "minValue": 333, "maxValue": 351, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "added_fire_damage_to_gear_min", "label": "Adds (min-max) min Fire Damage to the gear", "minValue": 198, "maxValue": 200, "unit": "FLAT" }, { "statId": "added_fire_damage_to_gear_max", "label": "Adds (min-max) max Fire Damage to the gear", "minValue": 256, "maxValue": 270, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "added_fire_damage_to_gear_min", "label": "Adds (min-max) min Fire Damage to the gear", "minValue": 152, "maxValue": 154, "unit": "FLAT" }, { "statId": "added_fire_damage_to_gear_max", "label": "Adds (min-max) max Fire Damage to the gear", "minValue": 197, "maxValue": 208, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_crossbow_basic_prefix_cold_damage_to_gear",
+        "name": "Adds (min-max)-(min-max) Cold Damage to the gear",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "added_cold_damage_to_gear_min", "label": "Adds (min-max) min Cold Damage to the gear", "minValue": 260, "maxValue": 262, "unit": "FLAT" }, { "statId": "added_cold_damage_to_gear_max", "label": "Adds (min-max) max Cold Damage to the gear", "minValue": 346, "maxValue": 348, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "added_cold_damage_to_gear_min", "label": "Adds (min-max) min Cold Damage to the gear", "minValue": 200, "maxValue": 202, "unit": "FLAT" }, { "statId": "added_cold_damage_to_gear_max", "label": "Adds (min-max) max Cold Damage to the gear", "minValue": 266, "maxValue": 268, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "added_cold_damage_to_gear_min", "label": "Adds (min-max) min Cold Damage to the gear", "minValue": 154, "maxValue": 156, "unit": "FLAT" }, { "statId": "added_cold_damage_to_gear_max", "label": "Adds (min-max) max Cold Damage to the gear", "minValue": 204, "maxValue": 206, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_crossbow_basic_prefix_lightning_damage_to_gear",
+        "name": "Adds (min-max)-(min-max) Lightning Damage to the gear",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "added_lightning_damage_to_gear_min", "label": "Adds (min-max) min Lightning Damage to the gear", "minValue": 29, "maxValue": 31, "unit": "FLAT" }, { "statId": "added_lightning_damage_to_gear_max", "label": "Adds (min-max) max Lightning Damage to the gear", "minValue": 577, "maxValue": 579, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "added_lightning_damage_to_gear_min", "label": "Adds (min-max) min Lightning Damage to the gear", "minValue": 22, "maxValue": 24, "unit": "FLAT" }, { "statId": "added_lightning_damage_to_gear_max", "label": "Adds (min-max) max Lightning Damage to the gear", "minValue": 444, "maxValue": 446, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "added_lightning_damage_to_gear_min", "label": "Adds (min-max) min Lightning Damage to the gear", "minValue": 17, "maxValue": 19, "unit": "FLAT" }, { "statId": "added_lightning_damage_to_gear_max", "label": "Adds (min-max) max Lightning Damage to the gear", "minValue": 341, "maxValue": 343, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_crossbow_basic_prefix_erosion_damage_to_gear",
+        "name": "Adds (min-max)-(min-max) Erosion Damage to the gear",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "added_erosion_damage_to_gear_min", "label": "Adds (min-max) min Erosion Damage to the gear", "minValue": 279, "maxValue": 281, "unit": "FLAT" }, { "statId": "added_erosion_damage_to_gear_max", "label": "Adds (min-max) max Erosion Damage to the gear", "minValue": 327, "maxValue": 329, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "added_erosion_damage_to_gear_min", "label": "Adds (min-max) min Erosion Damage to the gear", "minValue": 214, "maxValue": 216, "unit": "FLAT" }, { "statId": "added_erosion_damage_to_gear_max", "label": "Adds (min-max) max Erosion Damage to the gear", "minValue": 252, "maxValue": 254, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "added_erosion_damage_to_gear_min", "label": "Adds (min-max) min Erosion Damage to the gear", "minValue": 165, "maxValue": 167, "unit": "FLAT" }, { "statId": "added_erosion_damage_to_gear_max", "label": "Adds (min-max) max Erosion Damage to the gear", "minValue": 193, "maxValue": 195, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_crossbow_basic_prefix_projectile_damage",
+        "name": "+(min-max)% Projectile Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "projectile_damage", "label": "+(min-max)% Projectile Damage", "minValue": 282, "maxValue": 365, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "projectile_damage", "label": "+(min-max)% Projectile Damage", "minValue": 197, "maxValue": 281, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "projectile_damage", "label": "+(min-max)% Projectile Damage", "minValue": 152, "maxValue": 216, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_crossbow_basic_prefix_base_trauma_damage",
+        "name": "Adds (min-max) Base Trauma Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "base_trauma_damage", "label": "Adds (min-max) Base Trauma Damage", "minValue": 1620, "maxValue": 3780, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "base_trauma_damage", "label": "Adds (min-max) Base Trauma Damage", "minValue": 960, "maxValue": 2240, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_crossbow_basic_prefix_trauma_reap",
+        "name": "Reaps (min-max) s of Trauma Damage when dealing Damage Over Time. The effect has a 1 s Recovery Time against the same target",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "trauma_reap_seconds", "label": "Reaps (min-max) s of Trauma Damage when dealing Damage Over Time", "minValue": 0.5, "maxValue": 0.6, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "trauma_reap_seconds", "label": "Reaps (min-max) s of Trauma Damage when dealing Damage Over Time", "minValue": 0.25, "maxValue": 0.36, "unit": "FLAT" }] }
+        ]
+      }
+    ],
+    "ADVANCED_PREFIXES": [
+      {
+        "id": "crafted_crossbow_advanced_prefix_attack_and_spell_block_chance",
+        "name": "+(min-max)% Attack and Spell Block Chance",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "attack_and_spell_block_chance", "label": "+(min-max)% Attack and Spell Block Chance", "minValue": 60, "maxValue": 76, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "attack_and_spell_block_chance", "label": "+(min-max)% Attack and Spell Block Chance", "minValue": 46, "maxValue": 59, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_crossbow_advanced_prefix_gear_physical_damage",
+        "name": "+(min-max)% Gear Physical Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "gear_physical_damage", "label": "+(min-max)% Gear Physical Damage", "minValue": 105, "maxValue": 136, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "gear_physical_damage", "label": "+(min-max)% Gear Physical Damage", "minValue": 81, "maxValue": 104, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "gear_physical_damage", "label": "+(min-max)% Gear Physical Damage", "minValue": 49, "maxValue": 80, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_crossbow_advanced_prefix_dexterity",
+        "name": "+(min-max) Dexterity",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 235, "maxValue": 304, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 181, "maxValue": 234, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "dexterity", "label": "+(min-max) Dexterity", "minValue": 127, "maxValue": 180, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_crossbow_advanced_prefix_strength",
+        "name": "+(min-max) Strength",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 235, "maxValue": 304, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 181, "maxValue": 234, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "strength", "label": "+(min-max) Strength", "minValue": 127, "maxValue": 180, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_crossbow_advanced_prefix_intelligence",
+        "name": "+(min-max) Intelligence",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 235, "maxValue": 304, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 181, "maxValue": 234, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "intelligence", "label": "+(min-max) Intelligence", "minValue": 127, "maxValue": 180, "unit": "FLAT" }] }
+        ]
+      }
+    ],
+    "ULTIMATE_PREFIXES": [
+      {
+        "id": "crafted_crossbow_ultimate_prefix_armor_dmg_mitigation_penetration",
+        "name": "+(min-max)% Armor DMG Mitigation Penetration",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "armor_dmg_mitigation_penetration", "label": "+(min-max)% Armor DMG Mitigation Penetration", "minValue": 66, "maxValue": 85, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "armor_dmg_mitigation_penetration", "label": "+(min-max)% Armor DMG Mitigation Penetration", "minValue": 51, "maxValue": 64, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "armor_dmg_mitigation_penetration", "label": "+(min-max)% Armor DMG Mitigation Penetration", "minValue": 36, "maxValue": 50, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_crossbow_ultimate_prefix_attack_skill_level",
+        "name": "+(min-max) to Attack Skill Level",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "attack_skill_level", "label": "+(min-max) to Attack Skill Level", "minValue": 8, "maxValue": 8, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "attack_skill_level", "label": "+(min-max) to Attack Skill Level", "minValue": 7, "maxValue": 7, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "attack_skill_level", "label": "+(min-max) to Attack Skill Level", "minValue": 6, "maxValue": 6, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_crossbow_ultimate_prefix_elemental_erosion_resistance_penetration",
+        "name": "+(min-max)% Elemental and Erosion Resistance Penetration",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "elemental_and_erosion_resistance_penetration", "label": "+(min-max)% Elemental and Erosion Resistance Penetration", "minValue": 79, "maxValue": 101, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "elemental_and_erosion_resistance_penetration", "label": "+(min-max)% Elemental and Erosion Resistance Penetration", "minValue": 61, "maxValue": 78, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "elemental_and_erosion_resistance_penetration", "label": "+(min-max)% Elemental and Erosion Resistance Penetration", "minValue": 43, "maxValue": 60, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_crossbow_ultimate_prefix_gear_physical_damage_combo",
+        "name": "+(min-max)% Gear Physical Damage Adds (min-max)-(min-max) Physical Damage to the gear",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "gear_physical_damage", "label": "+(min-max)% Gear Physical Damage", "minValue": 146, "maxValue": 190, "unit": "PERCENT" }, { "statId": "added_physical_damage_to_gear_min", "label": "Adds (min-max) min Physical Damage to the gear", "minValue": 90, "maxValue": 92, "unit": "FLAT" }, { "statId": "added_physical_damage_to_gear_max", "label": "Adds (min-max) max Physical Damage to the gear", "minValue": 111, "maxValue": 113, "unit": "FLAT" }] },
+          { "tier": "T0", "stats": [{ "statId": "gear_physical_damage", "label": "+(min-max)% Gear Physical Damage", "minValue": 111, "maxValue": 145, "unit": "PERCENT" }, { "statId": "added_physical_damage_to_gear_min", "label": "Adds (min-max) min Physical Damage to the gear", "minValue": 69, "maxValue": 71, "unit": "FLAT" }, { "statId": "added_physical_damage_to_gear_max", "label": "Adds (min-max) max Physical Damage to the gear", "minValue": 85, "maxValue": 87, "unit": "FLAT" }] },
+          { "tier": "T1", "stats": [{ "statId": "gear_physical_damage", "label": "+(min-max)% Gear Physical Damage", "minValue": 77, "maxValue": 110, "unit": "PERCENT" }, { "statId": "added_physical_damage_to_gear_min", "label": "Adds (min-max) min Physical Damage to the gear", "minValue": 53, "maxValue": 55, "unit": "FLAT" }, { "statId": "added_physical_damage_to_gear_max", "label": "Adds (min-max) max Physical Damage to the gear", "minValue": 65, "maxValue": 67, "unit": "FLAT" }] }
+        ]
+      },
+      {
+        "id": "crafted_crossbow_ultimate_prefix_additional_trauma_damage",
+        "name": "+(min-max)% additional Trauma Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "additional_trauma_damage", "label": "+(min-max)% additional Trauma Damage", "minValue": 79, "maxValue": 101, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "additional_trauma_damage", "label": "+(min-max)% additional Trauma Damage", "minValue": 43, "maxValue": 60, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_crossbow_ultimate_prefix_knockback",
+        "name": "+(min-max)% Knockback distance +(min-max)% additional damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "knockback_distance", "label": "+(min-max)% Knockback distance", "minValue": 105, "maxValue": 135, "unit": "PERCENT" }, { "statId": "additional_damage", "label": "+(min-max)% additional damage", "minValue": 20, "maxValue": 20, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "knockback_distance", "label": "+(min-max)% Knockback distance", "minValue": 58, "maxValue": 80, "unit": "PERCENT" }, { "statId": "additional_damage", "label": "+(min-max)% additional damage", "minValue": 10, "maxValue": 10, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_crossbow_ultimate_prefix_elemental_damage_to_gear",
+        "name": "Adds (min-max)-(min-max) Elemental Damage to the gear -100% Gear Physical Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "added_elemental_damage_to_gear_min", "label": "Adds (min-max) min Elemental Damage to the gear", "minValue": 100, "maxValue": 102, "unit": "FLAT" }, { "statId": "added_elemental_damage_to_gear_max", "label": "Adds (min-max) max Elemental Damage to the gear", "minValue": 569, "maxValue": 571, "unit": "FLAT" }, { "statId": "gear_physical_damage_penalty", "label": "(min-max)% Gear Physical Damage", "minValue": -100, "maxValue": -100, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "added_elemental_damage_to_gear_min", "label": "Adds (min-max) min Elemental Damage to the gear", "minValue": 77, "maxValue": 79, "unit": "FLAT" }, { "statId": "added_elemental_damage_to_gear_max", "label": "Adds (min-max) max Elemental Damage to the gear", "minValue": 438, "maxValue": 440, "unit": "FLAT" }, { "statId": "gear_physical_damage_penalty", "label": "(min-max)% Gear Physical Damage", "minValue": -100, "maxValue": -100, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "added_elemental_damage_to_gear_min", "label": "Adds (min-max) min Elemental Damage to the gear", "minValue": 59, "maxValue": 61, "unit": "FLAT" }, { "statId": "added_elemental_damage_to_gear_max", "label": "Adds (min-max) max Elemental Damage to the gear", "minValue": 337, "maxValue": 339, "unit": "FLAT" }, { "statId": "gear_physical_damage_penalty", "label": "(min-max)% Gear Physical Damage", "minValue": -100, "maxValue": -100, "unit": "PERCENT" }] }
+        ]
+      }
+    ],
+    "BASIC_SUFFIXES": [
+      {
+        "id": "crafted_crossbow_basic_suffix_gear_attack_speed",
+        "name": "+(min-max)% Gear Attack Speed",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "gear_attack_speed", "label": "+(min-max)% Gear Attack Speed", "minValue": 43, "maxValue": 54, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "gear_attack_speed", "label": "+(min-max)% Gear Attack Speed", "minValue": 33, "maxValue": 42, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "gear_attack_speed", "label": "+(min-max)% Gear Attack Speed", "minValue": 23, "maxValue": 32, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_crossbow_basic_suffix_life_regain",
+        "name": "+(min-max)% Life Regain",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "life_regain", "label": "+(min-max)% Life Regain", "minValue": 40, "maxValue": 51, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "life_regain", "label": "+(min-max)% Life Regain", "minValue": 31, "maxValue": 39, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "life_regain", "label": "+(min-max)% Life Regain", "minValue": 22, "maxValue": 30, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_crossbow_basic_suffix_energy_shield_regain",
+        "name": "+(min-max)% Energy Shield Regain",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "energy_shield_regain", "label": "+(min-max)% Energy Shield Regain", "minValue": 40, "maxValue": 51, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "energy_shield_regain", "label": "+(min-max)% Energy Shield Regain", "minValue": 31, "maxValue": 39, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "energy_shield_regain", "label": "+(min-max)% Energy Shield Regain", "minValue": 22, "maxValue": 30, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_crossbow_basic_suffix_physical_damage",
+        "name": "+(min-max)% Physical Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "physical_damage", "label": "+(min-max)% Physical Damage", "minValue": 282, "maxValue": 365, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "physical_damage", "label": "+(min-max)% Physical Damage", "minValue": 217, "maxValue": 281, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "physical_damage", "label": "+(min-max)% Physical Damage", "minValue": 152, "maxValue": 216, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_crossbow_basic_suffix_elemental_damage",
+        "name": "+(min-max)% Elemental Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "elemental_damage", "label": "+(min-max)% Elemental Damage", "minValue": 282, "maxValue": 365, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "elemental_damage", "label": "+(min-max)% Elemental Damage", "minValue": 217, "maxValue": 281, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "elemental_damage", "label": "+(min-max)% Elemental Damage", "minValue": 152, "maxValue": 216, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_crossbow_basic_suffix_erosion_damage",
+        "name": "+(min-max)% Erosion Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "erosion_damage", "label": "+(min-max)% Erosion Damage", "minValue": 282, "maxValue": 365, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "erosion_damage", "label": "+(min-max)% Erosion Damage", "minValue": 217, "maxValue": 281, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "erosion_damage", "label": "+(min-max)% Erosion Damage", "minValue": 152, "maxValue": 216, "unit": "PERCENT" }] }
+        ]
+      }
+    ],
+    "ADVANCED_SUFFIXES": [
+      {
+        "id": "crafted_crossbow_advanced_suffix_attack_critical_strike_rating",
+        "name": "+(min-max)% Attack Critical Strike Rating for this gear",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "gear_attack_critical_strike_rating", "label": "+(min-max)% Attack Critical Strike Rating for this gear", "minValue": 66, "maxValue": 85, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "gear_attack_critical_strike_rating", "label": "+(min-max)% Attack Critical Strike Rating for this gear", "minValue": 51, "maxValue": 65, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "gear_attack_critical_strike_rating", "label": "+(min-max)% Attack Critical Strike Rating for this gear", "minValue": 36, "maxValue": 50, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_crossbow_advanced_suffix_critical_strike_rating",
+        "name": "+(min-max)% Critical Strike Rating",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "critical_strike_rating", "label": "+(min-max)% Critical Strike Rating", "minValue": 469, "maxValue": 608, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "critical_strike_rating", "label": "+(min-max)% Critical Strike Rating", "minValue": 328, "maxValue": 468, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "critical_strike_rating", "label": "+(min-max)% Critical Strike Rating", "minValue": 252, "maxValue": 360, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_crossbow_advanced_suffix_attack_and_cast_speed",
+        "name": "+(min-max)% Attack and Cast Speed",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "attack_and_cast_speed", "label": "+(min-max)% Attack and Cast Speed", "minValue": 95, "maxValue": 122, "unit": "PERCENT" }, { "statId": "minion_attack_and_cast_speed", "label": "+(min-max)% Minion Attack and Cast Speed", "minValue": 95, "maxValue": 122, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "attack_and_cast_speed", "label": "+(min-max)% Attack and Cast Speed", "minValue": 66, "maxValue": 94, "unit": "PERCENT" }, { "statId": "minion_attack_and_cast_speed", "label": "+(min-max)% Minion Attack and Cast Speed", "minValue": 66, "maxValue": 94, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "attack_and_cast_speed", "label": "+(min-max)% Attack and Cast Speed", "minValue": 51, "maxValue": 72, "unit": "PERCENT" }, { "statId": "minion_attack_and_cast_speed", "label": "+(min-max)% Minion Attack and Cast Speed", "minValue": 51, "maxValue": 72, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_crossbow_advanced_suffix_critical_strike_damage",
+        "name": "+(min-max)% Critical Strike Damage",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "critical_strike_damage", "label": "+(min-max)% Critical Strike Damage", "minValue": 235, "maxValue": 304, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "critical_strike_damage", "label": "+(min-max)% Critical Strike Damage", "minValue": 181, "maxValue": 234, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "critical_strike_damage", "label": "+(min-max)% Critical Strike Damage", "minValue": 127, "maxValue": 180, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_crossbow_advanced_suffix_affliction_effect",
+        "name": "+(min-max)% Affliction Effect",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "affliction_effect", "label": "+(min-max)% Affliction Effect", "minValue": 196, "maxValue": 254, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "affliction_effect", "label": "+(min-max)% Affliction Effect", "minValue": 151, "maxValue": 195, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "affliction_effect", "label": "+(min-max)% Affliction Effect", "minValue": 106, "maxValue": 150, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_crossbow_advanced_suffix_focus_speed",
+        "name": "+(min-max)% Focus Speed",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "focus_speed", "label": "+(min-max)% Focus Speed", "minValue": 150, "maxValue": 180, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "focus_speed", "label": "+(min-max)% Focus Speed", "minValue": 120, "maxValue": 140, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "focus_speed", "label": "+(min-max)% Focus Speed", "minValue": 90, "maxValue": 110, "unit": "PERCENT" }] }
+        ]
+      }
+    ],
+    "ULTIMATE_SUFFIXES": [
+      {
+        "id": "crafted_crossbow_ultimate_suffix_additional_damage_applied_to_life",
+        "name": "(min-max)% additional damage applied to Life",
+        "tiers": [
+          { "tier": "T1", "stats": [{ "statId": "additional_damage_applied_to_life", "label": "(min-max)% additional damage applied to Life", "minValue": 43, "maxValue": 60, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_crossbow_ultimate_suffix_focus_damage_enhancement",
+        "name": "+(min-max)% Focus Damage Enhancement",
+        "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "focus_damage_enhancement", "label": "+(min-max)% Focus Damage Enhancement", "minValue": 130, "maxValue": 160, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "focus_damage_enhancement", "label": "+(min-max)% Focus Damage Enhancement", "minValue": 96, "maxValue": 120, "unit": "PERCENT" }] },
+          { "tier": "T1", "stats": [{ "statId": "focus_damage_enhancement", "label": "+(min-max)% Focus Damage Enhancement", "minValue": 70, "maxValue": 90, "unit": "PERCENT" }] }
+        ]
+      },
+      {
+        "id": "crafted_crossbow_ultimate_suffix_ailment_damage_enhancement",
+        "name": "+(min-max)% Ailment Damage Enhancement",
+        "tiers": [
+          { "tier": "T1", "stats": [{ "statId": "ailment_damage_enhancement", "label": "+(min-max)% Ailment Damage Enhancement", "minValue": 80, "maxValue": 100, "unit": "PERCENT" }] }
+        ]
+      }
+    ]
+  }
+}
