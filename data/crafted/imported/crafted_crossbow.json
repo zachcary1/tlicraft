@@ -414,6 +414,8 @@
         "id": "crafted_crossbow_ultimate_suffix_additional_damage_applied_to_life",
         "name": "(min-max)% additional damage applied to Life",
         "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "additional_damage_applied_to_life", "label": "(min-max)% additional damage applied to Life", "minValue": 79, "maxValue": 101, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "additional_damage_applied_to_life", "label": "(min-max)% additional damage applied to Life", "minValue": 61, "maxValue": 78, "unit": "PERCENT" }] },
           { "tier": "T1", "stats": [{ "statId": "additional_damage_applied_to_life", "label": "(min-max)% additional damage applied to Life", "minValue": 43, "maxValue": 60, "unit": "PERCENT" }] }
         ]
       },
@@ -430,6 +432,8 @@
         "id": "crafted_crossbow_ultimate_suffix_ailment_damage_enhancement",
         "name": "+(min-max)% Ailment Damage Enhancement",
         "tiers": [
+          { "tier": "T0_PLUS", "stats": [{ "statId": "ailment_damage_enhancement", "label": "+(min-max)% Ailment Damage Enhancement", "minValue": 150, "maxValue": 170, "unit": "PERCENT" }] },
+          { "tier": "T0", "stats": [{ "statId": "ailment_damage_enhancement", "label": "+(min-max)% Ailment Damage Enhancement", "minValue": 110, "maxValue": 130, "unit": "PERCENT" }] },
           { "tier": "T1", "stats": [{ "statId": "ailment_damage_enhancement", "label": "+(min-max)% Ailment Damage Enhancement", "minValue": 80, "maxValue": 100, "unit": "PERCENT" }] }
         ]
       }
