@@ -4,7 +4,12 @@ import { useEffect, useState } from "react";
 import type { CraftedPool } from "@/services/crafting/types";
 import type { CostEstimate } from "@/services/crafting/cost-estimator";
 import type { CraftingGroupKey } from "@/services/crafting/probability-lookup";
-import ItemCard, { EMPTY_SLOTS, type ItemSlots } from "./ItemCard";
+import ItemCard, {
+  EMPTY_SLOTS,
+  EMPTY_RESOURCE_PRICES,
+  type ItemSlots,
+  type ResourcePrices,
+} from "./ItemCard";
 import CostEstimatePanel from "./CostEstimatePanel";
 import GearPanel, {
   EMPTY_LOADOUT,
@@ -32,6 +37,11 @@ type SlotData = {
   poolData: CraftedPool | null;
   itemSlots: ItemSlots;
   loading: boolean;
+  baseCostFE: string;
+  shallowCostFE: string;
+  modCostFE: string;
+  resourcePrices: ResourcePrices;
+  corrosionCostFE: string;
   costPerAttempt: string;
   estimating: boolean;
   estimateResult: EstimateResult | null;
@@ -42,6 +52,11 @@ const EMPTY_SLOT_DATA: SlotData = {
   poolData: null,
   itemSlots: EMPTY_SLOTS,
   loading: false,
+  baseCostFE: "",
+  shallowCostFE: "",
+  modCostFE: "",
+  resourcePrices: EMPTY_RESOURCE_PRICES,
+  corrosionCostFE: "",
   costPerAttempt: "",
   estimating: false,
   estimateResult: null,
@@ -140,7 +155,7 @@ export default function CraftingPage() {
     }
 
     const targets = PREFIX_SUFFIX_KEYS.flatMap((key) => {
-      const slot = data.itemSlots[key];
+      const slot = data.itemSlots[key] as import("./ItemCard").SlotValue;
       return slot
         ? [{ group: slot.sourceGroup as CraftingGroupKey, affixId: slot.affixId, tier: slot.tier }]
         : [];
@@ -249,6 +264,26 @@ export default function CraftingPage() {
                               })
                             }
                             onClear={() => clearSlot(focusedSlotId)}
+                            baseCostFE={focused.baseCostFE}
+                            onBaseCostFEChange={(v) =>
+                              updateSlotData(focusedSlotId, { baseCostFE: v })
+                            }
+                            shallowCostFE={focused.shallowCostFE}
+                            onShallowCostFEChange={(v) =>
+                              updateSlotData(focusedSlotId, { shallowCostFE: v })
+                            }
+                            modCostFE={focused.modCostFE}
+                            onModCostFEChange={(v) =>
+                              updateSlotData(focusedSlotId, { modCostFE: v })
+                            }
+                            resourcePrices={focused.resourcePrices}
+                            onResourcePricesChange={(p) =>
+                              updateSlotData(focusedSlotId, { resourcePrices: p })
+                            }
+                            corrosionCostFE={focused.corrosionCostFE}
+                            onCorrosionCostFEChange={(v) =>
+                              updateSlotData(focusedSlotId, { corrosionCostFE: v })
+                            }
                           />
 
                           {PREFIX_SUFFIX_KEYS.some((k) => focused.itemSlots[k] !== null) && (
