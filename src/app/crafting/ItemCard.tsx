@@ -56,6 +56,7 @@ function tierTextColor(tier: string): string {
   if (tier === "T0_PLUS") return "#534dbf";
   if (tier === "T0")      return "#fe0000";
   if (tier === "T1")      return "#ff7d1c";
+  if (tier === "T2")      return "#a457ff";
   return "";
 }
 
@@ -64,6 +65,7 @@ function tierSquareColor(tier: string): string {
   if (tier === "T0_PLUS") return "#fe0000";
   if (tier === "T0")      return "#fe0000";
   if (tier === "T1")      return "#ff7d1c";
+  if (tier === "T2")      return "#a457ff";
   return "";
 }
 
@@ -229,20 +231,18 @@ function NightmareSlotRow({ pool, values, onChange }: NightmareSlotRowProps) {
           </span>
         </span>
       </span>
-      <div className="flex-1">
-        <div className="flex items-center gap-2 mb-1">
-          <span className="text-xs text-zinc-500">
+      <div className="flex-1 min-w-0">
+        <button
+          onClick={() => setExpanded((e) => !e)}
+          className="w-full flex items-center justify-between gap-2 rounded bg-zinc-800 border border-zinc-700 px-2 py-1.5 hover:border-zinc-600 focus:outline-none text-xs mb-1"
+        >
+          <span className="text-zinc-400">
             {values.length > 0 ? `${values.length} selected` : "none selected"}
           </span>
-          <div className="flex-1 h-px bg-zinc-800/60" />
-          <button
-            onClick={() => setExpanded((e) => !e)}
-            className="shrink-0 w-5 h-5 flex items-center justify-center rounded text-sm font-bold text-zinc-500 hover:text-zinc-200 hover:bg-zinc-800 transition-colors"
-            title={expanded ? "Collapse" : "Expand"}
-          >
-            {expanded ? "−" : "+"}
-          </button>
-        </div>
+          <svg className="shrink-0 text-zinc-500 w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+            <path d={expanded ? "m18 15-6-6-6 6" : "m6 9 6 6 6-6"} />
+          </svg>
+        </button>
         {expanded && (
           <div className="space-y-3">
             {NIGHTMARE_GROUP_ORDER.map((group) => {
@@ -301,32 +301,78 @@ function Section({
   feCost,
   expanded,
   onToggle,
+  hoverCard,
 }: {
   label: string;
   feCost?: number | null;
   expanded?: boolean;
   onToggle?: () => void;
+  hoverCard?: React.ReactNode;
 }) {
+  const [tooltipOpen, setTooltipOpen] = useState(false);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  function scheduleClose() {
+    closeTimer.current = setTimeout(() => setTooltipOpen(false), 120);
+  }
+  function cancelClose() {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+  }
+
   return (
-    <div className="flex items-center gap-2 mt-4 mb-1">
-      <div className="w-1/4 h-px bg-zinc-800 shrink-0" />
-      <span className="shrink-0 text-xs font-semibold text-zinc-500 uppercase tracking-widest">
-        {label}
-      </span>
-      {feCost != null && (
-        <span className="shrink-0 text-xs text-white flex items-center gap-1">
-          <span className="font-bold">{Math.round(feCost).toLocaleString("en-US")}</span> <FEIcon className="w-3.5 h-3.5" />
+    <div className="relative">
+      <div
+        className="flex items-center gap-2 mt-4 mb-1"
+        onMouseLeave={scheduleClose}
+        onMouseEnter={cancelClose}
+      >
+        <div className="flex-1 h-px bg-zinc-800" />
+        <span className="shrink-0 text-xs font-semibold text-zinc-500 uppercase tracking-widest">
+          {label}
         </span>
-      )}
-      <div className="flex-1 h-px bg-zinc-800" />
-      {onToggle && (
-        <button
-          onClick={onToggle}
-          className="shrink-0 w-5 h-5 flex items-center justify-center rounded text-sm font-bold text-zinc-500 hover:text-zinc-200 hover:bg-zinc-800 transition-colors"
-          title={expanded ? "Collapse" : "Expand"}
+        <div className="flex-1 h-px bg-zinc-800" />
+        {feCost != null && (
+          <span
+            className={`shrink-0 text-xs flex items-center gap-1 px-1.5 py-0.5 rounded transition-colors${
+              Number.isNaN(feCost)
+                ? " text-red-400 bg-zinc-800 border border-red-900 cursor-help hover:border-red-600"
+                : hoverCard
+                ? " text-zinc-300 bg-zinc-800 border border-zinc-700 cursor-help hover:border-zinc-500 hover:text-white"
+                : " text-white"
+            }`}
+            onMouseEnter={() => { cancelClose(); if (hoverCard) setTooltipOpen(true); }}
+          >
+            {Number.isNaN(feCost) ? (
+              <span className="font-bold">NaN</span>
+            ) : (
+              <>
+                <span className="font-bold">{Math.round(feCost).toLocaleString("en-US")}</span>
+                <FEIcon className="w-3.5 h-3.5" />
+              </>
+            )}
+            {hoverCard && (
+              <svg className={`w-3 h-3 ${Number.isNaN(feCost) ? "text-red-600" : "text-zinc-500"}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+            )}
+          </span>
+        )}
+        {onToggle && (
+          <button
+            onClick={onToggle}
+            className="shrink-0 w-5 h-5 flex items-center justify-center rounded text-sm font-bold text-zinc-500 hover:text-zinc-200 hover:bg-zinc-800 transition-colors"
+            title={expanded ? "Collapse" : "Expand"}
+          >
+            {expanded ? "−" : "+"}
+          </button>
+        )}
+      </div>
+      {tooltipOpen && hoverCard && (
+        <div
+          className="absolute z-50 left-0 w-full"
+          onMouseEnter={cancelClose}
+          onMouseLeave={scheduleClose}
         >
-          {expanded ? "−" : "+"}
-        </button>
+          {hoverCard}
+        </div>
       )}
     </div>
   );
@@ -355,6 +401,45 @@ function TierLabel({ tier }: { tier: PoolTier }) {
       }
       <span className="font-bold" style={textColor ? { color: textColor } : undefined}>{displayTier(tier.tier)}</span>
       {stats && <span className="text-zinc-500">{stats}</span>}
+    </span>
+  );
+}
+
+// Returns the effective display tier for an affix, overriding to T0_PLUS for
+// corroded base affixes regardless of what the DB tier field says.
+function getEffectiveTier(sourceGroup: AffixGroupType, affix: PoolAffix): string {
+  if (sourceGroup === "CORROSION_BASE_AFFIXES") return "T0_PLUS";
+  return affix.tiers[0]?.tier ?? "";
+}
+
+// Colored square + tier label + colon + affix name, used in base/dream dropdowns.
+function AffixTierRow({
+  affix,
+  sourceGroup,
+  displayLabel,
+}: {
+  affix: PoolAffix;
+  sourceGroup: AffixGroupType;
+  displayLabel: string;
+}) {
+  const tier = getEffectiveTier(sourceGroup, affix);
+  const sqColor = tierSquareColor(tier);
+  const textColor = tierTextColor(tier);
+  return (
+    <span className="flex items-center gap-1.5 min-w-0">
+      {sqColor
+        ? <span className="inline-block w-2 h-2 shrink-0" style={{ backgroundColor: sqColor }} />
+        : <span className="inline-block w-2 h-2 shrink-0" />
+      }
+      {tier && (
+        <>
+          <span className="font-bold shrink-0" style={textColor ? { color: textColor } : undefined}>
+            {displayTier(tier)}
+          </span>
+          <span className="text-zinc-500 shrink-0">:</span>
+        </>
+      )}
+      <span className="text-zinc-100 truncate">{displayLabel}</span>
     </span>
   );
 }
@@ -431,6 +516,7 @@ type SimpleSlotProps = {
   value: SlotValue;
   onChange: (val: SlotValue) => void;
   showStats?: boolean;
+  showTiers?: boolean;
   groupDotColors?: Record<string, string>;
 };
 
@@ -445,7 +531,7 @@ function GroupDot({ color }: { color: string }) {
   );
 }
 
-function SimpleSlotRow({ label, accent, groups, value, onChange, showStats = false, groupDotColors }: SimpleSlotProps) {
+function SimpleSlotRow({ label, accent, groups, value, onChange, showStats = false, showTiers = false, groupDotColors }: SimpleSlotProps) {
   const [open, setOpen] = useState(false);
   const dropRef = useRef<HTMLDivElement>(null);
 
@@ -475,6 +561,59 @@ function SimpleSlotRow({ label, accent, groups, value, onChange, showStats = fal
 
   function optionLabel(affix: PoolAffix): string {
     return showStats ? buildAffixLabel(affix) : affix.name;
+  }
+
+  // Custom dropdown with tier labels (base affix, dream affix)
+  if (showTiers) {
+    const selectedOpt = allOptions.find((o) => o.affix.id === value?.affixId);
+    return (
+      <div className="flex items-center gap-2 py-1.5">
+        <span className={`w-24 shrink-0 text-xs font-medium ${accent}`}>{label}</span>
+        <div ref={dropRef} className="flex-1 min-w-0 relative text-xs">
+          <button
+            onClick={() => setOpen((o) => !o)}
+            className="w-full flex items-center justify-between gap-2 rounded bg-zinc-800 border border-zinc-700 px-2 py-1.5 hover:border-zinc-600 focus:outline-none"
+          >
+            <span className="flex items-center gap-1.5 min-w-0">
+              {selectedOpt
+                ? <AffixTierRow affix={selectedOpt.affix} sourceGroup={selectedOpt.sourceGroup} displayLabel={optionLabel(selectedOpt.affix)} />
+                : <span className="text-zinc-500 italic">— empty —</span>
+              }
+            </span>
+            <svg className="shrink-0 text-zinc-500 w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          {open && (
+            <div className="absolute z-50 top-full left-0 mt-1 w-full rounded border border-zinc-700 bg-zinc-900 shadow-xl py-0.5 max-h-64 overflow-y-auto">
+              <button
+                className="w-full flex items-center gap-2 px-2 py-1.5 text-zinc-500 italic hover:bg-zinc-800 transition-colors"
+                onClick={() => { onChange(null); setOpen(false); }}
+              >
+                <span className="w-2 h-2 shrink-0" />
+                — empty —
+              </button>
+              {groups.map(({ label: groupLabel, options }) =>
+                options.length === 0 ? null : (
+                  <div key={groupLabel}>
+                    {groups.length > 1 && (
+                      <p className="px-2 pt-2 pb-0.5 text-xs font-semibold text-zinc-500 uppercase tracking-widest">{groupLabel}</p>
+                    )}
+                    {options.map(({ affix, sourceGroup }) => (
+                      <button
+                        key={`${sourceGroup}-${affix.id}`}
+                        className={`w-full flex items-center px-2 py-1.5 hover:bg-zinc-800 transition-colors ${value?.affixId === affix.id ? "bg-zinc-800/60" : ""}`}
+                        onClick={() => { handleAffixChange(affix.id); setOpen(false); }}
+                      >
+                        <AffixTierRow affix={affix} sourceGroup={sourceGroup} displayLabel={optionLabel(affix)} />
+                      </button>
+                    ))}
+                  </div>
+                )
+              )}
+            </div>
+          )}
+        </div>
+      </div>
+    );
   }
 
   // Custom dropdown when groupDotColors is provided
@@ -758,7 +897,6 @@ function SequenceCostSection({
   modCostFE,
   onModCostFEChange,
 }: SequenceCostSectionProps) {
-  const [expanded, setExpanded] = useState(false);
   if (!sequenceSlot) return null;
 
   const isAdvanced = sequenceSlot.sourceGroup === "ADVANCED_SEQUENCES";
@@ -776,87 +914,70 @@ function SequenceCostSection({
   const totalFE = effectiveModCost > 0 ? avgMods * effectiveModCost : null;
 
   return (
-    <div className="mt-2 mb-1 p-3 rounded bg-zinc-800/50 border border-zinc-700/50">
-      <div className="flex items-center gap-2 mb-2">
-        <p className="text-xs font-semibold text-emerald-400">Sequence Cost Estimate</p>
-        {totalFE !== null && (
-          <span className="text-xs text-white flex items-center gap-1">
-            <span className="font-bold">{Math.round(totalFE).toLocaleString("en-US")}</span> <FEIcon />
+    <div className="p-3 rounded bg-zinc-900 border border-zinc-700">
+      <div className="space-y-1 text-xs text-zinc-400 mb-3">
+        <div className="flex justify-between gap-8">
+          <span>Type</span>
+          <span className="text-zinc-200 flex items-center gap-1.5">
+            <GroupDot color={isAdvanced ? "#fe0000" : "#ff7d1c"} />
+            {isAdvanced ? "Advanced" : "Intermediate"}
           </span>
+        </div>
+        {isAdvanced && (
+          <div className="flex justify-between gap-8">
+            <span>Combination</span>
+            <span className="text-zinc-200">
+              {pSuccess === P_ADV_TRIPLE
+                ? "3+1 (triple repeat)"
+                : pSuccess === P_ADV_DOUBLE
+                ? "2+1+1 (double repeat)"
+                : "4 distinct"}
+            </span>
+          </div>
         )}
-        <div className="flex-1" />
-        <button
-          onClick={() => setExpanded((e) => !e)}
-          className="shrink-0 w-5 h-5 flex items-center justify-center rounded text-sm font-bold text-zinc-500 hover:text-zinc-200 hover:bg-zinc-800 transition-colors"
-          title={expanded ? "Collapse" : "Expand"}
-        >
-          {expanded ? "−" : "+"}
-        </button>
+        <div className="flex justify-between gap-8">
+          <span>Mod</span>
+          <span className="text-zinc-200 flex items-center gap-1.5"><MatIcon name={modName} />{modName}</span>
+        </div>
+        <div className="flex justify-between gap-8">
+          <span>Mods per attempt</span>
+          <span className="text-zinc-200">{modsPerAttempt}</span>
+        </div>
+        <div className="flex justify-between gap-8">
+          <span>P(success per attempt)</span>
+          <span className="text-zinc-200">{(pSuccess * 100).toFixed(3)}%</span>
+        </div>
+        <div className="flex justify-between gap-8">
+          <span>Avg attempts</span>
+          <span className="text-zinc-200">{avgAttempts.toFixed(1)}</span>
+        </div>
+        <div className="flex justify-between gap-8 font-medium border-t border-zinc-700/50 pt-1 mt-1">
+          <span className="text-zinc-300">Avg mods needed</span>
+          <span className="text-emerald-300">{Math.round(avgMods).toLocaleString("en-US")}</span>
+        </div>
       </div>
-      {expanded && (
-        <>
-          <div className="space-y-1 text-xs text-zinc-400 mb-3">
-            <div className="flex justify-between gap-8">
-              <span>Type</span>
-              <span className="text-zinc-200">{isAdvanced ? "Advanced" : "Intermediate"}</span>
-            </div>
-            {isAdvanced && (
-              <div className="flex justify-between gap-8">
-                <span>Combination</span>
-                <span className="text-zinc-200">
-                  {pSuccess === P_ADV_TRIPLE
-                    ? "3+1 (triple repeat)"
-                    : pSuccess === P_ADV_DOUBLE
-                    ? "2+1+1 (double repeat)"
-                    : "4 distinct"}
-                </span>
-              </div>
-            )}
-            <div className="flex justify-between gap-8">
-              <span>Mod</span>
-              <span className="text-zinc-200">{modName}</span>
-            </div>
-            <div className="flex justify-between gap-8">
-              <span>Mods per attempt</span>
-              <span className="text-zinc-200">{modsPerAttempt}</span>
-            </div>
-            <div className="flex justify-between gap-8">
-              <span>P(success per attempt)</span>
-              <span className="text-zinc-200">{(pSuccess * 100).toFixed(3)}%</span>
-            </div>
-            <div className="flex justify-between gap-8">
-              <span>Avg attempts</span>
-              <span className="text-zinc-200">{avgAttempts.toFixed(1)}</span>
-            </div>
-            <div className="flex justify-between gap-8 font-medium border-t border-zinc-700/50 pt-1 mt-1">
-              <span className="text-zinc-300">Avg mods needed</span>
-              <span className="text-emerald-300">{Math.round(avgMods).toLocaleString("en-US")}</span>
-            </div>
-          </div>
-          <div className="flex items-center gap-2">
-            <label className="text-xs text-zinc-400 shrink-0 flex items-center gap-1.5">
-              <MatIcon name={modName} />
-              FE per {modName}
-            </label>
-            <input
-              type="number"
-              min="0"
-              step="any"
-              className="flex-1 rounded bg-zinc-800 border border-zinc-700 px-2 py-1 text-xs text-zinc-100 focus:outline-none focus:border-zinc-600"
-              placeholder={defaultModCost}
-              value={modCostFE}
-              onChange={(e) => onModCostFEChange(e.target.value)}
-            />
-          </div>
-          {totalFE !== null && (
-            <div className="flex justify-between mt-2 pt-2 border-t border-zinc-700/50 text-xs font-semibold">
-              <span className="text-zinc-400 flex items-center gap-1">Estimated total <FEIcon /></span>
-              <span className="text-white font-bold flex items-center gap-1">
-                {Math.round(totalFE).toLocaleString("en-US")} <FEIcon />
-              </span>
-            </div>
-          )}
-        </>
+      <div className="flex items-center gap-2">
+        <label className="text-xs text-zinc-400 shrink-0 flex items-center gap-1.5">
+          <MatIcon name={modName} />
+          FE per {modName}
+        </label>
+        <input
+          type="number"
+          min="0"
+          step="any"
+          className="flex-1 rounded bg-zinc-800 border border-zinc-700 px-2 py-1 text-xs text-zinc-100 focus:outline-none focus:border-zinc-600"
+          placeholder={defaultModCost}
+          value={modCostFE}
+          onChange={(e) => onModCostFEChange(e.target.value)}
+        />
+      </div>
+      {totalFE !== null && (
+        <div className="flex justify-between mt-2 pt-2 border-t border-zinc-700/50 text-xs font-semibold">
+          <span className="text-zinc-400 flex items-center gap-1">Estimated total <FEIcon /></span>
+          <span className="text-white font-bold flex items-center gap-1">
+            {Math.round(totalFE).toLocaleString("en-US")} <FEIcon />
+          </span>
+        </div>
       )}
     </div>
   );
@@ -1035,10 +1156,9 @@ function PrefixSuffixCostSection({
   prices,
   onPricesChange,
 }: PrefixSuffixCostSectionProps) {
-  const [expanded, setExpanded] = useState(false);
   const isTwoH = pool.baseItemCategory.id === "two_hand_weapon";
 
-  type Row = { key: PrefixSuffixKey; tier: string; cost: ResourceBundle };
+  type Row = { key: PrefixSuffixKey; tier: string; cost: ResourceBundle; rowFE: number };
   const rows: Row[] = [];
   const unsupported: string[] = [];
 
@@ -1047,7 +1167,7 @@ function PrefixSuffixCostSection({
     if (!slot) continue;
     const cost = getSlotCost(slot.sourceGroup, slot.tier, isTwoH);
     if (cost) {
-      rows.push({ key, tier: slot.tier, cost });
+      rows.push({ key, tier: slot.tier, cost, rowFE: calcTotalFE(cost, prices) });
     } else {
       unsupported.push(`${SLOT_LABELS[key]} (${displayTier(slot.tier)})`);
     }
@@ -1078,26 +1198,8 @@ function PrefixSuffixCostSection({
   }
 
   return (
-    <div className="mt-2 mb-1 p-3 rounded bg-zinc-800/50 border border-zinc-700/50">
-      <div className="flex items-center gap-2 mb-2">
-        <p className="text-xs font-semibold text-violet-400">Prefix / Suffix Cost Estimate</p>
-        {totalFEVal !== null && (
-          <span className="text-xs text-white flex items-center gap-1">
-            <span className="font-bold">{Math.round(totalFEVal).toLocaleString("en-US")}</span> <FEIcon />
-          </span>
-        )}
-        <div className="flex-1" />
-        <button
-          onClick={() => setExpanded((e) => !e)}
-          className="shrink-0 w-5 h-5 flex items-center justify-center rounded text-sm font-bold text-zinc-500 hover:text-zinc-200 hover:bg-zinc-800 transition-colors"
-          title={expanded ? "Collapse" : "Expand"}
-        >
-          {expanded ? "−" : "+"}
-        </button>
-      </div>
-      {expanded && (
-        <>
-          {rows.length > 0 && (
+    <div className="p-3 rounded bg-zinc-900 border border-zinc-700">
+      {rows.length > 0 && (
             <div>
               <div className="overflow-x-auto">
                 <table className="w-full text-xs">
@@ -1108,30 +1210,55 @@ function PrefixSuffixCostSection({
                       <th className="pb-1.5 pr-3 text-right"><span className="inline-flex items-center gap-1 justify-end">Raw <FEIcon className="w-3.5 h-3.5" /></span></th>
                       {needsPE && <th className="pb-1.5 pr-3 text-right"><span className="inline-flex items-center gap-1 justify-end"><MatIcon name="Precious Ember" className="w-3.5 h-3.5" />Precious</span></th>}
                       {needsME && <th className="pb-1.5 pr-3 text-right"><span className="inline-flex items-center gap-1 justify-end"><MatIcon name="Matchless Ember" className="w-3.5 h-3.5" />Matchless</span></th>}
-                      {needsUE && <th className="pb-1.5 pr-3 text-right"><span className="inline-flex items-center gap-1 justify-end"><MatIcon name="Ultimate Ember" className="w-3.5 h-3.5" />Ult. Ember</span></th>}
-                      {needsSF && <th className="pb-1.5 text-right"><span className="inline-flex items-center gap-1 justify-end"><MatIcon name="Sacred Fossil" className="w-3.5 h-3.5" />Fossils</span></th>}
+                      {needsUE && <th className="pb-1.5 pr-3 text-right"><span className="inline-flex items-center gap-1 justify-end whitespace-nowrap"><MatIcon name="Ultimate Ember" className="w-3.5 h-3.5" />Ult. Ember</span></th>}
+                      {needsSF && <th className="pb-1.5 pr-3 text-right"><span className="inline-flex items-center gap-1 justify-end"><MatIcon name="Sacred Fossil" className="w-3.5 h-3.5" />Fossils</span></th>}
+                      <th className="pb-1.5 text-right text-amber-500"><span className="inline-flex items-center gap-1 justify-end">Total <FEIcon className="w-3.5 h-3.5" /></span></th>
                     </tr>
                   </thead>
                   <tbody>
-                    {rows.map(({ key, tier, cost }) => (
+                    {rows.map(({ key, tier, cost, rowFE }) => (
                       <tr key={key} className="border-b border-zinc-800/50">
-                        <td className="py-1.5 pr-3 text-zinc-300">{SLOT_LABELS[key]}</td>
-                        <td className="py-1.5 pr-3 text-zinc-400">{displayTier(tier)}</td>
+                        <td className="py-1.5 pr-3 text-zinc-300 whitespace-nowrap">{SLOT_LABELS[key]}</td>
+                        <td className="py-1.5 pr-3">
+                          <span className="flex items-center gap-1.5">
+                            {tierSquareColor(tier)
+                              ? <span className="inline-block w-2 h-2 shrink-0" style={{ backgroundColor: tierSquareColor(tier) }} />
+                              : <span className="inline-block w-2 h-2 shrink-0" />
+                            }
+                            <span style={tierTextColor(tier) ? { color: tierTextColor(tier) } : undefined}>
+                              {displayTier(tier)}
+                            </span>
+                          </span>
+                        </td>
                         <td className="py-1.5 pr-3 text-right text-zinc-200">{fmtR(cost.fe)}</td>
                         {needsPE && <td className="py-1.5 pr-3 text-right text-zinc-400">{fmtR(cost.preciousEmbers)}</td>}
                         {needsME && <td className="py-1.5 pr-3 text-right text-zinc-400">{fmtR(cost.matchlessEmbers)}</td>}
                         {needsUE && <td className="py-1.5 pr-3 text-right text-zinc-400">{fmtR(cost.ultimateEmbers)}</td>}
-                        {needsSF && <td className="py-1.5 text-right text-zinc-400">{fmtR(cost.sacredFossils)}</td>}
+                        {needsSF && <td className="py-1.5 pr-3 text-right text-zinc-400">{fmtR(cost.sacredFossils)}</td>}
+                        <td className="py-1.5 text-right font-semibold text-amber-400">{Math.round(rowFE).toLocaleString("en-US")}</td>
                       </tr>
                     ))}
                     {rows.length > 1 && (
                       <tr className="font-semibold border-t border-zinc-700">
                         <td colSpan={2} className="pt-2 pb-1 pr-3 text-zinc-300">Total</td>
-                        <td className="pt-2 pb-1 pr-3 text-right text-zinc-200">{fmtR(totalBundle.fe)}</td>
-                        {needsPE && <td className="pt-2 pb-1 pr-3 text-right text-zinc-300">{fmtR(totalBundle.preciousEmbers)}</td>}
-                        {needsME && <td className="pt-2 pb-1 pr-3 text-right text-zinc-300">{fmtR(totalBundle.matchlessEmbers)}</td>}
-                        {needsUE && <td className="pt-2 pb-1 pr-3 text-right text-zinc-300">{fmtR(totalBundle.ultimateEmbers)}</td>}
-                        {needsSF && <td className="pt-2 pb-1 text-right text-zinc-300">{fmtR(totalBundle.sacredFossils)}</td>}
+                        <td className="pt-2 pb-1 pr-3 text-right text-zinc-200">
+                          <span className="inline-flex items-center gap-1 justify-end">{fmtR(totalBundle.fe)} <FEIcon className="w-3.5 h-3.5" /></span>
+                        </td>
+                        {needsPE && <td className="pt-2 pb-1 pr-3 text-right text-zinc-300">
+                          <span className="inline-flex items-center gap-1 justify-end">{fmtR(totalBundle.preciousEmbers)} <MatIcon name="Precious Ember" className="w-3.5 h-3.5" /></span>
+                        </td>}
+                        {needsME && <td className="pt-2 pb-1 pr-3 text-right text-zinc-300">
+                          <span className="inline-flex items-center gap-1 justify-end">{fmtR(totalBundle.matchlessEmbers)} <MatIcon name="Matchless Ember" className="w-3.5 h-3.5" /></span>
+                        </td>}
+                        {needsUE && <td className="pt-2 pb-1 pr-3 text-right text-zinc-300">
+                          <span className="inline-flex items-center gap-1 justify-end">{fmtR(totalBundle.ultimateEmbers)} <MatIcon name="Ultimate Ember" className="w-3.5 h-3.5" /></span>
+                        </td>}
+                        {needsSF && <td className="pt-2 pb-1 pr-3 text-right text-zinc-300">
+                          <span className="inline-flex items-center gap-1 justify-end">{fmtR(totalBundle.sacredFossils)} <MatIcon name="Sacred Fossil" className="w-3.5 h-3.5" /></span>
+                        </td>}
+                        {totalFEVal !== null && <td className="pt-2 pb-1 text-right font-bold text-amber-400">
+                          {Math.round(totalFEVal).toLocaleString("en-US")}
+                        </td>}
                       </tr>
                     )}
                   </tbody>
@@ -1181,35 +1308,24 @@ function PrefixSuffixCostSection({
               )}
             </div>
           )}
-          {rows.some((r) => r.tier === "T0_PLUS") && (
-            <p className="mt-1.5 text-xs text-zinc-600">
-              * T0+ affixes shown at T0 craft cost. The T0→T0+ upgrade is calculated in the Corrosion section below.
-            </p>
-          )}
-          {unsupported.length > 0 && (
-            <p className="mt-1 text-xs text-zinc-600">
-              Cost not modelled for: {unsupported.join(", ")} — only T1, T0, and T0+ are supported.
-            </p>
-          )}
-        </>
+      {rows.some((r) => r.tier === "T0_PLUS") && (
+        <p className="mt-1.5 text-xs text-zinc-600">
+          * T0+ affixes shown at T0 craft cost. The T0→T0+ upgrade is calculated in the Corrosion section below.
+        </p>
+      )}
+      {unsupported.length > 0 && (
+        <p className="mt-1 text-xs text-zinc-600">
+          Cost not modelled for: {unsupported.join(", ")} — only T1, T0, and T0+ are supported.
+        </p>
       )}
     </div>
   );
 }
 
-// ─── Grand total section ──────────────────────────────────────────────────────
+// ─── Shared helper ────────────────────────────────────────────────────────────
 
-type GrandTotalSectionProps = {
-  pool: CraftedPool;
-  slots: ItemSlots;
-  baseCostFE: string;
-  shallowCostFE: string;
-  modCostFE: string;
-  resourcePrices: ResourcePrices;
-};
-
-// Shared helper — computes each craft cost component and returns lines + total.
-// Used by both GrandTotalSection and CorrosionSection.
+// Computes each craft cost component and returns lines + total.
+// Used by ItemCard header tooltip and CorrosionHoverCard.
 function computeCraftCostLines(
   pool: CraftedPool,
   slots: ItemSlots,
@@ -1273,58 +1389,6 @@ function computeCraftCostLines(
   return { lines, total };
 }
 
-function GrandTotalSection({
-  pool,
-  slots,
-  baseCostFE,
-  shallowCostFE,
-  modCostFE,
-  resourcePrices,
-}: GrandTotalSectionProps) {
-  const [expanded, setExpanded] = useState(false);
-  const { lines, total: grandTotal } = computeCraftCostLines(
-    pool, slots, baseCostFE, shallowCostFE, modCostFE, resourcePrices,
-  );
-
-  if (lines.length === 0) return null;
-
-  return (
-    <>
-      <Section
-        label="Cost Breakdown"
-        expanded={expanded}
-        onToggle={() => setExpanded((e) => !e)}
-      />
-      {expanded && (
-        <div className="mt-1 p-3 rounded bg-zinc-800/50 border border-zinc-700/50 space-y-1.5 text-xs">
-          {lines.map(({ label, value }) => (
-            <div key={label} className="flex justify-between gap-8">
-              <span className="text-zinc-400">{label}</span>
-              <span className="text-zinc-200 flex items-center gap-1">
-                {value !== null
-                  ? <>{Math.round(value).toLocaleString("en-US")} <FEIcon className="w-3.5 h-3.5" /></>
-                  : "—"}
-              </span>
-            </div>
-          ))}
-          <div className="flex justify-between gap-8 font-semibold border-t border-zinc-700/50 pt-1.5">
-            <span className="text-zinc-300">Total</span>
-            <span className="text-white font-bold flex items-center gap-1">
-              {grandTotal !== null
-                ? <>{Math.round(grandTotal).toLocaleString("en-US")} <FEIcon className="w-3.5 h-3.5" /></>
-                : "—"}
-            </span>
-          </div>
-          {grandTotal === null && (
-            <p className="text-zinc-600 mt-0.5">
-              Fill in all cost inputs above to see the grand total.
-            </p>
-          )}
-        </div>
-      )}
-    </>
-  );
-}
 
 // ─── Corrosion total helper ───────────────────────────────────────────────────
 
@@ -1345,11 +1409,11 @@ function computeCorrosionTotal(
   const m = PREFIX_SUFFIX_KEYS.filter((k) => (slots[k] as SlotValue) !== null).length;
 
   if (!wantsCorrodedBase && w === 0) return null;
-  if (wantsCorrodedBase && w > 0) return null; // impossible combo
+  if (wantsCorrodedBase && w > 0) return NaN; // impossible combo
 
   const nCorrodedBase = pool.groups["CORROSION_BASE_AFFIXES"]?.length ?? 0;
   const pSuccess = corrosionSuccessP(wantsCorrodedBase, nCorrodedBase, w, m);
-  if (pSuccess <= 0) return null;
+  if (pSuccess <= 0) return NaN; // impossible too many T0+
 
   const corrCost = parseFloat(corrosionCostFE) || parseFloat(CORROSION_COST_DEFAULT);
   if (!(corrCost > 0)) return null;
@@ -1396,7 +1460,7 @@ function corrosionSuccessP(
   return 0; // w >= 3 or degenerate: impossible
 }
 
-type CorrosionSectionProps = {
+type CorrosionHoverCardProps = {
   pool: CraftedPool;
   slots: ItemSlots;
   baseCostFE: string;
@@ -1407,7 +1471,7 @@ type CorrosionSectionProps = {
   onCorrosionCostFEChange: (v: string) => void;
 };
 
-function CorrosionSection({
+function CorrosionHoverCard({
   pool,
   slots,
   baseCostFE,
@@ -1416,8 +1480,7 @@ function CorrosionSection({
   resourcePrices,
   corrosionCostFE,
   onCorrosionCostFEChange,
-}: CorrosionSectionProps) {
-  const [expanded, setExpanded] = useState(false);
+}: CorrosionHoverCardProps) {
   const wantsCorrodedBase = slots.base?.sourceGroup === "CORROSION_BASE_AFFIXES";
   const t0PlusKeys = PREFIX_SUFFIX_KEYS.filter(
     (k) => (slots[k] as SlotValue)?.tier === "T0_PLUS",
@@ -1428,7 +1491,9 @@ function CorrosionSection({
   // Only show this section when corrosion has a specific goal
   if (!wantsCorrodedBase && w === 0) return null;
 
-  const impossible = wantsCorrodedBase && w > 0;
+  const impossibleMixed = wantsCorrodedBase && w > 0;
+  const impossibleTooMany = !wantsCorrodedBase && w >= 3;
+  const impossible = impossibleMixed || impossibleTooMany;
   const nCorrodedBase = pool.groups["CORROSION_BASE_AFFIXES"]?.length ?? 0;
 
   const pSuccess = impossible
@@ -1436,7 +1501,6 @@ function CorrosionSection({
     : corrosionSuccessP(wantsCorrodedBase, nCorrodedBase, w, m);
   const avgAttempts = pSuccess > 0 ? 1 / pSuccess : null;
 
-  // Craft cost per attempt (re-crafting from scratch each time)
   const { total: craftCostPerAttempt } = computeCraftCostLines(
     pool, slots, baseCostFE, shallowCostFE, modCostFE, resourcePrices,
   );
@@ -1451,109 +1515,97 @@ function CorrosionSection({
       ? avgAttempts * (craftCostPerAttempt + corrCost)
       : null;
 
-  const corrosionTotal = totalWithRecrafts ?? corrosionOverhead;
+  // Use NaN for impossible so the error badge still appears and is hoverable
+  const corrosionTotal: number | null = impossible
+    ? NaN
+    : (totalWithRecrafts ?? corrosionOverhead);
 
-  // Build scenario description
-  const scenarioDesc = impossible
-    ? null
-    : wantsCorrodedBase
+  const scenarioDesc = wantsCorrodedBase
     ? `Mutation — 1 of ${nCorrodedBase} corroded base affixes`
     : w === 1
     ? `Arrogance or Desecration — 1 desired T0+ out of ${m} affixes`
-    : w === 2
-    ? `Desecration — 2 desired T0+ out of ${m} affixes`
-    : `${w} desired T0+ (impossible in one corrosion)`;
+    : `Desecration — 2 desired T0+ out of ${m} affixes`;
 
-  return (
-    <>
-      <Section
-        label="Corrosion"
-        feCost={corrosionTotal}
-        expanded={expanded}
-        onToggle={() => setExpanded((e) => !e)}
-      />
-      {expanded && (
-        <div className="mt-1 p-3 rounded bg-zinc-800/50 border border-zinc-700/50 text-xs space-y-1.5">
-          {impossible ? (
-            <p className="text-red-400">
-              Cannot achieve both a specific corroded base (Mutation) and T0+ upgrades
-              (Desecration/Arrogance) in a single corrosion — these are different outcomes.
-              Corrosion is one-time and permanent.
-            </p>
-          ) : (
-            <>
-              <div className="flex justify-between gap-8">
-                <span className="text-zinc-400">Target</span>
-                <span className="text-zinc-200 text-right">{scenarioDesc}</span>
-              </div>
-              <div className="flex justify-between gap-8">
-                <span className="text-zinc-400">P(success per attempt)</span>
-                <span className="text-zinc-200">
-                  {pSuccess > 0 ? (pSuccess * 100).toFixed(3) + "%" : "—"}
-                </span>
-              </div>
-              <div className="flex justify-between gap-8">
-                <span className="text-zinc-400">Avg attempts</span>
-                <span className="text-zinc-200">
-                  {avgAttempts !== null ? avgAttempts.toFixed(1) : "—"}
-                </span>
-              </div>
+  const impossibleMessage = impossibleMixed
+    ? "Cannot achieve both a specific corroded base (Mutation) and T0+ upgrades (Desecration/Arrogance) in a single corrosion — these are different outcomes. Corrosion is one-time and permanent."
+    : `Cannot upgrade ${w} affixes to T0+ in a single corrosion — Desecration upgrades at most 2 affixes at a time. Corrosion is one-time and permanent.`;
 
-              <div className="flex items-center gap-2 pt-1">
-                <label className="text-zinc-400 shrink-0 flex items-center gap-1.5">
-                  <MatIcon name="Glorious Axis" />
-                  FE per Glorious Axis
-                </label>
-                <input
-                  type="number"
-                  min="0"
-                  step="any"
-                  className="flex-1 rounded bg-zinc-800 border border-zinc-700 px-2 py-1 text-zinc-100 focus:outline-none focus:border-zinc-600"
-                  placeholder={CORROSION_COST_DEFAULT}
-                  value={corrosionCostFE}
-                  onChange={(e) => onCorrosionCostFEChange(e.target.value)}
-                />
+  const hoverCard = (
+    <div className="p-3 rounded bg-zinc-900 border border-zinc-700 text-xs space-y-1.5">
+      {impossible ? (
+        <p className="text-red-400">{impossibleMessage}</p>
+      ) : (
+        <>
+          <div className="flex justify-between gap-8">
+            <span className="text-zinc-400">Target</span>
+            <span className="text-zinc-200 text-right">{scenarioDesc}</span>
+          </div>
+          <div className="flex justify-between gap-8">
+            <span className="text-zinc-400">P(success per attempt)</span>
+            <span className="text-zinc-200">
+              {pSuccess > 0 ? (pSuccess * 100).toFixed(3) + "%" : "—"}
+            </span>
+          </div>
+          <div className="flex justify-between gap-8">
+            <span className="text-zinc-400">Avg attempts</span>
+            <span className="text-zinc-200">
+              {avgAttempts !== null ? avgAttempts.toFixed(1) : "—"}
+            </span>
+          </div>
+          <div className="flex items-center gap-2 pt-1">
+            <label className="text-zinc-400 shrink-0 flex items-center gap-1.5">
+              <MatIcon name="Glorious Axis" />
+              FE per Glorious Axis
+            </label>
+            <input
+              type="number"
+              min="0"
+              step="any"
+              className="w-28 min-w-0 rounded bg-zinc-800 border border-zinc-700 px-2 py-1 text-zinc-100 focus:outline-none focus:border-zinc-600"
+              placeholder={CORROSION_COST_DEFAULT}
+              value={corrosionCostFE}
+              onChange={(e) => onCorrosionCostFEChange(e.target.value)}
+            />
+          </div>
+          {hasCorrCost && avgAttempts !== null && (
+            <div className="space-y-1 border-t border-zinc-700/50 pt-1.5 mt-1">
+              <div className="flex justify-between gap-8 text-zinc-500">
+                <span>Corrosion items cost</span>
+                <span className="flex items-center gap-1">{Math.round(corrosionOverhead!).toLocaleString("en-US")} <FEIcon className="w-3.5 h-3.5" /></span>
               </div>
-
-              {hasCorrCost && avgAttempts !== null && (
-                <div className="space-y-1 border-t border-zinc-700/50 pt-1.5 mt-1">
-                  <div className="flex justify-between gap-8 text-zinc-500">
-                    <span>Corrosion items cost</span>
-                    <span className="flex items-center gap-1">{Math.round(corrosionOverhead!).toLocaleString("en-US")} <FEIcon className="w-3.5 h-3.5" /></span>
-                  </div>
-                  {craftCostPerAttempt !== null && (
-                    <div className="flex justify-between gap-8 text-zinc-500">
-                      <span>Re-craft cost ({avgAttempts.toFixed(1)} × craft)</span>
-                      <span className="flex items-center gap-1">
-                        {Math.round(avgAttempts * craftCostPerAttempt).toLocaleString("en-US")} <FEIcon className="w-3.5 h-3.5" />
-                      </span>
-                    </div>
-                  )}
-                  <div className="flex justify-between gap-8 font-semibold border-t border-zinc-700/50 pt-1">
-                    <span className="text-zinc-300 flex items-center gap-1">
-                      Total <FEIcon className="w-3.5 h-3.5" />{craftCostPerAttempt === null ? " (corrosion only)" : ""}
-                    </span>
-                    <span className="text-white font-bold flex items-center gap-1">
-                      {totalWithRecrafts !== null
-                        ? <>{Math.round(totalWithRecrafts).toLocaleString("en-US")} <FEIcon className="w-3.5 h-3.5" /></>
-                        : corrosionOverhead !== null
-                        ? <>{Math.round(corrosionOverhead).toLocaleString("en-US")} <FEIcon className="w-3.5 h-3.5" /></>
-                        : "—"}
-                    </span>
-                  </div>
-                  {craftCostPerAttempt === null && (
-                    <p className="text-zinc-600 mt-0.5">
-                      Fill in all craft cost inputs above to include re-craft overhead.
-                    </p>
-                  )}
+              {craftCostPerAttempt !== null && (
+                <div className="flex justify-between gap-8 text-zinc-500">
+                  <span>Re-craft cost ({avgAttempts.toFixed(1)} × craft)</span>
+                  <span className="flex items-center gap-1">
+                    {Math.round(avgAttempts * craftCostPerAttempt).toLocaleString("en-US")} <FEIcon className="w-3.5 h-3.5" />
+                  </span>
                 </div>
               )}
-            </>
+              <div className="flex justify-between gap-8 font-semibold border-t border-zinc-700/50 pt-1">
+                <span className="text-zinc-300 flex items-center gap-1">
+                  Total <FEIcon className="w-3.5 h-3.5" />{craftCostPerAttempt === null ? " (corrosion only)" : ""}
+                </span>
+                <span className="text-white font-bold flex items-center gap-1">
+                  {totalWithRecrafts !== null
+                    ? <>{Math.round(totalWithRecrafts).toLocaleString("en-US")} <FEIcon className="w-3.5 h-3.5" /></>
+                    : corrosionOverhead !== null
+                    ? <>{Math.round(corrosionOverhead).toLocaleString("en-US")} <FEIcon className="w-3.5 h-3.5" /></>
+                    : "—"}
+                </span>
+              </div>
+              {craftCostPerAttempt === null && (
+                <p className="text-zinc-600 mt-0.5">
+                  Fill in all craft cost inputs above to include re-craft overhead.
+                </p>
+              )}
+            </div>
           )}
-        </div>
+        </>
       )}
-    </>
+    </div>
   );
+
+  return hoverCard;
 }
 
 // ─── Dream cost section ───────────────────────────────────────────────────────
@@ -1573,7 +1625,6 @@ function DreamCostSection({
   shallowCostFE,
   onShallowCostFEChange,
 }: DreamCostSectionProps) {
-  const [expanded, setExpanded] = useState(false);
   if (!dreamSlot) return null;
 
   const D = pool.groups["SWEET_DREAM_AFFIXES"]?.length ?? 0;
@@ -1594,87 +1645,187 @@ function DreamCostSection({
     : null;
 
   return (
-    <div className="mt-2 mb-1 p-3 rounded bg-zinc-800/50 border border-zinc-700/50">
-      <div className="flex items-center gap-2 mb-2">
-        <p className="text-xs font-semibold" style={{ color: "#48b8ff" }}>Dream Cost Estimate</p>
-        {totalFE !== null && (
-          <span className="text-xs text-white flex items-center gap-1">
-            <span className="font-bold">{Math.round(totalFE).toLocaleString("en-US")}</span> <FEIcon className="w-3.5 h-3.5" />
-          </span>
-        )}
-        <div className="flex-1" />
-        <button
-          onClick={() => setExpanded((e) => !e)}
-          className="shrink-0 w-5 h-5 flex items-center justify-center rounded text-sm font-bold text-zinc-500 hover:text-zinc-200 hover:bg-zinc-800 transition-colors"
-          title={expanded ? "Collapse" : "Expand"}
-        >
-          {expanded ? "−" : "+"}
-        </button>
+    <div className="p-3 rounded bg-zinc-900 border border-zinc-700">
+      {k === 0 ? (
+        <p className="text-xs text-zinc-500">
+          Select acceptable nightmare affixes above to calculate cost.
+        </p>
+      ) : (
+        <>
+          <div className="space-y-1 text-xs text-zinc-400 mb-3">
+            <div className="flex justify-between gap-8">
+              <span>Dream pool size</span>
+              <span className="text-zinc-200">{D}</span>
+            </div>
+            <div className="flex justify-between gap-8">
+              <span>Nightmare pool size</span>
+              <span className="text-zinc-200">{N}</span>
+            </div>
+            <div className="flex justify-between gap-8">
+              <span>Acceptable nightmares</span>
+              <span className="text-zinc-200">{k}</span>
+            </div>
+            <div className="flex justify-between gap-8">
+              <span>P(hit per slot)</span>
+              <span className="text-zinc-200">{(pSingle * 100).toFixed(3)}%</span>
+            </div>
+            <div className="flex justify-between gap-8">
+              <span>P(hit per roll, 3 slots)</span>
+              <span className="text-zinc-200">{(pRoll * 100).toFixed(3)}%</span>
+            </div>
+            <div className="flex justify-between gap-8">
+              <span>Avg rolls</span>
+              <span className="text-zinc-200">{avgRolls.toFixed(1)}</span>
+            </div>
+            <div className="flex justify-between gap-8 font-medium border-t border-zinc-700/50 pt-1 mt-1">
+              <span className="text-zinc-300 flex items-center gap-1.5">
+                <MatIcon name={shallowName} />
+                Avg {shallowName}
+              </span>
+              <span className="text-sky-300">{avgShallows.toFixed(1)}</span>
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <label className="text-xs text-zinc-400 shrink-0 flex items-center gap-1.5">
+              <FEIcon className="w-3.5 h-3.5" /> per <MatIcon name={shallowName} /> {shallowName}
+            </label>
+            <input
+              type="number"
+              min="0"
+              step="any"
+              className="flex-1 rounded bg-zinc-800 border border-zinc-700 px-2 py-1 text-xs text-zinc-100 focus:outline-none focus:border-zinc-600"
+              placeholder={defaultShallowCost}
+              value={shallowCostFE}
+              onChange={(e) => onShallowCostFEChange(e.target.value)}
+            />
+          </div>
+          {totalFE !== null && (
+            <div className="flex justify-between mt-2 pt-2 border-t border-zinc-700/50 text-xs font-semibold">
+              <span className="text-zinc-400 flex items-center gap-1">Estimated total <FEIcon className="w-3.5 h-3.5" /></span>
+              <span className="text-white font-bold flex items-center gap-1">
+                {Math.round(totalFE).toLocaleString("en-US")} <FEIcon className="w-3.5 h-3.5" />
+              </span>
+            </div>
+          )}
+        </>
+      )}
+    </div>
+  );
+}
+
+// ─── Corroded base cost section ───────────────────────────────────────────────
+
+type CorrodedBaseCostSectionProps = {
+  pool: CraftedPool;
+  impossible: boolean;
+  craftCostPerAttempt: number | null;
+  corrosionCostFE: string;
+  onCorrosionCostFEChange: (v: string) => void;
+};
+
+function CorrodedBaseCostSection({
+  pool,
+  impossible,
+  craftCostPerAttempt,
+  corrosionCostFE,
+  onCorrosionCostFEChange,
+}: CorrodedBaseCostSectionProps) {
+  const nCorrodedBase = pool.groups["CORROSION_BASE_AFFIXES"]?.length ?? 0;
+  if (nCorrodedBase === 0) return null;
+
+  if (impossible) {
+    return (
+      <div className="p-3 rounded bg-zinc-900 border border-zinc-700">
+        <p className="text-xs text-red-400">
+          Cannot achieve both a specific corroded base (Mutation) and T0+ upgrades
+          (Desecration/Arrogance) in a single corrosion — these are different outcomes.
+          Corrosion is one-time and permanent.
+        </p>
       </div>
-      {expanded && (
-        k === 0 ? (
-          <p className="text-xs text-zinc-500">
-            Select acceptable nightmare affixes above to calculate cost.
-          </p>
-        ) : (
-          <>
-            <div className="space-y-1 text-xs text-zinc-400 mb-3">
-              <div className="flex justify-between gap-8">
-                <span>Dream pool size</span>
-                <span className="text-zinc-200">{D}</span>
-              </div>
-              <div className="flex justify-between gap-8">
-                <span>Nightmare pool size</span>
-                <span className="text-zinc-200">{N}</span>
-              </div>
-              <div className="flex justify-between gap-8">
-                <span>Acceptable nightmares</span>
-                <span className="text-zinc-200">{k}</span>
-              </div>
-              <div className="flex justify-between gap-8">
-                <span>P(hit per slot)</span>
-                <span className="text-zinc-200">{(pSingle * 100).toFixed(3)}%</span>
-              </div>
-              <div className="flex justify-between gap-8">
-                <span>P(hit per roll, 3 slots)</span>
-                <span className="text-zinc-200">{(pRoll * 100).toFixed(3)}%</span>
-              </div>
-              <div className="flex justify-between gap-8">
-                <span>Avg rolls</span>
-                <span className="text-zinc-200">{avgRolls.toFixed(1)}</span>
-              </div>
-              <div className="flex justify-between gap-8 font-medium border-t border-zinc-700/50 pt-1 mt-1">
-                <span className="text-zinc-300 flex items-center gap-1.5">
-                  <MatIcon name={shallowName} />
-                  Avg {shallowName}
-                </span>
-                <span className="text-sky-300">{avgShallows.toFixed(1)}</span>
-              </div>
+    );
+  }
+
+  const pSuccess = P_MUTATION / nCorrodedBase;
+  const avgAttempts = 1 / pSuccess;
+  const corrCost = parseFloat(corrosionCostFE) || parseFloat(CORROSION_COST_DEFAULT);
+  const hasCorrCost = corrCost > 0;
+
+  const corrosionOverhead = hasCorrCost ? avgAttempts * corrCost : null;
+  const totalWithRecrafts =
+    hasCorrCost && craftCostPerAttempt !== null
+      ? avgAttempts * (craftCostPerAttempt + corrCost)
+      : null;
+  const totalFE = totalWithRecrafts ?? corrosionOverhead;
+
+  return (
+    <div className="p-3 rounded bg-zinc-900 border border-zinc-700">
+      <div className="space-y-1 text-xs text-zinc-400 mb-3">
+        <div className="flex justify-between gap-8">
+          <span>Outcome</span>
+          <span className="text-zinc-200">Mutation</span>
+        </div>
+        <div className="flex justify-between gap-8">
+          <span>P(Mutation)</span>
+          <span className="text-zinc-200">{(P_MUTATION * 100).toFixed(0)}%</span>
+        </div>
+        <div className="flex justify-between gap-8">
+          <span>Corroded base pool size</span>
+          <span className="text-zinc-200">{nCorrodedBase}</span>
+        </div>
+        <div className="flex justify-between gap-8">
+          <span>P(hit this base)</span>
+          <span className="text-zinc-200">{(pSuccess * 100).toFixed(3)}%</span>
+        </div>
+        <div className="flex justify-between gap-8 font-medium border-t border-zinc-700/50 pt-1 mt-1">
+          <span className="text-zinc-300">Avg corrosions needed</span>
+          <span className="text-zinc-200">{avgAttempts.toFixed(1)}</span>
+        </div>
+      </div>
+      <div className="flex items-center gap-2">
+        <label className="text-xs text-zinc-400 shrink-0 flex items-center gap-1.5">
+          <MatIcon name="Glorious Axis" />
+          FE per Glorious Axis
+        </label>
+        <input
+          type="number"
+          min="0"
+          step="any"
+          className="flex-1 rounded bg-zinc-800 border border-zinc-700 px-2 py-1 text-xs text-zinc-100 focus:outline-none focus:border-zinc-600"
+          placeholder={CORROSION_COST_DEFAULT}
+          value={corrosionCostFE}
+          onChange={(e) => onCorrosionCostFEChange(e.target.value)}
+        />
+      </div>
+      {hasCorrCost && (
+        <div className="space-y-1 border-t border-zinc-700/50 pt-1.5 mt-2 text-xs">
+          <div className="flex justify-between gap-8 text-zinc-500">
+            <span>Corrosion items cost</span>
+            <span className="flex items-center gap-1">{Math.round(corrosionOverhead!).toLocaleString("en-US")} <FEIcon className="w-3.5 h-3.5" /></span>
+          </div>
+          {craftCostPerAttempt !== null && (
+            <div className="flex justify-between gap-8 text-zinc-500">
+              <span>Re-craft cost ({avgAttempts.toFixed(1)} × craft)</span>
+              <span className="flex items-center gap-1">
+                {Math.round(avgAttempts * craftCostPerAttempt).toLocaleString("en-US")} <FEIcon className="w-3.5 h-3.5" />
+              </span>
             </div>
-            <div className="flex items-center gap-2">
-              <label className="text-xs text-zinc-400 shrink-0 flex items-center gap-1.5">
-                <FEIcon className="w-3.5 h-3.5" /> per <MatIcon name={shallowName} /> {shallowName}
-              </label>
-              <input
-                type="number"
-                min="0"
-                step="any"
-                className="flex-1 rounded bg-zinc-800 border border-zinc-700 px-2 py-1 text-xs text-zinc-100 focus:outline-none focus:border-zinc-600"
-                placeholder={defaultShallowCost}
-                value={shallowCostFE}
-                onChange={(e) => onShallowCostFEChange(e.target.value)}
-              />
-            </div>
-            {totalFE !== null && (
-              <div className="flex justify-between mt-2 pt-2 border-t border-zinc-700/50 text-xs font-semibold">
-                <span className="text-zinc-400 flex items-center gap-1">Estimated total <FEIcon className="w-3.5 h-3.5" /></span>
-                <span className="text-white font-bold flex items-center gap-1">
-                  {Math.round(totalFE).toLocaleString("en-US")} <FEIcon className="w-3.5 h-3.5" />
-                </span>
-              </div>
-            )}
-          </>
-        )
+          )}
+          <div className="flex justify-between gap-8 font-semibold border-t border-zinc-700/50 pt-1">
+            <span className="text-zinc-300 flex items-center gap-1">
+              Total <FEIcon className="w-3.5 h-3.5" />{craftCostPerAttempt === null ? " (corrosion only)" : ""}
+            </span>
+            <span className="text-white font-bold flex items-center gap-1">
+              {totalFE !== null
+                ? <>{Math.round(totalFE).toLocaleString("en-US")} <FEIcon className="w-3.5 h-3.5" /></>
+                : "—"}
+            </span>
+          </div>
+          {craftCostPerAttempt === null && (
+            <p className="text-zinc-600 mt-0.5">
+              Fill in all craft cost inputs above to include re-craft overhead.
+            </p>
+          )}
+        </div>
       )}
     </div>
   );
@@ -1750,15 +1901,80 @@ export default function ItemCard({
   }
 
   // Top summary computations
-  const { total: grandTotal } = computeCraftCostLines(
+  const { lines: grandTotalLines, total: grandTotal } = computeCraftCostLines(
     pool, slots, baseCostFE, shallowCostFE, modCostFE, resourcePrices,
   );
+
+  const [grandTotalTooltipOpen, setGrandTotalTooltipOpen] = useState(false);
+  const grandTotalCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  function scheduleGrandClose() { grandTotalCloseTimer.current = setTimeout(() => setGrandTotalTooltipOpen(false), 120); }
+  function cancelGrandClose() { if (grandTotalCloseTimer.current) clearTimeout(grandTotalCloseTimer.current); }
+
+  const [corrTooltipOpen, setCorrTooltipOpen] = useState(false);
+  const corrCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  function scheduleCorrClose() { corrCloseTimer.current = setTimeout(() => setCorrTooltipOpen(false), 120); }
+  function cancelCorrClose() { if (corrCloseTimer.current) clearTimeout(corrCloseTimer.current); }
   const corrosionTotal = computeCorrosionTotal(
     pool, slots, baseCostFE, shallowCostFE, modCostFE, resourcePrices, corrosionCostFE,
   );
 
+  // Inline section cost computations
+  const baseFE: number | null = (() => {
+    if (slots.base?.sourceGroup === "BASE_AFFIXES") {
+      const v = parseFloat(baseCostFE);
+      return v > 0 ? v : null;
+    }
+    if (slots.base?.sourceGroup === "CORROSION_BASE_AFFIXES") {
+      const w = PREFIX_SUFFIX_KEYS.filter((k) => (slots[k] as SlotValue)?.tier === "T0_PLUS").length;
+      if (w > 0) return NaN; // impossible combo — show error badge
+      const n = pool.groups["CORROSION_BASE_AFFIXES"]?.length ?? 0;
+      if (n === 0) return null;
+      const avgAttempts = n / P_MUTATION;
+      const corrCost = parseFloat(corrosionCostFE) || parseFloat(CORROSION_COST_DEFAULT);
+      if (!(corrCost > 0)) return null;
+      if (grandTotal !== null) return avgAttempts * (grandTotal + corrCost);
+      return avgAttempts * corrCost;
+    }
+    return null;
+  })();
+
+  const dreamFE: number | null = (() => {
+    if (!slots.dream) return null;
+    const D = pool.groups["SWEET_DREAM_AFFIXES"]?.length ?? 0;
+    const N = pool.groups["NIGHTMARE_AFFIXES"]?.length ?? 0;
+    const k = slots.nightmare.length;
+    if (D === 0 || N === 0 || k === 0) return null;
+    const pSingle = (1 / D) * (k / N);
+    const pRoll = 1 - Math.pow(1 - pSingle, 3);
+    if (pRoll <= 0) return null;
+    const sc = parseFloat(shallowCostFE) || parseFloat(SHALLOW_COST_DEFAULTS[getItemType(pool)]);
+    return sc > 0 ? (1 / pRoll) * 3 * sc : null;
+  })();
+
+  const sequenceFE: number | null = (() => {
+    if (!slots.sequence) return null;
+    const isAdv = slots.sequence.sourceGroup === "ADVANCED_SEQUENCES";
+    const pSuccess = isAdv ? getAdvancedSequenceP(slots.sequence.affixId) : P_INTERMEDIATE;
+    const mc = parseFloat(modCostFE) || parseFloat(MOD_COST_DEFAULTS[getModName(pool, isAdv)] ?? "0");
+    const modsPerAttempt = pool.baseItemCategory.id === "two_hand_weapon" ? 20 : 10;
+    return mc > 0 ? (1 / pSuccess) * modsPerAttempt * mc : null;
+  })();
+
+  const psFEVal: number | null = (() => {
+    const isTwoH = pool.baseItemCategory.id === "two_hand_weapon";
+    let total = ZERO_BUNDLE;
+    let hasAny = false;
+    for (const key of PREFIX_SUFFIX_KEYS) {
+      const slot = slots[key] as SlotValue;
+      if (!slot) continue;
+      const cost = getSlotCost(slot.sourceGroup, slot.tier, isTwoH);
+      if (cost) { total = addBundles(total, cost); hasAny = true; }
+    }
+    return hasAny ? calcTotalFE(total, resourcePrices) : null;
+  })();
+
   return (
-    <div className="rounded-lg border border-zinc-700 bg-zinc-900 p-5 max-w-2xl">
+    <div className="rounded-lg border border-zinc-700 bg-zinc-900 p-5 max-w-3xl">
       {/* Header */}
       <div className="flex items-center justify-between mb-3">
         <div className="min-w-0">
@@ -1770,17 +1986,89 @@ export default function ItemCard({
           </p>
         </div>
 
-        {/* Totals centered */}
-        <div className="flex flex-col items-center gap-1 mx-4 shrink-0">
+        {/* Totals — hoverable badges */}
+        <div className="flex items-start gap-2 mx-4 shrink-0">
+          {/* Grand total badge */}
           {grandTotal !== null && (
-            <span className="text-sm text-white flex items-center gap-1.5">
-              <span className="font-bold">{Math.round(grandTotal).toLocaleString("en-US")}</span> <FEIcon className="w-4 h-4" />
-            </span>
+            <div className="relative flex flex-col items-center gap-0.5">
+              <span className="text-[10px] text-zinc-600 uppercase tracking-widest">Craft</span>
+              <span
+                className="text-sm flex items-center gap-1.5 px-2 py-0.5 rounded bg-zinc-800 border border-zinc-700 text-zinc-300 cursor-help hover:border-zinc-500 hover:text-white transition-colors"
+                onMouseEnter={() => { cancelGrandClose(); setGrandTotalTooltipOpen(true); }}
+                onMouseLeave={scheduleGrandClose}
+              >
+                <span className="font-bold">{Math.round(grandTotal).toLocaleString("en-US")}</span>
+                <FEIcon className="w-4 h-4" />
+                <svg className="w-3 h-3 text-zinc-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>
+                </svg>
+              </span>
+              {grandTotalTooltipOpen && (
+                <div
+                  className="absolute z-50 top-full mt-1 right-0 w-56 p-3 rounded bg-zinc-900 border border-zinc-700 shadow-lg space-y-1.5 text-xs"
+                  onMouseEnter={cancelGrandClose}
+                  onMouseLeave={scheduleGrandClose}
+                >
+                  {grandTotalLines.map(({ label, value }) => (
+                    <div key={label} className="flex justify-between gap-4">
+                      <span className="text-zinc-400">{label}</span>
+                      <span className="text-zinc-200 flex items-center gap-1">
+                        {value !== null
+                          ? <>{Math.round(value).toLocaleString("en-US")} <FEIcon className="w-3 h-3" /></>
+                          : "—"}
+                      </span>
+                    </div>
+                  ))}
+                  <div className="flex justify-between gap-4 font-semibold border-t border-zinc-700/50 pt-1.5">
+                    <span className="text-zinc-300">Total</span>
+                    <span className="text-white font-bold flex items-center gap-1">
+                      {Math.round(grandTotal).toLocaleString("en-US")} <FEIcon className="w-3 h-3" />
+                    </span>
+                  </div>
+                </div>
+              )}
+            </div>
           )}
+
+          {/* Corrosion badge */}
           {corrosionTotal !== null && (
-            <span className="text-sm text-white opacity-70 flex items-center gap-1.5">
-              +corr: <span className="font-bold">{Math.round(corrosionTotal).toLocaleString("en-US")}</span> <FEIcon className="w-4 h-4" />
-            </span>
+            <div className="relative flex flex-col items-center gap-0.5">
+              <span className="text-[10px] text-zinc-600 uppercase tracking-widest">+Corrosion</span>
+              <span
+                className={`text-sm flex items-center gap-1.5 px-2 py-0.5 rounded transition-colors cursor-help ${
+                  Number.isNaN(corrosionTotal)
+                    ? "text-red-400 bg-zinc-800 border border-red-900 hover:border-red-600"
+                    : "text-zinc-300 bg-zinc-800 border border-zinc-700 hover:border-zinc-500 hover:text-white"
+                }`}
+                onMouseEnter={() => { cancelCorrClose(); setCorrTooltipOpen(true); }}
+                onMouseLeave={scheduleCorrClose}
+              >
+                {Number.isNaN(corrosionTotal)
+                  ? <span className="font-bold">NaN</span>
+                  : <><span className="font-bold">{Math.round(corrosionTotal).toLocaleString("en-US")}</span><FEIcon className="w-4 h-4" /></>}
+                <svg className={`w-3 h-3 ${Number.isNaN(corrosionTotal) ? "text-red-600" : "text-zinc-500"}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>
+                </svg>
+              </span>
+              {corrTooltipOpen && (
+                <div
+                  className="absolute z-50 top-full mt-1 right-0 w-72"
+                  onMouseEnter={cancelCorrClose}
+                  onMouseLeave={scheduleCorrClose}
+                >
+                  <CorrosionHoverCard
+                    pool={pool}
+                    slots={slots}
+                    baseCostFE={baseCostFE}
+                    shallowCostFE={shallowCostFE}
+                    modCostFE={modCostFE}
+                    resourcePrices={resourcePrices}
+                    corrosionCostFE={corrosionCostFE}
+                    onCorrosionCostFEChange={onCorrosionCostFEChange}
+                  />
+                </div>
+              )}
+            </div>
           )}
         </div>
 
@@ -1798,7 +2086,19 @@ export default function ItemCard({
       </div>
 
       {/* Base Affix */}
-      <Section label="Base Affix" />
+      <Section
+        label="Base Affix"
+        feCost={baseFE}
+        hoverCard={slots.base?.sourceGroup === "CORROSION_BASE_AFFIXES" ? (
+          <CorrodedBaseCostSection
+            pool={pool}
+            impossible={PREFIX_SUFFIX_KEYS.some((k) => (slots[k] as SlotValue)?.tier === "T0_PLUS")}
+            craftCostPerAttempt={grandTotal}
+            corrosionCostFE={corrosionCostFE}
+            onCorrosionCostFEChange={onCorrosionCostFEChange}
+          />
+        ) : undefined}
+      />
       <SimpleSlotRow
         label="Base"
         accent="text-zinc-100"
@@ -1809,6 +2109,7 @@ export default function ItemCard({
         value={slots.base}
         onChange={(v) => update("base", v)}
         showStats
+        showTiers
       />
       {slots.base?.sourceGroup === "BASE_AFFIXES" && (
         <div className="flex items-center gap-2 py-1">
@@ -1826,7 +2127,19 @@ export default function ItemCard({
       )}
 
       {/* Dream + Nightmare */}
-      <Section label="Dream + Nightmare" />
+      <Section
+        label="Dream + Nightmare"
+        feCost={dreamFE}
+        hoverCard={slots.dream ? (
+          <DreamCostSection
+            pool={pool}
+            dreamSlot={slots.dream}
+            nightmareSlots={slots.nightmare}
+            shallowCostFE={shallowCostFE}
+            onShallowCostFEChange={onShallowCostFEChange}
+          />
+        ) : undefined}
+      />
       <SimpleSlotRow
         label="Dream"
         accent="text-[#48b8ff]"
@@ -1834,24 +2147,29 @@ export default function ItemCard({
         value={slots.dream}
         onChange={(v) => update("dream", v)}
         showStats
+        showTiers
       />
       <NightmareSlotRow
         pool={pool}
         values={slots.nightmare}
         onChange={(v) => onChange({ ...slots, nightmare: v })}
       />
-      <DreamCostSection
-        pool={pool}
-        dreamSlot={slots.dream}
-        nightmareSlots={slots.nightmare}
-        shallowCostFE={shallowCostFE}
-        onShallowCostFEChange={onShallowCostFEChange}
-      />
 
       {/* Sequence — weapons and shields only */}
       {hasSequences && (
         <>
-          <Section label="Sequence" />
+          <Section
+            label="Sequence"
+            feCost={sequenceFE}
+            hoverCard={slots.sequence ? (
+              <SequenceCostSection
+                pool={pool}
+                sequenceSlot={slots.sequence}
+                modCostFE={modCostFE}
+                onModCostFEChange={onModCostFEChange}
+              />
+            ) : undefined}
+          />
           <SimpleSlotRow
             label="Sequence"
             accent="text-emerald-400"
@@ -1863,23 +2181,29 @@ export default function ItemCard({
             value={slots.sequence}
             onChange={(v) => update("sequence", v)}
           />
-          <SequenceCostSection
-            pool={pool}
-            sequenceSlot={slots.sequence}
-            modCostFE={modCostFE}
-            onModCostFEChange={onModCostFEChange}
-          />
         </>
       )}
 
       {/* Prefixes + Suffixes */}
-      <Section label="Prefixes + Suffixes" />
+      <Section
+        label="Prefixes + Suffixes"
+        feCost={psFEVal}
+        hoverCard={psFEVal !== null ? (
+          <PrefixSuffixCostSection
+            pool={pool}
+            slots={slots}
+            prices={resourcePrices}
+            onPricesChange={onResourcePricesChange}
+          />
+        ) : undefined}
+      />
       <p className="text-xs text-zinc-600 mb-1 -mt-0.5 pl-0.5">
         {advancedCount}/2 advanced · {ultimateCount}/2 ultimate
       </p>
 
       {/* Prefixes sub-section */}
       <div className="flex items-center gap-2 mt-2 mb-0.5">
+        <div className="flex-1 h-px bg-zinc-800/60" />
         <span className="text-xs text-zinc-600 uppercase tracking-wider">Prefixes</span>
         <div className="flex-1 h-px bg-zinc-800/60" />
       </div>
@@ -1899,6 +2223,7 @@ export default function ItemCard({
 
       {/* Suffixes sub-section */}
       <div className="flex items-center gap-2 mt-3 mb-0.5">
+        <div className="flex-1 h-px bg-zinc-800/60" />
         <span className="text-xs text-zinc-600 uppercase tracking-wider">Suffixes</span>
         <div className="flex-1 h-px bg-zinc-800/60" />
       </div>
@@ -1916,32 +2241,6 @@ export default function ItemCard({
         />
       ))}
 
-      <PrefixSuffixCostSection
-        pool={pool}
-        slots={slots}
-        prices={resourcePrices}
-        onPricesChange={onResourcePricesChange}
-      />
-
-      <GrandTotalSection
-        pool={pool}
-        slots={slots}
-        baseCostFE={baseCostFE}
-        shallowCostFE={shallowCostFE}
-        modCostFE={modCostFE}
-        resourcePrices={resourcePrices}
-      />
-
-      <CorrosionSection
-        pool={pool}
-        slots={slots}
-        baseCostFE={baseCostFE}
-        shallowCostFE={shallowCostFE}
-        modCostFE={modCostFE}
-        resourcePrices={resourcePrices}
-        corrosionCostFE={corrosionCostFE}
-        onCorrosionCostFEChange={onCorrosionCostFEChange}
-      />
     </div>
   );
 }
