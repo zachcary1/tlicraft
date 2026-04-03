@@ -1,0 +1,962 @@
+[
+  {
+    "type": "Drop",
+    "rarity": "Legendary",
+    "name": "Alice 1",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll Member Services gain an additional effect: When settling Clockwork Ballet Games, there is a 33% chance to settle the rewards 1 additional time. This can only be triggered once (takes effect immediately after selecting Member Services and lasts for the duration of this game)\u003C/li\u003E\u003Cli class=\"mod\"\u003EAll Member Services gain an additional effect: Each time after completing Operation Cogwheel, there is a 16% chance to get 1 additional Cogwheel Voucher (takes effect immediately after selecting Member Services and lasts for the duration of this game)\u003C/li\u003E\u003Cli class=\"mod\"\u003EMember Services refresh attempts +2\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Legendary",
+    "name": "Captain Shadow",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EBosses defeated: \u003Cspan class=\"val\"\u003E80\u003C/span\u003E% chance to drop 1-3 additional random Embers\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+16\u003C/span\u003E% additional Ember Drop Quantity\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Legendary",
+    "name": "Chalk Spirit",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E1.3\u003C/span\u003E% chance for defeated monsters to drop \u003Cspan class=\"val\"\u003E1\u003C/span\u003E additional set(s) of random Flame Fuel\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+20\u003C/span\u003E% additional Flame Fuel Drop Quantity\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Legendary",
+    "name": "Corgi Fighter No.32",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+5\u003C/span\u003E% additional \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EThe \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EStar of Calamity boss\u003C/div\u003E\u003Cdiv\u003EThe Star of Calamity boss is exclusive to the Hunter's Odyssey gameplay. After the preseason concludes, Hunter's Odyssey will not be part of regular gameplay, but it may return in future preseasons.\u003C/div\u003E\u003C/div\u003E\"\u003EStar of Calamity boss\u003C/span\u003E has a \u003Cspan class=\"val\"\u003E1.2\u003C/span\u003E% chance to drop an additional \u003Cspan class=\"val\"\u003E1\u003C/span\u003E Proof(s) of Star Hunter\u003C/li\u003E\u003Cli class=\"mod\"\u003EThe \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EStar of Calamity boss\u003C/div\u003E\u003Cdiv\u003EThe Star of Calamity boss is exclusive to the Hunter's Odyssey gameplay. After the preseason concludes, Hunter's Odyssey will not be part of regular gameplay, but it may return in future preseasons.\u003C/div\u003E\u003C/div\u003E\"\u003EStar of Calamity boss\u003C/span\u003E on the map has a \u003Cspan class=\"val\"\u003E100\u003C/span\u003E% chance to replicate \u003Cspan class=\"val\"\u003E1\u003C/span\u003E times\u003C/li\u003E\u003Cli class=\"mod\"\u003EThe \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EStar of Calamity boss\u003C/div\u003E\u003Cdiv\u003EThe Star of Calamity boss is exclusive to the Hunter's Odyssey gameplay. After the preseason concludes, Hunter's Odyssey will not be part of regular gameplay, but it may return in future preseasons.\u003C/div\u003E\u003C/div\u003E\"\u003EStar of Calamity boss\u003C/span\u003E has a \u003Cspan class=\"val\"\u003E0.45\u003C/span\u003E% chance to drop an additional Tidemaster's Exclusive Drop (Only effective in stages at Timemark 5 and above)\u003C/li\u003E\u003Cli class=\"mod\"\u003EThe \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EStar of Calamity boss\u003C/div\u003E\u003Cdiv\u003EThe Star of Calamity boss is exclusive to the Hunter's Odyssey gameplay. After the preseason concludes, Hunter's Odyssey will not be part of regular gameplay, but it may return in future preseasons.\u003C/div\u003E\u003C/div\u003E\"\u003EStar of Calamity boss\u003C/span\u003E has a \u003Cspan class=\"val\"\u003E0.45\u003C/span\u003E% chance to drop an additional Lord of the Void Sea's Exclusive Drop (Only effective in stages at Timemark 5 and above)\u003C/li\u003E\u003Cli class=\"mod\"\u003EThe \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EStar of Calamity boss\u003C/div\u003E\u003Cdiv\u003EThe Star of Calamity boss is exclusive to the Hunter's Odyssey gameplay. After the preseason concludes, Hunter's Odyssey will not be part of regular gameplay, but it may return in future preseasons.\u003C/div\u003E\u003C/div\u003E\"\u003EStar of Calamity boss\u003C/span\u003E has a \u003Cspan class=\"val\"\u003E0.45\u003C/span\u003E% chance to drop an additional the Law Bearer's Exclusive Drop (Only effective in stages at Timemark 5 and above)\u003C/li\u003E\u003Cli class=\"mod\"\u003EThe \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EStar of Calamity boss\u003C/div\u003E\u003Cdiv\u003EThe Star of Calamity boss is exclusive to the Hunter's Odyssey gameplay. After the preseason concludes, Hunter's Odyssey will not be part of regular gameplay, but it may return in future preseasons.\u003C/div\u003E\u003C/div\u003E\"\u003EStar of Calamity boss\u003C/span\u003E has a \u003Cspan class=\"val\"\u003E0.45\u003C/span\u003E% chance to drop an additional Lone King of Aeterna's Exclusive Drop (Only effective in stages at Timemark 5 and above)\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Legendary",
+    "name": "Doro-Doro Dorothy",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EIn Netherrealm stages, when a Compass drops, there is a \u003Cspan class=\"val\"\u003E5\u003C/span\u003E% chance for a Doro-Doro Supply containing 5-10 Compasses to drop. There is a \u003Cspan class=\"val\"\u003E34\u003C/span\u003E% chance for 1 additional Doro-Doro Supply to drop.\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+18\u003C/span\u003E% additional Compass Drop Quantity\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Legendary",
+    "name": "Eternity Summoner",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E60\u003C/span\u003E% chance to unlock \u003Cspan class=\"val\"\u003E2\u003C/span\u003E additional reward type(s) when the Dark Surge is initiated for the first time on a map\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E60\u003C/span\u003E% chance to unlock \u003Cspan class=\"val\"\u003E1\u003C/span\u003E additional reward type(s) when the Dark Surge is initiated for the first time on a map\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Legendary",
+    "name": "Fluffhead Hare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E+5% additional Drop Quantity\\n$+sp1$% chance for 2 additional \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EGladiator\u003C/div\u003E\u003Cdiv\u003ERare monsters blessed by the God of War, which include 3 types: Bronze Gladiator, Silver Gladiator, and Gold Gladiator. (May appear in Invincible Champion Season-exclusive gameplay only. After the Invincible Champion Season concludes, Invincible Champion will not be part of the regular gameplay, but it may return in future Preseasons.)\u003C/div\u003E\u003C/div\u003E\"\u003EGladiator(s)\u003C/span\u003E to appear in the stage (Only effective in the Invincible Champion Season-exclusive gameplay)\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Legendary",
+    "name": "Heart-binding Rose",
+    "effect": "\u003Cul\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Legendary",
+    "name": "Intern Shelley",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen opening an \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAntidote Vial\u003C/div\u003E\u003Cdiv\u003EA treasure chest containing rewards obtained from the Vorax gameplay. The higher the Color Quality, the better the drops. During the Surgical Preparation phase, the higher your Ultimate Activity level, the better the corresponding Antidote Vial you'll obtain. In Shelley's Operating Theater, defeat a Vorax monster matching your Ultimate Activity level to unlock the corresponding Antidote Vial and claim your rewards.\u003C/div\u003E\u003C/div\u003E\"\u003EAntidote Vial\u003C/span\u003E, all items dropped from it have a 28% chance to be replicated 1 additional time (must be carried at all times in Shelley's Operating Theater)\u003C/li\u003E\u003Cli class=\"mod\"\u003EDuring the Surgical Preparation phase, \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESurgical Instrument\u003C/div\u003E\u003Cdiv\u003ESurgical Instruments are boost items obtained in the Vorax gameplay. They provide powerful special effects during the Preparation Phase, such as significantly increasing monster Quantity and Activity. They can also serve as core components for specific strategies, aiding you in training powerful Vorax monsters. In the Netherrealm, Surgical Instruments have a chance to drop when Vorax monsters are defeated. They can also be obtained when the Ultimate Activity reaches a certain level in the Surgical Preparation phase.\u003C/div\u003E\u003C/div\u003E\"\u003ESurgical Instrument\u003C/span\u003E refresh attempts +2 (takes effect immediately after entering the Surgical Preparation screen)\u003C/li\u003E\u003Cli class=\"mod\"\u003EWhen opening an \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAntidote Vial\u003C/div\u003E\u003Cdiv\u003EA treasure chest containing rewards obtained from the Vorax gameplay. The higher the Color Quality, the better the drops. During the Surgical Preparation phase, the higher your Ultimate Activity level, the better the corresponding Antidote Vial you'll obtain. In Shelley's Operating Theater, defeat a Vorax monster matching your Ultimate Activity level to unlock the corresponding Antidote Vial and claim your rewards.\u003C/div\u003E\u003C/div\u003E\"\u003EAntidote Vial\u003C/span\u003E, it has a 20% chance to be reopened once (this can only be triggered once\u003C/li\u003E\u003Cli class=\"mod\"\u003Emust be carried at all times in Shelley's Operating Theater)\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Legendary",
+    "name": "Jestress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen opening a Chest of Destiny in Fateful Contest, there is a 38% chance to double the Chest of Destiny rewards (takes effect immediately after entering Fateful Contest)\u003C/li\u003E\u003Cli class=\"mod\"\u003EWhen entering the Tarot Path, there is a 100% chance to gain 1 additional Note of Arcana\u003C/li\u003E\u003Cli class=\"mod\"\u003EWhen opening a Chest of Destiny in Fateful Contest, doubled Chest of Destiny rewards have a 100% chance to be tripled instead (takes effect immediately after entering Fateful Contest)\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Legendary",
+    "name": "Key of Overrealm",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll items dropped in the \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EOverrealm\u003C/div\u003E\u003Cdiv\u003EA space accessible by passing through &quot;Doors&quot;\u003Cbr\u003Ein Netherrealm stages. It inherits the Timemark Bonuses, Netherrealm Resonance Bonuses, some Probes, Compasses, and Netherrealm Talent Bonuses from the Netherrealm stage it belongs to.\u003Cbr/\u003EThe drops in the Overrealm are not affected by any Pactspirits other than Overrealm Pactspirits\u003C/div\u003E\u003C/div\u003E\"\u003EOverrealm\u003C/span\u003E have a 27% chance to be replicated 1 additional time. Upon triggering a replication, they have a 100% chance to be replicated 1 additional time again\u003C/li\u003E\u003Cli class=\"mod\"\u003EWhen entering the first level of the Overrealm, there is a 24% chance for an additional \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EBottled Shadow\u003C/div\u003E\u003Cdiv\u003EContains a reward affix that increases drops in the Overrealm, lasting for one Overrealm round. Multiple reward affixes can stack for even richer loot\u003Cbr/\u003EIn the Overrealm at Timemark 4 or above, filling the Containment Progress guarantees a Bottled Shadow. Entering Level 3 or 4 of the Overrealm guarantees an additional Bottled Shadow.\u003C/div\u003E\u003C/div\u003E\"\u003EBottled Shadow\u003C/span\u003E to appear on the Containment Progress bar\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Legendary",
+    "name": "Kong",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EFluorescent Memories dropped have a \u003Cspan class=\"val\"\u003E13\u003C/span\u003E% chance to be replicated \u003Cspan class=\"val\"\u003E2\u003C/span\u003E time(s)\u003C/li\u003E\u003Cli class=\"mod\"\u003EFluorescent Memories dropped have a \u003Cspan class=\"val\"\u003E20\u003C/span\u003E% chance to be replicated \u003Cspan class=\"val\"\u003E1\u003C/span\u003E time(s)\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Legendary",
+    "name": "Mistville Orphan",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EIn each round of the Whispering Mist gameplay, additionally gain 3 chance(s) to refresh the items for free at the Mistville Trader (only takes effect if you are carrying this Pactspirit when you enter Mistville)\u003C/li\u003E\u003Cli class=\"mod\"\u003EWhen going to the Clock Tower, there is a 13% chance to skip the battle and enter the Misty Lake, gaining 3 \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EChest of Folklores\u003C/div\u003E\u003Cdiv\u003EReward obtained by completing the Advent of Folklores after reaching the Clock Tower\u003C/div\u003E\u003C/div\u003E\"\u003EChests of Folklores\u003C/span\u003E at the same time\u003C/li\u003E\u003Cli class=\"mod\"\u003EWhen opening a Chest of Folklores, there is a 10% chance that 1 additional Chest of Folklores will appear (this can only be triggered once)\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Legendary",
+    "name": "Monument Knight",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EEvery time the player completes the Candelabrum gameplay in the Ruins of Aeterna, there is a 21% chance for 1 additional reward spots to appear in the Aeterna Map, up to 15 extra spot(s). After the City of Aeterna is rebuilt, all additional reward spots will be randomly assigned in traversable areas of the Aeterna Map.\u003C/li\u003E\u003Cli class=\"mod\"\u003EThere is a 16% chance for rewards to be doubled when the player enters the reward gameplay in the City of Aeterna\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Legendary",
+    "name": "Moonshadow Guide",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen completing a raid or a trade, or settling an order, there is a 24% chance for all rewards to be replicated 1 time\u003C/li\u003E\u003Cli class=\"mod\"\u003EThere is a 16% chance to +100% additional Drop Quantity during raids\u003C/li\u003E\u003Cli class=\"mod\"\u003EWhen returning from a trade, there is a 10% chance to bring back 1 laborer\u003C/li\u003E\u003Cli class=\"mod\"\u003EWhen starting a trade, there is a 16% chance to regain the invested resources and immediately settle the rewards\u003C/li\u003E\u003Cli class=\"mod\"\u003EWhen returning from a raid, there is a 10% chance to bring back 1 laborer\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Legendary",
+    "name": "Prof. SOURCE",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E28% chance for all reward units from \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECarjack\u003C/div\u003E\u003Cdiv\u003EAfter activating the Transport Vehicle in the Netherrealm stage, the escort bodyguards will attempt to flee with the payload. Chase after them and defeat incoming reinforcements to earn corresponding rewards\u003C/div\u003E\u003C/div\u003E\"\u003ECarjack\u003C/span\u003E or \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ETOWER Co. Central Vault\u003C/div\u003E\u003Cdiv\u003EGo to TOWER Co. Central Vault to challenge the endgame gameplay of the Outlaw season. You will enter a map with many small strongrooms. With each small strongroom you raid, security becomes tighter and tighter until you fail to raid a strongroom within the time limit and find yourself up against the boss. Defeat the boss to loot the bountiful rewards of the ultimate strongroom.\u003C/div\u003E\u003C/div\u003E\"\u003ETOWER Co. Central Vault\u003C/span\u003E in a Netherrealm stage to be recoded by Prof. SOURCE when they appear, replicating their rewards 1 time (takes effect immediately after starting Carjack and lasts for the duration of the operation\u003C/li\u003E\u003Cli class=\"mod\"\u003Emust be carried at all times in TOWER Co. Central Vault)\u003C/li\u003E\u003Cli class=\"mod\"\u003E100% chance for all reward units from \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECarjack\u003C/div\u003E\u003Cdiv\u003EAfter activating the Transport Vehicle in the Netherrealm stage, the escort bodyguards will attempt to flee with the payload. Chase after them and defeat incoming reinforcements to earn corresponding rewards\u003C/div\u003E\u003C/div\u003E\"\u003ECarjack\u003C/span\u003E or \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ETOWER Co. Central Vault\u003C/div\u003E\u003Cdiv\u003EGo to TOWER Co. Central Vault to challenge the endgame gameplay of the Outlaw season. You will enter a map with many small strongrooms. With each small strongroom you raid, security becomes tighter and tighter until you fail to raid a strongroom within the time limit and find yourself up against the boss. Defeat the boss to loot the bountiful rewards of the ultimate strongroom.\u003C/div\u003E\u003C/div\u003E\"\u003ETOWER Co. Central Vault\u003C/span\u003E that have been recoded in a Netherrealm stage to be replicated 1 time again (takes effect immediately after starting Carjack and lasts for the duration of the operation\u003C/li\u003E\u003Cli class=\"mod\"\u003Emust be carried at all times in TOWER Co. Central Vault)\u003C/li\u003E\u003Cli class=\"mod\"\u003EAfter revealing a \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EBounty Order\u003C/div\u003E\u003Cdiv\u003EBefore the Carjack starts, you have a chance to receive a Bounty Order from the Black Market. Reveal the Bounty Order by inserting TOWER Coins, and complete it to get additional Bounty Chests. There are three Bounty Order qualities: Basic, Generous, and Astronomical.\u003C/div\u003E\u003C/div\u003E\"\u003EBounty Order\u003C/span\u003E, gains 2 chance(s) to refresh \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EBounty Order\u003C/div\u003E\u003Cdiv\u003EBefore the Carjack starts, you have a chance to receive a Bounty Order from the Black Market. Reveal the Bounty Order by inserting TOWER Coins, and complete it to get additional Bounty Chests. There are three Bounty Order qualities: Basic, Generous, and Astronomical.\u003C/div\u003E\u003C/div\u003E\"\u003EBounty Orders\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Legendary",
+    "name": "Rainbowpaint Owl",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen the painting is completed, randomly transforms 2-5 Cells to Pactspirit Exclusive Cells that do not require combat and grant double rewards.\u003C/li\u003E\u003Cli class=\"mod\"\u003EThere is a 100% chance that 2 additional Splendor Egg(s) of random color will appear when entering the Frozen Canvas map.\u003C/li\u003E\u003Cli class=\"mod\"\u003EIn the Paint phase of each round, you gain 2 Brushstroke Effect refresh attempt(s). (Only takes effect if you are carrying this Pactspirit before starting a painting)\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Legendary",
+    "name": "Shepherd",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhile escaping from the Nightmare, whenever you remove Nightmare Roots, there is a 13% chance that all \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDream Bubbles\u003C/div\u003E\u003Cdiv\u003EThe rewards obtained in Twinightmare are collectively called Dream Bubbles and only become real after you escape from the Nightmare.\u003C/div\u003E\u003C/div\u003E\"\u003EDream Bubbles\u003C/span\u003E you have obtained will drop 1 additional time.\u003C/li\u003E\u003Cli class=\"mod\"\u003EUpon entering a Nightmare, there is a 100% chance to trigger 1 additional \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESweet Dream Omen\u003C/div\u003E\u003Cdiv\u003EWhen selecting a Dream Omen, Sweet Dream Omens will change your Dream Bubbles in various ways, such as by changing the quality or type of bubbles.\u003C/div\u003E\u003C/div\u003E\"\u003ESweet Dream Omen\u003C/span\u003E selection (this selection will not be accompanied by a \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENightmare Omen\u003C/div\u003E\u003Cdiv\u003EWhen selecting a Dream Omen, Nightmare Omens will remind you of the dangers you will encounter in your Nightmare.\u003C/div\u003E\u003C/div\u003E\"\u003ENightmare Omen\u003C/span\u003E)\u003C/li\u003E\u003Cli class=\"mod\"\u003EDuring each round of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ETwinightmare\u003C/div\u003E\u003Cdiv\u003EA round of Twinightmare consists of several Sweet Dreams and one Nightmare.\u003C/div\u003E\u003C/div\u003E\"\u003ETwinightmare\u003C/span\u003E, gain 2 chance(s) to re-roll the current \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDream Omen\u003C/div\u003E\u003Cdiv\u003EThere are 2 types of Dream Omens: Sweet Dream Omens and Nightmare Omens. Sweet Dream Omens will change your Dream Bubbles in various ways, such as by changing the quality or type of bubbles. Nightmare Omens will remind you of the dangers you will encounter in your Nightmare.\u003C/div\u003E\u003C/div\u003E\"\u003EDream Omens\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Legendary",
+    "name": "Starfish Chanter",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E27\u003C/span\u003E% chance to double the effect of the \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESeal Whisper\u003C/div\u003E\u003Cdiv\u003EComplete the exclusive gameplay of the Blacksail Season to get Seal Whispers. Collect a certain amount of Seal Whispers to unseal the Void Sea Terminal and challenge the season boss. Different combinations of Seal Whispers grant different bonuses that affect the rewards from the season boss\u003C/div\u003E\u003C/div\u003E\"\u003ESeal Whisper\u003C/span\u003E revealed when defeating \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EPirate\u003C/div\u003E\u003Cdiv\u003EA specific type of monster that players will encounter when playing the exclusive content of the Blacksail Season\u003C/div\u003E\u003C/div\u003E\"\u003EVoid Pirates\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E% additional \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Rare",
+    "name": "Benign Bug",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+9\u003C/span\u003E% additional Compass Drop Quantity\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Rare",
+    "name": "Benign Bug - Barbie Pink",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen opening a Chest of Destiny in Fateful Contest, there is a 2% chance to double the Chest of Destiny rewards (takes effect immediately after entering Fateful Contest)\u003C/li\u003E\u003Cli class=\"mod\"\u003E+8% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Rare",
+    "name": "Benign Bug - Merciless Silver",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E+8% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EWhen returning from a raid, there is a 5% chance to bring back 1 laborer\u003C/li\u003E\u003Cli class=\"mod\"\u003EWhen returning from a trade, there is a 5% chance to bring back 1 laborer\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Rare",
+    "name": "Bird Nest",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen opening an \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAntidote Vial\u003C/div\u003E\u003Cdiv\u003EA treasure chest containing rewards obtained from the Vorax gameplay. The higher the Color Quality, the better the drops. During the Surgical Preparation phase, the higher your Ultimate Activity level, the better the corresponding Antidote Vial you'll obtain. In Shelley's Operating Theater, defeat a Vorax monster matching your Ultimate Activity level to unlock the corresponding Antidote Vial and claim your rewards.\u003C/div\u003E\u003C/div\u003E\"\u003EAntidote Vial\u003C/span\u003E, it has a 2% chance to be reopened once (this can only be triggered once\u003C/li\u003E\u003Cli class=\"mod\"\u003Emust be carried at all times in Shelley's Operating Theater)\u003C/li\u003E\u003Cli class=\"mod\"\u003E+8% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Rare",
+    "name": "Cloudgatherer - Sky",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E% additional Ember Drop Quantity\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Rare",
+    "name": "Cloudgatherer - Sky's Dome",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EFluorescent Memories dropped have a \u003Cspan class=\"val\"\u003E10\u003C/span\u003E% chance to be replicated \u003Cspan class=\"val\"\u003E1\u003C/span\u003E time(s)\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Rare",
+    "name": "Cloudgatherer - Surging Gold",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E% additional Flame Fuel Drop Quantity\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Rare",
+    "name": "Dragon Plant",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll Member Services gain an additional effect: Each time after completing Operation Cogwheel, there is a 8% chance to get 1 additional Cogwheel Voucher (takes effect immediately after selecting Member Services and lasts for the duration of this game)\u003C/li\u003E\u003Cli class=\"mod\"\u003E+8% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Rare",
+    "name": "Dragon Plant - Lettuce",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EThere is a 50% chance that 2 additional Splendor Egg(s) of random color will appear when entering the Frozen Canvas map.\u003C/li\u003E\u003Cli class=\"mod\"\u003EIn the Paint phase of each round, you gain  Brushstroke Effect refresh attempt(s). (Only takes effect if you are carrying this Pactspirit before starting a painting)\u003C/li\u003E\u003Cli class=\"mod\"\u003E+8% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Rare",
+    "name": "First Mate of the Furious Sea - Silent Night",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen opening a Chest of Folklores, there is a 5% chance that 1 additional Chest of Folklores will appear (this can only be triggered once)\u003C/li\u003E\u003Cli class=\"mod\"\u003E+8% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Rare",
+    "name": "Hell Cavalry - Sea",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+18\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDivinity Stone\u003C/div\u003E\u003Cdiv\u003EAn incarnation of the power of the Six Gods. You can use them to exchange for items in Blessings from Gods.\u003Cbr/\u003E(Blessings from Gods can be accessed at the Spacetime Wanderer in Ember's Rest.)\u003C/div\u003E\u003C/div\u003E\"\u003EDivinity Stone\u003C/span\u003E Drop Quantity.\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Rare",
+    "name": "Letice",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EThere is a 8% chance for rewards to be doubled when the player enters the reward gameplay in the City of Aeterna\u003C/li\u003E\u003Cli class=\"mod\"\u003E+8% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Rare",
+    "name": "Letice - Frost",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhile escaping from the Nightmare, whenever you remove Nightmare Roots, there is a 3% chance that all \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDream Bubbles\u003C/div\u003E\u003Cdiv\u003EThe rewards obtained in Twinightmare are collectively called Dream Bubbles and only become real after you escape from the Nightmare.\u003C/div\u003E\u003C/div\u003E\"\u003EDream Bubbles\u003C/span\u003E you have obtained will drop 1 additional time.\u003C/li\u003E\u003Cli class=\"mod\"\u003E+8% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Rare",
+    "name": "Plaintive Ball of Thread - Flower",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E30\u003C/span\u003E% chance to unlock \u003Cspan class=\"val\"\u003E1\u003C/span\u003E additional reward type(s) when the Dark Surge is initiated for the first time on a map\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Rare",
+    "name": "Plaintive Ball of Thread - Frost",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% additional Gear Drop Quantity\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Rare",
+    "name": "Plaintive Ball of Thread - Gold Leaf",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Rare",
+    "name": "Shro-Shroom",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E2% chance for all reward units from \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECarjack\u003C/div\u003E\u003Cdiv\u003EAfter activating the Transport Vehicle in the Netherrealm stage, the escort bodyguards will attempt to flee with the payload. Chase after them and defeat incoming reinforcements to earn corresponding rewards\u003C/div\u003E\u003C/div\u003E\"\u003ECarjack\u003C/span\u003E or \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ETOWER Co. Central Vault\u003C/div\u003E\u003Cdiv\u003EGo to TOWER Co. Central Vault to challenge the endgame gameplay of the Outlaw season. You will enter a map with many small strongrooms. With each small strongroom you raid, security becomes tighter and tighter until you fail to raid a strongroom within the time limit and find yourself up against the boss. Defeat the boss to loot the bountiful rewards of the ultimate strongroom.\u003C/div\u003E\u003C/div\u003E\"\u003ETOWER Co. Central Vault\u003C/span\u003E in a Netherrealm stage to be recoded by Prof. SOURCE when they appear, replicating their rewards 1 time (takes effect immediately after starting Carjack and lasts for the duration of the operation\u003C/li\u003E\u003Cli class=\"mod\"\u003Emust be carried at all times in TOWER Co. Central Vault)\u003C/li\u003E\u003Cli class=\"mod\"\u003E+8% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Rare",
+    "name": "Shro-Shroom - Lurid Bolete",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EAll items dropped in the Overrealm have a \u003Cspan class=\"val\"\u003E2\u003C/span\u003E% chance to be replicated \u003Cspan class=\"val\"\u003E1\u003C/span\u003E additional time(s)\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Magic",
+    "name": "Feasting Samurai",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll Member Services gain an additional effect: Each time after completing Operation Cogwheel, there is a 4% chance to get 1 additional Cogwheel Voucher (takes effect immediately after selecting Member Services and lasts for the duration of this game)\u003C/li\u003E\u003Cli class=\"mod\"\u003E+8% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Magic",
+    "name": "Feasting Samurai - Mint",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EThere is a 25% chance that 2 additional Splendor Egg(s) of random color will appear when entering the Frozen Canvas map.\u003C/li\u003E\u003Cli class=\"mod\"\u003EIn the Paint phase of each round, you gain  Brushstroke Effect refresh attempt(s). (Only takes effect if you are carrying this Pactspirit before starting a painting)\u003C/li\u003E\u003Cli class=\"mod\"\u003E+8% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Magic",
+    "name": "Happy Chonky",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+5\u003C/span\u003E% additional Flame Fuel Drop Quantity\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Magic",
+    "name": "Happy Chonky - Emerald",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E% additional \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Magic",
+    "name": "Happy Chonky - Sun",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+3\u003C/span\u003E% additional Gear Drop Quantity\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Magic",
+    "name": "Happy Chonky - Violet",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen opening a Chest of Folklores, there is a 2.5% chance that 1 additional Chest of Folklores will appear (this can only be triggered once)\u003C/li\u003E\u003Cli class=\"mod\"\u003E+8% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Magic",
+    "name": "Idling Weasel - Cherry Blossom",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional Ember Drop Quantity\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Magic",
+    "name": "Idling Weasel - Sparkle",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EFluorescent Memories dropped have a \u003Cspan class=\"val\"\u003E5\u003C/span\u003E% chance to be replicated \u003Cspan class=\"val\"\u003E1\u003C/span\u003E time(s)\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Magic",
+    "name": "Luluri - Green Leaf",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E16\u003C/span\u003E% chance to unlock \u003Cspan class=\"val\"\u003E1\u003C/span\u003E additional reward type(s) when the Dark Surge is initiated for the first time on a map\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Magic",
+    "name": "Lumidrake",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E1% chance for all reward units from \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECarjack\u003C/div\u003E\u003Cdiv\u003EAfter activating the Transport Vehicle in the Netherrealm stage, the escort bodyguards will attempt to flee with the payload. Chase after them and defeat incoming reinforcements to earn corresponding rewards\u003C/div\u003E\u003C/div\u003E\"\u003ECarjack\u003C/span\u003E or \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ETOWER Co. Central Vault\u003C/div\u003E\u003Cdiv\u003EGo to TOWER Co. Central Vault to challenge the endgame gameplay of the Outlaw season. You will enter a map with many small strongrooms. With each small strongroom you raid, security becomes tighter and tighter until you fail to raid a strongroom within the time limit and find yourself up against the boss. Defeat the boss to loot the bountiful rewards of the ultimate strongroom.\u003C/div\u003E\u003C/div\u003E\"\u003ETOWER Co. Central Vault\u003C/span\u003E in a Netherrealm stage to be recoded by Prof. SOURCE when they appear, replicating their rewards 1 time (takes effect immediately after starting Carjack and lasts for the duration of the operation\u003C/li\u003E\u003Cli class=\"mod\"\u003Emust be carried at all times in TOWER Co. Central Vault)\u003C/li\u003E\u003Cli class=\"mod\"\u003E+8% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Magic",
+    "name": "Lumidrake - Flare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen opening an \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAntidote Vial\u003C/div\u003E\u003Cdiv\u003EA treasure chest containing rewards obtained from the Vorax gameplay. The higher the Color Quality, the better the drops. During the Surgical Preparation phase, the higher your Ultimate Activity level, the better the corresponding Antidote Vial you'll obtain. In Shelley's Operating Theater, defeat a Vorax monster matching your Ultimate Activity level to unlock the corresponding Antidote Vial and claim your rewards.\u003C/div\u003E\u003C/div\u003E\"\u003EAntidote Vial\u003C/span\u003E, it has a 1% chance to be reopened once (this can only be triggered once\u003C/li\u003E\u003Cli class=\"mod\"\u003Emust be carried at all times in Shelley's Operating Theater)\u003C/li\u003E\u003Cli class=\"mod\"\u003E+8% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Magic",
+    "name": "Lumidrake - Glow",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EAll items dropped in the Overrealm have a \u003Cspan class=\"val\"\u003E1\u003C/span\u003E% chance to be replicated \u003Cspan class=\"val\"\u003E1\u003C/span\u003E additional time(s)\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Magic",
+    "name": "Shocket",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EThere is a 4% chance for rewards to be doubled when the player enters the reward gameplay in the City of Aeterna\u003C/li\u003E\u003Cli class=\"mod\"\u003E+8% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Magic",
+    "name": "Shocket - Dark Night",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhile escaping from the Nightmare, whenever you remove Nightmare Roots, there is a 2% chance that all \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDream Bubbles\u003C/div\u003E\u003Cdiv\u003EThe rewards obtained in Twinightmare are collectively called Dream Bubbles and only become real after you escape from the Nightmare.\u003C/div\u003E\u003C/div\u003E\"\u003EDream Bubbles\u003C/span\u003E you have obtained will drop 1 additional time.\u003C/li\u003E\u003Cli class=\"mod\"\u003E+8% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Magic",
+    "name": "Spiny Snail - Cloud",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDivinity Stone\u003C/div\u003E\u003Cdiv\u003EAn incarnation of the power of the Six Gods. You can use them to exchange for items in Blessings from Gods.\u003Cbr/\u003E(Blessings from Gods can be accessed at the Spacetime Wanderer in Ember's Rest.)\u003C/div\u003E\u003C/div\u003E\"\u003EDivinity Stone\u003C/span\u003E Drop Quantity.\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Magic",
+    "name": "Sprouting Grass",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen opening a Chest of Destiny in Fateful Contest, there is a 1% chance to double the Chest of Destiny rewards (takes effect immediately after entering Fateful Contest)\u003C/li\u003E\u003Cli class=\"mod\"\u003E+8% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Magic",
+    "name": "Sprouting Grass - Purple Sand",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+5\u003C/span\u003E% additional Compass Drop Quantity\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Drop",
+    "rarity": "Magic",
+    "name": "Sprouting Grass - White Porcelain",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E+8% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDrop quantity\u003C/div\u003E\u003Cdiv\u003EAffects the quantity of items dropped (all types)\u003C/div\u003E\u003C/div\u003E\"\u003EDrop Quantity\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EWhen returning from a raid, there is a 2.5% chance to bring back 1 laborer\u003C/li\u003E\u003Cli class=\"mod\"\u003EWhen returning from a trade, there is a 2.5% chance to bring back 1 laborer\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Legendary",
+    "name": "Azure Gunslinger",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EGains 1 stack of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EPure Heart\u003C/div\u003E\u003Cdiv\u003E+5% additional Attack Damage dealt to nearby enemies (multiplies) for every stack of Pure Heart. Stacks up to 5 time(s). Lasts for 10s.\u003Cbr/\u003EThe duration of each stack of Pure Heart is calculated separately.\u003C/div\u003E\u003C/div\u003E\"\u003EPure Heart\u003C/span\u003E when using an Attack Mobility Skill\u003C/li\u003E\u003Cli class=\"mod\"\u003EWhen gaining \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EPure Heart\u003C/div\u003E\u003Cdiv\u003E+5% additional Attack Damage dealt to nearby enemies (multiplies) for every stack of Pure Heart. Stacks up to 5 time(s). Lasts for 10s.\u003Cbr/\u003EThe duration of each stack of Pure Heart is calculated separately.\u003C/div\u003E\u003C/div\u003E\"\u003EPure Heart\u003C/span\u003E, there is a \u003Cspan class=\"val\"\u003E100\u003C/span\u003E% chance to gain 1 additional stack of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EPure Heart\u003C/div\u003E\u003Cdiv\u003E+5% additional Attack Damage dealt to nearby enemies (multiplies) for every stack of Pure Heart. Stacks up to 5 time(s). Lasts for 10s.\u003Cbr/\u003EThe duration of each stack of Pure Heart is calculated separately.\u003C/div\u003E\u003C/div\u003E\"\u003EPure Heart\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-8\u003C/span\u003E% additional damage taken when \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EPure Heart\u003C/div\u003E\u003Cdiv\u003E+5% additional Attack Damage dealt to nearby enemies (multiplies) for every stack of Pure Heart. Stacks up to 5 time(s). Lasts for 10s.\u003Cbr/\u003EThe duration of each stack of Pure Heart is calculated separately.\u003C/div\u003E\u003C/div\u003E\"\u003EPure Heart\u003C/span\u003E is active\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+1\u003C/span\u003E Max \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EPure Heart\u003C/div\u003E\u003Cdiv\u003E+5% additional Attack Damage dealt to nearby enemies (multiplies) for every stack of Pure Heart. Stacks up to 5 time(s). Lasts for 10s.\u003Cbr/\u003EThe duration of each stack of Pure Heart is calculated separately.\u003C/div\u003E\u003C/div\u003E\"\u003EPure Heart\u003C/span\u003E Stacks\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+100\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EPure Heart\u003C/div\u003E\u003Cdiv\u003E+5% additional Attack Damage dealt to nearby enemies (multiplies) for every stack of Pure Heart. Stacks up to 5 time(s). Lasts for 10s.\u003Cbr/\u003EThe duration of each stack of Pure Heart is calculated separately.\u003C/div\u003E\u003C/div\u003E\"\u003EPure Heart\u003C/span\u003E Duration\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Legendary",
+    "name": "Backup Power",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+45\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENumbed\u003C/div\u003E\u003Cdiv\u003EAn Elemental Ailment that has a chance to be inflicted when Lightning Damage hits its target.\u003Cbr/\u003EWhen hitting a Numbed enemy, Lightning Damage inflicts 1 stack of Numbed for every 10% of the sum of Max Energy Shield and Life dealt by Lightning Damage. This threshold can be lowered or raised, but the minimum is 1%.\u003Cbr/\u003EThe default duration of Numbed is 2s, and the duration of each stack is calculated independently.\u003Cbr/\u003EMax Numbed stacks: 10. Each stack of Numbed increases the Lightning Damage taken by an additional +5%.\u003C/div\u003E\u003C/div\u003E\"\u003ENumbed\u003C/span\u003E Effect\u003C/li\u003E\u003Cli class=\"mod\"\u003EWhen inflicting \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENumbed\u003C/div\u003E\u003Cdiv\u003EAn Elemental Ailment that has a chance to be inflicted when Lightning Damage hits its target.\u003Cbr/\u003EWhen hitting a Numbed enemy, Lightning Damage inflicts 1 stack of Numbed for every 10% of the sum of Max Energy Shield and Life dealt by Lightning Damage. This threshold can be lowered or raised, but the minimum is 1%.\u003Cbr/\u003EThe default duration of Numbed is 2s, and the duration of each stack is calculated independently.\u003Cbr/\u003EMax Numbed stacks: 10. Each stack of Numbed increases the Lightning Damage taken by an additional +5%.\u003C/div\u003E\u003C/div\u003E\"\u003ENumbed\u003C/span\u003E, restores \u003Cspan class=\"val\"\u003E3\u003C/span\u003E% Missing Life and Energy Shield. Interval: \u003Cspan class=\"val\"\u003E0.2\u003C/span\u003E s\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+30\u003C/span\u003E% Movement Speed if you have inflicted \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENumbed\u003C/div\u003E\u003Cdiv\u003EAn Elemental Ailment that has a chance to be inflicted when Lightning Damage hits its target.\u003Cbr/\u003EWhen hitting a Numbed enemy, Lightning Damage inflicts 1 stack of Numbed for every 10% of the sum of Max Energy Shield and Life dealt by Lightning Damage. This threshold can be lowered or raised, but the minimum is 1%.\u003Cbr/\u003EThe default duration of Numbed is 2s, and the duration of each stack is calculated independently.\u003Cbr/\u003EMax Numbed stacks: 10. Each stack of Numbed increases the Lightning Damage taken by an additional +5%.\u003C/div\u003E\u003C/div\u003E\"\u003ENumbed\u003C/span\u003E recently\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Legendary",
+    "name": "Captain Kitty of the Furious Sea",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EImmediately casts Warcry. \u003Cspan class=\"val\"\u003E+25\u003C/span\u003E% additional Warcry Skill Effect\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+22\u003C/span\u003E% Warcry Cooldown Recovery Speed\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E Max Warcry Skill Charges\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Legendary",
+    "name": "Flower Whisperer",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+21\u003C/span\u003E% additional Projectile Skill Critical Strike Damage against Distant enemies\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+55\u003C/span\u003E Attack Projectile Skill Critical Strike Rating against Distant enemies\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+140\u003C/span\u003E Attack Projectile Skill Critical Strike Rating against Distant enemies\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Legendary",
+    "name": "Fog Scorpion",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+27\u003C/span\u003E% additional Attack Speed when only \u003Cspan class=\"val\"\u003E1\u003C/span\u003E enemies are \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENearby\u003C/div\u003E\u003Cdiv\u003EWithin 6m\u003C/div\u003E\u003C/div\u003E\"\u003ENearby\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+12\u003C/span\u003E% Movement Speed when at least \u003Cspan class=\"val\"\u003E2\u003C/span\u003E enemies are \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENearby\u003C/div\u003E\u003Cdiv\u003EWithin 6m\u003C/div\u003E\u003C/div\u003E\"\u003ENearby\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+30\u003C/span\u003E% Movement Speed when at least \u003Cspan class=\"val\"\u003E2\u003C/span\u003E enemies are \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENearby\u003C/div\u003E\u003Cdiv\u003EWithin 6m\u003C/div\u003E\u003C/div\u003E\"\u003ENearby\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Legendary",
+    "name": "Iron Lion",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EProjectile Quantity \u003Cspan class=\"val\"\u003E+2\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E% additional Attack and Cast Speed when no enemies are in \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EProximity\u003C/div\u003E\u003Cdiv\u003EWithin 4m\u003C/div\u003E\u003C/div\u003E\"\u003Eproximity\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+48\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EKnockback\u003C/div\u003E\u003Cdiv\u003EForced to move back by a short distance\u003C/div\u003E\u003C/div\u003E\"\u003EKnockback\u003C/span\u003E distance\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+14\u003C/span\u003E% Projectile Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Legendary",
+    "name": "Kitty Express",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EGains 1 stack of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFeline Stimulant\u003C/div\u003E\u003Cdiv\u003E+5% additional Attack Damage (multiplies) for every stack of Feline Stimulant. Stacks up to 3 time(s). Lasts for 9s.\u003C/div\u003E\u003C/div\u003E\"\u003EFeline Stimulant\u003C/span\u003E when triggering a Main Skill\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E to Max \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFeline Stimulant\u003C/div\u003E\u003Cdiv\u003E+5% additional Attack Damage (multiplies) for every stack of Feline Stimulant. Stacks up to 3 time(s). Lasts for 9s.\u003C/div\u003E\u003C/div\u003E\"\u003EFeline Stimulant\u003C/span\u003E stacks\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E% additional Attack Damage when having \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFeline Stimulant\u003C/div\u003E\u003Cdiv\u003E+5% additional Attack Damage (multiplies) for every stack of Feline Stimulant. Stacks up to 3 time(s). Lasts for 9s.\u003C/div\u003E\u003C/div\u003E\"\u003EFeline Stimulant\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EHas \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAttack Aggression\u003C/div\u003E\u003Cdiv\u003EAdditionally increases Attack Speed and Attack Damage by 5%. Increases Movement Speed by 10%\u003C/div\u003E\u003C/div\u003E\"\u003EAttack Aggression\u003C/span\u003E when reaching Max \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFeline Stimulant\u003C/div\u003E\u003Cdiv\u003E+5% additional Attack Damage (multiplies) for every stack of Feline Stimulant. Stacks up to 3 time(s). Lasts for 9s.\u003C/div\u003E\u003C/div\u003E\"\u003EFeline Stimulant\u003C/span\u003E stacks\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Legendary",
+    "name": "Poisoned Omen",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EYou can cast \u003Cspan class=\"val\"\u003E1\u003C/span\u003E additional Curses\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E6.5\u003C/span\u003E% Movement Speed if you have cast a Curse Skill recently\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+16\u003C/span\u003E% additional damage against Cursed enemies\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Legendary",
+    "name": "Raging Sands of Eternal Night",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAttacks eliminate enemies under \u003Cspan class=\"val\"\u003E20\u003C/span\u003E% Life on hit if you have Blocked recently\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EBlock Ratio\u003C/div\u003E\u003Cdiv\u003EBy default, Blocking absorbs 30% damage. Increase Block Ratio to increase the damage absorption ratio.\u003C/div\u003E\u003C/div\u003E\"\u003EBlock Ratio\u003C/span\u003E when there is a Boss \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENearby\u003C/div\u003E\u003Cdiv\u003EWithin 6m\u003C/div\u003E\u003C/div\u003E\"\u003ENearby\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Legendary",
+    "name": "Red Umbrella",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+26\u003C/span\u003E% chance for Attacks to inflict \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EParalysis\u003C/div\u003E\u003Cdiv\u003EIncreases damage taken by 15%\u003C/div\u003E\u003C/div\u003E\"\u003EParalysis\u003C/span\u003E on hit\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+14\u003C/span\u003E% additional Attack Damage dealt to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENearby\u003C/div\u003E\u003Cdiv\u003EWithin 6m\u003C/div\u003E\u003C/div\u003E\"\u003ENearby\u003C/span\u003E enemies\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+12\u003C/span\u003E% additional Attack Damage dealt to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENearby\u003C/div\u003E\u003Cdiv\u003EWithin 6m\u003C/div\u003E\u003C/div\u003E\"\u003ENearby\u003C/span\u003E enemies\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Legendary",
+    "name": "Swaying Bonnie",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E to Max Channeled Stacks\u003C/li\u003E\u003Cli class=\"mod\"\u003EAt max channeled stacks, \u003Cspan class=\"val\"\u003E+12\u003C/span\u003E% additional damage for Channeled Skills for \u003Cspan class=\"val\"\u003E4\u003C/span\u003E s\u003C/li\u003E\u003Cli class=\"mod\"\u003EFor every \u003Cspan class=\"val\"\u003E4\u003C/span\u003E channeled stacks, inflicts \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EWeaken\u003C/div\u003E\u003Cdiv\u003EReduces damage dealt by 10%\u003C/div\u003E\u003C/div\u003E\"\u003EWeaken\u003C/span\u003E on enemies within \u003Cspan class=\"val\"\u003E20\u003C/span\u003E m\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Legendary",
+    "name": "Valkyrie's Night Patrol",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EGains 1 stack of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EValkyrie's Hymn\u003C/div\u003E\u003Cdiv\u003E+4% additional Elemental Damage for Attack Skills for every stack of Valkyrie's Hymn (multiplies). Stacks up to 4 time(s). Lasts for 8s.\u003C/div\u003E\u003C/div\u003E\"\u003EValkyrie's Hymn\u003C/span\u003E for every \u003Cspan class=\"val\"\u003E2\u003C/span\u003E% Max Mana consumed\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E Max \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EValkyrie's Hymn\u003C/div\u003E\u003Cdiv\u003E+4% additional Elemental Damage for Attack Skills for every stack of Valkyrie's Hymn (multiplies). Stacks up to 4 time(s). Lasts for 8s.\u003C/div\u003E\u003C/div\u003E\"\u003EValkyrie's Hymn\u003C/span\u003E Stacks\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E% Elemental Damage for every stack of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EValkyrie's Hymn\u003C/div\u003E\u003Cdiv\u003E+4% additional Elemental Damage for Attack Skills for every stack of Valkyrie's Hymn (multiplies). Stacks up to 4 time(s). Lasts for 8s.\u003C/div\u003E\u003C/div\u003E\"\u003EValkyrie's Hymn\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EUpon reaching Max \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EValkyrie's Hymn\u003C/div\u003E\u003Cdiv\u003E+4% additional Elemental Damage for Attack Skills for every stack of Valkyrie's Hymn (multiplies). Stacks up to 4 time(s). Lasts for 8s.\u003C/div\u003E\u003C/div\u003E\"\u003EValkyrie's Hymn\u003C/span\u003E Stacks, \u003Cspan class=\"val\"\u003E+10\u003C/span\u003E% Elemental Resistance Penetration\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Legendary",
+    "name": "Witch Antelope of Lust",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EInflicts \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EParalysis\u003C/div\u003E\u003Cdiv\u003EIncreases damage taken by 15%\u003C/div\u003E\u003C/div\u003E\"\u003EParalysis\u003C/span\u003E or \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EWeaken\u003C/div\u003E\u003Cdiv\u003EReduces damage dealt by 10%\u003C/div\u003E\u003C/div\u003E\"\u003EWeaken\u003C/span\u003E on enemies within 10m in turn. Cooldown: \u003Cspan class=\"val\"\u003E4\u003C/span\u003E s\u003C/li\u003E\u003Cli class=\"mod\"\u003EFor every type of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECrowd Control Effects\u003C/div\u003E\u003Cdiv\u003EFrostbite, Freeze, Paralysis, Knockback, Weaken, Slow, Taunt, and Blinding\u003C/div\u003E\u003C/div\u003E\"\u003Ecrowd control effect\u003C/span\u003E the enemy has, you and your Minions deal \u003Cspan class=\"val\"\u003E+3\u003C/span\u003E% additional damage to them\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Rare",
+    "name": "Benign Bug - Tolerant Green",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+28\u003C/span\u003E% Attack Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Rare",
+    "name": "Dragon Plant - Kale",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003EAt max channeled stacks, \u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage for Channeled Skills for \u003Cspan class=\"val\"\u003E4\u003C/span\u003E s\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Rare",
+    "name": "Dragon Plant - Truffle",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional Attack and Cast Speed when no enemies are in \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EProximity\u003C/div\u003E\u003Cdiv\u003EWithin 4m\u003C/div\u003E\u003C/div\u003E\"\u003Eproximity\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Rare",
+    "name": "First Mate of the Furious Sea - Rock",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003EWhen inflicting \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENumbed\u003C/div\u003E\u003Cdiv\u003EAn Elemental Ailment that has a chance to be inflicted when Lightning Damage hits its target.\u003Cbr/\u003EWhen hitting a Numbed enemy, Lightning Damage inflicts 1 stack of Numbed for every 10% of the sum of Max Energy Shield and Life dealt by Lightning Damage. This threshold can be lowered or raised, but the minimum is 1%.\u003Cbr/\u003EThe default duration of Numbed is 2s, and the duration of each stack is calculated independently.\u003Cbr/\u003EMax Numbed stacks: 10. Each stack of Numbed increases the Lightning Damage taken by an additional +5%.\u003C/div\u003E\u003C/div\u003E\"\u003ENumbed\u003C/span\u003E, restores \u003Cspan class=\"val\"\u003E1.5\u003C/span\u003E% Missing Life and Energy Shield. Interval: \u003Cspan class=\"val\"\u003E0.4\u003C/span\u003E s\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E7.5\u003C/span\u003E% Movement Speed if you have inflicted \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENumbed\u003C/div\u003E\u003Cdiv\u003EAn Elemental Ailment that has a chance to be inflicted when Lightning Damage hits its target.\u003Cbr/\u003EWhen hitting a Numbed enemy, Lightning Damage inflicts 1 stack of Numbed for every 10% of the sum of Max Energy Shield and Life dealt by Lightning Damage. This threshold can be lowered or raised, but the minimum is 1%.\u003Cbr/\u003EThe default duration of Numbed is 2s, and the duration of each stack is calculated independently.\u003Cbr/\u003EMax Numbed stacks: 10. Each stack of Numbed increases the Lightning Damage taken by an additional +5%.\u003C/div\u003E\u003C/div\u003E\"\u003ENumbed\u003C/span\u003E recently\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Rare",
+    "name": "First Mate of the Furious Sea - Sky",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+11\u003C/span\u003E% Warcry Cooldown Recovery Speed\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Rare",
+    "name": "Hell Cavalry - Twilight",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003EFor every type of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECrowd Control Effects\u003C/div\u003E\u003Cdiv\u003EFrostbite, Freeze, Paralysis, Knockback, Weaken, Slow, Taunt, and Blinding\u003C/div\u003E\u003C/div\u003E\"\u003Ecrowd control effect\u003C/span\u003E the enemy has, you and your Minions deal \u003Cspan class=\"val\"\u003E1.6\u003C/span\u003E% additional damage to them\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Rare",
+    "name": "Letice - Withered Leaf",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+3\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EBlock Ratio\u003C/div\u003E\u003Cdiv\u003EBy default, Blocking absorbs 30% damage. Increase Block Ratio to increase the damage absorption ratio.\u003C/div\u003E\u003C/div\u003E\"\u003EBlock Ratio\u003C/span\u003E when there is a Boss \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENearby\u003C/div\u003E\u003Cdiv\u003EWithin 6m\u003C/div\u003E\u003C/div\u003E\"\u003ENearby\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Rare",
+    "name": "Plaintive Ball of Thread - Violet",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+15\u003C/span\u003E% Movement Speed when at least \u003Cspan class=\"val\"\u003E2\u003C/span\u003E enemies are \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENearby\u003C/div\u003E\u003Cdiv\u003EWithin 6m\u003C/div\u003E\u003C/div\u003E\"\u003ENearby\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Rare",
+    "name": "Shro-Shroom - Boletus",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+28\u003C/span\u003E% Elemental Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Rare",
+    "name": "Shro-Shroom - Gloom Shroom",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+28\u003C/span\u003E% Attack Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Rare",
+    "name": "Traveling Lizard - Green Leaf",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% additional Attack Damage dealt to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENearby\u003C/div\u003E\u003Cdiv\u003EWithin 6m\u003C/div\u003E\u003C/div\u003E\"\u003ENearby\u003C/span\u003E enemies\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Rare",
+    "name": "Traveling Lizard - Violet",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+70\u003C/span\u003E Attack Projectile Skill Critical Strike Rating against Distant enemies\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Rare",
+    "name": "Winter Darer - Sky",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E% additional damage against Cursed enemies\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Magic",
+    "name": "Awooawoo - Blue Sky",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003EFor every type of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECrowd Control Effects\u003C/div\u003E\u003Cdiv\u003EFrostbite, Freeze, Paralysis, Knockback, Weaken, Slow, Taunt, and Blinding\u003C/div\u003E\u003C/div\u003E\"\u003Ecrowd control effect\u003C/span\u003E the enemy has, you and your Minions deal \u003Cspan class=\"val\"\u003E0.8\u003C/span\u003E% additional damage to them\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Magic",
+    "name": "Awooawoo - Drizzle",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+35\u003C/span\u003E Attack Projectile Skill Critical Strike Rating against Distant enemies\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Magic",
+    "name": "Awooawoo - Violet",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+3\u003C/span\u003E% additional Attack Damage dealt to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENearby\u003C/div\u003E\u003Cdiv\u003EWithin 6m\u003C/div\u003E\u003C/div\u003E\"\u003ENearby\u003C/span\u003E enemies\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Magic",
+    "name": "Feasting Samurai - Honey",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E% additional Attack and Cast Speed when no enemies are in \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EProximity\u003C/div\u003E\u003Cdiv\u003EWithin 4m\u003C/div\u003E\u003C/div\u003E\"\u003Eproximity\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Magic",
+    "name": "Feasting Samurai - Orange",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003EAt max channeled stacks, \u003Cspan class=\"val\"\u003E+2\u003C/span\u003E% additional damage for Channeled Skills for \u003Cspan class=\"val\"\u003E4\u003C/span\u003E s\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Magic",
+    "name": "Idling Weasel - Sandstone",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003EWhen inflicting \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENumbed\u003C/div\u003E\u003Cdiv\u003EAn Elemental Ailment that has a chance to be inflicted when Lightning Damage hits its target.\u003Cbr/\u003EWhen hitting a Numbed enemy, Lightning Damage inflicts 1 stack of Numbed for every 10% of the sum of Max Energy Shield and Life dealt by Lightning Damage. This threshold can be lowered or raised, but the minimum is 1%.\u003Cbr/\u003EThe default duration of Numbed is 2s, and the duration of each stack is calculated independently.\u003Cbr/\u003EMax Numbed stacks: 10. Each stack of Numbed increases the Lightning Damage taken by an additional +5%.\u003C/div\u003E\u003C/div\u003E\"\u003ENumbed\u003C/span\u003E, restores \u003Cspan class=\"val\"\u003E1.5\u003C/span\u003E% Missing Life and Energy Shield. Interval: \u003Cspan class=\"val\"\u003E0.8\u003C/span\u003E s\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E3.75\u003C/span\u003E% Movement Speed if you have inflicted \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENumbed\u003C/div\u003E\u003Cdiv\u003EAn Elemental Ailment that has a chance to be inflicted when Lightning Damage hits its target.\u003Cbr/\u003EWhen hitting a Numbed enemy, Lightning Damage inflicts 1 stack of Numbed for every 10% of the sum of Max Energy Shield and Life dealt by Lightning Damage. This threshold can be lowered or raised, but the minimum is 1%.\u003Cbr/\u003EThe default duration of Numbed is 2s, and the duration of each stack is calculated independently.\u003Cbr/\u003EMax Numbed stacks: 10. Each stack of Numbed increases the Lightning Damage taken by an additional +5%.\u003C/div\u003E\u003C/div\u003E\"\u003ENumbed\u003C/span\u003E recently\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Magic",
+    "name": "Idling Weasel - Shallow sea",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E% Movement Speed when at least \u003Cspan class=\"val\"\u003E2\u003C/span\u003E enemies are \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENearby\u003C/div\u003E\u003Cdiv\u003EWithin 6m\u003C/div\u003E\u003C/div\u003E\"\u003ENearby\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Magic",
+    "name": "Luluri - Shallow Sea",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E5.5\u003C/span\u003E% Warcry Cooldown Recovery Speed\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Magic",
+    "name": "Lumidrake - Candlelight",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+14\u003C/span\u003E% Attack Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Magic",
+    "name": "Lumidrake - Fluorescence",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+14\u003C/span\u003E% Attack Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Magic",
+    "name": "Shocket - Green Leaf",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E1.6\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EBlock Ratio\u003C/div\u003E\u003Cdiv\u003EBy default, Blocking absorbs 30% damage. Increase Block Ratio to increase the damage absorption ratio.\u003C/div\u003E\u003C/div\u003E\"\u003EBlock Ratio\u003C/span\u003E when there is a Boss \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENearby\u003C/div\u003E\u003Cdiv\u003EWithin 6m\u003C/div\u003E\u003C/div\u003E\"\u003ENearby\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Magic",
+    "name": "Spiny Snail - Flame",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage against Cursed enemies\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Attack",
+    "rarity": "Magic",
+    "name": "Sprouting Grass - Black Porcelain",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+14\u003C/span\u003E% Elemental Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Cold",
+    "rarity": "Legendary",
+    "name": "Ice Puppet",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EFocus energy to create an ice prison \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENearby\u003C/div\u003E\u003Cdiv\u003EWithin 6m\u003C/div\u003E\u003C/div\u003E\"\u003ENear\u003C/span\u003E yourself and the Pact Holder, which debuffs \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFrostbite\u003C/div\u003E\u003Cdiv\u003EFrostbite is an Ailment that may be triggered on Cold Damage hits. Frostbitten enemies -10% Attack, Cast, and Movement Speed. Base Frostbite Rating: 10. For every 1 Frostbite Rating, +1% additional Cold Damage taken. The enemy will be Frozen once they have more than 100 Frostbite Rating.\u003C/div\u003E\u003C/div\u003E\"\u003EFrostbitten\u003C/span\u003E enemies inside every second and makes them take \u003Cspan class=\"val\"\u003E+13\u003C/span\u003E% additional Cold Damage, up to 4 stacks, for 6s.\u003C/li\u003E\u003Cli class=\"mod\"\u003ECooldown: 10s\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+12\u003C/span\u003E% additional Cold Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Cold",
+    "rarity": "Rare",
+    "name": "Hell Cavalry - Crushed Ice",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% additional Cold Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Cold",
+    "rarity": "Magic",
+    "name": "Awooawoo - White Mist",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+3\u003C/span\u003E% additional Cold Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Erosion",
+    "rarity": "Legendary",
+    "name": "Portrait of a Fallen Saintess",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EGains 1 stack of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ERepentance\u003C/div\u003E\u003Cdiv\u003E+4% additional Erosion Damage for every stack of Repentance (multiplies). Stacks up to 4 time(s). Lasts for 8s.\u003C/div\u003E\u003C/div\u003E\"\u003ERepentance\u003C/span\u003E when gaining any Blessing\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+3\u003C/span\u003E Max \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ERepentance\u003C/div\u003E\u003Cdiv\u003E+4% additional Erosion Damage for every stack of Repentance (multiplies). Stacks up to 4 time(s). Lasts for 8s.\u003C/div\u003E\u003C/div\u003E\"\u003ERepentance\u003C/span\u003E Stacks\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+3\u003C/span\u003E% Erosion Resistance per stack of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ERepentance\u003C/div\u003E\u003Cdiv\u003E+4% additional Erosion Damage for every stack of Repentance (multiplies). Stacks up to 4 time(s). Lasts for 8s.\u003C/div\u003E\u003C/div\u003E\"\u003ERepentance\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Erosion",
+    "rarity": "Rare",
+    "name": "Benign Bug - Ghost Light Yellow",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+28\u003C/span\u003E% Erosion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Erosion",
+    "rarity": "Magic",
+    "name": "Sprouting Grass - Green Porcelain",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+14\u003C/span\u003E% Erosion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fire",
+    "rarity": "Legendary",
+    "name": "Melting Flames",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003ECovers targets within a 5m radius with flames and debuffs enemies within the area.\u003C/li\u003E\u003Cli class=\"mod\"\u003EDebuff: + \u003Cspan class=\"val\"\u003E35\u003C/span\u003E% additional Fire Damage taken by the enemy for 3s.\u003C/li\u003E\u003Cli class=\"mod\"\u003ECooldown: \u003Cspan class=\"val\"\u003E5\u003C/span\u003E s.\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+12\u003C/span\u003E% additional Fire Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fire",
+    "rarity": "Rare",
+    "name": "Winter Darer - Lava",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% additional Fire Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fire",
+    "rarity": "Magic",
+    "name": "Happy Chonky - Ember",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+3\u003C/span\u003E% additional Fire Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Lightning",
+    "rarity": "Legendary",
+    "name": "Bitter Thunder",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EBestows the surging power of lightning to the pact holder, granting + \u003Cspan class=\"val\"\u003E19\u003C/span\u003E% additional Lightning Damage and + \u003Cspan class=\"val\"\u003E20\u003C/span\u003E% additional Max Damage for 5s.\u003C/li\u003E\u003Cli class=\"mod\"\u003ECooldown: 10s.\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+12\u003C/span\u003E% additional Lightning Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Lightning",
+    "rarity": "Rare",
+    "name": "Hell Cavalry - Muffled Thunder",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% additional Lightning Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Lightning",
+    "rarity": "Magic",
+    "name": "Happy Chonky - Electrify",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+3\u003C/span\u003E% additional Lightning Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Persistent",
+    "rarity": "Legendary",
+    "name": "Abyssal King Soul",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E50\u003C/span\u003E% chance for Damage Over Time to spread to targets in \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EProximity\u003C/div\u003E\u003Cdiv\u003EWithin 4m\u003C/div\u003E\u003C/div\u003E\"\u003EProximity\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+35\u003C/span\u003E% additional \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EReaping\u003C/div\u003E\u003Cdiv\u003EDeals a certain amount of True Damage to the target, equivalent to the damage from all DoT effects over a certain period of time\u003C/div\u003E\u003C/div\u003E\"\u003EReaping\u003C/span\u003E Recovery Speed\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+20\u003C/span\u003E% Movement Speed if you have caused \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EReaping\u003C/div\u003E\u003Cdiv\u003EDeals a certain amount of True Damage to the target, equivalent to the damage from all DoT effects over a certain period of time\u003C/div\u003E\u003C/div\u003E\"\u003EReaping\u003C/span\u003E recently\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Persistent",
+    "rarity": "Legendary",
+    "name": "Crossroad Walker",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+18\u003C/span\u003E% additional Ailment Damage against Cursed enemies\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+15\u003C/span\u003E% Curse effect\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+20\u003C/span\u003E% Curse Effect\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Persistent",
+    "rarity": "Legendary",
+    "name": "Fire Swordsman",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EReaps \u003Cspan class=\"val\"\u003E1\u003C/span\u003E s of Damage Over Time when inflicting an Ailment. The effect has a \u003Cspan class=\"val\"\u003E6\u003C/span\u003E s Recovery Time against the same target\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% Reaping Duration for each recent Reaping. Stacks up to \u003Cspan class=\"val\"\u003E4\u003C/span\u003E time(s)\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+14\u003C/span\u003E% Reaping Duration for each Reap dealt, stacking up to \u003Cspan class=\"val\"\u003E4\u003C/span\u003E times.\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Persistent",
+    "rarity": "Legendary",
+    "name": "Firewing",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+105\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAffliction\u003C/div\u003E\u003Cdiv\u003EWhen the Affliction inflicted per second is not 0, the Damage Over Time dealt will continuously inflicts Affliction on the target\u003Cbr/\u003EThe target takes 1% additional Damage Over Time for every Affliction point\u003Cbr/\u003EThe max Affliction is 100\u003C/div\u003E\u003C/div\u003E\"\u003EAffliction\u003C/span\u003E effect at \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFull Life\u003C/div\u003E\u003Cdiv\u003EWhen current Life is above 95% of Max Life\u003C/div\u003E\u003C/div\u003E\"\u003EFull Life\u003C/span\u003E.\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+14\u003C/span\u003E \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAffliction\u003C/div\u003E\u003Cdiv\u003EWhen the Affliction inflicted per second is not 0, the Damage Over Time dealt will continuously inflicts Affliction on the target\u003Cbr/\u003EThe target takes 1% additional Damage Over Time for every Affliction point\u003Cbr/\u003EThe max Affliction is 100\u003C/div\u003E\u003C/div\u003E\"\u003EAffliction\u003C/span\u003E inflicted per second on \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFull Life\u003C/div\u003E\u003Cdiv\u003EWhen current Life is above 95% of Max Life\u003C/div\u003E\u003C/div\u003E\"\u003EFull Life\u003C/span\u003E.\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+30\u003C/span\u003E \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAffliction\u003C/div\u003E\u003Cdiv\u003EWhen the Affliction inflicted per second is not 0, the Damage Over Time dealt will continuously inflicts Affliction on the target\u003Cbr/\u003EThe target takes 1% additional Damage Over Time for every Affliction point\u003Cbr/\u003EThe max Affliction is 100\u003C/div\u003E\u003C/div\u003E\"\u003EAffliction\u003C/span\u003E inflicted per second at \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFull Life\u003C/div\u003E\u003Cdiv\u003EWhen current Life is above 95% of Max Life\u003C/div\u003E\u003C/div\u003E\"\u003EFull Life\u003C/span\u003E.\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Persistent",
+    "rarity": "Rare",
+    "name": "Greedy Chestnut - Emerald",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E% Curse Effect\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Persistent",
+    "rarity": "Rare",
+    "name": "Greedy Chestnut - Lotus Leaf",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% Reaping Duration for each Reap dealt, stacking up to \u003Cspan class=\"val\"\u003E4\u003C/span\u003E times.\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Persistent",
+    "rarity": "Rare",
+    "name": "Greedy Chestnut - Radiance",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+16\u003C/span\u003E \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAffliction\u003C/div\u003E\u003Cdiv\u003EWhen the Affliction inflicted per second is not 0, the Damage Over Time dealt will continuously inflicts Affliction on the target\u003Cbr/\u003EThe target takes 1% additional Damage Over Time for every Affliction point\u003Cbr/\u003EThe max Affliction is 100\u003C/div\u003E\u003C/div\u003E\"\u003EAffliction\u003C/span\u003E inflicted per second at \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFull Life\u003C/div\u003E\u003Cdiv\u003EWhen current Life is above 95% of Max Life\u003C/div\u003E\u003C/div\u003E\"\u003EFull Life\u003C/span\u003E.\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Persistent",
+    "rarity": "Rare",
+    "name": "Letice - Flame",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E% Movement Speed if you have caused \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EReaping\u003C/div\u003E\u003Cdiv\u003EDeals a certain amount of True Damage to the target, equivalent to the damage from all DoT effects over a certain period of time\u003C/div\u003E\u003C/div\u003E\"\u003EReaping\u003C/span\u003E recently\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Persistent",
+    "rarity": "Magic",
+    "name": "Awooawoo - Amber",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E3.6\u003C/span\u003E% Reaping Duration for each Reap dealt, stacking up to \u003Cspan class=\"val\"\u003E4\u003C/span\u003E times.\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Persistent",
+    "rarity": "Magic",
+    "name": "Idling Weasel - Abyss",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+5\u003C/span\u003E% Curse Effect\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Persistent",
+    "rarity": "Magic",
+    "name": "Luluri - Golden Leaf",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAffliction\u003C/div\u003E\u003Cdiv\u003EWhen the Affliction inflicted per second is not 0, the Damage Over Time dealt will continuously inflicts Affliction on the target\u003Cbr/\u003EThe target takes 1% additional Damage Over Time for every Affliction point\u003Cbr/\u003EThe max Affliction is 100\u003C/div\u003E\u003C/div\u003E\"\u003EAffliction\u003C/span\u003E inflicted per second at \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFull Life\u003C/div\u003E\u003Cdiv\u003EWhen current Life is above 95% of Max Life\u003C/div\u003E\u003C/div\u003E\"\u003EFull Life\u003C/span\u003E.\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Persistent",
+    "rarity": "Magic",
+    "name": "Shocket - Violet",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+5\u003C/span\u003E% Movement Speed if you have caused \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EReaping\u003C/div\u003E\u003Cdiv\u003EDeals a certain amount of True Damage to the target, equivalent to the damage from all DoT effects over a certain period of time\u003C/div\u003E\u003C/div\u003E\"\u003EReaping\u003C/span\u003E recently\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Spell",
+    "rarity": "Legendary",
+    "name": "Dreamweaver",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+19\u003C/span\u003E% additional \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EElemental\u003C/div\u003E\u003Cdiv\u003EFire, Cold, and Lightning\u003C/div\u003E\u003C/div\u003E\"\u003EElemental\u003C/span\u003E Damage dealt by Spell Skills\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E1.2\u003C/span\u003E% Elemental Resistance Penetration when hitting an enemy with \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EElemental\u003C/div\u003E\u003Cdiv\u003EFire, Cold, and Lightning\u003C/div\u003E\u003C/div\u003E\"\u003EElemental\u003C/span\u003E Damage, stacking up to 4 times\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+3\u003C/span\u003E% Elemental Resistance Penetration every time you hit an enemy with Elemental Damage recently. Stacks up to 4 times\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Spell",
+    "rarity": "Legendary",
+    "name": "Squiddle",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EActivating \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESpell Burst\u003C/div\u003E\u003Cdiv\u003EAutomatically uses a Spell Skill a certain number of times.\u003Cbr/\u003EWhen Spell Burst is fully charged, the next Spell Skill used will activate Spell Burst, which will consume all stacks charged and automatically use the Spell Skill the same number of times.\u003Cbr/\u003ESkills that have a cooldown, Triggered Skills, Sentry Skills, Channeled Skills, and Combo Skills cannot activate Spell Burst.\u003C/div\u003E\u003C/div\u003E\"\u003ESpell Burst\u003C/span\u003E with at least \u003Cspan class=\"val\"\u003E6\u003C/span\u003E stack(s) of Max \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESpell Burst\u003C/div\u003E\u003Cdiv\u003EAutomatically uses a Spell Skill a certain number of times.\u003Cbr/\u003EWhen Spell Burst is fully charged, the next Spell Skill used will activate Spell Burst, which will consume all stacks charged and automatically use the Spell Skill the same number of times.\u003Cbr/\u003ESkills that have a cooldown, Triggered Skills, Sentry Skills, Channeled Skills, and Combo Skills cannot activate Spell Burst.\u003C/div\u003E\u003C/div\u003E\"\u003ESpell Burst\u003C/span\u003E grants 1 stack of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESquidnova\u003C/div\u003E\u003Cdiv\u003E+16% additional Hit Damage for skills cast by \u003Ce id=756\u003ESpell Burst\u003C/e\u003E\u003Cbr\u003Efor 10s.\u003C/div\u003E\u003C/div\u003E\"\u003ESquidnova\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+50\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESquidnova\u003C/div\u003E\u003Cdiv\u003E+16% additional Hit Damage for skills cast by \u003Ce id=756\u003ESpell Burst\u003C/e\u003E\u003Cbr\u003Efor 10s.\u003C/div\u003E\u003C/div\u003E\"\u003ESquidnova\u003C/span\u003E Effect\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E% additional Spell Damage when having \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESquidnova\u003C/div\u003E\u003Cdiv\u003E+16% additional Hit Damage for skills cast by \u003Ce id=756\u003ESpell Burst\u003C/e\u003E\u003Cbr\u003Efor 10s.\u003C/div\u003E\u003C/div\u003E\"\u003ESquidnova\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+1\u003C/span\u003E to Max \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESpell Burst\u003C/div\u003E\u003Cdiv\u003EAutomatically uses a Spell Skill a certain number of times.\u003Cbr/\u003EWhen Spell Burst is fully charged, the next Spell Skill used will activate Spell Burst, which will consume all stacks charged and automatically use the Spell Skill the same number of times.\u003Cbr/\u003ESkills that have a cooldown, Triggered Skills, Sentry Skills, Channeled Skills, and Combo Skills cannot activate Spell Burst.\u003C/div\u003E\u003C/div\u003E\"\u003ESpell Burst\u003C/span\u003E when having \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESquidnova\u003C/div\u003E\u003Cdiv\u003E+16% additional Hit Damage for skills cast by \u003Ce id=756\u003ESpell Burst\u003C/e\u003E\u003Cbr\u003Efor 10s.\u003C/div\u003E\u003C/div\u003E\"\u003ESquidnova\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Spell",
+    "rarity": "Legendary",
+    "name": "Starcatcher",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E% additional Cast Speed per second when an \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EElite\u003C/div\u003E\u003Cdiv\u003EElite monsters include rare monsters and bosses\u003C/div\u003E\u003C/div\u003E\"\u003EElite\u003C/span\u003E is \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENearby\u003C/div\u003E\u003Cdiv\u003EWithin 6m\u003C/div\u003E\u003C/div\u003E\"\u003ENearby\u003C/span\u003E, up to \u003Cspan class=\"val\"\u003E+24\u003C/span\u003E%\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% Movement Speed when an \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EElite\u003C/div\u003E\u003Cdiv\u003EElite monsters include rare monsters and bosses\u003C/div\u003E\u003C/div\u003E\"\u003EElite\u003C/span\u003E is \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENearby\u003C/div\u003E\u003Cdiv\u003EWithin 6m\u003C/div\u003E\u003C/div\u003E\"\u003ENearby\u003C/span\u003E, up to \u003Cspan class=\"val\"\u003E+12\u003C/span\u003E%\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E% Movement Speed per second when an \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EElite\u003C/div\u003E\u003Cdiv\u003EElite monsters include rare monsters and bosses\u003C/div\u003E\u003C/div\u003E\"\u003EElite\u003C/span\u003E is \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENearby\u003C/div\u003E\u003Cdiv\u003EWithin 6m\u003C/div\u003E\u003C/div\u003E\"\u003Enearby\u003C/span\u003E, up to \u003Cspan class=\"val\"\u003E+3\u003C/span\u003E stack(s)\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Spell",
+    "rarity": "Legendary",
+    "name": "The Bone worm's Daughter",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+70\u003C/span\u003E Spell Critical Strike Rating per Ailment on enemies, up to \u003Cspan class=\"val\"\u003E+140\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% Critical Strike Damage per Ailment on enemies, up to \u003Cspan class=\"val\"\u003E+14\u003C/span\u003E%\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+18\u003C/span\u003E% Critical Strike Damage per Ailment on enemies, up to \u003Cspan class=\"val\"\u003E+36\u003C/span\u003E%\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Spell",
+    "rarity": "Rare",
+    "name": "Cloudgatherer - Violet",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E1.6\u003C/span\u003E% Elemental Resistance Penetration every time you hit an enemy with Elemental Damage recently. Stacks up to 4 times\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Spell",
+    "rarity": "Rare",
+    "name": "Hell Cavalry - Glow",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+9\u003C/span\u003E% Critical Strike Damage per Ailment on enemies, up to \u003Cspan class=\"val\"\u003E+18\u003C/span\u003E%\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Spell",
+    "rarity": "Rare",
+    "name": "Shro-Shroom - Oyster Mushroom",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+28\u003C/span\u003E% Spell Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Spell",
+    "rarity": "Rare",
+    "name": "Winter Darer - Shallow Sea",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+5\u003C/span\u003E% Movement Speed per second when an \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EElite\u003C/div\u003E\u003Cdiv\u003EElite monsters include rare monsters and bosses\u003C/div\u003E\u003C/div\u003E\"\u003EElite\u003C/span\u003E is \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENearby\u003C/div\u003E\u003Cdiv\u003EWithin 6m\u003C/div\u003E\u003C/div\u003E\"\u003Enearby\u003C/span\u003E, up to \u003Cspan class=\"val\"\u003E+3\u003C/span\u003E stack(s)\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Spell",
+    "rarity": "Magic",
+    "name": "Idling Weasel - Sprouts",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E0.8\u003C/span\u003E% Elemental Resistance Penetration every time you hit an enemy with Elemental Damage recently. Stacks up to 4 times\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Spell",
+    "rarity": "Magic",
+    "name": "Luluri - Amethyst",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% Critical Strike Damage per Ailment on enemies, up to \u003Cspan class=\"val\"\u003E+8\u003C/span\u003E%\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Spell",
+    "rarity": "Magic",
+    "name": "Luluri - Maple",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+3\u003C/span\u003E% Movement Speed per second when an \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EElite\u003C/div\u003E\u003Cdiv\u003EElite monsters include rare monsters and bosses\u003C/div\u003E\u003C/div\u003E\"\u003EElite\u003C/span\u003E is \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENearby\u003C/div\u003E\u003Cdiv\u003EWithin 6m\u003C/div\u003E\u003C/div\u003E\"\u003Enearby\u003C/span\u003E, up to \u003Cspan class=\"val\"\u003E+3\u003C/span\u003E stack(s)\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Spell",
+    "rarity": "Magic",
+    "name": "Lumidrake - Aurora",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+14\u003C/span\u003E% Spell Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Summon",
+    "rarity": "Legendary",
+    "name": "Drapion Lady",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+55\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EOrigin of Spirit Magus\u003C/div\u003E\u003Cdiv\u003EBuff effect gained after Activating a Spirit Magus summoning skill.\u003C/div\u003E\u003C/div\u003E\"\u003EOrigin of Spirit Magus\u003C/span\u003E effect\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Spirit Magus Skill Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E% additional Spirit Magus Skill Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Summon",
+    "rarity": "Legendary",
+    "name": "Mechanical Throne",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+19\u003C/span\u003E% chance for Synthetic Troop Minions to deal Double Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E% Minion Attack and Cast Speed for \u003Cspan class=\"val\"\u003E4\u003C/span\u003E s when your Synthetic Troop Minions deal Double Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+20\u003C/span\u003E% Minion Attack and Cast Speed for \u003Cspan class=\"val\"\u003E4\u003C/span\u003E s when your Synthetic Troops deal Double Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Summon",
+    "rarity": "Legendary",
+    "name": "Scale of Original Sin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+53\u003C/span\u003E% additional Spirit Magus \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EUltimate\u003C/div\u003E\u003Cdiv\u003EWhen in a certain state, Spirit Magi use their Ultimate with extremely high strength\u003C/div\u003E\u003C/div\u003E\"\u003EUltimate\u003C/span\u003E Damage and Ailment Damage dealt by Ultimate when any two of Strength, Dexterity, and Intelligence are equal\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E Spirit Magus Skill Level\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Summon",
+    "rarity": "Legendary",
+    "name": "Sprite of Silent Vale",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+75\u003C/span\u003E initial \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EGrowth\u003C/div\u003E\u003Cdiv\u003ESpirit Magi grow into the next Stage for every 100 Growth. They start at Stage 1 and can grow until they reach Stage 5. For every 8 Growth they have, Spirit Magi gain +1% Physique, +5% additional Skill Area, and a bonus every stage:\u003Cbr/\u003EAt Stage 2, +30% chance for them to use Enhanced Skill chance.\u003Cbr/\u003EAt Stage 3, their Enhanced Skills become stronger.\u003Cbr/\u003EAt Stage 4, their Empower Skills become stronger.\u003Cbr/\u003EAt Stage 5, they +25% additional damage, +10% additional Skill Area, and gain increased Movement Speed and Tracking Area.\u003Cbr/\u003EThe max Growth is 1000.\u003C/div\u003E\u003C/div\u003E\"\u003EGrowth\u003C/span\u003E for Spirit Magi\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+12\u003C/span\u003E% Movement Speed when a Spirit Magus is \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENearby\u003C/div\u003E\u003Cdiv\u003EWithin 6m\u003C/div\u003E\u003C/div\u003E\"\u003Enearby\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EFor every \u003Cspan class=\"val\"\u003E20\u003C/span\u003E \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EGrowth\u003C/div\u003E\u003Cdiv\u003ESpirit Magi grow into the next Stage for every 100 Growth. They start at Stage 1 and can grow until they reach Stage 5. For every 8 Growth they have, Spirit Magi gain +1% Physique, +5% additional Skill Area, and a bonus every stage:\u003Cbr/\u003EAt Stage 2, +30% chance for them to use Enhanced Skill chance.\u003Cbr/\u003EAt Stage 3, their Enhanced Skills become stronger.\u003Cbr/\u003EAt Stage 4, their Empower Skills become stronger.\u003Cbr/\u003EAt Stage 5, they +25% additional damage, +10% additional Skill Area, and gain increased Movement Speed and Tracking Area.\u003Cbr/\u003EThe max Growth is 1000.\u003C/div\u003E\u003C/div\u003E\"\u003EGrowth\u003C/span\u003E a Spirit Magus has, it deals \u003Cspan class=\"val\"\u003E+1\u003C/span\u003E% additional damage, up to \u003Cspan class=\"val\"\u003E+10\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Summon",
+    "rarity": "Legendary",
+    "name": "Whisperwind Leaves",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+30\u003C/span\u003E% additional damage for recently summoned Minions\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+60\u003C/span\u003E Critical Strike Rating for recently summoned Minions\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+160\u003C/span\u003E Critical Strike Rating for recently summoned Minions\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Summon",
+    "rarity": "Rare",
+    "name": "Cloudgatherer - Sparkle",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+80\u003C/span\u003E Critical Strike Rating for recently summoned Minions\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Summon",
+    "rarity": "Rare",
+    "name": "Dragon Plant - Onion",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% Movement Speed when a Spirit Magus is \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENearby\u003C/div\u003E\u003Cdiv\u003EWithin 6m\u003C/div\u003E\u003C/div\u003E\"\u003Enearby\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Summon",
+    "rarity": "Rare",
+    "name": "Greedy Chestnut - Lotus Root",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional Spirit Magus Skill Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Summon",
+    "rarity": "Rare",
+    "name": "Letice - Amethyst",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+56\u003C/span\u003E% Spirit Magus Skill Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Summon",
+    "rarity": "Rare",
+    "name": "Winter Darer",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E% Minion Attack and Cast Speed for \u003Cspan class=\"val\"\u003E4\u003C/span\u003E s when your Synthetic Troops deal Double Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Summon",
+    "rarity": "Magic",
+    "name": "Explorer Otter - Olive",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E% additional Spirit Magus Skill Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Summon",
+    "rarity": "Magic",
+    "name": "Feasting Samurai - Garlic",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+3\u003C/span\u003E% Movement Speed when a Spirit Magus is \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENearby\u003C/div\u003E\u003Cdiv\u003EWithin 6m\u003C/div\u003E\u003C/div\u003E\"\u003Enearby\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Summon",
+    "rarity": "Magic",
+    "name": "Shocket - Pale",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+28\u003C/span\u003E% Spirit Magus Skill Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Summon",
+    "rarity": "Magic",
+    "name": "Spiny Snail - Flower",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+5\u003C/span\u003E% Minion Attack and Cast Speed for \u003Cspan class=\"val\"\u003E4\u003C/span\u003E s when your Synthetic Troops deal Double Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Summon",
+    "rarity": "Magic",
+    "name": "Spiny Snail - Iris",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+40\u003C/span\u003E Critical Strike Rating for recently summoned Minions\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Survival",
+    "rarity": "Legendary",
+    "name": "Anthem",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+14\u003C/span\u003E% additional Life\u003C/li\u003E\u003Cli class=\"mod\"\u003ERegenerates \u003Cspan class=\"val\"\u003E0.9\u003C/span\u003E% Life per second\u003C/li\u003E\u003Cli class=\"mod\"\u003ERegenerates \u003Cspan class=\"val\"\u003E2\u003C/span\u003E% Life per second\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-4\u003C/span\u003E% additional damage taken\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Survival",
+    "rarity": "Legendary",
+    "name": "Knight of Pale Blue",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-55\u003C/span\u003E% additional Physical Damage taken when there are only \u003Cspan class=\"val\"\u003E1\u003C/span\u003E enemies \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENearby\u003C/div\u003E\u003Cdiv\u003EWithin 6m\u003C/div\u003E\u003C/div\u003E\"\u003ENearby\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-4\u003C/span\u003E% additional damage taken\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-8\u003C/span\u003E% additional damage taken\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-4\u003C/span\u003E% additional damage taken\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Survival",
+    "rarity": "Legendary",
+    "name": "Preserver of Eternity",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+40\u003C/span\u003E% Movement Speed if you haven't been hit recently\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E% Movement Speed\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+20\u003C/span\u003E% Movement Speed\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-4\u003C/span\u003E% additional damage taken\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Survival",
+    "rarity": "Legendary",
+    "name": "Spirit Bless",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+14\u003C/span\u003E% additional Max Energy Shield\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E% Energy Shield \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECharge\u003C/div\u003E\u003Cdiv\u003EEnergy Shield starts to charge after the character hasn't taken any damage for 2s at the rate of 20% of Max Energy Shield per second and stops charging if the character takes damage\u003C/div\u003E\u003C/div\u003E\"\u003ECharge\u003C/span\u003E Speed\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+16\u003C/span\u003E% Energy Shield \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECharge\u003C/div\u003E\u003Cdiv\u003EEnergy Shield starts to charge after the character hasn't taken any damage for 2s at the rate of 20% of Max Energy Shield per second and stops charging if the character takes damage\u003C/div\u003E\u003C/div\u003E\"\u003ECharge\u003C/span\u003E Speed\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-4\u003C/span\u003E% additional damage taken\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Survival",
+    "rarity": "Legendary",
+    "name": "Warbler of Plum Blossoms",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+14\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EElemental\u003C/div\u003E\u003Cdiv\u003EFire, Cold, and Lightning\u003C/div\u003E\u003C/div\u003E\"\u003EElemental\u003C/span\u003E Resistance\u003C/li\u003E\u003Cli class=\"mod\"\u003EConverts \u003Cspan class=\"val\"\u003E3\u003C/span\u003E% of Physical Damage taken to random \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EElemental\u003C/div\u003E\u003Cdiv\u003EFire, Cold, and Lightning\u003C/div\u003E\u003C/div\u003E\"\u003EElemental\u003C/span\u003E Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003EConverts \u003Cspan class=\"val\"\u003E8\u003C/span\u003E% of Physical Damage taken to random \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EElemental\u003C/div\u003E\u003Cdiv\u003EFire, Cold, and Lightning\u003C/div\u003E\u003C/div\u003E\"\u003EElemental\u003C/span\u003E Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-4\u003C/span\u003E% additional damage taken\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Survival",
+    "rarity": "Rare",
+    "name": "Hell Cavalry",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-6\u003C/span\u003E% additional damage taken\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-4\u003C/span\u003E% additional damage taken\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-4\u003C/span\u003E% additional damage taken\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Survival",
+    "rarity": "Rare",
+    "name": "Plaintive Ball of Thread",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-6\u003C/span\u003E% additional damage taken\u003C/li\u003E\u003Cli class=\"mod\"\u003ERegenerates \u003Cspan class=\"val\"\u003E1.2\u003C/span\u003E% Life per second\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-4\u003C/span\u003E% additional damage taken\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Survival",
+    "rarity": "Rare",
+    "name": "Traveling Lizard - Flower",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-6\u003C/span\u003E% additional damage taken\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E% Movement Speed\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-4\u003C/span\u003E% additional damage taken\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Survival",
+    "rarity": "Rare",
+    "name": "Traveling Lizard - Ocean",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-6\u003C/span\u003E% additional damage taken\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E% Energy Shield \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECharge\u003C/div\u003E\u003Cdiv\u003EEnergy Shield starts to charge after the character hasn't taken any damage for 2s at the rate of 20% of Max Energy Shield per second and stops charging if the character takes damage\u003C/div\u003E\u003C/div\u003E\"\u003ECharge\u003C/span\u003E Speed\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-4\u003C/span\u003E% additional damage taken\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Survival",
+    "rarity": "Rare",
+    "name": "Winter Darer - Rock",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-6\u003C/span\u003E% additional damage taken\u003C/li\u003E\u003Cli class=\"mod\"\u003EConverts \u003Cspan class=\"val\"\u003E4\u003C/span\u003E% of Physical Damage taken to random \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EElemental\u003C/div\u003E\u003Cdiv\u003EFire, Cold, and Lightning\u003C/div\u003E\u003C/div\u003E\"\u003EElemental\u003C/span\u003E Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-4\u003C/span\u003E% additional damage taken\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Survival",
+    "rarity": "Magic",
+    "name": "Explorer Otter - Mudstone",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-6\u003C/span\u003E% additional damage taken\u003C/li\u003E\u003Cli class=\"mod\"\u003ERegenerates \u003Cspan class=\"val\"\u003E0.6\u003C/span\u003E% Life per second\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-4\u003C/span\u003E% additional damage taken\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Survival",
+    "rarity": "Magic",
+    "name": "Explorer Otter - Quicksand",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-6\u003C/span\u003E% additional damage taken\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+5\u003C/span\u003E% Movement Speed\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-4\u003C/span\u003E% additional damage taken\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Survival",
+    "rarity": "Magic",
+    "name": "Explorer Otter - Rock",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-6\u003C/span\u003E% additional damage taken\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% Energy Shield \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECharge\u003C/div\u003E\u003Cdiv\u003EEnergy Shield starts to charge after the character hasn't taken any damage for 2s at the rate of 20% of Max Energy Shield per second and stops charging if the character takes damage\u003C/div\u003E\u003C/div\u003E\"\u003ECharge\u003C/span\u003E Speed\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-4\u003C/span\u003E% additional damage taken\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Survival",
+    "rarity": "Magic",
+    "name": "Spiny Snail - Cloudless Sky",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-6\u003C/span\u003E% additional damage taken\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-2\u003C/span\u003E% additional damage taken\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-4\u003C/span\u003E% additional damage taken\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Survival",
+    "rarity": "Magic",
+    "name": "Spiny Snail - Green",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-6\u003C/span\u003E% additional damage taken\u003C/li\u003E\u003Cli class=\"mod\"\u003EConverts \u003Cspan class=\"val\"\u003E2\u003C/span\u003E% of Physical Damage taken to random \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EElemental\u003C/div\u003E\u003Cdiv\u003EFire, Cold, and Lightning\u003C/div\u003E\u003C/div\u003E\"\u003EElemental\u003C/span\u003E Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-4\u003C/span\u003E% additional damage taken\u003C/li\u003E\u003C/ul\u003E"
+  }
+]

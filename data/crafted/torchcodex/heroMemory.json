@@ -1,0 +1,1697 @@
+[
+  {
+    "type": "Base Stats",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+90\u003C/span\u003E Dexterity\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Stats",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+90\u003C/span\u003E Intelligence\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Stats",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+90\u003C/span\u003E Strength\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Stats",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+90\u003C/span\u003E% damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Stats",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+90\u003C/span\u003E% Minion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Stats",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+180\u003C/span\u003E Max Mana\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Stats",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+330\u003C/span\u003E Max Life\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Stats",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4320\u003C/span\u003E Armor\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Stats",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4320\u003C/span\u003E Evasion\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Stats",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+525\u003C/span\u003E Max Energy Shield\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Stats",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+30\u003C/span\u003E% Movement Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Stats",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+36\u003C/span\u003E% Attack Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Stats",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+36\u003C/span\u003E% Cast Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Stats",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+36\u003C/span\u003E% Minion Attack Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Stats",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+36\u003C/span\u003E% Minion Cast Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E(-60–-40)\u003C/span\u003E% Curse effect against you\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–12)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAffliction\u003C/div\u003E\u003Cdiv\u003EWhen the Affliction inflicted per second is not 0, the Damage Over Time dealt will continuously inflicts Affliction on the target\u003Cbr/\u003EThe target takes 1% additional Damage Over Time for every Affliction point\u003Cbr/\u003EThe max Affliction is 100\u003C/div\u003E\u003C/div\u003E\"\u003EAffliction\u003C/span\u003E Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–12)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EReaping\u003C/div\u003E\u003Cdiv\u003EDeals a certain amount of True Damage to the target, equivalent to the damage from all DoT effects over a certain period of time\u003C/div\u003E\u003C/div\u003E\"\u003EReaping\u003C/span\u003E Recovery Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–14)\u003C/span\u003E% Attack Block Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–14)\u003C/span\u003E% Max Energy Shield\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–14)\u003C/span\u003E% Max Life\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–14)\u003C/span\u003E% Spell Block Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(12–18)\u003C/span\u003E% Armor\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(12–18)\u003C/span\u003E% Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(12–18)\u003C/span\u003E% Evasion\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(12–18)\u003C/span\u003E% Minion Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(14–18)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAffliction\u003C/div\u003E\u003Cdiv\u003EWhen the Affliction inflicted per second is not 0, the Damage Over Time dealt will continuously inflicts Affliction on the target\u003Cbr/\u003EThe target takes 1% additional Damage Over Time for every Affliction point\u003Cbr/\u003EThe max Affliction is 100\u003C/div\u003E\u003C/div\u003E\"\u003EAffliction\u003C/span\u003E Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(14–22)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EReaping\u003C/div\u003E\u003Cdiv\u003EDeals a certain amount of True Damage to the target, equivalent to the damage from all DoT effects over a certain period of time\u003C/div\u003E\u003C/div\u003E\"\u003EReaping\u003C/span\u003E Recovery Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(15–21)\u003C/span\u003E% Attack Block Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(15–21)\u003C/span\u003E% Spell Block Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(18–22)\u003C/span\u003E% Movement Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(2–4)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EMax Resistance\u003C/div\u003E\u003Cdiv\u003EBy default, the Max Resistance is 60%. This limit can be increased.\u003C/div\u003E\u003C/div\u003E\"\u003EMax Cold Resistance\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(2–4)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EMax Resistance\u003C/div\u003E\u003Cdiv\u003EBy default, the Max Resistance is 60%. This limit can be increased.\u003C/div\u003E\u003C/div\u003E\"\u003EMax Erosion Resistance\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(2–4)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EMax Resistance\u003C/div\u003E\u003Cdiv\u003EBy default, the Max Resistance is 60%. This limit can be increased.\u003C/div\u003E\u003C/div\u003E\"\u003EMax Fire Resistance\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(2–4)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EMax Resistance\u003C/div\u003E\u003Cdiv\u003EBy default, the Max Resistance is 60%. This limit can be increased.\u003C/div\u003E\u003C/div\u003E\"\u003EMax Lightning Resistance\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–26)\u003C/span\u003E% Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–26)\u003C/span\u003E% Minion Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–28)\u003C/span\u003E% Armor\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–28)\u003C/span\u003E% damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–28)\u003C/span\u003E% Evasion\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–28)\u003C/span\u003E% Minion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–30)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAffliction\u003C/div\u003E\u003Cdiv\u003EWhen the Affliction inflicted per second is not 0, the Damage Over Time dealt will continuously inflicts Affliction on the target\u003Cbr/\u003EThe target takes 1% additional Damage Over Time for every Affliction point\u003Cbr/\u003EThe max Affliction is 100\u003C/div\u003E\u003C/div\u003E\"\u003EAffliction\u003C/span\u003E Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(24–32)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EReaping\u003C/div\u003E\u003Cdiv\u003EDeals a certain amount of True Damage to the target, equivalent to the damage from all DoT effects over a certain period of time\u003C/div\u003E\u003C/div\u003E\"\u003EReaping\u003C/span\u003E Recovery Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(26–30)\u003C/span\u003E% chance to avoid \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EElemental Ailment\u003C/div\u003E\u003Cdiv\u003EIgnite, Frostbite, Freeze, and Numbed\u003C/div\u003E\u003C/div\u003E\"\u003EElemental Ailments\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(28–31)\u003C/span\u003E% Minion Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(30–42)\u003C/span\u003E% Armor\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(30–42)\u003C/span\u003E% damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(30–42)\u003C/span\u003E% Evasion\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(30–42)\u003C/span\u003E% Minion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(38–42)\u003C/span\u003E% Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(4–6)\u003C/span\u003E% Max Energy Shield\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(4–6)\u003C/span\u003E% Max Life\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(44–52)\u003C/span\u003E% damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(44–52)\u003C/span\u003E% Minion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(6–8)\u003C/span\u003E% Max Energy Shield\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(6–8)\u003C/span\u003E% Max Life\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(6–9)\u003C/span\u003E% Attack Block Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(6–9)\u003C/span\u003E% Spell Block Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E% Attack Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E% Cast Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E% Cooldown Recovery Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E% Minion Attack Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E% Minion Cast Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+15\u003C/span\u003E% Skill Area\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+16\u003C/span\u003E% Attack Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+16\u003C/span\u003E% Cast Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+16\u003C/span\u003E% Minion Attack Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+16\u003C/span\u003E% Minion Cast Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+16\u003C/span\u003E% Projectile Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E to Hero Trait Level\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+23\u003C/span\u003E% Skill Area\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+24\u003C/span\u003E% Projectile Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+30\u003C/span\u003E% Projectile Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+32\u003C/span\u003E% Skill Area\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+40\u003C/span\u003E% Critical Strike Rating\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+40\u003C/span\u003E% Minion Critical Strike Rating\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% Attack Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% Cast Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% Minion Attack Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% Minion Cast Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+60\u003C/span\u003E% Critical Strike Rating\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+60\u003C/span\u003E% Minion Critical Strike Rating\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+80\u003C/span\u003E% Critical Strike Rating\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+80\u003C/span\u003E% Minion Critical Strike Rating\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EImmune to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EBlind\u003C/div\u003E\u003Cdiv\u003ETarget's damage has a 20% chance to miss before addressed\u003C/div\u003E\u003C/div\u003E\"\u003EBlinding\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EImmune to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EParalysis\u003C/div\u003E\u003Cdiv\u003EIncreases damage taken by 15%\u003C/div\u003E\u003C/div\u003E\"\u003EParalysis\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EImmune to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESlow\u003C/div\u003E\u003Cdiv\u003EEach stack reduces Attack Speed, Cast Speed, and Movement Speed by 6%. Stacks up to 5 times\u003C/div\u003E\u003C/div\u003E\"\u003ESlow\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EImmune to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EWeaken\u003C/div\u003E\u003Cdiv\u003EReduces damage dealt by 10%\u003C/div\u003E\u003C/div\u003E\"\u003EWeaken\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E(-60–-40)\u003C/span\u003E% Curse effect against you\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–12)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAffliction\u003C/div\u003E\u003Cdiv\u003EWhen the Affliction inflicted per second is not 0, the Damage Over Time dealt will continuously inflicts Affliction on the target\u003Cbr/\u003EThe target takes 1% additional Damage Over Time for every Affliction point\u003Cbr/\u003EThe max Affliction is 100\u003C/div\u003E\u003C/div\u003E\"\u003EAffliction\u003C/span\u003E Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–12)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EReaping\u003C/div\u003E\u003Cdiv\u003EDeals a certain amount of True Damage to the target, equivalent to the damage from all DoT effects over a certain period of time\u003C/div\u003E\u003C/div\u003E\"\u003EReaping\u003C/span\u003E Recovery Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–14)\u003C/span\u003E% Attack Block Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–14)\u003C/span\u003E% Max Energy Shield\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–14)\u003C/span\u003E% Max Life\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–14)\u003C/span\u003E% Spell Block Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(12–18)\u003C/span\u003E% Armor\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(12–18)\u003C/span\u003E% Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(12–18)\u003C/span\u003E% Evasion\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(12–18)\u003C/span\u003E% Minion Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(14–18)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAffliction\u003C/div\u003E\u003Cdiv\u003EWhen the Affliction inflicted per second is not 0, the Damage Over Time dealt will continuously inflicts Affliction on the target\u003Cbr/\u003EThe target takes 1% additional Damage Over Time for every Affliction point\u003Cbr/\u003EThe max Affliction is 100\u003C/div\u003E\u003C/div\u003E\"\u003EAffliction\u003C/span\u003E Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(14–22)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EReaping\u003C/div\u003E\u003Cdiv\u003EDeals a certain amount of True Damage to the target, equivalent to the damage from all DoT effects over a certain period of time\u003C/div\u003E\u003C/div\u003E\"\u003EReaping\u003C/span\u003E Recovery Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(15–21)\u003C/span\u003E% Attack Block Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(15–21)\u003C/span\u003E% Spell Block Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(18–22)\u003C/span\u003E% Movement Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(2–4)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EMax Resistance\u003C/div\u003E\u003Cdiv\u003EBy default, the Max Resistance is 60%. This limit can be increased.\u003C/div\u003E\u003C/div\u003E\"\u003EMax Cold Resistance\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(2–4)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EMax Resistance\u003C/div\u003E\u003Cdiv\u003EBy default, the Max Resistance is 60%. This limit can be increased.\u003C/div\u003E\u003C/div\u003E\"\u003EMax Erosion Resistance\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(2–4)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EMax Resistance\u003C/div\u003E\u003Cdiv\u003EBy default, the Max Resistance is 60%. This limit can be increased.\u003C/div\u003E\u003C/div\u003E\"\u003EMax Fire Resistance\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(2–4)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EMax Resistance\u003C/div\u003E\u003Cdiv\u003EBy default, the Max Resistance is 60%. This limit can be increased.\u003C/div\u003E\u003C/div\u003E\"\u003EMax Lightning Resistance\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–26)\u003C/span\u003E% Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–26)\u003C/span\u003E% Minion Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–28)\u003C/span\u003E% Armor\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–28)\u003C/span\u003E% damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–28)\u003C/span\u003E% Evasion\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–28)\u003C/span\u003E% Minion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–30)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAffliction\u003C/div\u003E\u003Cdiv\u003EWhen the Affliction inflicted per second is not 0, the Damage Over Time dealt will continuously inflicts Affliction on the target\u003Cbr/\u003EThe target takes 1% additional Damage Over Time for every Affliction point\u003Cbr/\u003EThe max Affliction is 100\u003C/div\u003E\u003C/div\u003E\"\u003EAffliction\u003C/span\u003E Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(24–32)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EReaping\u003C/div\u003E\u003Cdiv\u003EDeals a certain amount of True Damage to the target, equivalent to the damage from all DoT effects over a certain period of time\u003C/div\u003E\u003C/div\u003E\"\u003EReaping\u003C/span\u003E Recovery Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(26–30)\u003C/span\u003E% chance to avoid \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EElemental Ailment\u003C/div\u003E\u003Cdiv\u003EIgnite, Frostbite, Freeze, and Numbed\u003C/div\u003E\u003C/div\u003E\"\u003EElemental Ailments\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(28–31)\u003C/span\u003E% Minion Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(30–42)\u003C/span\u003E% damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(30–42)\u003C/span\u003E% Minion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(34–38)\u003C/span\u003E% Armor\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(34–38)\u003C/span\u003E% Evasion\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(38–42)\u003C/span\u003E% Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(4–6)\u003C/span\u003E% Max Energy Shield\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(4–6)\u003C/span\u003E% Max Life\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(44–52)\u003C/span\u003E% damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(44–52)\u003C/span\u003E% Minion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(6–8)\u003C/span\u003E% Max Energy Shield\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(6–8)\u003C/span\u003E% Max Life\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(6–9)\u003C/span\u003E% Attack Block Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(6–9)\u003C/span\u003E% Spell Block Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E% Attack Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E% Cast Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E% Cooldown Recovery Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E% Minion Attack Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E% Minion Cast Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+15\u003C/span\u003E% Skill Area\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+16\u003C/span\u003E% Attack Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+16\u003C/span\u003E% Cast Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+16\u003C/span\u003E% Minion Attack Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+16\u003C/span\u003E% Minion Cast Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+16\u003C/span\u003E% Projectile Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E to Hero Trait Level\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+23\u003C/span\u003E% Skill Area\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+24\u003C/span\u003E% Projectile Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+30\u003C/span\u003E% Projectile Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+32\u003C/span\u003E% Skill Area\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+40\u003C/span\u003E% Critical Strike Rating\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+40\u003C/span\u003E% Minion Critical Strike Rating\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% Attack Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% Cast Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% Minion Attack Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% Minion Cast Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+60\u003C/span\u003E% Critical Strike Rating\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+60\u003C/span\u003E% Minion Critical Strike Rating\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+80\u003C/span\u003E% Critical Strike Rating\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+80\u003C/span\u003E% Minion Critical Strike Rating\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EImmune to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EBlind\u003C/div\u003E\u003Cdiv\u003ETarget's damage has a 20% chance to miss before addressed\u003C/div\u003E\u003C/div\u003E\"\u003EBlinding\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EImmune to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EParalysis\u003C/div\u003E\u003Cdiv\u003EIncreases damage taken by 15%\u003C/div\u003E\u003C/div\u003E\"\u003EParalysis\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EImmune to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESlow\u003C/div\u003E\u003Cdiv\u003EEach stack reduces Attack Speed, Cast Speed, and Movement Speed by 6%. Stacks up to 5 times\u003C/div\u003E\u003C/div\u003E\"\u003ESlow\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EImmune to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EWeaken\u003C/div\u003E\u003Cdiv\u003EReduces damage dealt by 10%\u003C/div\u003E\u003C/div\u003E\"\u003EWeaken\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E(-60–-40)\u003C/span\u003E% Curse effect against you\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–12)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAffliction\u003C/div\u003E\u003Cdiv\u003EWhen the Affliction inflicted per second is not 0, the Damage Over Time dealt will continuously inflicts Affliction on the target\u003Cbr/\u003EThe target takes 1% additional Damage Over Time for every Affliction point\u003Cbr/\u003EThe max Affliction is 100\u003C/div\u003E\u003C/div\u003E\"\u003EAffliction\u003C/span\u003E Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–12)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EReaping\u003C/div\u003E\u003Cdiv\u003EDeals a certain amount of True Damage to the target, equivalent to the damage from all DoT effects over a certain period of time\u003C/div\u003E\u003C/div\u003E\"\u003EReaping\u003C/span\u003E Recovery Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–14)\u003C/span\u003E% Attack Block Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–14)\u003C/span\u003E% Max Energy Shield\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–14)\u003C/span\u003E% Max Life\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–14)\u003C/span\u003E% Spell Block Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(12–18)\u003C/span\u003E% Armor\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(12–18)\u003C/span\u003E% Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(12–18)\u003C/span\u003E% Evasion\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(12–18)\u003C/span\u003E% Minion Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(14–18)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAffliction\u003C/div\u003E\u003Cdiv\u003EWhen the Affliction inflicted per second is not 0, the Damage Over Time dealt will continuously inflicts Affliction on the target\u003Cbr/\u003EThe target takes 1% additional Damage Over Time for every Affliction point\u003Cbr/\u003EThe max Affliction is 100\u003C/div\u003E\u003C/div\u003E\"\u003EAffliction\u003C/span\u003E Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(14–22)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EReaping\u003C/div\u003E\u003Cdiv\u003EDeals a certain amount of True Damage to the target, equivalent to the damage from all DoT effects over a certain period of time\u003C/div\u003E\u003C/div\u003E\"\u003EReaping\u003C/span\u003E Recovery Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(15–21)\u003C/span\u003E% Attack Block Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(15–21)\u003C/span\u003E% Spell Block Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(18–22)\u003C/span\u003E% Movement Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(2–4)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EMax Resistance\u003C/div\u003E\u003Cdiv\u003EBy default, the Max Resistance is 60%. This limit can be increased.\u003C/div\u003E\u003C/div\u003E\"\u003EMax Cold Resistance\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(2–4)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EMax Resistance\u003C/div\u003E\u003Cdiv\u003EBy default, the Max Resistance is 60%. This limit can be increased.\u003C/div\u003E\u003C/div\u003E\"\u003EMax Erosion Resistance\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(2–4)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EMax Resistance\u003C/div\u003E\u003Cdiv\u003EBy default, the Max Resistance is 60%. This limit can be increased.\u003C/div\u003E\u003C/div\u003E\"\u003EMax Fire Resistance\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(2–4)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EMax Resistance\u003C/div\u003E\u003Cdiv\u003EBy default, the Max Resistance is 60%. This limit can be increased.\u003C/div\u003E\u003C/div\u003E\"\u003EMax Lightning Resistance\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–26)\u003C/span\u003E% Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–26)\u003C/span\u003E% Minion Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–28)\u003C/span\u003E% Armor\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–28)\u003C/span\u003E% damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–28)\u003C/span\u003E% Evasion\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–28)\u003C/span\u003E% Minion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–30)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAffliction\u003C/div\u003E\u003Cdiv\u003EWhen the Affliction inflicted per second is not 0, the Damage Over Time dealt will continuously inflicts Affliction on the target\u003Cbr/\u003EThe target takes 1% additional Damage Over Time for every Affliction point\u003Cbr/\u003EThe max Affliction is 100\u003C/div\u003E\u003C/div\u003E\"\u003EAffliction\u003C/span\u003E Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(24–32)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EReaping\u003C/div\u003E\u003Cdiv\u003EDeals a certain amount of True Damage to the target, equivalent to the damage from all DoT effects over a certain period of time\u003C/div\u003E\u003C/div\u003E\"\u003EReaping\u003C/span\u003E Recovery Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(26–30)\u003C/span\u003E% chance to avoid \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EElemental Ailment\u003C/div\u003E\u003Cdiv\u003EIgnite, Frostbite, Freeze, and Numbed\u003C/div\u003E\u003C/div\u003E\"\u003EElemental Ailments\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(28–31)\u003C/span\u003E% Minion Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(30–42)\u003C/span\u003E% damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(30–42)\u003C/span\u003E% Minion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(34–38)\u003C/span\u003E% Armor\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(34–38)\u003C/span\u003E% Evasion\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(38–42)\u003C/span\u003E% Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(4–6)\u003C/span\u003E% Max Energy Shield\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(4–6)\u003C/span\u003E% Max Life\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(44–52)\u003C/span\u003E% damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(44–52)\u003C/span\u003E% Minion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(6–8)\u003C/span\u003E% Max Energy Shield\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(6–8)\u003C/span\u003E% Max Life\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(6–9)\u003C/span\u003E% Attack Block Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(6–9)\u003C/span\u003E% Spell Block Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E% Attack Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E% Cast Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E% Cooldown Recovery Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E% Minion Attack Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E% Minion Cast Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+15\u003C/span\u003E% Skill Area\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+16\u003C/span\u003E% Attack Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+16\u003C/span\u003E% Cast Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+16\u003C/span\u003E% Minion Attack Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+16\u003C/span\u003E% Minion Cast Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+16\u003C/span\u003E% Projectile Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E to Hero Trait Level\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+23\u003C/span\u003E% Skill Area\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+24\u003C/span\u003E% Projectile Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+30\u003C/span\u003E% Projectile Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+32\u003C/span\u003E% Skill Area\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+40\u003C/span\u003E% Critical Strike Rating\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+40\u003C/span\u003E% Minion Critical Strike Rating\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% Attack Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% Cast Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% Minion Attack Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% Minion Cast Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+60\u003C/span\u003E% Critical Strike Rating\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+60\u003C/span\u003E% Minion Critical Strike Rating\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+80\u003C/span\u003E% Critical Strike Rating\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+80\u003C/span\u003E% Minion Critical Strike Rating\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EImmune to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EBlind\u003C/div\u003E\u003Cdiv\u003ETarget's damage has a 20% chance to miss before addressed\u003C/div\u003E\u003C/div\u003E\"\u003EBlinding\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EImmune to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EParalysis\u003C/div\u003E\u003Cdiv\u003EIncreases damage taken by 15%\u003C/div\u003E\u003C/div\u003E\"\u003EParalysis\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EImmune to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESlow\u003C/div\u003E\u003Cdiv\u003EEach stack reduces Attack Speed, Cast Speed, and Movement Speed by 6%. Stacks up to 5 times\u003C/div\u003E\u003C/div\u003E\"\u003ESlow\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EImmune to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EWeaken\u003C/div\u003E\u003Cdiv\u003EReduces damage dealt by 10%\u003C/div\u003E\u003C/div\u003E\"\u003EWeaken\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–12)\u003C/span\u003E% additional Attack and Cast Speed for Combo Starters\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(31–40)\u003C/span\u003E% Critical Strike Damage for Combo Finishers\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(14–20)\u003C/span\u003E% Max Energy Shield\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(14–20)\u003C/span\u003E% Max Life\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(18–23)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EOrigin of Spirit Magus\u003C/div\u003E\u003Cdiv\u003EBuff effect gained after Activating a Spirit Magus summoning skill.\u003C/div\u003E\u003C/div\u003E\"\u003EOrigin of Spirit Magus\u003C/span\u003E effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(21–31)\u003C/span\u003E% Attack Block Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(21–31)\u003C/span\u003E% Spell Block Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(22–27)\u003C/span\u003E% Max Mana\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(25–32)\u003C/span\u003E% Focus Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(26–40)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAffliction\u003C/div\u003E\u003Cdiv\u003EWhen the Affliction inflicted per second is not 0, the Damage Over Time dealt will continuously inflicts Affliction on the target\u003Cbr/\u003EThe target takes 1% additional Damage Over Time for every Affliction point\u003Cbr/\u003EThe max Affliction is 100\u003C/div\u003E\u003C/div\u003E\"\u003EAffliction\u003C/span\u003E Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(26–40)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EReaping\u003C/div\u003E\u003Cdiv\u003EDeals a certain amount of True Damage to the target, equivalent to the damage from all DoT effects over a certain period of time\u003C/div\u003E\u003C/div\u003E\"\u003EReaping\u003C/span\u003E Recovery Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(39–45)\u003C/span\u003E% Skill Area\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(40–46)\u003C/span\u003E% Armor\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(40–46)\u003C/span\u003E% Evasion\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(46–58)\u003C/span\u003E% attack Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(46–58)\u003C/span\u003E% Spell Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(55–65)\u003C/span\u003E% Cold Skill Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(55–65)\u003C/span\u003E% Erosion Skill Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(55–65)\u003C/span\u003E% Fire Skill Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(55–65)\u003C/span\u003E% Lightning Skill Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(55–65)\u003C/span\u003E% Minion Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(55–65)\u003C/span\u003E% Physical Skill Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(58–68)\u003C/span\u003E% Attack Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(58–68)\u003C/span\u003E% Cold Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(58–68)\u003C/span\u003E% Damage Over Time\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(58–68)\u003C/span\u003E% Erosion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(58–68)\u003C/span\u003E% Fire Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(58–68)\u003C/span\u003E% Lightning Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(58–68)\u003C/span\u003E% Minion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(58–68)\u003C/span\u003E% Physical Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(58–68)\u003C/span\u003E% Spell Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+104\u003C/span\u003E% Attack Critical Strike Rating\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+104\u003C/span\u003E% Minion Critical Strike Rating\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+104\u003C/span\u003E% Spell Critical Strike Rating\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+18\u003C/span\u003E% Attack and Cast Speed\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+18\u003C/span\u003E% Minion Attack and Cast Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+52\u003C/span\u003E% Projectile Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–12)\u003C/span\u003E% additional Attack and Cast Speed for Combo Starters\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(31–40)\u003C/span\u003E% Critical Strike Damage for Combo Finishers\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(14–20)\u003C/span\u003E% Max Energy Shield\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(14–20)\u003C/span\u003E% Max Life\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(18–23)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EOrigin of Spirit Magus\u003C/div\u003E\u003Cdiv\u003EBuff effect gained after Activating a Spirit Magus summoning skill.\u003C/div\u003E\u003C/div\u003E\"\u003EOrigin of Spirit Magus\u003C/span\u003E effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(21–31)\u003C/span\u003E% Attack Block Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(21–31)\u003C/span\u003E% Spell Block Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(22–27)\u003C/span\u003E% Max Mana\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(25–32)\u003C/span\u003E% Focus Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(26–40)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAffliction\u003C/div\u003E\u003Cdiv\u003EWhen the Affliction inflicted per second is not 0, the Damage Over Time dealt will continuously inflicts Affliction on the target\u003Cbr/\u003EThe target takes 1% additional Damage Over Time for every Affliction point\u003Cbr/\u003EThe max Affliction is 100\u003C/div\u003E\u003C/div\u003E\"\u003EAffliction\u003C/span\u003E Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(26–40)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EReaping\u003C/div\u003E\u003Cdiv\u003EDeals a certain amount of True Damage to the target, equivalent to the damage from all DoT effects over a certain period of time\u003C/div\u003E\u003C/div\u003E\"\u003EReaping\u003C/span\u003E Recovery Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(39–45)\u003C/span\u003E% Skill Area\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(40–46)\u003C/span\u003E% Armor\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(40–46)\u003C/span\u003E% Evasion\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(46–58)\u003C/span\u003E% attack Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(46–58)\u003C/span\u003E% Spell Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(55–65)\u003C/span\u003E% Cold Skill Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(55–65)\u003C/span\u003E% Erosion Skill Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(55–65)\u003C/span\u003E% Fire Skill Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(55–65)\u003C/span\u003E% Lightning Skill Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(55–65)\u003C/span\u003E% Minion Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(55–65)\u003C/span\u003E% Physical Skill Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(58–68)\u003C/span\u003E% Attack Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(58–68)\u003C/span\u003E% Cold Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(58–68)\u003C/span\u003E% Damage Over Time\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(58–68)\u003C/span\u003E% Erosion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(58–68)\u003C/span\u003E% Fire Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(58–68)\u003C/span\u003E% Lightning Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(58–68)\u003C/span\u003E% Minion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(58–68)\u003C/span\u003E% Physical Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(58–68)\u003C/span\u003E% Spell Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+104\u003C/span\u003E% Attack Critical Strike Rating\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+104\u003C/span\u003E% Minion Critical Strike Rating\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+104\u003C/span\u003E% Spell Critical Strike Rating\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+18\u003C/span\u003E% Attack and Cast Speed\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+18\u003C/span\u003E% Minion Attack and Cast Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+52\u003C/span\u003E% Projectile Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–12)\u003C/span\u003E% additional Attack and Cast Speed for Combo Starters\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(31–40)\u003C/span\u003E% Critical Strike Damage for Combo Finishers\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(14–20)\u003C/span\u003E% Max Energy Shield\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(14–20)\u003C/span\u003E% Max Life\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(18–23)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EOrigin of Spirit Magus\u003C/div\u003E\u003Cdiv\u003EBuff effect gained after Activating a Spirit Magus summoning skill.\u003C/div\u003E\u003C/div\u003E\"\u003EOrigin of Spirit Magus\u003C/span\u003E effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(21–31)\u003C/span\u003E% Attack Block Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(21–31)\u003C/span\u003E% Spell Block Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(22–27)\u003C/span\u003E% Max Mana\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(25–32)\u003C/span\u003E% Focus Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(26–40)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAffliction\u003C/div\u003E\u003Cdiv\u003EWhen the Affliction inflicted per second is not 0, the Damage Over Time dealt will continuously inflicts Affliction on the target\u003Cbr/\u003EThe target takes 1% additional Damage Over Time for every Affliction point\u003Cbr/\u003EThe max Affliction is 100\u003C/div\u003E\u003C/div\u003E\"\u003EAffliction\u003C/span\u003E Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(26–40)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EReaping\u003C/div\u003E\u003Cdiv\u003EDeals a certain amount of True Damage to the target, equivalent to the damage from all DoT effects over a certain period of time\u003C/div\u003E\u003C/div\u003E\"\u003EReaping\u003C/span\u003E Recovery Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(39–45)\u003C/span\u003E% Skill Area\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(40–46)\u003C/span\u003E% Armor\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(40–46)\u003C/span\u003E% Evasion\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(46–58)\u003C/span\u003E% attack Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(46–58)\u003C/span\u003E% Spell Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(55–65)\u003C/span\u003E% Cold Skill Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(55–65)\u003C/span\u003E% Erosion Skill Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(55–65)\u003C/span\u003E% Fire Skill Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(55–65)\u003C/span\u003E% Lightning Skill Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(55–65)\u003C/span\u003E% Minion Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(55–65)\u003C/span\u003E% Physical Skill Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(58–68)\u003C/span\u003E% Attack Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(58–68)\u003C/span\u003E% Cold Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(58–68)\u003C/span\u003E% Damage Over Time\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(58–68)\u003C/span\u003E% Erosion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(58–68)\u003C/span\u003E% Fire Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(58–68)\u003C/span\u003E% Lightning Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(58–68)\u003C/span\u003E% Minion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(58–68)\u003C/span\u003E% Physical Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(58–68)\u003C/span\u003E% Spell Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+104\u003C/span\u003E% Attack Critical Strike Rating\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+104\u003C/span\u003E% Minion Critical Strike Rating\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+104\u003C/span\u003E% Spell Critical Strike Rating\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+18\u003C/span\u003E% Attack and Cast Speed\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+18\u003C/span\u003E% Minion Attack and Cast Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+52\u003C/span\u003E% Projectile Speed\u003C/li\u003E\u003C/ul\u003E"
+  }
+]

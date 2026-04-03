@@ -1,0 +1,467 @@
+[
+  {
+    "type": "Aromatic",
+    "name": "Caged Fury",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003E\u003C/div\u003E\u003Cdiv\u003E-6% additional Attack Speed (multiplies) for every 1 time(s) you cast an Attack Mobility Skill in the last 2s\u003C/li\u003E\u003Cli class=\"mod\"\u003E+15% additional Attack Speed and +35% additional Attack Damage after using a Mobility Skill. The effect falls off to 0 within 2s\u003C/div\u003E\u003C/div\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Aromatic",
+    "name": "Comradeship",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003E\u003C/div\u003E\u003Cdiv\u003EMinions gain the Belt's bonuses\u003C/li\u003E\u003Cli class=\"mod\"\u003E-10% additional Minion Damage\u003C/div\u003E\u003C/div\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Aromatic",
+    "name": "Divine Grace",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003E\u003C/div\u003E\u003Cdiv\u003EGains 1 stack(s) of a random Blessing every second. Interval: 1s\u003C/li\u003E\u003Cli class=\"mod\"\u003E+1% additional damage per stack of Blessing, up to 10%\u003C/li\u003E\u003Cli class=\"mod\"\u003E-1% additional damage taken per stack of Blessing, up to 10%\u003C/div\u003E\u003C/div\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Aromatic",
+    "name": "Hallowed Journey",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003E\u003C/div\u003E\u003Cdiv\u003ETriggers Lv. 40 Blurry Steps, Secret Origin Unleash, and Arcane Circle after consuming a total of 5000 Mana. Interval: 2s\u003C/div\u003E\u003C/div\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Aromatic",
+    "name": "Rotted Taboo",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003E\u003C/div\u003E\u003Cdiv\u003ETakes 100 Secondary Erosion Damage when casting an Erosion Skill. Interval: 0.1s\u003C/li\u003E\u003Cli class=\"mod\"\u003E+6 to Erosion Skill Level\u003C/li\u003E\u003Cli class=\"mod\"\u003EErosion Skills are guaranteed to inflict all types of Ailment on hit\u003C/div\u003E\u003C/div\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Affliction",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+30\u003C/span\u003E \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003E\u003C/div\u003E\u003Cdiv\u003EWhen the Affliction inflicted per second is not 0, the Damage Over Time dealt will continuously inflicts Affliction on the target\u003Cbr/\u003EThe target takes 1% additional Damage Over Time for every Affliction point\u003Cbr/\u003EThe max Affliction is 100\u003C/div\u003E\u003C/div\u003E\"\u003EAffliction\u003C/span\u003E inflicted per second\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+30\u003C/span\u003E% additional \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAffliction\u003C/div\u003E\u003Cdiv\u003EWhen the Affliction inflicted per second is not 0, the Damage Over Time dealt will continuously inflicts Affliction on the target\u003Cbr/\u003EThe target takes 1% additional Damage Over Time for every Affliction point\u003Cbr/\u003EThe max Affliction is 100\u003C/div\u003E\u003C/div\u003E\"\u003EAffliction\u003C/span\u003E effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Ambition",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+100\u003C/span\u003E% chance to gain \u003Cspan class=\"val\"\u003E10\u003C/span\u003E \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFervor rating\u003C/div\u003E\u003Cdiv\u003E+2% Critical Strike Rating for every point of Fervor Rating you have. The Max Fervor Rating is 100.\u003C/div\u003E\u003C/div\u003E\"\u003EFervor rating\u003C/span\u003E on hit\u003C/li\u003E\u003Cli class=\"mod\"\u003EGains \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFighting Will\u003C/div\u003E\u003Cdiv\u003EAccumulates Fervor Rating when you defeat enemies or hit Elite enemies while having Fervor. +2% Critical Strike Rating for every point of Fervor Rating. The Max Fervor Rating is 100 points.\u003C/div\u003E\u003C/div\u003E\"\u003EFervor\u003C/span\u003E when there are enemies \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENearby\u003C/div\u003E\u003Cdiv\u003EWithin 6m\u003C/div\u003E\u003C/div\u003E\"\u003ENearby\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Arcane",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EConverts \u003Cspan class=\"val\"\u003E100\u003C/span\u003E% of Mana Cost to Life Cost\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+25\u003C/span\u003E% additional Max Life\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Barrier of Radiance",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EEnergy Shield \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECharge\u003C/div\u003E\u003Cdiv\u003EEnergy Shield starts to charge after the character hasn't taken any damage for 2s at the rate of 20% of Max Energy Shield per second and stops charging if the character takes damage\u003C/div\u003E\u003C/div\u003E\"\u003ECharge\u003C/span\u003E started recently cannot be interrupted by damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+50\u003C/span\u003E% Energy Shield \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECharge\u003C/div\u003E\u003Cdiv\u003EEnergy Shield starts to charge after the character hasn't taken any damage for 2s at the rate of 20% of Max Energy Shield per second and stops charging if the character takes damage\u003C/div\u003E\u003C/div\u003E\"\u003ECharge\u003C/span\u003E Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Beyond Cure",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EDeals more \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EWilt\u003C/div\u003E\u003Cdiv\u003EAn Ailment that may be triggered on hit, dealing Erosion Damage per second for 1.5s based on Base Wilt Damage. Stacks up to 30 time(s)\u003Cbr/\u003EWilt cannot be inflicted when Base Wilt Damage is 0\u003C/div\u003E\u003C/div\u003E\"\u003EWilt\u003C/span\u003E Damage to enemies with more Life, up to \u003Cspan class=\"val\"\u003E+60\u003C/span\u003E% additional \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EWilt\u003C/div\u003E\u003Cdiv\u003EAn Ailment that may be triggered on hit, dealing Erosion Damage per second for 1.5s based on Base Wilt Damage. Stacks up to 30 time(s)\u003Cbr/\u003EWilt cannot be inflicted when Base Wilt Damage is 0\u003C/div\u003E\u003C/div\u003E\"\u003EWilt\u003C/span\u003E Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Blunt",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+30\u003C/span\u003E% additional Physical Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003EEnemies \u003Cspan class=\"val\"\u003E+20\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EInjury Buffer\u003C/div\u003E\u003Cdiv\u003EDelays a portion of Hit Damage taken in the next 4s.\u003C/div\u003E\u003C/div\u003E\"\u003EInjury Buffer\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Bunch",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+1\u003C/span\u003E to Max \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFocus Blessing\u003C/div\u003E\u003Cdiv\u003EEvery stack of Focus Blessing grants +5% additional damage. Initial max stacks: 4\u003C/div\u003E\u003C/div\u003E\"\u003EFocus Blessing\u003C/span\u003E Stacks\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+3\u003C/span\u003E% additional Spell Damage per stack of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFocus Blessing\u003C/div\u003E\u003Cdiv\u003EEvery stack of Focus Blessing grants +5% additional damage. Initial max stacks: 4\u003C/div\u003E\u003C/div\u003E\"\u003EFocus Blessing\u003C/span\u003E owned\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Centralize",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EGains additional \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFighting Will\u003C/div\u003E\u003Cdiv\u003EAccumulates Fervor Rating when you defeat enemies or hit Elite enemies while having Fervor. +2% Critical Strike Rating for every point of Fervor Rating. The Max Fervor Rating is 100 points.\u003C/div\u003E\u003C/div\u003E\"\u003EFervor\u003C/span\u003E Rating equal to \u003Cspan class=\"val\"\u003E25\u003C/span\u003E% of the current \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFervor rating\u003C/div\u003E\u003Cdiv\u003E+2% Critical Strike Rating for every point of Fervor Rating you have. The Max Fervor Rating is 100.\u003C/div\u003E\u003C/div\u003E\"\u003EFervor Rating\u003C/span\u003E on hit. Cooldown: \u003Cspan class=\"val\"\u003E0.3\u003C/span\u003E s\u003C/li\u003E\u003Cli class=\"mod\"\u003EConsumes half of current \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFervor rating\u003C/div\u003E\u003Cdiv\u003E+2% Critical Strike Rating for every point of Fervor Rating you have. The Max Fervor Rating is 100.\u003C/div\u003E\u003C/div\u003E\"\u003EFervor Rating\u003C/span\u003E when hit. \u003Cspan class=\"val\"\u003E-0.8\u003C/span\u003E% additional damage per 1 point consumed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Co-resonance",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+25\u003C/span\u003E% additional Sentry Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003EAttack Speed bonus and \u003Cspan class=\"val\"\u003E100\u003C/span\u003E% of additional bonus are also applied to Attack Sentries' Cast Frequency\u003C/li\u003E\u003Cli class=\"mod\"\u003ECast Speed bonus and \u003Cspan class=\"val\"\u003E100\u003C/span\u003E% of additional bonus are also applied to Spell Sentries' Cast Frequency\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Cohesion",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+50\u003C/span\u003E% additional Critical Strike Rating for the next Main Skill used every \u003Cspan class=\"val\"\u003E1\u003C/span\u003E s\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Determined",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EUpon taking \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFatal Damage\u003C/div\u003E\u003Cdiv\u003EThe instance of damage that defeats the target\u003C/div\u003E\u003C/div\u003E\"\u003Efatal damage\u003C/span\u003E, you have a \u003Cspan class=\"val\"\u003E50\u003C/span\u003E% chance to keep at least 1 Life\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Dirty Tricks",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EUpon inflicting damage, \u003Cspan class=\"val\"\u003E+12\u003C/span\u003E% additional Hit Damage (multiplies) for every type of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAilment\u003C/div\u003E\u003Cdiv\u003ETrauma, Ignite, Frostbite, Freeze, Numbed, and Wilt\u003C/div\u003E\u003C/div\u003E\"\u003EAilment\u003C/span\u003E the enemy has\u003C/li\u003E\u003Cli class=\"mod\"\u003EWhen Minions deal damage, \u003Cspan class=\"val\"\u003E+12\u003C/span\u003E% additional Hit Damage (multiplies) for every type of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAilment\u003C/div\u003E\u003Cdiv\u003ETrauma, Ignite, Frostbite, Freeze, Numbed, and Wilt\u003C/div\u003E\u003C/div\u003E\"\u003EAilment\u003C/span\u003E the enemy has\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Elimination",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAttacks eliminate enemies under \u003Cspan class=\"val\"\u003E18\u003C/span\u003E% Life on hit\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Frostbitten",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EInflicts \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFrostbite\u003C/div\u003E\u003Cdiv\u003EFrostbite is an Ailment that may be triggered on Cold Damage hits.  enemies -10% Attack, Cast, and Movement Speed. Base Frostbite Rating: 10. For every 1 Frostbite Rating, +1% additional Cold Damage taken. The enemy will be Frozen once they have more than 100 Frostbite Rating.\u003C/div\u003E\u003C/div\u003E\"\u003EFrostbite\u003C/span\u003E when dealing Hit Cold Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+50\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFrostbite\u003C/div\u003E\u003Cdiv\u003EFrostbite is an Ailment that may be triggered on Cold Damage hits. Frostbitten enemies -10% Attack, Cast, and Movement Speed. Base Frostbite Rating: 10. For every 1 Frostbite Rating, +1% additional Cold Damage taken. The enemy will be Frozen once they have more than 100 Frostbite Rating.\u003C/div\u003E\u003C/div\u003E\"\u003EFrostbite\u003C/span\u003E Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Frozen Lotus",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+25\u003C/span\u003E% additional Cold Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+25\u003C/span\u003E% additional Minion Cold Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003ESkills no longer cost Mana\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Full Defense",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+25\u003C/span\u003E% additional \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDefense\u003C/div\u003E\u003Cdiv\u003EThe sum of Armor, Evasion, and Energy Shield\u003C/div\u003E\u003C/div\u003E\"\u003EDefense\u003C/span\u003E gained from Shield\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-1\u003C/span\u003E% additional \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDamage Taken Reduction\u003C/div\u003E\u003Cdiv\u003EDamage mitigation from each independent source can at most reduce the damage taken by 90%.\u003C/div\u003E\u003C/div\u003E\"\u003EDamage Over Time taken\u003C/span\u003E for every \u003Cspan class=\"val\"\u003E1\u003C/span\u003E% Block Ratio\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Gale",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E60\u003C/span\u003E% of the Projectile Speed bonus is also applied to the additional bonus for Projectile Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Hair-trigger",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E% additional damage of a skill for every \u003Cspan class=\"val\"\u003E7\u003C/span\u003E points of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFervor rating\u003C/div\u003E\u003Cdiv\u003E+2% Critical Strike Rating for every point of Fervor Rating you have. The Max Fervor Rating is 100.\u003C/div\u003E\u003C/div\u003E\"\u003EFervor Rating\u003C/span\u003E when the skill is triggered\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Holiness",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-95\u003C/span\u003E% Curse effect against you\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-15\u003C/span\u003E% additional damage taken from Cursed enemies\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Impending",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EEvery \u003Cspan class=\"val\"\u003E0.25\u003C/span\u003E s, +6% additional damage taken for enemies within \u003Cspan class=\"val\"\u003E10\u003C/span\u003E m. Stacks up to 5 times\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Impermanence",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-90\u003C/span\u003E% additional Min Physical Damage, and \u003Cspan class=\"val\"\u003E+80\u003C/span\u003E% additional Max Physical Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-32\u003C/span\u003E% additional min damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+32\u003C/span\u003E% additional Max Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Indifference",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+1\u003C/span\u003E% additional damage and \u003Cspan class=\"val\"\u003E+1\u003C/span\u003E% additional Minion Damage for every \u003Cspan class=\"val\"\u003E5\u003C/span\u003E remaining Energy, up to \u003Cspan class=\"val\"\u003E+50\u003C/span\u003E% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Joined Force",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EOff-Hand Weapon\u003C/div\u003E\u003Cdiv\u003EThe weapon held in the Character's left hand is the Off-Hand Weapon\u003C/div\u003E\u003C/div\u003E\"\u003EOff-Hand\u003C/span\u003E Weapons do not participate in Attacks while \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDual Wielding\u003C/div\u003E\u003Cdiv\u003EWhen using two One-Handed Weapons, one in each hand\u003C/div\u003E\u003C/div\u003E\"\u003EDual Wielding\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EAdds \u003Cspan class=\"val\"\u003E60\u003C/span\u003E% of the damage of the \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EOff-Hand Weapon\u003C/div\u003E\u003Cdiv\u003EThe weapon held in the Character's left hand is the Off-Hand Weapon\u003C/div\u003E\u003C/div\u003E\"\u003EOff-Hand Weapon\u003C/span\u003E to the final damage of the \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EMain-Hand Weapon\u003C/div\u003E\u003Cdiv\u003EThe weapon held in the Character's right hand is the Main-Hand Weapon\u003C/div\u003E\u003C/div\u003E\"\u003EMain-Hand Weapon\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Kinetic Conversion",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E100\u003C/span\u003E% chance to gain a \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EBarrier\u003C/div\u003E\u003Cdiv\u003EGains a Shield equal to 20% of the sum of Max Life and Max Energy Shield, absorbing 50% of the Hit Damage taken. Cannot gain another Barrier when a Barrier is present.\u003C/div\u003E\u003C/div\u003E\"\u003EBarrier\u003C/span\u003E for every \u003Cspan class=\"val\"\u003E5\u003C/span\u003E m you move\u003C/li\u003E\u003Cli class=\"mod\"\u003ERefreshes \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EBarrier\u003C/div\u003E\u003Cdiv\u003EGains a Shield equal to 20% of the sum of Max Life and Max Energy Shield, absorbing 50% of the Hit Damage taken. Cannot gain another Barrier when a Barrier is present.\u003C/div\u003E\u003C/div\u003E\"\u003EBarrier\u003C/span\u003E when gaining \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EBarrier\u003C/div\u003E\u003Cdiv\u003EGains a Shield equal to 20% of the sum of Max Life and Max Energy Shield, absorbing 50% of the Hit Damage taken. Cannot gain another Barrier when a Barrier is present.\u003C/div\u003E\u003C/div\u003E\"\u003EBarrier\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-40\u003C/span\u003E% additional \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EBarrier\u003C/div\u003E\u003Cdiv\u003EGains a Shield equal to 20% of the sum of Max Life and Max Energy Shield, absorbing 50% of the Hit Damage taken. Cannot gain another Barrier when a Barrier is present.\u003C/div\u003E\u003C/div\u003E\"\u003EBarrier\u003C/span\u003E Shield\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Last Stand",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EBlock Ratio is set to \u003Cspan class=\"val\"\u003E0\u003C/span\u003E%\u003C/li\u003E\u003Cli class=\"mod\"\u003EFor every \u003Cspan class=\"val\"\u003E+3\u003C/span\u003E% Attack or Spell Block Chance, \u003Cspan class=\"val\"\u003E+2\u003C/span\u003E% additional damage, up to \u003Cspan class=\"val\"\u003E+90\u003C/span\u003E%\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Mana",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E20\u003C/span\u003E% of damage is taken from  before life\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+12\u003C/span\u003E% additional Max Mana\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Master Escapist",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+1\u003C/span\u003E Max \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDeflection\u003C/div\u003E\u003Cdiv\u003EReduces additional damage taken by 8% for every stack of Deflection, up to 3 stack(s). When hit, consumes all stacks of Deflection\u003C/div\u003E\u003C/div\u003E\"\u003EDeflection\u003C/span\u003E stacks\u003C/li\u003E\u003Cli class=\"mod\"\u003EGains \u003Cspan class=\"val\"\u003E1\u003C/span\u003E stacks of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDeflection\u003C/div\u003E\u003Cdiv\u003EReduces additional damage taken by 8% for every stack of Deflection, up to 3 stack(s). When hit, consumes all stacks of Deflection\u003C/div\u003E\u003C/div\u003E\"\u003EDeflection\u003C/span\u003E on Evasion\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Mighty Guard",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E Minion Skill Level\u003C/li\u003E\u003Cli class=\"mod\"\u003E+ \u003Cspan class=\"val\"\u003E4\u003C/span\u003E \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECommand\u003C/div\u003E\u003Cdiv\u003EEvery point of Command will grant Synthetic Troop Minions +3% additional damage and a bigger Tracking Area.\u003Cbr/\u003EThe lowest Command is -100 while the highest is 100. When Command is not 0, 13 point(s) will be returned (reduced/granted) every second until it becomes 0. For every 10 Command increased, +7 additional points will be returned.\u003Cbr/\u003ESynthetic Troop Minions' Duration will not reduce when Command is a positive value.\u003C/div\u003E\u003C/div\u003E\"\u003ECommand\u003C/span\u003E per second\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+40\u003C/span\u003E initial \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EGrowth\u003C/div\u003E\u003Cdiv\u003ESpirit Magi grow into the next Stage for every 100 Growth. They start at Stage 1 and can grow until they reach Stage 5. For every 8 Growth they have, Spirit Magi gain +1% Physique, +5% additional Skill Area, and a bonus every stage:\u003Cbr/\u003EAt Stage 2, +30% chance for them to use Enhanced Skill chance.\u003Cbr/\u003EAt Stage 3, their Enhanced Skills become stronger.\u003Cbr/\u003EAt Stage 4, their Empower Skills become stronger.\u003Cbr/\u003EAt Stage 5, they +25% additional damage, +10% additional Skill Area, and gain increased Movement Speed and Tracking Area.\u003Cbr/\u003EThe max Growth is 1000.\u003C/div\u003E\u003C/div\u003E\"\u003EGrowth\u003C/span\u003E for Spirit Magi\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "No Loose Ends",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+50\u003C/span\u003E% additional Attack Damage at \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ELow Life\u003C/div\u003E\u003Cdiv\u003EWhen current Life is under 35% of Max Life\u003C/div\u003E\u003C/div\u003E\"\u003ELow Life\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EYour Max Energy Shield is fixed at \u003Cspan class=\"val\"\u003E0\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Panacea",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003ERestoration Skills: \u003Cspan class=\"val\"\u003E+100\u003C/span\u003E% Restoration Effect\u003C/li\u003E\u003Cli class=\"mod\"\u003ERestoration Effect from Restoration Skills cannot be removed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Peculiar Vibe",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EYou can apply \u003Cspan class=\"val\"\u003E1\u003C/span\u003E additional \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ETangle\u003C/div\u003E\u003Cdiv\u003EGenerated by the player, it can attach to an enemy and periodically trigger a specified Spell Skill\u003C/div\u003E\u003C/div\u003E\"\u003ETangle(s)\u003C/span\u003E to enemies\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-30\u003C/span\u003E% additional Tangle Skill Area\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Perception",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+100\u003C/span\u003E% chance to gain \u003Cspan class=\"val\"\u003E1\u003C/span\u003E stacks of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAgility Blessing\u003C/div\u003E\u003Cdiv\u003EEvery stack of Agility Blessing grants +4% Attack and Cast Speed and +2% additional damage. Initial max stacks: 4\u003C/div\u003E\u003C/div\u003E\"\u003EAgility Blessing\u003C/span\u003E on hit\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+1\u003C/span\u003E to Max \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAgility Blessing\u003C/div\u003E\u003Cdiv\u003EEvery stack of Agility Blessing grants +4% Attack and Cast Speed and +2% additional damage. Initial max stacks: 4\u003C/div\u003E\u003C/div\u003E\"\u003EAgility Blessing\u003C/span\u003E Stacks\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Plague",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+20\u003C/span\u003E% Movement Speed when defeating \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EWilt\u003C/div\u003E\u003Cdiv\u003EAn Ailment that may be triggered on hit, dealing Erosion Damage per second for 1.5s based on Base Wilt Damage. Stacks up to 30 time(s)\u003Cbr/\u003EWilt cannot be inflicted when Base Wilt Damage is 0\u003C/div\u003E\u003C/div\u003E\"\u003EWilted\u003C/span\u003E enemies recently\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+15\u003C/span\u003E% additional \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EWilt\u003C/div\u003E\u003Cdiv\u003EAn Ailment that may be triggered on hit, dealing Erosion Damage per second for 1.5s based on Base Wilt Damage. Stacks up to 30 time(s)\u003Cbr/\u003EWilt cannot be inflicted when Base Wilt Damage is 0\u003C/div\u003E\u003C/div\u003E\"\u003EWilt\u003C/span\u003E Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Poisoned Relief",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+25\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EInjury Buffer\u003C/div\u003E\u003Cdiv\u003EDelays a portion of Hit Damage taken in the next 4s.\u003C/div\u003E\u003C/div\u003E\"\u003EInjury Buffer\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-15\u003C/span\u003E% additional damage taken at \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ELow Life\u003C/div\u003E\u003Cdiv\u003EWhen current Life is under 35% of Max Life\u003C/div\u003E\u003C/div\u003E\"\u003ELow Life\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Queer Angle",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EYou and Minions deal \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ELucky\u003C/div\u003E\u003Cdiv\u003EPerforms a random check or random roll twice and picks the result that benefits you the most\u003C/div\u003E\u003C/div\u003E\"\u003ELucky\u003C/span\u003E Damage against \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENumbed\u003C/div\u003E\u003Cdiv\u003EAn Elemental Ailment that has a chance to be inflicted when Lightning Damage hits its target.\u003Cbr/\u003EWhen hitting a Numbed enemy, Lightning Damage inflicts 1 stack of Numbed for every 10% of the sum of Max Energy Shield and Life dealt by Lightning Damage. This threshold can be lowered or raised, but the minimum is 1%.\u003Cbr/\u003EThe default duration of Numbed is 2s, and the duration of each stack is calculated independently.\u003Cbr/\u003EMax Numbed stacks: 10. Each stack of Numbed increases the Lightning Damage taken by an additional +5%.\u003C/div\u003E\u003C/div\u003E\"\u003ENumbed\u003C/span\u003E enemies\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Quick Ritual",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EMin Channeled Stacks \u003Cspan class=\"val\"\u003E+1\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+20\u003C/span\u003E% additional Channeled Skill damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Quick Wits",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+25\u003C/span\u003E% additional Spell Damage when the Energy Shield is not low\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-20\u003C/span\u003E% additional damage taken at Low Energy Shield\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Rally",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003ESynthetic Troop Minions summoned at a time \u003Cspan class=\"val\"\u003E+1\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+25\u003C/span\u003E% additional Minion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Rebirth",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EConverts \u003Cspan class=\"val\"\u003E50\u003C/span\u003E% of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ELife Regain\u003C/div\u003E\u003Cdiv\u003EBased on the Missing Life (including Sealed Life), restores a portion of Life on hit. This effect has a 0.5s interval.\u003C/div\u003E\u003C/div\u003E\"\u003ELife Regain\u003C/span\u003E and Energy Shield Regain to Restoration Over Time\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-50\u003C/span\u003E% additional Regain Interval\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Reflection",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% additional damage for each type of Aura you are affected by\u003C/li\u003E\u003Cli class=\"mod\"\u003EMinions \u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% additional damage for each type of Aura they are affected by\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Resolve",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional Armor per stack of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ETenacity Blessing\u003C/div\u003E\u003Cdiv\u003EEvery stack of Tenacity Blessing grants an additional 4% damage reduction (multiplies). Initial max stacks: 4.\u003C/div\u003E\u003C/div\u003E\"\u003ETenacity Blessing\u003C/span\u003E owned\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Rock",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EConverts \u003Cspan class=\"val\"\u003E5\u003C/span\u003E% of Physical Damage taken to Fire Damage for every stack of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ETenacity Blessing\u003C/div\u003E\u003Cdiv\u003EEvery stack of Tenacity Blessing grants an additional 4% damage reduction (multiplies). Initial max stacks: 4.\u003C/div\u003E\u003C/div\u003E\"\u003ETenacity Blessing\u003C/span\u003E you have\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Sacrifice",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EChanges the base effect of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ETenacity Blessing\u003C/div\u003E\u003Cdiv\u003EEvery stack of Tenacity Blessing grants an additional 4% damage reduction (multiplies). Initial max stacks: 4.\u003C/div\u003E\u003C/div\u003E\"\u003ETenacity Blessing\u003C/span\u003E to: +8% additional damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Sentry",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EMax  Quantity \u003Cspan class=\"val\"\u003E+1\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+100\u003C/span\u003E% additional Cast Speed for Sentry Skills\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Shell",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+35\u003C/span\u003E% additional Max Energy Shield\u003C/li\u003E\u003Cli class=\"mod\"\u003EYour Max Life is set to \u003Cspan class=\"val\"\u003E100\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Shrink Back",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EGains \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EBarrier\u003C/div\u003E\u003Cdiv\u003EGains a Shield equal to 20% of the sum of Max Life and Max Energy Shield, absorbing 50% of the Hit Damage taken. Cannot gain another Barrier when a Barrier is present.\u003C/div\u003E\u003C/div\u003E\"\u003EBarrier\u003C/span\u003E every 1s\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+50\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EBarrier\u003C/div\u003E\u003Cdiv\u003EGains a Shield equal to 20% of the sum of Max Life and Max Energy Shield, absorbing 50% of the Hit Damage taken. Cannot gain another Barrier when a Barrier is present.\u003C/div\u003E\u003C/div\u003E\"\u003EBarrier\u003C/span\u003E Shield\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Source",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+50\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESealed Mana\u003C/div\u003E\u003Cdiv\u003EA portion of Mana is reserved to maintain persistent effects such as auras\u003C/div\u003E\u003C/div\u003E\"\u003ESealed Mana\u003C/span\u003E Compensation for Spirit Magus Skills\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+30\u003C/span\u003E% additional \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EOrigin of Spirit Magus\u003C/div\u003E\u003Cdiv\u003EBuff effect gained after Activating a Spirit Magus summoning skill.\u003C/div\u003E\u003C/div\u003E\"\u003EOrigin of Spirit Magus\u003C/span\u003E Effect\u003C/li\u003E\u003Cli class=\"mod\"\u003ESpirit Magi \u003Cspan class=\"val\"\u003E+30\u003C/span\u003E% additional Empower Skill Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Starfire",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+1\u003C/span\u003E \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EIgnite\u003C/div\u003E\u003Cdiv\u003EAn Ailment that may be triggered on hit, dealing Fire Damage per second for 4s based on Base Ignite Damage. Unable to stack\u003Cbr/\u003EIgnite cannot be inflicted when Base Ignite Damage is 0\u003C/div\u003E\u003C/div\u003E\"\u003EIgnite\u003C/span\u003E limit\u003C/li\u003E\u003Cli class=\"mod\"\u003EWhen Ignite is inflicted, it spreads to enemies within 10m. Interval: 0.3s\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Steady Accumulation",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+40\u003C/span\u003E% additional Hit Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003EAdditional \u003Cspan class=\"val\"\u003E-30\u003C/span\u003E% Skill Effect Duration\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Subtle Impact",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EBlur\u003C/div\u003E\u003Cdiv\u003EGains 100 points of Blur Rating.\u003Cbr/\u003EOnce 100 points of Blur Rating is gained, 10 Blur Rating is lost per second. Blur is lost once Blur Rating drops to 0.\u003Cbr/\u003E+0.3% Evasion and +0.2% chance to avoid damage for every point of Blur Rating you have.\u003Cbr/\u003EMax Blur Rating is 100\u003C/div\u003E\u003C/div\u003E\"\u003EBlur\u003C/span\u003E gains an additional effect: +25% additional Damage Over Time\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Transition",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E50\u003C/span\u003E% chance for this skill to deal \u003Cspan class=\"val\"\u003E+16\u003C/span\u003E% additional damage when casting a skill\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E25\u003C/span\u003E% chance for this skill to deal \u003Cspan class=\"val\"\u003E+32\u003C/span\u003E% additional damage when casting a skill\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E10\u003C/span\u003E% chance for this skill to deal \u003Cspan class=\"val\"\u003E+80\u003C/span\u003E% additional damage when casting a skill\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Core",
+    "name": "Well Matched",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EDeals up to \u003Cspan class=\"val\"\u003E+25\u003C/span\u003E% additional Attack Damage to enemies in \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EProximity\u003C/div\u003E\u003Cdiv\u003EWithin 4m\u003C/div\u003E\u003C/div\u003E\"\u003Eproximity\u003C/span\u003E, and this damage reduces as the distance from the enemy grows\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-15\u003C/span\u003E% additional damage taken from enemies in \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EProximity\u003C/div\u003E\u003Cdiv\u003EWithin 4m\u003C/div\u003E\u003C/div\u003E\"\u003Eproximity\u003C/span\u003E, and this damage reduces as the distance from the enemy grows\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium",
+    "name": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EMultistrike\u003C/div\u003E\u003Cdiv\u003EChance to perform an additional attack when using Attack Skills. If the chance exceeds 100%, one additional attack will be performed with every 100% of the chance.\u003Cbr/\u003E\u003Cbr/\u003E+20% Attack Speed during Multistrikes.\u003Cbr/\u003EMultistrikes consume skill resources as normal and will be interrupted if there are insufficient resources. Moving or using other non-instant skills will interrupt Multistrike.\u003Cbr/\u003EMobility, Channeled Skills, and Sentry skills cannot Multistrike\u003C/div\u003E\u003C/div\u003E\"\u003EMultistrikes\u003C/span\u003E deal \u003Cspan class=\"val\"\u003E16\u003C/span\u003E% increasing damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium",
+    "name": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-4\u003C/span\u003E% to the Max Life and Energy Shield thresholds for inflicting \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENumbed\u003C/div\u003E\u003Cdiv\u003EAn Elemental Ailment that has a chance to be inflicted when Lightning Damage hits its target.\u003Cbr/\u003EWhen hitting a Numbed enemy, Lightning Damage inflicts 1 stack of Numbed for every 10% of the sum of Max Energy Shield and Life dealt by Lightning Damage. This threshold can be lowered or raised, but the minimum is 1%.\u003Cbr/\u003EThe default duration of Numbed is 2s, and the duration of each stack is calculated independently.\u003Cbr/\u003EMax Numbed stacks: 10. Each stack of Numbed increases the Lightning Damage taken by an additional +5%.\u003C/div\u003E\u003C/div\u003E\"\u003ENumbed\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EInflicts \u003Cspan class=\"val\"\u003E1\u003C/span\u003E additional stack(s) of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENumbed\u003C/div\u003E\u003Cdiv\u003EAn Elemental Ailment that has a chance to be inflicted when Lightning Damage hits its target.\u003Cbr/\u003EWhen hitting a Numbed enemy, Lightning Damage inflicts 1 stack of Numbed for every 10% of the sum of Max Energy Shield and Life dealt by Lightning Damage. This threshold can be lowered or raised, but the minimum is 1%.\u003Cbr/\u003EThe default duration of Numbed is 2s, and the duration of each stack is calculated independently.\u003Cbr/\u003EMax Numbed stacks: 10. Each stack of Numbed increases the Lightning Damage taken by an additional +5%.\u003C/div\u003E\u003C/div\u003E\"\u003ENumbed\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium",
+    "name": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+1\u003C/span\u003E \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EJump\u003C/div\u003E\u003Cdiv\u003EUpon hitting a target, a horizontal Projectile or Chain Skill jumps to another target nearby\u003C/div\u003E\u003C/div\u003E\"\u003EJumps\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium",
+    "name": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+1\u003C/span\u003E Max \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESpell Burst\u003C/div\u003E\u003Cdiv\u003EAutomatically uses a Spell Skill a certain number of times.\u003Cbr/\u003EWhen Spell Burst is fully charged, the next Spell Skill used will activate Spell Burst, which will consume all stacks charged and automatically use the Spell Skill the same number of times.\u003Cbr/\u003ESkills that have a cooldown, Triggered Skills, Sentry Skills, Channeled Skills, and Combo Skills cannot activate Spell Burst.\u003C/div\u003E\u003C/div\u003E\"\u003ESpell Burst\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium",
+    "name": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+1\u003C/span\u003E Minion Skill Level\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium",
+    "name": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+1\u003C/span\u003E to All Skills' Levels\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium",
+    "name": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+1\u003C/span\u003E to Attack Skill Level\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium",
+    "name": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+1\u003C/span\u003E to Max \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAgility Blessing\u003C/div\u003E\u003Cdiv\u003EEvery stack of Agility Blessing grants +4% Attack and Cast Speed and +2% additional damage. Initial max stacks: 4\u003C/div\u003E\u003C/div\u003E\"\u003EAgility Blessing\u003C/span\u003E Stacks\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium",
+    "name": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+1\u003C/span\u003E to Max \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFocus Blessing\u003C/div\u003E\u003Cdiv\u003EEvery stack of Focus Blessing grants +5% additional damage. Initial max stacks: 4\u003C/div\u003E\u003C/div\u003E\"\u003EFocus Blessing\u003C/span\u003E Stacks\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium",
+    "name": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+1\u003C/span\u003E to Max \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ETenacity Blessing\u003C/div\u003E\u003Cdiv\u003EEvery stack of Tenacity Blessing grants an additional 4% damage reduction (multiplies). Initial max stacks: 4.\u003C/div\u003E\u003C/div\u003E\"\u003ETenacity Blessing\u003C/span\u003E Stacks\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium",
+    "name": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+1\u003C/span\u003E to Max Channeled Stacks\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium",
+    "name": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+1\u003C/span\u003E% Attack Speed per \u003Cspan class=\"val\"\u003E40\u003C/span\u003E Dexterity\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium",
+    "name": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+1\u003C/span\u003E% Movement Speed per \u003Cspan class=\"val\"\u003E10\u003C/span\u003E \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFervor rating\u003C/div\u003E\u003Cdiv\u003E+2% Critical Strike Rating for every point of Fervor Rating you have. The Max Fervor Rating is 100.\u003C/div\u003E\u003C/div\u003E\"\u003EFervor Rating\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium",
+    "name": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E% additional Base Damage for Two-Handed Weapons\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium",
+    "name": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E% additional damage against \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFreeze\u003C/div\u003E\u003Cdiv\u003EWhen a unit's Frostbite Rating exceeds 100, it becomes Frozen\u003Cbr/\u003EFrozen non-Legendary bosses will be Frost-Sealed periodically and cannot act. The Frost-Seal duration is 2s, and the Frost-Seal Interval is 3 for the same unit\u003Cbr/\u003EFrost-Seal ends when Frostbite ends\u003C/div\u003E\u003C/div\u003E\"\u003EFrozen\u003C/span\u003E enemies\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium",
+    "name": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+100\u003C/span\u003E% chance to gain \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EBlur\u003C/div\u003E\u003Cdiv\u003EGains 100 points of Blur Rating.\u003Cbr/\u003EOnce 100 points of Blur Rating is gained, 10 Blur Rating is lost per second. Blur is lost once Blur Rating drops to 0.\u003Cbr/\u003E+0.3% Evasion and +0.2% chance to avoid damage for every point of Blur Rating you have.\u003Cbr/\u003EMax Blur Rating is 100\u003C/div\u003E\u003C/div\u003E\"\u003EBlur\u003C/span\u003E on defeat\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium",
+    "name": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+12\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESteep Strike\u003C/div\u003E\u003Cdiv\u003ESlash Strike Skills are cast in Sweep Slash form by default. When casting the skill, there is a chance that it will be cast in Steep Strike form. Some skills gain Steep Strike attempts at specific times. When there are Steep Strike attempts, the skill will be cast in Steep Strike form and consume 1 Steep Strike attempt.\u003C/div\u003E\u003C/div\u003E\"\u003ESteep Strike\u003C/span\u003E chance.\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium",
+    "name": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+12\u003C/span\u003E% additional Max Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+12\u003C/span\u003E% additional Max Damage for Minions\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium",
+    "name": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+12\u003C/span\u003E% additional Sentry Damage if Sentry Skill is not used in the last \u003Cspan class=\"val\"\u003E1\u003C/span\u003E s\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium",
+    "name": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+15\u003C/span\u003E% Life Regeneration Speed\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-15\u003C/span\u003E% additional Energy Shield \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECharge\u003C/div\u003E\u003Cdiv\u003EEnergy Shield starts to charge after the character hasn't taken any damage for 2s at the rate of 20% of Max Energy Shield per second and stops charging if the character takes damage\u003C/div\u003E\u003C/div\u003E\"\u003ECharge\u003C/span\u003E Interval\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium",
+    "name": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+20\u003C/span\u003E% chance to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EBlind\u003C/div\u003E\u003Cdiv\u003ETarget's damage has a 20% chance to miss before addressed\u003C/div\u003E\u003C/div\u003E\"\u003EBlind\u003C/span\u003E the target on hit\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+25\u003C/span\u003E% Critical Strike Damage Mitigation against \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EBlind\u003C/div\u003E\u003Cdiv\u003ETarget's damage has a 20% chance to miss before addressed\u003C/div\u003E\u003C/div\u003E\"\u003EBlinded\u003C/span\u003E enemies\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium",
+    "name": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+40\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDefense\u003C/div\u003E\u003Cdiv\u003EThe sum of Armor, Evasion, and Energy Shield\u003C/div\u003E\u003C/div\u003E\"\u003EDefense\u003C/span\u003E gained from Chest Armor\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium",
+    "name": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+5\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EBlock Ratio\u003C/div\u003E\u003Cdiv\u003EBy default, Blocking absorbs 30% damage. Increase Block Ratio to increase the damage absorption ratio.\u003C/div\u003E\u003C/div\u003E\"\u003EBlock Ratio\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003ERestores \u003Cspan class=\"val\"\u003E1\u003C/span\u003E% Missing Life and Energy Shield when Blocking\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium",
+    "name": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EBarrier\u003C/div\u003E\u003Cdiv\u003EGains a Shield equal to 20% of the sum of Max Life and Max Energy Shield, absorbing 50% of the Hit Damage taken. Cannot gain another Barrier when a Barrier is present.\u003C/div\u003E\u003C/div\u003E\"\u003EBarrier\u003C/span\u003E Absorption Rate\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium",
+    "name": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E% additional \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDeterioration\u003C/div\u003E\u003Cdiv\u003ELasts for 1s. When the duration ends, deals True Damage equal to 60% of the Hit Erosion Damage dealt. Stacks up to 99 times. Each stack is calculated independently\u003C/div\u003E\u003C/div\u003E\"\u003EDeterioration\u003C/span\u003E Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+5\u003C/span\u003E% additional \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDeterioration\u003C/div\u003E\u003Cdiv\u003ELasts for 1s. When the duration ends, deals True Damage equal to 60% of the Hit Erosion Damage dealt. Stacks up to 99 times. Each stack is calculated independently\u003C/div\u003E\u003C/div\u003E\"\u003EDeterioration\u003C/span\u003E Duration\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium",
+    "name": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E% Armor DMG Mitigation Penetration\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E% Armor DMG Mitigation Penetration for Minions\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium",
+    "name": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E120\u003C/span\u003E% of the increase/decrease on \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EKnockback\u003C/div\u003E\u003Cdiv\u003EForced to move back by a short distance\u003C/div\u003E\u003C/div\u003E\"\u003EKnockback\u003C/span\u003E distance is also applied to damage bonus\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium",
+    "name": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E8\u003C/span\u003E% of damage is taken from Mana before life\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium",
+    "name": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E8\u003C/span\u003E% of damage taken is \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDamage Transfer\u003C/div\u003E\u003Cdiv\u003ETransfers a part of the Hit Damage and Secondary Damage taken to other units.\u003Cbr/\u003EUp to 90% of the damage can be transferred.\u003C/div\u003E\u003C/div\u003E\"\u003Etransferred\u003C/span\u003E to a random Minion\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-80\u003C/span\u003E% additional damage taken by Spirit Magi\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium",
+    "name": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EConverts \u003Cspan class=\"val\"\u003E6\u003C/span\u003E% of Physical Damage taken to random \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EElemental\u003C/div\u003E\u003Cdiv\u003EFire, Cold, and Lightning\u003C/div\u003E\u003C/div\u003E\"\u003EElemental\u003C/span\u003E Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium",
+    "name": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003ECritical Strikes eliminate enemies under \u003Cspan class=\"val\"\u003E8\u003C/span\u003E% Life\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium",
+    "name": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EGains \u003Cspan class=\"val\"\u003E1\u003C/span\u003E stack(s) of Focus Blessing when \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EReaping\u003C/div\u003E\u003Cdiv\u003EDeals a certain amount of True Damage to the target, equivalent to the damage from all DoT effects over a certain period of time\u003C/div\u003E\u003C/div\u003E\"\u003EReaping\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium",
+    "name": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EImmediately starts Energy Shield \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECharge\u003C/div\u003E\u003Cdiv\u003EEnergy Shield starts to charge after the character hasn't taken any damage for 2s at the rate of 20% of Max Energy Shield per second and stops charging if the character takes damage\u003C/div\u003E\u003C/div\u003E\"\u003ECharge\u003C/span\u003E upon entering Low Energy Shield status\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium",
+    "name": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EImmune to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EIgnite\u003C/div\u003E\u003Cdiv\u003EAn Ailment that may be triggered on hit, dealing Fire Damage per second for 4s based on Base Ignite Damage. Unable to stack\u003Cbr/\u003EIgnite cannot be inflicted when Base Ignite Damage is 0\u003C/div\u003E\u003C/div\u003E\"\u003EIgnite\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMinions are immune to Fire Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium",
+    "name": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003ERestores \u003Cspan class=\"val\"\u003E3\u003C/span\u003E% of Life on defeat\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium",
+    "name": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EUpon inflicting damage, \u003Cspan class=\"val\"\u003E+15\u003C/span\u003E% damage for every type of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAilment\u003C/div\u003E\u003Cdiv\u003ETrauma, Ignite, Frostbite, Freeze, Numbed, and Wilt\u003C/div\u003E\u003C/div\u003E\"\u003EAilment\u003C/span\u003E the enemy has\u003C/li\u003E\u003Cli class=\"mod\"\u003EWhen Minions deal damage, \u003Cspan class=\"val\"\u003E+15\u003C/span\u003E% damage for every type of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAilment\u003C/div\u003E\u003Cdiv\u003ETrauma, Ignite, Frostbite, Freeze, Numbed, and Wilt\u003C/div\u003E\u003C/div\u003E\"\u003EAilment\u003C/span\u003E the enemy has\u003C/li\u003E\u003C/ul\u003E"
+  }
+]

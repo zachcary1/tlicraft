@@ -1,0 +1,52 @@
+[
+  {
+    "section": "blend",
+    "numItems": 93,
+    "difference": 0
+  },
+  {
+    "section": "destiny",
+    "numItems": 190,
+    "difference": 0
+  },
+  {
+    "section": "etherealPrism",
+    "numItems": 271,
+    "difference": 0
+  },
+  {
+    "section": "gear",
+    "numItems": 5637,
+    "difference": 0
+  },
+  {
+    "section": "heroTrait",
+    "numItems": 168,
+    "difference": 0
+  },
+  {
+    "section": "heroMemory",
+    "numItems": 339,
+    "difference": 0
+  },
+  {
+    "section": "legendary",
+    "numItems": 320,
+    "difference": -1
+  },
+  {
+    "section": "pactspirit",
+    "numItems": 160,
+    "difference": 0
+  },
+  {
+    "section": "skill",
+    "numItems": 629,
+    "difference": 0
+  },
+  {
+    "section": "talent",
+    "numItems": 1013,
+    "difference": 0
+  }
+]

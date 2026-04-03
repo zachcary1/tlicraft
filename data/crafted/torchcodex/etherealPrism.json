@@ -1,0 +1,1284 @@
+[
+  {
+    "type": "Base Affix",
+    "rarity": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+75\u003C/span\u003E% to the effects of Random Affixes on this Prism\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Affix",
+    "rarity": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAdds an additional effect to the Core Talent on the \u003Cspan class=\"dim\"\u003EGod of Might/Goddess of Hunting/Goddess of Knowledge/God of War/Goddess of Deception/God of Machines\u003C/span\u003E Advanced Talent Panel:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EBlind\u003C/div\u003E\u003Cdiv\u003ETarget's damage has a 20% chance to miss before addressed\u003C/div\u003E\u003C/div\u003E\"\u003EBlinds\u003C/span\u003E enemies within \u003Cspan class=\"val\"\u003E15\u003C/span\u003E m when casting Dazzling Bloom\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+12\u003C/span\u003E% additional damage for Spirit Magi against \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EBlind\u003C/div\u003E\u003Cdiv\u003ETarget's damage has a 20% chance to miss before addressed\u003C/div\u003E\u003C/div\u003E\"\u003EBlinded\u003C/span\u003E enemies\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Affix",
+    "rarity": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAdds an additional effect to the Core Talent on the \u003Cspan class=\"dim\"\u003EGod of Might/Goddess of Hunting/Goddess of Knowledge/God of War/Goddess of Deception/God of Machines\u003C/span\u003E Advanced Talent Panel:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+1\u003C/span\u003E% additional Damage per \u003Cspan class=\"val\"\u003E+5\u003C/span\u003E% Movement Speed, up to \u003Cspan class=\"val\"\u003E+12\u003C/span\u003E%\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Affix",
+    "rarity": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAdds an additional effect to the Core Talent on the \u003Cspan class=\"dim\"\u003EGod of Might/Goddess of Hunting/Goddess of Knowledge/God of War/Goddess of Deception/God of Machines\u003C/span\u003E Advanced Talent Panel:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+12\u003C/span\u003E% additional Attack Damage and \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAilment Damage\u003C/div\u003E\u003Cdiv\u003ETrauma, Ignite, and Wilt\u003C/div\u003E\u003C/div\u003E\"\u003EAilment Damage\u003C/span\u003E dealt by attacks when there are \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EElite\u003C/div\u003E\u003Cdiv\u003EElite monsters include rare monsters and bosses\u003C/div\u003E\u003C/div\u003E\"\u003EElites\u003C/span\u003E within 10m \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENearby\u003C/div\u003E\u003Cdiv\u003EWithin 6m\u003C/div\u003E\u003C/div\u003E\"\u003Enearby\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+50\u003C/span\u003E% Skill Area when there are no \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EElite\u003C/div\u003E\u003Cdiv\u003EElite monsters include rare monsters and bosses\u003C/div\u003E\u003C/div\u003E\"\u003EElites\u003C/span\u003E within 10m \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENearby\u003C/div\u003E\u003Cdiv\u003EWithin 6m\u003C/div\u003E\u003C/div\u003E\"\u003Enearby\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Affix",
+    "rarity": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAdds an additional effect to the Core Talent on the \u003Cspan class=\"dim\"\u003EGod of Might/Goddess of Hunting/Goddess of Knowledge/God of War/Goddess of Deception/God of Machines\u003C/span\u003E Advanced Talent Panel:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+12\u003C/span\u003E% additional Attack Damage when holding a One-Handed Weapon\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+12\u003C/span\u003E% additional Base Damage for Two-Handed Weapons\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Affix",
+    "rarity": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAdds an additional effect to the Core Talent on the \u003Cspan class=\"dim\"\u003EGod of Might/Goddess of Hunting/Goddess of Knowledge/God of War/Goddess of Deception/God of Machines\u003C/span\u003E Advanced Talent Panel:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+12\u003C/span\u003E% additional Spell Damage when you have \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESpell Aggression\u003C/div\u003E\u003Cdiv\u003EAdditionally increases Cast Speed and Spell Damage by 7%. Increases Mobility Skill Cooldown Recovery Speed by 7%\u003C/div\u003E\u003C/div\u003E\"\u003ESpell Aggression\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Affix",
+    "rarity": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAdds an additional effect to the Core Talent on the \u003Cspan class=\"dim\"\u003EGod of Might/Goddess of Hunting/Goddess of Knowledge/God of War/Goddess of Deception/God of Machines\u003C/span\u003E Advanced Talent Panel:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E2.5\u003C/span\u003E% additional Minion Damage per Synthetic Troop Minion you own\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Affix",
+    "rarity": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAdds an additional effect to the Core Talent on the \u003Cspan class=\"dim\"\u003EGod of Might/Goddess of Hunting/Goddess of Knowledge/God of War/Goddess of Deception/God of Machines\u003C/span\u003E Advanced Talent Panel:\u003C/li\u003E\u003Cli class=\"mod\"\u003EEliminates enemies with less than \u003Cspan class=\"val\"\u003E12\u003C/span\u003E% Life and at least \u003Cspan class=\"val\"\u003E30\u003C/span\u003E stack(s) of Wilt when dealing damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Affix",
+    "rarity": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAdds an additional effect to the Core Talent on the \u003Cspan class=\"dim\"\u003EGod of Might/Goddess of Hunting/Goddess of Knowledge/God of War/Goddess of Deception/God of Machines\u003C/span\u003E Advanced Talent Panel:\u003C/li\u003E\u003Cli class=\"mod\"\u003EFor every stack of Max \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESpell Burst\u003C/div\u003E\u003Cdiv\u003EAutomatically uses a Spell Skill a certain number of times.\u003Cbr/\u003EWhen Spell Burst is fully charged, the next Spell Skill used will activate Spell Burst, which will consume all stacks charged and automatically use the Spell Skill the same number of times.\u003Cbr/\u003ESkills that have a cooldown, Triggered Skills, Sentry Skills, Channeled Skills, and Combo Skills cannot activate Spell Burst.\u003C/div\u003E\u003C/div\u003E\"\u003ESpell Burst\u003C/span\u003E, \u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% additional Spell Damage, up to \u003Cspan class=\"val\"\u003E+16\u003C/span\u003E% additional Spell Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Affix",
+    "rarity": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAdds an additional effect to the Core Talent on the \u003Cspan class=\"dim\"\u003EGod of Might/Goddess of Hunting/Goddess of Knowledge/God of War/Goddess of Deception/God of Machines\u003C/span\u003E Advanced Talent Panel:\u003C/li\u003E\u003Cli class=\"mod\"\u003EWhen channeling Harmonious Field, triggers the Sentry Main Skill if there are no Sentries within 10m. Interval: 1s\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+30\u003C/span\u003E% Empower Skill Effect for Harmonious Field\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Affix",
+    "rarity": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAdds an additional effect to the Core Talent on the \u003Cspan class=\"dim\"\u003EGod of Might/Goddess of Hunting/Goddess of Knowledge/God of War/Goddess of Deception/God of Machines\u003C/span\u003E Advanced Talent Panel:\u003C/li\u003E\u003Cli class=\"mod\"\u003EWhile standing still, \u003Cspan class=\"val\"\u003E+12\u003C/span\u003E% additional Attack Damage and \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAilment Damage\u003C/div\u003E\u003Cdiv\u003ETrauma, Ignite, and Wilt\u003C/div\u003E\u003C/div\u003E\"\u003EAilment Damage\u003C/span\u003E dealt by attacks. \u003Cspan class=\"val\"\u003E-5\u003C/span\u003E% additional damage taken\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Affix",
+    "rarity": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EReplaces the Core Talent on the \u003Cspan class=\"dim\"\u003EGod of Might/Goddess of Hunting/Goddess of Knowledge/God of War/Goddess of Deception/God of Machines\u003C/span\u003E Advanced Talent Panel with \u003Cspan class=\"tooltip\" data-title=\"-100% additional Tenacity Blessing, Agility Blessing, and Focus Blessing Effect\u003Cbr/\u003EWhen gaining any Blessing, Minions within 10m also gain it\u003Cbr/\u003EMinions' max Blessing stacks are twice your own\"\u003ECommander's Gambit\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Affix",
+    "rarity": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EReplaces the Core Talent on the \u003Cspan class=\"dim\"\u003EGod of Might/Goddess of Hunting/Goddess of Knowledge/God of War/Goddess of Deception/God of Machines\u003C/span\u003E Advanced Talent Panel with \u003Cspan class=\"tooltip\" data-title=\"+1000 Max Energy\"\u003EEffortless Command\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Affix",
+    "rarity": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EReplaces the Core Talent on the \u003Cspan class=\"dim\"\u003EGod of Might/Goddess of Hunting/Goddess of Knowledge/God of War/Goddess of Deception/God of Machines\u003C/span\u003E Advanced Talent Panel with \u003Cspan class=\"tooltip\" data-title=\"+12% additional Erosion Damage to an enemy for each type of Crowd Control Effect they are under\u003Cbr/\u003ECrowd Control Effects inflicted are reflected back onto you\"\u003ESelf-Delusion\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Affix",
+    "rarity": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EReplaces the Core Talent on the \u003Cspan class=\"dim\"\u003EGod of Might/Goddess of Hunting/Goddess of Knowledge/God of War/Goddess of Deception/God of Machines\u003C/span\u003E Advanced Talent Panel with \u003Cspan class=\"tooltip\" data-title=\"+3% additional \u003Ce id=710\u003EIgnite\u003C/e\u003E Damage, up to +150%, for every +1% \u003Ce id=710\u003EIgnite\u003C/e\u003E Chance above 100%\u003Cbr/\u003E+3% additional \u003Ce id=709\u003EWilt\u003C/e\u003E Damage, up to +150%, for every +1% \u003Ce id=709\u003EWilt\u003C/e\u003E Chance above 100%\u003Cbr/\u003E+3% additional \u003Ce id=711\u003ETrauma\u003C/e\u003E Damage, up to +150%, for every +1% \u003Ce id=711\u003ETrauma\u003C/e\u003E Chance above 100%\"\u003EFiery Fantasy\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Affix",
+    "rarity": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EReplaces the Core Talent on the \u003Cspan class=\"dim\"\u003EGod of Might/Goddess of Hunting/Goddess of Knowledge/God of War/Goddess of Deception/God of Machines\u003C/span\u003E Advanced Talent Panel with \u003Cspan class=\"tooltip\" data-title=\"Adds 100% of \u003Ce id=111\u003EMain-Hand Weapon\u003C/e\u003E's Damage to Spells\u003Cbr/\u003EAdds 75% of \u003Ce id=111\u003EMain-Hand Weapon\u003C/e\u003E's Critical Strike Rating to the Base Critical Strike Rating of Spell Skills\u003Cbr/\u003E-99% additional Ailment Damage\"\u003ETowering Presence\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Affix",
+    "rarity": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EReplaces the Core Talent on the \u003Cspan class=\"dim\"\u003EGod of Might/Goddess of Hunting/Goddess of Knowledge/God of War/Goddess of Deception/God of Machines\u003C/span\u003E Advanced Talent Panel with \u003Cspan class=\"tooltip\" data-title=\"Changes the effect of each point of Affliction to: +0.1% - +3% additional Damage Over Time taken. Refreshes every 1s and is affected by Lucky Damage bonuses\u003Cbr/\u003E90% of the bonuses and additional bonuses for Max Damage is also applied to Damage Over Time\"\u003EEscalating Affliction\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Affix",
+    "rarity": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EReplaces the Core Talent on the \u003Cspan class=\"dim\"\u003EGod of Might/Goddess of Hunting/Goddess of Knowledge/God of War/Goddess of Deception/God of Machines\u003C/span\u003E Advanced Talent Panel with \u003Cspan class=\"tooltip\" data-title=\"Enemies have a 25% chance to explode when defeated by Attacks or Spells, dealing True Damage equal to 250% of their Max Life to enemies within a 5m radius\u003Cbr/\u003E+30% additional damage dealt to Elites\"\u003ECrushing Blast\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Affix",
+    "rarity": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EReplaces the Core Talent on the \u003Cspan class=\"dim\"\u003EGod of Might/Goddess of Hunting/Goddess of Knowledge/God of War/Goddess of Deception/God of Machines\u003C/span\u003E Advanced Talent Panel with \u003Cspan class=\"tooltip\" data-title=\"For each different Warcry cast, +35% additional Attack Damage for 8s\u003Cbr/\u003E-100% additional Empower Skill and Defensive Skill Effect\"\u003EStorm's Command\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Affix",
+    "rarity": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EReplaces the Core Talent on the \u003Cspan class=\"dim\"\u003EGod of Might/Goddess of Hunting/Goddess of Knowledge/God of War/Goddess of Deception/God of Machines\u003C/span\u003E Advanced Talent Panel with \u003Cspan class=\"tooltip\" data-title=\"Gains Cold and Lightning Resistance equal to 50% of Fire Resistance\u003Cbr/\u003E\"\u003EOne For All\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Affix",
+    "rarity": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EReplaces the Core Talent on the \u003Cspan class=\"dim\"\u003EGod of Might/Goddess of Hunting/Goddess of Knowledge/God of War/Goddess of Deception/God of Machines\u003C/span\u003E Advanced Talent Panel with \u003Cspan class=\"tooltip\" data-title=\"Gains Defense equal to 2% of Armor and absorbs 100% of Non-True Damage taken every 10s. Defense is refreshed when gained again\u003Cbr/\u003EMax Life is fixed at 100\u003Cbr/\u003EYour Evasion and Max Energy Shield are fixed at 0\"\u003EUnwavering Fortress\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Affix",
+    "rarity": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EReplaces the Core Talent on the \u003Cspan class=\"dim\"\u003EGod of Might/Goddess of Hunting/Goddess of Knowledge/God of War/Goddess of Deception/God of Machines\u003C/span\u003E Advanced Talent Panel with \u003Cspan class=\"tooltip\" data-title=\"Gains different buffs based on the number of different Spell Skills equipped: For every Empower Skill equipped, +13% additional Spell Damage (multiplies)\u003Cbr/\u003EFor every Curse Skill equipped, +6% Elemental and Erosion Resistance Penetration and +6% Armor DMG Mitigation Penetration\u003Cbr/\u003EFor every Defensive Skill equipped, +13% additional Max Mana (multiplies)\u003Cbr/\u003EFor every Mobility Skill equipped, +13% additional Cast Speed (multiplies)\"\u003EKeen Intellect\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Affix",
+    "rarity": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EReplaces the Core Talent on the \u003Cspan class=\"dim\"\u003EGod of Might/Goddess of Hunting/Goddess of Knowledge/God of War/Goddess of Deception/God of Machines\u003C/span\u003E Advanced Talent Panel with \u003Cspan class=\"tooltip\" data-title=\"Gains Growth equal to 80% of the nearest Spirit Magus every 1s, and Growth gains Return Speed equal to Command\u003Cbr/\u003EFor every 10 Growth, +1% additional damage for Spirit Magi, +0.1% additional Physique and +0.5% Skill Area for yourself\"\u003ECircle of Life\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Affix",
+    "rarity": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EReplaces the Core Talent on the \u003Cspan class=\"dim\"\u003EGod of Might/Goddess of Hunting/Goddess of Knowledge/God of War/Goddess of Deception/God of Machines\u003C/span\u003E Advanced Talent Panel with \u003Cspan class=\"tooltip\" data-title=\"Has 130 point(s) of fixed Fervor Rating\"\u003EUnmatched Valor\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Affix",
+    "rarity": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EReplaces the Core Talent on the \u003Cspan class=\"dim\"\u003EGod of Might/Goddess of Hunting/Goddess of Knowledge/God of War/Goddess of Deception/God of Machines\u003C/span\u003E Advanced Talent Panel with \u003Cspan class=\"tooltip\" data-title=\"If you haven't been hit recently, +40% Injury Buffer. This effect lasts for 4s longer when you are hit\u003Cbr/\u003EIf you have been hit recently, gains 1 stack of \u003Ce id=159\u003EDeflection\u003C/e\u003E every 0.5s\"\u003EAdaptive Defense\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Affix",
+    "rarity": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EReplaces the Core Talent on the \u003Cspan class=\"dim\"\u003EGod of Might/Goddess of Hunting/Goddess of Knowledge/God of War/Goddess of Deception/God of Machines\u003C/span\u003E Advanced Talent Panel with \u003Cspan class=\"tooltip\" data-title=\"Inflicts \u003Ce id=61014\u003EScorch\u003C/e\u003E instead of \u003Ce id=710\u003EIgnite\u003C/e\u003E\u003Cbr/\u003ENearby enemies within 10m -10% Fire Resistance for each stack of \u003Ce id=61014\u003EScorch\u003C/e\u003E on them\"\u003EFire's Allure\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Affix",
+    "rarity": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EReplaces the Core Talent on the \u003Cspan class=\"dim\"\u003EGod of Might/Goddess of Hunting/Goddess of Knowledge/God of War/Goddess of Deception/God of Machines\u003C/span\u003E Advanced Talent Panel with \u003Cspan class=\"tooltip\" data-title=\"Moves in the target direction when casting Dark Gate\u003Cbr/\u003E+3 Max Charges for Dark Gate\u003Cbr/\u003E+50% additional Cooldown Recovery Speed for Dark Gate\u003Cbr/\u003E+30% additional Minion Damage if a Dark Gate has been cast recently\"\u003EDark Advance\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Affix",
+    "rarity": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EReplaces the Core Talent on the \u003Cspan class=\"dim\"\u003EGod of Might/Goddess of Hunting/Goddess of Knowledge/God of War/Goddess of Deception/God of Machines\u003C/span\u003E Advanced Talent Panel with \u003Cspan class=\"tooltip\" data-title=\"On hit, Main Ranged Horizontal Projectile Skills have a 100% chance to cast an additional Main Skill, whose projectiles fire in a ring and deal -60% additional damage. Interval: 0.03s. Does not affect Sentry Skills, Vertical Skills, and Channeled Skills.\u003Cbr/\u003EProjectile Quantity upper limit: 5\u003Cbr/\u003E+2 Horizontal Projectile Penetration(s)\"\u003ESweeping Fury\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Affix",
+    "rarity": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EReplaces the Core Talent on the \u003Cspan class=\"dim\"\u003EGod of Might/Goddess of Hunting/Goddess of Knowledge/God of War/Goddess of Deception/God of Machines\u003C/span\u003E Advanced Talent Panel with \u003Cspan class=\"tooltip\" data-title=\"Reduces 10% Armor and 2% Elemental and Erosion Resistance for enemies on Critical Strike for 8s. Stacks up to 10 time(s)\"\u003EJuggernaut\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Affix",
+    "rarity": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EReplaces the Core Talent on the \u003Cspan class=\"dim\"\u003EGod of Might/Goddess of Hunting/Goddess of Knowledge/God of War/Goddess of Deception/God of Machines\u003C/span\u003E Advanced Talent Panel with \u003Cspan class=\"tooltip\" data-title=\"Spell Skills on hit have a 50% chance to spawn a Pulse, dealing True Damage equal to 150% of Hit Damage. Interval: 0.03s\"\u003ESpell Ripple\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Affix",
+    "rarity": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EReplaces the Core Talent on the \u003Cspan class=\"dim\"\u003EGod of Might/Goddess of Hunting/Goddess of Knowledge/God of War/Goddess of Deception/God of Machines\u003C/span\u003E Advanced Talent Panel with \u003Cspan class=\"tooltip\" data-title=\"Triggers Miraculous Gain when casting a Restoration Skill\u003Cbr/\u003ERestoration Skills gain 1 Charging Progress every second\"\u003EMiraculous Touch\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Affix",
+    "rarity": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EReplaces the Core Talent on the \u003Cspan class=\"dim\"\u003EGod of Might/Goddess of Hunting/Goddess of Knowledge/God of War/Goddess of Deception/God of Machines\u003C/span\u003E Advanced Talent Panel with \u003Cspan class=\"tooltip\" data-title=\"When a Combo Finisher is in Multistrike, it is guaranteed to deal damage equal to the Max Multistrike Count\"\u003EUnstoppable Force\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Base Affix",
+    "rarity": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EReplaces the Core Talent on the \u003Cspan class=\"dim\"\u003EGod of Might/Goddess of Hunting/Goddess of Knowledge/God of War/Goddess of Deception/God of Machines\u003C/span\u003E Advanced Talent Panel with \u003Cspan class=\"tooltip\" data-title=\"When exiting Stand Still, gains 1 stack of buff that lasts for 2s, up to 5 time(s)\u003Cbr/\u003E+14% additional damage dealt to enemies in proximity for each stack of this buff. +8% Attack Speed\"\u003EHare's Agility\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area can ignore prerequisite point requirements\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area can ignore prerequisite point requirements\u003C/li\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area can ignore prerequisite point requirements\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EPoints can be allocated to all \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area \u003Cspan class=\"val\"\u003E1\u003C/span\u003E additional time(s)\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EPoints can be allocated to all \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area \u003Cspan class=\"val\"\u003E2\u003C/span\u003E additional time(s)\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EPoints can be allocated to all \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area \u003Cspan class=\"val\"\u003E3\u003C/span\u003E additional time(s)\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EPoints can be allocated to all \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area \u003Cspan class=\"val\"\u003E1\u003C/span\u003E additional time(s)\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EPoints can be allocated to all \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area \u003Cspan class=\"val\"\u003E2\u003C/span\u003E additional time(s)\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EPoints can be allocated to all \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area \u003Cspan class=\"val\"\u003E3\u003C/span\u003E additional time(s)\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-100\u003C/span\u003E% Curse effect against you\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+1\u003C/span\u003E to Max \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAgility Blessing\u003C/div\u003E\u003Cdiv\u003EEvery stack of Agility Blessing grants +4% Attack and Cast Speed and +2% additional damage. Initial max stacks: 4\u003C/div\u003E\u003C/div\u003E\"\u003EAgility Blessing\u003C/span\u003E Stacks\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+1\u003C/span\u003E to Max \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFocus Blessing\u003C/div\u003E\u003Cdiv\u003EEvery stack of Focus Blessing grants +5% additional damage. Initial max stacks: 4\u003C/div\u003E\u003C/div\u003E\"\u003EFocus Blessing\u003C/span\u003E Stacks\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+1\u003C/span\u003E to Max \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ETenacity Blessing\u003C/div\u003E\u003Cdiv\u003EEvery stack of Tenacity Blessing grants an additional 4% damage reduction (multiplies). Initial max stacks: 4.\u003C/div\u003E\u003C/div\u003E\"\u003ETenacity Blessing\u003C/span\u003E Stacks\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+100\u003C/span\u003E% chance to gain a Barrier upon casting a Defensive Skill\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+175\u003C/span\u003E% chance to gain a Barrier upon casting a Defensive Skill\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E to Max \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAgility Blessing\u003C/div\u003E\u003Cdiv\u003EEvery stack of Agility Blessing grants +4% Attack and Cast Speed and +2% additional damage. Initial max stacks: 4\u003C/div\u003E\u003C/div\u003E\"\u003EAgility Blessing\u003C/span\u003E Stacks\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E to Max \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFocus Blessing\u003C/div\u003E\u003Cdiv\u003EEvery stack of Focus Blessing grants +5% additional damage. Initial max stacks: 4\u003C/div\u003E\u003C/div\u003E\"\u003EFocus Blessing\u003C/span\u003E Stacks\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E to Max \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ETenacity Blessing\u003C/div\u003E\u003Cdiv\u003EEvery stack of Tenacity Blessing grants an additional 4% damage reduction (multiplies). Initial max stacks: 4.\u003C/div\u003E\u003C/div\u003E\"\u003ETenacity Blessing\u003C/span\u003E Stacks\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003EGains \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAttack Aggression\u003C/div\u003E\u003Cdiv\u003EAdditionally increases Attack Speed and Attack Damage by 5%. Increases Movement Speed by 10%\u003C/div\u003E\u003C/div\u003E\"\u003EAttack Aggression\u003C/span\u003E when casting an Attack Skill\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+100\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAttack Aggression\u003C/div\u003E\u003Cdiv\u003EAdditionally increases Attack Speed and Attack Damage by 5%. Increases Movement Speed by 10%\u003C/div\u003E\u003C/div\u003E\"\u003EAttack Aggression\u003C/span\u003E Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003EGains \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAttack Aggression\u003C/div\u003E\u003Cdiv\u003EAdditionally increases Attack Speed and Attack Damage by 5%. Increases Movement Speed by 10%\u003C/div\u003E\u003C/div\u003E\"\u003EAttack Aggression\u003C/span\u003E when casting an Attack Skill\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+40\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAttack Aggression\u003C/div\u003E\u003Cdiv\u003EAdditionally increases Attack Speed and Attack Damage by 5%. Increases Movement Speed by 10%\u003C/div\u003E\u003C/div\u003E\"\u003EAttack Aggression\u003C/span\u003E Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003EGains \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESpell Aggression\u003C/div\u003E\u003Cdiv\u003EAdditionally increases Cast Speed and Spell Damage by 7%. Increases Mobility Skill Cooldown Recovery Speed by 7%\u003C/div\u003E\u003C/div\u003E\"\u003ESpell Aggression\u003C/span\u003E when casting a Spell Skill\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+100\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESpell Aggression\u003C/div\u003E\u003Cdiv\u003EAdditionally increases Cast Speed and Spell Damage by 7%. Increases Mobility Skill Cooldown Recovery Speed by 7%\u003C/div\u003E\u003C/div\u003E\"\u003ESpell Aggression\u003C/span\u003E Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003EGains \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESpell Aggression\u003C/div\u003E\u003Cdiv\u003EAdditionally increases Cast Speed and Spell Damage by 7%. Increases Mobility Skill Cooldown Recovery Speed by 7%\u003C/div\u003E\u003C/div\u003E\"\u003ESpell Aggression\u003C/span\u003E when casting a Spell Skill\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+40\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESpell Aggression\u003C/div\u003E\u003Cdiv\u003EAdditionally increases Cast Speed and Spell Damage by 7%. Increases Mobility Skill Cooldown Recovery Speed by 7%\u003C/div\u003E\u003C/div\u003E\"\u003ESpell Aggression\u003C/span\u003E Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003EGains a stack of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFortitude\u003C/div\u003E\u003Cdiv\u003EEach stack of Fortitude additionally reduces Hit Damage taken by 5% for 10s.\u003Cbr/\u003EBase Max Fortitude Stacks: 3.\u003C/div\u003E\u003C/div\u003E\"\u003EFortitude\u003C/span\u003E when using a Melee Skill\u003C/li\u003E\u003Cli class=\"mod\"\u003EOwns \u003Cspan class=\"val\"\u003E1\u003C/span\u003E additional stack(s) of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFortitude\u003C/div\u003E\u003Cdiv\u003EEach stack of Fortitude additionally reduces Hit Damage taken by 5% for 10s.\u003Cbr/\u003EBase Max Fortitude Stacks: 3.\u003C/div\u003E\u003C/div\u003E\"\u003EFortitude\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003EGains a stack of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFortitude\u003C/div\u003E\u003Cdiv\u003EEach stack of Fortitude additionally reduces Hit Damage taken by 5% for 10s.\u003Cbr/\u003EBase Max Fortitude Stacks: 3.\u003C/div\u003E\u003C/div\u003E\"\u003EFortitude\u003C/span\u003E when using a Melee Skill\u003C/li\u003E\u003Cli class=\"mod\"\u003EOwns \u003Cspan class=\"val\"\u003E2\u003C/span\u003E additional stack(s) of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFortitude\u003C/div\u003E\u003Cdiv\u003EEach stack of Fortitude additionally reduces Hit Damage taken by 5% for 10s.\u003Cbr/\u003EBase Max Fortitude Stacks: 3.\u003C/div\u003E\u003C/div\u003E\"\u003EFortitude\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003EGains a stack of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ETorment\u003C/div\u003E\u003Cdiv\u003EEach stack of Torment additionally increases Damage Over Time dealt by 5% for 4s. Stacks up to 3 times\u003C/div\u003E\u003C/div\u003E\"\u003ETorment\u003C/span\u003E when dealing Damage Over Time\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+100\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ETorment\u003C/div\u003E\u003Cdiv\u003EEach stack of Torment additionally increases Damage Over Time dealt by 5% for 4s. Stacks up to 3 times\u003C/div\u003E\u003C/div\u003E\"\u003ETorment\u003C/span\u003E Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003EGains a stack of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ETorment\u003C/div\u003E\u003Cdiv\u003EEach stack of Torment additionally increases Damage Over Time dealt by 5% for 4s. Stacks up to 3 times\u003C/div\u003E\u003C/div\u003E\"\u003ETorment\u003C/span\u003E when dealing Damage Over Time\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+40\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ETorment\u003C/div\u003E\u003Cdiv\u003EEach stack of Torment additionally increases Damage Over Time dealt by 5% for 4s. Stacks up to 3 times\u003C/div\u003E\u003C/div\u003E\"\u003ETorment\u003C/span\u003E Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003EHas \u003Cspan class=\"val\"\u003E100\u003C/span\u003E point(s) of fixed \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EBlur Rating\u003C/div\u003E\u003Cdiv\u003E+0.3% Evasion and +0.2% chance to avoid damage for every point of Blur Rating you have. The Max Blur Rating is 100\u003C/div\u003E\u003C/div\u003E\"\u003EBlur Rating\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003EHas \u003Cspan class=\"val\"\u003E120\u003C/span\u003E point(s) of fixed \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EBlur Rating\u003C/div\u003E\u003Cdiv\u003E+0.3% Evasion and +0.2% chance to avoid damage for every point of Blur Rating you have. The Max Blur Rating is 100\u003C/div\u003E\u003C/div\u003E\"\u003EBlur Rating\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003EImmune to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EParalysis\u003C/div\u003E\u003Cdiv\u003EIncreases damage taken by 15%\u003C/div\u003E\u003C/div\u003E\"\u003EParalysis\u003C/span\u003E and \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESlow\u003C/div\u003E\u003Cdiv\u003EEach stack reduces Attack Speed, Cast Speed, and Movement Speed by 6%. Stacks up to 5 times\u003C/div\u003E\u003C/div\u003E\"\u003ESlow\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003EInflicts \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECold Infiltration\u003C/div\u003E\u003Cdiv\u003EAdditionally increases Cold Damage taken by 13%. Reduces Movement Speed by 5%\u003C/div\u003E\u003C/div\u003E\"\u003ECold Infiltration\u003C/span\u003E on hit\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+100\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECold Infiltration\u003C/div\u003E\u003Cdiv\u003EAdditionally increases Cold Damage taken by 13%. Reduces Movement Speed by 5%\u003C/div\u003E\u003C/div\u003E\"\u003ECold Infiltration\u003C/span\u003E Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003EInflicts \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECold Infiltration\u003C/div\u003E\u003Cdiv\u003EAdditionally increases Cold Damage taken by 13%. Reduces Movement Speed by 5%\u003C/div\u003E\u003C/div\u003E\"\u003ECold Infiltration\u003C/span\u003E on hit\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+40\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECold Infiltration\u003C/div\u003E\u003Cdiv\u003EAdditionally increases Cold Damage taken by 13%. Reduces Movement Speed by 5%\u003C/div\u003E\u003C/div\u003E\"\u003ECold Infiltration\u003C/span\u003E Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003EInflicts \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFire Infiltration\u003C/div\u003E\u003Cdiv\u003EAdditionally increases Fire Damage taken by 13%. Reduces Skill Area by 8%\u003C/div\u003E\u003C/div\u003E\"\u003EFire Infiltration\u003C/span\u003E on hit\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+100\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFire Infiltration\u003C/div\u003E\u003Cdiv\u003EAdditionally increases Fire Damage taken by 13%. Reduces Skill Area by 8%\u003C/div\u003E\u003C/div\u003E\"\u003EFire Infiltration\u003C/span\u003E Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003EInflicts \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFire Infiltration\u003C/div\u003E\u003Cdiv\u003EAdditionally increases Fire Damage taken by 13%. Reduces Skill Area by 8%\u003C/div\u003E\u003C/div\u003E\"\u003EFire Infiltration\u003C/span\u003E on hit\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+40\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFire Infiltration\u003C/div\u003E\u003Cdiv\u003EAdditionally increases Fire Damage taken by 13%. Reduces Skill Area by 8%\u003C/div\u003E\u003C/div\u003E\"\u003EFire Infiltration\u003C/span\u003E Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003EInflicts \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFrail\u003C/div\u003E\u003Cdiv\u003EAdditionally increases Spell Damage taken by 15%\u003C/div\u003E\u003C/div\u003E\"\u003EFrail\u003C/span\u003E when dealing Spell Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+100\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFrail\u003C/div\u003E\u003Cdiv\u003EAdditionally increases Spell Damage taken by 15%\u003C/div\u003E\u003C/div\u003E\"\u003EFrail\u003C/span\u003E Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003EInflicts \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFrail\u003C/div\u003E\u003Cdiv\u003EAdditionally increases Spell Damage taken by 15%\u003C/div\u003E\u003C/div\u003E\"\u003EFrail\u003C/span\u003E when dealing Spell Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+40\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFrail\u003C/div\u003E\u003Cdiv\u003EAdditionally increases Spell Damage taken by 15%\u003C/div\u003E\u003C/div\u003E\"\u003EFrail\u003C/span\u003E Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003EInflicts \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ELightning Infiltration\u003C/div\u003E\u003Cdiv\u003EAdditionally increases Lightning Damage taken by 13%. Reduces Attack Speed by 5%\u003C/div\u003E\u003C/div\u003E\"\u003ELightning Infiltration\u003C/span\u003E on hit\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+100\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ELightning Infiltration\u003C/div\u003E\u003Cdiv\u003EAdditionally increases Lightning Damage taken by 13%. Reduces Attack Speed by 5%\u003C/div\u003E\u003C/div\u003E\"\u003ELightning Infiltration\u003C/span\u003E Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003EInflicts \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ELightning Infiltration\u003C/div\u003E\u003Cdiv\u003EAdditionally increases Lightning Damage taken by 13%. Reduces Attack Speed by 5%\u003C/div\u003E\u003C/div\u003E\"\u003ELightning Infiltration\u003C/span\u003E on hit\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+40\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ELightning Infiltration\u003C/div\u003E\u003Cdiv\u003EAdditionally increases Lightning Damage taken by 13%. Reduces Attack Speed by 5%\u003C/div\u003E\u003C/div\u003E\"\u003ELightning Infiltration\u003C/span\u003E Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003EYou can cast \u003Cspan class=\"val\"\u003E1\u003C/span\u003E additional Curses\u003C/li\u003E\u003Cli class=\"mod\"\u003EGains 1 Lv. \u003Cspan class=\"val\"\u003E1\u003C/span\u003E random curse for \u003Cspan class=\"val\"\u003E5\u003C/span\u003E s after casting a Curse Skill\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E+ \u003Cspan class=\"val\"\u003E3\u003C/span\u003E \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECommand\u003C/div\u003E\u003Cdiv\u003EEvery point of Command will grant Synthetic Troop Minions +3% additional damage and a bigger Tracking Area.\u003Cbr/\u003EThe lowest Command is -100 while the highest is 100. When Command is not 0, 13 point(s) will be returned (reduced/granted) every second until it becomes 0. For every 10 Command increased, +7 additional points will be returned.\u003Cbr/\u003ESynthetic Troop Minions' Duration will not reduce when Command is a positive value.\u003C/div\u003E\u003C/div\u003E\"\u003ECommand\u003C/span\u003E per second\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E+ \u003Cspan class=\"val\"\u003E5.5\u003C/span\u003E \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECommand\u003C/div\u003E\u003Cdiv\u003EEvery point of Command will grant Synthetic Troop Minions +3% additional damage and a bigger Tracking Area.\u003Cbr/\u003EThe lowest Command is -100 while the highest is 100. When Command is not 0, 13 point(s) will be returned (reduced/granted) every second until it becomes 0. For every 10 Command increased, +7 additional points will be returned.\u003Cbr/\u003ESynthetic Troop Minions' Duration will not reduce when Command is a positive value.\u003C/div\u003E\u003C/div\u003E\"\u003ECommand\u003C/span\u003E per second\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EMultistrike\u003C/div\u003E\u003Cdiv\u003EChance to perform an additional attack when using Attack Skills. If the chance exceeds 100%, one additional attack will be performed with every 100% of the chance.\u003Cbr/\u003E\u003Cbr/\u003E+20% Attack Speed during Multistrikes.\u003Cbr/\u003EMultistrikes consume skill resources as normal and will be interrupted if there are insufficient resources. Moving or using other non-instant skills will interrupt Multistrike.\u003Cbr/\u003EMobility, Channeled Skills, and Sentry skills cannot Multistrike\u003C/div\u003E\u003C/div\u003E\"\u003EMultistrikes\u003C/span\u003E deal \u003Cspan class=\"val\"\u003E12\u003C/span\u003E% increasing damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EMultistrike\u003C/div\u003E\u003Cdiv\u003EChance to perform an additional attack when using Attack Skills. If the chance exceeds 100%, one additional attack will be performed with every 100% of the chance.\u003Cbr/\u003E\u003Cbr/\u003E+20% Attack Speed during Multistrikes.\u003Cbr/\u003EMultistrikes consume skill resources as normal and will be interrupted if there are insufficient resources. Moving or using other non-instant skills will interrupt Multistrike.\u003Cbr/\u003EMobility, Channeled Skills, and Sentry skills cannot Multistrike\u003C/div\u003E\u003C/div\u003E\"\u003EMultistrikes\u003C/span\u003E deal \u003Cspan class=\"val\"\u003E21\u003C/span\u003E% increasing damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E to Max \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFrostbite\u003C/div\u003E\u003Cdiv\u003EEnemies are inflicted with a fixed amount of Frostbite Rating when they are Frostbitten. This can be increased by raising Max Frostbite Rating. The Max Frostbite Rating is 100.\u003C/div\u003E\u003C/div\u003E\"\u003EFrostbite Rating\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+12\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EOrigin of Spirit Magus\u003C/div\u003E\u003Cdiv\u003EBuff effect gained after Activating a Spirit Magus summoning skill.\u003C/div\u003E\u003C/div\u003E\"\u003EOrigin of Spirit Magus\u003C/span\u003E effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+15\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENumbed\u003C/div\u003E\u003Cdiv\u003EAn Elemental Ailment that has a chance to be inflicted when Lightning Damage hits its target.\u003Cbr/\u003EWhen hitting a Numbed enemy, Lightning Damage inflicts 1 stack of Numbed for every 10% of the sum of Max Energy Shield and Life dealt by Lightning Damage. This threshold can be lowered or raised, but the minimum is 1%.\u003Cbr/\u003EThe default duration of Numbed is 2s, and the duration of each stack is calculated independently.\u003Cbr/\u003EMax Numbed stacks: 10. Each stack of Numbed increases the Lightning Damage taken by an additional +5%.\u003C/div\u003E\u003C/div\u003E\"\u003ENumbed\u003C/span\u003E Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+16\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDeterioration\u003C/div\u003E\u003Cdiv\u003ELasts for 1s. When the duration ends, deals True Damage equal to 60% of the Hit Erosion Damage dealt. Stacks up to 99 times. Each stack is calculated independently\u003C/div\u003E\u003C/div\u003E\"\u003EDeterioration\u003C/span\u003E Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+16\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESteep Strike\u003C/div\u003E\u003Cdiv\u003ESlash Strike Skills are cast in Sweep Slash form by default. When casting the skill, there is a chance that it will be cast in Steep Strike form. Some skills gain Steep Strike attempts at specific times. When there are Steep Strike attempts, the skill will be cast in Steep Strike form and consume 1 Steep Strike attempt.\u003C/div\u003E\u003C/div\u003E\"\u003ESteep Strike\u003C/span\u003E chance.\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+21\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EOrigin of Spirit Magus\u003C/div\u003E\u003Cdiv\u003EBuff effect gained after Activating a Spirit Magus summoning skill.\u003C/div\u003E\u003C/div\u003E\"\u003EOrigin of Spirit Magus\u003C/span\u003E effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+24\u003C/span\u003E initial \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EGrowth\u003C/div\u003E\u003Cdiv\u003ESpirit Magi grow into the next Stage for every 100 Growth. They start at Stage 1 and can grow until they reach Stage 5. For every 8 Growth they have, Spirit Magi gain +1% Physique, +5% additional Skill Area, and a bonus every stage:\u003Cbr/\u003EAt Stage 2, +30% chance for them to use Enhanced Skill chance.\u003Cbr/\u003EAt Stage 3, their Enhanced Skills become stronger.\u003Cbr/\u003EAt Stage 4, their Empower Skills become stronger.\u003Cbr/\u003EAt Stage 5, they +25% additional damage, +10% additional Skill Area, and gain increased Movement Speed and Tracking Area.\u003Cbr/\u003EThe max Growth is 1000.\u003C/div\u003E\u003C/div\u003E\"\u003EGrowth\u003C/span\u003E for Spirit Magi\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+25\u003C/span\u003E% Reaping Duration\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+28\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDeterioration\u003C/div\u003E\u003Cdiv\u003ELasts for 1s. When the duration ends, deals True Damage equal to 60% of the Hit Erosion Damage dealt. Stacks up to 99 times. Each stack is calculated independently\u003C/div\u003E\u003C/div\u003E\"\u003EDeterioration\u003C/span\u003E Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+30\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDemolisher Charge\u003C/div\u003E\u003Cdiv\u003EImpact Skills gain 1 Demolisher Charge at regular intervals.\u003Cbr/\u003EUsing a Demolisher Skill will consume its charges and convert the skill into a stronger form\u003C/div\u003E\u003C/div\u003E\"\u003EDemolisher Charge\u003C/span\u003E Restoration Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+42\u003C/span\u003E initial \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EGrowth\u003C/div\u003E\u003Cdiv\u003ESpirit Magi grow into the next Stage for every 100 Growth. They start at Stage 1 and can grow until they reach Stage 5. For every 8 Growth they have, Spirit Magi gain +1% Physique, +5% additional Skill Area, and a bonus every stage:\u003Cbr/\u003EAt Stage 2, +30% chance for them to use Enhanced Skill chance.\u003Cbr/\u003EAt Stage 3, their Enhanced Skills become stronger.\u003Cbr/\u003EAt Stage 4, their Empower Skills become stronger.\u003Cbr/\u003EAt Stage 5, they +25% additional damage, +10% additional Skill Area, and gain increased Movement Speed and Tracking Area.\u003Cbr/\u003EThe max Growth is 1000.\u003C/div\u003E\u003C/div\u003E\"\u003EGrowth\u003C/span\u003E for Spirit Magi\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+44\u003C/span\u003E% Reaping Duration\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+5\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EBlock Ratio\u003C/div\u003E\u003Cdiv\u003EBy default, Blocking absorbs 30% damage. Increase Block Ratio to increase the damage absorption ratio.\u003C/div\u003E\u003C/div\u003E\"\u003EBlock Ratio\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% additional \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EPhantom\u003C/div\u003E\u003Cdiv\u003EShadow Strike creates a Shadow that strikes at other targets with the same attack. If no other targets are present, it will strike the character's target.\u003Cbr/\u003EMultiple Shadows can attack the same target, and the Shadows' Shotgun Effect falloff coefficient is 70%\u003Cbr/\u003EShadow damage and character damage are independent of each other\u003C/div\u003E\u003C/div\u003E\"\u003EShadow\u003C/span\u003E Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% Aura Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% Movement Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+9\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EBlock Ratio\u003C/div\u003E\u003Cdiv\u003EBy default, Blocking absorbs 30% damage. Increase Block Ratio to increase the damage absorption ratio.\u003C/div\u003E\u003C/div\u003E\"\u003EBlock Ratio\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+9\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESteep Strike\u003C/div\u003E\u003Cdiv\u003ESlash Strike Skills are cast in Sweep Slash form by default. When casting the skill, there is a chance that it will be cast in Steep Strike form. Some skills gain Steep Strike attempts at specific times. When there are Steep Strike attempts, the skill will be cast in Steep Strike form and consume 1 Steep Strike attempt.\u003C/div\u003E\u003C/div\u003E\"\u003ESteep Strike\u003C/span\u003E chance.\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E10.5\u003C/span\u003E% additional \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EPhantom\u003C/div\u003E\u003Cdiv\u003EShadow Strike creates a Shadow that strikes at other targets with the same attack. If no other targets are present, it will strike the character's target.\u003Cbr/\u003EMultiple Shadows can attack the same target, and the Shadows' Shotgun Effect falloff coefficient is 70%\u003Cbr/\u003EShadow damage and character damage are independent of each other\u003C/div\u003E\u003C/div\u003E\"\u003EShadow\u003C/span\u003E Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E10.5\u003C/span\u003E% Aura Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E12.5\u003C/span\u003E% Movement Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E17.5\u003C/span\u003E to Max \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFrostbite\u003C/div\u003E\u003Cdiv\u003EEnemies are inflicted with a fixed amount of Frostbite Rating when they are Frostbitten. This can be increased by raising Max Frostbite Rating. The Max Frostbite Rating is 100.\u003C/div\u003E\u003C/div\u003E\"\u003EFrostbite Rating\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E26.5\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENumbed\u003C/div\u003E\u003Cdiv\u003EAn Elemental Ailment that has a chance to be inflicted when Lightning Damage hits its target.\u003Cbr/\u003EWhen hitting a Numbed enemy, Lightning Damage inflicts 1 stack of Numbed for every 10% of the sum of Max Energy Shield and Life dealt by Lightning Damage. This threshold can be lowered or raised, but the minimum is 1%.\u003Cbr/\u003EThe default duration of Numbed is 2s, and the duration of each stack is calculated independently.\u003Cbr/\u003EMax Numbed stacks: 10. Each stack of Numbed increases the Lightning Damage taken by an additional +5%.\u003C/div\u003E\u003C/div\u003E\"\u003ENumbed\u003C/span\u003E Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E52.5\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDemolisher Charge\u003C/div\u003E\u003Cdiv\u003EImpact Skills gain 1 Demolisher Charge at regular intervals.\u003Cbr/\u003EUsing a Demolisher Skill will consume its charges and convert the skill into a stronger form\u003C/div\u003E\u003C/div\u003E\"\u003EDemolisher Charge\u003C/span\u003E Restoration Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+1\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EElemental\u003C/div\u003E\u003Cdiv\u003EFire, Cold, and Lightning\u003C/div\u003E\u003C/div\u003E\"\u003EElemental\u003C/span\u003E and Erosion Resistance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E Dexterity\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E Intelligence\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E Strength\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E% Critical Strike Rating\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E% Minion Critical Strike Rating\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+14\u003C/span\u003E% Projectile Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDefense\u003C/div\u003E\u003Cdiv\u003EThe sum of Armor, Evasion, and Energy Shield\u003C/div\u003E\u003C/div\u003E\"\u003EDefense\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EElemental\u003C/div\u003E\u003Cdiv\u003EFire, Cold, and Lightning\u003C/div\u003E\u003C/div\u003E\"\u003EElemental\u003C/span\u003E and Erosion Resistance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E% Attack and Cast Speed\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E% Minion Attack and Cast Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E% Attack and Spell Block Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E% Aura Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E% Max Life\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E% Sealed Mana Compensation\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EOrigin of Spirit Magus\u003C/div\u003E\u003Cdiv\u003EBuff effect gained after Activating a Spirit Magus summoning skill.\u003C/div\u003E\u003C/div\u003E\"\u003EOrigin of Spirit Magus\u003C/span\u003E effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% Cold Resistance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% Erosion Resistance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% Fire Resistance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% Lightning Resistance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% Max Mana\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAffliction\u003C/div\u003E\u003Cdiv\u003EWhen the Affliction inflicted per second is not 0, the Damage Over Time dealt will continuously inflicts Affliction on the target\u003Cbr/\u003EThe target takes 1% additional Damage Over Time for every Affliction point\u003Cbr/\u003EThe max Affliction is 100\u003C/div\u003E\u003C/div\u003E\"\u003EAffliction\u003C/span\u003E Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESpell Burst\u003C/div\u003E\u003Cdiv\u003EAutomatically uses a Spell Skill a certain number of times.\u003Cbr/\u003EWhen Spell Burst is fully charged, the next Spell Skill used will activate Spell Burst, which will consume all stacks charged and automatically use the Spell Skill the same number of times.\u003Cbr/\u003ESkills that have a cooldown, Triggered Skills, Sentry Skills, Channeled Skills, and Combo Skills cannot activate Spell Burst.\u003C/div\u003E\u003C/div\u003E\"\u003ESpell Burst\u003C/span\u003E Charge Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% Attack Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% Critical Strike Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% Minion Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% Damage Over Time\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% Minion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% Spell Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EOrigin of Spirit Magus\u003C/div\u003E\u003Cdiv\u003EBuff effect gained after Activating a Spirit Magus summoning skill.\u003C/div\u003E\u003C/div\u003E\"\u003EOrigin of Spirit Magus\u003C/span\u003E effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% Cold Resistance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% Erosion Resistance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% Fire Resistance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% Lightning Resistance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% Max Mana\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E% Projectile Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E10.5\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAffliction\u003C/div\u003E\u003Cdiv\u003EWhen the Affliction inflicted per second is not 0, the Damage Over Time dealt will continuously inflicts Affliction on the target\u003Cbr/\u003EThe target takes 1% additional Damage Over Time for every Affliction point\u003Cbr/\u003EThe max Affliction is 100\u003C/div\u003E\u003C/div\u003E\"\u003EAffliction\u003C/span\u003E Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E10.5\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESpell Burst\u003C/div\u003E\u003Cdiv\u003EAutomatically uses a Spell Skill a certain number of times.\u003Cbr/\u003EWhen Spell Burst is fully charged, the next Spell Skill used will activate Spell Burst, which will consume all stacks charged and automatically use the Spell Skill the same number of times.\u003Cbr/\u003ESkills that have a cooldown, Triggered Skills, Sentry Skills, Channeled Skills, and Combo Skills cannot activate Spell Burst.\u003C/div\u003E\u003C/div\u003E\"\u003ESpell Burst\u003C/span\u003E Charge Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E10.5\u003C/span\u003E% Attack Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E10.5\u003C/span\u003E% Critical Strike Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E10.5\u003C/span\u003E% Minion Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E10.5\u003C/span\u003E% Damage Over Time\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E10.5\u003C/span\u003E% Minion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E10.5\u003C/span\u003E% Spell Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E17.5\u003C/span\u003E Dexterity\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E17.5\u003C/span\u003E Intelligence\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E17.5\u003C/span\u003E Strength\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E17.5\u003C/span\u003E% Critical Strike Rating\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E17.5\u003C/span\u003E% Minion Critical Strike Rating\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E3.5\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDefense\u003C/div\u003E\u003Cdiv\u003EThe sum of Armor, Evasion, and Energy Shield\u003C/div\u003E\u003C/div\u003E\"\u003EDefense\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E3.5\u003C/span\u003E% Attack and Cast Speed\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E3.5\u003C/span\u003E% Minion Attack and Cast Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E3.5\u003C/span\u003E% Attack and Spell Block Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E3.5\u003C/span\u003E% Aura Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E3.5\u003C/span\u003E% Max Life\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E3.5\u003C/span\u003E% Sealed Mana Compensation\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+1\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EElemental\u003C/div\u003E\u003Cdiv\u003EFire, Cold, and Lightning\u003C/div\u003E\u003C/div\u003E\"\u003EElemental\u003C/span\u003E and Erosion Resistance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E Dexterity\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E Intelligence\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E Strength\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E% Critical Strike Rating\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E% Minion Critical Strike Rating\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+14\u003C/span\u003E% Projectile Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDefense\u003C/div\u003E\u003Cdiv\u003EThe sum of Armor, Evasion, and Energy Shield\u003C/div\u003E\u003C/div\u003E\"\u003EDefense\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EElemental\u003C/div\u003E\u003Cdiv\u003EFire, Cold, and Lightning\u003C/div\u003E\u003C/div\u003E\"\u003EElemental\u003C/span\u003E and Erosion Resistance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E% Attack and Cast Speed\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E% Minion Attack and Cast Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E% Attack and Spell Block Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E% Aura Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E% Max Life\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E% Sealed Mana Compensation\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EOrigin of Spirit Magus\u003C/div\u003E\u003Cdiv\u003EBuff effect gained after Activating a Spirit Magus summoning skill.\u003C/div\u003E\u003C/div\u003E\"\u003EOrigin of Spirit Magus\u003C/span\u003E effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% Cold Resistance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% Erosion Resistance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% Fire Resistance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% Lightning Resistance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% Max Mana\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAffliction\u003C/div\u003E\u003Cdiv\u003EWhen the Affliction inflicted per second is not 0, the Damage Over Time dealt will continuously inflicts Affliction on the target\u003Cbr/\u003EThe target takes 1% additional Damage Over Time for every Affliction point\u003Cbr/\u003EThe max Affliction is 100\u003C/div\u003E\u003C/div\u003E\"\u003EAffliction\u003C/span\u003E Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESpell Burst\u003C/div\u003E\u003Cdiv\u003EAutomatically uses a Spell Skill a certain number of times.\u003Cbr/\u003EWhen Spell Burst is fully charged, the next Spell Skill used will activate Spell Burst, which will consume all stacks charged and automatically use the Spell Skill the same number of times.\u003Cbr/\u003ESkills that have a cooldown, Triggered Skills, Sentry Skills, Channeled Skills, and Combo Skills cannot activate Spell Burst.\u003C/div\u003E\u003C/div\u003E\"\u003ESpell Burst\u003C/span\u003E Charge Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% Attack Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% Critical Strike Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% Minion Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% Damage Over Time\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% Minion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% Spell Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EOrigin of Spirit Magus\u003C/div\u003E\u003Cdiv\u003EBuff effect gained after Activating a Spirit Magus summoning skill.\u003C/div\u003E\u003C/div\u003E\"\u003EOrigin of Spirit Magus\u003C/span\u003E effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% Cold Resistance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% Erosion Resistance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% Fire Resistance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% Lightning Resistance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+7\u003C/span\u003E% Max Mana\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E% Projectile Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E10.5\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAffliction\u003C/div\u003E\u003Cdiv\u003EWhen the Affliction inflicted per second is not 0, the Damage Over Time dealt will continuously inflicts Affliction on the target\u003Cbr/\u003EThe target takes 1% additional Damage Over Time for every Affliction point\u003Cbr/\u003EThe max Affliction is 100\u003C/div\u003E\u003C/div\u003E\"\u003EAffliction\u003C/span\u003E Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E10.5\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESpell Burst\u003C/div\u003E\u003Cdiv\u003EAutomatically uses a Spell Skill a certain number of times.\u003Cbr/\u003EWhen Spell Burst is fully charged, the next Spell Skill used will activate Spell Burst, which will consume all stacks charged and automatically use the Spell Skill the same number of times.\u003Cbr/\u003ESkills that have a cooldown, Triggered Skills, Sentry Skills, Channeled Skills, and Combo Skills cannot activate Spell Burst.\u003C/div\u003E\u003C/div\u003E\"\u003ESpell Burst\u003C/span\u003E Charge Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E10.5\u003C/span\u003E% Attack Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E10.5\u003C/span\u003E% Critical Strike Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E10.5\u003C/span\u003E% Minion Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E10.5\u003C/span\u003E% Damage Over Time\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E10.5\u003C/span\u003E% Minion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E10.5\u003C/span\u003E% Spell Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E17.5\u003C/span\u003E Dexterity\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E17.5\u003C/span\u003E Intelligence\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E17.5\u003C/span\u003E Strength\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E17.5\u003C/span\u003E% Critical Strike Rating\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E17.5\u003C/span\u003E% Minion Critical Strike Rating\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E3.5\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDefense\u003C/div\u003E\u003Cdiv\u003EThe sum of Armor, Evasion, and Energy Shield\u003C/div\u003E\u003C/div\u003E\"\u003EDefense\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E3.5\u003C/span\u003E% Attack and Cast Speed\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E3.5\u003C/span\u003E% Minion Attack and Cast Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E3.5\u003C/span\u003E% Attack and Spell Block Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E3.5\u003C/span\u003E% Aura Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E3.5\u003C/span\u003E% Max Life\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E3.5\u003C/span\u003E% Sealed Mana Compensation\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-15\u003C/span\u003E to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAll Stats\u003C/div\u003E\u003Cdiv\u003EStrength, Dexterity, and Intelligence\u003C/div\u003E\u003C/div\u003E\"\u003EAll Stats\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Adaptive Defense\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-15\u003C/span\u003E to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAll Stats\u003C/div\u003E\u003Cdiv\u003EStrength, Dexterity, and Intelligence\u003C/div\u003E\u003C/div\u003E\"\u003EAll Stats\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Circle of Life\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-15\u003C/span\u003E to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAll Stats\u003C/div\u003E\u003Cdiv\u003EStrength, Dexterity, and Intelligence\u003C/div\u003E\u003C/div\u003E\"\u003EAll Stats\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Commander's Gambit\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-15\u003C/span\u003E to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAll Stats\u003C/div\u003E\u003Cdiv\u003EStrength, Dexterity, and Intelligence\u003C/div\u003E\u003C/div\u003E\"\u003EAll Stats\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Crushing Blast\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-15\u003C/span\u003E to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAll Stats\u003C/div\u003E\u003Cdiv\u003EStrength, Dexterity, and Intelligence\u003C/div\u003E\u003C/div\u003E\"\u003EAll Stats\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Dark Advance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-15\u003C/span\u003E to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAll Stats\u003C/div\u003E\u003Cdiv\u003EStrength, Dexterity, and Intelligence\u003C/div\u003E\u003C/div\u003E\"\u003EAll Stats\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Effortless Command\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-15\u003C/span\u003E to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAll Stats\u003C/div\u003E\u003Cdiv\u003EStrength, Dexterity, and Intelligence\u003C/div\u003E\u003C/div\u003E\"\u003EAll Stats\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Escalating Affliction\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-15\u003C/span\u003E to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAll Stats\u003C/div\u003E\u003Cdiv\u003EStrength, Dexterity, and Intelligence\u003C/div\u003E\u003C/div\u003E\"\u003EAll Stats\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Fiery Fantasy\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-15\u003C/span\u003E to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAll Stats\u003C/div\u003E\u003Cdiv\u003EStrength, Dexterity, and Intelligence\u003C/div\u003E\u003C/div\u003E\"\u003EAll Stats\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Fire's Allure\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-15\u003C/span\u003E to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAll Stats\u003C/div\u003E\u003Cdiv\u003EStrength, Dexterity, and Intelligence\u003C/div\u003E\u003C/div\u003E\"\u003EAll Stats\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Hare's Agility\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-15\u003C/span\u003E to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAll Stats\u003C/div\u003E\u003Cdiv\u003EStrength, Dexterity, and Intelligence\u003C/div\u003E\u003C/div\u003E\"\u003EAll Stats\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Juggernaut\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-15\u003C/span\u003E to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAll Stats\u003C/div\u003E\u003Cdiv\u003EStrength, Dexterity, and Intelligence\u003C/div\u003E\u003C/div\u003E\"\u003EAll Stats\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Keen Intellect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-15\u003C/span\u003E to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAll Stats\u003C/div\u003E\u003Cdiv\u003EStrength, Dexterity, and Intelligence\u003C/div\u003E\u003C/div\u003E\"\u003EAll Stats\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Miraculous Touch\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-15\u003C/span\u003E to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAll Stats\u003C/div\u003E\u003Cdiv\u003EStrength, Dexterity, and Intelligence\u003C/div\u003E\u003C/div\u003E\"\u003EAll Stats\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: One For All\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-15\u003C/span\u003E to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAll Stats\u003C/div\u003E\u003Cdiv\u003EStrength, Dexterity, and Intelligence\u003C/div\u003E\u003C/div\u003E\"\u003EAll Stats\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Self-Delusion\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-15\u003C/span\u003E to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAll Stats\u003C/div\u003E\u003Cdiv\u003EStrength, Dexterity, and Intelligence\u003C/div\u003E\u003C/div\u003E\"\u003EAll Stats\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Spell Ripple\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-15\u003C/span\u003E to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAll Stats\u003C/div\u003E\u003Cdiv\u003EStrength, Dexterity, and Intelligence\u003C/div\u003E\u003C/div\u003E\"\u003EAll Stats\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Storm's Command\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-15\u003C/span\u003E to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAll Stats\u003C/div\u003E\u003Cdiv\u003EStrength, Dexterity, and Intelligence\u003C/div\u003E\u003C/div\u003E\"\u003EAll Stats\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Sweeping Fury\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-15\u003C/span\u003E to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAll Stats\u003C/div\u003E\u003Cdiv\u003EStrength, Dexterity, and Intelligence\u003C/div\u003E\u003C/div\u003E\"\u003EAll Stats\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Towering Presence\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-15\u003C/span\u003E to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAll Stats\u003C/div\u003E\u003Cdiv\u003EStrength, Dexterity, and Intelligence\u003C/div\u003E\u003C/div\u003E\"\u003EAll Stats\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Unmatched Valor\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-15\u003C/span\u003E to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAll Stats\u003C/div\u003E\u003Cdiv\u003EStrength, Dexterity, and Intelligence\u003C/div\u003E\u003C/div\u003E\"\u003EAll Stats\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Unstoppable Force\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-15\u003C/span\u003E to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAll Stats\u003C/div\u003E\u003Cdiv\u003EStrength, Dexterity, and Intelligence\u003C/div\u003E\u003C/div\u003E\"\u003EAll Stats\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Unwavering Fortress\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-5\u003C/span\u003E% Elemental Resistance\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Adaptive Defense\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-5\u003C/span\u003E% Elemental Resistance\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Circle of Life\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-5\u003C/span\u003E% Elemental Resistance\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Commander's Gambit\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-5\u003C/span\u003E% Elemental Resistance\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Crushing Blast\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-5\u003C/span\u003E% Elemental Resistance\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Dark Advance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-5\u003C/span\u003E% Elemental Resistance\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Effortless Command\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-5\u003C/span\u003E% Elemental Resistance\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Escalating Affliction\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-5\u003C/span\u003E% Elemental Resistance\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Fiery Fantasy\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-5\u003C/span\u003E% Elemental Resistance\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Fire's Allure\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-5\u003C/span\u003E% Elemental Resistance\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Hare's Agility\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-5\u003C/span\u003E% Elemental Resistance\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Juggernaut\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-5\u003C/span\u003E% Elemental Resistance\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Keen Intellect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-5\u003C/span\u003E% Elemental Resistance\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Miraculous Touch\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-5\u003C/span\u003E% Elemental Resistance\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: One For All\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-5\u003C/span\u003E% Elemental Resistance\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Self-Delusion\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-5\u003C/span\u003E% Elemental Resistance\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Spell Ripple\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-5\u003C/span\u003E% Elemental Resistance\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Storm's Command\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-5\u003C/span\u003E% Elemental Resistance\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Sweeping Fury\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-5\u003C/span\u003E% Elemental Resistance\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Towering Presence\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-5\u003C/span\u003E% Elemental Resistance\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Unmatched Valor\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-5\u003C/span\u003E% Elemental Resistance\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Unstoppable Force\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-5\u003C/span\u003E% Elemental Resistance\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Unwavering Fortress\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDefense\u003C/div\u003E\u003Cdiv\u003EThe sum of Armor, Evasion, and Energy Shield\u003C/div\u003E\u003C/div\u003E\"\u003EDefense\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Adaptive Defense\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDefense\u003C/div\u003E\u003Cdiv\u003EThe sum of Armor, Evasion, and Energy Shield\u003C/div\u003E\u003C/div\u003E\"\u003EDefense\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Circle of Life\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDefense\u003C/div\u003E\u003Cdiv\u003EThe sum of Armor, Evasion, and Energy Shield\u003C/div\u003E\u003C/div\u003E\"\u003EDefense\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Commander's Gambit\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDefense\u003C/div\u003E\u003Cdiv\u003EThe sum of Armor, Evasion, and Energy Shield\u003C/div\u003E\u003C/div\u003E\"\u003EDefense\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Crushing Blast\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDefense\u003C/div\u003E\u003Cdiv\u003EThe sum of Armor, Evasion, and Energy Shield\u003C/div\u003E\u003C/div\u003E\"\u003EDefense\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Dark Advance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDefense\u003C/div\u003E\u003Cdiv\u003EThe sum of Armor, Evasion, and Energy Shield\u003C/div\u003E\u003C/div\u003E\"\u003EDefense\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Effortless Command\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDefense\u003C/div\u003E\u003Cdiv\u003EThe sum of Armor, Evasion, and Energy Shield\u003C/div\u003E\u003C/div\u003E\"\u003EDefense\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Escalating Affliction\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDefense\u003C/div\u003E\u003Cdiv\u003EThe sum of Armor, Evasion, and Energy Shield\u003C/div\u003E\u003C/div\u003E\"\u003EDefense\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Fiery Fantasy\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDefense\u003C/div\u003E\u003Cdiv\u003EThe sum of Armor, Evasion, and Energy Shield\u003C/div\u003E\u003C/div\u003E\"\u003EDefense\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Fire's Allure\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDefense\u003C/div\u003E\u003Cdiv\u003EThe sum of Armor, Evasion, and Energy Shield\u003C/div\u003E\u003C/div\u003E\"\u003EDefense\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Hare's Agility\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDefense\u003C/div\u003E\u003Cdiv\u003EThe sum of Armor, Evasion, and Energy Shield\u003C/div\u003E\u003C/div\u003E\"\u003EDefense\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Juggernaut\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDefense\u003C/div\u003E\u003Cdiv\u003EThe sum of Armor, Evasion, and Energy Shield\u003C/div\u003E\u003C/div\u003E\"\u003EDefense\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Keen Intellect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDefense\u003C/div\u003E\u003Cdiv\u003EThe sum of Armor, Evasion, and Energy Shield\u003C/div\u003E\u003C/div\u003E\"\u003EDefense\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Miraculous Touch\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDefense\u003C/div\u003E\u003Cdiv\u003EThe sum of Armor, Evasion, and Energy Shield\u003C/div\u003E\u003C/div\u003E\"\u003EDefense\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: One For All\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDefense\u003C/div\u003E\u003Cdiv\u003EThe sum of Armor, Evasion, and Energy Shield\u003C/div\u003E\u003C/div\u003E\"\u003EDefense\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Self-Delusion\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDefense\u003C/div\u003E\u003Cdiv\u003EThe sum of Armor, Evasion, and Energy Shield\u003C/div\u003E\u003C/div\u003E\"\u003EDefense\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Spell Ripple\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDefense\u003C/div\u003E\u003Cdiv\u003EThe sum of Armor, Evasion, and Energy Shield\u003C/div\u003E\u003C/div\u003E\"\u003EDefense\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Storm's Command\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDefense\u003C/div\u003E\u003Cdiv\u003EThe sum of Armor, Evasion, and Energy Shield\u003C/div\u003E\u003C/div\u003E\"\u003EDefense\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Sweeping Fury\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDefense\u003C/div\u003E\u003Cdiv\u003EThe sum of Armor, Evasion, and Energy Shield\u003C/div\u003E\u003C/div\u003E\"\u003EDefense\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Towering Presence\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDefense\u003C/div\u003E\u003Cdiv\u003EThe sum of Armor, Evasion, and Energy Shield\u003C/div\u003E\u003C/div\u003E\"\u003EDefense\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Unmatched Valor\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDefense\u003C/div\u003E\u003Cdiv\u003EThe sum of Armor, Evasion, and Energy Shield\u003C/div\u003E\u003C/div\u003E\"\u003EDefense\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Unstoppable Force\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDefense\u003C/div\u003E\u003Cdiv\u003EThe sum of Armor, Evasion, and Energy Shield\u003C/div\u003E\u003C/div\u003E\"\u003EDefense\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EMutated Core Talents no longer replace the original talent, but add the following to the Core Talent in the current Talent Panel: Unwavering Fortress\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EThe Effect Area expands to \u003Cspan class=\"val\"\u003E2x2 Rectangle\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EThe Effect Area expands to \u003Cspan class=\"val\"\u003E2x4 Rectangle\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EThe Effect Area expands to \u003Cspan class=\"val\"\u003E3x3 Rectangle\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EThe Effect Area expands to \u003Cspan class=\"val\"\u003E3x4 Rectangle\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EThe Effect Area expands to \u003Cspan class=\"val\"\u003E4x2 Rectangle\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EThe Effect Area expands to \u003Cspan class=\"val\"\u003E4x3 Rectangle\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EThe Effect Area expands to \u003Cspan class=\"val\"\u003E7x1 Rectangle\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  }
+]

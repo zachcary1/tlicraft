@@ -1,0 +1,951 @@
+[
+  {
+    "type": "Dual Kismet",
+    "name": "Bird in a Pond",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EImmune to crowd control effects\u003C/li\u003E\u003Cli class=\"mod\"\u003E-25% Defense\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Bitterbond",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E+3% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EMax Resistance\u003C/div\u003E\u003Cdiv\u003EBy default, the Max Resistance is 60%. This limit can be increased.\u003C/div\u003E\u003C/div\u003E\"\u003EMax\u003C/span\u003E \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EElemental\u003C/div\u003E\u003Cdiv\u003EFire, Cold, and Lightning\u003C/div\u003E\u003C/div\u003E\"\u003EElemental Resistance\u003C/span\u003E for each inactivated Tangle\u003C/li\u003E\u003Cli class=\"mod\"\u003E+25% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESpell Aggression\u003C/div\u003E\u003Cdiv\u003EAdditionally increases Cast Speed and Spell Damage by 7%. Increases Mobility Skill Cooldown Recovery Speed by 7%\u003C/div\u003E\u003C/div\u003E\"\u003ESpell Aggression\u003C/span\u003E Effect for each activated Tangle\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Bounded Holy Maiden",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EUnable to inflict Ignite, Numbed, Wilt, and Trauma\u003C/li\u003E\u003Cli class=\"mod\"\u003EInflicts Paralysis, Blind, Weaken, Slow, Taunt, and Frostbite on hit\u003C/li\u003E\u003Cli class=\"mod\"\u003E-60% Crowd Control Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Butterfly in a Bottle",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EImmune to Trauma, Wilt, and Ignite\u003C/li\u003E\u003Cli class=\"mod\"\u003E-8% Elemental Resistance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Dark Moon",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EGains the Origin of Spirit Magus Effect of a Lv. 20 Erosion Magus\u003C/li\u003E\u003Cli class=\"mod\"\u003E+30% Origin of Spirit Magus Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Destiny's Betrayal",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EChanges the negative effects from Dream Interpretation into positive effects\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Echidna",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EGains Lv. 20 Precise: Acuteness Focus Buff\u003C/li\u003E\u003Cli class=\"mod\"\u003E+60% Focus Buff Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Evil Flame",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E15% chance to cause an explosion when defeating a Cursed enemy with an Attack or Spell, dealing True Damage equal to 250% of the defeated enemy's Max Life to enemies within a 5m radius\u003C/li\u003E\u003Cli class=\"mod\"\u003E+15% Skill Area\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Fire in the Stone",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E+100% Fire Resistance when you have Steadfast\u003C/li\u003E\u003Cli class=\"mod\"\u003E-25% Lightning Resistance\u003C/li\u003E\u003Cli class=\"mod\"\u003E-25% Cold Resistance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Fire Plume",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EGains the Origin of Spirit Magus Effect of a Lv. 20 Fire Magus\u003C/li\u003E\u003Cli class=\"mod\"\u003E+30% Origin of Spirit Magus Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Fish in a Cage",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EImmune to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EElemental Ailment\u003C/div\u003E\u003Cdiv\u003EIgnite, Frostbite, Freeze, and Numbed\u003C/div\u003E\u003C/div\u003E\"\u003EElemental Ailments\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E-25% Erosion Resistance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Flash Flood",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EHalves \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESpell Burst\u003C/div\u003E\u003Cdiv\u003EAutomatically uses a Spell Skill a certain number of times.\u003Cbr/\u003EWhen Spell Burst is fully charged, the next Spell Skill used will activate Spell Burst, which will consume all stacks charged and automatically use the Spell Skill the same number of times.\u003Cbr/\u003ESkills that have a cooldown, Triggered Skills, Sentry Skills, Channeled Skills, and Combo Skills cannot activate Spell Burst.\u003C/div\u003E\u003C/div\u003E\"\u003ESpell Burst\u003C/span\u003E Upper Limit\u003C/li\u003E\u003Cli class=\"mod\"\u003E+8% additional Attack and Cast Speed for every \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESpell Burst\u003C/div\u003E\u003Cdiv\u003EAutomatically uses a Spell Skill a certain number of times.\u003Cbr/\u003EWhen Spell Burst is fully charged, the next Spell Skill used will activate Spell Burst, which will consume all stacks charged and automatically use the Spell Skill the same number of times.\u003Cbr/\u003ESkills that have a cooldown, Triggered Skills, Sentry Skills, Channeled Skills, and Combo Skills cannot activate Spell Burst.\u003C/div\u003E\u003C/div\u003E\"\u003ESpell Burst\u003C/span\u003E triggered recently, up to 40%\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Ghost Bee",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E+50% Shadow Tracking Area\u003C/li\u003E\u003Cli class=\"mod\"\u003E+50% Shadow Strike Skill Area\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "God's Fall",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E+2 to all skills' level\u003C/li\u003E\u003Cli class=\"mod\"\u003EWhen casting a skill, lose 5% of current Life and Energy Shield\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Great Library",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAdditionally increases damage by 2% (stacks) for every unique Kismet installed\u003C/li\u003E\u003Cli class=\"mod\"\u003EReduces your damage taken by 1% (multiplies) for every unique Kismet installed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Hanging Bird",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EEvading has the Lucky effect when you have at least 3 stacks of Deflection\u003C/li\u003E\u003Cli class=\"mod\"\u003E-50% additional Evasion\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Hatch Out",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E-5 to Aura Skill Level and +30% Sealed Mana Compensation when you have no Energy Shield\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Headless",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E-50% Helmet Defense\u003C/li\u003E\u003Cli class=\"mod\"\u003E+100% Chest Armor Defense\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Heartless",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E-100% additional Chest Armor Defense\u003C/li\u003E\u003Cli class=\"mod\"\u003E+30% additional Helmet, Glove, and Boot Defense\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Hot Ice",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E-2% Max Cold Resistance and +35 to Max Frostbite Rating\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Hunter's Hand",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003ETriggers the Main Active Skill 0.5s after using an Attack Horizontal Projectile Skill. Interval: 1s\u003C/li\u003E\u003Cli class=\"mod\"\u003ETriggers the Main Active Skill 1s after using an Attack Horizontal Projectile Skill. Interval: 1s\u003C/li\u003E\u003Cli class=\"mod\"\u003ETriggers the Main Active Skill 1.5s after using an Attack Horizontal Projectile Skill. Interval: 1s\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Ice Flower",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EGains the Origin of Spirit Magus Effect of a Lv. 20 Frost Magus\u003C/li\u003E\u003Cli class=\"mod\"\u003E+30% Origin of Spirit Magus Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Iron Wall",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E-30% Attack Block Chance and +30% Block Ratio while Dual Wielding\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Mammoth",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003ETriggers Lv. 20 Resurrection Warcry on hit. Interval: 3s\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Mechanical Tree",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E+10% additional Synthetic Troop Minion Damage for every Spirit Magus\u003C/li\u003E\u003Cli class=\"mod\"\u003E+8% additional Spirit Magi Damage for every Synthetic Troop\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Mighty Arrow",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E-25% additional Projectile Speed and -25% Projectile Duration\u003C/li\u003E\u003Cli class=\"mod\"\u003E+25% additional Attack Horizontal Projectile Damage taken by nearby enemies\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Mirror Cracks",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E-3 to Defensive Skill Level\u003C/li\u003E\u003Cli class=\"mod\"\u003E+45% Defensive Skill Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Mountain God",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAdds 2% Armor to Barrier Shield\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Peerless",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E+1 Combo Finisher charge\u003C/li\u003E\u003Cli class=\"mod\"\u003EThe time before Combo Sequence resets is fixed at 0.3s\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Pendulum",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EGains 1 stack of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDeflection\u003C/div\u003E\u003Cdiv\u003EReduces additional damage taken by 8% for every stack of Deflection, up to 3 stack(s). When hit, consumes all stacks of Deflection\u003C/div\u003E\u003C/div\u003E\"\u003EDeflection\u003C/span\u003E for every 5m of movement\u003C/li\u003E\u003Cli class=\"mod\"\u003E10% chance to gain 3 stacks of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDeflection\u003C/div\u003E\u003Cdiv\u003EReduces additional damage taken by 8% for every stack of Deflection, up to 3 stack(s). When hit, consumes all stacks of Deflection\u003C/div\u003E\u003C/div\u003E\"\u003EDeflection\u003C/span\u003E when gaining \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDeflection\u003C/div\u003E\u003Cdiv\u003EReduces additional damage taken by 8% for every stack of Deflection, up to 3 stack(s). When hit, consumes all stacks of Deflection\u003C/div\u003E\u003C/div\u003E\"\u003EDeflection\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Perched River",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E+2 to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESpell Burst\u003C/div\u003E\u003Cdiv\u003EAutomatically uses a Spell Skill a certain number of times.\u003Cbr/\u003EWhen Spell Burst is fully charged, the next Spell Skill used will activate Spell Burst, which will consume all stacks charged and automatically use the Spell Skill the same number of times.\u003Cbr/\u003ESkills that have a cooldown, Triggered Skills, Sentry Skills, Channeled Skills, and Combo Skills cannot activate Spell Burst.\u003C/div\u003E\u003C/div\u003E\"\u003ESpell Burst\u003C/span\u003E Upper Limit\u003C/li\u003E\u003Cli class=\"mod\"\u003ECritical Strikes have the \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EUnlucky\u003C/div\u003E\u003Cdiv\u003EPerforms a random check or random roll twice and picks the result that benefits you the least\u003C/div\u003E\u003C/div\u003E\"\u003EUnlucky\u003C/span\u003E effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Plague Source",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E0.5s after dealing Damage Over Time, Reaps 3s of Damage Over Time. Cooldown: 99s\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Pointer",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E+1 Max \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDeflection\u003C/div\u003E\u003Cdiv\u003EReduces additional damage taken by 8% for every stack of Deflection, up to 3 stack(s). When hit, consumes all stacks of Deflection\u003C/div\u003E\u003C/div\u003E\"\u003EDeflection\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EGains 1 additional stack of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDeflection\u003C/div\u003E\u003Cdiv\u003EReduces additional damage taken by 8% for every stack of Deflection, up to 3 stack(s). When hit, consumes all stacks of Deflection\u003C/div\u003E\u003C/div\u003E\"\u003EDeflection\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Prophet",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EInjury Buffer is fixed at 0\u003C/li\u003E\u003Cli class=\"mod\"\u003ERestores 10% Missing Life when taking Hit Damage. Interval: 0.05s\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Queen Ant",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E+3% additional Ultimate Damage and Ailment Damage dealt by Ultimate (multiplies) for all Spirit Magi for every Ultimate used by a Spirit Magus recently. Stacks up to 3 times\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Resentful Maiden",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E+1 to Max Tangle Quantity\u003C/li\u003E\u003Cli class=\"mod\"\u003E+10% Tangle Duration\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Rock Core",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EGains the Origin of Spirit Magus Effect of a Lv. 20 Rock Magus\u003C/li\u003E\u003Cli class=\"mod\"\u003E+30% Origin of Spirit Magus Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Shadow",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E+2,000 Evasion\u003C/li\u003E\u003Cli class=\"mod\"\u003E-20% Chance to Avoid Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E+30% Movement Speed after evading. The effect falls off to 0 within 10s\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Sky Piercer",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E+20% Attack Horizontal Projectile Speed and +15% additional Attack Horizontal Projectile Damage within 5s after using a Mobility Skill\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Solid Rock",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EGains a stack of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFortitude\u003C/div\u003E\u003Cdiv\u003EEach stack of Fortitude additionally reduces Hit Damage taken by 5% for 10s.\u003Cbr/\u003EBase Max Fortitude Stacks: 3.\u003C/div\u003E\u003C/div\u003E\"\u003EFortitude\u003C/span\u003E when using a Melee Skill\u003C/li\u003E\u003Cli class=\"mod\"\u003E+2 Max Fortitude Stacks\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Spindle",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003ETriggers Lv. 25 Corruption upon inflicting damage. Cooldown: 0.2s\u003C/li\u003E\u003Cli class=\"mod\"\u003E-50% Curse Skill Area\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Spirit Orb",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EGains \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EVoid Orb\u003C/div\u003E\u003Cdiv\u003EDeals 50-100 Physical Damage to yourself. Interval: 0.5s. Lasts for 5s\u003C/div\u003E\u003C/div\u003E\"\u003EVoid Orbs\u003C/span\u003E every 0.5s while standing still. Stacks up to 5 times\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Star-Chasing Arrow",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E+15% additional damage for Attack Horizontal Projectiles\u003C/li\u003E\u003Cli class=\"mod\"\u003E+5% additional Attack Speed for Mobility Skills if Attack Horizontal Projectiles have dealt damage to distant enemies recently\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Sun Slash",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EGains \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EBlazing Sun\u003C/div\u003E\u003Cdiv\u003E+1% Slash‐Strike Skill Area and +1% additional Steep Strike Damage for every +6% Steep Strike chance\u003C/div\u003E\u003C/div\u003E\"\u003EBlazing Sun\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Three-Eyed Cat",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E-5% Sealed Mana Compensation\u003C/li\u003E\u003Cli class=\"mod\"\u003E+30% additional damage when simultaneously affected by Aura, Focus, and Origin of Spirit Magus\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Thunder Branch",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EGains the Origin of Spirit Magus Effect of a Lv. 20 Thunder Magus\u003C/li\u003E\u003Cli class=\"mod\"\u003E+30% Origin of Spirit Magus Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Twin Cities",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EEvery 4s, alternate between gaining Lv. 12 Delayed Pain and Frost Shield for 5s\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Two-Headed Crow",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EYou can inflict 1 additional Curse\u003C/li\u003E\u003Cli class=\"mod\"\u003EEnemies are immune to Curse until they have max Affliction\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Unholy Grail",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E-40% Restoration Duration for Restoration Skills\u003C/li\u003E\u003Cli class=\"mod\"\u003EWhen casting a Restoration Skill, gains 4 stacks of a random Blessing\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Viper",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EGains Lv. 20 Precise: Corrosion Focus Buff\u003C/li\u003E\u003Cli class=\"mod\"\u003E+60% Focus Buff Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Witch's Cauldron",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen at full Energy Shield, removes all Energy Shields, +20% additional Max Mana, and +10% additional Spell Damage for 4s\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
+    "name": "Wraith",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAdds 25% Non-Erosion Damage as Erosion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Ascetic",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(1.7–1.9)\u003C/span\u003E% Double Damage Chance for Combo Finishers for every \u003Cspan class=\"val\"\u003E1\u003C/span\u003E Combo Point(s) consumed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Ashes",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–12)\u003C/span\u003E% additional Fire Damage against \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EIgnite\u003C/div\u003E\u003Cdiv\u003EAn Ailment that may be triggered on hit, dealing Fire Damage per second for 4s based on Base Ignite Damage. Unable to stack\u003Cbr/\u003EIgnite cannot be inflicted when Base Ignite Damage is 0\u003C/div\u003E\u003C/div\u003E\"\u003EIgnited\u003C/span\u003E enemies\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-30\u003C/span\u003E% chance to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EIgnite\u003C/div\u003E\u003Cdiv\u003EAn Ailment that may be triggered on hit, dealing Fire Damage per second for 4s based on Base Ignite Damage. Unable to stack\u003Cbr/\u003EIgnite cannot be inflicted when Base Ignite Damage is 0\u003C/div\u003E\u003C/div\u003E\"\u003EIgnite\u003C/span\u003E targets\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Black Square",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(8–10)\u003C/span\u003E% Max Energy Shield\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+5\u003C/span\u003E% additional Damage Over Time\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-10\u003C/span\u003E% additional Energy Shield \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECharge\u003C/div\u003E\u003Cdiv\u003EEnergy Shield starts to charge after the character hasn't taken any damage for 2s at the rate of 20% of Max Energy Shield per second and stops charging if the character takes damage\u003C/div\u003E\u003C/div\u003E\"\u003ECharge\u003C/span\u003E Interval\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Bouquet",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(3–4)\u003C/span\u003E% additional Spirit Magi Damage for every Spirit Magus you have\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Civet",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EGains a stack of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAgility Blessing\u003C/div\u003E\u003Cdiv\u003EEvery stack of Agility Blessing grants +4% Attack and Cast Speed and +2% additional damage. Initial max stacks: 4\u003C/div\u003E\u003C/div\u003E\"\u003EAgility Blessing\u003C/span\u003E per \u003Cspan class=\"val\"\u003E0.5\u003C/span\u003E s when moving\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Creek",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003ERestoration Skills gain \u003Cspan class=\"val\"\u003E1\u003C/span\u003E Charging Progress every second\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(6–9)\u003C/span\u003E% Movement Speed while the Restoration Skill lasts\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Double Blade",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(12–15)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EMain-Hand Weapon\u003C/div\u003E\u003Cdiv\u003EThe weapon held in the Character's right hand is the Main-Hand Weapon\u003C/div\u003E\u003C/div\u003E\"\u003EMain-Hand Weapon\u003C/span\u003E Critical Strike Rating and adds \u003Cspan class=\"val\"\u003E(10–12)\u003C/span\u003E - \u003Cspan class=\"val\"\u003E(15–17)\u003C/span\u003E Physical Damage to the \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EOff-Hand Weapon\u003C/div\u003E\u003Cdiv\u003EThe weapon held in the Character's left hand is the Off-Hand Weapon\u003C/div\u003E\u003C/div\u003E\"\u003EOff-Hand Weapon\u003C/span\u003E while \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDual Wielding\u003C/div\u003E\u003Cdiv\u003EWhen using two One-Handed Weapons, one in each hand\u003C/div\u003E\u003C/div\u003E\"\u003EDual Wielding\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Fisherman",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(100–120)\u003C/span\u003E% Mark Effect when an \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EElite\u003C/div\u003E\u003Cdiv\u003EElite monsters include rare monsters and bosses\u003C/div\u003E\u003C/div\u003E\"\u003EElite\u003C/span\u003E is in \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EProximity\u003C/div\u003E\u003Cdiv\u003EWithin 4m\u003C/div\u003E\u003C/div\u003E\"\u003Eproximity\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003EThe \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EKnockback direction is reversed\u003C/div\u003E\u003Cdiv\u003EInverts the Knockback direction\u003C/div\u003E\u003C/div\u003E\"\u003Eknockback direction is reversed\u003C/span\u003E for Horizontal Projectiles\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Fluffy Ball",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(40–60)\u003C/span\u003E% Critical Strike Damage Mitigation\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Giant",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(4–6)\u003C/span\u003E% chance to deal Triple Damage for Attack Skills when holding a Two-Handed Weapon\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Giant Bear",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(50–60)\u003C/span\u003E% Melee Attack Critical Strike Damage against \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EElite\u003C/div\u003E\u003Cdiv\u003EElite monsters include rare monsters and bosses\u003C/div\u003E\u003C/div\u003E\"\u003EElites\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Green Shoot",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(50–60)\u003C/span\u003E initial \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EGrowth\u003C/div\u003E\u003Cdiv\u003ESpirit Magi grow into the next Stage for every 100 Growth. They start at Stage 1 and can grow until they reach Stage 5. For every 8 Growth they have, Spirit Magi gain +1% Physique, +5% additional Skill Area, and a bonus every stage:\u003Cbr/\u003EAt Stage 2, +30% chance for them to use Enhanced Skill chance.\u003Cbr/\u003EAt Stage 3, their Enhanced Skills become stronger.\u003Cbr/\u003EAt Stage 4, their Empower Skills become stronger.\u003Cbr/\u003EAt Stage 5, they +25% additional damage, +10% additional Skill Area, and gain increased Movement Speed and Tracking Area.\u003Cbr/\u003EThe max Growth is 1000.\u003C/div\u003E\u003C/div\u003E\"\u003EGrowth\u003C/span\u003E for Spirit Magi\u003C/li\u003E\u003Cli class=\"mod\"\u003ESpirit Magi \u003Cspan class=\"val\"\u003E+20\u003C/span\u003E% Cooldown Recovery Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Growth Ring",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–15)\u003C/span\u003E% Terra Skill Duration\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+50\u003C/span\u003E% chance to \u003Cspan class=\"val\"\u003E+100\u003C/span\u003E% Skill Area when casting a Terra Skill\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+50\u003C/span\u003E% chance to \u003Cspan class=\"val\"\u003E-75\u003C/span\u003E% additional Skill Area when casting a Terra Skill\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Guard",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(5–6)\u003C/span\u003E% additional Sentry Skill Cast Frequency\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+1\u003C/span\u003E Sentry quantity that can be deployed at a time\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Guillotine",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(4–6)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESteep Strike\u003C/div\u003E\u003Cdiv\u003ESlash Strike Skills are cast in Sweep Slash form by default. When casting the skill, there is a chance that it will be cast in Steep Strike form. Some skills gain Steep Strike attempts at specific times. When there are Steep Strike attempts, the skill will be cast in Steep Strike form and consume 1 Steep Strike attempt.\u003C/div\u003E\u003C/div\u003E\"\u003ESteep Strike\u003C/span\u003E chance.\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(4–6)\u003C/span\u003E% additional \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESteep Strike\u003C/div\u003E\u003Cdiv\u003ESlash Strike Skills are cast in Sweep Slash form by default. When casting the skill, there is a chance that it will be cast in Steep Strike form. Some skills gain Steep Strike attempts at specific times. When there are Steep Strike attempts, the skill will be cast in Steep Strike form and consume 1 Steep Strike attempt.\u003C/div\u003E\u003C/div\u003E\"\u003ESteep Strike\u003C/span\u003E Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Hawk",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EImmune to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EBlind\u003C/div\u003E\u003Cdiv\u003ETarget's damage has a 20% chance to miss before addressed\u003C/div\u003E\u003C/div\u003E\"\u003EBlinding\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EBlind\u003C/div\u003E\u003Cdiv\u003ETarget's damage has a 20% chance to miss before addressed\u003C/div\u003E\u003C/div\u003E\"\u003EBlinds\u003C/span\u003E \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENearby\u003C/div\u003E\u003Cdiv\u003EWithin 6m\u003C/div\u003E\u003C/div\u003E\"\u003Enearby\u003C/span\u003E enemies when using an Attack Projectile Skill\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Hound",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(16–20)\u003C/span\u003E% chance to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EMultistrike\u003C/div\u003E\u003Cdiv\u003EChance to perform an additional attack when using Attack Skills. If the chance exceeds 100%, one additional attack will be performed with every 100% of the chance.\u003Cbr/\u003E\u003Cbr/\u003E+20% Attack Speed during Multistrikes.\u003Cbr/\u003EMultistrikes consume skill resources as normal and will be interrupted if there are insufficient resources. Moving or using other non-instant skills will interrupt Multistrike.\u003Cbr/\u003EMobility, Channeled Skills, and Sentry skills cannot Multistrike\u003C/div\u003E\u003C/div\u003E\"\u003EMultistrike\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EMultistrike\u003C/div\u003E\u003Cdiv\u003EChance to perform an additional attack when using Attack Skills. If the chance exceeds 100%, one additional attack will be performed with every 100% of the chance.\u003Cbr/\u003E\u003Cbr/\u003E+20% Attack Speed during Multistrikes.\u003Cbr/\u003EMultistrikes consume skill resources as normal and will be interrupted if there are insufficient resources. Moving or using other non-instant skills will interrupt Multistrike.\u003Cbr/\u003EMobility, Channeled Skills, and Sentry skills cannot Multistrike\u003C/div\u003E\u003C/div\u003E\"\u003EMultistrikes\u003C/span\u003E deal \u003Cspan class=\"val\"\u003E(8–10)\u003C/span\u003E% increasing damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Hunter",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EProjectile Damage increases with the distance traveled, dealing up to \u003Cspan class=\"val\"\u003E+(70–100)\u003C/span\u003E% damage to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDistant\u003C/div\u003E\u003Cdiv\u003E6m away\u003C/div\u003E\u003C/div\u003E\"\u003Edistant\u003C/span\u003E enemies\u003C/li\u003E\u003Cli class=\"mod\"\u003EProjectile Damage increases with the distance traveled, increasing the Critical Strike Rating by up to \u003Cspan class=\"val\"\u003E+(70–100)\u003C/span\u003E% against \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDistant\u003C/div\u003E\u003Cdiv\u003E6m away\u003C/div\u003E\u003C/div\u003E\"\u003Edistant\u003C/span\u003E enemies\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Ice Soul",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EInflicts \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFrostbite\u003C/div\u003E\u003Cdiv\u003EFrostbite is an Ailment that may be triggered on Cold Damage hits. Frostbitten enemies -10% Attack, Cast, and Movement Speed. Base Frostbite Rating: 10. For every 1 Frostbite Rating, +1% additional Cold Damage taken. The enemy will be Frozen once they have more than 100 Frostbite Rating.\u003C/div\u003E\u003C/div\u003E\"\u003EFrostbite\u003C/span\u003E on \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENearby\u003C/div\u003E\u003Cdiv\u003EWithin 6m\u003C/div\u003E\u003C/div\u003E\"\u003Enearby\u003C/span\u003E enemies\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Leader",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E+ \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECommand\u003C/div\u003E\u003Cdiv\u003EEvery point of Command will grant Synthetic Troop Minions +3% additional damage and a bigger Tracking Area.\u003Cbr/\u003EThe lowest Command is -100 while the highest is 100. When Command is not 0, 13 point(s) will be returned (reduced/granted) every second until it becomes 0. For every 10 Command increased, +7 additional points will be returned.\u003Cbr/\u003ESynthetic Troop Minions' Duration will not reduce when Command is a positive value.\u003C/div\u003E\u003C/div\u003E\"\u003ECommand\u003C/span\u003E per second\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(15–20)\u003C/span\u003E% Minion Max Life\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Lion",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EFor each time Warcry has been cast recently, \u003Cspan class=\"val\"\u003E+(4–5)\u003C/span\u003E% Warcry Effect. Stacks up to \u003Cspan class=\"val\"\u003E3\u003C/span\u003E time(s)\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Longevity Tree",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(2–3)\u003C/span\u003E% Max \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EElemental\u003C/div\u003E\u003Cdiv\u003EFire, Cold, and Lightning\u003C/div\u003E\u003C/div\u003E\"\u003EElemental\u003C/span\u003E \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EMax Resistance\u003C/div\u003E\u003Cdiv\u003EBy default, the Max Resistance is 60%. This limit can be increased.\u003C/div\u003E\u003C/div\u003E\"\u003EResistance\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Mercury Bottle",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(70–80)\u003C/span\u003E \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAffliction\u003C/div\u003E\u003Cdiv\u003EWhen the Affliction inflicted per second is not 0, the Damage Over Time dealt will continuously inflicts Affliction on the target\u003Cbr/\u003EThe target takes 1% additional Damage Over Time for every Affliction point\u003Cbr/\u003EThe max Affliction is 100\u003C/div\u003E\u003C/div\u003E\"\u003EAffliction\u003C/span\u003E inflicted per second\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Mouth of the Spring",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(12–15)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESpell Burst\u003C/div\u003E\u003Cdiv\u003EAutomatically uses a Spell Skill a certain number of times.\u003Cbr/\u003EWhen Spell Burst is fully charged, the next Spell Skill used will activate Spell Burst, which will consume all stacks charged and automatically use the Spell Skill the same number of times.\u003Cbr/\u003ESkills that have a cooldown, Triggered Skills, Sentry Skills, Channeled Skills, and Combo Skills cannot activate Spell Burst.\u003C/div\u003E\u003C/div\u003E\"\u003ESpell Burst\u003C/span\u003E Charge Speed\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-5\u003C/span\u003E% additional damage taken when \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESpell Burst\u003C/div\u003E\u003Cdiv\u003EAutomatically uses a Spell Skill a certain number of times.\u003Cbr/\u003EWhen Spell Burst is fully charged, the next Spell Skill used will activate Spell Burst, which will consume all stacks charged and automatically use the Spell Skill the same number of times.\u003Cbr/\u003ESkills that have a cooldown, Triggered Skills, Sentry Skills, Channeled Skills, and Combo Skills cannot activate Spell Burst.\u003C/div\u003E\u003C/div\u003E\"\u003ESpell Burst\u003C/span\u003E Charge is activated\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Pale Fox",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EGains \u003Cspan class=\"val\"\u003E1\u003C/span\u003E stack(s) of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFocus Blessing\u003C/div\u003E\u003Cdiv\u003EEvery stack of Focus Blessing grants +5% additional damage. Initial max stacks: 4\u003C/div\u003E\u003C/div\u003E\"\u003EFocus Blessing\u003C/span\u003E when using a Non-Main Skill\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Prosthetics",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(9–12)\u003C/span\u003E% Physique for Synthetic Troop Minions\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(9–12)\u003C/span\u003E% chance for Synthetic Troop Minions to deal Double Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Red Leech",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(100–150)\u003C/span\u003E% Critical Strike Rating against \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ETrauma\u003C/div\u003E\u003Cdiv\u003EAn Ailment that may be triggered on hit, dealing Physical Damage per second for 4s based on Base Trauma Damage. Unable to stack\u003Cbr/\u003ETrauma cannot be inflicted when Base Trauma Damage is 0\u003C/div\u003E\u003C/div\u003E\"\u003ETraumatized\u003C/span\u003E enemies\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-20\u003C/span\u003E% Critical Strike Damage against \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ETrauma\u003C/div\u003E\u003Cdiv\u003EAn Ailment that may be triggered on hit, dealing Physical Damage per second for 4s based on Base Trauma Damage. Unable to stack\u003Cbr/\u003ETrauma cannot be inflicted when Base Trauma Damage is 0\u003C/div\u003E\u003C/div\u003E\"\u003ETraumatized\u003C/span\u003E enemies\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Ripple",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating Spell Burst, \u003Cspan class=\"val\"\u003E+(8–10)\u003C/span\u003E% Skill Area for each time Spell Burst is activated\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Sacred Crest",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E(-60–-40)\u003C/span\u003E% Curse effect against you\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Scale",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(35–40)\u003C/span\u003E% Attack Damage for each unique type of weapon equipped while \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDual Wielding\u003C/div\u003E\u003Cdiv\u003EWhen using two One-Handed Weapons, one in each hand\u003C/div\u003E\u003C/div\u003E\"\u003EDual Wielding\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Scorpion Stinger",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(3–5)\u003C/span\u003E% Skill Effect Duration\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EReaping\u003C/div\u003E\u003Cdiv\u003EDeals a certain amount of True Damage to the target, equivalent to the damage from all DoT effects over a certain period of time\u003C/div\u003E\u003C/div\u003E\"\u003EReaping\u003C/span\u003E Recovery Speed for each \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EReaping\u003C/div\u003E\u003Cdiv\u003EDeals a certain amount of True Damage to the target, equivalent to the damage from all DoT effects over a certain period of time\u003C/div\u003E\u003C/div\u003E\"\u003EReaping\u003C/span\u003E dealt recently, up to \u003Cspan class=\"val\"\u003E20\u003C/span\u003E%\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Screw",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(120–150)\u003C/span\u003E Minion Critical Strike Rating\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-1\u003C/span\u003E% additional Minion Attack and Cast Speed for every \u003Cspan class=\"val\"\u003E2\u003C/span\u003E Synthetic Troop Minions you have\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Shackles",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EGains \u003Cspan class=\"val\"\u003E(30–35)\u003C/span\u003E% Movement Speed when consuming Demolisher Charge. The effect gradually falls off to 0 within \u003Cspan class=\"val\"\u003E1\u003C/span\u003E s.\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Shadow Mage",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(40–50)\u003C/span\u003E% Sentry Duration\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E% additional Cast Speed for Sentry Skills\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Shield",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(12–15)\u003C/span\u003E% Defense when holding a Shield\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+3\u003C/span\u003E% Movement Speed when holding a Shield\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Spades",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(8–10)\u003C/span\u003E% Max Life\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+5\u003C/span\u003E% additional Damage Over Time\u003C/li\u003E\u003Cli class=\"mod\"\u003ERegenerates \u003Cspan class=\"val\"\u003E1\u003C/span\u003E% Life per second\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Spider Fluid",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+1\u003C/span\u003E% damage per stack of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EWilt\u003C/div\u003E\u003Cdiv\u003EAn Ailment that may be triggered on hit, dealing Erosion Damage per second for 1.5s based on Base Wilt Damage. Stacks up to 30 time(s)\u003Cbr/\u003EWilt cannot be inflicted when Base Wilt Damage is 0\u003C/div\u003E\u003C/div\u003E\"\u003EWilt\u003C/span\u003E inflicted recently. Stacks up to \u003Cspan class=\"val\"\u003E100\u003C/span\u003E time(s)\u003C/li\u003E\u003Cli class=\"mod\"\u003EAdds \u003Cspan class=\"val\"\u003E5\u003C/span\u003E - \u003Cspan class=\"val\"\u003E5\u003C/span\u003E Base \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EWilt\u003C/div\u003E\u003Cdiv\u003EAn Ailment that may be triggered on hit, dealing Erosion Damage per second for 1.5s based on Base Wilt Damage. Stacks up to 30 time(s)\u003Cbr/\u003EWilt cannot be inflicted when Base Wilt Damage is 0\u003C/div\u003E\u003C/div\u003E\"\u003EWilt\u003C/span\u003E Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Star Trail",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+45\u003C/span\u003E% for the effects of Micro Fates in the same Pact Branch\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Stone Bear",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EGains \u003Cspan class=\"val\"\u003E1\u003C/span\u003E stack(s) of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ETenacity Blessing\u003C/div\u003E\u003Cdiv\u003EEvery stack of Tenacity Blessing grants an additional 4% damage reduction (multiplies). Initial max stacks: 4.\u003C/div\u003E\u003C/div\u003E\"\u003ETenacity Blessing\u003C/span\u003E when Regaining\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Synthetic Heart",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EMax Synthetic Troop Quantity \u003Cspan class=\"val\"\u003E+1\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Tiger Roar",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+100\u003C/span\u003E% chance to inflict \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EIntimidated\u003C/div\u003E\u003Cdiv\u003ETakes +12% additional damage and deals -12% damage for 4s when at Low Life\u003C/div\u003E\u003C/div\u003E\"\u003EIntimidated\u003C/span\u003E on hit\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–12)\u003C/span\u003E% additional damage against \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ELow Life\u003C/div\u003E\u003Cdiv\u003EWhen current Life is under 35% of Max Life\u003C/div\u003E\u003C/div\u003E\"\u003ELow Life\u003C/span\u003E enemies\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Tiger's Chain",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen casting Combo Starters, \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EKnockback direction is reversed\u003C/div\u003E\u003Cdiv\u003EInverts the Knockback direction\u003C/div\u003E\u003C/div\u003E\"\u003EReverse Knocks Back\u003C/span\u003E enemies within \u003Cspan class=\"val\"\u003E8\u003C/span\u003E m by \u003Cspan class=\"val\"\u003E(1.5–2)\u003C/span\u003E m\u003C/li\u003E\u003Cli class=\"mod\"\u003EThe effective radius is affected by Skill Area bonuses\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+8\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EKnockback\u003C/div\u003E\u003Cdiv\u003EForced to move back by a short distance\u003C/div\u003E\u003C/div\u003E\"\u003EKnockback\u003C/span\u003E Distance for each Combo Finisher cast recently. Stacks up to \u003Cspan class=\"val\"\u003E5\u003C/span\u003E time(s)\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(4–6)\u003C/span\u003E% additional Combo Skill Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Volcano",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E(-25–-20)\u003C/span\u003E% chance to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EIgnite\u003C/div\u003E\u003Cdiv\u003EAn Ailment that may be triggered on hit, dealing Fire Damage per second for 4s based on Base Ignite Damage. Unable to stack\u003Cbr/\u003EIgnite cannot be inflicted when Base Ignite Damage is 0\u003C/div\u003E\u003C/div\u003E\"\u003EIgnite\u003C/span\u003E targets\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E(-25–-20)\u003C/span\u003E% additional \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EIgnite\u003C/div\u003E\u003Cdiv\u003EAn Ailment that may be triggered on hit, dealing Fire Damage per second for 4s based on Base Ignite Damage. Unable to stack\u003Cbr/\u003EIgnite cannot be inflicted when Base Ignite Damage is 0\u003C/div\u003E\u003C/div\u003E\"\u003EIgnite\u003C/span\u003E Duration\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+1\u003C/span\u003E \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EIgnite\u003C/div\u003E\u003Cdiv\u003EAn Ailment that may be triggered on hit, dealing Fire Damage per second for 4s based on Base Ignite Damage. Unable to stack\u003Cbr/\u003EIgnite cannot be inflicted when Base Ignite Damage is 0\u003C/div\u003E\u003C/div\u003E\"\u003EIgnite\u003C/span\u003E limit\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "War Hammer",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(50–60)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDemolisher Charge\u003C/div\u003E\u003Cdiv\u003EImpact Skills gain 1 Demolisher Charge at regular intervals.\u003Cbr/\u003EUsing a Demolisher Skill will consume its charges and convert the skill into a stronger form\u003C/div\u003E\u003C/div\u003E\"\u003EDemolisher Charge\u003C/span\u003E Restoration Speed when wielding a hammer\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Wind Chime",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(12–15)\u003C/span\u003E% chance for Spirit Magi to use an \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EEnhanced Skill\u003C/div\u003E\u003Cdiv\u003EChance to change the skill into a stronger Enhanced Skill when Spirit Magus uses a Base Skill. The chance can be increased, and at 100%, Spirit Magi will no longer use Base Skills and always use Enhanced Skills\u003C/div\u003E\u003C/div\u003E\"\u003EEnhanced Skill\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Witch Cloak",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E(8–10)\u003C/span\u003E% of damage is taken from Mana before life\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Affliction Effect",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–26)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAffliction\u003C/div\u003E\u003Cdiv\u003EWhen the Affliction inflicted per second is not 0, the Damage Over Time dealt will continuously inflicts Affliction on the target\u003Cbr/\u003EThe target takes 1% additional Damage Over Time for every Affliction point\u003Cbr/\u003EThe max Affliction is 100\u003C/div\u003E\u003C/div\u003E\"\u003EAffliction\u003C/span\u003E Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Armor",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(14–18)\u003C/span\u003E% Armor\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Attack Block Chance",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(12–15)\u003C/span\u003E% Attack Block Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Attack Cast Speed",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–12)\u003C/span\u003E% Attack and Cast Speed\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–12)\u003C/span\u003E% Minion Attack and Cast Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Attack Damage",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(28–36)\u003C/span\u003E% Attack Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Aura Effect",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(5–7)\u003C/span\u003E% Aura Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Block Ratio",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(4–6)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EBlock Ratio\u003C/div\u003E\u003Cdiv\u003EBy default, Blocking absorbs 30% damage. Increase Block Ratio to increase the damage absorption ratio.\u003C/div\u003E\u003C/div\u003E\"\u003EBlock Ratio\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Cold Resistance",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–14)\u003C/span\u003E% Cold Resistance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Command",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E+ \u003Cspan class=\"val\"\u003E(2–4)\u003C/span\u003E \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECommand\u003C/div\u003E\u003Cdiv\u003EEvery point of Command will grant Synthetic Troop Minions +3% additional damage and a bigger Tracking Area.\u003Cbr/\u003EThe lowest Command is -100 while the highest is 100. When Command is not 0, 13 point(s) will be returned (reduced/granted) every second until it becomes 0. For every 10 Command increased, +7 additional points will be returned.\u003Cbr/\u003ESynthetic Troop Minions' Duration will not reduce when Command is a positive value.\u003C/div\u003E\u003C/div\u003E\"\u003ECommand\u003C/span\u003E per second\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Critical Strike Damage",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(24–30)\u003C/span\u003E% Critical Strike Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(24–30)\u003C/span\u003E% Minion Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Critical Strike Rating",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(48–60)\u003C/span\u003E% Critical Strike Rating\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(48–60)\u003C/span\u003E% Minion Critical Strike Rating\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Curse Effect",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(4–6)\u003C/span\u003E% Curse Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Dexterity",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(24–30)\u003C/span\u003E Dexterity\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Double Damage Chance",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(4–6)\u003C/span\u003E% chance to deal Double Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(4–6)\u003C/span\u003E% chance for Minions to deal Double Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Energy Shield",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–12)\u003C/span\u003E% Max Energy Shield\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Energy Shield Charge Speed",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(6–10)\u003C/span\u003E% Energy Shield \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECharge\u003C/div\u003E\u003Cdiv\u003EEnergy Shield starts to charge after the character hasn't taken any damage for 2s at the rate of 20% of Max Energy Shield per second and stops charging if the character takes damage\u003C/div\u003E\u003C/div\u003E\"\u003ECharge\u003C/span\u003E Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Energy Shield Restored on Defeat",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003ERestores \u003Cspan class=\"val\"\u003E(0.2–0.4)\u003C/span\u003E% of Energy Shield on defeat\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Erosion Resistance",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–14)\u003C/span\u003E% Erosion Resistance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Evade",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(14–18)\u003C/span\u003E% Evasion\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Fire Resistance",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–14)\u003C/span\u003E% Fire Resistance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Focus Speed",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(14–18)\u003C/span\u003E% Focus Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Growth",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–24)\u003C/span\u003E initial \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EGrowth\u003C/div\u003E\u003Cdiv\u003ESpirit Magi grow into the next Stage for every 100 Growth. They start at Stage 1 and can grow until they reach Stage 5. For every 8 Growth they have, Spirit Magi gain +1% Physique, +5% additional Skill Area, and a bonus every stage:\u003Cbr/\u003EAt Stage 2, +30% chance for them to use Enhanced Skill chance.\u003Cbr/\u003EAt Stage 3, their Enhanced Skills become stronger.\u003Cbr/\u003EAt Stage 4, their Empower Skills become stronger.\u003Cbr/\u003EAt Stage 5, they +25% additional damage, +10% additional Skill Area, and gain increased Movement Speed and Tracking Area.\u003Cbr/\u003EThe max Growth is 1000.\u003C/div\u003E\u003C/div\u003E\"\u003EGrowth\u003C/span\u003E for Spirit Magi\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Intelligence",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(24–30)\u003C/span\u003E Intelligence\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Life Regeneration",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(6–10)\u003C/span\u003E% Life Regeneration Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Life Restored on Defeat",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003ERestores \u003Cspan class=\"val\"\u003E(0.4–0.6)\u003C/span\u003E% of Life on defeat\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Lightning Resistance",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–14)\u003C/span\u003E% Lightning Resistance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Mana%",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(12–16)\u003C/span\u003E% Max Mana\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Max Cold Resistance",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(2–4)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EMax Resistance\u003C/div\u003E\u003Cdiv\u003EBy default, the Max Resistance is 60%. This limit can be increased.\u003C/div\u003E\u003C/div\u003E\"\u003EMax Cold Resistance\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Max Erosion Resistance",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(2–4)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EMax Resistance\u003C/div\u003E\u003Cdiv\u003EBy default, the Max Resistance is 60%. This limit can be increased.\u003C/div\u003E\u003C/div\u003E\"\u003EMax Erosion Resistance\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Max Fire Resistance",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(2–4)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EMax Resistance\u003C/div\u003E\u003Cdiv\u003EBy default, the Max Resistance is 60%. This limit can be increased.\u003C/div\u003E\u003C/div\u003E\"\u003EMax Fire Resistance\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Max Lightning Resistance",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(2–4)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EMax Resistance\u003C/div\u003E\u003Cdiv\u003EBy default, the Max Resistance is 60%. This limit can be increased.\u003C/div\u003E\u003C/div\u003E\"\u003EMax Lightning Resistance\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Movement Speed",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(4–6)\u003C/span\u003E% Movement Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Multistrike Chance",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–24)\u003C/span\u003E% chance to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EMultistrike\u003C/div\u003E\u003Cdiv\u003EChance to perform an additional attack when using Attack Skills. If the chance exceeds 100%, one additional attack will be performed with every 100% of the chance.\u003Cbr/\u003E\u003Cbr/\u003E+20% Attack Speed during Multistrikes.\u003Cbr/\u003EMultistrikes consume skill resources as normal and will be interrupted if there are insufficient resources. Moving or using other non-instant skills will interrupt Multistrike.\u003Cbr/\u003EMobility, Channeled Skills, and Sentry skills cannot Multistrike\u003C/div\u003E\u003C/div\u003E\"\u003EMultistrike\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Multistrike Increment",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EMultistrike\u003C/div\u003E\u003Cdiv\u003EChance to perform an additional attack when using Attack Skills. If the chance exceeds 100%, one additional attack will be performed with every 100% of the chance.\u003Cbr/\u003E\u003Cbr/\u003E+20% Attack Speed during Multistrikes.\u003Cbr/\u003EMultistrikes consume skill resources as normal and will be interrupted if there are insufficient resources. Moving or using other non-instant skills will interrupt Multistrike.\u003Cbr/\u003EMobility, Channeled Skills, and Sentry skills cannot Multistrike\u003C/div\u003E\u003C/div\u003E\"\u003EMultistrikes\u003C/span\u003E deal \u003Cspan class=\"val\"\u003E(10–12)\u003C/span\u003E% increasing damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Numbed Effect",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(14–16)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENumbed\u003C/div\u003E\u003Cdiv\u003EAn Elemental Ailment that has a chance to be inflicted when Lightning Damage hits its target.\u003Cbr/\u003EWhen hitting a Numbed enemy, Lightning Damage inflicts 1 stack of Numbed for every 10% of the sum of Max Energy Shield and Life dealt by Lightning Damage. This threshold can be lowered or raised, but the minimum is 1%.\u003Cbr/\u003EThe default duration of Numbed is 2s, and the duration of each stack is calculated independently.\u003Cbr/\u003EMax Numbed stacks: 10. Each stack of Numbed increases the Lightning Damage taken by an additional +5%.\u003C/div\u003E\u003C/div\u003E\"\u003ENumbed\u003C/span\u003E Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Origin of Spirit Magus",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(15–18)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EOrigin of Spirit Magus\u003C/div\u003E\u003Cdiv\u003EBuff effect gained after Activating a Spirit Magus summoning skill.\u003C/div\u003E\u003C/div\u003E\"\u003EOrigin of Spirit Magus\u003C/span\u003E effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Reaping Duration",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–26)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EReaping\u003C/div\u003E\u003Cdiv\u003EDeals a certain amount of True Damage to the target, equivalent to the damage from all DoT effects over a certain period of time\u003C/div\u003E\u003C/div\u003E\"\u003EReaping\u003C/span\u003E Duration\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Seal Compensation",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(4–6)\u003C/span\u003E% Sealed Mana Compensation\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Spell Block Chance",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(12–15)\u003C/span\u003E% Spell Block Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Spell Damage",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(28–36)\u003C/span\u003E% Spell Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(28–36)\u003C/span\u003E% Minion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Medium Fate",
+    "name": "Strength",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(24–30)\u003C/span\u003E Strength\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Affliction Effect",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–13)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EAffliction\u003C/div\u003E\u003Cdiv\u003EWhen the Affliction inflicted per second is not 0, the Damage Over Time dealt will continuously inflicts Affliction on the target\u003Cbr/\u003EThe target takes 1% additional Damage Over Time for every Affliction point\u003Cbr/\u003EThe max Affliction is 100\u003C/div\u003E\u003C/div\u003E\"\u003EAffliction\u003C/span\u003E Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Armor",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(7–9)\u003C/span\u003E% Armor\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Attack Block Chance",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(6–8)\u003C/span\u003E% Attack Block Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Attack Cast Speed",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(4–6)\u003C/span\u003E% Attack and Cast Speed\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(4–6)\u003C/span\u003E% Minion Attack and Cast Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Attack Damage",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(14–18)\u003C/span\u003E% Attack Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Aura Effect",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(2–3)\u003C/span\u003E% Aura Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Block Ratio",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(1–3)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EBlock Ratio\u003C/div\u003E\u003Cdiv\u003EBy default, Blocking absorbs 30% damage. Increase Block Ratio to increase the damage absorption ratio.\u003C/div\u003E\u003C/div\u003E\"\u003EBlock Ratio\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Cold Resistance",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(5–7)\u003C/span\u003E% Cold Resistance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Command",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E+ \u003Cspan class=\"val\"\u003E(1–2)\u003C/span\u003E \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECommand\u003C/div\u003E\u003Cdiv\u003EEvery point of Command will grant Synthetic Troop Minions +3% additional damage and a bigger Tracking Area.\u003Cbr/\u003EThe lowest Command is -100 while the highest is 100. When Command is not 0, 13 point(s) will be returned (reduced/granted) every second until it becomes 0. For every 10 Command increased, +7 additional points will be returned.\u003Cbr/\u003ESynthetic Troop Minions' Duration will not reduce when Command is a positive value.\u003C/div\u003E\u003C/div\u003E\"\u003ECommand\u003C/span\u003E per second\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Critical Strike Damage",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(12–15)\u003C/span\u003E% Critical Strike Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(12–15)\u003C/span\u003E% Minion Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Critical Strike Rating",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(24–30)\u003C/span\u003E% Critical Strike Rating\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(24–30)\u003C/span\u003E% Minion Critical Strike Rating\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Curse Effect",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(1–3)\u003C/span\u003E% Curse Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Deterioration Chance",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(2–4)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDeterioration\u003C/div\u003E\u003Cdiv\u003ELasts for 1s. When the duration ends, deals True Damage equal to 60% of the Hit Erosion Damage dealt. Stacks up to 99 times. Each stack is calculated independently\u003C/div\u003E\u003C/div\u003E\"\u003EDeterioration\u003C/span\u003E Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Deterioration Duration",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(3–5)\u003C/span\u003E% additional \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDeterioration\u003C/div\u003E\u003Cdiv\u003ELasts for 1s. When the duration ends, deals True Damage equal to 60% of the Hit Erosion Damage dealt. Stacks up to 99 times. Each stack is calculated independently\u003C/div\u003E\u003C/div\u003E\"\u003EDeterioration\u003C/span\u003E Duration\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Dexterity",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(12–15)\u003C/span\u003E Dexterity\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Double Damage Chance",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(1–3)\u003C/span\u003E% chance to deal Double Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(1–3)\u003C/span\u003E% chance for Minions to deal Double Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Energy Shield",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(5–6)\u003C/span\u003E% Max Energy Shield\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Energy Shield Charge Speed",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(3–5)\u003C/span\u003E% Energy Shield \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECharge\u003C/div\u003E\u003Cdiv\u003EEnergy Shield starts to charge after the character hasn't taken any damage for 2s at the rate of 20% of Max Energy Shield per second and stops charging if the character takes damage\u003C/div\u003E\u003C/div\u003E\"\u003ECharge\u003C/span\u003E Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Energy Shield Restored on Defeat",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003ERestores \u003Cspan class=\"val\"\u003E(0.1–0.2)\u003C/span\u003E% of Energy Shield on defeat\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Erosion Resistance",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(5–7)\u003C/span\u003E% Erosion Resistance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Evade",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(7–9)\u003C/span\u003E% Evasion\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Fire Resistance",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(5–7)\u003C/span\u003E% Fire Resistance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Focus Speed",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(7–9)\u003C/span\u003E% Focus Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Growth",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–12)\u003C/span\u003E initial \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EGrowth\u003C/div\u003E\u003Cdiv\u003ESpirit Magi grow into the next Stage for every 100 Growth. They start at Stage 1 and can grow until they reach Stage 5. For every 8 Growth they have, Spirit Magi gain +1% Physique, +5% additional Skill Area, and a bonus every stage:\u003Cbr/\u003EAt Stage 2, +30% chance for them to use Enhanced Skill chance.\u003Cbr/\u003EAt Stage 3, their Enhanced Skills become stronger.\u003Cbr/\u003EAt Stage 4, their Empower Skills become stronger.\u003Cbr/\u003EAt Stage 5, they +25% additional damage, +10% additional Skill Area, and gain increased Movement Speed and Tracking Area.\u003Cbr/\u003EThe max Growth is 1000.\u003C/div\u003E\u003C/div\u003E\"\u003EGrowth\u003C/span\u003E for Spirit Magi\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Ignite Damage Mitigation",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E(-36–-30)\u003C/span\u003E% additional Ignite Damage taken\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E(-36–-30)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EIgnite\u003C/div\u003E\u003Cdiv\u003EAn Ailment that may be triggered on hit, dealing Fire Damage per second for 4s based on Base Ignite Damage. Unable to stack\u003Cbr/\u003EIgnite cannot be inflicted when Base Ignite Damage is 0\u003C/div\u003E\u003C/div\u003E\"\u003EIgnite\u003C/span\u003E Effect received\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Intelligence",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(12–15)\u003C/span\u003E Intelligence\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Life Regeneration",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(3–5)\u003C/span\u003E% Life Regeneration Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Life Restored on Defeat",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003ERestores \u003Cspan class=\"val\"\u003E(0.2–0.3)\u003C/span\u003E% of Life on defeat\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Lightning Resistance",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(5–7)\u003C/span\u003E% Lightning Resistance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Mana%",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(6–8)\u003C/span\u003E% Max Mana\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Max Cold Resistance",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(1–2)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EMax Resistance\u003C/div\u003E\u003Cdiv\u003EBy default, the Max Resistance is 60%. This limit can be increased.\u003C/div\u003E\u003C/div\u003E\"\u003EMax Cold Resistance\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Max Erosion Resistance",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(1–2)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EMax Resistance\u003C/div\u003E\u003Cdiv\u003EBy default, the Max Resistance is 60%. This limit can be increased.\u003C/div\u003E\u003C/div\u003E\"\u003EMax Erosion Resistance\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Max Fire Resistance",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(1–2)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EMax Resistance\u003C/div\u003E\u003Cdiv\u003EBy default, the Max Resistance is 60%. This limit can be increased.\u003C/div\u003E\u003C/div\u003E\"\u003EMax Fire Resistance\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Max Lightning Resistance",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(1–2)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EMax Resistance\u003C/div\u003E\u003Cdiv\u003EBy default, the Max Resistance is 60%. This limit can be increased.\u003C/div\u003E\u003C/div\u003E\"\u003EMax Lightning Resistance\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Movement Speed",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(1–3)\u003C/span\u003E% Movement Speed\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Multistrike Chance",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–12)\u003C/span\u003E% chance to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EMultistrike\u003C/div\u003E\u003Cdiv\u003EChance to perform an additional attack when using Attack Skills. If the chance exceeds 100%, one additional attack will be performed with every 100% of the chance.\u003Cbr/\u003E\u003Cbr/\u003E+20% Attack Speed during Multistrikes.\u003Cbr/\u003EMultistrikes consume skill resources as normal and will be interrupted if there are insufficient resources. Moving or using other non-instant skills will interrupt Multistrike.\u003Cbr/\u003EMobility, Channeled Skills, and Sentry skills cannot Multistrike\u003C/div\u003E\u003C/div\u003E\"\u003EMultistrike\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Multistrike Increment",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EMultistrike\u003C/div\u003E\u003Cdiv\u003EChance to perform an additional attack when using Attack Skills. If the chance exceeds 100%, one additional attack will be performed with every 100% of the chance.\u003Cbr/\u003E\u003Cbr/\u003E+20% Attack Speed during Multistrikes.\u003Cbr/\u003EMultistrikes consume skill resources as normal and will be interrupted if there are insufficient resources. Moving or using other non-instant skills will interrupt Multistrike.\u003Cbr/\u003EMobility, Channeled Skills, and Sentry skills cannot Multistrike\u003C/div\u003E\u003C/div\u003E\"\u003EMultistrikes\u003C/span\u003E deal \u003Cspan class=\"val\"\u003E(4–6)\u003C/span\u003E% increasing damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Numbed Effect",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(6–8)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENumbed\u003C/div\u003E\u003Cdiv\u003EAn Elemental Ailment that has a chance to be inflicted when Lightning Damage hits its target.\u003Cbr/\u003EWhen hitting a Numbed enemy, Lightning Damage inflicts 1 stack of Numbed for every 10% of the sum of Max Energy Shield and Life dealt by Lightning Damage. This threshold can be lowered or raised, but the minimum is 1%.\u003Cbr/\u003EThe default duration of Numbed is 2s, and the duration of each stack is calculated independently.\u003Cbr/\u003EMax Numbed stacks: 10. Each stack of Numbed increases the Lightning Damage taken by an additional +5%.\u003C/div\u003E\u003C/div\u003E\"\u003ENumbed\u003C/span\u003E Effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Numbed Effect Mitigation",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E(-55–-45)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ENumbed\u003C/div\u003E\u003Cdiv\u003EAn Elemental Ailment that has a chance to be inflicted when Lightning Damage hits its target.\u003Cbr/\u003EWhen hitting a Numbed enemy, Lightning Damage inflicts 1 stack of Numbed for every 10% of the sum of Max Energy Shield and Life dealt by Lightning Damage. This threshold can be lowered or raised, but the minimum is 1%.\u003Cbr/\u003EThe default duration of Numbed is 2s, and the duration of each stack is calculated independently.\u003Cbr/\u003EMax Numbed stacks: 10. Each stack of Numbed increases the Lightning Damage taken by an additional +5%.\u003C/div\u003E\u003C/div\u003E\"\u003ENumbed\u003C/span\u003E Effect received\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Origin of Spirit Magus",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(7–9)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EOrigin of Spirit Magus\u003C/div\u003E\u003Cdiv\u003EBuff effect gained after Activating a Spirit Magus summoning skill.\u003C/div\u003E\u003C/div\u003E\"\u003EOrigin of Spirit Magus\u003C/span\u003E effect\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Paralysis Effect Mitigation",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E(-55–-45)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EParalysis\u003C/div\u003E\u003Cdiv\u003EIncreases damage taken by 15%\u003C/div\u003E\u003C/div\u003E\"\u003EParalysis\u003C/span\u003E Effect received\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Reaping Duration",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–13)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EReaping\u003C/div\u003E\u003Cdiv\u003EDeals a certain amount of True Damage to the target, equivalent to the damage from all DoT effects over a certain period of time\u003C/div\u003E\u003C/div\u003E\"\u003EReaping\u003C/span\u003E Duration\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Seal Compensation",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(1–3)\u003C/span\u003E% Sealed Mana Compensation\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Slow Effect Mitigation",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E(-55–-45)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESlow\u003C/div\u003E\u003Cdiv\u003EEach stack reduces Attack Speed, Cast Speed, and Movement Speed by 6%. Stacks up to 5 times\u003C/div\u003E\u003C/div\u003E\"\u003ESlow\u003C/span\u003E Effect received\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Spell Block Chance",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(6–8)\u003C/span\u003E% Spell Block Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Spell Damage",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(14–18)\u003C/span\u003E% Spell Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(14–18)\u003C/span\u003E% Minion Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Strength",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(12–15)\u003C/span\u003E Strength\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Trauma Damage Mitigation",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E(-36–-30)\u003C/span\u003E% Trauma Damage taken\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Weaken Effect Mitigation",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E(-55–-45)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EWeaken\u003C/div\u003E\u003Cdiv\u003EReduces damage dealt by 10%\u003C/div\u003E\u003C/div\u003E\"\u003EWeaken\u003C/span\u003E Effect received\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Micro Fate",
+    "name": "Wilt Damage Mitigation",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E(-36–-30)\u003C/span\u003E% Wilt Damage taken\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Undetermined Fate",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EUndetermined Fate\u003C/li\u003E\u003C/ul\u003E"
+  }
+]

@@ -1854,7 +1854,7 @@ export default function ItemCard({
           <Section label="Sequence" />
           <SimpleSlotRow
             label="Sequence"
-            accent="text-zinc-100"
+            accent="text-emerald-400"
             groups={[
               { label: "Intermediate", options: getOptions(pool, "INTERMEDIATE_SEQUENCES") },
               { label: "Advanced", options: getOptions(pool, "ADVANCED_SEQUENCES") },
