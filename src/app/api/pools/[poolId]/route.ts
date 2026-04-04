@@ -11,11 +11,16 @@ type RouteContext = {
 export async function GET(_: Request, context: RouteContext) {
   const { poolId } = await context.params;
 
-  const pool = await getCraftedPool(poolId);
+  try {
+    const pool = await getCraftedPool(poolId);
 
-  if (!pool) {
-    return NextResponse.json({ error: "Pool not found" }, { status: 404 });
+    if (!pool) {
+      return NextResponse.json({ error: "Pool not found" }, { status: 404 });
+    }
+
+    return NextResponse.json(transformCraftedPool(pool));
+  } catch (err) {
+    console.error(`[GET /api/pools/${poolId}]`, err);
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
-
-  return NextResponse.json(transformCraftedPool(pool));
 }

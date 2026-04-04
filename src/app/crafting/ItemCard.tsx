@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useLayoutEffect } from "react";
 import type { AffixGroupType } from "@prisma/client";
 import type { CraftedPool, PoolAffix, PoolTier } from "@/services/crafting/types";
 
@@ -176,11 +176,46 @@ type NightmareSlotRowProps = {
   pool: CraftedPool;
   values: NonNullable<SlotValue>[];
   onChange: (vals: NonNullable<SlotValue>[]) => void;
+  warn?: boolean;
 };
 
-function NightmareSlotRow({ pool, values, onChange }: NightmareSlotRowProps) {
+function NightmareSlotRow({ pool, values, onChange, warn = false }: NightmareSlotRowProps) {
   const [expanded, setExpanded] = useState(false);
+  const [dropDir, setDropDir] = useState<DropDir>("down");
+  const [maxHeight, setMaxHeight] = useState<number | undefined>(undefined);
+  const triggerRef = useRef<HTMLDivElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
+
   const options = getOptions(pool, "NIGHTMARE_AFFIXES");
+
+  useEffect(() => {
+    if (!expanded) return;
+    function handleClick(e: MouseEvent) {
+      if (triggerRef.current && !triggerRef.current.contains(e.target as Node)) setExpanded(false);
+    }
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, [expanded]);
+
+  useLayoutEffect(() => {
+    if (!expanded) { setDropDir("down"); setMaxHeight(undefined); return; }
+    if (!panelRef.current || !triggerRef.current) return;
+    const triggerRect = triggerRef.current.getBoundingClientRect();
+    const menuHeight = panelRef.current.getBoundingClientRect().height;
+    const margin = 8;
+    const spaceBelow = window.innerHeight - triggerRect.bottom - margin;
+    const spaceAbove = triggerRect.top - margin;
+    if (menuHeight <= spaceBelow) {
+      setDropDir("down"); setMaxHeight(undefined);
+    } else if (menuHeight <= spaceAbove) {
+      setDropDir("up"); setMaxHeight(undefined);
+    } else {
+      const centerY = triggerRect.top + triggerRect.height / 2;
+      const maxHalf = Math.min(centerY - margin, window.innerHeight - centerY - margin);
+      setDropDir("center"); setMaxHeight(Math.max(maxHalf * 2, 80));
+    }
+  }, [expanded]);
+
   if (options.length === 0) return null;
 
   const selectedIds = new Set(values.map((v) => v.affixId));
@@ -201,7 +236,6 @@ function NightmareSlotRow({ pool, values, onChange }: NightmareSlotRowProps) {
     }
   }
 
-  // Group options by category, sort alphabetically within each group
   const grouped = new Map<NightmareGroup, AffixOption[]>(
     NIGHTMARE_GROUP_ORDER.map((g) => [g, []]),
   );
@@ -220,10 +254,13 @@ function NightmareSlotRow({ pool, values, onChange }: NightmareSlotRowProps) {
     Special: "text-purple-300",
   };
 
+  const panelPositionClass = dropDir === "down" ? "top-full mt-1" : dropDir === "up" ? "bottom-full mb-1" : "overflow-y-auto";
+  const panelStyle = dropDir === "center" ? { top: "50%", transform: "translateY(-50%)", maxHeight: maxHeight ? `${maxHeight}px` : undefined } : undefined;
+
   return (
     <div className="flex items-start gap-2 py-2">
       <span className="w-24 shrink-0 flex items-center gap-1 pt-0.5">
-        <span className="text-xs font-medium" style={{ color: "#c64a28" }}>Nightmare</span>
+        <span className="text-sm font-medium" style={{ color: "#c64a28" }}>Nightmare</span>
         <span className="relative group/tip">
           <span className="inline-flex items-center justify-center w-3.5 h-3.5 rounded-full border border-zinc-600 text-zinc-500 text-[9px] font-bold cursor-default select-none hover:border-zinc-400 hover:text-zinc-300 transition-colors">?</span>
           <span className="pointer-events-none absolute left-1/2 -translate-x-1/2 bottom-full mb-1.5 z-50 w-max rounded bg-zinc-800 border border-zinc-700 px-2.5 py-2 text-xs text-zinc-200 shadow-lg opacity-0 group-hover/tip:opacity-100 transition-opacity whitespace-nowrap text-center leading-relaxed">
@@ -231,12 +268,16 @@ function NightmareSlotRow({ pool, values, onChange }: NightmareSlotRowProps) {
           </span>
         </span>
       </span>
-      <div className="flex-1 min-w-0">
+      <div ref={triggerRef} className="flex-1 min-w-0 relative">
         <button
           onClick={() => setExpanded((e) => !e)}
-          className="w-full flex items-center justify-between gap-2 rounded bg-zinc-800 border border-zinc-700 px-2 py-1.5 hover:border-zinc-600 focus:outline-none text-xs mb-1"
+          className={`w-full flex items-center justify-between gap-2 rounded bg-zinc-800 border px-2 py-1.5 focus:outline-none text-sm transition-colors${
+            warn
+              ? " border-red-700 hover:border-red-500"
+              : " border-zinc-700 hover:border-zinc-600"
+          }`}
         >
-          <span className="text-zinc-400">
+          <span className={warn ? "text-red-400 font-medium" : "text-zinc-400"}>
             {values.length > 0 ? `${values.length} selected` : "none selected"}
           </span>
           <svg className="shrink-0 text-zinc-500 w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -244,33 +285,88 @@ function NightmareSlotRow({ pool, values, onChange }: NightmareSlotRowProps) {
           </svg>
         </button>
         {expanded && (
-          <div className="space-y-3">
-            {NIGHTMARE_GROUP_ORDER.map((group) => {
-              const opts = grouped.get(group)!;
-              if (opts.length === 0) return null;
-              return (
-                <div key={group}>
-                  <p className={`text-xs font-semibold uppercase tracking-wider mb-1.5 ${GROUP_ACCENT[group]}`}>
-                    {group}
-                  </p>
-                  <div className="grid grid-cols-2 gap-x-6 gap-y-1.5">
-                    {opts.map(({ affix, sourceGroup }) => (
-                      <label key={affix.id} className="flex items-center gap-1.5 cursor-pointer group min-w-0">
-                        <input
-                          type="checkbox"
-                          className="shrink-0 accent-purple-400"
-                          checked={selectedIds.has(affix.id)}
-                          onChange={() => toggle({ affix, sourceGroup })}
-                        />
-                        <span className="text-xs text-zinc-300 group-hover:text-zinc-100 truncate">
-                          {nightmareLabel(affix)}
+          <div
+            ref={panelRef}
+            className={`absolute z-50 left-0 w-full rounded border border-zinc-700 bg-zinc-900 shadow-xl p-3 ${panelPositionClass}`}
+            style={panelStyle}
+          >
+            <div className="space-y-3">
+              {NIGHTMARE_GROUP_ORDER.map((group) => {
+                const opts = grouped.get(group)!;
+                if (opts.length === 0) return null;
+                const allSelected = opts.every(({ affix }) => selectedIds.has(affix.id));
+                const noneSelected = opts.every(({ affix }) => !selectedIds.has(affix.id));
+                function selectAll() {
+                  const toAdd = opts.filter(({ affix }) => !selectedIds.has(affix.id));
+                  onChange([
+                    ...values,
+                    ...toAdd.map(({ affix, sourceGroup }) => ({
+                      affixId: affix.id,
+                      affixName: affix.name,
+                      tier: affix.tiers[0]?.tier ?? "",
+                      sourceGroup,
+                    })),
+                  ]);
+                }
+                function selectNone() {
+                  const groupIds = new Set(opts.map(({ affix }) => affix.id));
+                  onChange(values.filter((v) => !groupIds.has(v.affixId)));
+                }
+                const minionOpts = group === "Damage"
+                  ? opts.filter(({ affix }) => /minion/.test(affix.tiers[0]?.stats[0]?.statId ?? ""))
+                  : [];
+                const allMinionsSelected = minionOpts.length > 0 && minionOpts.every(({ affix }) => selectedIds.has(affix.id));
+                function selectAllMinions() {
+                  const toAdd = minionOpts.filter(({ affix }) => !selectedIds.has(affix.id));
+                  onChange([...values, ...toAdd.map(({ affix, sourceGroup }) => ({ affixId: affix.id, affixName: affix.name, tier: affix.tiers[0]?.tier ?? "", sourceGroup }))]);
+                }
+                function selectNoneMinions() {
+                  const minionIds = new Set(minionOpts.map(({ affix }) => affix.id));
+                  onChange(values.filter((v) => !minionIds.has(v.affixId)));
+                }
+                return (
+                  <div key={group}>
+                    <div className="relative flex items-center mb-1.5">
+                      <button
+                        onClick={allSelected ? selectNone : selectAll}
+                        className={`flex items-center gap-1.5 rounded px-1.5 py-0.5 hover:bg-zinc-800 transition-colors cursor-pointer text-sm font-semibold uppercase tracking-wider ${GROUP_ACCENT[group]}`}
+                      >
+                        {group}
+                        <span className="text-xs font-normal normal-case tracking-normal text-zinc-500">
+                          {allSelected ? "deselect all" : "select all"}
                         </span>
-                      </label>
-                    ))}
+                      </button>
+                      {minionOpts.length > 0 && (
+                        <button
+                          onClick={allMinionsSelected ? selectNoneMinions : selectAllMinions}
+                          className="absolute left-1/2 -translate-x-1/2 flex items-center gap-1.5 rounded px-1.5 py-0.5 hover:bg-zinc-800 transition-colors cursor-pointer text-sm font-semibold uppercase tracking-wider text-emerald-400"
+                        >
+                          Minions
+                          <span className="text-xs font-normal normal-case tracking-normal text-zinc-500">
+                            {allMinionsSelected ? "deselect all" : "select all"}
+                          </span>
+                        </button>
+                      )}
+                    </div>
+                    <div className="grid grid-cols-2 gap-x-6 gap-y-1.5">
+                      {opts.map(({ affix, sourceGroup }) => (
+                        <label key={affix.id} className="flex items-center gap-1.5 cursor-pointer group min-w-0">
+                          <input
+                            type="checkbox"
+                            className="shrink-0 accent-purple-400"
+                            checked={selectedIds.has(affix.id)}
+                            onChange={() => toggle({ affix, sourceGroup })}
+                          />
+                          <span className="text-xs text-zinc-300 group-hover:text-zinc-100 truncate">
+                            {nightmareLabel(affix)}
+                          </span>
+                        </label>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         )}
       </div>
@@ -322,36 +418,34 @@ function Section({
   return (
     <div className="relative">
       <div
-        className="flex items-center gap-2 mt-4 mb-1"
-        onMouseLeave={scheduleClose}
-        onMouseEnter={cancelClose}
+        className="relative flex items-center justify-end gap-2 mt-4 mb-1 min-h-[2rem]"
       >
-        <div className="flex-1 h-px bg-zinc-800" />
-        <span className="shrink-0 text-xs font-semibold text-zinc-500 uppercase tracking-widest">
+        <div className="absolute inset-x-0 top-1/2 h-px bg-zinc-800" />
+        <span className="absolute left-1/2 -translate-x-1/2 shrink-0 text-xs font-semibold text-zinc-500 uppercase tracking-widest bg-zinc-900 px-2 z-10">
           {label}
         </span>
-        <div className="flex-1 h-px bg-zinc-800" />
         {feCost != null && (
           <span
-            className={`shrink-0 text-xs flex items-center gap-1 px-1.5 py-0.5 rounded transition-colors${
+            className={`relative z-10 shrink-0 text-sm flex items-center gap-2 px-3 py-1 rounded transition-colors${
               Number.isNaN(feCost)
                 ? " text-red-400 bg-zinc-800 border border-red-900 cursor-help hover:border-red-600"
                 : hoverCard
                 ? " text-zinc-300 bg-zinc-800 border border-zinc-700 cursor-help hover:border-zinc-500 hover:text-white"
-                : " text-white"
+                : " text-white bg-zinc-900"
             }`}
             onMouseEnter={() => { cancelClose(); if (hoverCard) setTooltipOpen(true); }}
+            onMouseLeave={scheduleClose}
           >
             {Number.isNaN(feCost) ? (
               <span className="font-bold">NaN</span>
             ) : (
               <>
                 <span className="font-bold">{Math.round(feCost).toLocaleString("en-US")}</span>
-                <FEIcon className="w-3.5 h-3.5" />
+                <FEIcon className="w-5 h-5" />
               </>
             )}
             {hoverCard && (
-              <svg className={`w-3 h-3 ${Number.isNaN(feCost) ? "text-red-600" : "text-zinc-500"}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+              <svg className={`w-4 h-4 ${Number.isNaN(feCost) ? "text-red-600" : "text-zinc-500"}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
             )}
           </span>
         )}
@@ -367,7 +461,7 @@ function Section({
       </div>
       {tooltipOpen && hoverCard && (
         <div
-          className="absolute z-50 left-0 w-full"
+          className="absolute z-50 right-0"
           onMouseEnter={cancelClose}
           onMouseLeave={scheduleClose}
         >
@@ -531,9 +625,14 @@ function GroupDot({ color }: { color: string }) {
   );
 }
 
+type DropDir = "down" | "up" | "center";
+
 function SimpleSlotRow({ label, accent, groups, value, onChange, showStats = false, showTiers = false, groupDotColors }: SimpleSlotProps) {
   const [open, setOpen] = useState(false);
+  const [dropDir, setDropDir] = useState<DropDir>("down");
+  const [maxHeight, setMaxHeight] = useState<number | undefined>(undefined);
   const dropRef = useRef<HTMLDivElement>(null);
+  const dropMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!open) return;
@@ -542,6 +641,25 @@ function SimpleSlotRow({ label, accent, groups, value, onChange, showStats = fal
     }
     document.addEventListener("mousedown", handleClick);
     return () => document.removeEventListener("mousedown", handleClick);
+  }, [open]);
+
+  useLayoutEffect(() => {
+    if (!open) { setDropDir("down"); setMaxHeight(undefined); return; }
+    if (!dropMenuRef.current || !dropRef.current) return;
+    const triggerRect = dropRef.current.getBoundingClientRect();
+    const menuHeight = dropMenuRef.current.getBoundingClientRect().height;
+    const margin = 8;
+    const spaceBelow = window.innerHeight - triggerRect.bottom - margin;
+    const spaceAbove = triggerRect.top - margin;
+    if (menuHeight <= spaceBelow) {
+      setDropDir("down"); setMaxHeight(undefined);
+    } else if (menuHeight <= spaceAbove) {
+      setDropDir("up"); setMaxHeight(undefined);
+    } else {
+      const centerY = triggerRect.top + triggerRect.height / 2;
+      const maxHalf = Math.min(centerY - margin, window.innerHeight - centerY - margin);
+      setDropDir("center"); setMaxHeight(Math.max(maxHalf * 2, 80));
+    }
   }, [open]);
 
   const allOptions = groups.flatMap((g) => g.options);
@@ -568,7 +686,7 @@ function SimpleSlotRow({ label, accent, groups, value, onChange, showStats = fal
     const selectedOpt = allOptions.find((o) => o.affix.id === value?.affixId);
     return (
       <div className="flex items-center gap-2 py-1.5">
-        <span className={`w-24 shrink-0 text-xs font-medium ${accent}`}>{label}</span>
+        <span className={`w-24 shrink-0 text-sm font-medium ${accent}`}>{label}</span>
         <div ref={dropRef} className="flex-1 min-w-0 relative text-xs">
           <button
             onClick={() => setOpen((o) => !o)}
@@ -583,7 +701,7 @@ function SimpleSlotRow({ label, accent, groups, value, onChange, showStats = fal
             <svg className="shrink-0 text-zinc-500 w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="m6 9 6 6 6-6"/></svg>
           </button>
           {open && (
-            <div className="absolute z-50 top-full left-0 mt-1 w-full rounded border border-zinc-700 bg-zinc-900 shadow-xl py-0.5 max-h-64 overflow-y-auto">
+            <div ref={dropMenuRef} className={`absolute z-50 left-0 w-full rounded border border-zinc-700 bg-zinc-900 shadow-xl py-0.5 ${dropDir === "down" ? "top-full mt-1" : dropDir === "up" ? "bottom-full mb-1" : "overflow-y-auto"}`} style={dropDir === "center" ? { top: "50%", transform: "translateY(-50%)", maxHeight: maxHeight ? `${maxHeight}px` : undefined } : undefined}>
               <button
                 className="w-full flex items-center gap-2 px-2 py-1.5 text-zinc-500 italic hover:bg-zinc-800 transition-colors"
                 onClick={() => { onChange(null); setOpen(false); }}
@@ -626,7 +744,7 @@ function SimpleSlotRow({ label, accent, groups, value, onChange, showStats = fal
 
     return (
       <div className="flex items-center gap-2 py-1.5">
-        <span className={`w-24 shrink-0 text-xs font-medium ${accent}`}>{label}</span>
+        <span className={`w-24 shrink-0 text-sm font-medium ${accent}`}>{label}</span>
         <div ref={dropRef} className="flex-1 min-w-0 relative text-xs">
           <button
             onClick={() => setOpen((o) => !o)}
@@ -644,7 +762,7 @@ function SimpleSlotRow({ label, accent, groups, value, onChange, showStats = fal
             <svg className="shrink-0 text-zinc-500 w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="m6 9 6 6 6-6"/></svg>
           </button>
           {open && (
-            <div className="absolute z-50 top-full left-0 mt-1 w-full rounded border border-zinc-700 bg-zinc-900 shadow-xl py-0.5 max-h-64 overflow-y-auto">
+            <div ref={dropMenuRef} className={`absolute z-50 left-0 w-full rounded border border-zinc-700 bg-zinc-900 shadow-xl py-0.5 ${dropDir === "down" ? "top-full mt-1" : dropDir === "up" ? "bottom-full mb-1" : "overflow-y-auto"}`} style={dropDir === "center" ? { top: "50%", transform: "translateY(-50%)", maxHeight: maxHeight ? `${maxHeight}px` : undefined } : undefined}>
               <button
                 className="w-full flex items-center gap-2 px-2 py-1.5 text-zinc-500 italic hover:bg-zinc-800 transition-colors"
                 onClick={() => { onChange(null); setOpen(false); }}
@@ -681,7 +799,7 @@ function SimpleSlotRow({ label, accent, groups, value, onChange, showStats = fal
 
   return (
     <div className="flex items-center gap-2 py-1.5">
-      <span className={`w-24 shrink-0 text-xs font-medium ${accent}`}>{label}</span>
+      <span className={`w-24 shrink-0 text-sm font-medium ${accent}`}>{label}</span>
       <select
         className="flex-1 min-w-0 rounded bg-zinc-800 border border-zinc-700 px-2 py-1.5 text-xs text-zinc-100 focus:outline-none focus:border-zinc-600"
         value={value?.affixId ?? ""}
@@ -744,68 +862,130 @@ function PrefixSuffixSlotRow({
   const thisIsAdvanced = value?.sourceGroup === advancedGroup;
   const thisIsUltimate = value?.sourceGroup === ultimateGroup;
 
-  // Disable advanced if the OTHER slots already fill the cap
   const advancedOtherCount = advancedCount - (thisIsAdvanced ? 1 : 0);
   const ultimateOtherCount = ultimateCount - (thisIsUltimate ? 1 : 0);
   const disableAdvanced = advancedOtherCount >= MAX_ADVANCED;
   const disableUltimate = ultimateOtherCount >= MAX_ULTIMATE;
 
+  const [open, setOpen] = useState(false);
+  const [dropDir, setDropDir] = useState<DropDir>("down");
+  const [maxHeight, setMaxHeight] = useState<number | undefined>(undefined);
+  const dropRef = useRef<HTMLDivElement>(null);
+  const dropMenuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    function handleClick(e: MouseEvent) {
+      if (dropRef.current && !dropRef.current.contains(e.target as Node)) setOpen(false);
+    }
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, [open]);
+
+  useLayoutEffect(() => {
+    if (!open) { setDropDir("down"); setMaxHeight(undefined); return; }
+    if (!dropMenuRef.current || !dropRef.current) return;
+    const triggerRect = dropRef.current.getBoundingClientRect();
+    const menuHeight = dropMenuRef.current.getBoundingClientRect().height;
+    const margin = 8;
+    const spaceBelow = window.innerHeight - triggerRect.bottom - margin;
+    const spaceAbove = triggerRect.top - margin;
+    if (menuHeight <= spaceBelow) {
+      setDropDir("down"); setMaxHeight(undefined);
+    } else if (menuHeight <= spaceAbove) {
+      setDropDir("up"); setMaxHeight(undefined);
+    } else {
+      const centerY = triggerRect.top + triggerRect.height / 2;
+      const maxHalf = Math.min(centerY - margin, window.innerHeight - centerY - margin);
+      setDropDir("center"); setMaxHeight(Math.max(maxHalf * 2, 80));
+    }
+  }, [open]);
+
   function handleAffixChange(affixId: string) {
-    if (!affixId) { onChange(null); return; }
+    if (!affixId) { onChange(null); setOpen(false); return; }
     const opt = allOptions.find((o) => o.affix.id === affixId);
     if (!opt) return;
     const sorted = sortTiers(opt.affix.tiers);
-    const defaultTier =
-      sorted.find((t) => t.tier === "T1") ?? sorted[sorted.length - 1];
+    const defaultTier = sorted.find((t) => t.tier === "T1") ?? sorted[sorted.length - 1];
     onChange({
       affixId: opt.affix.id,
       affixName: opt.affix.name,
       tier: defaultTier?.tier ?? "",
       sourceGroup: opt.sourceGroup,
     });
+    setOpen(false);
   }
+
+  const selectedOpt = allOptions.find((o) => o.affix.id === value?.affixId);
+
+  const groups: { label: string; options: AffixOption[]; disabled: boolean; color: string }[] = [
+    { label: "Basic", options: basicOptions, disabled: false, color: "text-zinc-500" },
+    { label: `Advanced${disableAdvanced ? " (limit reached)" : ""}`, options: advancedOptions, disabled: disableAdvanced, color: "text-sky-400" },
+    { label: `Ultimate${disableUltimate ? " (limit reached)" : ""}`, options: ultimateOptions, disabled: disableUltimate, color: "text-amber-400" },
+  ].filter((g) => g.options.length > 0);
+
+  const affinityLabel = value
+    ? value.sourceGroup === basicGroup ? { text: "Basic", cls: "text-zinc-500" }
+    : value.sourceGroup === advancedGroup ? { text: "Advanced", cls: "text-sky-400" }
+    : { text: "Ultimate", cls: "text-amber-400" }
+    : null;
 
   return (
     <div className="flex items-center gap-2 py-1.5">
-      <span className="w-24 shrink-0 text-xs font-medium text-zinc-300">{label}</span>
-      <select
-        className="flex-1 min-w-0 rounded bg-zinc-800 border border-zinc-700 px-2 py-1.5 text-xs text-zinc-100 focus:outline-none focus:border-zinc-600"
-        value={value?.affixId ?? ""}
-        onChange={(e) => handleAffixChange(e.target.value)}
-      >
-        <option value="">— empty —</option>
-
-        {basicOptions.length > 0 && (
-          <optgroup label="Basic">
-            {basicOptions.map(({ affix }) => (
-              <option key={affix.id} value={affix.id} disabled={takenAffixIds.has(affix.id)}>
-                {affix.name}
-              </option>
-            ))}
-          </optgroup>
+      <div className="w-24 shrink-0 flex flex-col">
+        <span className="text-xs font-medium text-zinc-300">{label}</span>
+        {affinityLabel && (
+          <span className={`text-[10px] font-medium ${affinityLabel.cls}`}>{affinityLabel.text}</span>
         )}
-
-        {advancedOptions.length > 0 && (
-          <optgroup label={`Advanced${disableAdvanced ? " (limit reached)" : ""}`}>
-            {advancedOptions.map(({ affix }) => (
-              <option key={affix.id} value={affix.id} disabled={disableAdvanced || takenAffixIds.has(affix.id)}>
-                {affix.name}
-              </option>
+      </div>
+      <div ref={dropRef} className="flex-1 min-w-0 relative text-xs">
+        <button
+          onClick={() => setOpen((o) => !o)}
+          className="w-full flex items-center justify-between gap-2 rounded bg-zinc-800 border border-zinc-700 px-2 py-1.5 hover:border-zinc-600 focus:outline-none"
+        >
+          <span className="truncate">
+            {selectedOpt
+              ? <span className="text-zinc-100">{selectedOpt.affix.name}</span>
+              : <span className="text-zinc-500 italic">— empty —</span>
+            }
+          </span>
+          <svg className="shrink-0 text-zinc-500 w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        {open && (
+          <div ref={dropMenuRef} className={`absolute z-50 left-0 w-full rounded border border-zinc-700 bg-zinc-900 shadow-xl py-0.5 ${dropDir === "down" ? "top-full mt-1" : dropDir === "up" ? "bottom-full mb-1" : "overflow-y-auto"}`} style={dropDir === "center" ? { top: "50%", transform: "translateY(-50%)", maxHeight: maxHeight ? `${maxHeight}px` : undefined } : undefined}>
+            <button
+              className="w-full block text-left pl-5 pr-2 py-1.5 text-zinc-500 italic hover:bg-zinc-800 transition-colors"
+              onClick={() => handleAffixChange("")}
+            >
+              — empty —
+            </button>
+            {groups.map(({ label: groupLabel, options, disabled, color }) => (
+              <div key={groupLabel}>
+                <p className={`px-2 pt-2 pb-0.5 text-xs font-semibold uppercase tracking-widest ${color}`}>{groupLabel}</p>
+                {options.map(({ affix }) => {
+                  const isDisabled = disabled || takenAffixIds.has(affix.id);
+                  return (
+                    <button
+                      key={affix.id}
+                      disabled={isDisabled}
+                      className={`w-full block text-left pl-5 pr-2 py-1.5 transition-colors ${
+                        isDisabled
+                          ? "text-zinc-600 cursor-default"
+                          : value?.affixId === affix.id
+                          ? "bg-zinc-800/60 text-zinc-100 hover:bg-zinc-800"
+                          : "text-zinc-100 hover:bg-zinc-800"
+                      }`}
+                      onClick={() => !isDisabled && handleAffixChange(affix.id)}
+                    >
+                      {affix.name}
+                    </button>
+                  );
+                })}
+              </div>
             ))}
-          </optgroup>
+          </div>
         )}
-
-        {ultimateOptions.length > 0 && (
-          <optgroup label={`Ultimate${disableUltimate ? " (limit reached)" : ""}`}>
-            {ultimateOptions.map(({ affix }) => (
-              <option key={affix.id} value={affix.id} disabled={disableUltimate || takenAffixIds.has(affix.id)}>
-                {affix.name}
-              </option>
-            ))}
-          </optgroup>
-        )}
-      </select>
-
+      </div>
       <TierPicker
         options={allOptions}
         value={value}
@@ -914,7 +1094,7 @@ function SequenceCostSection({
   const totalFE = effectiveModCost > 0 ? avgMods * effectiveModCost : null;
 
   return (
-    <div className="p-3 rounded bg-zinc-900 border border-zinc-700">
+    <div className="w-72 p-3 rounded bg-zinc-900 border border-zinc-700">
       <div className="space-y-1 text-xs text-zinc-400 mb-3">
         <div className="flex justify-between gap-8">
           <span>Type</span>
@@ -936,7 +1116,7 @@ function SequenceCostSection({
           </div>
         )}
         <div className="flex justify-between gap-8">
-          <span>Mod</span>
+          <span>Material</span>
           <span className="text-zinc-200 flex items-center gap-1.5"><MatIcon name={modName} />{modName}</span>
         </div>
         <div className="flex justify-between gap-8">
@@ -952,24 +1132,26 @@ function SequenceCostSection({
           <span className="text-zinc-200">{avgAttempts.toFixed(1)}</span>
         </div>
         <div className="flex justify-between gap-8 font-medium border-t border-zinc-700/50 pt-1 mt-1">
-          <span className="text-zinc-300">Avg mods needed</span>
+          <span className="text-zinc-300 flex items-center gap-1.5"><MatIcon name={modName} />Avg {modName}</span>
           <span className="text-emerald-300">{Math.round(avgMods).toLocaleString("en-US")}</span>
         </div>
       </div>
-      <div className="flex items-center gap-2">
-        <label className="text-xs text-zinc-400 shrink-0 flex items-center gap-1.5">
-          <MatIcon name={modName} />
-          FE per {modName}
+      <div className="flex flex-col gap-1">
+        <label className="text-xs text-zinc-400 flex items-center gap-1.5">
+          <FEIcon className="w-3.5 h-3.5" /> per <MatIcon name={modName} /> {modName}
         </label>
-        <input
-          type="number"
-          min="0"
-          step="any"
-          className="flex-1 rounded bg-zinc-800 border border-zinc-700 px-2 py-1 text-xs text-zinc-100 focus:outline-none focus:border-zinc-600"
-          placeholder={defaultModCost}
-          value={modCostFE}
-          onChange={(e) => onModCostFEChange(e.target.value)}
-        />
+        <div className="relative flex items-center">
+          <input
+            type="number"
+            min="0"
+            step="any"
+            className="w-full rounded bg-zinc-800 border border-zinc-700 pl-2 pr-7 py-1 text-xs text-zinc-100 focus:outline-none focus:border-zinc-600"
+            placeholder={defaultModCost}
+            value={modCostFE}
+            onChange={(e) => onModCostFEChange(e.target.value)}
+          />
+          <FEIcon className="absolute right-2 w-3.5 h-3.5 text-zinc-400 pointer-events-none" />
+        </div>
       </div>
       {totalFE !== null && (
         <div className="flex justify-between mt-2 pt-2 border-t border-zinc-700/50 text-xs font-semibold">
@@ -1032,6 +1214,23 @@ function getItemType(pool: CraftedPool): "weapon" | "armor" | "trinket" {
   return "armor"; // helmet, chest, gloves, boots, shield
 }
 
+function getEquipmentIconPath(pool: CraftedPool): string {
+  const type = getItemType(pool);
+  if (type === "weapon" && pool.weaponType)
+    return `/icons/equipment/${pool.weaponType.name}.webp`;
+  if (type === "trinket")
+    return `/icons/equipment/${pool.baseItemCategory.name}.webp`;
+  const attr = pool.attributeType ?? "STR";
+  return `/icons/equipment/${attr} ${pool.baseItemCategory.name}.webp`;
+}
+
+function getPSRarityColors(count: number): { border: string; gradientEnd: string } {
+  if (count === 0) return { border: "#71717a", gradientEnd: "#3f3f46" };
+  if (count <= 4)  return { border: "#38bdf8", gradientEnd: "#0c4a6e" };
+  if (count === 5) return { border: "#c084fc", gradientEnd: "#6b21a8" };
+  return                  { border: "#f472b6", gradientEnd: "#9d174d" };
+}
+
 function getShallowDreamName(pool: CraftedPool): string {
   const t = getItemType(pool);
   if (t === "weapon")  return "Shallow Dream Talking - Weapon";
@@ -1072,8 +1271,8 @@ const ROLL_HIT_P: Record<string, number> = {
 const UPGRADE_COST_PER: Record<string, ResourceBundle> = {
   BASIC_PREFIXES:    { fe: 30,  preciousEmbers: 300, matchlessEmbers: 0, ultimateEmbers: 0, sacredFossils: 1 },
   BASIC_SUFFIXES:    { fe: 30,  preciousEmbers: 300, matchlessEmbers: 0, ultimateEmbers: 0, sacredFossils: 1 },
-  ADVANCED_PREFIXES: { fe: 90,  preciousEmbers: 300, matchlessEmbers: 0, ultimateEmbers: 0, sacredFossils: 3 },
-  ADVANCED_SUFFIXES: { fe: 90,  preciousEmbers: 300, matchlessEmbers: 0, ultimateEmbers: 0, sacredFossils: 3 },
+  ADVANCED_PREFIXES: { fe: 90,  preciousEmbers: 0, matchlessEmbers: 300, ultimateEmbers: 0, sacredFossils: 3 },
+  ADVANCED_SUFFIXES: { fe: 90,  preciousEmbers: 0, matchlessEmbers: 300, ultimateEmbers: 0, sacredFossils: 3 },
   ULTIMATE_PREFIXES: { fe: 180, preciousEmbers: 0,   matchlessEmbers: 0, ultimateEmbers: 6, sacredFossils: 6 },
   ULTIMATE_SUFFIXES: { fe: 180, preciousEmbers: 0,   matchlessEmbers: 0, ultimateEmbers: 6, sacredFossils: 6 },
 };
@@ -1158,7 +1357,7 @@ function PrefixSuffixCostSection({
 }: PrefixSuffixCostSectionProps) {
   const isTwoH = pool.baseItemCategory.id === "two_hand_weapon";
 
-  type Row = { key: PrefixSuffixKey; tier: string; cost: ResourceBundle; rowFE: number };
+  type Row = { key: PrefixSuffixKey; tier: string; sourceGroup: string; cost: ResourceBundle; rowFE: number };
   const rows: Row[] = [];
   const unsupported: string[] = [];
 
@@ -1167,7 +1366,7 @@ function PrefixSuffixCostSection({
     if (!slot) continue;
     const cost = getSlotCost(slot.sourceGroup, slot.tier, isTwoH);
     if (cost) {
-      rows.push({ key, tier: slot.tier, cost, rowFE: calcTotalFE(cost, prices) });
+      rows.push({ key, tier: slot.tier, sourceGroup: slot.sourceGroup, cost, rowFE: calcTotalFE(cost, prices) });
     } else {
       unsupported.push(`${SLOT_LABELS[key]} (${displayTier(slot.tier)})`);
     }
@@ -1216,9 +1415,16 @@ function PrefixSuffixCostSection({
                     </tr>
                   </thead>
                   <tbody>
-                    {rows.map(({ key, tier, cost, rowFE }) => (
+                    {rows.map(({ key, tier, sourceGroup, cost, rowFE }) => {
+                      const typeLabel = sourceGroup.includes("ADVANCED") ? { text: "Advanced", cls: "text-sky-400" }
+                        : sourceGroup.includes("ULTIMATE") ? { text: "Ultimate", cls: "text-amber-400" }
+                        : { text: "Basic", cls: "text-zinc-500" };
+                      return (
                       <tr key={key} className="border-b border-zinc-800/50">
-                        <td className="py-1.5 pr-3 text-zinc-300 whitespace-nowrap">{SLOT_LABELS[key]}</td>
+                        <td className="py-1.5 pr-3 whitespace-nowrap">
+                          <div className="text-zinc-300">{SLOT_LABELS[key]}</div>
+                          <div className={`text-[10px] font-medium ${typeLabel.cls}`}>{typeLabel.text}</div>
+                        </td>
                         <td className="py-1.5 pr-3">
                           <span className="flex items-center gap-1.5">
                             {tierSquareColor(tier)
@@ -1237,7 +1443,8 @@ function PrefixSuffixCostSection({
                         {needsSF && <td className="py-1.5 pr-3 text-right text-zinc-400">{fmtR(cost.sacredFossils)}</td>}
                         <td className="py-1.5 text-right font-semibold text-amber-400">{Math.round(rowFE).toLocaleString("en-US")}</td>
                       </tr>
-                    ))}
+                    );
+                    })}
                     {rows.length > 1 && (
                       <tr className="font-semibold border-t border-zinc-700">
                         <td colSpan={2} className="pt-2 pb-1 pr-3 text-zinc-300">Total</td>
@@ -1276,15 +1483,18 @@ function PrefixSuffixCostSection({
                           <MatIcon name={label} className="w-4 h-4" />
                           {label}
                         </label>
-                        <input
-                          type="number"
-                          min="0"
-                          step="any"
-                          className="w-24 rounded bg-zinc-800 border border-zinc-700 px-2 py-1 text-xs text-zinc-100 focus:outline-none focus:border-zinc-600"
-                          placeholder={RESOURCE_PRICE_DEFAULTS[key]}
-                          value={prices[key]}
-                          onChange={(e) => onPricesChange({ ...prices, [key]: e.target.value })}
-                        />
+                        <div className="relative flex items-center">
+                          <input
+                            type="number"
+                            min="0"
+                            step="any"
+                            className="w-24 rounded bg-zinc-800 border border-zinc-700 pl-2 pr-7 py-1 text-xs text-zinc-100 focus:outline-none focus:border-zinc-600"
+                            placeholder={RESOURCE_PRICE_DEFAULTS[key]}
+                            value={prices[key]}
+                            onChange={(e) => onPricesChange({ ...prices, [key]: e.target.value })}
+                          />
+                          <FEIcon className="absolute right-2 w-3.5 h-3.5 text-zinc-400 pointer-events-none" />
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -1347,7 +1557,8 @@ function computeCraftCostLines(
     const D = pool.groups["SWEET_DREAM_AFFIXES"]?.length ?? 0;
     const N = pool.groups["NIGHTMARE_AFFIXES"]?.length ?? 0;
     const k = slots.nightmare.length;
-    if (D === 0 || N === 0 || k === 0) return null;
+    if (D === 0 || N === 0) return null;
+    if (k === 0) return NaN;
     const pSingle = (1 / D) * (k / N);
     const pRoll = 1 - Math.pow(1 - pSingle, 3);
     if (pRoll <= 0) return null;
@@ -1552,20 +1763,22 @@ function CorrosionHoverCard({
               {avgAttempts !== null ? avgAttempts.toFixed(1) : "—"}
             </span>
           </div>
-          <div className="flex items-center gap-2 pt-1">
-            <label className="text-zinc-400 shrink-0 flex items-center gap-1.5">
-              <MatIcon name="Glorious Axis" />
-              FE per Glorious Axis
+          <div className="flex flex-col gap-1 pt-1">
+            <label className="text-xs text-zinc-400 flex items-center gap-1.5">
+              <FEIcon className="w-3.5 h-3.5" /> per <MatIcon name="Glorious Axis" /> Glorious Axis
             </label>
-            <input
-              type="number"
-              min="0"
-              step="any"
-              className="w-28 min-w-0 rounded bg-zinc-800 border border-zinc-700 px-2 py-1 text-zinc-100 focus:outline-none focus:border-zinc-600"
-              placeholder={CORROSION_COST_DEFAULT}
-              value={corrosionCostFE}
-              onChange={(e) => onCorrosionCostFEChange(e.target.value)}
-            />
+            <div className="relative flex items-center">
+              <input
+                type="number"
+                min="0"
+                step="any"
+                className="w-full rounded bg-zinc-800 border border-zinc-700 pl-2 pr-7 py-1 text-xs text-zinc-100 focus:outline-none focus:border-zinc-600"
+                placeholder={CORROSION_COST_DEFAULT}
+                value={corrosionCostFE}
+                onChange={(e) => onCorrosionCostFEChange(e.target.value)}
+              />
+              <FEIcon className="absolute right-2 w-3.5 h-3.5 text-zinc-400 pointer-events-none" />
+            </div>
           </div>
           {hasCorrCost && avgAttempts !== null && (
             <div className="space-y-1 border-t border-zinc-700/50 pt-1.5 mt-1">
@@ -1645,25 +1858,32 @@ function DreamCostSection({
     : null;
 
   return (
-    <div className="p-3 rounded bg-zinc-900 border border-zinc-700">
+    <div className="w-72 p-3 rounded bg-zinc-900 border border-zinc-700">
       {k === 0 ? (
-        <p className="text-xs text-zinc-500">
-          Select acceptable nightmare affixes above to calculate cost.
-        </p>
+        <div className="text-xs">
+          <span className="font-bold text-red-400">NaN</span>
+          <p className="text-zinc-500 mt-1">
+            Select at least one <span style={{ color: "#c64a28" }}>Nightmare</span> affix below to calculate cost.
+          </p>
+        </div>
       ) : (
         <>
           <div className="space-y-1 text-xs text-zinc-400 mb-3">
             <div className="flex justify-between gap-8">
-              <span>Dream pool size</span>
+              <span><span style={{ color: "#48b8ff" }}>Dream</span> pool size</span>
               <span className="text-zinc-200">{D}</span>
             </div>
             <div className="flex justify-between gap-8">
-              <span>Nightmare pool size</span>
+              <span><span style={{ color: "#c64a28" }}>Nightmare</span> pool size</span>
               <span className="text-zinc-200">{N}</span>
             </div>
             <div className="flex justify-between gap-8">
-              <span>Acceptable nightmares</span>
+              <span>Acceptable <span style={{ color: "#c64a28" }}>nightmares</span></span>
               <span className="text-zinc-200">{k}</span>
+            </div>
+            <div className="flex justify-between gap-8">
+              <span>Material</span>
+              <span className="text-zinc-200 flex items-center gap-1.5"><MatIcon name={shallowName} />{shallowName}</span>
             </div>
             <div className="flex justify-between gap-8">
               <span>P(hit per slot)</span>
@@ -1685,19 +1905,22 @@ function DreamCostSection({
               <span className="text-sky-300">{avgShallows.toFixed(1)}</span>
             </div>
           </div>
-          <div className="flex items-center gap-2">
-            <label className="text-xs text-zinc-400 shrink-0 flex items-center gap-1.5">
+          <div className="flex flex-col gap-1">
+            <label className="text-xs text-zinc-400 flex items-center gap-1.5">
               <FEIcon className="w-3.5 h-3.5" /> per <MatIcon name={shallowName} /> {shallowName}
             </label>
-            <input
-              type="number"
-              min="0"
-              step="any"
-              className="flex-1 rounded bg-zinc-800 border border-zinc-700 px-2 py-1 text-xs text-zinc-100 focus:outline-none focus:border-zinc-600"
-              placeholder={defaultShallowCost}
-              value={shallowCostFE}
-              onChange={(e) => onShallowCostFEChange(e.target.value)}
-            />
+            <div className="relative flex items-center">
+              <input
+                type="number"
+                min="0"
+                step="any"
+                className="w-full rounded bg-zinc-800 border border-zinc-700 pl-2 pr-7 py-1 text-xs text-zinc-100 focus:outline-none focus:border-zinc-600"
+                placeholder={defaultShallowCost}
+                value={shallowCostFE}
+                onChange={(e) => onShallowCostFEChange(e.target.value)}
+              />
+              <FEIcon className="absolute right-2 w-3.5 h-3.5 text-zinc-400 pointer-events-none" />
+            </div>
           </div>
           {totalFE !== null && (
             <div className="flex justify-between mt-2 pt-2 border-t border-zinc-700/50 text-xs font-semibold">
@@ -1758,7 +1981,7 @@ function CorrodedBaseCostSection({
   const totalFE = totalWithRecrafts ?? corrosionOverhead;
 
   return (
-    <div className="p-3 rounded bg-zinc-900 border border-zinc-700">
+    <div className="w-72 p-3 rounded bg-zinc-900 border border-zinc-700">
       <div className="space-y-1 text-xs text-zinc-400 mb-3">
         <div className="flex justify-between gap-8">
           <span>Outcome</span>
@@ -1781,20 +2004,22 @@ function CorrodedBaseCostSection({
           <span className="text-zinc-200">{avgAttempts.toFixed(1)}</span>
         </div>
       </div>
-      <div className="flex items-center gap-2">
-        <label className="text-xs text-zinc-400 shrink-0 flex items-center gap-1.5">
-          <MatIcon name="Glorious Axis" />
-          FE per Glorious Axis
+      <div className="flex flex-col gap-1">
+        <label className="text-xs text-zinc-400 flex items-center gap-1.5">
+          <FEIcon className="w-3.5 h-3.5" /> per <MatIcon name="Glorious Axis" /> Glorious Axis
         </label>
-        <input
-          type="number"
-          min="0"
-          step="any"
-          className="flex-1 rounded bg-zinc-800 border border-zinc-700 px-2 py-1 text-xs text-zinc-100 focus:outline-none focus:border-zinc-600"
-          placeholder={CORROSION_COST_DEFAULT}
-          value={corrosionCostFE}
-          onChange={(e) => onCorrosionCostFEChange(e.target.value)}
-        />
+        <div className="relative flex items-center">
+          <input
+            type="number"
+            min="0"
+            step="any"
+            className="w-full rounded bg-zinc-800 border border-zinc-700 pl-2 pr-7 py-1 text-xs text-zinc-100 focus:outline-none focus:border-zinc-600"
+            placeholder={CORROSION_COST_DEFAULT}
+            value={corrosionCostFE}
+            onChange={(e) => onCorrosionCostFEChange(e.target.value)}
+          />
+          <FEIcon className="absolute right-2 w-3.5 h-3.5 text-zinc-400 pointer-events-none" />
+        </div>
       </div>
       {hasCorrCost && (
         <div className="space-y-1 border-t border-zinc-700/50 pt-1.5 mt-2 text-xs">
@@ -1922,7 +2147,7 @@ export default function ItemCard({
   const baseFE: number | null = (() => {
     if (slots.base?.sourceGroup === "BASE_AFFIXES") {
       const v = parseFloat(baseCostFE);
-      return v > 0 ? v : null;
+      return isNaN(v) ? 0 : v;
     }
     if (slots.base?.sourceGroup === "CORROSION_BASE_AFFIXES") {
       const w = PREFIX_SUFFIX_KEYS.filter((k) => (slots[k] as SlotValue)?.tier === "T0_PLUS").length;
@@ -1943,7 +2168,8 @@ export default function ItemCard({
     const D = pool.groups["SWEET_DREAM_AFFIXES"]?.length ?? 0;
     const N = pool.groups["NIGHTMARE_AFFIXES"]?.length ?? 0;
     const k = slots.nightmare.length;
-    if (D === 0 || N === 0 || k === 0) return null;
+    if (D === 0 || N === 0) return null;
+    if (k === 0) return NaN;
     const pSingle = (1 / D) * (k / N);
     const pRoll = 1 - Math.pow(1 - pSingle, 3);
     if (pRoll <= 0) return null;
@@ -1973,116 +2199,123 @@ export default function ItemCard({
     return hasAny ? calcTotalFE(total, resourcePrices) : null;
   })();
 
-  return (
-    <div className="rounded-lg border border-zinc-700 bg-zinc-900 p-5 max-w-3xl">
-      {/* Header */}
-      <div className="flex items-center justify-between mb-3">
-        <div className="min-w-0">
-          <h2 className="text-base font-bold text-zinc-100">{pool.name}</h2>
-          <p className="text-xs text-zinc-500">
-            {pool.baseItemCategory.name}
-            {pool.weaponType ? ` · ${pool.weaponType.name}` : ""}
-            {pool.attributeType ? ` · ${pool.attributeType}` : ""}
-          </p>
-        </div>
+  const psCount = PREFIX_SUFFIX_KEYS.filter((k) => slots[k] !== null).length;
+  const { border: iconBorder, gradientEnd } = getPSRarityColors(psCount);
 
-        {/* Totals — hoverable badges */}
-        <div className="flex items-start gap-2 mx-4 shrink-0">
-          {/* Grand total badge */}
-          {grandTotal !== null && (
-            <div className="relative flex flex-col items-center gap-0.5">
-              <span className="text-[10px] text-zinc-600 uppercase tracking-widest">Craft</span>
-              <span
-                className="text-sm flex items-center gap-1.5 px-2 py-0.5 rounded bg-zinc-800 border border-zinc-700 text-zinc-300 cursor-help hover:border-zinc-500 hover:text-white transition-colors"
-                onMouseEnter={() => { cancelGrandClose(); setGrandTotalTooltipOpen(true); }}
+  return (
+    <div className="relative rounded-lg border border-zinc-700 bg-zinc-900 px-5 pb-5 pt-[108px] max-w-3xl">
+      {/* Delete button — top-right corner */}
+      {onClear && (
+        <button
+          onClick={onClear}
+          title="Remove item"
+          className="absolute top-3 right-3 rounded p-1.5 text-zinc-500 hover:bg-zinc-800 hover:text-red-400 transition-colors z-20"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/>
+          </svg>
+        </button>
+      )}
+
+      {/* Icon — centered, top 1/3 hangs above card */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/3 z-10">
+        <div
+          className="w-36 h-36 rounded flex items-center justify-center overflow-hidden"
+          style={{
+            border: `2px solid ${iconBorder}`,
+            background: `linear-gradient(to bottom, #1a1a1a 0%, ${gradientEnd} 100%)`,
+          }}
+        >
+          <img
+            src={getEquipmentIconPath(pool)}
+            alt={pool.name}
+            className="w-full h-full object-contain p-0.5"
+          />
+        </div>
+      </div>
+
+      {/* Costs — absolutely positioned top-right, stacked vertically */}
+      <div className="absolute top-3 right-24 flex flex-col items-end gap-1.5">
+        {grandTotal !== null && (
+          <div
+            className="relative flex flex-col items-end cursor-help"
+            onMouseEnter={() => { cancelGrandClose(); setGrandTotalTooltipOpen(true); }}
+            onMouseLeave={scheduleGrandClose}
+          >
+            <span className="text-[10px] text-zinc-500 uppercase tracking-widest mb-0.5">Craft</span>
+            <span className={`text-2xl font-bold flex items-center gap-1.5 ${Number.isNaN(grandTotal) ? "text-red-400" : "text-white"}`}>
+              {Number.isNaN(grandTotal) ? "NaN" : Math.round(grandTotal).toLocaleString("en-US")}
+              {!Number.isNaN(grandTotal) && <FEIcon className="w-5 h-5" />}
+            </span>
+            {grandTotalTooltipOpen && (
+              <div
+                className="absolute z-50 top-full mt-2 right-0 w-56 p-3 rounded bg-zinc-900 border border-zinc-700 shadow-lg space-y-1.5 text-xs"
+                onMouseEnter={cancelGrandClose}
                 onMouseLeave={scheduleGrandClose}
               >
-                <span className="font-bold">{Math.round(grandTotal).toLocaleString("en-US")}</span>
-                <FEIcon className="w-4 h-4" />
-                <svg className="w-3 h-3 text-zinc-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>
-                </svg>
-              </span>
-              {grandTotalTooltipOpen && (
-                <div
-                  className="absolute z-50 top-full mt-1 right-0 w-56 p-3 rounded bg-zinc-900 border border-zinc-700 shadow-lg space-y-1.5 text-xs"
-                  onMouseEnter={cancelGrandClose}
-                  onMouseLeave={scheduleGrandClose}
-                >
-                  {grandTotalLines.map(({ label, value }) => (
-                    <div key={label} className="flex justify-between gap-4">
-                      <span className="text-zinc-400">{label}</span>
-                      <span className="text-zinc-200 flex items-center gap-1">
-                        {value !== null
-                          ? <>{Math.round(value).toLocaleString("en-US")} <FEIcon className="w-3 h-3" /></>
-                          : "—"}
-                      </span>
-                    </div>
-                  ))}
-                  <div className="flex justify-between gap-4 font-semibold border-t border-zinc-700/50 pt-1.5">
-                    <span className="text-zinc-300">Total</span>
+                {grandTotalLines.map(({ label, value }) => (
+                  <div key={label} className="flex justify-between gap-4">
+                    <span className="text-zinc-400">{label}</span>
+                    <span className={`flex items-center gap-1 ${value !== null && Number.isNaN(value) ? "text-red-400 font-bold" : "text-zinc-200"}`}>
+                      {value === null ? "—" : Number.isNaN(value) ? "NaN" : <>{Math.round(value).toLocaleString("en-US")} <FEIcon className="w-3 h-3" /></>}
+                    </span>
+                  </div>
+                ))}
+                <div className="flex justify-between gap-4 font-semibold border-t border-zinc-700/50 pt-1.5">
+                  <span className="text-zinc-300">Total</span>
+                  {Number.isNaN(grandTotal) ? (
+                    <span className="text-red-400 font-bold">NaN</span>
+                  ) : (
                     <span className="text-white font-bold flex items-center gap-1">
                       {Math.round(grandTotal).toLocaleString("en-US")} <FEIcon className="w-3 h-3" />
                     </span>
-                  </div>
+                  )}
                 </div>
-              )}
-            </div>
-          )}
-
-          {/* Corrosion badge */}
-          {corrosionTotal !== null && (
-            <div className="relative flex flex-col items-center gap-0.5">
-              <span className="text-[10px] text-zinc-600 uppercase tracking-widest">+Corrosion</span>
-              <span
-                className={`text-sm flex items-center gap-1.5 px-2 py-0.5 rounded transition-colors cursor-help ${
-                  Number.isNaN(corrosionTotal)
-                    ? "text-red-400 bg-zinc-800 border border-red-900 hover:border-red-600"
-                    : "text-zinc-300 bg-zinc-800 border border-zinc-700 hover:border-zinc-500 hover:text-white"
-                }`}
-                onMouseEnter={() => { cancelCorrClose(); setCorrTooltipOpen(true); }}
+              </div>
+            )}
+          </div>
+        )}
+        {corrosionTotal !== null && (
+          <div
+            className="relative flex flex-col items-end cursor-help"
+            onMouseEnter={() => { cancelCorrClose(); setCorrTooltipOpen(true); }}
+            onMouseLeave={scheduleCorrClose}
+          >
+            <span className="text-[10px] text-zinc-500 uppercase tracking-widest mb-0.5">+Corrosion</span>
+            <span className={`text-2xl font-bold flex items-center gap-1.5 ${Number.isNaN(corrosionTotal) ? "text-red-400" : "text-zinc-300"}`}>
+              {Number.isNaN(corrosionTotal) ? "NaN" : Math.round(corrosionTotal).toLocaleString("en-US")}
+              {!Number.isNaN(corrosionTotal) && <FEIcon className="w-5 h-5" />}
+            </span>
+            {corrTooltipOpen && (
+              <div
+                className="absolute z-50 top-full mt-2 right-0 w-72"
+                onMouseEnter={cancelCorrClose}
                 onMouseLeave={scheduleCorrClose}
               >
-                {Number.isNaN(corrosionTotal)
-                  ? <span className="font-bold">NaN</span>
-                  : <><span className="font-bold">{Math.round(corrosionTotal).toLocaleString("en-US")}</span><FEIcon className="w-4 h-4" /></>}
-                <svg className={`w-3 h-3 ${Number.isNaN(corrosionTotal) ? "text-red-600" : "text-zinc-500"}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>
-                </svg>
-              </span>
-              {corrTooltipOpen && (
-                <div
-                  className="absolute z-50 top-full mt-1 right-0 w-72"
-                  onMouseEnter={cancelCorrClose}
-                  onMouseLeave={scheduleCorrClose}
-                >
-                  <CorrosionHoverCard
-                    pool={pool}
-                    slots={slots}
-                    baseCostFE={baseCostFE}
-                    shallowCostFE={shallowCostFE}
-                    modCostFE={modCostFE}
-                    resourcePrices={resourcePrices}
-                    corrosionCostFE={corrosionCostFE}
-                    onCorrosionCostFEChange={onCorrosionCostFEChange}
-                  />
-                </div>
-              )}
-            </div>
-          )}
-        </div>
-
-        {onClear && (
-          <button
-            onClick={onClear}
-            title="Remove item"
-            className="shrink-0 rounded p-1 text-zinc-500 hover:bg-zinc-800 hover:text-red-400 transition-colors"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/>
-            </svg>
-          </button>
+                <CorrosionHoverCard
+                  pool={pool}
+                  slots={slots}
+                  baseCostFE={baseCostFE}
+                  shallowCostFE={shallowCostFE}
+                  modCostFE={modCostFE}
+                  resourcePrices={resourcePrices}
+                  corrosionCostFE={corrosionCostFE}
+                  onCorrosionCostFEChange={onCorrosionCostFEChange}
+                />
+              </div>
+            )}
+          </div>
         )}
+      </div>
+
+      {/* Name/desc — centered below the icon */}
+      <div className="text-center mb-3">
+        <h2 className="text-base font-bold text-zinc-100 leading-tight">{pool.name}</h2>
+        <p className="text-xs text-zinc-500">
+          {pool.baseItemCategory.name}
+          {pool.weaponType ? ` · ${pool.weaponType.name}` : ""}
+          {pool.attributeType ? ` · ${pool.attributeType}` : ""}
+        </p>
       </div>
 
       {/* Base Affix */}
@@ -2097,6 +2330,22 @@ export default function ItemCard({
             corrosionCostFE={corrosionCostFE}
             onCorrosionCostFEChange={onCorrosionCostFEChange}
           />
+        ) : slots.base?.sourceGroup === "BASE_AFFIXES" ? (
+          <div className="mt-1 ml-auto w-48 rounded border border-zinc-700 bg-zinc-900 shadow-lg px-3 py-2.5 text-xs space-y-2">
+            <p className="text-zinc-400">Cost of this base affix</p>
+            <div className="relative flex items-center">
+              <input
+                type="number"
+                min="0"
+                autoFocus
+                className="w-full rounded bg-zinc-800 border border-zinc-700 pl-2 pr-7 py-1.5 text-zinc-100 focus:outline-none focus:border-zinc-500"
+                placeholder="0"
+                value={baseCostFE}
+                onChange={(e) => onBaseCostFEChange(e.target.value)}
+              />
+              <FEIcon className="absolute right-2 w-4 h-4 shrink-0 text-zinc-400 pointer-events-none" />
+            </div>
+          </div>
         ) : undefined}
       />
       <SimpleSlotRow
@@ -2111,20 +2360,6 @@ export default function ItemCard({
         showStats
         showTiers
       />
-      {slots.base?.sourceGroup === "BASE_AFFIXES" && (
-        <div className="flex items-center gap-2 py-1">
-          <span className="w-24 shrink-0" />
-          <label className="text-xs text-zinc-400 shrink-0 flex items-center gap-1">Cost (<FEIcon className="w-3.5 h-3.5" />)</label>
-          <input
-            type="number"
-            min="0"
-            className="w-36 rounded bg-zinc-800 border border-zinc-700 px-2 py-1.5 text-xs text-zinc-100 focus:outline-none focus:border-zinc-600"
-            placeholder="0"
-            value={baseCostFE}
-            onChange={(e) => onBaseCostFEChange(e.target.value)}
-          />
-        </div>
-      )}
 
       {/* Dream + Nightmare */}
       <Section
@@ -2153,6 +2388,7 @@ export default function ItemCard({
         pool={pool}
         values={slots.nightmare}
         onChange={(v) => onChange({ ...slots, nightmare: v })}
+        warn={!!slots.dream && slots.nightmare.length === 0}
       />
 
       {/* Sequence — weapons and shields only */}
