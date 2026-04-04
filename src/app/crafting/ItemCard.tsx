@@ -177,9 +177,10 @@ type NightmareSlotRowProps = {
   values: NonNullable<SlotValue>[];
   onChange: (vals: NonNullable<SlotValue>[]) => void;
   warn?: boolean;
+  disabled?: boolean;
 };
 
-function NightmareSlotRow({ pool, values, onChange, warn = false }: NightmareSlotRowProps) {
+function NightmareSlotRow({ pool, values, onChange, warn = false, disabled = false }: NightmareSlotRowProps) {
   const [expanded, setExpanded] = useState(false);
   const [dropDir, setDropDir] = useState<DropDir>("down");
   const [maxHeight, setMaxHeight] = useState<number | undefined>(undefined);
@@ -271,14 +272,18 @@ function NightmareSlotRow({ pool, values, onChange, warn = false }: NightmareSlo
       <div ref={triggerRef} className="flex-1 min-w-0 relative">
         <button
           onClick={() => setExpanded((e) => !e)}
+          disabled={disabled && values.length === 0}
+          title={disabled && values.length === 0 ? "No dream affix — nightmare affixes unavailable" : undefined}
           className={`w-full flex items-center justify-between gap-2 rounded bg-zinc-800 border px-2 py-1.5 focus:outline-none text-sm transition-colors${
-            warn
+            disabled && values.length === 0
+              ? " border-zinc-700 opacity-40 cursor-not-allowed"
+              : warn
               ? " border-red-700 hover:border-red-500"
               : " border-zinc-700 hover:border-zinc-600"
           }`}
         >
-          <span className={warn ? "text-red-400 font-medium" : "text-zinc-400"}>
-            {values.length > 0 ? `${values.length} selected` : "none selected"}
+          <span className={warn ? "text-red-400 font-medium" : disabled && values.length === 0 ? "text-zinc-500 italic" : "text-zinc-400"}>
+            {values.length > 0 ? `${values.length} selected` : disabled ? "— limit reached —" : "none selected"}
           </span>
           <svg className="shrink-0 text-zinc-500 w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
             <path d={expanded ? "m18 15-6-6-6 6" : "m6 9 6 6 6-6"} />
@@ -386,7 +391,7 @@ function MatIcon({ name, className = "w-4 h-4" }: { name: string; className?: st
   );
 }
 
-function FEIcon({ className = "w-4 h-4" }: { className?: string }) {
+export function FEIcon({ className = "w-4 h-4" }: { className?: string }) {
   return <MatIcon name="Flame Elementium" className={className} />;
 }
 
@@ -619,6 +624,7 @@ type SimpleSlotProps = {
   showTiers?: boolean;
   groupDotColors?: Record<string, string>;
   highlighted?: boolean;
+  disabled?: boolean;
 };
 
 function GroupDot({ color }: { color: string }) {
@@ -634,7 +640,7 @@ function GroupDot({ color }: { color: string }) {
 
 type DropDir = "down" | "up" | "center";
 
-function SimpleSlotRow({ label, accent, groups, value, onChange, showStats = false, showTiers = false, groupDotColors, highlighted = false }: SimpleSlotProps) {
+function SimpleSlotRow({ label, accent, groups, value, onChange, showStats = false, showTiers = false, groupDotColors, highlighted = false, disabled = false }: SimpleSlotProps) {
   const [open, setOpen] = useState(false);
   const [dropDir, setDropDir] = useState<DropDir>("down");
   const [maxHeight, setMaxHeight] = useState<number | undefined>(undefined);
@@ -697,12 +703,14 @@ function SimpleSlotRow({ label, accent, groups, value, onChange, showStats = fal
         <div ref={dropRef} className="flex-1 min-w-0 relative text-xs">
           <button
             onClick={() => setOpen((o) => !o)}
-            className={`w-full flex items-center justify-between gap-2 rounded bg-zinc-800 border border-zinc-700 px-2 py-1.5 hover:border-zinc-600 focus:outline-none transition-transform duration-150 ${highlighted ? "scale-[1.02] origin-left" : ""}`}
+            disabled={disabled && !value}
+            title={disabled && !value ? "Build already has 3 dream affixes" : undefined}
+            className={`w-full flex items-center justify-between gap-2 rounded bg-zinc-800 border border-zinc-700 px-2 py-1.5 focus:outline-none transition-transform duration-150 ${highlighted ? "scale-[1.02] origin-left" : ""} ${disabled && !value ? "opacity-40 cursor-not-allowed" : "hover:border-zinc-600"}`}
           >
             <span className="flex items-center gap-1.5 min-w-0">
               {selectedOpt
                 ? <AffixTierRow affix={selectedOpt.affix} sourceGroup={selectedOpt.sourceGroup} displayLabel={optionLabel(selectedOpt.affix)} highlighted={highlighted} />
-                : <span className="text-zinc-500 italic">— empty —</span>
+                : <span className="text-zinc-500 italic">{disabled ? "— limit reached —" : "— empty —"}</span>
               }
             </span>
             <svg className="shrink-0 text-zinc-500 w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="m6 9 6 6 6-6"/></svg>
@@ -758,10 +766,10 @@ function SimpleSlotRow({ label, accent, groups, value, onChange, showStats = fal
             className="w-full flex items-center justify-between gap-2 rounded bg-zinc-800 border border-zinc-700 px-2 py-1.5 hover:border-zinc-600 focus:outline-none"
           >
             <span className="flex items-center gap-2 min-w-0">
-              {selectedDotColor
+              {selectedOpt && (selectedDotColor
                 ? <GroupDot color={selectedDotColor} />
                 : <span className="w-3 h-3 shrink-0" />
-              }
+              )}
               <span className="truncate text-zinc-100">
                 {selectedOpt ? optionLabel(selectedOpt.affix) : <span className="text-zinc-500 italic">— empty —</span>}
               </span>
@@ -804,27 +812,50 @@ function SimpleSlotRow({ label, accent, groups, value, onChange, showStats = fal
     );
   }
 
+  const selectedOpt = allOptions.find((o) => o.affix.id === value?.affixId);
+
   return (
     <div className="flex items-center gap-2 py-1.5">
       <span className={`w-24 shrink-0 text-sm font-medium ${accent}`}>{label}</span>
-      <select
-        className="flex-1 min-w-0 rounded bg-zinc-800 border border-zinc-700 px-2 py-1.5 text-xs text-zinc-100 focus:outline-none focus:border-zinc-600"
-        value={value?.affixId ?? ""}
-        onChange={(e) => handleAffixChange(e.target.value)}
-      >
-        <option value="">— empty —</option>
-        {groups.map(({ label: groupLabel, options }) =>
-          options.length === 0 ? null : (
-            <optgroup key={groupLabel} label={groupLabel}>
-              {options.map(({ affix, sourceGroup }) => (
-                <option key={`${sourceGroup}-${affix.id}`} value={affix.id}>
-                  {optionLabel(affix)}
-                </option>
-              ))}
-            </optgroup>
-          )
+      <div ref={dropRef} className="flex-1 min-w-0 relative text-xs">
+        <button
+          onClick={() => setOpen((o) => !o)}
+          className="w-full flex items-center justify-between gap-2 rounded bg-zinc-800 border border-zinc-700 px-2 py-1.5 hover:border-zinc-600 focus:outline-none"
+        >
+          <span className="truncate text-zinc-100">
+            {selectedOpt ? optionLabel(selectedOpt.affix) : <span className="text-zinc-500 italic">— empty —</span>}
+          </span>
+          <svg className="shrink-0 text-zinc-500 w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        {open && (
+          <div ref={dropMenuRef} className={`absolute z-50 left-0 w-full rounded border border-zinc-700 bg-zinc-900 shadow-xl py-0.5 ${dropDir === "down" ? "top-full mt-1" : dropDir === "up" ? "bottom-full mb-1" : "overflow-y-auto"}`} style={dropDir === "center" ? { top: "50%", transform: "translateY(-50%)", maxHeight: maxHeight ? `${maxHeight}px` : undefined } : undefined}>
+            <button
+              className="w-full flex items-center gap-2 px-2 py-1.5 text-zinc-500 italic hover:bg-zinc-800 transition-colors"
+              onClick={() => { onChange(null); setOpen(false); }}
+            >
+              — empty —
+            </button>
+            {groups.map(({ label: groupLabel, options }) =>
+              options.length === 0 ? null : (
+                <div key={groupLabel}>
+                  {groups.length > 1 && (
+                    <p className="px-2 pt-2 pb-0.5 text-xs font-semibold text-zinc-500 uppercase tracking-widest">{groupLabel}</p>
+                  )}
+                  {options.map(({ affix, sourceGroup }) => (
+                    <button
+                      key={`${sourceGroup}-${affix.id}`}
+                      className={`w-full flex items-center px-2 py-1.5 hover:bg-zinc-800 transition-colors ${value?.affixId === affix.id ? "bg-zinc-800/60" : ""}`}
+                      onClick={() => { handleAffixChange(affix.id); setOpen(false); }}
+                    >
+                      <span className="truncate text-zinc-100">{optionLabel(affix)}</span>
+                    </button>
+                  ))}
+                </div>
+              )
+            )}
+          </div>
         )}
-      </select>
+      </div>
     </div>
   );
 }
@@ -1549,7 +1580,7 @@ function PrefixSuffixCostSection({
 
 // Computes each craft cost component and returns lines + total.
 // Used by ItemCard header tooltip and CorrosionHoverCard.
-function computeCraftCostLines(
+export function computeCraftCostLines(
   pool: CraftedPool,
   slots: ItemSlots,
   baseCostFE: string,
@@ -1616,7 +1647,7 @@ function computeCraftCostLines(
 
 // ─── Corrosion total helper ───────────────────────────────────────────────────
 
-function computeCorrosionTotal(
+export function computeCorrosionTotal(
   pool: CraftedPool,
   slots: ItemSlots,
   baseCostFE: string,
@@ -2092,6 +2123,7 @@ type Props = {
   onResourcePricesChange: (p: ResourcePrices) => void;
   corrosionCostFE: string;
   onCorrosionCostFEChange: (v: string) => void;
+  dreamsFull?: boolean;
 };
 
 const ADVANCED_GROUPS: AffixGroupType[] = ["ADVANCED_PREFIXES", "ADVANCED_SUFFIXES"];
@@ -2116,6 +2148,7 @@ export default function ItemCard({
   onResourcePricesChange,
   corrosionCostFE,
   onCorrosionCostFEChange,
+  dreamsFull = false,
 }: Props) {
   const hasSequences =
     (pool.groups["INTERMEDIATE_SEQUENCES"]?.length ?? 0) > 0 ||
@@ -2412,12 +2445,14 @@ export default function ItemCard({
         onChange={(v) => update("dream", v)}
         showStats
         showTiers
+        disabled={dreamsFull && !slots.dream}
       />
       <NightmareSlotRow
         pool={pool}
         values={slots.nightmare}
         onChange={(v) => onChange({ ...slots, nightmare: v })}
         warn={!!slots.dream && slots.nightmare.length === 0}
+        disabled={dreamsFull && !slots.dream}
       />
 
       {/* Sequence — weapons and shields only */}

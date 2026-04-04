@@ -5,6 +5,8 @@ import type { CraftedPool } from "@/services/crafting/types";
 import ItemCard, {
   EMPTY_SLOTS,
   EMPTY_RESOURCE_PRICES,
+  computeCraftCostLines,
+  computeCorrosionTotal,
   type ItemSlots,
   type ResourcePrices,
 } from "./ItemCard";
@@ -150,12 +152,26 @@ export default function CraftingPage() {
     })
   ) as Partial<Record<GearSlotId, number>>;
 
+  const dreamCount = (Object.keys(slotDataMap) as GearSlotId[]).filter(
+    (id) => slotDataMap[id]?.itemSlots.dream !== null
+  ).length;
+
+  const costTotals = Object.fromEntries(
+    (Object.keys(slotDataMap) as GearSlotId[]).map((id) => {
+      const d = slotDataMap[id];
+      if (!d?.poolData) return [id, { craft: null, corrosion: null }];
+      const { total: craft } = computeCraftCostLines(d.poolData, d.itemSlots, d.baseCostFE, d.shallowCostFE, d.modCostFE, d.resourcePrices);
+      const corrosion = computeCorrosionTotal(d.poolData, d.itemSlots, d.baseCostFE, d.shallowCostFE, d.modCostFE, d.resourcePrices, d.corrosionCostFE);
+      return [id, { craft, corrosion }];
+    })
+  ) as Partial<Record<GearSlotId, { craft: number | null; corrosion: number | null }>>;
+
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100 p-8">
       <h1 className="text-2xl font-bold mb-8">Crafting Calculator</h1>
       <div className="grid grid-cols-2 divide-x divide-zinc-800 min-h-[calc(100vh-8rem)]">
         {/* Left: gear panel */}
-        <div className="flex justify-center items-start pr-8">
+        <div className="flex justify-end items-start pr-8">
           {loadingPools ? (
             <p className="text-zinc-500 text-sm">Loading pools...</p>
           ) : (
@@ -165,6 +181,8 @@ export default function CraftingPage() {
               activeSlotId={activeSlotId}
               focusedSlotId={focusedSlotId}
               psCounts={psCounts}
+              costTotals={costTotals}
+              dreamCount={dreamCount}
               onSlotOpen={(id) => setActiveSlotId((prev) => (prev === id ? null : id))}
               onSlotFocus={(id) => setFocusedSlotId(id)}
               onSlotClose={() => setActiveSlotId(null)}
@@ -186,6 +204,7 @@ export default function CraftingPage() {
               slots={focused.itemSlots}
               onChange={(s) => updateSlotData(focusedSlotId, { itemSlots: s })}
               onClear={() => clearSlot(focusedSlotId)}
+              dreamsFull={dreamCount >= 3 && !focused.itemSlots.dream}
               baseCostFE={focused.baseCostFE}
               onBaseCostFEChange={(v) => updateSlotData(focusedSlotId, { baseCostFE: v })}
               shallowCostFE={focused.shallowCostFE}
