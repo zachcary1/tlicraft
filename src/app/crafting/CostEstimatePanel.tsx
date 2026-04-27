@@ -26,46 +26,44 @@ export default function CostEstimatePanel({ result, costPerAttempt }: Props) {
   const { estimates, totalExpectedAttempts, totalExpectedCost } = result;
 
   return (
-    <div className="rounded border border-zinc-700 bg-zinc-900 p-4">
-      <h2 className="text-base font-semibold mb-4">Cost Estimate</h2>
+    <div className="zinc-card">
+      <h2 className="fw-semibold mb-4" style={{ fontSize: "1rem" }}>Cost Estimate</h2>
 
       <div className="overflow-x-auto">
-        <table className="w-full text-sm">
+        <table className="w-100 small">
           <thead>
-            <tr className="text-left text-zinc-500 text-xs uppercase tracking-wide border-b border-zinc-800">
-              <th className="pb-2 pr-4">Affix</th>
-              <th className="pb-2 pr-4">Tier</th>
-              <th className="pb-2 pr-4 text-right">Probability</th>
-              <th className="pb-2 pr-4 text-right">Avg Attempts</th>
-              <th className="pb-2 text-right">Avg Cost</th>
+            <tr className="text-start text-uppercase" style={{ color: "var(--zinc-500)", borderBottom: "1px solid var(--zinc-800)", letterSpacing: "0.05em" }}>
+              <th className="pb-2 pe-4">Affix</th>
+              <th className="pb-2 pe-4">Tier</th>
+              <th className="pb-2 pe-4 text-end">Probability</th>
+              <th className="pb-2 pe-4 text-end">Avg Attempts</th>
+              <th className="pb-2 text-end">Avg Cost</th>
             </tr>
           </thead>
           <tbody>
             {estimates.map((e) => (
-              <tr key={`${e.group}-${e.affixId}-${e.tier}`} className="border-b border-zinc-800/50">
-                <td className="py-2 pr-4 text-zinc-200">{e.affixName}</td>
-                <td className="py-2 pr-4 text-zinc-400">{e.tier}</td>
-                <td className="py-2 pr-4 text-right text-zinc-400">{fmtProb(e.probability)}</td>
-                <td className="py-2 pr-4 text-right text-zinc-300">{fmt(e.expectedAttempts)}</td>
-                <td className="py-2 text-right text-amber-400">{fmt(e.expectedCost)}</td>
+              <tr key={`${e.group}-${e.affixId}-${e.tier}`} style={{ borderBottom: "1px solid rgba(39,39,42,0.5)" }}>
+                <td className="py-2 pe-4" style={{ color: "var(--zinc-200)" }}>{e.affixName}</td>
+                <td className="py-2 pe-4" style={{ color: "var(--zinc-400)" }}>{e.tier}</td>
+                <td className="py-2 pe-4 text-end" style={{ color: "var(--zinc-400)" }}>{fmtProb(e.probability)}</td>
+                <td className="py-2 pe-4 text-end" style={{ color: "var(--zinc-300)" }}>{fmt(e.expectedAttempts)}</td>
+                <td className="py-2 text-end" style={{ color: "#fbbf24" }}>{fmt(e.expectedCost)}</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
 
-      <div className="mt-4 pt-4 border-t border-zinc-800 flex flex-col sm:flex-row sm:justify-between gap-2 text-sm">
-        <div className="text-zinc-400">
-          Cost per attempt: <span className="text-zinc-200">{fmt(costPerAttempt)}</span>
+      <div className="mt-4 pt-4 d-flex flex-column flex-sm-row justify-content-sm-between gap-2 small" style={{ borderTop: "1px solid var(--zinc-800)" }}>
+        <div style={{ color: "var(--zinc-400)" }}>
+          Cost per attempt: <span style={{ color: "var(--zinc-200)" }}>{fmt(costPerAttempt)}</span>
         </div>
-        <div className="flex gap-6">
-          <div className="text-zinc-400">
-            Total avg attempts:{" "}
-            <span className="text-zinc-200">{fmt(totalExpectedAttempts)}</span>
+        <div className="d-flex gap-4">
+          <div style={{ color: "var(--zinc-400)" }}>
+            Total avg attempts: <span style={{ color: "var(--zinc-200)" }}>{fmt(totalExpectedAttempts)}</span>
           </div>
-          <div className="text-zinc-400">
-            Total avg cost:{" "}
-            <span className="font-semibold text-amber-400">{fmt(totalExpectedCost)}</span>
+          <div style={{ color: "var(--zinc-400)" }}>
+            Total avg cost: <span className="fw-semibold" style={{ color: "#fbbf24" }}>{fmt(totalExpectedCost)}</span>
           </div>
         </div>
       </div>

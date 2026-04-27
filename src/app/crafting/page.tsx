@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import type { CraftedPool } from "@/services/crafting/types";
 import ItemCard, {
   EMPTY_SLOTS,
@@ -167,13 +168,13 @@ export default function CraftingPage() {
   ) as Partial<Record<GearSlotId, { craft: number | null; corrosion: number | null }>>;
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-100 p-8">
-      <h1 className="text-2xl font-bold mb-8">Crafting Calculator</h1>
-      <div className="grid grid-cols-2 divide-x divide-zinc-800 min-h-[calc(100vh-8rem)]">
+    <Container fluid className="min-vh-100 py-4 px-4">
+      <h1 className="fw-bold mb-4 fs-4">Crafting Calculator</h1>
+      <Row className="min-vh-100">
         {/* Left: gear panel */}
-        <div className="flex justify-end items-start pr-8">
+        <Col className="d-flex justify-content-end align-items-start pe-4 border-end" style={{ borderColor: "var(--zinc-800)" }}>
           {loadingPools ? (
-            <p className="text-zinc-500 text-sm">Loading pools...</p>
+            <p className="text-secondary small">Loading pools...</p>
           ) : (
             <GearPanel
               pools={pools}
@@ -189,38 +190,37 @@ export default function CraftingPage() {
               onSelect={handleSlotSelect}
             />
           )}
-        </div>
+        </Col>
 
         {/* Right: item builder */}
-        <div className="pl-8">
+        <Col className="ps-4">
           {!focusedSlotId || !focused ? (
-            <p className="text-zinc-600 text-sm">Select a gear slot to start configuring.</p>
+            <p className="text-secondary small">Select a gear slot to start configuring.</p>
           ) : focused.loading ? (
-            <p className="text-zinc-500 text-sm">Loading pool...</p>
+            <p className="text-secondary small">Loading pool...</p>
           ) : focused.poolData ? (
-          <div className="space-y-8 max-w-3xl">
-            <ItemCard
-              pool={focused.poolData}
-              slots={focused.itemSlots}
-              onChange={(s) => updateSlotData(focusedSlotId, { itemSlots: s })}
-              onClear={() => clearSlot(focusedSlotId)}
-              dreamsFull={dreamCount >= 3 && !focused.itemSlots.dream}
-              baseCostFE={focused.baseCostFE}
-              onBaseCostFEChange={(v) => updateSlotData(focusedSlotId, { baseCostFE: v })}
-              shallowCostFE={focused.shallowCostFE}
-              onShallowCostFEChange={(v) => updateSlotData(focusedSlotId, { shallowCostFE: v })}
-              modCostFE={focused.modCostFE}
-              onModCostFEChange={(v) => updateSlotData(focusedSlotId, { modCostFE: v })}
-              resourcePrices={focused.resourcePrices}
-              onResourcePricesChange={(p) => updateSlotData(focusedSlotId, { resourcePrices: p })}
-              corrosionCostFE={focused.corrosionCostFE}
-              onCorrosionCostFEChange={(v) => updateSlotData(focusedSlotId, { corrosionCostFE: v })}
-            />
-
-          </div>
-        ) : null}
-        </div>
-      </div>
-    </div>
+            <div style={{ maxWidth: "48rem" }}>
+              <ItemCard
+                pool={focused.poolData}
+                slots={focused.itemSlots}
+                onChange={(s) => updateSlotData(focusedSlotId, { itemSlots: s })}
+                onClear={() => clearSlot(focusedSlotId)}
+                dreamsFull={dreamCount >= 3 && !focused.itemSlots.dream}
+                baseCostFE={focused.baseCostFE}
+                onBaseCostFEChange={(v) => updateSlotData(focusedSlotId, { baseCostFE: v })}
+                shallowCostFE={focused.shallowCostFE}
+                onShallowCostFEChange={(v) => updateSlotData(focusedSlotId, { shallowCostFE: v })}
+                modCostFE={focused.modCostFE}
+                onModCostFEChange={(v) => updateSlotData(focusedSlotId, { modCostFE: v })}
+                resourcePrices={focused.resourcePrices}
+                onResourcePricesChange={(p) => updateSlotData(focusedSlotId, { resourcePrices: p })}
+                corrosionCostFE={focused.corrosionCostFE}
+                onCorrosionCostFEChange={(v) => updateSlotData(focusedSlotId, { corrosionCostFE: v })}
+              />
+            </div>
+          ) : null}
+        </Col>
+      </Row>
+    </Container>
   );
 }

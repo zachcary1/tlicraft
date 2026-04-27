@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect, useLayoutEffect, useState } from "react";
+import { Card } from "react-bootstrap";
 import { FEIcon } from "./ItemCard";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -144,48 +145,68 @@ function SlotDropdown({ slotId, pools, loadout, triggerRef, onSelect, onClose }:
     return acc;
   }, {});
 
-  const positionClass =
-    dropDir === "down" ? "top-full mt-2" :
-    dropDir === "up"   ? "bottom-full mb-2" :
-    "overflow-y-auto";
-  const positionStyle: React.CSSProperties | undefined =
-    dropDir === "center"
-      ? { top: "50%", transform: "translate(-50%, -50%)", maxHeight: maxHeight ? `${maxHeight}px` : undefined }
-      : undefined;
+  const positionStyle: React.CSSProperties =
+    dropDir === "down" ? { top: "100%", marginTop: 8 } :
+    dropDir === "up"   ? { bottom: "100%", marginBottom: 8 } :
+    { top: "50%", transform: "translate(-50%, -50%)", maxHeight: maxHeight ? `${maxHeight}px` : undefined, overflowY: "auto" };
 
   return (
     <div
       ref={ref}
-      className={`absolute z-50 left-1/2 -translate-x-1/2 min-w-48 rounded-lg border border-zinc-700 bg-zinc-900 shadow-xl py-1 ${positionClass}`}
-      style={positionStyle}
+      className="position-absolute z-3 start-50 translate-middle-x dropdown-menu show py-1"
+      style={{
+        minWidth: "12rem",
+        borderRadius: "0.5rem",
+        border: "1px solid var(--zinc-700)",
+        backgroundColor: "var(--zinc-900)",
+        boxShadow: "0 10px 25px rgba(0,0,0,0.5)",
+        ...positionStyle,
+      }}
     >
       {locked ? (
-        <p className="px-3 py-2 text-xs text-zinc-500 italic">Off-hand locked (two-handed weapon equipped)</p>
+        <p className="px-3 py-2 text-secondary small fst-italic mb-0">Off-hand locked (two-handed weapon equipped)</p>
       ) : available.length === 0 ? (
-        <p className="px-3 py-2 text-xs text-zinc-500 italic">No items available</p>
+        <p className="px-3 py-2 text-secondary small fst-italic mb-0">No items available</p>
       ) : (
         <>
-          <button className="w-full text-left px-3 py-1.5 text-xs text-zinc-400 hover:bg-zinc-800" onClick={() => onSelect("")}>
+          <button
+            className="dropdown-item small"
+            style={{ color: "var(--zinc-400)" }}
+            onClick={() => onSelect("")}
+          >
             — empty —
           </button>
           {Object.entries(grouped).map(([cat, items]) => (
             <div key={cat}>
-              <p className="px-3 pt-2 pb-0.5 text-xs font-semibold text-zinc-500 uppercase tracking-widest">{cat}</p>
+              <p
+                className="px-3 pt-2 pb-1 mb-0 small fw-semibold text-uppercase"
+                style={{ color: "var(--zinc-500)", letterSpacing: "0.1em" }}
+              >
+                {cat}
+              </p>
               {items.map((p) => {
                 const disabled = isPoolDisabled(slotId, p, loadout);
                 return (
                   <button
                     key={p.id}
                     disabled={disabled}
-                    className={`w-full text-left px-3 py-1.5 text-xs transition-colors ${
-                      disabled ? "text-zinc-600 cursor-not-allowed"
-                      : loadout[slotId] === p.id ? "text-amber-400 hover:bg-zinc-800"
-                      : "text-zinc-100 hover:bg-zinc-800"
-                    }`}
+                    className="dropdown-item small"
+                    style={{
+                      color: disabled
+                        ? "var(--zinc-600)"
+                        : loadout[slotId] === p.id
+                        ? "#f59e0b"
+                        : "var(--zinc-100)",
+                      cursor: disabled ? "not-allowed" : undefined,
+                    }}
                     onClick={disabled ? undefined : () => onSelect(p.id)}
                   >
                     {p.name}
-                    {p.attributeType && <span className="ml-1 text-zinc-600">({p.attributeType})</span>}
+                    {p.attributeType && (
+                      <span className="ms-1" style={{ color: "var(--zinc-600)" }}>
+                        ({p.attributeType})
+                      </span>
+                    )}
                   </button>
                 );
               })}
@@ -253,36 +274,44 @@ function SlotTile({ slotId, pools, loadout, psCount, isOpen, isFocused, craftTot
 
   return (
     <div
-      className="flex flex-col items-center gap-0.5"
+      className="d-flex flex-column align-items-center"
+      style={{ gap: "2px" }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <span className={`text-xs uppercase tracking-wider font-medium transition-colors ${isHovered && !locked ? "text-zinc-300" : "text-zinc-600"}`}>
+      <span
+        className="small text-uppercase fw-medium"
+        style={{
+          color: isHovered && !locked ? "var(--zinc-300)" : "var(--zinc-600)",
+          letterSpacing: "0.05em",
+          transition: "color 0.15s",
+        }}
+      >
         {SLOT_LABELS[slotId]}
       </span>
-      <div className="relative">
+
+      <div className="position-relative">
         <button
           ref={triggerRef}
           onClick={handleClick}
           disabled={locked}
-          className="w-36 h-36 rounded-lg flex items-center justify-center relative overflow-hidden transition-all"
-          style={{ border, background: bg, boxShadow: glow, opacity: locked ? 0.35 : 1 }}
+          className="d-flex align-items-center justify-content-center position-relative overflow-hidden p-0 border-0"
+          style={{
+            width: 144, height: 144,
+            borderRadius: "0.5rem",
+            border, background: bg, boxShadow: glow,
+            opacity: locked ? 0.35 : 1,
+            transition: "border 0.15s, box-shadow 0.15s",
+          }}
         >
           {selectedPool ? (
             <img
               src={getPoolIconPath(selectedPool)}
               alt={selectedPool.name}
-              className="w-full h-full object-contain p-1.5"
+              style={{ width: "100%", height: "100%", objectFit: "contain", padding: 6 }}
             />
           ) : (
-            /* Empty slot placeholder */
-            <div
-              className="w-16 h-16 rounded"
-              style={{
-                background: "#0a0a0a",
-                border: "1px solid #3f3f46",
-              }}
-            />
+            <div style={{ width: 64, height: 64, borderRadius: 4, background: "#0a0a0a", border: "1px solid #3f3f46" }} />
           )}
         </button>
 
@@ -290,7 +319,21 @@ function SlotTile({ slotId, pools, loadout, psCount, isOpen, isFocused, craftTot
           <button
             title="Change item"
             onClick={(e) => { e.stopPropagation(); onOpen(); }}
-            className="absolute top-2 right-2 rounded p-1 text-zinc-400 hover:text-zinc-100 hover:bg-black/40 transition-colors"
+            className="position-absolute p-1 border-0 rounded"
+            style={{
+              top: 8, right: 8,
+              background: "transparent",
+              color: "var(--zinc-400)",
+              transition: "color 0.15s, background 0.15s",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLButtonElement).style.color = "var(--zinc-100)";
+              (e.currentTarget as HTMLButtonElement).style.background = "rgba(0,0,0,0.4)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLButtonElement).style.color = "var(--zinc-400)";
+              (e.currentTarget as HTMLButtonElement).style.background = "transparent";
+            }}
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
@@ -311,26 +354,49 @@ function SlotTile({ slotId, pools, loadout, psCount, isOpen, isFocused, craftTot
         )}
 
         {selectedPool && (
-          <span className="absolute top-full left-1/2 -translate-x-1/2 mt-0.5 text-base font-bold text-zinc-100 leading-tight text-center w-max max-w-[180px] pointer-events-none">
+          <span
+            className="position-absolute fw-bold text-center"
+            style={{
+              top: "100%",
+              left: "50%",
+              transform: "translateX(-50%)",
+              marginTop: 2,
+              fontSize: "1rem",
+              color: "var(--zinc-100)",
+              lineHeight: 1.2,
+              whiteSpace: "nowrap",
+              maxWidth: 180,
+              pointerEvents: "none",
+            }}
+          >
             {selectedPool.name.replace(/\s*armor\b/gi, "").trim()}
           </span>
         )}
 
         {(craftTotal !== null || corrosionTotal !== null) && (
-          <div className={`absolute top-0 flex flex-col gap-1.5 pointer-events-none ${costSide === "right" ? "left-full ml-3 items-start" : "right-full mr-3 items-end"}`}>
+          <div
+            className="position-absolute top-0 d-flex flex-column"
+            style={{
+              gap: 6,
+              pointerEvents: "none",
+              ...(costSide === "right"
+                ? { left: "100%", marginLeft: 12, alignItems: "flex-start" }
+                : { right: "100%", marginRight: 12, alignItems: "flex-end" }),
+            }}
+          >
             {craftTotal !== null && (
-              <div className={`flex flex-col ${costSide === "right" ? "items-start" : "items-end"}`}>
-                <span className="text-[10px] text-zinc-500 uppercase tracking-widest mb-0.5">Craft</span>
-                <span className={`text-2xl font-bold flex items-center gap-1.5 ${Number.isNaN(craftTotal) ? "text-red-400" : "text-white"}`}>
+              <div className="d-flex flex-column" style={{ alignItems: costSide === "right" ? "flex-start" : "flex-end" }}>
+                <span className="text-uppercase" style={{ fontSize: 10, color: "var(--zinc-500)", letterSpacing: "0.1em", marginBottom: 2 }}>Craft</span>
+                <span className="fw-bold d-flex align-items-center" style={{ fontSize: "1.5rem", gap: 6, color: Number.isNaN(craftTotal) ? "#f87171" : "#fff" }}>
                   {Number.isNaN(craftTotal) ? "NaN" : Math.round(craftTotal).toLocaleString("en-US")}
                   {!Number.isNaN(craftTotal) && <FEIcon className="w-5 h-5" />}
                 </span>
               </div>
             )}
             {corrosionTotal !== null && (
-              <div className={`flex flex-col ${costSide === "right" ? "items-start" : "items-end"}`}>
-                <span className="text-[10px] text-zinc-500 uppercase tracking-widest mb-0.5">+Corrosion</span>
-                <span className={`text-2xl font-bold flex items-center gap-1.5 ${Number.isNaN(corrosionTotal) ? "text-red-400" : "text-zinc-300"}`}>
+              <div className="d-flex flex-column" style={{ alignItems: costSide === "right" ? "flex-start" : "flex-end" }}>
+                <span className="text-uppercase" style={{ fontSize: 10, color: "var(--zinc-500)", letterSpacing: "0.1em", marginBottom: 2 }}>+Corrosion</span>
+                <span className="fw-bold d-flex align-items-center" style={{ fontSize: "1.5rem", gap: 6, color: Number.isNaN(corrosionTotal) ? "#f87171" : "var(--zinc-300)" }}>
                   {Number.isNaN(corrosionTotal) ? "NaN" : Math.round(corrosionTotal).toLocaleString("en-US")}
                   {!Number.isNaN(corrosionTotal) && <FEIcon className="w-5 h-5" />}
                 </span>
@@ -383,55 +449,67 @@ export default function GearPanel({ pools, loadout, activeSlotId, focusedSlotId,
     : withCorrValues.reduce((a, b) => a + b, 0);
 
   return (
-    <div className="rounded-lg border border-zinc-700 bg-zinc-900 px-5 pt-6 pb-8 flex flex-col w-full max-w-3xl">
-      <div className="flex justify-between w-full items-start px-8">
-        {/* Left column — costs on right */}
-        <div className="flex flex-col gap-8">
-          {LAYOUT.map(([left]) => (
-            <SlotTile key={left} slotId={left} pools={pools} loadout={loadout} psCount={psCounts[left] ?? 0} isOpen={activeSlotId === left} isFocused={focusedSlotId === left} craftTotal={costTotals[left]?.craft ?? null} corrosionTotal={costTotals[left]?.corrosion ?? null} costSide="right" onOpen={() => onSlotOpen(left)} onFocus={() => onSlotFocus(left)} onSelect={(id) => onSelect(left, id)} onClose={onSlotClose} />
-          ))}
+    <Card
+      className="w-100"
+      style={{
+        maxWidth: "48rem",
+        backgroundColor: "var(--zinc-900)",
+        borderColor: "var(--zinc-700)",
+      }}
+    >
+      <Card.Body className="px-4 pt-4 pb-5">
+        <div className="d-flex justify-content-between align-items-start px-3">
+          {/* Left column — costs on right */}
+          <div className="d-flex flex-column" style={{ gap: 32 }}>
+            {LAYOUT.map(([left]) => (
+              <SlotTile key={left} slotId={left} pools={pools} loadout={loadout} psCount={psCounts[left] ?? 0} isOpen={activeSlotId === left} isFocused={focusedSlotId === left} craftTotal={costTotals[left]?.craft ?? null} corrosionTotal={costTotals[left]?.corrosion ?? null} costSide="right" onOpen={() => onSlotOpen(left)} onFocus={() => onSlotFocus(left)} onSelect={(id) => onSelect(left, id)} onClose={onSlotClose} />
+            ))}
+          </div>
+          {/* Right column — costs on left */}
+          <div className="d-flex flex-column" style={{ gap: 32 }}>
+            {LAYOUT.map(([, right]) => (
+              <SlotTile key={right} slotId={right} pools={pools} loadout={loadout} psCount={psCounts[right] ?? 0} isOpen={activeSlotId === right} isFocused={focusedSlotId === right} craftTotal={costTotals[right]?.craft ?? null} corrosionTotal={costTotals[right]?.corrosion ?? null} costSide="left" onOpen={() => onSlotOpen(right)} onFocus={() => onSlotFocus(right)} onSelect={(id) => onSelect(right, id)} onClose={onSlotClose} />
+            ))}
+          </div>
         </div>
-        {/* Right column — costs on left */}
-        <div className="flex flex-col gap-8">
-          {LAYOUT.map(([, right]) => (
-            <SlotTile key={right} slotId={right} pools={pools} loadout={loadout} psCount={psCounts[right] ?? 0} isOpen={activeSlotId === right} isFocused={focusedSlotId === right} craftTotal={costTotals[right]?.craft ?? null} corrosionTotal={costTotals[right]?.corrosion ?? null} costSide="left" onOpen={() => onSlotOpen(right)} onFocus={() => onSlotFocus(right)} onSelect={(id) => onSelect(right, id)} onClose={onSlotClose} />
-          ))}
-        </div>
-      </div>
 
-      {/* Dream affix counter */}
-      <div className="flex justify-center mt-10">
-        <div className="flex flex-col items-center gap-0.5">
-          <span className="text-[10px] text-zinc-500 uppercase tracking-widest">Dream Affixes</span>
-          <span className={`text-2xl font-bold ${dreamCount >= 3 ? "text-[#48b8ff]" : "text-zinc-400"}`}>
-            {dreamCount}<span className="text-zinc-600">/3</span>
-          </span>
+        {/* Dream affix counter */}
+        <div className="d-flex justify-content-center mt-5">
+          <div className="d-flex flex-column align-items-center" style={{ gap: 2 }}>
+            <span className="text-uppercase" style={{ fontSize: 10, color: "var(--zinc-500)", letterSpacing: "0.1em" }}>Dream Affixes</span>
+            <span className="fw-bold" style={{ fontSize: "1.5rem", color: dreamCount >= 3 ? "#48b8ff" : "var(--zinc-400)" }}>
+              {dreamCount}<span style={{ color: "var(--zinc-600)" }}>/3</span>
+            </span>
+          </div>
         </div>
-      </div>
 
-      {/* Total costs footer */}
-      {(totalCraft !== null || totalWithCorrosion !== null) && (
-        <div className="mt-6 pt-5 border-t border-zinc-700 flex justify-around items-start">
-          {totalCraft !== null && (
-            <div className="flex flex-col items-center gap-0.5">
-              <span className="text-[10px] text-zinc-500 uppercase tracking-widest">Total Craft</span>
-              <span className={`text-2xl font-bold flex items-center gap-1.5 ${Number.isNaN(totalCraft) ? "text-red-400" : "text-white"}`}>
-                {Number.isNaN(totalCraft) ? "NaN" : Math.round(totalCraft).toLocaleString("en-US")}
-                {!Number.isNaN(totalCraft) && <FEIcon className="w-5 h-5" />}
-              </span>
-            </div>
-          )}
-          {totalWithCorrosion !== null && (
-            <div className="flex flex-col items-center gap-0.5">
-              <span className="text-[10px] text-zinc-500 uppercase tracking-widest">Total with Corrosion</span>
-              <span className={`text-2xl font-bold flex items-center gap-1.5 ${Number.isNaN(totalWithCorrosion) ? "text-red-400" : "text-zinc-300"}`}>
-                {Number.isNaN(totalWithCorrosion) ? "NaN" : Math.round(totalWithCorrosion).toLocaleString("en-US")}
-                {!Number.isNaN(totalWithCorrosion) && <FEIcon className="w-5 h-5" />}
-              </span>
-            </div>
-          )}
-        </div>
-      )}
-    </div>
+        {/* Total costs footer */}
+        {(totalCraft !== null || totalWithCorrosion !== null) && (
+          <div
+            className="mt-4 pt-4 d-flex justify-content-around align-items-start"
+            style={{ borderTop: "1px solid var(--zinc-700)" }}
+          >
+            {totalCraft !== null && (
+              <div className="d-flex flex-column align-items-center" style={{ gap: 2 }}>
+                <span className="text-uppercase" style={{ fontSize: 10, color: "var(--zinc-500)", letterSpacing: "0.1em" }}>Total Craft</span>
+                <span className="fw-bold d-flex align-items-center" style={{ fontSize: "1.5rem", gap: 6, color: Number.isNaN(totalCraft) ? "#f87171" : "#fff" }}>
+                  {Number.isNaN(totalCraft) ? "NaN" : Math.round(totalCraft).toLocaleString("en-US")}
+                  {!Number.isNaN(totalCraft) && <FEIcon className="w-5 h-5" />}
+                </span>
+              </div>
+            )}
+            {totalWithCorrosion !== null && (
+              <div className="d-flex flex-column align-items-center" style={{ gap: 2 }}>
+                <span className="text-uppercase" style={{ fontSize: 10, color: "var(--zinc-500)", letterSpacing: "0.1em" }}>Total with Corrosion</span>
+                <span className="fw-bold d-flex align-items-center" style={{ fontSize: "1.5rem", gap: 6, color: Number.isNaN(totalWithCorrosion) ? "#f87171" : "var(--zinc-300)" }}>
+                  {Number.isNaN(totalWithCorrosion) ? "NaN" : Math.round(totalWithCorrosion).toLocaleString("en-US")}
+                  {!Number.isNaN(totalWithCorrosion) && <FEIcon className="w-5 h-5" />}
+                </span>
+              </div>
+            )}
+          </div>
+        )}
+      </Card.Body>
+    </Card>
   );
 }
