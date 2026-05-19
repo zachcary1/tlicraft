@@ -204,6 +204,12 @@ export default function CraftingPage() {
         return s !== null && ULTIMATE_GROUPS.includes(s!.sourceGroup);
       }).length
     : 0;
+  const focusedT0PlusCount = focused
+    ? PREFIX_SUFFIX_KEYS.filter((k) => {
+        const s = focused.itemSlots[k];
+        return s !== null && (s as import("./ItemCard").SlotValue)?.tier === "T0_PLUS";
+      }).length
+    : 0;
 
   return (
     <div
@@ -273,6 +279,7 @@ export default function CraftingPage() {
             dreamsFull={dreamCount >= 3 && !focused?.itemSlots.dream}
             advancedCount={focusedAdvancedCount}
             ultimateCount={focusedUltimateCount}
+            t0PlusCount={focusedT0PlusCount}
             takenAffixIds={takenAffixIds}
           />
         </div>

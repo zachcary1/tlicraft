@@ -383,7 +383,7 @@ export default function GearPanel({ pools, loadout, activeSlotId, focusedSlotId,
     : withCorrValues.reduce((a, b) => a + b, 0);
 
   return (
-    <div className="border border-[#1c1c1c] bg-[#0f0f0f] px-4 pt-4 pb-6 flex flex-col w-fit" style={{ borderRadius: "0 36px 0 36px", borderWidth: "1px" }}>
+    <div className="border border-[#1c1c1c] px-4 pt-4 pb-6 flex flex-col w-fit" style={{ borderRadius: "0 36px 0 36px", borderWidth: "1px", background: "linear-gradient(to bottom, #1d1e1e, #020202)" }}>
       <div className="flex gap-48 items-start px-2">
         {/* Left column — costs on right */}
         <div className="flex flex-col gap-12">
