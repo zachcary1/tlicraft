@@ -9,12 +9,14 @@ import ItemCard, {
   computeCorrosionTotal,
   type ItemSlots,
   type ResourcePrices,
+  type ActiveSlotId,
 } from "./ItemCard";
 import GearPanel, {
   EMPTY_LOADOUT,
   type GearSlotId,
   type GearLoadout,
 } from "./GearPanel";
+import AffixPanel from "./AffixPanel";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -35,6 +37,7 @@ type SlotData = {
   modCostFE: string;
   resourcePrices: ResourcePrices;
   corrosionCostFE: string;
+  activeAffixSlot: ActiveSlotId | null;
 };
 
 const EMPTY_SLOT_DATA: SlotData = {
@@ -46,6 +49,7 @@ const EMPTY_SLOT_DATA: SlotData = {
   modCostFE: "",
   resourcePrices: EMPTY_RESOURCE_PRICES,
   corrosionCostFE: "",
+  activeAffixSlot: null,
 };
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
@@ -58,7 +62,6 @@ export default function CraftingPage() {
   const [activeSlotId, setActiveSlotId] = useState<GearSlotId | null>(null);
   const [focusedSlotId, setFocusedSlotId] = useState<GearSlotId | null>(null);
 
-  // Per-slot state: map from GearSlotId → SlotData
   const [slotDataMap, setSlotDataMap] = useState<Partial<Record<GearSlotId, SlotData>>>({});
 
   useEffect(() => {
@@ -70,7 +73,6 @@ export default function CraftingPage() {
       });
   }, []);
 
-  // When a pool is selected for a slot, load the full pool data
   function handleSlotSelect(slotId: GearSlotId, poolId: string) {
     setLoadout((prev) => ({ ...prev, [slotId]: poolId }));
 
@@ -84,7 +86,6 @@ export default function CraftingPage() {
       return;
     }
 
-    // Start loading
     setSlotDataMap((prev) => ({
       ...prev,
       [slotId]: { ...EMPTY_SLOT_DATA, loading: true },
@@ -95,11 +96,8 @@ export default function CraftingPage() {
       .then(async (r) => {
         const text = await r.text();
         if (!text) throw new Error(`Empty response (status ${r.status})`);
-        try {
-          return JSON.parse(text);
-        } catch {
-          throw new Error(`Invalid JSON (status ${r.status}): ${text.slice(0, 200)}`);
-        }
+        try { return JSON.parse(text); }
+        catch { throw new Error(`Invalid JSON (status ${r.status}): ${text.slice(0, 200)}`); }
       })
       .then((data: CraftedPool) => {
         setSlotDataMap((prev) => ({
@@ -116,6 +114,21 @@ export default function CraftingPage() {
       });
   }
 
+  // Deselect active affix slot when clicking outside any interactive element
+  useEffect(() => {
+    function handleMouseDown(e: MouseEvent) {
+      const target = e.target as Element;
+      if (!target.closest("button, input, label, select, textarea, a, [data-affix-panel]")) {
+        setSlotDataMap((prev) => {
+          if (!focusedSlotId || !prev[focusedSlotId]?.activeAffixSlot) return prev;
+          return { ...prev, [focusedSlotId]: { ...prev[focusedSlotId]!, activeAffixSlot: null } };
+        });
+      }
+    }
+    document.addEventListener("mousedown", handleMouseDown);
+    return () => document.removeEventListener("mousedown", handleMouseDown);
+  }, [focusedSlotId]);
+
   function updateSlotData(slotId: GearSlotId, patch: Partial<SlotData>) {
     setSlotDataMap((prev) => ({
       ...prev,
@@ -131,14 +144,12 @@ export default function CraftingPage() {
       return next;
     });
     if (focusedSlotId === slotId) {
-      // Focus the next available slot, if any
       const remaining = (Object.keys(slotDataMap) as GearSlotId[]).filter(
         (id) => id !== slotId && slotDataMap[id]?.poolData,
       );
       setFocusedSlotId(remaining[0] ?? null);
     }
   }
-
 
   const focused = focusedSlotId ? slotDataMap[focusedSlotId] : null;
 
@@ -166,12 +177,44 @@ export default function CraftingPage() {
     })
   ) as Partial<Record<GearSlotId, { craft: number | null; corrosion: number | null }>>;
 
+  // Taken affix IDs per active slot (for prefix/suffix dedup)
+  const PREFIX_SUFFIX_KEYS = ["prefix1","prefix2","prefix3","suffix1","suffix2","suffix3"] as const;
+  const takenAffixIds: Partial<Record<ActiveSlotId, Set<string>>> = {};
+  if (focused?.poolData) {
+    for (const key of PREFIX_SUFFIX_KEYS) {
+      const others = PREFIX_SUFFIX_KEYS.filter((k) => k !== key);
+      takenAffixIds[key] = new Set(
+        others.map((k) => focused.itemSlots[k]?.affixId).filter(Boolean) as string[]
+      );
+    }
+  }
+
+  // Advanced/ultimate counts for the focused item
+  const ADVANCED_GROUPS = ["ADVANCED_PREFIXES", "ADVANCED_SUFFIXES"];
+  const ULTIMATE_GROUPS = ["ULTIMATE_PREFIXES", "ULTIMATE_SUFFIXES"];
+  const focusedAdvancedCount = focused
+    ? PREFIX_SUFFIX_KEYS.filter((k) => {
+        const s = focused.itemSlots[k];
+        return s !== null && ADVANCED_GROUPS.includes(s!.sourceGroup);
+      }).length
+    : 0;
+  const focusedUltimateCount = focused
+    ? PREFIX_SUFFIX_KEYS.filter((k) => {
+        const s = focused.itemSlots[k];
+        return s !== null && ULTIMATE_GROUPS.includes(s!.sourceGroup);
+      }).length
+    : 0;
+
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-100 p-8">
-      <h1 className="text-2xl font-bold mb-8">Crafting Calculator</h1>
-      <div className="grid grid-cols-2 divide-x divide-zinc-800 min-h-[calc(100vh-8rem)]">
-        {/* Left: gear panel */}
-        <div className="flex justify-end items-start pr-8">
+    <div
+      className="min-h-screen text-[#1a2028]"
+      style={{ backgroundImage: "url('/background/background.jpg')", backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}
+    >
+      <div className="flex items-start gap-[25px] min-h-screen px-[15%]">
+        <h1 className="sr-only">Crafting Calculator</h1>
+
+        {/* Gear panel */}
+        <div className="pr-12 pt-[25px]">
           {loadingPools ? (
             <p className="text-zinc-500 text-sm">Loading pools...</p>
           ) : (
@@ -191,14 +234,13 @@ export default function CraftingPage() {
           )}
         </div>
 
-        {/* Right: item builder */}
-        <div className="pl-8">
+        {/* Item card */}
+        <div className="w-[700px] shrink-0 pl-12 pr-4 self-center">
           {!focusedSlotId || !focused ? (
             <p className="text-zinc-600 text-sm">Select a gear slot to start configuring.</p>
           ) : focused.loading ? (
             <p className="text-zinc-500 text-sm">Loading pool...</p>
           ) : focused.poolData ? (
-          <div className="space-y-8 max-w-3xl">
             <ItemCard
               pool={focused.poolData}
               slots={focused.itemSlots}
@@ -215,10 +257,24 @@ export default function CraftingPage() {
               onResourcePricesChange={(p) => updateSlotData(focusedSlotId, { resourcePrices: p })}
               corrosionCostFE={focused.corrosionCostFE}
               onCorrosionCostFEChange={(v) => updateSlotData(focusedSlotId, { corrosionCostFE: v })}
+              activeSlot={focused.activeAffixSlot}
+              onActiveSlotChange={(id) => updateSlotData(focusedSlotId, { activeAffixSlot: id })}
             />
+          ) : null}
+        </div>
 
-          </div>
-        ) : null}
+        {/* Affix panel */}
+        <div className="w-[560px] shrink-0 pl-4" data-affix-panel>
+          <AffixPanel
+            pool={focused?.poolData ?? null}
+            slots={focused?.itemSlots ?? EMPTY_SLOTS}
+            activeSlot={focused?.activeAffixSlot ?? null}
+            onChange={(s) => focusedSlotId && updateSlotData(focusedSlotId, { itemSlots: s })}
+            dreamsFull={dreamCount >= 3 && !focused?.itemSlots.dream}
+            advancedCount={focusedAdvancedCount}
+            ultimateCount={focusedUltimateCount}
+            takenAffixIds={takenAffixIds}
+          />
         </div>
       </div>
     </div>

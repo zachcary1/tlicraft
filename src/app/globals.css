@@ -1,29 +1,45 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'TLFont';
+  src: url('/font/tl_ptn.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #e0ddd8;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: 'TLFont', sans-serif;
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --radius-sm: 0 12px 0 12px;
+  --radius: 0 18px 0 18px;
+  --radius-md: 0 22px 0 22px;
+  --radius-lg: 0 28px 0 28px;
+  --radius-xl: 0 34px 0 34px;
+  --radius-2xl: 0 42px 0 42px;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'TLFont', Arial, Helvetica, sans-serif;
 }
+
+
+.border   { border-width: 2px; }
+.border-t  { border-top-width: 2px; }
+.border-b  { border-bottom-width: 2px; }
+.border-l  { border-left-width: 2px; }
+.border-r  { border-right-width: 2px; }
+.border-x  { border-left-width: 2px; border-right-width: 2px; }
+.border-y  { border-top-width: 2px; border-bottom-width: 2px; }
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {

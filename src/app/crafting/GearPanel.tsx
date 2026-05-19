@@ -156,7 +156,7 @@ function SlotDropdown({ slotId, pools, loadout, triggerRef, onSelect, onClose }:
   return (
     <div
       ref={ref}
-      className={`absolute z-50 left-1/2 -translate-x-1/2 min-w-48 rounded-lg border border-zinc-700 bg-zinc-900 shadow-xl py-1 ${positionClass}`}
+      className={`absolute z-50 left-1/2 -translate-x-1/2 min-w-48 rounded-lg border border-[#1c1c1c] bg-[#0f0f0f] shadow-xl py-1 ${positionClass}`}
       style={positionStyle}
     >
       {locked ? (
@@ -165,12 +165,12 @@ function SlotDropdown({ slotId, pools, loadout, triggerRef, onSelect, onClose }:
         <p className="px-3 py-2 text-xs text-zinc-500 italic">No items available</p>
       ) : (
         <>
-          <button className="w-full text-left px-3 py-1.5 text-xs text-zinc-400 hover:bg-zinc-800" onClick={() => onSelect("")}>
+          <button className="w-full text-left px-3 py-1.5 text-xs text-zinc-400 hover:bg-[#111111]" onClick={() => onSelect("")}>
             — empty —
           </button>
           {Object.entries(grouped).map(([cat, items]) => (
             <div key={cat}>
-              <p className="px-3 pt-2 pb-0.5 text-xs font-semibold text-zinc-500 uppercase tracking-widest">{cat}</p>
+              <p className="px-3 pt-2 pb-0.5 text-[11px] font-semibold text-zinc-500 uppercase tracking-wider">{cat}</p>
               {items.map((p) => {
                 const disabled = isPoolDisabled(slotId, p, loadout);
                 return (
@@ -179,8 +179,8 @@ function SlotDropdown({ slotId, pools, loadout, triggerRef, onSelect, onClose }:
                     disabled={disabled}
                     className={`w-full text-left px-3 py-1.5 text-xs transition-colors ${
                       disabled ? "text-zinc-600 cursor-not-allowed"
-                      : loadout[slotId] === p.id ? "text-amber-400 hover:bg-zinc-800"
-                      : "text-zinc-100 hover:bg-zinc-800"
+                      : loadout[slotId] === p.id ? "text-amber-400 hover:bg-[#111111]"
+                      : "text-[#e0ddd8] hover:bg-[#111111]"
                     }`}
                     onClick={disabled ? undefined : () => onSelect(p.id)}
                   >
@@ -238,12 +238,12 @@ function SlotTile({ slotId, pools, loadout, psCount, isOpen, isFocused, craftTot
 
   const isActive = !locked && (isOpen || (isFocused && selectedPool));
   const border = locked
-    ? "2px solid #27272a"
+    ? "6px solid #1c1c1c"
     : isActive
-    ? "2px solid #f59e0b"
+    ? "6px solid #f59e0b"
     : selectedPool
-    ? `2px solid ${isHovered ? rarityBorderHover : rarityBorder}`
-    : `2px solid ${isHovered ? "#52525b" : "#3f3f46"}`;
+    ? `6px solid ${isHovered ? rarityBorderHover : rarityBorder}`
+    : `6px solid ${isHovered ? "#52525b" : "#3f3f46"}`;
 
   const glow = isActive ? "0 0 12px #f59e0b55" : "none";
 
@@ -257,7 +257,7 @@ function SlotTile({ slotId, pools, loadout, psCount, isOpen, isFocused, craftTot
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <span className={`text-xs uppercase tracking-wider font-medium transition-colors ${isHovered && !locked ? "text-zinc-300" : "text-zinc-600"}`}>
+      <span className={`text-xs uppercase tracking-wider font-medium transition-colors ${isHovered && !locked ? "text-[#e0ddd8]" : "text-zinc-600"}`}>
         {SLOT_LABELS[slotId]}
       </span>
       <div className="relative">
@@ -265,8 +265,8 @@ function SlotTile({ slotId, pools, loadout, psCount, isOpen, isFocused, craftTot
           ref={triggerRef}
           onClick={handleClick}
           disabled={locked}
-          className="w-36 h-36 rounded-lg flex items-center justify-center relative overflow-hidden transition-all"
-          style={{ border, background: bg, boxShadow: glow, opacity: locked ? 0.35 : 1 }}
+          className="w-36 h-36 flex items-center justify-center relative overflow-hidden transition-all"
+          style={{ border, background: bg, boxShadow: glow, opacity: locked ? 0.35 : 1, borderRadius: "0 28px 0 28px" }}
         >
           {selectedPool ? (
             <img
@@ -290,7 +290,7 @@ function SlotTile({ slotId, pools, loadout, psCount, isOpen, isFocused, craftTot
           <button
             title="Change item"
             onClick={(e) => { e.stopPropagation(); onOpen(); }}
-            className="absolute top-2 right-2 rounded p-1 text-zinc-400 hover:text-zinc-100 hover:bg-black/40 transition-colors"
+            className="absolute top-2 right-2 rounded p-1 text-zinc-400 hover:text-[#e0ddd8] hover:bg-black/40 transition-colors"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
@@ -311,7 +311,7 @@ function SlotTile({ slotId, pools, loadout, psCount, isOpen, isFocused, craftTot
         )}
 
         {selectedPool && (
-          <span className="absolute top-full left-1/2 -translate-x-1/2 mt-0.5 text-base font-bold text-zinc-100 leading-tight text-center w-max max-w-[180px] pointer-events-none">
+          <span className="absolute top-full left-1/2 -translate-x-1/2 mt-0.5 text-[14px] font-semibold text-[#e0ddd8] leading-tight text-center w-max max-w-[180px] pointer-events-none">
             {selectedPool.name.replace(/\s*armor\b/gi, "").trim()}
           </span>
         )}
@@ -321,7 +321,7 @@ function SlotTile({ slotId, pools, loadout, psCount, isOpen, isFocused, craftTot
             {craftTotal !== null && (
               <div className={`flex flex-col ${costSide === "right" ? "items-start" : "items-end"}`}>
                 <span className="text-[10px] text-zinc-500 uppercase tracking-widest mb-0.5">Craft</span>
-                <span className={`text-2xl font-bold flex items-center gap-1.5 ${Number.isNaN(craftTotal) ? "text-red-400" : "text-white"}`}>
+                <span className={`text-[22px] font-bold tracking-[-0.02em] flex items-center gap-1.5 ${Number.isNaN(craftTotal) ? "text-red-400" : "text-[#e0ddd8]"}`}>
                   {Number.isNaN(craftTotal) ? "NaN" : Math.round(craftTotal).toLocaleString("en-US")}
                   {!Number.isNaN(craftTotal) && <FEIcon className="w-5 h-5" />}
                 </span>
@@ -330,7 +330,7 @@ function SlotTile({ slotId, pools, loadout, psCount, isOpen, isFocused, craftTot
             {corrosionTotal !== null && (
               <div className={`flex flex-col ${costSide === "right" ? "items-start" : "items-end"}`}>
                 <span className="text-[10px] text-zinc-500 uppercase tracking-widest mb-0.5">+Corrosion</span>
-                <span className={`text-2xl font-bold flex items-center gap-1.5 ${Number.isNaN(corrosionTotal) ? "text-red-400" : "text-zinc-300"}`}>
+                <span className={`text-[22px] font-bold tracking-[-0.02em] flex items-center gap-1.5 ${Number.isNaN(corrosionTotal) ? "text-red-400" : "text-[#e0ddd8]"}`}>
                   {Number.isNaN(corrosionTotal) ? "NaN" : Math.round(corrosionTotal).toLocaleString("en-US")}
                   {!Number.isNaN(corrosionTotal) && <FEIcon className="w-5 h-5" />}
                 </span>
@@ -383,16 +383,16 @@ export default function GearPanel({ pools, loadout, activeSlotId, focusedSlotId,
     : withCorrValues.reduce((a, b) => a + b, 0);
 
   return (
-    <div className="rounded-lg border border-zinc-700 bg-zinc-900 px-5 pt-6 pb-8 flex flex-col w-full max-w-3xl">
-      <div className="flex justify-between w-full items-start px-8">
+    <div className="border border-[#1c1c1c] bg-[#0f0f0f] px-4 pt-4 pb-6 flex flex-col w-fit" style={{ borderRadius: "0 36px 0 36px", borderWidth: "1px" }}>
+      <div className="flex gap-48 items-start px-2">
         {/* Left column — costs on right */}
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-12">
           {LAYOUT.map(([left]) => (
             <SlotTile key={left} slotId={left} pools={pools} loadout={loadout} psCount={psCounts[left] ?? 0} isOpen={activeSlotId === left} isFocused={focusedSlotId === left} craftTotal={costTotals[left]?.craft ?? null} corrosionTotal={costTotals[left]?.corrosion ?? null} costSide="right" onOpen={() => onSlotOpen(left)} onFocus={() => onSlotFocus(left)} onSelect={(id) => onSelect(left, id)} onClose={onSlotClose} />
           ))}
         </div>
         {/* Right column — costs on left */}
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-12">
           {LAYOUT.map(([, right]) => (
             <SlotTile key={right} slotId={right} pools={pools} loadout={loadout} psCount={psCounts[right] ?? 0} isOpen={activeSlotId === right} isFocused={focusedSlotId === right} craftTotal={costTotals[right]?.craft ?? null} corrosionTotal={costTotals[right]?.corrosion ?? null} costSide="left" onOpen={() => onSlotOpen(right)} onFocus={() => onSlotFocus(right)} onSelect={(id) => onSelect(right, id)} onClose={onSlotClose} />
           ))}
@@ -401,21 +401,33 @@ export default function GearPanel({ pools, loadout, activeSlotId, focusedSlotId,
 
       {/* Dream affix counter */}
       <div className="flex justify-center mt-10">
-        <div className="flex flex-col items-center gap-0.5">
-          <span className="text-[10px] text-zinc-500 uppercase tracking-widest">Dream Affixes</span>
-          <span className={`text-2xl font-bold ${dreamCount >= 3 ? "text-[#48b8ff]" : "text-zinc-400"}`}>
-            {dreamCount}<span className="text-zinc-600">/3</span>
+        <div className="flex flex-col items-center gap-2">
+          <span className="text-[10px] text-zinc-500 uppercase tracking-widest">
+            Dream Affixes · {dreamCount} / 3
           </span>
+          <div className="flex gap-1.5">
+            {[0, 1, 2].map((i) => (
+              <div
+                key={i}
+                style={{
+                  width: "18px",
+                  height: "3px",
+                  borderRadius: "2px",
+                  backgroundColor: i < dreamCount ? "#48b8ff" : "#3f3f46",
+                }}
+              />
+            ))}
+          </div>
         </div>
       </div>
 
       {/* Total costs footer */}
       {(totalCraft !== null || totalWithCorrosion !== null) && (
-        <div className="mt-6 pt-5 border-t border-zinc-700 flex justify-around items-start">
+        <div className="mt-6 pt-5 border-t border-[#1c1c1c]flex justify-around items-start">
           {totalCraft !== null && (
             <div className="flex flex-col items-center gap-0.5">
               <span className="text-[10px] text-zinc-500 uppercase tracking-widest">Total Craft</span>
-              <span className={`text-2xl font-bold flex items-center gap-1.5 ${Number.isNaN(totalCraft) ? "text-red-400" : "text-white"}`}>
+              <span className={`text-[22px] font-bold tracking-[-0.02em] flex items-center gap-1.5 ${Number.isNaN(totalCraft) ? "text-red-400" : "text-[#e0ddd8]"}`}>
                 {Number.isNaN(totalCraft) ? "NaN" : Math.round(totalCraft).toLocaleString("en-US")}
                 {!Number.isNaN(totalCraft) && <FEIcon className="w-5 h-5" />}
               </span>
@@ -424,7 +436,7 @@ export default function GearPanel({ pools, loadout, activeSlotId, focusedSlotId,
           {totalWithCorrosion !== null && (
             <div className="flex flex-col items-center gap-0.5">
               <span className="text-[10px] text-zinc-500 uppercase tracking-widest">Total with Corrosion</span>
-              <span className={`text-2xl font-bold flex items-center gap-1.5 ${Number.isNaN(totalWithCorrosion) ? "text-red-400" : "text-zinc-300"}`}>
+              <span className={`text-[22px] font-bold tracking-[-0.02em] flex items-center gap-1.5 ${Number.isNaN(totalWithCorrosion) ? "text-red-400" : "text-[#e0ddd8]"}`}>
                 {Number.isNaN(totalWithCorrosion) ? "NaN" : Math.round(totalWithCorrosion).toLocaleString("en-US")}
                 {!Number.isNaN(totalWithCorrosion) && <FEIcon className="w-5 h-5" />}
               </span>
