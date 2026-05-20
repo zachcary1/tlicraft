@@ -165,7 +165,7 @@ function SlotDropdown({ slotId, pools, loadout, triggerRef, onSelect, onClose }:
         <p className="px-3 py-2 text-xs text-zinc-500 italic">No items available</p>
       ) : (
         <>
-          <button className="w-full text-left px-3 py-1.5 text-xs text-zinc-400 hover:bg-[#111111]" onClick={() => onSelect("")}>
+          <button className="w-full text-left px-3 py-1.5 text-xs text-zinc-400 hover:bg-[#2a2929] cursor-pointer" onClick={() => onSelect("")}>
             — empty —
           </button>
           {Object.entries(grouped).map(([cat, items]) => (
@@ -174,19 +174,25 @@ function SlotDropdown({ slotId, pools, loadout, triggerRef, onSelect, onClose }:
               {items.map((p) => {
                 const disabled = isPoolDisabled(slotId, p, loadout);
                 return (
-                  <button
-                    key={p.id}
-                    disabled={disabled}
-                    className={`w-full text-left px-3 py-1.5 text-xs transition-colors ${
-                      disabled ? "text-zinc-600 cursor-not-allowed"
-                      : loadout[slotId] === p.id ? "text-amber-400 hover:bg-[#111111]"
-                      : "text-[#e0ddd8] hover:bg-[#111111]"
-                    }`}
-                    onClick={disabled ? undefined : () => onSelect(p.id)}
-                  >
-                    {p.name}
-                    {p.attributeType && <span className="ml-1 text-zinc-600">({p.attributeType})</span>}
-                  </button>
+                  <div key={p.id} className="relative group/disabled">
+                    <button
+                      disabled={disabled}
+                      className={`w-full text-left px-3 py-1.5 text-xs transition-colors ${
+                        disabled ? "text-zinc-600 cursor-not-allowed"
+                        : loadout[slotId] === p.id ? "text-amber-400 hover:bg-[#2a2929] cursor-pointer"
+                        : "text-[#e0ddd8] hover:bg-[#2a2929] cursor-pointer"
+                      }`}
+                      onClick={disabled ? undefined : () => onSelect(p.id)}
+                    >
+                      {p.name}
+                      {p.attributeType && <span className="ml-1 text-zinc-600">({p.attributeType})</span>}
+                    </button>
+                    {disabled && (
+                      <span className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-1 px-2.5 py-1.5 rounded-sm text-xs text-white bg-[#1a1a1a] border border-[#535357] whitespace-nowrap opacity-0 group-hover/disabled:opacity-100 transition-opacity z-[10000]">
+                        Locked — unequip the off-hand slot first
+                      </span>
+                    )}
+                  </div>
                 );
               })}
             </div>
@@ -209,20 +215,28 @@ type SlotTileProps = {
   craftTotal: number | null;
   corrosionTotal: number | null;
   costSide: "left" | "right";
+  hasDream: boolean;
   onOpen: () => void;
   onFocus: () => void;
   onSelect: (poolId: string) => void;
   onClose: () => void;
 };
 
-function getPSRarityColors(count: number): { border: string; borderHover: string; gradientEnd: string } {
-  if (count === 0) return { border: "#71717a", borderHover: "#a1a1aa", gradientEnd: "#3f3f46" };
-  if (count <= 4)  return { border: "#38bdf8", borderHover: "#7dd3fc", gradientEnd: "#0c4a6e" };
-  if (count === 5) return { border: "#c084fc", borderHover: "#d8b4fe", gradientEnd: "#6b21a8" };
-  return                  { border: "#f472b6", borderHover: "#f9a8d4", gradientEnd: "#9d174d" };
+function getPSRarityColors(count: number): { border: string; borderHover: string; gradientEnd: string; metallicKey: "zinc" | "blue" | "purple" | "pink" } {
+  if (count === 0) return { border: "#71717a", borderHover: "#a1a1aa", gradientEnd: "#3f3f46", metallicKey: "zinc" };
+  if (count <= 4)  return { border: "#38bdf8", borderHover: "#7dd3fc", gradientEnd: "#0c4a6e", metallicKey: "blue" };
+  if (count === 5) return { border: "#c084fc", borderHover: "#d8b4fe", gradientEnd: "#6b21a8", metallicKey: "purple" };
+  return                  { border: "#f472b6", borderHover: "#f9a8d4", gradientEnd: "#9d174d", metallicKey: "pink" };
 }
 
-function SlotTile({ slotId, pools, loadout, psCount, isOpen, isFocused, craftTotal, corrosionTotal, costSide, onOpen, onFocus, onSelect, onClose }: SlotTileProps) {
+const METALLIC_GRADIENTS = {
+  zinc:   "linear-gradient(145deg, #b8b8bc 0%, #4a4a4e 15%, #d8d8dc 35%, #6a6a70 55%, #2c2c30 75%, #9a9a9e 100%)",
+  blue:   "linear-gradient(145deg, #bae6fd 0%, #0369a1 15%, #e0f2fe 35%, #38bdf8 55%, #075985 75%, #7dd3fc 100%)",
+  purple: "linear-gradient(145deg, #e9d5ff 0%, #7e22ce 15%, #f3e8ff 35%, #c084fc 55%, #6b21a8 75%, #d8b4fe 100%)",
+  pink:   "linear-gradient(145deg, #fce7f3 0%, #be185d 15%, #fdf2f8 35%, #f472b6 55%, #9d174d 75%, #f9a8d4 100%)",
+};
+
+function SlotTile({ slotId, pools, loadout, psCount, isOpen, isFocused, craftTotal, corrosionTotal, costSide, hasDream, onOpen, onFocus, onSelect, onClose }: SlotTileProps) {
   const triggerRef = useRef<HTMLButtonElement>(null);
   const [isHovered, setIsHovered] = useState(false);
   const selectedPool = pools.find((p) => p.id === loadout[slotId]);
@@ -234,22 +248,29 @@ function SlotTile({ slotId, pools, loadout, psCount, isOpen, isFocused, craftTot
     else onOpen();
   }
 
-  const { border: rarityBorder, borderHover: rarityBorderHover, gradientEnd } = getPSRarityColors(psCount);
+  const { gradientEnd, metallicKey, border: rarityBorder } = getPSRarityColors(psCount);
 
   const isActive = !locked && (isOpen || (isFocused && selectedPool));
-  const border = locked
-    ? "6px solid #1c1c1c"
-    : isActive
-    ? "6px solid #f59e0b"
-    : selectedPool
-    ? `6px solid ${isHovered ? rarityBorderHover : rarityBorder}`
-    : `6px solid ${isHovered ? "#52525b" : "#3f3f46"}`;
 
-  const glow = isActive ? "0 0 12px #f59e0b55" : "none";
+  const glow = isActive
+    ? `0 0 12px ${rarityBorder}cc, 0 0 28px ${rarityBorder}88, 0 0 52px ${rarityBorder}44`
+    : "none";
 
-  const bg = selectedPool
+  const innerBg = selectedPool
     ? `linear-gradient(to bottom, #1a1a1a 0%, ${gradientEnd} 100%)`
     : "#0a0a0a";
+
+  const metallicBorder = METALLIC_GRADIENTS[metallicKey];
+
+  const border = selectedPool
+    ? "6px solid transparent"
+    : locked
+    ? "6px solid #1c1c1c"
+    : `6px solid ${isHovered ? "#52525b" : "#3f3f46"}`;
+
+  const bg = selectedPool
+    ? `${innerBg} padding-box, ${metallicBorder} border-box`
+    : innerBg;
 
   return (
     <div
@@ -257,7 +278,7 @@ function SlotTile({ slotId, pools, loadout, psCount, isOpen, isFocused, craftTot
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <span className={`text-xs uppercase tracking-wider font-medium transition-colors ${isHovered && !locked ? "text-[#e0ddd8]" : "text-zinc-600"}`}>
+      <span className={`relative z-10 text-xs uppercase tracking-wider font-medium transition-colors ${isActive ? "text-white" : isHovered && !locked ? "text-[#e0ddd8]" : "text-zinc-600"}`}>
         {SLOT_LABELS[slotId]}
       </span>
       <div className="relative">
@@ -265,7 +286,7 @@ function SlotTile({ slotId, pools, loadout, psCount, isOpen, isFocused, craftTot
           ref={triggerRef}
           onClick={handleClick}
           disabled={locked}
-          className="w-36 h-36 flex items-center justify-center relative overflow-hidden transition-all"
+          className={`w-36 h-36 flex items-center justify-center relative overflow-hidden transition-all ${locked ? "cursor-not-allowed" : "cursor-pointer"}`}
           style={{ border, background: bg, boxShadow: glow, opacity: locked ? 0.35 : 1, borderRadius: "0 28px 0 28px" }}
         >
           {selectedPool ? (
@@ -286,17 +307,38 @@ function SlotTile({ slotId, pools, loadout, psCount, isOpen, isFocused, craftTot
           )}
         </button>
 
+        {locked && isHovered && (
+          <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-50 pointer-events-none">
+            <div className="px-3 py-1.5 text-xs text-white whitespace-nowrap border border-[#535357] bg-[#1a1a1a] rounded-sm shadow-lg">
+              Off-hand locked — two-handed weapon equipped
+            </div>
+          </div>
+        )}
+
+        {selectedPool && hasDream && (
+          <img
+            src="/icons/slots/dream.png"
+            alt="Dream affix"
+            className="absolute bottom-2 right-2 w-7 h-7 pointer-events-none p-[3px] rounded-tr-[5px] rounded-bl-[5px]"
+            style={{ background: "rgba(30,30,30,0.65)" }}
+          />
+        )}
+
         {selectedPool && !locked && (
+          <div className="absolute top-2 right-2 group/change">
           <button
-            title="Change item"
             onClick={(e) => { e.stopPropagation(); onOpen(); }}
-            className="absolute top-2 right-2 rounded p-1 text-zinc-400 hover:text-[#e0ddd8] hover:bg-black/40 transition-colors"
+            className="relative rounded p-1 text-zinc-400 hover:text-[#e0ddd8] hover:bg-black/40 transition-colors cursor-pointer"
           >
+            <span className="pointer-events-none absolute bottom-full right-0 mb-1.5 px-2.5 py-1.5 rounded-sm text-xs text-white bg-[#1a1a1a] border border-[#535357] whitespace-nowrap opacity-0 group-hover/change:opacity-100 transition-opacity z-50">
+              Change item
+            </span>
             <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
               <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
             </svg>
           </button>
+          </div>
         )}
 
         {isOpen && (
@@ -311,7 +353,7 @@ function SlotTile({ slotId, pools, loadout, psCount, isOpen, isFocused, craftTot
         )}
 
         {selectedPool && (
-          <span className="absolute top-full left-1/2 -translate-x-1/2 mt-0.5 text-[14px] font-semibold text-[#e0ddd8] leading-tight text-center w-max max-w-[180px] pointer-events-none">
+          <span className="absolute z-10 top-full left-1/2 -translate-x-1/2 mt-0.5 text-[14px] font-semibold text-[#e0ddd8] leading-tight text-center w-max max-w-[180px] pointer-events-none">
             {selectedPool.name.replace(/\s*armor\b/gi, "").trim()}
           </span>
         )}
@@ -353,13 +395,14 @@ type GearPanelProps = {
   psCounts: Partial<Record<GearSlotId, number>>;
   costTotals: Partial<Record<GearSlotId, { craft: number | null; corrosion: number | null }>>;
   dreamCount: number;
+  dreamFlags: Partial<Record<GearSlotId, boolean>>;
   onSlotOpen: (id: GearSlotId) => void;
   onSlotFocus: (id: GearSlotId) => void;
   onSlotClose: () => void;
   onSelect: (slotId: GearSlotId, poolId: string) => void;
 };
 
-export default function GearPanel({ pools, loadout, activeSlotId, focusedSlotId, psCounts, costTotals, dreamCount, onSlotOpen, onSlotFocus, onSlotClose, onSelect }: GearPanelProps) {
+export default function GearPanel({ pools, loadout, activeSlotId, focusedSlotId, psCounts, costTotals, dreamCount, dreamFlags, onSlotOpen, onSlotFocus, onSlotClose, onSelect }: GearPanelProps) {
   const allSlots = LAYOUT.flat();
 
   // Sum craft totals; NaN if any contributing slot is NaN
@@ -388,13 +431,13 @@ export default function GearPanel({ pools, loadout, activeSlotId, focusedSlotId,
         {/* Left column — costs on right */}
         <div className="flex flex-col gap-12">
           {LAYOUT.map(([left]) => (
-            <SlotTile key={left} slotId={left} pools={pools} loadout={loadout} psCount={psCounts[left] ?? 0} isOpen={activeSlotId === left} isFocused={focusedSlotId === left} craftTotal={costTotals[left]?.craft ?? null} corrosionTotal={costTotals[left]?.corrosion ?? null} costSide="right" onOpen={() => onSlotOpen(left)} onFocus={() => onSlotFocus(left)} onSelect={(id) => onSelect(left, id)} onClose={onSlotClose} />
+            <SlotTile key={left} slotId={left} pools={pools} loadout={loadout} psCount={psCounts[left] ?? 0} isOpen={activeSlotId === left} isFocused={focusedSlotId === left} craftTotal={costTotals[left]?.craft ?? null} corrosionTotal={costTotals[left]?.corrosion ?? null} costSide="right" hasDream={dreamFlags[left] ?? false} onOpen={() => onSlotOpen(left)} onFocus={() => onSlotFocus(left)} onSelect={(id) => onSelect(left, id)} onClose={onSlotClose} />
           ))}
         </div>
         {/* Right column — costs on left */}
         <div className="flex flex-col gap-12">
           {LAYOUT.map(([, right]) => (
-            <SlotTile key={right} slotId={right} pools={pools} loadout={loadout} psCount={psCounts[right] ?? 0} isOpen={activeSlotId === right} isFocused={focusedSlotId === right} craftTotal={costTotals[right]?.craft ?? null} corrosionTotal={costTotals[right]?.corrosion ?? null} costSide="left" onOpen={() => onSlotOpen(right)} onFocus={() => onSlotFocus(right)} onSelect={(id) => onSelect(right, id)} onClose={onSlotClose} />
+            <SlotTile key={right} slotId={right} pools={pools} loadout={loadout} psCount={psCounts[right] ?? 0} isOpen={activeSlotId === right} isFocused={focusedSlotId === right} craftTotal={costTotals[right]?.craft ?? null} corrosionTotal={costTotals[right]?.corrosion ?? null} costSide="left" hasDream={dreamFlags[right] ?? false} onOpen={() => onSlotOpen(right)} onFocus={() => onSlotFocus(right)} onSelect={(id) => onSelect(right, id)} onClose={onSlotClose} />
           ))}
         </div>
       </div>

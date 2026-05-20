@@ -413,24 +413,38 @@ export default function AffixPanel({
       {/* Group tabs */}
       <div className="flex flex-row flex-wrap justify-center gap-3 px-6 pt-16">
           {groupDefs.map((g, i) => (
-            <button
-              key={g.label}
-              onClick={() => setActiveGroupIdx(i)}
-              className={`px-6 py-4 text-[16px] font-semibold transition-colors ${
-                i === activeGroupIdx
-                  ? "text-[#000000]"
-                  : "text-[#ffffff] hover:opacity-80"
-              }`}
-              style={{
-                backgroundColor: i === activeGroupIdx ? "#ffde1f" : "#0c0c0c",
-                borderRadius: "12px 0 12px 0",
-                boxShadow: i === activeGroupIdx
-                  ? "0 6px 10px rgba(255,222,31,0.4), 5px 3px 8px rgba(255,222,31,0.2), -5px 3px 8px rgba(255,222,31,0.2)"
-                  : "0 3px 6px rgba(0,0,0,0.4)",
-              }}
-            >
-              {g.label}
-            </button>
+            <div key={g.label} className="relative flex flex-col items-center">
+              <button
+                onClick={() => setActiveGroupIdx(i)}
+                className={`px-6 py-4 text-[16px] font-semibold transition-colors ${
+                  i === activeGroupIdx
+                    ? "text-[#000000]"
+                    : "text-[#ffffff] hover:opacity-80"
+                }`}
+                style={{
+                  backgroundColor: i === activeGroupIdx ? "#ffde1f" : "#0c0c0c",
+                  borderRadius: "12px 0 12px 0",
+                  boxShadow: i === activeGroupIdx
+                    ? "0 6px 10px rgba(255,222,31,0.4), 5px 3px 8px rgba(255,222,31,0.2), -5px 3px 8px rgba(255,222,31,0.2)"
+                    : "0 3px 6px rgba(0,0,0,0.4)",
+                }}
+              >
+                {g.label}
+              </button>
+              {i === activeGroupIdx && (
+                <span
+                  className="absolute top-full left-1/2 -translate-x-1/2"
+                  style={{
+                    width: 0,
+                    height: 0,
+                    borderLeft: "12px solid transparent",
+                    borderRight: "12px solid transparent",
+                    borderTop: "12px solid #ffde1f",
+                    filter: "drop-shadow(0 4px 6px rgba(255,222,31,0.5))",
+                  }}
+                />
+              )}
+            </div>
           ))}
       </div>
 

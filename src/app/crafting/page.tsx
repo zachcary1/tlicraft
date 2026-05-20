@@ -167,6 +167,13 @@ export default function CraftingPage() {
     (id) => slotDataMap[id]?.itemSlots.dream !== null
   ).length;
 
+  const dreamFlags = Object.fromEntries(
+    (Object.keys(slotDataMap) as GearSlotId[]).map((id) => [
+      id,
+      slotDataMap[id]?.itemSlots.dream !== null && slotDataMap[id]?.itemSlots.dream !== undefined,
+    ])
+  ) as Partial<Record<GearSlotId, boolean>>;
+
   const costTotals = Object.fromEntries(
     (Object.keys(slotDataMap) as GearSlotId[]).map((id) => {
       const d = slotDataMap[id];
@@ -232,6 +239,7 @@ export default function CraftingPage() {
               psCounts={psCounts}
               costTotals={costTotals}
               dreamCount={dreamCount}
+              dreamFlags={dreamFlags}
               onSlotOpen={(id) => setActiveSlotId((prev) => (prev === id ? null : id))}
               onSlotFocus={(id) => setFocusedSlotId(id)}
               onSlotClose={() => setActiveSlotId(null)}

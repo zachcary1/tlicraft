@@ -235,10 +235,10 @@ function NightmareSlotRow({ pool, values, onActivate, isActive = false, warn = f
         onClick={onActivate}
         disabled={disabled && values.length === 0}
         title={disabled && values.length === 0 ? "No dream affix — nightmare affixes unavailable" : undefined}
-        className={`flex-1 min-w-0 relative flex items-center pl-3 pr-[48px] py-3 rounded-sm border-0 overflow-hidden focus:outline-none text-base transition-colors ${
-          warn ? "ring-1 ring-red-700"
+        className={`flex-1 min-w-0 relative flex items-center pl-3 pr-[48px] py-3 rounded-sm border-0 overflow-hidden focus:outline-none text-base transition-all ${
+          warn ? "ring-1 ring-red-700 cursor-pointer hover:brightness-95"
           : disabled && values.length === 0 ? "opacity-40 cursor-not-allowed"
-          : ""
+          : "cursor-pointer hover:brightness-95"
         }`}
         style={{ backgroundColor: buttonBg }}
       >
@@ -284,6 +284,7 @@ function Section({
   hoverCard,
   highlighted,
   plain = false,
+  centerLabel = false,
 }: {
   label: string;
   feCost?: number | null;
@@ -292,6 +293,7 @@ function Section({
   hoverCard?: React.ReactNode;
   highlighted?: boolean;
   plain?: boolean;
+  centerLabel?: boolean;
 }) {
   const [tooltipOpen, setTooltipOpen] = useState(false);
   const [tooltipPos, setTooltipPos] = useState<{ bottom: number; left: number } | null>(null);
@@ -315,21 +317,29 @@ function Section({
     setTooltipOpen(true);
   }
 
+  const labelCls = `font-semibold uppercase tracking-wider whitespace-nowrap transition-all duration-150 ${plain ? (highlighted ? "text-[15px] text-[#1a1a1a]" : "text-[13px] text-[#555]") : (highlighted ? "text-[18px] text-[#1a1a1a]" : "text-[16px] text-[#555]")}`;
+
   return (
     <div className={`relative flex items-center gap-2 px-3 py-0.5${plain ? " bg-[#eaeaea]" : ""}`} style={plain ? undefined : { background: "linear-gradient(to right, #bdc3c9, #eaeaea)" }}>
-      <span className={`font-semibold uppercase tracking-wider whitespace-nowrap transition-all duration-150 ${plain ? (highlighted ? "text-[15px] text-[#1a1a1a]" : "text-[13px] text-[#555]") : (highlighted ? "text-[18px] text-[#1a1a1a]" : "text-[16px] text-[#555]")}`}>
-        {label}
-      </span>
+      {centerLabel ? (
+        <>
+          <span className={`absolute left-0 right-0 text-center pointer-events-none ${labelCls}`}>{label}</span>
+          <span className={`invisible ${labelCls}`}>x</span>
+        </>
+      ) : (
+        <span className={labelCls}>{label}</span>
+      )}
       <span
         ref={badgeRef}
-        className={`ml-auto text-[15px] font-semibold tracking-[-0.02em] flex items-center gap-1.5 transition-all duration-150${
+        className={`ml-auto text-[15px] font-semibold tracking-[-0.02em] flex items-center gap-1.5 transition-all duration-150 bg-[#848485] px-2.5 py-0.5${
           feCost == null ? " invisible" :
           Number.isNaN(feCost)
             ? " text-red-400 cursor-help"
             : hoverCard
-            ? " text-[#1a1a1a] cursor-help"
-            : " text-[#1a1a1a]"
+            ? " text-[#e0ddd8] cursor-help"
+            : " text-[#e0ddd8]"
         }`}
+        style={{ borderRadius: "0 6px 0 6px", boxShadow: "0 2px 6px rgba(0,0,0,0.35)" }}
         onMouseEnter={feCost != null ? handleBadgeEnter : undefined}
         onMouseLeave={feCost != null ? scheduleClose : undefined}
       >
@@ -342,9 +352,6 @@ function Section({
             <span className="font-bold">{Math.round(feCost).toLocaleString("en-US")}</span>
             <FEIcon className="w-5 h-5" />
           </>
-        )}
-        {hoverCard && (
-          <svg className={`w-4 h-4 ${Number.isNaN(feCost) ? "text-red-600" : "text-zinc-400"}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
         )}
       </span>
       {onToggle && (
@@ -535,8 +542,8 @@ function SimpleSlotRow({ label, accent, groups, value, onChange, onActivate, isA
         onClick={onActivate}
         disabled={disabled && !value}
         title={disabled && !value ? "Limit reached" : undefined}
-        className={`flex-1 min-w-0 relative flex items-center gap-2 pl-3 pr-[48px] py-3 rounded-sm border-0 overflow-hidden focus:outline-none text-sm transition-colors ${
-          disabled && !value ? "opacity-40 cursor-not-allowed" : ""}`}
+        className={`flex-1 min-w-0 relative flex items-center gap-2 pl-3 pr-[48px] py-3 rounded-sm border-0 overflow-hidden focus:outline-none text-sm transition-all ${
+          disabled && !value ? "opacity-40 cursor-not-allowed" : "cursor-pointer hover:brightness-95"}`}
         style={{ backgroundColor: buttonBg }}
       >
         {selectedOpt ? (
@@ -620,7 +627,7 @@ function PrefixSuffixSlotRow({
     <div className="flex items-center gap-2 py-1">
       <button
         onClick={onActivate}
-        className="flex-1 min-w-0 relative flex items-center pl-3 pr-[48px] py-3 rounded-sm bg-[#dedfdf] border-0 focus:outline-none text-sm transition-colors"
+        className="flex-1 min-w-0 relative flex items-center pl-3 pr-[48px] py-3 rounded-sm bg-[#dedfdf] border-0 overflow-hidden focus:outline-none text-sm transition-all cursor-pointer hover:brightness-95"
       >
         {selectedOpt ? (() => {
           const typeLabel = value?.sourceGroup?.includes("ADVANCED") ? { text: "Advanced", cls: "text-sky-400" }
@@ -880,12 +887,19 @@ function getEquipmentIconPath(pool: CraftedPool): string {
   return `/icons/equipment/${attr} ${pool.baseItemCategory.name}.webp`;
 }
 
-function getPSRarityColors(count: number): { border: string; gradientEnd: string; accent: string; accentDark: string } {
-  if (count === 0) return { border: "#71717a", gradientEnd: "#3f3f46", accent: "#52525b", accentDark: "#141415" };
-  if (count <= 4)  return { border: "#38bdf8", gradientEnd: "#0c4a6e", accent: "#0369a1", accentDark: "#030e1c" };
-  if (count === 5) return { border: "#c084fc", gradientEnd: "#6b21a8", accent: "#7e22ce", accentDark: "#0d0118" };
-  return                  { border: "#f472b6", gradientEnd: "#9d174d", accent: "#be185d", accentDark: "#12010a" };
+function getPSRarityColors(count: number): { border: string; gradientEnd: string; accent: string; accentDark: string; metallicKey: "zinc" | "blue" | "purple" | "pink" } {
+  if (count === 0) return { border: "#71717a", gradientEnd: "#3f3f46", accent: "#52525b", accentDark: "#141415", metallicKey: "zinc" };
+  if (count <= 4)  return { border: "#38bdf8", gradientEnd: "#0c4a6e", accent: "#0369a1", accentDark: "#030e1c", metallicKey: "blue" };
+  if (count === 5) return { border: "#c084fc", gradientEnd: "#6b21a8", accent: "#7e22ce", accentDark: "#0d0118", metallicKey: "purple" };
+  return                  { border: "#f472b6", gradientEnd: "#9d174d", accent: "#be185d", accentDark: "#12010a", metallicKey: "pink" };
 }
+
+const METALLIC_GRADIENTS = {
+  zinc:   "linear-gradient(145deg, #b8b8bc 0%, #4a4a4e 15%, #d8d8dc 35%, #6a6a70 55%, #2c2c30 75%, #9a9a9e 100%)",
+  blue:   "linear-gradient(145deg, #bae6fd 0%, #0369a1 15%, #e0f2fe 35%, #38bdf8 55%, #075985 75%, #7dd3fc 100%)",
+  purple: "linear-gradient(145deg, #e9d5ff 0%, #7e22ce 15%, #f3e8ff 35%, #c084fc 55%, #6b21a8 75%, #d8b4fe 100%)",
+  pink:   "linear-gradient(145deg, #fce7f3 0%, #be185d 15%, #fdf2f8 35%, #f472b6 55%, #9d174d 75%, #f9a8d4 100%)",
+};
 
 function getShallowDreamName(pool: CraftedPool): string {
   const t = getItemType(pool);
@@ -1886,7 +1900,8 @@ export default function ItemCard({
   })();
 
   const psCount = PREFIX_SUFFIX_KEYS.filter((k) => slots[k] !== null).length;
-  const { border: iconBorder, gradientEnd, accent: accentBg, accentDark } = getPSRarityColors(psCount);
+  const { gradientEnd, accent: accentBg, accentDark, metallicKey } = getPSRarityColors(psCount);
+  const iconBorderBg = `linear-gradient(to bottom, #1a1a1a 0%, ${gradientEnd} 100%) padding-box, ${METALLIC_GRADIENTS[metallicKey]} border-box`;
 
   return (
     <div className="relative max-w-3xl">
@@ -1913,7 +1928,7 @@ export default function ItemCard({
         <button
           onClick={onClear}
           title="Remove item"
-          className="absolute z-10 rounded p-1.5 text-white/60 hover:text-white transition-colors"
+          className="absolute z-10 rounded p-1.5 text-white/60 hover:text-white transition-colors cursor-pointer"
           style={{ top: "-63px", right: "8px" }}
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -1930,16 +1945,26 @@ export default function ItemCard({
           left: "20px",
           width: "128px",
           height: "128px",
-          border: `6px solid ${iconBorder}`,
-          background: `linear-gradient(to bottom, #1a1a1a 0%, ${gradientEnd} 100%)`,
+          border: "6px solid transparent",
+          background: iconBorderBg,
           borderRadius: "0 28px 0 28px",
         }}
       >
-        <img
-          src={getEquipmentIconPath(pool)}
-          alt={pool.name}
-          className="w-full h-full object-contain p-0.5"
-        />
+        <div className="relative w-full h-full">
+          <img
+            src={getEquipmentIconPath(pool)}
+            alt={pool.name}
+            className="w-full h-full object-contain p-0.5"
+          />
+          {slots.dream && (
+            <img
+              src="/icons/slots/dream.png"
+              alt="Dream affix"
+              className="absolute bottom-0.5 right-0.5 w-7 h-7 pointer-events-none p-[3px] rounded-tr-[5px] rounded-bl-[5px]"
+              style={{ background: "rgba(30,30,30,0.65)" }}
+            />
+          )}
+        </div>
       </div>
 
       {/* Main card */}
@@ -2174,13 +2199,14 @@ export default function ItemCard({
         </div>
       )}
 
-      {/* Prefixes + Suffixes — centered heading only, no border */}
-      <div className="mt-6 flex justify-center">
+      {/* Prefixes + Suffixes — centered label, badge aligned to match other section headers */}
+      <div className="mt-6 mr-[40px]">
         <Section
           label="Prefixes + Suffixes"
           feCost={psFEVal}
           highlighted={hoveredLine === "Prefix / Suffix"}
           plain
+          centerLabel
           hoverCard={psFEVal !== null ? (
             <PrefixSuffixCostSection
               pool={pool}
