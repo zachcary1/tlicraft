@@ -118,13 +118,36 @@ export function sortTiers(tiers: PoolTier[]): PoolTier[] {
 //   1. "(min-max)% Name"            → "(5–10)% Name"           (% stays outside parens)
 //   2. "(min-max)% Verb (min-max)%" → "Verb (36–45)%"          (strip redundant leading prefix)
 //   3. "+(min-max) +1 Name"         → "+(1) Name"              (strip repeated literal value)
-export function buildAffixLabel(affix: PoolAffix): string {
-  const tier = affix.tiers[0];
+export function buildAffixLabel(affix: PoolAffix, tierStr?: string): string {
+  const sorted = sortTiers(affix.tiers);
+  const tier = tierStr
+    ? (sorted.find((t) => t.tier === tierStr) ?? sorted[sorted.length - 1])
+    : (sorted.find((t) => t.tier === "T1") ?? sorted[sorted.length - 1]);
   if (!tier || tier.stats.length === 0) return affix.name;
   const firstStat = tier.stats[0];
 
-  // Step 1: replace each (min-max) sequentially with the corresponding stat's range.
-  // e.g. two stats → first (min-max) gets stat[0]'s range, second gets stat[1]'s range.
+  function fillRange(template: string, stat: PoolStat): string {
+    const r =
+      stat.minValue === stat.maxValue
+        ? `${stat.minValue}`
+        : `${stat.minValue}–${stat.maxValue}`;
+    return template
+      .replace(/\(min-max\)/gi, `(${r})`)
+      .replace(/\(min\)/g, `(${stat.minValue})`)
+      .replace(/\bmin\b/g, `(${stat.minValue})`);
+  }
+
+  // Armor/ring/belt-style: affix name is bare ("Max Life"); value template lives
+  // in each stat's label field ("+(min-max) Max Life"). Fill each stat label with
+  // its own values and join when there are multiple stats.
+  if (!/\(min-max\)/i.test(affix.name)) {
+    return tier.stats
+      .map((stat) => fillRange(stat.label, stat).trim())
+      .join(" / ");
+  }
+
+  // Weapon/sequence-style: the affix name itself is the template with (min-max)
+  // placeholders — replace them sequentially, one per stat.
   let statIdx = 0;
   let name = affix.name.replace(/\(min-max\)/gi, () => {
     const stat = tier.stats[statIdx] ?? firstStat;
@@ -136,27 +159,11 @@ export function buildAffixLabel(affix: PoolAffix): string {
     return `(${r})`;
   });
 
-  // Remaining edge-case fixes operate on the first stat's range only.
-  const firstRange =
-    firstStat.minValue === firstStat.maxValue
-      ? `${firstStat.minValue}`
-      : `${firstStat.minValue}–${firstStat.maxValue}`;
-  const esc = firstRange.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-
-  // Step 2: if the first stat's range appears twice, the leading prefix is redundant.
-  // e.g. "(36–45)% Converts (36–45)% of X" → "Converts (36–45)% of X"
-  const count = (name.match(new RegExp(`\\(${esc}\\)`, "g")) ?? []).length;
-  if (count >= 2) {
-    name = name.replace(new RegExp(`^\\+?\\(${esc}\\)%?\\s*`), "").trimStart();
-  }
-
-  // Step 3: strip a literal repeated value right after the leading (range).
-  // e.g. "+(1) +1 Projectile Quantity" → "+(1) Projectile Quantity"
-  if (firstStat.minValue === firstStat.maxValue) {
-    name = name.replace(
-      new RegExp(`^(\\+?\\(${esc}\\)\\S*\\s+)\\+?${esc}\\s+`),
-      "$1",
-    );
+  // If the name template had fewer (min-max) slots than there are stats, append
+  // the remaining stat labels with their values filled in.
+  if (statIdx < tier.stats.length) {
+    const extras = tier.stats.slice(statIdx).map((s) => fillRange(s.label, s).trim());
+    name = name.trim() + " / " + extras.join(" / ");
   }
 
   return name.trim();
@@ -533,7 +540,7 @@ function SimpleSlotRow({ label, accent, groups, value, onChange, onActivate, isA
   const selectedDotColor = selectedGroup && groupDotColors ? groupDotColors[selectedGroup.label] : null;
 
   function optionLabel(affix: PoolAffix): string {
-    return showStats ? buildAffixLabel(affix) : affix.name;
+    return showStats ? buildAffixLabel(affix, value?.affixId === affix.id ? value?.tier : undefined) : affix.name;
   }
 
   return (
@@ -637,7 +644,7 @@ function PrefixSuffixSlotRow({
             <span className="flex items-center gap-2 min-w-0">
               {value?.tier && <TierBadge tier={value.tier} />}
               <span className="relative min-w-0">
-                <span className="truncate block transition-colors duration-150" style={{ color: value?.tier === "T0_PLUS" ? "#5e56e1" : "#1a1a1a" }}>{selectedOpt.affix.name}</span>
+                <span className="truncate block transition-colors duration-150" style={{ color: value?.tier === "T0_PLUS" ? "#5e56e1" : "#1a1a1a" }}>{buildAffixLabel(selectedOpt.affix, value?.tier)}</span>
                 <span className={`absolute top-full left-0 text-[10px] font-medium leading-none mt-0.5 whitespace-nowrap ${typeLabel.cls}`}>{typeLabel.text}</span>
               </span>
             </span>
@@ -1757,6 +1764,130 @@ const PREFIX_SUFFIX_KEYS = [
   "prefix1", "prefix2", "prefix3", "suffix1", "suffix2", "suffix3",
 ] as const;
 type PrefixSuffixKey = (typeof PREFIX_SUFFIX_KEYS)[number];
+
+// ─── Placeholder card (no slot selected) ─────────────────────────────────────
+
+export function PlaceholderItemCard({ title = "Select a gear slot…" }: { title?: string }) {
+  const { accent: accentBg, accentDark } = getPSRarityColors(0);
+  const iconBorderBg = `linear-gradient(to bottom, #1a1a1a 0%, #3f3f46 100%) padding-box, ${METALLIC_GRADIENTS.zinc} border-box`;
+
+  const SkeletonRow = () => (
+    <div className="flex items-center gap-2 py-1">
+      <div className="flex-1 h-[46px] rounded-sm bg-[#d8d9d9] opacity-50" />
+    </div>
+  );
+
+  const SkeletonSection = ({ label }: { label: string }) => (
+    <div className="flex items-center gap-2 px-3 py-0.5" style={{ background: "linear-gradient(to right, #bdc3c9, #eaeaea)" }}>
+      <span className="font-semibold uppercase tracking-wider text-[16px] text-[#777]">{label}</span>
+    </div>
+  );
+
+  return (
+    <div className="relative max-w-3xl opacity-50 pointer-events-none select-none">
+      <div
+        className="absolute inset-x-0 bottom-0"
+        style={{
+          top: "-70px",
+          background: `linear-gradient(to right, ${accentBg}, ${accentDark})`,
+          borderRadius: "0 36px 0 36px",
+          zIndex: 0,
+          boxShadow: "0 0 40px 8px rgba(0,0,0,0.45)",
+        }}
+      />
+
+      <h2
+        className="absolute z-10 text-[28px] font-semibold text-white/40 leading-tight pointer-events-none"
+        style={{ top: "-60px", left: "160px", right: "48px" }}
+      >
+        {title}
+      </h2>
+
+      <div
+        className="absolute z-20 flex items-center justify-center overflow-hidden"
+        style={{
+          top: "-61px",
+          left: "20px",
+          width: "128px",
+          height: "128px",
+          border: "6px solid transparent",
+          background: iconBorderBg,
+          borderRadius: "0 28px 0 28px",
+        }}
+      >
+      </div>
+
+      <div className="relative z-10 border border-[#bec4c9] bg-[#eaeaea] text-[#1a1a1a] px-5 pb-5 pt-1" style={{ borderRadius: "0 36px 0 36px" }}>
+        <div className="flex items-start gap-4 mb-2 min-h-[72px]">
+          <div className="w-32 shrink-0" />
+          <div className="flex-1 min-w-0 pt-1 space-y-1">
+            <div className="h-4 w-32 rounded bg-zinc-300 opacity-60" />
+            <div className="h-4 w-40 rounded bg-zinc-300 opacity-60" />
+          </div>
+        </div>
+
+        {/* Base Affix */}
+        <div className="relative border border-[#bec4c9] mt-4 pt-5 px-3 pb-3" style={{ borderRadius: "0 12px 0 12px" }}>
+          <div className="absolute top-0 left-[20px] right-[40px] -translate-y-1/2 z-[100]">
+            <div className="flex items-center px-3 py-0.5" style={{ background: "linear-gradient(to right, #bdc3c9, #eaeaea)" }}>
+              <span className="font-semibold uppercase tracking-wider text-[16px] text-[#777]">Base Affix</span>
+            </div>
+          </div>
+          <SkeletonRow />
+        </div>
+
+        {/* Dream + Nightmare */}
+        <div className="relative border border-[#bec4c9] mt-6 pt-5 px-3 pb-3" style={{ borderRadius: "0 12px 0 12px" }}>
+          <div className="absolute top-0 left-[20px] right-[40px] -translate-y-1/2 z-[100]">
+            <div className="flex items-center px-3 py-0.5" style={{ background: "linear-gradient(to right, #bdc3c9, #eaeaea)" }}>
+              <span className="font-semibold uppercase tracking-wider text-[16px] text-[#777]">Dream + Nightmare</span>
+            </div>
+          </div>
+          <SkeletonRow />
+          <div className="flex items-center gap-2 py-1">
+            <div className="flex-1 h-[46px] rounded-sm opacity-50" style={{ backgroundColor: "#e6dada" }} />
+          </div>
+        </div>
+
+        {/* Sequence */}
+        <div className="relative border border-[#bec4c9] mt-6 pt-5 px-3 pb-3" style={{ borderRadius: "0 12px 0 12px" }}>
+          <div className="absolute top-0 left-[20px] right-[40px] -translate-y-1/2 z-[100]">
+            <div className="flex items-center px-3 py-0.5" style={{ background: "linear-gradient(to right, #bdc3c9, #eaeaea)" }}>
+              <span className="font-semibold uppercase tracking-wider text-[16px] text-[#777]">Sequence</span>
+            </div>
+          </div>
+          <SkeletonRow />
+        </div>
+
+        <div className="mt-4 mr-[40px]">
+          <div className="flex items-center px-3 py-0.5 bg-[#eaeaea]">
+            <span className="font-semibold uppercase tracking-wider text-[15px] text-[#777] w-full text-center">Prefixes + Suffixes</span>
+          </div>
+        </div>
+
+        <div className="relative border border-[#bec4c9] mt-3 pt-5 px-3 pb-2" style={{ borderRadius: "0 12px 0 12px" }}>
+          <div className="absolute top-0 left-[20px] right-[40px] -translate-y-1/2 z-[100]">
+            <div className="flex items-center px-3 py-0.5" style={{ background: "linear-gradient(to right, #bdc3c9, #eaeaea)" }}>
+              <span className="font-semibold uppercase tracking-wider text-[16px] text-[#777]">Prefix (0/3)</span>
+            </div>
+          </div>
+          <SkeletonRow /><SkeletonRow /><SkeletonRow />
+        </div>
+
+        <div className="relative border border-[#bec4c9] mt-4 pt-5 px-3 pb-2" style={{ borderRadius: "0 12px 0 12px" }}>
+          <div className="absolute top-0 left-[20px] right-[40px] -translate-y-1/2 z-[100]">
+            <div className="flex items-center px-3 py-0.5" style={{ background: "linear-gradient(to right, #bdc3c9, #eaeaea)" }}>
+              <span className="font-semibold uppercase tracking-wider text-[16px] text-[#777]">Suffix (0/3)</span>
+            </div>
+          </div>
+          <SkeletonRow /><SkeletonRow /><SkeletonRow />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── Main component ───────────────────────────────────────────────────────────
 
 export default function ItemCard({
   pool,

@@ -63,6 +63,108 @@ const LAYOUT: [GearSlotId, GearSlotId][] = [
   ["main_hand", "off_hand"],
 ];
 
+// ─── Empty slot icons ─────────────────────────────────────────────────────────
+
+const C = "#52525b"; // single gray color for all placeholder icons
+
+const SLOT_ICONS: Record<GearSlotId, React.ReactNode> = {
+  helmet: (
+    <svg width="60" height="60" viewBox="0 0 24 24" fill={C}>
+      {/* dome */}
+      <path d="M4 15C4 9.477 7.582 5 12 5C16.418 5 20 9.477 20 15L20 17L4 17Z" />
+      {/* brim */}
+      <rect x="2" y="17" width="20" height="3" rx="1" />
+      {/* visor slit */}
+      <rect x="6" y="13.5" width="12" height="1.5" rx="0.75" fill="#0a0a0a" />
+    </svg>
+  ),
+  chest: (
+    <svg width="60" height="60" viewBox="0 0 24 24" fill={C}>
+      {/* body plate */}
+      <path d="M8 5L4 7L4 20L20 20L20 7L16 5L12 8Z" />
+      {/* left pauldron */}
+      <rect x="2" y="6" width="5" height="5" rx="1" />
+      {/* right pauldron */}
+      <rect x="17" y="6" width="5" height="5" rx="1" />
+    </svg>
+  ),
+  gloves: (
+    <svg width="60" height="60" viewBox="0 0 24 24" fill={C}>
+      {/* index */}
+      <rect x="7" y="7" width="2.2" height="8" rx="1.1" />
+      {/* middle */}
+      <rect x="10" y="5" width="2.2" height="10" rx="1.1" />
+      {/* ring */}
+      <rect x="13" y="6" width="2.2" height="9" rx="1.1" />
+      {/* pinky */}
+      <rect x="16" y="8" width="2.2" height="7" rx="1.1" />
+      {/* palm */}
+      <rect x="7" y="13" width="11" height="7" rx="2" />
+      {/* thumb */}
+      <rect x="4" y="12" width="5" height="2.2" rx="1.1" />
+    </svg>
+  ),
+  boots: (
+    <svg width="60" height="60" viewBox="0 0 24 24" fill={C}>
+      <path d="M9 2L9 15L5 15Q4 15 4 16L4 21Q4 22 5 22L19 22Q20 22 20 21L20 18Q20 17 19 17L12 17L12 2Z" />
+    </svg>
+  ),
+  necklace: (
+    <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
+      {/* chain arc */}
+      <path d="M5 5Q12 15 19 5" stroke={C} strokeWidth="2.5" strokeLinecap="round" />
+      {/* left chain to pendant */}
+      <line x1="8.5" y1="11" x2="12" y2="17" stroke={C} strokeWidth="2" strokeLinecap="round" />
+      {/* right chain to pendant */}
+      <line x1="15.5" y1="11" x2="12" y2="17" stroke={C} strokeWidth="2" strokeLinecap="round" />
+      {/* pendant */}
+      <circle cx="12" cy="19.5" r="2.5" fill={C} />
+    </svg>
+  ),
+  belt: (
+    <svg width="60" height="60" viewBox="0 0 24 24" fill={C}>
+      {/* left strap */}
+      <rect x="2" y="10" width="7" height="4" />
+      {/* right strap */}
+      <rect x="15" y="10" width="7" height="4" />
+      {/* buckle frame */}
+      <rect x="8" y="8" width="8" height="8" rx="1" />
+      {/* buckle pin */}
+      <rect x="11.5" y="8" width="1" height="8" rx="0.5" fill="#0a0a0a" />
+    </svg>
+  ),
+  ring_l: (
+    <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
+      {/* band */}
+      <circle cx="12" cy="13" r="7.5" stroke={C} strokeWidth="3.5" />
+      {/* gem */}
+      <path d="M12 2L15 5.5L12 8L9 5.5Z" fill={C} />
+    </svg>
+  ),
+  ring_r: (
+    <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
+      <circle cx="12" cy="13" r="7.5" stroke={C} strokeWidth="3.5" />
+      <path d="M12 2L15 5.5L12 8L9 5.5Z" fill={C} />
+    </svg>
+  ),
+  main_hand: (
+    <svg width="60" height="60" viewBox="0 0 24 24" fill={C}>
+      {/* blade */}
+      <path d="M12 2L13.5 17L12 20L10.5 17Z" />
+      {/* crossguard */}
+      <rect x="7" y="16.5" width="10" height="2.5" rx="1.25" />
+      {/* grip */}
+      <rect x="11" y="19" width="2" height="4" rx="1" />
+    </svg>
+  ),
+  off_hand: (
+    <svg width="60" height="60" viewBox="0 0 24 24" fill={C}>
+      {/* shield */}
+      <path d="M12 2L21 7L21 14L12 22L3 14L3 7Z" />
+    </svg>
+  ),
+};
+
 // ─── Icon path helper ─────────────────────────────────────────────────────────
 
 function getPoolIconPath(pool: PoolSummary): string {
@@ -296,14 +398,9 @@ function SlotTile({ slotId, pools, loadout, psCount, isOpen, isFocused, craftTot
               className="w-full h-full object-contain p-1.5"
             />
           ) : (
-            /* Empty slot placeholder */
-            <div
-              className="w-16 h-16 rounded"
-              style={{
-                background: "#0a0a0a",
-                border: "1px solid #3f3f46",
-              }}
-            />
+            <div className="opacity-30">
+              {SLOT_ICONS[slotId]}
+            </div>
           )}
         </button>
 
@@ -416,17 +513,15 @@ export default function GearPanel({ pools, loadout, activeSlotId, focusedSlotId,
   const withCorrValues = allSlots.map((id) => {
     const c = costTotals[id];
     if (!c) return null;
-    if (c.craft === null && c.corrosion === null) return null;
-    const craft = c.craft ?? 0;
-    const corr = c.corrosion ?? 0;
-    return craft + corr;
+    const value = c.corrosion ?? c.craft;
+    return value;
   }).filter((v) => v !== null) as number[];
   const totalWithCorrosion: number | null = (!anyCorrosion || withCorrValues.length === 0) ? null
     : withCorrValues.some(Number.isNaN) ? NaN
     : withCorrValues.reduce((a, b) => a + b, 0);
 
   return (
-    <div className="border border-[#1c1c1c] px-4 pt-4 pb-6 flex flex-col w-fit" style={{ borderRadius: "0 36px 0 36px", borderWidth: "1px", background: "linear-gradient(to bottom, #1d1e1e, #020202)" }}>
+    <div className="border border-[#1c1c1c] px-4 pt-4 pb-6 flex flex-col w-fit" style={{ borderRadius: "0 36px 0 36px", borderWidth: "1px", background: "linear-gradient(to bottom, #1d1e1e, #020202)", boxShadow: "0 8px 40px 8px rgba(0,0,0,0.6)" }}>
       <div className="flex gap-48 items-start px-2">
         {/* Left column — costs on right */}
         <div className="flex flex-col gap-12">
@@ -466,25 +561,21 @@ export default function GearPanel({ pools, loadout, activeSlotId, focusedSlotId,
 
       {/* Total costs footer */}
       {(totalCraft !== null || totalWithCorrosion !== null) && (
-        <div className="mt-6 pt-5 border-t border-[#1c1c1c]flex justify-around items-start">
-          {totalCraft !== null && (
-            <div className="flex flex-col items-center gap-0.5">
-              <span className="text-[10px] text-zinc-500 uppercase tracking-widest">Total Craft</span>
-              <span className={`text-[22px] font-bold tracking-[-0.02em] flex items-center gap-1.5 ${Number.isNaN(totalCraft) ? "text-red-400" : "text-[#e0ddd8]"}`}>
-                {Number.isNaN(totalCraft) ? "NaN" : Math.round(totalCraft).toLocaleString("en-US")}
-                {!Number.isNaN(totalCraft) && <FEIcon className="w-5 h-5" />}
-              </span>
-            </div>
-          )}
-          {totalWithCorrosion !== null && (
-            <div className="flex flex-col items-center gap-0.5">
-              <span className="text-[10px] text-zinc-500 uppercase tracking-widest">Total with Corrosion</span>
-              <span className={`text-[22px] font-bold tracking-[-0.02em] flex items-center gap-1.5 ${Number.isNaN(totalWithCorrosion) ? "text-red-400" : "text-[#e0ddd8]"}`}>
-                {Number.isNaN(totalWithCorrosion) ? "NaN" : Math.round(totalWithCorrosion).toLocaleString("en-US")}
-                {!Number.isNaN(totalWithCorrosion) && <FEIcon className="w-5 h-5" />}
-              </span>
-            </div>
-          )}
+        <div className="mt-6 pt-5 border-t border-[#1c1c1c] flex justify-between items-start px-2">
+          <div className="flex flex-col items-start gap-0.5">
+            <span className="text-[10px] text-zinc-500 uppercase tracking-widest">Total Gear Cost</span>
+            <span className={`text-[22px] font-bold tracking-[-0.02em] flex items-center gap-1.5 ${totalCraft !== null && Number.isNaN(totalCraft) ? "text-red-400" : "text-[#e0ddd8]"}`}>
+              {totalCraft === null ? "—" : Number.isNaN(totalCraft) ? "NaN" : Math.round(totalCraft).toLocaleString("en-US")}
+              {totalCraft !== null && !Number.isNaN(totalCraft) && <FEIcon className="w-5 h-5" />}
+            </span>
+          </div>
+          <div className="flex flex-col items-end gap-0.5">
+            <span className="text-[10px] text-zinc-500 uppercase tracking-widest">Total Gear Cost with Corrosion</span>
+            <span className={`text-[22px] font-bold tracking-[-0.02em] flex items-center gap-1.5 ${totalWithCorrosion !== null && Number.isNaN(totalWithCorrosion) ? "text-red-400" : "text-[#e0ddd8]"}`}>
+              {totalWithCorrosion === null ? "—" : Number.isNaN(totalWithCorrosion) ? "NaN" : Math.round(totalWithCorrosion).toLocaleString("en-US")}
+              {totalWithCorrosion !== null && !Number.isNaN(totalWithCorrosion) && <FEIcon className="w-5 h-5" />}
+            </span>
+          </div>
         </div>
       )}
     </div>

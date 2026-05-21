@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import type { CraftedPool } from "@/services/crafting/types";
 import ItemCard, {
+  PlaceholderItemCard,
   EMPTY_SLOTS,
   EMPTY_RESOURCE_PRICES,
   computeCraftCostLines,
@@ -251,9 +252,9 @@ export default function CraftingPage() {
         {/* Item card */}
         <div className="w-[700px] shrink-0 pl-12 pr-4 self-center">
           {!focusedSlotId || !focused ? (
-            <p className="text-zinc-600 text-sm">Select a gear slot to start configuring.</p>
+            <PlaceholderItemCard />
           ) : focused.loading ? (
-            <p className="text-zinc-500 text-sm">Loading pool...</p>
+            <PlaceholderItemCard title="Loading affix pools…" />
           ) : focused.poolData ? (
             <ItemCard
               pool={focused.poolData}

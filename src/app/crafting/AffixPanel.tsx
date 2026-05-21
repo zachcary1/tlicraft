@@ -562,7 +562,7 @@ export default function AffixPanel({
                       const isTakenByOther = taken.has(affix.id);
                       const isUnavailable = isTakenByOther || groupDisabled;
                       const tooltipText = isTakenByOther ? "Already selected in another slot" : groupDisabled ? "Limit reached for this tier" : null;
-                      const displayLabel = buildAffixLabel(affix);
+                      const displayLabel = buildAffixLabel(affix, isSelected ? currentValue?.tier : undefined);
                       const tier = getEffectiveTier(sourceGroup, affix);
                       return (
                         <button
@@ -612,7 +612,7 @@ export default function AffixPanel({
                       const isTakenByOther = taken.has(affix.id);
                       const isUnavailable = isTakenByOther || groupDisabled;
                       const tooltipText = isTakenByOther ? "Already selected in another slot" : groupDisabled ? "Limit reached for this tier" : null;
-                      const displayLabel = buildAffixLabel(affix);
+                      const displayLabel = buildAffixLabel(affix, isSelected ? currentValue?.tier : undefined);
                       const tier = getEffectiveTier(sourceGroup, affix);
                       return (
                         <TooltipRow key={`${sourceGroup}-${affix.id}`} rowKey={`${sourceGroup}-${affix.id}`} tooltip={isUnavailable ? (tooltipText ?? null) : null}>
@@ -660,7 +660,7 @@ export default function AffixPanel({
               : groupDisabled
               ? "Limit reached for this tier"
               : null;
-            const displayLabel = buildAffixLabel(affix);
+            const displayLabel = buildAffixLabel(affix, isSelected ? currentValue?.tier : undefined);
             const showTier = activeSlot === "base";
             const tier = showTier ? getEffectiveTier(sourceGroup, affix) : "";
             const sequenceDotColor = activeSlot === "sequence"
