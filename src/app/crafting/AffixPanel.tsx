@@ -269,6 +269,7 @@ type Props = {
   ultimateCount: number;
   t0PlusCount: number;
   takenAffixIds: Partial<Record<ActiveSlotId, Set<string>>>;
+  hidePrompt?: boolean;
 };
 
 // ─── AffixPanel ───────────────────────────────────────────────────────────────
@@ -283,6 +284,7 @@ export default function AffixPanel({
   ultimateCount,
   t0PlusCount,
   takenAffixIds,
+  hidePrompt = false,
 }: Props) {
   const [activeGroupIdx, setActiveGroupIdx] = useState(0);
   const slotsRef = useRef(slots);
@@ -308,9 +310,11 @@ export default function AffixPanel({
           background: "linear-gradient(to bottom, #1e1d1d 0%, #2b2929 10%, #2b2929 90%, #1e1d1d 100%)",
         }}
       >
-        <p className="text-center text-[20px] font-semibold whitespace-nowrap" style={{ color: "#d92020" }}>
-          Select the affix location for crafting
-        </p>
+        {!hidePrompt && (
+          <p className="text-center text-[20px] font-semibold whitespace-nowrap" style={{ color: "#d92020" }}>
+            Select the affix location for crafting
+          </p>
+        )}
       </div>
     );
   }
