@@ -661,12 +661,16 @@ export default function AffixPanel({
               ? "Limit reached for this tier"
               : null;
             const displayLabel = buildAffixLabel(affix, isSelected ? currentValue?.tier : undefined);
-            const showTier = activeSlot === "base";
-            const tier = showTier ? getEffectiveTier(sourceGroup, affix) : "";
+            const sortedTiers = sortTiers(affix.tiers);
+            const showTier = activeSlot === "base" || isPrefixSuffix;
+            const tier = activeSlot === "base"
+              ? getEffectiveTier(sourceGroup, affix)
+              : isPrefixSuffix
+              ? (isSelected ? currentValue!.tier : (sortedTiers.find((t) => t.tier === "T1") ?? sortedTiers[sortedTiers.length - 1])?.tier ?? "")
+              : "";
             const sequenceDotColor = activeSlot === "sequence"
               ? sourceGroup === "INTERMEDIATE_SEQUENCES" ? "#fd7c1c" : "#fd0000"
               : null;
-            const sortedTiers = sortTiers(affix.tiers);
             const showTierPicker = isSelected && sortedTiers.length > 1;
             return (
               <TooltipRow key={`${sourceGroup}-${affix.id}`} rowKey={`${sourceGroup}-${affix.id}`} tooltip={isUnavailable ? (tooltipText ?? null) : null}>
@@ -700,7 +704,7 @@ export default function AffixPanel({
                     boxShadow: "0 3px 6px rgba(0,0,0,0.4)",
                   }}
                 >
-                  {showTier && tier ? (
+                  {showTier && tier && !showTierPicker ? (
                     <span className="flex items-center gap-2">
                       <TierBadge tier={tier} />
                       <span>{displayLabel}</span>

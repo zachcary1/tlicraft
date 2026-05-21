@@ -264,7 +264,7 @@ function SlotDropdown({ slotId, pools, loadout, triggerRef, onSelect, onClose }:
       {locked ? (
         <p className="px-3 py-2 text-xs text-zinc-500 italic">Off-hand locked (two-handed weapon equipped)</p>
       ) : available.length === 0 ? (
-        <p className="px-3 py-2 text-xs text-zinc-500 italic">No items available</p>
+        <p className="px-3 py-2 text-xs text-zinc-500 italic">{pools.length === 0 ? "Pools loading…" : "No items available"}</p>
       ) : (
         <>
           <button className="w-full text-left px-3 py-1.5 text-xs text-zinc-400 hover:bg-[#2a2929] cursor-pointer" onClick={() => onSelect("")}>
@@ -559,25 +559,23 @@ export default function GearPanel({ pools, loadout, activeSlotId, focusedSlotId,
         </div>
       </div>
 
-      {/* Total costs footer */}
-      {(totalCraft !== null || totalWithCorrosion !== null) && (
-        <div className="mt-6 pt-5 border-t border-[#1c1c1c] flex justify-between items-start px-2">
-          <div className="flex flex-col items-start gap-0.5">
-            <span className="text-[10px] text-zinc-500 uppercase tracking-widest">Total Gear Cost</span>
-            <span className={`text-[22px] font-bold tracking-[-0.02em] flex items-center gap-1.5 ${totalCraft !== null && Number.isNaN(totalCraft) ? "text-red-400" : "text-[#e0ddd8]"}`}>
-              {totalCraft === null ? "—" : Number.isNaN(totalCraft) ? "NaN" : Math.round(totalCraft).toLocaleString("en-US")}
-              {totalCraft !== null && !Number.isNaN(totalCraft) && <FEIcon className="w-5 h-5" />}
-            </span>
-          </div>
-          <div className="flex flex-col items-end gap-0.5">
-            <span className="text-[10px] text-zinc-500 uppercase tracking-widest">Total Gear Cost with Corrosion</span>
-            <span className={`text-[22px] font-bold tracking-[-0.02em] flex items-center gap-1.5 ${totalWithCorrosion !== null && Number.isNaN(totalWithCorrosion) ? "text-red-400" : "text-[#e0ddd8]"}`}>
-              {totalWithCorrosion === null ? "—" : Number.isNaN(totalWithCorrosion) ? "NaN" : Math.round(totalWithCorrosion).toLocaleString("en-US")}
-              {totalWithCorrosion !== null && !Number.isNaN(totalWithCorrosion) && <FEIcon className="w-5 h-5" />}
-            </span>
-          </div>
+      {/* Total costs footer — always rendered to keep panel height fixed */}
+      <div className="mt-6 pt-5 border-t border-[#1c1c1c] flex justify-between items-start px-2">
+        <div className="flex flex-col items-start gap-0.5">
+          <span className="text-[10px] text-zinc-500 uppercase tracking-widest">Total Gear Cost</span>
+          <span className={`text-[22px] font-bold tracking-[-0.02em] flex items-center gap-1.5 ${totalCraft !== null && Number.isNaN(totalCraft) ? "text-red-400" : "text-[#e0ddd8]"}`}>
+            {totalCraft === null ? "—" : Number.isNaN(totalCraft) ? "NaN" : Math.round(totalCraft).toLocaleString("en-US")}
+            {totalCraft !== null && !Number.isNaN(totalCraft) && <FEIcon className="w-5 h-5" />}
+          </span>
         </div>
-      )}
+        <div className="flex flex-col items-end gap-0.5">
+          <span className="text-[10px] text-zinc-500 uppercase tracking-widest">Total Gear Cost with Corrosion</span>
+          <span className={`text-[22px] font-bold tracking-[-0.02em] flex items-center gap-1.5 ${totalWithCorrosion !== null && Number.isNaN(totalWithCorrosion) ? "text-red-400" : "text-[#e0ddd8]"}`}>
+            {totalWithCorrosion === null ? "—" : Number.isNaN(totalWithCorrosion) ? "NaN" : Math.round(totalWithCorrosion).toLocaleString("en-US")}
+            {totalWithCorrosion !== null && !Number.isNaN(totalWithCorrosion) && <FEIcon className="w-5 h-5" />}
+          </span>
+        </div>
+      </div>
     </div>
   );
 }

@@ -189,7 +189,7 @@ export function getOptions(pool: CraftedPool, group: AffixGroupType): AffixOptio
 
 export function nightmareLabel(affix: PoolAffix): string {
   const tier = affix.tiers[0];
-  if (!tier || tier.stats.length === 0) return affix.name;
+  if (!tier || tier.stats.length === 0) return `-1 ${affix.name}`;
   const parts = tier.stats.map((s) => {
     const range =
       s.minValue === s.maxValue

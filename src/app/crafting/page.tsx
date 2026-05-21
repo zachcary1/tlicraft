@@ -222,31 +222,35 @@ export default function CraftingPage() {
   return (
     <div
       className="min-h-screen text-[#1a2028]"
-      style={{ backgroundImage: "url('/background/background.jpg')", backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}
+      style={{
+        backgroundImage: [
+          "linear-gradient(to bottom, rgba(0,0,0,0.28) 0%, transparent 18%, transparent 82%, rgba(0,0,0,0.28) 100%)",
+          "url('/background/background.jpg')",
+        ].join(", "),
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
     >
       <div className="flex items-start gap-[25px] min-h-screen px-[15%]">
         <h1 className="sr-only">Crafting Calculator</h1>
 
         {/* Gear panel */}
-        <div className="pr-12 pt-[25px]">
-          {loadingPools ? (
-            <p className="text-zinc-500 text-sm">Loading pools...</p>
-          ) : (
-            <GearPanel
-              pools={pools}
-              loadout={loadout}
-              activeSlotId={activeSlotId}
-              focusedSlotId={focusedSlotId}
-              psCounts={psCounts}
-              costTotals={costTotals}
-              dreamCount={dreamCount}
-              dreamFlags={dreamFlags}
-              onSlotOpen={(id) => setActiveSlotId((prev) => (prev === id ? null : id))}
-              onSlotFocus={(id) => setFocusedSlotId(id)}
-              onSlotClose={() => setActiveSlotId(null)}
-              onSelect={handleSlotSelect}
-            />
-          )}
+        <div className="pr-12 pt-[35px]">
+          <GearPanel
+            pools={pools}
+            loadout={loadout}
+            activeSlotId={activeSlotId}
+            focusedSlotId={focusedSlotId}
+            psCounts={psCounts}
+            costTotals={costTotals}
+            dreamCount={dreamCount}
+            dreamFlags={dreamFlags}
+            onSlotOpen={(id) => setActiveSlotId((prev) => (prev === id ? null : id))}
+            onSlotFocus={(id) => setFocusedSlotId(id)}
+            onSlotClose={() => setActiveSlotId(null)}
+            onSelect={handleSlotSelect}
+          />
         </div>
 
         {/* Item card */}
