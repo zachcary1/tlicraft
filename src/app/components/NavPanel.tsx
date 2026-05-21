@@ -33,13 +33,20 @@ const NAV_ITEMS: NavItem[] = [
     ),
   },
   {
-    href: "/divinity-slates",
-    label: "Divinity Slates",
+    href: "/skills",
+    label: "Skills",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2L2 7l10 5 10-5-10-5z" />
-        <path d="M2 17l10 5 10-5" />
-        <path d="M2 12l10 5 10-5" />
+        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+      </svg>
+    ),
+  },
+  {
+    href: "/pactspirits",
+    label: "Pactspirits",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M9 10h.01M15 10h.01M12 2a8 8 0 0 0-8 8v10l3-3 3 3 3-3 3 3 3-3V10a8 8 0 0 0-8-8z" />
       </svg>
     ),
   },
@@ -49,15 +56,6 @@ const NAV_ITEMS: NavItem[] = [
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-      </svg>
-    ),
-  },
-  {
-    href: "/skills",
-    label: "Skills",
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
       </svg>
     ),
   },
@@ -72,11 +70,13 @@ const NAV_ITEMS: NavItem[] = [
     ),
   },
   {
-    href: "/pactspirits",
-    label: "Pactspirits",
+    href: "/divinity-slates",
+    label: "Divinity Slates",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M9 10h.01M15 10h.01M12 2a8 8 0 0 0-8 8v10l3-3 3 3 3-3 3 3 3-3V10a8 8 0 0 0-8-8z" />
+        <path d="M12 2L2 7l10 5 10-5-10-5z" />
+        <path d="M2 17l10 5 10-5" />
+        <path d="M2 12l10 5 10-5" />
       </svg>
     ),
   },
@@ -88,7 +88,7 @@ export default function NavPanel() {
 
   return (
     <nav
-      className="fixed left-0 top-0 h-screen z-40 flex flex-col py-6 gap-2 overflow-hidden transition-all duration-200"
+      className="fixed left-0 top-0 h-screen z-40 flex flex-col py-6 gap-2 transition-all duration-200"
       style={{
         width: expanded ? "180px" : "64px",
         background: "linear-gradient(to bottom, #141414, #0a0a0a)",
@@ -100,7 +100,6 @@ export default function NavPanel() {
         <button
           onClick={() => setExpanded((e) => !e)}
           className="flex-1 w-full flex items-center justify-end pr-4 text-[#52525b] hover:text-[#e0ddd8] hover:bg-[#1c1c1c] transition-all cursor-pointer"
-          title={expanded ? "Collapse" : "Expand"}
         >
           {expanded ? (
             <>
@@ -127,14 +126,15 @@ export default function NavPanel() {
           <Link
             key={item.href}
             href={item.href}
-            title={!expanded ? item.label : undefined}
-            className="relative group flex items-center gap-3 h-12 transition-all duration-200 shrink-0"
+            className={`relative group flex items-center gap-3 h-12 transition-all duration-200 shrink-0 ${
+              isActive
+                ? "bg-[#1c1c1c] text-[#e0ddd8]"
+                : "text-[#52525b] hover:bg-[#161616] hover:text-[#a1a1aa]"
+            }`}
             style={{
               width: expanded ? "calc(100% - 16px)" : "48px",
-              marginLeft: expanded ? "8px" : "8px",
+              marginLeft: "8px",
               borderRadius: "0 10px 0 10px",
-              color: isActive ? "#e0ddd8" : "#52525b",
-              backgroundColor: isActive ? "#1c1c1c" : "transparent",
               paddingLeft: "13px",
             }}
           >
@@ -147,11 +147,11 @@ export default function NavPanel() {
             {/* Tooltip when collapsed */}
             {!expanded && (
               <span
-                className="pointer-events-none absolute left-full ml-3 px-2.5 py-1 text-xs text-[#e0ddd8] whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity"
+                className="pointer-events-none absolute left-full ml-3 px-3 py-1 text-xs whitespace-nowrap rounded opacity-0 group-hover:opacity-100 transition-opacity duration-150"
                 style={{
-                  background: "#1c1c1c",
-                  border: "1px solid #2a2a2a",
-                  borderRadius: "0 6px 0 6px",
+                  background: "#141414",
+                  border: "1px solid #3a3a3a",
+                  color: "#a1a1aa",
                 }}
               >
                 {item.label}
