@@ -36,7 +36,7 @@ type PoolSummary = {
 
 // ─── Slot definitions ─────────────────────────────────────────────────────────
 
-const SLOT_LABELS: Record<GearSlotId, string> = {
+export const SLOT_LABELS: Record<GearSlotId, string> = {
   helmet: "Helmet", chest: "Chest", gloves: "Gloves", boots: "Boots",
   necklace: "Necklace", belt: "Belt", ring_l: "Ring", ring_r: "Ring",
   main_hand: "Main Hand", off_hand: "Off Hand",
@@ -55,7 +55,7 @@ const SLOT_CATEGORIES: Record<GearSlotId, string[]> = {
   off_hand:  ["one_hand_weapon", "shield"],
 };
 
-const LAYOUT: [GearSlotId, GearSlotId][] = [
+export const LAYOUT: [GearSlotId, GearSlotId][] = [
   ["helmet",    "chest"],
   ["necklace",  "gloves"],
   ["belt",      "boots"],
@@ -67,7 +67,7 @@ const LAYOUT: [GearSlotId, GearSlotId][] = [
 
 const C = "#52525b"; // single gray color for all placeholder icons
 
-const SLOT_ICONS: Record<GearSlotId, React.ReactNode> = {
+export const SLOT_ICONS: Record<GearSlotId, React.ReactNode> = {
   helmet: (
     <svg width="60" height="60" viewBox="0 0 24 24" fill={C}>
       {/* dome */}
@@ -106,7 +106,10 @@ const SLOT_ICONS: Record<GearSlotId, React.ReactNode> = {
   ),
   boots: (
     <svg width="60" height="60" viewBox="0 0 24 24" fill={C}>
-      <path d="M9 2L9 15L5 15Q4 15 4 16L4 21Q4 22 5 22L19 22Q20 22 20 21L20 18Q20 17 19 17L12 17L12 2Z" />
+      {/* shaft */}
+      <rect x="6" y="4" width="7" height="10" rx="1" />
+      {/* foot */}
+      <path d="M6 12L20 12Q24 12 24 16L24 21L6 21Z" />
     </svg>
   ),
   necklace: (
@@ -149,12 +152,16 @@ const SLOT_ICONS: Record<GearSlotId, React.ReactNode> = {
   ),
   main_hand: (
     <svg width="60" height="60" viewBox="0 0 24 24" fill={C}>
-      {/* blade */}
-      <path d="M12 2L13.5 17L12 20L10.5 17Z" />
+      {/* blade tip */}
+      <path d="M12 1L14 5L10 5Z" />
+      {/* blade body */}
+      <rect x="10" y="5" width="4" height="13" />
       {/* crossguard */}
-      <rect x="7" y="16.5" width="10" height="2.5" rx="1.25" />
+      <rect x="6.5" y="18" width="11" height="2" rx="1" />
       {/* grip */}
-      <rect x="11" y="19" width="2" height="4" rx="1" />
+      <rect x="11" y="20" width="2" height="3.5" rx="1" />
+      {/* pommel */}
+      <circle cx="12" cy="24" r="1.5" />
     </svg>
   ),
   off_hand: (
