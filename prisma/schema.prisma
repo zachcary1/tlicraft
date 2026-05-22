@@ -139,3 +139,112 @@ model CraftedAffixTierStat {
   @@index([tierId])
   @@index([statId])
 }
+
+model Skill {
+  id     String   @id
+  name   String
+  type   String
+  tags   String[]
+  effect String
+
+  @@index([type])
+}
+
+model Blend {
+  id     String @id
+  type   String
+  name   String
+  effect String
+
+  @@index([type])
+}
+
+model Destiny {
+  id     String @id
+  type   String
+  name   String
+  effect String
+
+  @@index([type])
+}
+
+model EtherealPrism {
+  id     String @id
+  type   String
+  rarity String
+  effect String
+
+  @@index([type])
+}
+
+model GearAffix {
+  id        String @id
+  category  String
+  item      String
+  itemGroup String
+  type      String
+  pool      String
+  tier      String
+  effect    String
+
+  @@index([category])
+  @@index([item])
+  @@index([type])
+}
+
+model HeroMemory {
+  id     String @id
+  type   String
+  item   String
+  effect String
+
+  @@index([type])
+  @@index([item])
+}
+
+model HeroTrait {
+  id        String @id
+  heroGroup String
+  hero      String
+  name      String
+  level     Int
+  effect    String
+
+  @@index([heroGroup])
+  @@index([hero])
+}
+
+model Legendary {
+  id       String @id
+  category String
+  item     String
+  name     String
+  affixes  String
+
+  @@index([category])
+  @@index([item])
+}
+
+model PactSpirit {
+  id     String @id
+  type   String
+  rarity String
+  name   String
+  effect String
+
+  @@index([type])
+  @@index([rarity])
+}
+
+model Talent {
+  id     String @id
+  god    String
+  tree   String
+  type   String
+  name   String
+  effect String
+
+  @@index([god])
+  @@index([tree])
+  @@index([type])
+}

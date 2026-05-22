@@ -119,6 +119,7 @@ export default function SkillsPage() {
           </span>
         </div>
 
+
       </div>
 
     </div>

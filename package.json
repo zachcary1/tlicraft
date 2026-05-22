@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "import:crafted-pools": "tsx scripts/import-crafted-pools.ts"
+    "import:crafted-pools": "tsx scripts/import-crafted-pools.ts",
+    "import:skills": "tsx scripts/import-skills.ts",
+    "import:torchcodex": "tsx scripts/import-torchcodex.ts"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
