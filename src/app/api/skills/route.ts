@@ -6,9 +6,11 @@ export async function GET(req: NextRequest) {
   const type = searchParams.get("type");
   const tag = searchParams.get("tag");
 
+  const types = searchParams.get("types")?.split(",").filter(Boolean);
+
   const skills = await prisma.skill.findMany({
     where: {
-      ...(type ? { type } : {}),
+      ...(types?.length ? { type: { in: types } } : type ? { type } : {}),
       ...(tag ? { tags: { has: tag } } : {}),
     },
     orderBy: { name: "asc" },
