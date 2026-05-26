@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface Skill {
   name: string;
@@ -99,6 +99,12 @@ function getPreciseSortKey(name: string): [string, number] {
   if (name.startsWith("Precise: ")) return [name.slice(9), 1];
   if (name.startsWith("Precise "))  return [name.slice(8), 1];
   return [name, 0];
+}
+
+function getSupportBaseName(name: string): string {
+  if (name.startsWith("Precise: ")) return name.slice(9);
+  if (name.startsWith("Precise "))  return name.slice(8);
+  return name;
 }
 
 function extractSupportConstraint(effect: string): string {
@@ -256,13 +262,20 @@ function asymmetricPill(x: number, y: number, w: number, h: number, r: number): 
 
 // ─── Left panel hex cell ──────────────────────────────────────────────────────
 
-function HexCell({ onClick, selected, variant = "active" }: {
+function HexCell({ onClick, selected, variant = "active", skillName }: {
   onClick?: () => void;
   selected?: boolean;
   variant?: "active" | "passive";
+  skillName?: string | null;
 }) {
   const [hovered, setHovered] = useState(false);
+  const [imgError, setImgError] = useState(false);
   const v = HEX_CELL_VARIANTS[variant];
+
+  useEffect(() => { setImgError(false); }, [skillName]);
+
+  const iconPath = skillName ? `/icons/skills/${variant}/${skillName.replace(": ", " - ")}.webp` : null;
+  const clipId = skillName ? `hex-cell-${skillName.replace(/[^a-zA-Z0-9]/g, "-")}` : null;
 
   return (
     <svg
@@ -282,27 +295,46 @@ function HexCell({ onClick, selected, variant = "active" }: {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
+      {clipId && (
+        <defs>
+          <clipPath id={clipId}>
+            <polygon points={hexCellPoints} />
+          </clipPath>
+        </defs>
+      )}
       <polygon
         points={hexCellPoints}
         fill={selected ? v.selected : hovered ? v.hover : v.base}
         stroke={selected ? v.strokeSelected : hovered ? v.strokeHover : v.stroke}
         strokeWidth="1"
       />
-      <text
-        x={hexW / 2} y={hexH / 2}
-        textAnchor="middle" dominantBaseline="middle"
-        fontSize="32" fill={v.plus}
-        style={{ pointerEvents: "none", userSelect: "none" }}
-      >
-        +
-      </text>
+      {iconPath && clipId && !imgError ? (
+        <image
+          href={iconPath}
+          x={0} y={0}
+          width={hexW} height={hexH}
+          clipPath={`url(#${clipId})`}
+          preserveAspectRatio="xMidYMid slice"
+          onError={() => setImgError(true)}
+          style={{ pointerEvents: "none" }}
+        />
+      ) : (
+        <text
+          x={hexW / 2} y={hexH / 2}
+          textAnchor="middle" dominantBaseline="middle"
+          fontSize="32" fill={v.plus}
+          style={{ pointerEvents: "none", userSelect: "none" }}
+        >
+          +
+        </text>
+      )}
     </svg>
   );
 }
 
 // ─── Center panel hex slot ────────────────────────────────────────────────────
 
-function SvgHexSlot({ x, y, variant, isSkillSlot = false, label, subLabel, energyCost, selected = false, hasSkill = false, skillName, disabled = false, onClick }: {
+function SvgHexSlot({ x, y, variant, isSkillSlot = false, label, subLabel, energyCost, selected = false, hasSkill = false, skillName, iconPath, disabled = false, onClick }: {
   x: number;
   y: number;
   variant: "active" | "passive";
@@ -313,17 +345,28 @@ function SvgHexSlot({ x, y, variant, isSkillSlot = false, label, subLabel, energ
   selected?: boolean;
   hasSkill?: boolean;
   skillName?: string | null;
+  iconPath?: string;
   disabled?: boolean;
   onClick?: () => void;
 }) {
   const [hovered, setHovered] = useState(false);
+  const [imgError, setImgError] = useState(false);
   const v = HEX_CELL_VARIANTS[variant];
+
+  useEffect(() => { setImgError(false); }, [iconPath]);
 
   const energyLabel = energyCost !== undefined ? `${energyCost} energy` : null;
   const pillH = 24;
   const pillR = 10;
   const pillW = energyLabel ? energyLabel.length * 6.5 + 22 : 0;
   const pillY = y - CENTER_HEX_R - 16;
+
+  const showIcon = hasSkill && !!iconPath && !imgError;
+  const clipId = `svg-slot-${Math.round(x)}-${Math.round(y)}`;
+  const imgX = x - CENTER_HEX_R * Math.sqrt(3) / 2;
+  const imgY = y - CENTER_HEX_R;
+  const imgW = CENTER_HEX_R * Math.sqrt(3);
+  const imgH = CENTER_HEX_R * 2;
 
   return (
     <g
@@ -332,17 +375,38 @@ function SvgHexSlot({ x, y, variant, isSkillSlot = false, label, subLabel, energ
       onMouseLeave={disabled ? undefined : () => setHovered(false)}
       style={{
         cursor: disabled ? "default" : "pointer",
-        opacity: disabled ? 0.35 : 1,
         outline: "none",
-        filter: selected
-          ? "drop-shadow(0 0 6px rgba(255,255,255,0.6)) drop-shadow(0 0 14px rgba(255,255,255,0.25)) drop-shadow(0 3px 6px rgba(0,0,0,0.6))"
-          : "drop-shadow(0 3px 6px rgba(0,0,0,0.6))",
-        transition: "filter 0.15s ease",
+        filter: "drop-shadow(0 3px 6px rgba(0,0,0,0.6))",
       }}
     >
+      {showIcon && (
+        <defs>
+          <clipPath id={clipId}>
+            <polygon points={centerHexCellPointsAt(x, y)} />
+          </clipPath>
+        </defs>
+      )}
+      {/* Background fill */}
       <polygon
         points={centerHexCellPointsAt(x, y)}
-        fill={hovered ? v.hover : v.base}
+        fill={disabled ? "#222222" : hovered ? v.hover : v.base}
+        stroke="none"
+      />
+      {/* Icon image clipped to hex */}
+      {showIcon && (
+        <image
+          href={iconPath}
+          x={imgX} y={imgY} width={imgW} height={imgH}
+          clipPath={`url(#${clipId})`}
+          preserveAspectRatio="xMidYMid slice"
+          onError={() => setImgError(true)}
+          style={{ pointerEvents: "none" }}
+        />
+      )}
+      {/* Stroke ring on top of image */}
+      <polygon
+        points={centerHexCellPointsAt(x, y)}
+        fill="none"
         stroke={hasSkill ? "white" : "none"}
         strokeWidth={hasSkill ? "2" : "0"}
       />
@@ -355,29 +419,29 @@ function SvgHexSlot({ x, y, variant, isSkillSlot = false, label, subLabel, energ
           <text
             x={x} y={pillY}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize="12" fill={hasSkill ? "#ffffff" : "#5a5a5a"} letterSpacing="0.04em"
+            fontSize="12" fill={disabled ? "#383838" : hasSkill ? "#ffffff" : "#5a5a5a"} letterSpacing="0.04em"
           >
             {energyLabel}
           </text>
         </g>
       )}
-      {label && (
+      {label && !showIcon && (
         <text
           x={x} y={y - (subLabel ? 7 : 0)}
           textAnchor="middle" dominantBaseline="middle"
           fontSize={isSkillSlot ? "9" : "13"}
-          fill={isSkillSlot ? "#52525b" : "#6b6b6b"}
+          fill={disabled ? "#383838" : isSkillSlot ? "#52525b" : "#6b6b6b"}
           letterSpacing={isSkillSlot ? "0.08em" : undefined}
           style={{ pointerEvents: "none", userSelect: "none" }}
         >
           {label}
         </text>
       )}
-      {subLabel && (
+      {subLabel && !showIcon && (
         <text
           x={x} y={y + 9}
           textAnchor="middle" dominantBaseline="middle"
-          fontSize="7.5" fill="#484848" letterSpacing="0.06em"
+          fontSize="7.5" fill={disabled ? "#303030" : "#484848"} letterSpacing="0.06em"
           style={{ pointerEvents: "none", userSelect: "none" }}
         >
           {subLabel}
@@ -406,6 +470,21 @@ function SvgHexSlot({ x, y, variant, isSkillSlot = false, label, subLabel, energ
   );
 }
 
+// ─── Icon path helper ─────────────────────────────────────────────────────────
+
+function getSkillIconPath(skill: Skill, isSkillSlot: boolean, layoutMode: LayoutMode): string | undefined {
+  if (isSkillSlot) {
+    if (layoutMode === "active")  return `/icons/skills/active/${skill.name}.webp`;
+    if (layoutMode === "passive") return `/icons/skills/passive/${skill.name.replace(": ", " - ")}.webp`;
+    return undefined;
+  }
+  if (skill.type === "Support")                return `/icons/skills/support/${skill.name.replace(": ", " - ")}.webp`;
+  if (skill.type === "Support (Magnificent)")  return `/icons/skills/magnificent/${skill.name.replace(": ", " - ")}.webp`;
+  if (skill.type === "Support (Noble)")        return `/icons/skills/noble/${skill.name.replace(": ", " - ")}.webp`;
+  if (skill.type === "Activation Medium")      return `/icons/skills/activation_medium/${skill.name.replace("Activation Medium: ", "")}.webp`;
+  return undefined;
+}
+
 // ─── Skill card ───────────────────────────────────────────────────────────────
 
 const CARD_HEX_R   = 34;
@@ -416,49 +495,116 @@ const CARD_HEX_PTS = Array.from({ length: 6 }, (_, i) => {
   return `${CARD_HEX_W / 2 + CARD_HEX_R * Math.cos(a)},${CARD_HEX_H / 2 + CARD_HEX_R * Math.sin(a)}`;
 }).join(" ");
 
-function SkillCard({ name, selected, onClick }: { name: string; selected: boolean; onClick: () => void }) {
+function SkillCard({ name, selected, onClick, iconPath, blockedReason }: {
+  name: string;
+  selected: boolean;
+  onClick: () => void;
+  iconPath?: string;
+  blockedReason?: string;
+}) {
   const [hovered, setHovered] = useState(false);
+  const [imgError, setImgError] = useState(false);
+  const [tooltipCoords, setTooltipCoords] = useState<{ x: number; y: number } | null>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => { setImgError(false); }, [iconPath]);
+
+  const isBlocked = !!blockedReason;
+  const clipId = `skill-card-${name.replace(/[^a-zA-Z0-9]/g, "-")}`;
+
+  function handleMouseEnter() {
+    setHovered(true);
+    if (isBlocked && cardRef.current) {
+      const rect = cardRef.current.getBoundingClientRect();
+      setTooltipCoords({ x: rect.left + rect.width / 2, y: rect.top - 8 });
+    }
+  }
+
+  function handleMouseLeave() {
+    setHovered(false);
+    setTooltipCoords(null);
+  }
 
   return (
-    <div
-      onClick={onClick}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      style={{
-        width: "100%",
-        height: 172,
-        background: selected ? "#1e2d3e" : hovered ? "#1c1c1c" : "#161616",
-        border: `1px solid ${selected ? "#3a5878" : "#2a2a2a"}`,
-        borderRadius: "0 12px 0 12px",
-        cursor: "pointer",
-        transition: "background 0.1s, border-color 0.1s",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: 10,
-        padding: "10px 6px",
-        boxSizing: "border-box",
-      }}
-    >
-      <svg width={CARD_HEX_W} height={CARD_HEX_H} overflow="visible" style={{ flexShrink: 0 }}>
-        <polygon points={CARD_HEX_PTS} fill="#182332" stroke="#2a4060" strokeWidth="1" />
-      </svg>
-      <div style={{
-        color: "#e4e4e7",
-        fontSize: 14,
-        fontWeight: 600,
-        textAlign: "center",
-        lineHeight: 1.3,
-        width: "100%",
-        overflow: "hidden",
-        display: "-webkit-box",
-        WebkitLineClamp: 3,
-        WebkitBoxOrient: "vertical",
-      }}>
-        {name}
+    <>
+      <div
+        ref={cardRef}
+        onClick={isBlocked ? undefined : onClick}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        style={{
+          width: "100%",
+          height: 172,
+          background: selected ? "#1e2d3e" : hovered && !isBlocked ? "#1c1c1c" : "#161616",
+          border: `1px solid ${selected ? "#3a5878" : "#2a2a2a"}`,
+          borderRadius: "0 12px 0 12px",
+          cursor: isBlocked ? "not-allowed" : "pointer",
+          transition: "background 0.1s, border-color 0.1s",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: 10,
+          padding: "10px 6px",
+          boxSizing: "border-box",
+          opacity: isBlocked ? 0.35 : 1,
+        }}
+      >
+        <svg width={CARD_HEX_W} height={CARD_HEX_H} overflow="visible" style={{ flexShrink: 0 }}>
+          <defs>
+            <clipPath id={clipId}>
+              <polygon points={CARD_HEX_PTS} />
+            </clipPath>
+          </defs>
+          <polygon points={CARD_HEX_PTS} fill="#182332" stroke="#2a4060" strokeWidth="1" />
+          {iconPath && !imgError && (
+            <image
+              href={iconPath}
+              x={0} y={0}
+              width={CARD_HEX_W} height={CARD_HEX_H}
+              clipPath={`url(#${clipId})`}
+              preserveAspectRatio="xMidYMid slice"
+              onError={() => setImgError(true)}
+              style={{ pointerEvents: "none" }}
+            />
+          )}
+        </svg>
+        <div style={{
+          color: "#e4e4e7",
+          fontSize: 14,
+          fontWeight: 600,
+          textAlign: "center",
+          lineHeight: 1.3,
+          width: "100%",
+          overflow: "hidden",
+          display: "-webkit-box",
+          WebkitLineClamp: 3,
+          WebkitBoxOrient: "vertical",
+        }}>
+          {name}
+        </div>
       </div>
-    </div>
+      {tooltipCoords && blockedReason && (
+        <div style={{
+          position: "fixed",
+          left: tooltipCoords.x,
+          top: tooltipCoords.y,
+          transform: "translateX(-50%) translateY(-100%)",
+          background: "#111111",
+          border: "1px solid #555555",
+          borderRadius: 4,
+          padding: "5px 10px",
+          color: "#e4e4e7",
+          fontSize: 11,
+          whiteSpace: "nowrap",
+          pointerEvents: "none",
+          zIndex: 9999,
+          letterSpacing: "0.03em",
+        }}>
+          {blockedReason}
+        </div>
+      )}
+    </>
   );
 }
 
@@ -617,26 +763,62 @@ export default function SkillsPage() {
       <div className="absolute inset-0 flex items-center justify-center">
         <svg width={svgW} height={svgH} overflow="visible">
 
+          {/* Glow pre-pass — rendered first so it sits beneath all slot content */}
+          {selectedCenterSlot && layoutMode && (() => {
+            const slotId = selectedCenterSlot;
+            let gx: number, gy: number;
+            if (slotId === "skill") {
+              gx = cx; gy = cy;
+            } else {
+              const slotNum = parseInt(slotId.replace("support-", ""));
+              const outerSlots = layoutMode === "active" ? activeOuterSlots : passiveOuterSlots;
+              const found = outerSlots.find((s) => s.slot === slotNum);
+              if (!found) return null;
+              gx = found.x; gy = found.y;
+            }
+            return (
+              <polygon
+                key="glow"
+                points={centerHexCellPointsAt(gx, gy)}
+                fill="white"
+                stroke="none"
+                style={{
+                  filter: "drop-shadow(0 0 6px rgba(255,255,255,1)) drop-shadow(0 0 18px rgba(255,255,255,0.85)) drop-shadow(0 0 38px rgba(255,255,255,0.5)) drop-shadow(0 0 70px rgba(255,255,255,0.2))",
+                  pointerEvents: "none",
+                }}
+              />
+            );
+          })()}
+
           {layoutMode === "active" && (
             <>
               <polygon points={hexPoints}      fill="none" stroke="#3a3a3a" strokeWidth="1" style={{ pointerEvents: "none" }} />
               <polygon points={hexPointsInner} fill="none" stroke="#3a3a3a" strokeWidth="1" style={{ pointerEvents: "none" }} />
-              <SvgHexSlot x={cx} y={cy} variant="active" isSkillSlot label="SKILL"
-                skillName={selectedActive !== null ? activeSkillSelections[selectedActive] : null}
-                hasSkill={selectedActive !== null && activeSkillSelections[selectedActive] !== null}
-                selected={selectedCenterSlot === "skill"} onClick={() => selectCenterSlot("skill")} />
+              {(() => {
+                const skillName = selectedActive !== null ? activeSkillSelections[selectedActive] : null;
+                const iconPath = skillName ? `/icons/skills/active/${skillName}.webp` : undefined;
+                return (
+                  <SvgHexSlot x={cx} y={cy} variant="active" isSkillSlot label="SKILL"
+                    skillName={skillName} iconPath={iconPath}
+                    hasSkill={skillName !== null}
+                    selected={selectedCenterSlot === "skill"} onClick={() => selectCenterSlot("skill")} />
+                );
+              })()}
               {activeOuterSlots.map((slot) => {
                 const noSkill = selectedActive === null || activeSkillSelections[selectedActive] === null;
                 const supportKey = `active-${selectedActive ?? 0}-${slot.slot}`;
                 const assignedSupport = supportSelections[supportKey];
                 // undefined → don't render label at all (disabled); null → "Select Skill"; string → skill name
                 const slotSkillName = noSkill ? undefined : (assignedSupport ?? null);
+                const supportSkill = assignedSupport ? allSupportSkills.find((s) => s.name === assignedSupport) : undefined;
+                const supportIconPath = supportSkill ? getSkillIconPath(supportSkill, false, "active") : undefined;
                 return (
                   <SvgHexSlot key={slot.slot} x={slot.x} y={slot.y} variant="active"
                     label={String(slot.slot)} subLabel={slot.specialLabel} energyCost={slot.energyCost}
                     selected={selectedCenterSlot === `support-${slot.slot}`}
                     disabled={noSkill}
                     skillName={slotSkillName}
+                    iconPath={supportIconPath}
                     hasSkill={!noSkill && !!assignedSupport}
                     onClick={() => selectCenterSlot(`support-${slot.slot}`)} />
                 );
@@ -649,21 +831,30 @@ export default function SkillsPage() {
               <circle cx={cx} cy={cy} r={R}             fill="none" stroke="#3a3a3a" strokeWidth="1" style={{ pointerEvents: "none" }} />
               <circle cx={cx} cy={cy} r={passiveInnerR} fill="none" stroke="#3a3a3a" strokeWidth="1" style={{ pointerEvents: "none" }} />
               <circle cx={cx} cy={cy} r={passiveTinyR}  fill="none" stroke="#3a3a3a" strokeWidth="1" style={{ pointerEvents: "none" }} />
-              <SvgHexSlot x={cx} y={cy} variant="passive" isSkillSlot label="SKILL"
-                skillName={selectedPassive !== null ? passiveSkillSelections[selectedPassive] : null}
-                hasSkill={selectedPassive !== null && passiveSkillSelections[selectedPassive] !== null}
-                selected={selectedCenterSlot === "skill"} onClick={() => selectCenterSlot("skill")} />
+              {(() => {
+                const skillName = selectedPassive !== null ? passiveSkillSelections[selectedPassive] : null;
+                const iconPath = skillName ? `/icons/skills/passive/${skillName.replace(": ", " - ")}.webp` : undefined;
+                return (
+                  <SvgHexSlot x={cx} y={cy} variant="passive" isSkillSlot label="SKILL"
+                    skillName={skillName} iconPath={iconPath}
+                    hasSkill={skillName !== null}
+                    selected={selectedCenterSlot === "skill"} onClick={() => selectCenterSlot("skill")} />
+                );
+              })()}
               {passiveOuterSlots.map((pos) => {
                 const noSkill = selectedPassive === null || passiveSkillSelections[selectedPassive] === null;
                 const supportKey = `passive-${selectedPassive ?? 0}-${pos.slot}`;
                 const assignedSupport = supportSelections[supportKey];
                 const slotSkillName = noSkill ? undefined : (assignedSupport ?? null);
+                const supportSkill = assignedSupport ? allSupportSkills.find((s) => s.name === assignedSupport) : undefined;
+                const supportIconPath = supportSkill ? getSkillIconPath(supportSkill, false, "passive") : undefined;
                 return (
                   <SvgHexSlot key={pos.slot} x={pos.x} y={pos.y} variant="passive"
                     label={String(pos.slot)} energyCost={pos.energyCost}
                     selected={selectedCenterSlot === `support-${pos.slot}`}
                     disabled={noSkill}
                     skillName={slotSkillName}
+                    iconPath={supportIconPath}
                     hasSkill={!noSkill && !!assignedSupport}
                     onClick={() => selectCenterSlot(`support-${pos.slot}`)} />
                 );
@@ -762,12 +953,12 @@ export default function SkillsPage() {
         <div className="flex flex-col items-center pt-10 gap-2">
           <span className="text-[10px] uppercase tracking-widest mb-1" style={{ color: "#52525b" }}>Active</span>
           {Array.from({ length: 5 }, (_, i) => (
-            <HexCell key={i} variant="active" onClick={() => selectActive(i)} selected={layoutMode === "active" && selectedActive === i} />
+            <HexCell key={i} variant="active" onClick={() => selectActive(i)} selected={layoutMode === "active" && selectedActive === i} skillName={activeSkillSelections[i]} />
           ))}
           <div style={{ height: 40 }} />
           <span className="text-[10px] uppercase tracking-widest mb-1" style={{ color: "#52525b" }}>Passive</span>
           {Array.from({ length: 4 }, (_, i) => (
-            <HexCell key={i} variant="passive" onClick={() => selectPassive(i)} selected={layoutMode === "passive" && selectedPassive === i} />
+            <HexCell key={i} variant="passive" onClick={() => selectPassive(i)} selected={layoutMode === "passive" && selectedPassive === i} skillName={passiveSkillSelections[i]} />
           ))}
         </div>
       </div>
@@ -832,6 +1023,17 @@ export default function SkillsPage() {
                   return sortByPrecise(a, b);
                 });
 
+          const usedSupportBaseNames = new Set<string>();
+          if (!isSkillSlot && currentSlotIdx !== null) {
+            const allSupportSlots = layoutMode === "active" ? ACTIVE_SUPPORT_SLOTS : PASSIVE_SUPPORT_SLOTS;
+            for (const slotDef of allSupportSlots) {
+              const key = `${layoutMode}-${currentSlotIdx}-${slotDef.slot}`;
+              if (key !== currentSupportKey && supportSelections[key]) {
+                usedSupportBaseNames.add(getSupportBaseName(supportSelections[key]));
+              }
+            }
+          }
+
           const needle   = searchQuery.replace(/\s/g, "").toLowerCase();
           const filtered = needle ? pool.filter((s) => s.name.toLowerCase().includes(needle)) : pool;
 
@@ -890,14 +1092,19 @@ export default function SkillsPage() {
               {/* Scrollable grid */}
               <div className="overflow-y-auto" style={{ flex: 1, padding: "0 16px 16px" }}>
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 8 }}>
-                  {filtered.map((skill) => (
-                    <SkillCard
-                      key={skill.name}
-                      name={skill.name}
-                      selected={currentSelection === skill.name}
-                      onClick={() => handleCardClick(skill.name)}
-                    />
-                  ))}
+                  {filtered.map((skill) => {
+                    const isBlocked = !isSkillSlot && usedSupportBaseNames.has(getSupportBaseName(skill.name));
+                    return (
+                      <SkillCard
+                        key={skill.name}
+                        name={skill.name}
+                        selected={currentSelection === skill.name}
+                        onClick={() => handleCardClick(skill.name)}
+                        iconPath={getSkillIconPath(skill, isSkillSlot, layoutMode)}
+                        blockedReason={isBlocked ? "Already used in this build" : undefined}
+                      />
+                    );
+                  })}
                 </div>
               </div>
             </>

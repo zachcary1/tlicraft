@@ -3092,7 +3092,7 @@
   },
   {
     "type": "Support",
-    "name": "Precise Restrain",
+    "name": "Precise: Restrain",
     "tags": [],
     "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Chr\u003ESupports Passive Skill.\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E15.5\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESealed Mana\u003C/div\u003E\u003Cdiv\u003EA portion of Mana is reserved to maintain persistent effects such as auras\u003C/div\u003E\u003C/div\u003E\"\u003ESealed Mana\u003C/span\u003E Compensation for the supported skill \u003Chr\u003E\u003Cspan class=\"val\"\u003E15.5\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESealed Mana\u003C/div\u003E\u003Cdiv\u003EA portion of Mana is reserved to maintain persistent effects such as auras\u003C/div\u003E\u003C/div\u003E\"\u003ESealed Mana\u003C/span\u003E Compensation for the supported skill\u003C/li\u003E\u003C/ul\u003E"
   },
