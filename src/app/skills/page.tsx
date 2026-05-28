@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 
 interface Skill {
   name: string;
@@ -262,11 +263,14 @@ function asymmetricPill(x: number, y: number, w: number, h: number, r: number): 
 
 // ─── Left panel hex cell ──────────────────────────────────────────────────────
 
-function HexCell({ onClick, selected, variant = "active", skillName }: {
+function HexCell({ onClick, selected, variant = "active", skillName, skill, onSkillHover, onSkillLeave }: {
   onClick?: () => void;
   selected?: boolean;
   variant?: "active" | "passive";
   skillName?: string | null;
+  skill?: Skill | null;
+  onSkillHover?: (skill: Skill, x: number, y: number) => void;
+  onSkillLeave?: () => void;
 }) {
   const [hovered, setHovered] = useState(false);
   const [imgError, setImgError] = useState(false);
@@ -292,8 +296,9 @@ function HexCell({ onClick, selected, variant = "active", skillName }: {
         transition: "filter 0.15s ease",
       }}
       onClick={onClick}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      onMouseEnter={(e) => { setHovered(true); if (skill) onSkillHover?.(skill, e.clientX, e.clientY); }}
+      onMouseMove={(e) => { if (skill) onSkillHover?.(skill, e.clientX, e.clientY); }}
+      onMouseLeave={() => { setHovered(false); onSkillLeave?.(); }}
     >
       {clipId && (
         <defs>
@@ -334,7 +339,7 @@ function HexCell({ onClick, selected, variant = "active", skillName }: {
 
 // ─── Center panel hex slot ────────────────────────────────────────────────────
 
-function SvgHexSlot({ x, y, variant, isSkillSlot = false, label, subLabel, energyCost, selected = false, hasSkill = false, skillName, iconPath, disabled = false, onClick }: {
+function SvgHexSlot({ x, y, variant, isSkillSlot = false, label, subLabel, energyCost, selected = false, hasSkill = false, skillName, iconPath, disabled = false, skill, onSkillHover, onSkillLeave, onClick }: {
   x: number;
   y: number;
   variant: "active" | "passive";
@@ -347,9 +352,13 @@ function SvgHexSlot({ x, y, variant, isSkillSlot = false, label, subLabel, energ
   skillName?: string | null;
   iconPath?: string;
   disabled?: boolean;
+  skill?: Skill | null;
+  onSkillHover?: (skill: Skill, x: number, y: number) => void;
+  onSkillLeave?: () => void;
   onClick?: () => void;
 }) {
   const [hovered, setHovered] = useState(false);
+  const [cursorPos, setCursorPos] = useState<{ x: number; y: number } | null>(null);
   const [imgError, setImgError] = useState(false);
   const v = HEX_CELL_VARIANTS[variant];
 
@@ -368,13 +377,17 @@ function SvgHexSlot({ x, y, variant, isSkillSlot = false, label, subLabel, energ
   const imgW = CENTER_HEX_R * Math.sqrt(3);
   const imgH = CENTER_HEX_R * 2;
 
+  const tooltipText = "Select a skill first";
+
   return (
+    <>
     <g
       onClick={disabled ? undefined : (e) => { e.stopPropagation(); onClick?.(); }}
-      onMouseEnter={disabled ? undefined : () => setHovered(true)}
-      onMouseLeave={disabled ? undefined : () => setHovered(false)}
+      onMouseEnter={(e) => { if (disabled) { setCursorPos({ x: e.clientX, y: e.clientY }); } else { setHovered(true); if (skill) onSkillHover?.(skill, e.clientX, e.clientY); } }}
+      onMouseMove={(e) => { if (disabled) { setCursorPos({ x: e.clientX, y: e.clientY }); } else if (skill) { onSkillHover?.(skill, e.clientX, e.clientY); } }}
+      onMouseLeave={() => { if (disabled) { setCursorPos(null); } else { setHovered(false); onSkillLeave?.(); } }}
       style={{
-        cursor: disabled ? "default" : "pointer",
+        cursor: disabled ? (cursorPos ? "not-allowed" : "default") : "pointer",
         outline: "none",
         filter: "drop-shadow(0 3px 6px rgba(0,0,0,0.6))",
       }}
@@ -467,6 +480,28 @@ function SvgHexSlot({ x, y, variant, isSkillSlot = false, label, subLabel, energ
         </foreignObject>
       )}
     </g>
+    {disabled && cursorPos && createPortal(
+      <div style={{
+        position: "fixed",
+        left: cursorPos.x,
+        top: cursorPos.y - 38,
+        transform: "translateX(-50%)",
+        background: "#111111",
+        border: "1px solid #555555",
+        borderRadius: "0 8px 0 8px",
+        padding: "5px 10px",
+        color: "#e4e4e7",
+        fontSize: 11,
+        whiteSpace: "nowrap",
+        pointerEvents: "none",
+        zIndex: 9999,
+        letterSpacing: "0.03em",
+      }}>
+        {tooltipText}
+      </div>,
+      document.body
+    )}
+    </>
   );
 }
 
@@ -485,6 +520,205 @@ function getSkillIconPath(skill: Skill, isSkillSlot: boolean, layoutMode: Layout
   return undefined;
 }
 
+// ─── Skill tooltip card ───────────────────────────────────────────────────────
+
+function getTooltipIconPath(skill: Skill): string | undefined {
+  if (skill.type === "Active")                return `/icons/skills/active/${skill.name}.webp`;
+  if (skill.type === "Passive")               return `/icons/skills/passive/${skill.name.replace(": ", " - ")}.webp`;
+  if (skill.type === "Support")               return `/icons/skills/support/${skill.name.replace(": ", " - ")}.webp`;
+  if (skill.type === "Support (Magnificent)") return `/icons/skills/magnificent/${skill.name.replace(": ", " - ")}.webp`;
+  if (skill.type === "Support (Noble)")       return `/icons/skills/noble/${skill.name.replace(": ", " - ")}.webp`;
+  if (skill.type === "Activation Medium")     return `/icons/skills/activation_medium/${skill.name.replace("Activation Medium: ", "")}.webp`;
+  return undefined;
+}
+
+// icon circle: r=44, black ring: 5px, blue ring: 6px → SVG size = (44+11)*2 = 110
+const TT_ICON_R   = 44;
+const TT_BLACK_W  = 5;
+const TT_BLUE_W   = 6;
+const TT_RING_W   = TT_BLACK_W + TT_BLUE_W;            // 7
+const TT_ICON_SVG = (TT_ICON_R + TT_RING_W) * 2;       // 102
+const TT_ICON_CX  = TT_ICON_R + TT_RING_W;             // 51  — circle center in SVG
+const TT_CARD_W   = 296;
+const TT_CARD_MAX_H = 640;
+const TT_HDR_PAD  = TT_ICON_SVG / 2 + 10;              // 61  — padding-top for header
+
+function deduplicateEffect(html: string): string {
+  if (!html) return html;
+  const div = document.createElement("div");
+  div.innerHTML = html;
+
+  // Split each <li> into segments at <hr> boundaries, deduplicate segments
+  // across the whole list. This handles Blink-style duplication (where content
+  // after a mid-<hr> repeats earlier items) without stripping legitimate
+  // multi-section items like Activation Mediums.
+  const seenSegments = new Set<string>();
+
+  div.querySelectorAll("li.mod").forEach((li) => {
+    const nodes = Array.from(li.childNodes);
+    const firstContentIdx = nodes.findIndex(
+      (n) => !(n.nodeType === Node.TEXT_NODE && !(n as Text).data.trim())
+    );
+    if (firstContentIdx < 0) { li.remove(); return; }
+
+    const hasLeadingHr = nodes[firstContentIdx].nodeName === "HR";
+    const startIdx = hasLeadingHr ? firstContentIdx + 1 : firstContentIdx;
+
+    // Collect segments split by <hr>
+    const segments: { nodes: ChildNode[]; text: string }[] = [];
+    let cur: ChildNode[] = [];
+    for (let i = startIdx; i < nodes.length; i++) {
+      if (nodes[i].nodeName === "HR") {
+        const text = cur.map(n => n.textContent ?? "").join("").replace(/\s+/g, " ").trim();
+        if (text) segments.push({ nodes: cur, text });
+        cur = [];
+      } else {
+        cur.push(nodes[i]);
+      }
+    }
+    const text = cur.map(n => n.textContent ?? "").join("").replace(/\s+/g, " ").trim();
+    if (text) segments.push({ nodes: cur, text });
+
+    // Keep only segments not yet seen
+    const unique = segments.filter(seg => {
+      if (seenSegments.has(seg.text)) return false;
+      seenSegments.add(seg.text);
+      return true;
+    });
+
+    if (unique.length === 0) { li.remove(); return; }
+    if (unique.length === segments.length) return; // nothing changed
+
+    // Rebuild li with only unique segments
+    li.innerHTML = "";
+    if (hasLeadingHr) li.appendChild(document.createElement("hr"));
+    unique.forEach((seg, i) => {
+      if (i > 0) li.appendChild(document.createElement("hr"));
+      seg.nodes.forEach(n => li.appendChild(n.cloneNode(true)));
+    });
+  });
+
+  return div.innerHTML;
+}
+
+function SkillTooltipCard({ skill, cx: cursorX, cy: cursorY }: { skill: Skill; cx: number; cy: number }) {
+  const [imgError, setImgError] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [cardH, setCardH] = useState(TT_CARD_MAX_H);
+  useEffect(() => { setImgError(false); }, [skill.name]);
+  useEffect(() => {
+    if (cardRef.current) setCardH(cardRef.current.offsetHeight);
+  });
+
+  const iconPath = getTooltipIconPath(skill);
+  const clipId   = `tt-icon-${skill.name.replace(/[^a-zA-Z0-9]/g, "-")}`;
+
+  const vpW      = window.innerWidth;
+  const vpH      = window.innerHeight;
+  const taskbar  = Math.max(0, window.screen.height - window.screen.availHeight);
+  const safeH    = vpH - (taskbar || 48);
+  const GAP      = 18;
+  const cardLeft = cursorX + GAP + TT_CARD_W <= vpW ? cursorX + GAP : cursorX - GAP - TT_CARD_W;
+  const cardTop  = Math.max(TT_ICON_SVG / 2 + 8, Math.min(safeH - cardH, cursorY - 24));
+
+  return createPortal(
+    <div ref={cardRef} style={{
+      position: "fixed",
+      left: cardLeft,
+      top: cardTop,
+      width: TT_CARD_W,
+      background: "#1d1b1c",
+      border: "1px solid #2a2a2a",
+      borderRadius: "0 12px 0 12px",
+      pointerEvents: "none",
+      zIndex: 9999,
+      overflow: "visible",
+      boxShadow: "0 8px 32px rgba(0,0,0,0.7)",
+    }}>
+      {/* Circular icon hanging above the card — centered vertically on the card's top edge */}
+      <div style={{
+        position: "absolute",
+        top: -(TT_ICON_SVG / 2),
+        left: "50%",
+        transform: "translateX(-50%)",
+        zIndex: 1,
+      }}>
+        <svg width={TT_ICON_SVG} height={TT_ICON_SVG} style={{ display: "block" }}>
+          <defs>
+            <clipPath id={clipId}>
+              <circle cx={TT_ICON_CX} cy={TT_ICON_CX} r={TT_ICON_R} />
+            </clipPath>
+          </defs>
+          {/* Blue outer ring */}
+          <circle cx={TT_ICON_CX} cy={TT_ICON_CX} r={TT_ICON_R + TT_RING_W} fill="#253ba3" />
+          {/* Black inner ring */}
+          <circle cx={TT_ICON_CX} cy={TT_ICON_CX} r={TT_ICON_R + TT_BLACK_W} fill="#000000" />
+          {/* Image background fill */}
+          <circle cx={TT_ICON_CX} cy={TT_ICON_CX} r={TT_ICON_R} fill="#182332" />
+          {/* Skill image clipped to circle */}
+          {iconPath && !imgError && (
+            <image
+              href={iconPath}
+              x={TT_ICON_CX - TT_ICON_R} y={TT_ICON_CX - TT_ICON_R}
+              width={TT_ICON_R * 2} height={TT_ICON_R * 2}
+              clipPath={`url(#${clipId})`}
+              preserveAspectRatio="xMidYMid slice"
+              onError={() => setImgError(true)}
+              style={{ pointerEvents: "none" }}
+            />
+          )}
+        </svg>
+      </div>
+
+      {/* Header — gradient background stops at the divider */}
+      <div style={{
+        background: `linear-gradient(to bottom, #253ba3 ${TT_ICON_R + TT_RING_W}px, #1d1b1c 70%)`,
+        borderRadius: "0 12px 0 0",
+        paddingTop: TT_HDR_PAD,
+        paddingLeft: 6,
+        paddingRight: 6,
+        paddingBottom: 12,
+      }}>
+        {/* Type */}
+        <div style={{ color: "rgba(255,255,255,0.55)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", textAlign: "center", marginBottom: 4 }}>
+          {skill.type}
+        </div>
+        {/* Name */}
+        <div style={{ color: "#ffffff", fontSize: 15, fontWeight: 700, textAlign: "center", lineHeight: 1.3, marginBottom: 8 }}>
+          {skill.name}
+        </div>
+        {/* Tags */}
+        {skill.tags.length > 0 && (
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 4, justifyContent: "center" }}>
+            {skill.tags.map((tag) => (
+              <span key={tag} style={{
+                background: "#595757",
+                border: "1px solid rgba(255,255,255,0.18)",
+                borderRadius: "0 4px 0 4px",
+                padding: "1px 7px",
+                fontSize: 10,
+                color: "#bfbfbf",
+                letterSpacing: "0.05em",
+              }}>
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Body — effect text */}
+      <div style={{ padding: "10px 14px 14px" }}>
+        {skill.effect && (
+          <div className="skill-effect"
+            dangerouslySetInnerHTML={{ __html: deduplicateEffect(skill.effect) }} />
+        )}
+      </div>
+    </div>,
+    document.body
+  );
+}
+
 // ─── Skill card ───────────────────────────────────────────────────────────────
 
 const CARD_HEX_R   = 34;
@@ -495,12 +729,15 @@ const CARD_HEX_PTS = Array.from({ length: 6 }, (_, i) => {
   return `${CARD_HEX_W / 2 + CARD_HEX_R * Math.cos(a)},${CARD_HEX_H / 2 + CARD_HEX_R * Math.sin(a)}`;
 }).join(" ");
 
-function SkillCard({ name, selected, onClick, iconPath, blockedReason }: {
+function SkillCard({ name, selected, onClick, iconPath, blockedReason, skill, onSkillHover, onSkillLeave }: {
   name: string;
   selected: boolean;
   onClick: () => void;
   iconPath?: string;
   blockedReason?: string;
+  skill?: Skill;
+  onSkillHover?: (skill: Skill, x: number, y: number) => void;
+  onSkillLeave?: () => void;
 }) {
   const [hovered, setHovered] = useState(false);
   const [imgError, setImgError] = useState(false);
@@ -512,17 +749,23 @@ function SkillCard({ name, selected, onClick, iconPath, blockedReason }: {
   const isBlocked = !!blockedReason;
   const clipId = `skill-card-${name.replace(/[^a-zA-Z0-9]/g, "-")}`;
 
-  function handleMouseEnter() {
+  function handleMouseEnter(e: React.MouseEvent) {
     setHovered(true);
     if (isBlocked && cardRef.current) {
       const rect = cardRef.current.getBoundingClientRect();
       setTooltipCoords({ x: rect.left + rect.width / 2, y: rect.top - 8 });
     }
+    if (skill) onSkillHover?.(skill, e.clientX, e.clientY);
+  }
+
+  function handleMouseMove(e: React.MouseEvent) {
+    if (skill) onSkillHover?.(skill, e.clientX, e.clientY);
   }
 
   function handleMouseLeave() {
     setHovered(false);
     setTooltipCoords(null);
+    onSkillLeave?.();
   }
 
   return (
@@ -531,6 +774,7 @@ function SkillCard({ name, selected, onClick, iconPath, blockedReason }: {
         ref={cardRef}
         onClick={isBlocked ? undefined : onClick}
         onMouseEnter={handleMouseEnter}
+        onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         style={{
           width: "100%",
@@ -644,6 +888,11 @@ export default function SkillsPage() {
   const [passiveSkillSelections, setPassiveSkillSelections] = useState<(string | null)[]>(Array(4).fill(null));
   const [supportSelections,      setSupportSelections]      = useState<Record<string, string>>({});
   const [searchQuery,            setSearchQuery]            = useState("");
+  const [hoveredTooltip,         setHoveredTooltip]         = useState<{ skill: Skill; x: number; y: number } | null>(null);
+  const [energyTipPos,           setEnergyTipPos]           = useState<{ x: number; y: number } | null>(null);
+
+  function handleSkillHover(skill: Skill, x: number, y: number) { setHoveredTooltip({ skill, x, y }); }
+  function handleSkillLeave() { setHoveredTooltip(null); }
 
   useEffect(() => { setSearchQuery(""); }, [selectedActive, selectedPassive, selectedCenterSlot]);
 
@@ -797,10 +1046,12 @@ export default function SkillsPage() {
               {(() => {
                 const skillName = selectedActive !== null ? activeSkillSelections[selectedActive] : null;
                 const iconPath = skillName ? `/icons/skills/active/${skillName}.webp` : undefined;
+                const skillObj = skillName ? activeSkills.find(s => s.name === skillName) ?? null : null;
                 return (
                   <SvgHexSlot x={cx} y={cy} variant="active" isSkillSlot label="SKILL"
                     skillName={skillName} iconPath={iconPath}
                     hasSkill={skillName !== null}
+                    skill={skillObj} onSkillHover={handleSkillHover} onSkillLeave={handleSkillLeave}
                     selected={selectedCenterSlot === "skill"} onClick={() => selectCenterSlot("skill")} />
                 );
               })()}
@@ -808,7 +1059,6 @@ export default function SkillsPage() {
                 const noSkill = selectedActive === null || activeSkillSelections[selectedActive] === null;
                 const supportKey = `active-${selectedActive ?? 0}-${slot.slot}`;
                 const assignedSupport = supportSelections[supportKey];
-                // undefined → don't render label at all (disabled); null → "Select Skill"; string → skill name
                 const slotSkillName = noSkill ? undefined : (assignedSupport ?? null);
                 const supportSkill = assignedSupport ? allSupportSkills.find((s) => s.name === assignedSupport) : undefined;
                 const supportIconPath = supportSkill ? getSkillIconPath(supportSkill, false, "active") : undefined;
@@ -820,6 +1070,7 @@ export default function SkillsPage() {
                     skillName={slotSkillName}
                     iconPath={supportIconPath}
                     hasSkill={!noSkill && !!assignedSupport}
+                    skill={supportSkill ?? null} onSkillHover={handleSkillHover} onSkillLeave={handleSkillLeave}
                     onClick={() => selectCenterSlot(`support-${slot.slot}`)} />
                 );
               })}
@@ -834,10 +1085,12 @@ export default function SkillsPage() {
               {(() => {
                 const skillName = selectedPassive !== null ? passiveSkillSelections[selectedPassive] : null;
                 const iconPath = skillName ? `/icons/skills/passive/${skillName.replace(": ", " - ")}.webp` : undefined;
+                const skillObj = skillName ? passiveSkills.find(s => s.name === skillName) ?? null : null;
                 return (
                   <SvgHexSlot x={cx} y={cy} variant="passive" isSkillSlot label="SKILL"
                     skillName={skillName} iconPath={iconPath}
                     hasSkill={skillName !== null}
+                    skill={skillObj} onSkillHover={handleSkillHover} onSkillLeave={handleSkillLeave}
                     selected={selectedCenterSlot === "skill"} onClick={() => selectCenterSlot("skill")} />
                 );
               })()}
@@ -856,6 +1109,7 @@ export default function SkillsPage() {
                     skillName={slotSkillName}
                     iconPath={supportIconPath}
                     hasSkill={!noSkill && !!assignedSupport}
+                    skill={supportSkill ?? null} onSkillHover={handleSkillHover} onSkillLeave={handleSkillLeave}
                     onClick={() => selectCenterSlot(`support-${pos.slot}`)} />
                 );
               })}
@@ -908,11 +1162,16 @@ export default function SkillsPage() {
               <span style={{ color: overLimit ? "#c06060" : "#e4e4e7", fontSize: 24, fontWeight: 600 }}>
                 {totalEnergy}
               </span>
-              <span style={{ color: "#52525b", fontSize: 13, marginLeft: 5 }}>
+              <span style={{ color: overLimit ? "#c06060" : "#52525b", fontSize: 13, marginLeft: 5 }}>
                 / {MAX_ENERGY}
               </span>
             </div>
             <button
+              onMouseEnter={(e) => {
+                const r = e.currentTarget.getBoundingClientRect();
+                setEnergyTipPos({ x: r.left + r.width / 2, y: r.bottom });
+              }}
+              onMouseLeave={() => setEnergyTipPos(null)}
               onClick={() => {}}
               style={{
                 width: 18, height: 18,
@@ -921,7 +1180,7 @@ export default function SkillsPage() {
                 border: "1px solid #3a3a3a",
                 color: "#6a6a6a",
                 fontSize: 11,
-                cursor: "pointer",
+                cursor: "default",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -953,12 +1212,16 @@ export default function SkillsPage() {
         <div className="flex flex-col items-center pt-10 gap-2">
           <span className="text-[10px] uppercase tracking-widest mb-1" style={{ color: "#52525b" }}>Active</span>
           {Array.from({ length: 5 }, (_, i) => (
-            <HexCell key={i} variant="active" onClick={() => selectActive(i)} selected={layoutMode === "active" && selectedActive === i} skillName={activeSkillSelections[i]} />
+            <HexCell key={i} variant="active" onClick={() => selectActive(i)} selected={layoutMode === "active" && selectedActive === i} skillName={activeSkillSelections[i]}
+              skill={activeSkillSelections[i] ? activeSkills.find(s => s.name === activeSkillSelections[i]) ?? null : null}
+              onSkillHover={handleSkillHover} onSkillLeave={handleSkillLeave} />
           ))}
           <div style={{ height: 40 }} />
           <span className="text-[10px] uppercase tracking-widest mb-1" style={{ color: "#52525b" }}>Passive</span>
           {Array.from({ length: 4 }, (_, i) => (
-            <HexCell key={i} variant="passive" onClick={() => selectPassive(i)} selected={layoutMode === "passive" && selectedPassive === i} skillName={passiveSkillSelections[i]} />
+            <HexCell key={i} variant="passive" onClick={() => selectPassive(i)} selected={layoutMode === "passive" && selectedPassive === i} skillName={passiveSkillSelections[i]}
+              skill={passiveSkillSelections[i] ? passiveSkills.find(s => s.name === passiveSkillSelections[i]) ?? null : null}
+              onSkillHover={handleSkillHover} onSkillLeave={handleSkillLeave} />
           ))}
         </div>
       </div>
@@ -1102,6 +1365,9 @@ export default function SkillsPage() {
                         onClick={() => handleCardClick(skill.name)}
                         iconPath={getSkillIconPath(skill, isSkillSlot, layoutMode)}
                         blockedReason={isBlocked ? "Already used in this build" : undefined}
+                        skill={skill}
+                        onSkillHover={handleSkillHover}
+                        onSkillLeave={handleSkillLeave}
                       />
                     );
                   })}
@@ -1112,6 +1378,84 @@ export default function SkillsPage() {
         })()}
 
       </div>
+
+      {hoveredTooltip && (
+        <SkillTooltipCard skill={hoveredTooltip.skill} cx={hoveredTooltip.x} cy={hoveredTooltip.y} />
+      )}
+
+      {energyTipPos && (() => {
+        const activeBreakdown = Array.from({ length: 5 }, (_, i) => ({
+          name: activeSkillSelections[i] ?? null,
+          energy: getSkillEnergy("active", i, supportSelections),
+        }));
+        const passiveBreakdown = Array.from({ length: 4 }, (_, i) => ({
+          name: passiveSkillSelections[i] ?? null,
+          energy: getSkillEnergy("passive", i, supportSelections),
+        }));
+        const tipW = 230;
+        const tipH = 340; // estimated height for placement decision
+        const taskbar = Math.max(0, window.screen.height - window.screen.availHeight);
+        const safeBottom = window.innerHeight - (taskbar || 48);
+        const left = Math.max(8, Math.min(window.innerWidth - tipW - 8, energyTipPos.x - tipW / 2));
+        const showBelow = energyTipPos.y + tipH + 8 <= safeBottom;
+        const top = showBelow ? energyTipPos.y + 8 : energyTipPos.y - tipH - 8;
+
+        return createPortal(
+          <div style={{
+            position: "fixed", left, top,
+            width: tipW,
+            background: "#161616",
+            border: "1px solid #2a2a2a",
+            borderRadius: "0 12px 0 12px",
+            boxShadow: "0 8px 32px rgba(0,0,0,0.7)",
+            pointerEvents: "none",
+            zIndex: 9999,
+            padding: "10px 14px 12px",
+          }}>
+            <div style={{ color: "#52525b", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 10 }}>
+              Energy Breakdown
+            </div>
+
+            <div style={{ color: "#52525b", fontSize: 9, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 5 }}>
+              Active Skills
+            </div>
+            {activeBreakdown.map((row, i) => (
+              <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", fontSize: 12, marginBottom: 3 }}>
+                <span style={{ color: row.name ? "#c8c4be" : "#3a3a3a", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", maxWidth: 150 }}>
+                  {row.name ?? "—"}
+                </span>
+                <span style={{ color: row.energy > 0 ? "#e4e4e7" : "#3a3a3a", marginLeft: 8, flexShrink: 0 }}>
+                  {row.energy}
+                </span>
+              </div>
+            ))}
+
+            <div style={{ borderTop: "1px solid #2a2a2a", margin: "8px 0" }} />
+
+            <div style={{ color: "#52525b", fontSize: 9, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 5 }}>
+              Passive Skills
+            </div>
+            {passiveBreakdown.map((row, i) => (
+              <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", fontSize: 12, marginBottom: 3 }}>
+                <span style={{ color: row.name ? "#c8c4be" : "#3a3a3a", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", maxWidth: 150 }}>
+                  {row.name ?? "—"}
+                </span>
+                <span style={{ color: row.energy > 0 ? "#e4e4e7" : "#3a3a3a", marginLeft: 8, flexShrink: 0 }}>
+                  {row.energy}
+                </span>
+              </div>
+            ))}
+
+            <div style={{ borderTop: "1px solid #2a2a2a", margin: "8px 0" }} />
+
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", fontSize: 13, fontWeight: 600 }}>
+              <span style={{ color: "#e4e4e7" }}>Total</span>
+              <span style={{ color: overLimit ? "#c06060" : "#e4e4e7" }}>{totalEnergy} / {MAX_ENERGY}</span>
+            </div>
+          </div>,
+          document.body
+        );
+      })()}
 
     </div>
   );

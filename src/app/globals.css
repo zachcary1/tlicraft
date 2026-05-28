@@ -74,19 +74,20 @@ input[type="number"] {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
 }
 
 .skill-effect li.mod {
+  display: block;
   color: #c8c4be;
   font-size: 13px;
   line-height: 1.5;
   padding: 3px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+  margin-bottom: 2px;
+}
+
+.skill-effect li.mod span.val,
+.skill-effect li.mod span.tooltip {
+  display: inline;
 }
 
 .skill-effect li.mod hr {
