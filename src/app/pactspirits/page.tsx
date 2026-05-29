@@ -415,7 +415,7 @@ export default function PactspiritsPage() {
                   transition: "background 0.15s", flexShrink: 0,
                 }}
               >
-                ✕ Clear
+                ✕ Clear Selection
               </button>
             </div>
 
