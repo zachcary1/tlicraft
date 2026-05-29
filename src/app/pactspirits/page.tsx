@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 
 // ─── Layout constants ─────────────────────────────────────────────────────────
 
@@ -164,24 +165,34 @@ function PactSpiritSlot({
 // ─── Right-panel picker card ──────────────────────────────────────────────────
 
 function PactSpiritCard({
-  spirit, selected, onClick,
+  spirit, selected, disabled, onClick,
 }: {
   spirit:   PactSpirit;
   selected: boolean;
+  disabled: boolean;
   onClick:  () => void;
 }) {
   const [imgError, setImgError] = useState(false);
   const [hovered,  setHovered]  = useState(false);
+  const [tipPos,   setTipPos]   = useState<{ x: number; y: number } | null>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
   useEffect(() => { setImgError(false); }, [spirit.name]);
 
   const rarityColor = RARITY_COLOR[spirit.rarity] ?? "#6b6b6b";
 
   return (
     <div
-      onClick={onClick}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6, cursor: "pointer" }}
+      ref={wrapperRef}
+      onClick={disabled ? undefined : onClick}
+      onMouseEnter={() => {
+        setHovered(true);
+        if (disabled && wrapperRef.current) {
+          const r = wrapperRef.current.getBoundingClientRect();
+          setTipPos({ x: r.left + r.width / 2, y: r.top });
+        }
+      }}
+      onMouseLeave={() => { setHovered(false); setTipPos(null); }}
+      style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6, cursor: disabled ? "not-allowed" : "pointer", position: "relative" }}
     >
       {/* Card image */}
       <div style={{
@@ -192,7 +203,9 @@ function PactSpiritCard({
         outline: selected ? "4px solid #fbdb58" : "none",
         outlineOffset: "1px",
         background: `linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, transparent 70%), ${RARITY_BG[spirit.rarity] ?? "#161616"}`,
-        filter: hovered ? "brightness(0.75)" : "none",
+        filter: disabled
+          ? "grayscale(0.7) brightness(0.45)"
+          : hovered ? "brightness(0.75)" : "none",
         transition: "filter 0.15s",
       }}>
         {!imgError ? (
@@ -220,6 +233,21 @@ function PactSpiritCard({
           pointerEvents: "none",
         }} />
       </div>
+
+      {/* Disabled tooltip — portaled to body to escape overflow clipping */}
+      {disabled && tipPos && createPortal(
+        <div style={{
+          position: "fixed",
+          left: tipPos.x, top: tipPos.y - 8,
+          transform: "translate(-50%, -100%)",
+          background: "#1a1a1a", border: "1px solid #3a3a3a", borderRadius: "0 6px 0 6px",
+          padding: "5px 9px", color: "#a1a1aa", fontSize: 10, whiteSpace: "nowrap",
+          zIndex: 9999, pointerEvents: "none",
+        }}>
+          Already selected in another slot
+        </div>,
+        document.body
+      )}
 
       {/* Name below card */}
       <div style={{ height: 28, display: "flex", alignItems: "flex-start", justifyContent: "center", paddingTop: 2 }}>
@@ -285,6 +313,14 @@ export default function PactspiritsPage() {
   const pool = selectedSlot?.category === "battle" ? battleSpirits : selectedSlot?.category === "drop" ? dropSpirits : [];
   const needle   = searchQuery.replace(/\s/g, "").toLowerCase();
   const filtered = needle ? pool.filter((s) => s.name.toLowerCase().includes(needle)) : pool;
+
+  const takenNames: Set<string> = selectedSlot
+    ? new Set(
+        Object.entries(slotSelections)
+          .filter(([key, name]) => name && key.startsWith(selectedSlot.category) && key !== slotKey(selectedSlot.category, selectedSlot.index))
+          .map(([, name]) => name)
+      )
+    : new Set();
 
   const currentSelection = selectedSlot ? (slotSelections[slotKey(selectedSlot.category, selectedSlot.index)] ?? "") : "";
   const hasSelection     = !!currentSelection;
@@ -439,6 +475,7 @@ export default function PactspiritsPage() {
                           key={spirit.id}
                           spirit={spirit}
                           selected={currentSelection === spirit.name}
+                          disabled={takenNames.has(spirit.name)}
                           onClick={() => handleCardClick(spirit.name)}
                         />
                       ))}
