@@ -10,14 +10,18 @@ interface Skill {
   effect: string;
 }
 
-const BG_STYLE = {
-  backgroundImage: [
-    "linear-gradient(to bottom, rgba(0,0,0,0.28) 0%, transparent 18%, transparent 82%, rgba(0,0,0,0.28) 100%)",
-    "url('/background/background.jpg')",
-  ].join(", "),
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-  backgroundRepeat: "no-repeat",
+const BG_GRADIENT = "linear-gradient(to bottom, rgba(0,0,0,0.28) 0%, transparent 18%, transparent 82%, rgba(0,0,0,0.28) 100%)";
+
+const BG_ACTIVE_STYLE: React.CSSProperties = {
+  position: "absolute", inset: 0,
+  backgroundImage: `${BG_GRADIENT}, url('/background/active%20skills.png')`,
+  backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat",
+};
+
+const BG_PASSIVE_STYLE: React.CSSProperties = {
+  position: "absolute", inset: 0,
+  backgroundImage: `${BG_GRADIENT}, url('/background/passive%20skills.png')`,
+  backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat",
 };
 
 // ─── Slot type rules ──────────────────────────────────────────────────────────
@@ -200,10 +204,18 @@ const hexPointsInner = Array.from({ length: 6 }, (_, i) => {
 }).join(" ");
 
 const CCW_VERTEX_ORDER = [0, 5, 4, 2, 1];
+const ACTIVE_SLOT_OFFSETS: [number, number][] = [
+  [0,    30 ],  // slot 1: top → down
+  [35,   0  ],  // slot 2: top-left → right
+  [35,  -22 ],  // slot 3: bot-left → up-right (x matches slot 2 so it sits directly below)
+  [-35, -22 ],  // slot 4: bot-right → up-left (x matches slot 5 so it sits directly below)
+  [-35,  0  ],  // slot 5: top-right → left
+];
 const activeOuterSlots = ACTIVE_SUPPORT_SLOTS.map((def, idx) => {
-  const vi    = CCW_VERTEX_ORDER[idx];
-  const angle = (Math.PI / 180) * (60 * vi - 90);
-  return { x: cx + R * Math.cos(angle), y: cy + R * Math.sin(angle), ...def };
+  const vi      = CCW_VERTEX_ORDER[idx];
+  const angle   = (Math.PI / 180) * (60 * vi - 90);
+  const [dx, dy] = ACTIVE_SLOT_OFFSETS[idx];
+  return { x: cx + R * Math.cos(angle) + dx, y: cy + R * Math.sin(angle) + dy, ...def };
 });
 
 const passiveInnerR = R * 0.65;
@@ -1006,7 +1018,10 @@ export default function SkillsPage() {
   const overLimit   = totalEnergy > MAX_ENERGY;
 
   return (
-    <div className="min-h-screen relative" style={BG_STYLE} onClick={clearAll}>
+    <div className="min-h-screen relative" onClick={clearAll}>
+
+      <div style={{ ...BG_ACTIVE_STYLE,  opacity: layoutMode === "passive" ? 0 : 1 }} />
+      <div style={{ ...BG_PASSIVE_STYLE, opacity: layoutMode === "passive" ? 1 : 0 }} />
 
       {/* Center diagram */}
       <div className="absolute inset-0 flex items-center justify-center">
@@ -1041,14 +1056,14 @@ export default function SkillsPage() {
 
           {layoutMode === "active" && (
             <>
-              <polygon points={hexPoints}      fill="none" stroke="#3a3a3a" strokeWidth="1" style={{ pointerEvents: "none" }} />
-              <polygon points={hexPointsInner} fill="none" stroke="#3a3a3a" strokeWidth="1" style={{ pointerEvents: "none" }} />
+              <polygon points={hexPoints}      fill="none" stroke="#3a3a3a" strokeWidth="1" style={{ pointerEvents: "none" }} opacity={0} />
+              <polygon points={hexPointsInner} fill="none" stroke="#3a3a3a" strokeWidth="1" style={{ pointerEvents: "none" }} opacity={0} />
               {(() => {
                 const skillName = selectedActive !== null ? activeSkillSelections[selectedActive] : null;
                 const iconPath = skillName ? `/icons/skills/active/${skillName}.webp` : undefined;
                 const skillObj = skillName ? activeSkills.find(s => s.name === skillName) ?? null : null;
                 return (
-                  <SvgHexSlot x={cx} y={cy} variant="active" isSkillSlot label="SKILL"
+                  <SvgHexSlot x={cx} y={cy - 20} variant="active" isSkillSlot label="SKILL"
                     skillName={skillName} iconPath={iconPath}
                     hasSkill={skillName !== null}
                     skill={skillObj} onSkillHover={handleSkillHover} onSkillLeave={handleSkillLeave}
@@ -1079,15 +1094,15 @@ export default function SkillsPage() {
 
           {layoutMode === "passive" && (
             <>
-              <circle cx={cx} cy={cy} r={R}             fill="none" stroke="#3a3a3a" strokeWidth="1" style={{ pointerEvents: "none" }} />
-              <circle cx={cx} cy={cy} r={passiveInnerR} fill="none" stroke="#3a3a3a" strokeWidth="1" style={{ pointerEvents: "none" }} />
-              <circle cx={cx} cy={cy} r={passiveTinyR}  fill="none" stroke="#3a3a3a" strokeWidth="1" style={{ pointerEvents: "none" }} />
+              <circle cx={cx} cy={cy} r={R}             fill="none" stroke="#3a3a3a" strokeWidth="1" style={{ pointerEvents: "none" }} opacity={0} />
+              <circle cx={cx} cy={cy} r={passiveInnerR} fill="none" stroke="#3a3a3a" strokeWidth="1" style={{ pointerEvents: "none" }} opacity={0} />
+              <circle cx={cx} cy={cy} r={passiveTinyR}  fill="none" stroke="#3a3a3a" strokeWidth="1" style={{ pointerEvents: "none" }} opacity={0} />
               {(() => {
                 const skillName = selectedPassive !== null ? passiveSkillSelections[selectedPassive] : null;
                 const iconPath = skillName ? `/icons/skills/passive/${skillName.replace(": ", " - ")}.webp` : undefined;
                 const skillObj = skillName ? passiveSkills.find(s => s.name === skillName) ?? null : null;
                 return (
-                  <SvgHexSlot x={cx} y={cy} variant="passive" isSkillSlot label="SKILL"
+                  <SvgHexSlot x={cx} y={cy - 35} variant="passive" isSkillSlot label="SKILL"
                     skillName={skillName} iconPath={iconPath}
                     hasSkill={skillName !== null}
                     skill={skillObj} onSkillHover={handleSkillHover} onSkillLeave={handleSkillLeave}

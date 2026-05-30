@@ -1,7 +1,7 @@
 const BG_STYLE = {
   backgroundImage: [
     "linear-gradient(to bottom, rgba(0,0,0,0.28) 0%, transparent 18%, transparent 82%, rgba(0,0,0,0.28) 100%)",
-    "url('/background/background.jpg')",
+    "url('/background/hero%20trait.png')",
   ].join(", "),
   backgroundSize: "cover",
   backgroundPosition: "center",
