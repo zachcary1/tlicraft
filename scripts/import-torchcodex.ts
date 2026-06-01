@@ -170,13 +170,13 @@ async function importLegendary() {
 
 // ── Pact Spirit ────────────────────────────────────────────────────────────────
 
-const BATTLE_PACTSPIRIT_TYPES = new Set(["Attack", "Spell", "Persistent", "Summon", "Survival", "Lightning", "Fire", "Cold", "Erosion"]);
+const BATTLE_PACTSPIRIT_TYPES = new Set(["Attack", "Spell", "Persistent", "Summon", "Survival", "Lightning", "Fire", "Cold", "Erosion", "Elixir"]);
 
 async function importPactSpirit() {
-  const rows = await readJson<{ type: string; rarity: string; name: string; effect: string }>("pactspirit");
+  const rows = await readJson<{ type: string; rarity: string; name: string; tags?: string[]; effect: string }>("pactspirit");
   for (const row of rows) {
     const id = `pactspirit_${slugify(row.name)}`;
-    const tags = BATTLE_PACTSPIRIT_TYPES.has(row.type) ? [row.type] : [];
+    const tags = row.tags ?? (BATTLE_PACTSPIRIT_TYPES.has(row.type) ? [row.type] : []);
     await prisma.pactSpirit.upsert({
       where: { id },
       update: { type: row.type, rarity: row.rarity, name: row.name, tags, effect: row.effect },

@@ -3,331 +3,496 @@
     "type": "Drop",
     "rarity": "Legendary",
     "name": "Alice 1",
-    "effect": "<ul><li class=\"mod\">All Member Services gain an additional effect: When settling Clockwork Ballet Games, there is a 33% chance to settle the rewards 1 additional time. This can only be triggered once (takes effect immediately after selecting Member Services and lasts for the duration of this game)</li><li class=\"mod\">All Member Services gain an additional effect: Each time after completing Operation Cogwheel, there is a 16% chance to get 1 additional Cogwheel Voucher (takes effect immediately after selecting Member Services and lasts for the duration of this game)</li><li class=\"mod\">Member Services refresh attempts +2</li></ul>"
+    "effect": "<ul><li class=\"mod\">All Member Services gain an additional effect: When settling Clockwork Ballet Games, there is a 33% chance to settle the rewards 1 additional time. This can only be triggered once (takes effect immediately after selecting Member Services and lasts for the duration of this game)</li><li class=\"mod\">All Member Services gain an additional effect: Each time after completing Operation Cogwheel, there is a 16% chance to get 1 additional Cogwheel Voucher (takes effect immediately after selecting Member Services and lasts for the duration of this game)</li><li class=\"mod\">Member Services refresh attempts +2</li></ul>",
+    "tags": [
+      "Doll"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Legendary",
     "name": "Captain Shadow",
-    "effect": "<ul><li class=\"mod\">Bosses defeated: <span class=\"val\">80</span>% chance to drop 1-3 additional random Embers</li><li class=\"mod\"><span class=\"val\">+16</span>% additional Ember Drop Quantity</li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\">Bosses defeated: <span class=\"val\">80</span>% chance to drop 1-3 additional random Embers</li><li class=\"mod\"><span class=\"val\">+16</span>% additional Ember Drop Quantity</li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Ember"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Legendary",
     "name": "Chalk Spirit",
-    "effect": "<ul><li class=\"mod\"><span class=\"val\">1.3</span>% chance for defeated monsters to drop <span class=\"val\">1</span> additional set(s) of random Flame Fuel</li><li class=\"mod\"><span class=\"val\">+20</span>% additional Flame Fuel Drop Quantity</li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\"><span class=\"val\">1.3</span>% chance for defeated monsters to drop <span class=\"val\">1</span> additional set(s) of random Flame Fuel</li><li class=\"mod\"><span class=\"val\">+20</span>% additional Flame Fuel Drop Quantity</li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Ember"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Legendary",
     "name": "Corgi Fighter No.32",
-    "effect": "<ul><li class=\"mod\"><span class=\"val\">+5</span>% additional <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\">The <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Star of Calamity boss</div><div>The Star of Calamity boss is exclusive to the Hunter's Odyssey gameplay. After the preseason concludes, Hunter's Odyssey will not be part of regular gameplay, but it may return in future preseasons.</div></div>\">Star of Calamity boss</span> has a <span class=\"val\">1.2</span>% chance to drop an additional <span class=\"val\">1</span> Proof(s) of Star Hunter</li><li class=\"mod\">The <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Star of Calamity boss</div><div>The Star of Calamity boss is exclusive to the Hunter's Odyssey gameplay. After the preseason concludes, Hunter's Odyssey will not be part of regular gameplay, but it may return in future preseasons.</div></div>\">Star of Calamity boss</span> on the map has a <span class=\"val\">100</span>% chance to replicate <span class=\"val\">1</span> times</li><li class=\"mod\">The <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Star of Calamity boss</div><div>The Star of Calamity boss is exclusive to the Hunter's Odyssey gameplay. After the preseason concludes, Hunter's Odyssey will not be part of regular gameplay, but it may return in future preseasons.</div></div>\">Star of Calamity boss</span> has a <span class=\"val\">0.45</span>% chance to drop an additional Tidemaster's Exclusive Drop (Only effective in stages at Timemark 5 and above)</li><li class=\"mod\">The <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Star of Calamity boss</div><div>The Star of Calamity boss is exclusive to the Hunter's Odyssey gameplay. After the preseason concludes, Hunter's Odyssey will not be part of regular gameplay, but it may return in future preseasons.</div></div>\">Star of Calamity boss</span> has a <span class=\"val\">0.45</span>% chance to drop an additional Lord of the Void Sea's Exclusive Drop (Only effective in stages at Timemark 5 and above)</li><li class=\"mod\">The <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Star of Calamity boss</div><div>The Star of Calamity boss is exclusive to the Hunter's Odyssey gameplay. After the preseason concludes, Hunter's Odyssey will not be part of regular gameplay, but it may return in future preseasons.</div></div>\">Star of Calamity boss</span> has a <span class=\"val\">0.45</span>% chance to drop an additional the Law Bearer's Exclusive Drop (Only effective in stages at Timemark 5 and above)</li><li class=\"mod\">The <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Star of Calamity boss</div><div>The Star of Calamity boss is exclusive to the Hunter's Odyssey gameplay. After the preseason concludes, Hunter's Odyssey will not be part of regular gameplay, but it may return in future preseasons.</div></div>\">Star of Calamity boss</span> has a <span class=\"val\">0.45</span>% chance to drop an additional Lone King of Aeterna's Exclusive Drop (Only effective in stages at Timemark 5 and above)</li></ul>"
+    "effect": "<ul><li class=\"mod\"><span class=\"val\">+5</span>% additional <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\">The <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Star of Calamity boss</div><div>The Star of Calamity boss is exclusive to the Hunter's Odyssey gameplay. After the preseason concludes, Hunter's Odyssey will not be part of regular gameplay, but it may return in future preseasons.</div></div>\">Star of Calamity boss</span> has a <span class=\"val\">1.2</span>% chance to drop an additional <span class=\"val\">1</span> Proof(s) of Star Hunter</li><li class=\"mod\">The <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Star of Calamity boss</div><div>The Star of Calamity boss is exclusive to the Hunter's Odyssey gameplay. After the preseason concludes, Hunter's Odyssey will not be part of regular gameplay, but it may return in future preseasons.</div></div>\">Star of Calamity boss</span> on the map has a <span class=\"val\">100</span>% chance to replicate <span class=\"val\">1</span> times</li><li class=\"mod\">The <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Star of Calamity boss</div><div>The Star of Calamity boss is exclusive to the Hunter's Odyssey gameplay. After the preseason concludes, Hunter's Odyssey will not be part of regular gameplay, but it may return in future preseasons.</div></div>\">Star of Calamity boss</span> has a <span class=\"val\">0.45</span>% chance to drop an additional Tidemaster's Exclusive Drop (Only effective in stages at Timemark 5 and above)</li><li class=\"mod\">The <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Star of Calamity boss</div><div>The Star of Calamity boss is exclusive to the Hunter's Odyssey gameplay. After the preseason concludes, Hunter's Odyssey will not be part of regular gameplay, but it may return in future preseasons.</div></div>\">Star of Calamity boss</span> has a <span class=\"val\">0.45</span>% chance to drop an additional Lord of the Void Sea's Exclusive Drop (Only effective in stages at Timemark 5 and above)</li><li class=\"mod\">The <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Star of Calamity boss</div><div>The Star of Calamity boss is exclusive to the Hunter's Odyssey gameplay. After the preseason concludes, Hunter's Odyssey will not be part of regular gameplay, but it may return in future preseasons.</div></div>\">Star of Calamity boss</span> has a <span class=\"val\">0.45</span>% chance to drop an additional the Law Bearer's Exclusive Drop (Only effective in stages at Timemark 5 and above)</li><li class=\"mod\">The <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Star of Calamity boss</div><div>The Star of Calamity boss is exclusive to the Hunter's Odyssey gameplay. After the preseason concludes, Hunter's Odyssey will not be part of regular gameplay, but it may return in future preseasons.</div></div>\">Star of Calamity boss</span> has a <span class=\"val\">0.45</span>% chance to drop an additional Lone King of Aeterna's Exclusive Drop (Only effective in stages at Timemark 5 and above)</li></ul>",
+    "tags": [
+      "Others"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Legendary",
     "name": "Doro-Doro Dorothy",
-    "effect": "<ul><li class=\"mod\">In Netherrealm stages, when a Compass drops, there is a <span class=\"val\">5</span>% chance for a Doro-Doro Supply containing 5-10 Compasses to drop. There is a <span class=\"val\">34</span>% chance for 1 additional Doro-Doro Supply to drop.</li><li class=\"mod\"><span class=\"val\">+18</span>% additional Compass Drop Quantity</li></ul>"
+    "effect": "<ul><li class=\"mod\">In Netherrealm stages, when a Compass drops, there is a <span class=\"val\">5</span>% chance for a Doro-Doro Supply containing 5-10 Compasses to drop. There is a <span class=\"val\">34</span>% chance for 1 additional Doro-Doro Supply to drop.</li><li class=\"mod\"><span class=\"val\">+18</span>% additional Compass Drop Quantity</li></ul>",
+    "tags": [
+      "Compass"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Legendary",
     "name": "Eternity Summoner",
-    "effect": "<ul><li class=\"mod\"><span class=\"val\">60</span>% chance to unlock <span class=\"val\">2</span> additional reward type(s) when the Dark Surge is initiated for the first time on a map</li><li class=\"mod\"><span class=\"val\">60</span>% chance to unlock <span class=\"val\">1</span> additional reward type(s) when the Dark Surge is initiated for the first time on a map</li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\"><span class=\"val\">60</span>% chance to unlock <span class=\"val\">2</span> additional reward type(s) when the Dark Surge is initiated for the first time on a map</li><li class=\"mod\"><span class=\"val\">60</span>% chance to unlock <span class=\"val\">1</span> additional reward type(s) when the Dark Surge is initiated for the first time on a map</li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Dark Surge"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Legendary",
     "name": "Fluffhead Hare",
-    "effect": "<ul><li class=\"mod\">+5% additional Drop Quantity\\n$+sp1$% chance for 2 additional <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Gladiator</div><div>Rare monsters blessed by the God of War, which include 3 types: Bronze Gladiator, Silver Gladiator, and Gold Gladiator. (May appear in Invincible Champion Season-exclusive gameplay only. After the Invincible Champion Season concludes, Invincible Champion will not be part of the regular gameplay, but it may return in future Preseasons.)</div></div>\">Gladiator(s)</span> to appear in the stage (Only effective in the Invincible Champion Season-exclusive gameplay)</li></ul>"
+    "effect": "<ul><li class=\"mod\">+5% additional Drop Quantity\\n$+sp1$% chance for 2 additional <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Gladiator</div><div>Rare monsters blessed by the God of War, which include 3 types: Bronze Gladiator, Silver Gladiator, and Gold Gladiator. (May appear in Invincible Champion Season-exclusive gameplay only. After the Invincible Champion Season concludes, Invincible Champion will not be part of the regular gameplay, but it may return in future Preseasons.)</div></div>\">Gladiator(s)</span> to appear in the stage (Only effective in the Invincible Champion Season-exclusive gameplay)</li></ul>",
+    "tags": [
+      "Others"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Legendary",
     "name": "Heart-binding Rose",
-    "effect": "<ul></ul>"
+    "effect": "<ul></ul>",
+    "tags": [
+      "Cube"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Legendary",
     "name": "Intern Shelley",
-    "effect": "<ul><li class=\"mod\">When opening an <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Antidote Vial</div><div>A treasure chest containing rewards obtained from the Vorax gameplay. The higher the Color Quality, the better the drops. During the Surgical Preparation phase, the higher your Ultimate Activity level, the better the corresponding Antidote Vial you'll obtain. In Shelley's Operating Theater, defeat a Vorax monster matching your Ultimate Activity level to unlock the corresponding Antidote Vial and claim your rewards.</div></div>\">Antidote Vial</span>, all items dropped from it have a 28% chance to be replicated 1 additional time (must be carried at all times in Shelley's Operating Theater)</li><li class=\"mod\">During the Surgical Preparation phase, <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Surgical Instrument</div><div>Surgical Instruments are boost items obtained in the Vorax gameplay. They provide powerful special effects during the Preparation Phase, such as significantly increasing monster Quantity and Activity. They can also serve as core components for specific strategies, aiding you in training powerful Vorax monsters. In the Netherrealm, Surgical Instruments have a chance to drop when Vorax monsters are defeated. They can also be obtained when the Ultimate Activity reaches a certain level in the Surgical Preparation phase.</div></div>\">Surgical Instrument</span> refresh attempts +2 (takes effect immediately after entering the Surgical Preparation screen)</li><li class=\"mod\">When opening an <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Antidote Vial</div><div>A treasure chest containing rewards obtained from the Vorax gameplay. The higher the Color Quality, the better the drops. During the Surgical Preparation phase, the higher your Ultimate Activity level, the better the corresponding Antidote Vial you'll obtain. In Shelley's Operating Theater, defeat a Vorax monster matching your Ultimate Activity level to unlock the corresponding Antidote Vial and claim your rewards.</div></div>\">Antidote Vial</span>, it has a 20% chance to be reopened once (this can only be triggered once</li><li class=\"mod\">must be carried at all times in Shelley's Operating Theater)</li></ul>"
+    "effect": "<ul><li class=\"mod\">When opening an <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Antidote Vial</div><div>A treasure chest containing rewards obtained from the Vorax gameplay. The higher the Color Quality, the better the drops. During the Surgical Preparation phase, the higher your Ultimate Activity level, the better the corresponding Antidote Vial you'll obtain. In Shelley's Operating Theater, defeat a Vorax monster matching your Ultimate Activity level to unlock the corresponding Antidote Vial and claim your rewards.</div></div>\">Antidote Vial</span>, all items dropped from it have a 28% chance to be replicated 1 additional time (must be carried at all times in Shelley's Operating Theater)</li><li class=\"mod\">During the Surgical Preparation phase, <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Surgical Instrument</div><div>Surgical Instruments are boost items obtained in the Vorax gameplay. They provide powerful special effects during the Preparation Phase, such as significantly increasing monster Quantity and Activity. They can also serve as core components for specific strategies, aiding you in training powerful Vorax monsters. In the Netherrealm, Surgical Instruments have a chance to drop when Vorax monsters are defeated. They can also be obtained when the Ultimate Activity reaches a certain level in the Surgical Preparation phase.</div></div>\">Surgical Instrument</span> refresh attempts +2 (takes effect immediately after entering the Surgical Preparation screen)</li><li class=\"mod\">When opening an <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Antidote Vial</div><div>A treasure chest containing rewards obtained from the Vorax gameplay. The higher the Color Quality, the better the drops. During the Surgical Preparation phase, the higher your Ultimate Activity level, the better the corresponding Antidote Vial you'll obtain. In Shelley's Operating Theater, defeat a Vorax monster matching your Ultimate Activity level to unlock the corresponding Antidote Vial and claim your rewards.</div></div>\">Antidote Vial</span>, it has a 20% chance to be reopened once (this can only be triggered once</li><li class=\"mod\">must be carried at all times in Shelley's Operating Theater)</li></ul>",
+    "tags": [
+      "Vorax"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Legendary",
     "name": "Jestress",
-    "effect": "<ul><li class=\"mod\">When opening a Chest of Destiny in Fateful Contest, there is a 38% chance to double the Chest of Destiny rewards (takes effect immediately after entering Fateful Contest)</li><li class=\"mod\">When entering the Tarot Path, there is a 100% chance to gain 1 additional Note of Arcana</li><li class=\"mod\">When opening a Chest of Destiny in Fateful Contest, doubled Chest of Destiny rewards have a 100% chance to be tripled instead (takes effect immediately after entering Fateful Contest)</li></ul>"
+    "effect": "<ul><li class=\"mod\">When opening a Chest of Destiny in Fateful Contest, there is a 38% chance to double the Chest of Destiny rewards (takes effect immediately after entering Fateful Contest)</li><li class=\"mod\">When entering the Tarot Path, there is a 100% chance to gain 1 additional Note of Arcana</li><li class=\"mod\">When opening a Chest of Destiny in Fateful Contest, doubled Chest of Destiny rewards have a 100% chance to be tripled instead (takes effect immediately after entering Fateful Contest)</li></ul>",
+    "tags": [
+      "Arcana"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Legendary",
     "name": "Key of Overrealm",
-    "effect": "<ul><li class=\"mod\">All items dropped in the <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Overrealm</div><div>A space accessible by passing through &quot;Doors&quot;<br>in Netherrealm stages. It inherits the Timemark Bonuses, Netherrealm Resonance Bonuses, some Probes, Compasses, and Netherrealm Talent Bonuses from the Netherrealm stage it belongs to.<br/>The drops in the Overrealm are not affected by any Pactspirits other than Overrealm Pactspirits</div></div>\">Overrealm</span> have a 27% chance to be replicated 1 additional time. Upon triggering a replication, they have a 100% chance to be replicated 1 additional time again</li><li class=\"mod\">When entering the first level of the Overrealm, there is a 24% chance for an additional <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Bottled Shadow</div><div>Contains a reward affix that increases drops in the Overrealm, lasting for one Overrealm round. Multiple reward affixes can stack for even richer loot<br/>In the Overrealm at Timemark 4 or above, filling the Containment Progress guarantees a Bottled Shadow. Entering Level 3 or 4 of the Overrealm guarantees an additional Bottled Shadow.</div></div>\">Bottled Shadow</span> to appear on the Containment Progress bar</li></ul>"
+    "effect": "<ul><li class=\"mod\">All items dropped in the <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Overrealm</div><div>A space accessible by passing through &quot;Doors&quot;<br>in Netherrealm stages. It inherits the Timemark Bonuses, Netherrealm Resonance Bonuses, some Probes, Compasses, and Netherrealm Talent Bonuses from the Netherrealm stage it belongs to.<br/>The drops in the Overrealm are not affected by any Pactspirits other than Overrealm Pactspirits</div></div>\">Overrealm</span> have a 27% chance to be replicated 1 additional time. Upon triggering a replication, they have a 100% chance to be replicated 1 additional time again</li><li class=\"mod\">When entering the first level of the Overrealm, there is a 24% chance for an additional <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Bottled Shadow</div><div>Contains a reward affix that increases drops in the Overrealm, lasting for one Overrealm round. Multiple reward affixes can stack for even richer loot<br/>In the Overrealm at Timemark 4 or above, filling the Containment Progress guarantees a Bottled Shadow. Entering Level 3 or 4 of the Overrealm guarantees an additional Bottled Shadow.</div></div>\">Bottled Shadow</span> to appear on the Containment Progress bar</li></ul>",
+    "tags": [
+      "Overrealm"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Legendary",
     "name": "Kong",
-    "effect": "<ul><li class=\"mod\">Fluorescent Memories dropped have a <span class=\"val\">13</span>% chance to be replicated <span class=\"val\">2</span> time(s)</li><li class=\"mod\">Fluorescent Memories dropped have a <span class=\"val\">20</span>% chance to be replicated <span class=\"val\">1</span> time(s)</li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\">Fluorescent Memories dropped have a <span class=\"val\">13</span>% chance to be replicated <span class=\"val\">2</span> time(s)</li><li class=\"mod\">Fluorescent Memories dropped have a <span class=\"val\">20</span>% chance to be replicated <span class=\"val\">1</span> time(s)</li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Fluorescent"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Legendary",
     "name": "Mistville Orphan",
-    "effect": "<ul><li class=\"mod\">In each round of the Whispering Mist gameplay, additionally gain 3 chance(s) to refresh the items for free at the Mistville Trader (only takes effect if you are carrying this Pactspirit when you enter Mistville)</li><li class=\"mod\">When going to the Clock Tower, there is a 13% chance to skip the battle and enter the Misty Lake, gaining 3 <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Chest of Folklores</div><div>Reward obtained by completing the Advent of Folklores after reaching the Clock Tower</div></div>\">Chests of Folklores</span> at the same time</li><li class=\"mod\">When opening a Chest of Folklores, there is a 10% chance that 1 additional Chest of Folklores will appear (this can only be triggered once)</li></ul>"
+    "effect": "<ul><li class=\"mod\">In each round of the Whispering Mist gameplay, additionally gain 3 chance(s) to refresh the items for free at the Mistville Trader (only takes effect if you are carrying this Pactspirit when you enter Mistville)</li><li class=\"mod\">When going to the Clock Tower, there is a 13% chance to skip the battle and enter the Misty Lake, gaining 3 <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Chest of Folklores</div><div>Reward obtained by completing the Advent of Folklores after reaching the Clock Tower</div></div>\">Chests of Folklores</span> at the same time</li><li class=\"mod\">When opening a Chest of Folklores, there is a 10% chance that 1 additional Chest of Folklores will appear (this can only be triggered once)</li></ul>",
+    "tags": [
+      "Mistville"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Legendary",
     "name": "Monument Knight",
-    "effect": "<ul><li class=\"mod\">Every time the player completes the Candelabrum gameplay in the Ruins of Aeterna, there is a 21% chance for 1 additional reward spots to appear in the Aeterna Map, up to 15 extra spot(s). After the City of Aeterna is rebuilt, all additional reward spots will be randomly assigned in traversable areas of the Aeterna Map.</li><li class=\"mod\">There is a 16% chance for rewards to be doubled when the player enters the reward gameplay in the City of Aeterna</li></ul>"
+    "effect": "<ul><li class=\"mod\">Every time the player completes the Candelabrum gameplay in the Ruins of Aeterna, there is a 21% chance for 1 additional reward spots to appear in the Aeterna Map, up to 15 extra spot(s). After the City of Aeterna is rebuilt, all additional reward spots will be randomly assigned in traversable areas of the Aeterna Map.</li><li class=\"mod\">There is a 16% chance for rewards to be doubled when the player enters the reward gameplay in the City of Aeterna</li></ul>",
+    "tags": [
+      "Aeterna"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Legendary",
     "name": "Moonshadow Guide",
-    "effect": "<ul><li class=\"mod\">When completing a raid or a trade, or settling an order, there is a 24% chance for all rewards to be replicated 1 time</li><li class=\"mod\">There is a 16% chance to +100% additional Drop Quantity during raids</li><li class=\"mod\">When returning from a trade, there is a 10% chance to bring back 1 laborer</li><li class=\"mod\">When starting a trade, there is a 16% chance to regain the invested resources and immediately settle the rewards</li><li class=\"mod\">When returning from a raid, there is a 10% chance to bring back 1 laborer</li></ul>"
+    "effect": "<ul><li class=\"mod\">When completing a raid or a trade, or settling an order, there is a 24% chance for all rewards to be replicated 1 time</li><li class=\"mod\">There is a 16% chance to +100% additional Drop Quantity during raids</li><li class=\"mod\">When returning from a trade, there is a 10% chance to bring back 1 laborer</li><li class=\"mod\">When starting a trade, there is a 16% chance to regain the invested resources and immediately settle the rewards</li><li class=\"mod\">When returning from a raid, there is a 10% chance to bring back 1 laborer</li></ul>",
+    "tags": [
+      "Sandlord"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Legendary",
     "name": "Prof. SOURCE",
-    "effect": "<ul><li class=\"mod\">28% chance for all reward units from <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Carjack</div><div>After activating the Transport Vehicle in the Netherrealm stage, the escort bodyguards will attempt to flee with the payload. Chase after them and defeat incoming reinforcements to earn corresponding rewards</div></div>\">Carjack</span> or <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>TOWER Co. Central Vault</div><div>Go to TOWER Co. Central Vault to challenge the endgame gameplay of the Outlaw season. You will enter a map with many small strongrooms. With each small strongroom you raid, security becomes tighter and tighter until you fail to raid a strongroom within the time limit and find yourself up against the boss. Defeat the boss to loot the bountiful rewards of the ultimate strongroom.</div></div>\">TOWER Co. Central Vault</span> in a Netherrealm stage to be recoded by Prof. SOURCE when they appear, replicating their rewards 1 time (takes effect immediately after starting Carjack and lasts for the duration of the operation</li><li class=\"mod\">must be carried at all times in TOWER Co. Central Vault)</li><li class=\"mod\">100% chance for all reward units from <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Carjack</div><div>After activating the Transport Vehicle in the Netherrealm stage, the escort bodyguards will attempt to flee with the payload. Chase after them and defeat incoming reinforcements to earn corresponding rewards</div></div>\">Carjack</span> or <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>TOWER Co. Central Vault</div><div>Go to TOWER Co. Central Vault to challenge the endgame gameplay of the Outlaw season. You will enter a map with many small strongrooms. With each small strongroom you raid, security becomes tighter and tighter until you fail to raid a strongroom within the time limit and find yourself up against the boss. Defeat the boss to loot the bountiful rewards of the ultimate strongroom.</div></div>\">TOWER Co. Central Vault</span> that have been recoded in a Netherrealm stage to be replicated 1 time again (takes effect immediately after starting Carjack and lasts for the duration of the operation</li><li class=\"mod\">must be carried at all times in TOWER Co. Central Vault)</li><li class=\"mod\">After revealing a <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Bounty Order</div><div>Before the Carjack starts, you have a chance to receive a Bounty Order from the Black Market. Reveal the Bounty Order by inserting TOWER Coins, and complete it to get additional Bounty Chests. There are three Bounty Order qualities: Basic, Generous, and Astronomical.</div></div>\">Bounty Order</span>, gains 2 chance(s) to refresh <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Bounty Order</div><div>Before the Carjack starts, you have a chance to receive a Bounty Order from the Black Market. Reveal the Bounty Order by inserting TOWER Coins, and complete it to get additional Bounty Chests. There are three Bounty Order qualities: Basic, Generous, and Astronomical.</div></div>\">Bounty Orders</span></li></ul>"
+    "effect": "<ul><li class=\"mod\">28% chance for all reward units from <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Carjack</div><div>After activating the Transport Vehicle in the Netherrealm stage, the escort bodyguards will attempt to flee with the payload. Chase after them and defeat incoming reinforcements to earn corresponding rewards</div></div>\">Carjack</span> or <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>TOWER Co. Central Vault</div><div>Go to TOWER Co. Central Vault to challenge the endgame gameplay of the Outlaw season. You will enter a map with many small strongrooms. With each small strongroom you raid, security becomes tighter and tighter until you fail to raid a strongroom within the time limit and find yourself up against the boss. Defeat the boss to loot the bountiful rewards of the ultimate strongroom.</div></div>\">TOWER Co. Central Vault</span> in a Netherrealm stage to be recoded by Prof. SOURCE when they appear, replicating their rewards 1 time (takes effect immediately after starting Carjack and lasts for the duration of the operation</li><li class=\"mod\">must be carried at all times in TOWER Co. Central Vault)</li><li class=\"mod\">100% chance for all reward units from <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Carjack</div><div>After activating the Transport Vehicle in the Netherrealm stage, the escort bodyguards will attempt to flee with the payload. Chase after them and defeat incoming reinforcements to earn corresponding rewards</div></div>\">Carjack</span> or <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>TOWER Co. Central Vault</div><div>Go to TOWER Co. Central Vault to challenge the endgame gameplay of the Outlaw season. You will enter a map with many small strongrooms. With each small strongroom you raid, security becomes tighter and tighter until you fail to raid a strongroom within the time limit and find yourself up against the boss. Defeat the boss to loot the bountiful rewards of the ultimate strongroom.</div></div>\">TOWER Co. Central Vault</span> that have been recoded in a Netherrealm stage to be replicated 1 time again (takes effect immediately after starting Carjack and lasts for the duration of the operation</li><li class=\"mod\">must be carried at all times in TOWER Co. Central Vault)</li><li class=\"mod\">After revealing a <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Bounty Order</div><div>Before the Carjack starts, you have a chance to receive a Bounty Order from the Black Market. Reveal the Bounty Order by inserting TOWER Coins, and complete it to get additional Bounty Chests. There are three Bounty Order qualities: Basic, Generous, and Astronomical.</div></div>\">Bounty Order</span>, gains 2 chance(s) to refresh <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Bounty Order</div><div>Before the Carjack starts, you have a chance to receive a Bounty Order from the Black Market. Reveal the Bounty Order by inserting TOWER Coins, and complete it to get additional Bounty Chests. There are three Bounty Order qualities: Basic, Generous, and Astronomical.</div></div>\">Bounty Orders</span></li></ul>",
+    "tags": [
+      "Outlaw"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Legendary",
     "name": "Rainbowpaint Owl",
-    "effect": "<ul><li class=\"mod\">When the painting is completed, randomly transforms 2-5 Cells to Pactspirit Exclusive Cells that do not require combat and grant double rewards.</li><li class=\"mod\">There is a 100% chance that 2 additional Splendor Egg(s) of random color will appear when entering the Frozen Canvas map.</li><li class=\"mod\">In the Paint phase of each round, you gain 2 Brushstroke Effect refresh attempt(s). (Only takes effect if you are carrying this Pactspirit before starting a painting)</li></ul>"
+    "effect": "<ul><li class=\"mod\">When the painting is completed, randomly transforms 2-5 Cells to Pactspirit Exclusive Cells that do not require combat and grant double rewards.</li><li class=\"mod\">There is a 100% chance that 2 additional Splendor Egg(s) of random color will appear when entering the Frozen Canvas map.</li><li class=\"mod\">In the Paint phase of each round, you gain 2 Brushstroke Effect refresh attempt(s). (Only takes effect if you are carrying this Pactspirit before starting a painting)</li></ul>",
+    "tags": [
+      "Frozen Canvas"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Legendary",
     "name": "Shepherd",
-    "effect": "<ul><li class=\"mod\">While escaping from the Nightmare, whenever you remove Nightmare Roots, there is a 13% chance that all <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Dream Bubbles</div><div>The rewards obtained in Twinightmare are collectively called Dream Bubbles and only become real after you escape from the Nightmare.</div></div>\">Dream Bubbles</span> you have obtained will drop 1 additional time.</li><li class=\"mod\">Upon entering a Nightmare, there is a 100% chance to trigger 1 additional <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Sweet Dream Omen</div><div>When selecting a Dream Omen, Sweet Dream Omens will change your Dream Bubbles in various ways, such as by changing the quality or type of bubbles.</div></div>\">Sweet Dream Omen</span> selection (this selection will not be accompanied by a <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Nightmare Omen</div><div>When selecting a Dream Omen, Nightmare Omens will remind you of the dangers you will encounter in your Nightmare.</div></div>\">Nightmare Omen</span>)</li><li class=\"mod\">During each round of <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Twinightmare</div><div>A round of Twinightmare consists of several Sweet Dreams and one Nightmare.</div></div>\">Twinightmare</span>, gain 2 chance(s) to re-roll the current <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Dream Omen</div><div>There are 2 types of Dream Omens: Sweet Dream Omens and Nightmare Omens. Sweet Dream Omens will change your Dream Bubbles in various ways, such as by changing the quality or type of bubbles. Nightmare Omens will remind you of the dangers you will encounter in your Nightmare.</div></div>\">Dream Omens</span></li></ul>"
+    "effect": "<ul><li class=\"mod\">While escaping from the Nightmare, whenever you remove Nightmare Roots, there is a 13% chance that all <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Dream Bubbles</div><div>The rewards obtained in Twinightmare are collectively called Dream Bubbles and only become real after you escape from the Nightmare.</div></div>\">Dream Bubbles</span> you have obtained will drop 1 additional time.</li><li class=\"mod\">Upon entering a Nightmare, there is a 100% chance to trigger 1 additional <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Sweet Dream Omen</div><div>When selecting a Dream Omen, Sweet Dream Omens will change your Dream Bubbles in various ways, such as by changing the quality or type of bubbles.</div></div>\">Sweet Dream Omen</span> selection (this selection will not be accompanied by a <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Nightmare Omen</div><div>When selecting a Dream Omen, Nightmare Omens will remind you of the dangers you will encounter in your Nightmare.</div></div>\">Nightmare Omen</span>)</li><li class=\"mod\">During each round of <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Twinightmare</div><div>A round of Twinightmare consists of several Sweet Dreams and one Nightmare.</div></div>\">Twinightmare</span>, gain 2 chance(s) to re-roll the current <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Dream Omen</div><div>There are 2 types of Dream Omens: Sweet Dream Omens and Nightmare Omens. Sweet Dream Omens will change your Dream Bubbles in various ways, such as by changing the quality or type of bubbles. Nightmare Omens will remind you of the dangers you will encounter in your Nightmare.</div></div>\">Dream Omens</span></li></ul>",
+    "tags": [
+      "Nightmare"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Legendary",
     "name": "Starfish Chanter",
-    "effect": "<ul><li class=\"mod\"><span class=\"val\">27</span>% chance to double the effect of the <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Seal Whisper</div><div>Complete the exclusive gameplay of the Blacksail Season to get Seal Whispers. Collect a certain amount of Seal Whispers to unseal the Void Sea Terminal and challenge the season boss. Different combinations of Seal Whispers grant different bonuses that affect the rewards from the season boss</div></div>\">Seal Whisper</span> revealed when defeating <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Pirate</div><div>A specific type of monster that players will encounter when playing the exclusive content of the Blacksail Season</div></div>\">Void Pirates</span></li><li class=\"mod\"><span class=\"val\">+8</span>% additional <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\"><span class=\"val\">27</span>% chance to double the effect of the <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Seal Whisper</div><div>Complete the exclusive gameplay of the Blacksail Season to get Seal Whispers. Collect a certain amount of Seal Whispers to unseal the Void Sea Terminal and challenge the season boss. Different combinations of Seal Whispers grant different bonuses that affect the rewards from the season boss</div></div>\">Seal Whisper</span> revealed when defeating <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Pirate</div><div>A specific type of monster that players will encounter when playing the exclusive content of the Blacksail Season</div></div>\">Void Pirates</span></li><li class=\"mod\"><span class=\"val\">+8</span>% additional <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Blacksail"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Rare",
     "name": "Benign Bug",
-    "effect": "<ul><li class=\"mod\"><span class=\"val\">+8</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\"><span class=\"val\">+9</span>% additional Compass Drop Quantity</li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\"><span class=\"val\">+8</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\"><span class=\"val\">+9</span>% additional Compass Drop Quantity</li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Compass"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Rare",
     "name": "Benign Bug - Barbie Pink",
-    "effect": "<ul><li class=\"mod\">When opening a Chest of Destiny in Fateful Contest, there is a 2% chance to double the Chest of Destiny rewards (takes effect immediately after entering Fateful Contest)</li><li class=\"mod\">+8% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\">When opening a Chest of Destiny in Fateful Contest, there is a 2% chance to double the Chest of Destiny rewards (takes effect immediately after entering Fateful Contest)</li><li class=\"mod\">+8% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Arcana"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Rare",
     "name": "Benign Bug - Merciless Silver",
-    "effect": "<ul><li class=\"mod\">+8% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\">When returning from a raid, there is a 5% chance to bring back 1 laborer</li><li class=\"mod\">When returning from a trade, there is a 5% chance to bring back 1 laborer</li></ul>"
+    "effect": "<ul><li class=\"mod\">+8% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\">When returning from a raid, there is a 5% chance to bring back 1 laborer</li><li class=\"mod\">When returning from a trade, there is a 5% chance to bring back 1 laborer</li></ul>",
+    "tags": [
+      "Sandlord"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Rare",
     "name": "Bird Nest",
-    "effect": "<ul><li class=\"mod\">When opening an <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Antidote Vial</div><div>A treasure chest containing rewards obtained from the Vorax gameplay. The higher the Color Quality, the better the drops. During the Surgical Preparation phase, the higher your Ultimate Activity level, the better the corresponding Antidote Vial you'll obtain. In Shelley's Operating Theater, defeat a Vorax monster matching your Ultimate Activity level to unlock the corresponding Antidote Vial and claim your rewards.</div></div>\">Antidote Vial</span>, it has a 2% chance to be reopened once (this can only be triggered once</li><li class=\"mod\">must be carried at all times in Shelley's Operating Theater)</li><li class=\"mod\">+8% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\">When opening an <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Antidote Vial</div><div>A treasure chest containing rewards obtained from the Vorax gameplay. The higher the Color Quality, the better the drops. During the Surgical Preparation phase, the higher your Ultimate Activity level, the better the corresponding Antidote Vial you'll obtain. In Shelley's Operating Theater, defeat a Vorax monster matching your Ultimate Activity level to unlock the corresponding Antidote Vial and claim your rewards.</div></div>\">Antidote Vial</span>, it has a 2% chance to be reopened once (this can only be triggered once</li><li class=\"mod\">must be carried at all times in Shelley's Operating Theater)</li><li class=\"mod\">+8% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Vorax"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Rare",
     "name": "Cloudgatherer - Sky",
-    "effect": "<ul><li class=\"mod\"><span class=\"val\">+8</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\"><span class=\"val\">+8</span>% additional Ember Drop Quantity</li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\"><span class=\"val\">+8</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\"><span class=\"val\">+8</span>% additional Ember Drop Quantity</li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Ember"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Rare",
     "name": "Cloudgatherer - Sky's Dome",
-    "effect": "<ul><li class=\"mod\"><span class=\"val\">+8</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\">Fluorescent Memories dropped have a <span class=\"val\">10</span>% chance to be replicated <span class=\"val\">1</span> time(s)</li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\"><span class=\"val\">+8</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\">Fluorescent Memories dropped have a <span class=\"val\">10</span>% chance to be replicated <span class=\"val\">1</span> time(s)</li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Fluorescent"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Rare",
     "name": "Cloudgatherer - Surging Gold",
-    "effect": "<ul><li class=\"mod\"><span class=\"val\">+8</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\"><span class=\"val\">+10</span>% additional Flame Fuel Drop Quantity</li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\"><span class=\"val\">+8</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\"><span class=\"val\">+10</span>% additional Flame Fuel Drop Quantity</li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Ember"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Rare",
     "name": "Dragon Plant",
-    "effect": "<ul><li class=\"mod\">All Member Services gain an additional effect: Each time after completing Operation Cogwheel, there is a 8% chance to get 1 additional Cogwheel Voucher (takes effect immediately after selecting Member Services and lasts for the duration of this game)</li><li class=\"mod\">+8% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\">All Member Services gain an additional effect: Each time after completing Operation Cogwheel, there is a 8% chance to get 1 additional Cogwheel Voucher (takes effect immediately after selecting Member Services and lasts for the duration of this game)</li><li class=\"mod\">+8% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Doll"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Rare",
     "name": "Dragon Plant - Lettuce",
-    "effect": "<ul><li class=\"mod\">There is a 50% chance that 2 additional Splendor Egg(s) of random color will appear when entering the Frozen Canvas map.</li><li class=\"mod\">In the Paint phase of each round, you gain  Brushstroke Effect refresh attempt(s). (Only takes effect if you are carrying this Pactspirit before starting a painting)</li><li class=\"mod\">+8% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\">There is a 50% chance that 2 additional Splendor Egg(s) of random color will appear when entering the Frozen Canvas map.</li><li class=\"mod\">In the Paint phase of each round, you gain  Brushstroke Effect refresh attempt(s). (Only takes effect if you are carrying this Pactspirit before starting a painting)</li><li class=\"mod\">+8% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Frozen Canvas"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Rare",
     "name": "First Mate of the Furious Sea - Silent Night",
-    "effect": "<ul><li class=\"mod\">When opening a Chest of Folklores, there is a 5% chance that 1 additional Chest of Folklores will appear (this can only be triggered once)</li><li class=\"mod\">+8% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\">When opening a Chest of Folklores, there is a 5% chance that 1 additional Chest of Folklores will appear (this can only be triggered once)</li><li class=\"mod\">+8% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Mistville"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Rare",
     "name": "Hell Cavalry - Sea",
-    "effect": "<ul><li class=\"mod\"><span class=\"val\">+8</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\"><span class=\"val\">+18</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Divinity Stone</div><div>An incarnation of the power of the Six Gods. You can use them to exchange for items in Blessings from Gods.<br/>(Blessings from Gods can be accessed at the Spacetime Wanderer in Ember's Rest.)</div></div>\">Divinity Stone</span> Drop Quantity.</li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\"><span class=\"val\">+8</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\"><span class=\"val\">+18</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Divinity Stone</div><div>An incarnation of the power of the Six Gods. You can use them to exchange for items in Blessings from Gods.<br/>(Blessings from Gods can be accessed at the Spacetime Wanderer in Ember's Rest.)</div></div>\">Divinity Stone</span> Drop Quantity.</li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Cube"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Rare",
     "name": "Letice",
-    "effect": "<ul><li class=\"mod\">There is a 8% chance for rewards to be doubled when the player enters the reward gameplay in the City of Aeterna</li><li class=\"mod\">+8% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\">There is a 8% chance for rewards to be doubled when the player enters the reward gameplay in the City of Aeterna</li><li class=\"mod\">+8% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Aeterna"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Rare",
     "name": "Letice - Frost",
-    "effect": "<ul><li class=\"mod\">While escaping from the Nightmare, whenever you remove Nightmare Roots, there is a 3% chance that all <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Dream Bubbles</div><div>The rewards obtained in Twinightmare are collectively called Dream Bubbles and only become real after you escape from the Nightmare.</div></div>\">Dream Bubbles</span> you have obtained will drop 1 additional time.</li><li class=\"mod\">+8% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\">While escaping from the Nightmare, whenever you remove Nightmare Roots, there is a 3% chance that all <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Dream Bubbles</div><div>The rewards obtained in Twinightmare are collectively called Dream Bubbles and only become real after you escape from the Nightmare.</div></div>\">Dream Bubbles</span> you have obtained will drop 1 additional time.</li><li class=\"mod\">+8% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Nightmare"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Rare",
     "name": "Plaintive Ball of Thread - Flower",
-    "effect": "<ul><li class=\"mod\"><span class=\"val\">+8</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\"><span class=\"val\">30</span>% chance to unlock <span class=\"val\">1</span> additional reward type(s) when the Dark Surge is initiated for the first time on a map</li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\"><span class=\"val\">+8</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\"><span class=\"val\">30</span>% chance to unlock <span class=\"val\">1</span> additional reward type(s) when the Dark Surge is initiated for the first time on a map</li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Dark Surge"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Rare",
     "name": "Plaintive Ball of Thread - Frost",
-    "effect": "<ul><li class=\"mod\"><span class=\"val\">+6</span>% additional Gear Drop Quantity</li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\"><span class=\"val\">+6</span>% additional Gear Drop Quantity</li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Others"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Rare",
     "name": "Plaintive Ball of Thread - Gold Leaf",
-    "effect": "<ul><li class=\"mod\"><span class=\"val\">+8</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\"><span class=\"val\">+4</span>% additional <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\"><span class=\"val\">+8</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\"><span class=\"val\">+4</span>% additional <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Blacksail"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Rare",
     "name": "Shro-Shroom",
-    "effect": "<ul><li class=\"mod\">2% chance for all reward units from <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Carjack</div><div>After activating the Transport Vehicle in the Netherrealm stage, the escort bodyguards will attempt to flee with the payload. Chase after them and defeat incoming reinforcements to earn corresponding rewards</div></div>\">Carjack</span> or <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>TOWER Co. Central Vault</div><div>Go to TOWER Co. Central Vault to challenge the endgame gameplay of the Outlaw season. You will enter a map with many small strongrooms. With each small strongroom you raid, security becomes tighter and tighter until you fail to raid a strongroom within the time limit and find yourself up against the boss. Defeat the boss to loot the bountiful rewards of the ultimate strongroom.</div></div>\">TOWER Co. Central Vault</span> in a Netherrealm stage to be recoded by Prof. SOURCE when they appear, replicating their rewards 1 time (takes effect immediately after starting Carjack and lasts for the duration of the operation</li><li class=\"mod\">must be carried at all times in TOWER Co. Central Vault)</li><li class=\"mod\">+8% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\">2% chance for all reward units from <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Carjack</div><div>After activating the Transport Vehicle in the Netherrealm stage, the escort bodyguards will attempt to flee with the payload. Chase after them and defeat incoming reinforcements to earn corresponding rewards</div></div>\">Carjack</span> or <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>TOWER Co. Central Vault</div><div>Go to TOWER Co. Central Vault to challenge the endgame gameplay of the Outlaw season. You will enter a map with many small strongrooms. With each small strongroom you raid, security becomes tighter and tighter until you fail to raid a strongroom within the time limit and find yourself up against the boss. Defeat the boss to loot the bountiful rewards of the ultimate strongroom.</div></div>\">TOWER Co. Central Vault</span> in a Netherrealm stage to be recoded by Prof. SOURCE when they appear, replicating their rewards 1 time (takes effect immediately after starting Carjack and lasts for the duration of the operation</li><li class=\"mod\">must be carried at all times in TOWER Co. Central Vault)</li><li class=\"mod\">+8% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Outlaw"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Rare",
     "name": "Shro-Shroom - Lurid Bolete",
-    "effect": "<ul><li class=\"mod\"><span class=\"val\">+8</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\">All items dropped in the Overrealm have a <span class=\"val\">2</span>% chance to be replicated <span class=\"val\">1</span> additional time(s)</li></ul>"
+    "effect": "<ul><li class=\"mod\"><span class=\"val\">+8</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\">All items dropped in the Overrealm have a <span class=\"val\">2</span>% chance to be replicated <span class=\"val\">1</span> additional time(s)</li></ul>",
+    "tags": [
+      "Overrealm"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Magic",
     "name": "Feasting Samurai",
-    "effect": "<ul><li class=\"mod\">All Member Services gain an additional effect: Each time after completing Operation Cogwheel, there is a 4% chance to get 1 additional Cogwheel Voucher (takes effect immediately after selecting Member Services and lasts for the duration of this game)</li><li class=\"mod\">+8% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\">All Member Services gain an additional effect: Each time after completing Operation Cogwheel, there is a 4% chance to get 1 additional Cogwheel Voucher (takes effect immediately after selecting Member Services and lasts for the duration of this game)</li><li class=\"mod\">+8% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Doll"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Magic",
     "name": "Feasting Samurai - Mint",
-    "effect": "<ul><li class=\"mod\">There is a 25% chance that 2 additional Splendor Egg(s) of random color will appear when entering the Frozen Canvas map.</li><li class=\"mod\">In the Paint phase of each round, you gain  Brushstroke Effect refresh attempt(s). (Only takes effect if you are carrying this Pactspirit before starting a painting)</li><li class=\"mod\">+8% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\">There is a 25% chance that 2 additional Splendor Egg(s) of random color will appear when entering the Frozen Canvas map.</li><li class=\"mod\">In the Paint phase of each round, you gain  Brushstroke Effect refresh attempt(s). (Only takes effect if you are carrying this Pactspirit before starting a painting)</li><li class=\"mod\">+8% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Frozen Canvas"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Magic",
     "name": "Happy Chonky",
-    "effect": "<ul><li class=\"mod\"><span class=\"val\">+8</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\"><span class=\"val\">+5</span>% additional Flame Fuel Drop Quantity</li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\"><span class=\"val\">+8</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\"><span class=\"val\">+5</span>% additional Flame Fuel Drop Quantity</li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Ember"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Magic",
     "name": "Happy Chonky - Emerald",
-    "effect": "<ul><li class=\"mod\"><span class=\"val\">+8</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\"><span class=\"val\">+2</span>% additional <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\"><span class=\"val\">+8</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\"><span class=\"val\">+2</span>% additional <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Blacksail"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Magic",
     "name": "Happy Chonky - Sun",
-    "effect": "<ul><li class=\"mod\"><span class=\"val\">+3</span>% additional Gear Drop Quantity</li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\"><span class=\"val\">+3</span>% additional Gear Drop Quantity</li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Others"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Magic",
     "name": "Happy Chonky - Violet",
-    "effect": "<ul><li class=\"mod\">When opening a Chest of Folklores, there is a 2.5% chance that 1 additional Chest of Folklores will appear (this can only be triggered once)</li><li class=\"mod\">+8% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\">When opening a Chest of Folklores, there is a 2.5% chance that 1 additional Chest of Folklores will appear (this can only be triggered once)</li><li class=\"mod\">+8% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Mistville"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Magic",
     "name": "Idling Weasel - Cherry Blossom",
-    "effect": "<ul><li class=\"mod\"><span class=\"val\">+8</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\"><span class=\"val\">+4</span>% additional Ember Drop Quantity</li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\"><span class=\"val\">+8</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\"><span class=\"val\">+4</span>% additional Ember Drop Quantity</li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Ember"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Magic",
     "name": "Idling Weasel - Sparkle",
-    "effect": "<ul><li class=\"mod\"><span class=\"val\">+8</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\">Fluorescent Memories dropped have a <span class=\"val\">5</span>% chance to be replicated <span class=\"val\">1</span> time(s)</li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\"><span class=\"val\">+8</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\">Fluorescent Memories dropped have a <span class=\"val\">5</span>% chance to be replicated <span class=\"val\">1</span> time(s)</li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Fluorescent"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Magic",
     "name": "Luluri - Green Leaf",
-    "effect": "<ul><li class=\"mod\"><span class=\"val\">+8</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\"><span class=\"val\">16</span>% chance to unlock <span class=\"val\">1</span> additional reward type(s) when the Dark Surge is initiated for the first time on a map</li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\"><span class=\"val\">+8</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\"><span class=\"val\">16</span>% chance to unlock <span class=\"val\">1</span> additional reward type(s) when the Dark Surge is initiated for the first time on a map</li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Dark Surge"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Magic",
     "name": "Lumidrake",
-    "effect": "<ul><li class=\"mod\">1% chance for all reward units from <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Carjack</div><div>After activating the Transport Vehicle in the Netherrealm stage, the escort bodyguards will attempt to flee with the payload. Chase after them and defeat incoming reinforcements to earn corresponding rewards</div></div>\">Carjack</span> or <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>TOWER Co. Central Vault</div><div>Go to TOWER Co. Central Vault to challenge the endgame gameplay of the Outlaw season. You will enter a map with many small strongrooms. With each small strongroom you raid, security becomes tighter and tighter until you fail to raid a strongroom within the time limit and find yourself up against the boss. Defeat the boss to loot the bountiful rewards of the ultimate strongroom.</div></div>\">TOWER Co. Central Vault</span> in a Netherrealm stage to be recoded by Prof. SOURCE when they appear, replicating their rewards 1 time (takes effect immediately after starting Carjack and lasts for the duration of the operation</li><li class=\"mod\">must be carried at all times in TOWER Co. Central Vault)</li><li class=\"mod\">+8% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\">1% chance for all reward units from <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Carjack</div><div>After activating the Transport Vehicle in the Netherrealm stage, the escort bodyguards will attempt to flee with the payload. Chase after them and defeat incoming reinforcements to earn corresponding rewards</div></div>\">Carjack</span> or <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>TOWER Co. Central Vault</div><div>Go to TOWER Co. Central Vault to challenge the endgame gameplay of the Outlaw season. You will enter a map with many small strongrooms. With each small strongroom you raid, security becomes tighter and tighter until you fail to raid a strongroom within the time limit and find yourself up against the boss. Defeat the boss to loot the bountiful rewards of the ultimate strongroom.</div></div>\">TOWER Co. Central Vault</span> in a Netherrealm stage to be recoded by Prof. SOURCE when they appear, replicating their rewards 1 time (takes effect immediately after starting Carjack and lasts for the duration of the operation</li><li class=\"mod\">must be carried at all times in TOWER Co. Central Vault)</li><li class=\"mod\">+8% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Outlaw"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Magic",
     "name": "Lumidrake - Flare",
-    "effect": "<ul><li class=\"mod\">When opening an <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Antidote Vial</div><div>A treasure chest containing rewards obtained from the Vorax gameplay. The higher the Color Quality, the better the drops. During the Surgical Preparation phase, the higher your Ultimate Activity level, the better the corresponding Antidote Vial you'll obtain. In Shelley's Operating Theater, defeat a Vorax monster matching your Ultimate Activity level to unlock the corresponding Antidote Vial and claim your rewards.</div></div>\">Antidote Vial</span>, it has a 1% chance to be reopened once (this can only be triggered once</li><li class=\"mod\">must be carried at all times in Shelley's Operating Theater)</li><li class=\"mod\">+8% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\">When opening an <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Antidote Vial</div><div>A treasure chest containing rewards obtained from the Vorax gameplay. The higher the Color Quality, the better the drops. During the Surgical Preparation phase, the higher your Ultimate Activity level, the better the corresponding Antidote Vial you'll obtain. In Shelley's Operating Theater, defeat a Vorax monster matching your Ultimate Activity level to unlock the corresponding Antidote Vial and claim your rewards.</div></div>\">Antidote Vial</span>, it has a 1% chance to be reopened once (this can only be triggered once</li><li class=\"mod\">must be carried at all times in Shelley's Operating Theater)</li><li class=\"mod\">+8% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Vorax"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Magic",
     "name": "Lumidrake - Glow",
-    "effect": "<ul><li class=\"mod\"><span class=\"val\">+8</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\">All items dropped in the Overrealm have a <span class=\"val\">1</span>% chance to be replicated <span class=\"val\">1</span> additional time(s)</li></ul>"
+    "effect": "<ul><li class=\"mod\"><span class=\"val\">+8</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\">All items dropped in the Overrealm have a <span class=\"val\">1</span>% chance to be replicated <span class=\"val\">1</span> additional time(s)</li></ul>",
+    "tags": [
+      "Overrealm"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Magic",
     "name": "Shocket",
-    "effect": "<ul><li class=\"mod\">There is a 4% chance for rewards to be doubled when the player enters the reward gameplay in the City of Aeterna</li><li class=\"mod\">+8% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\">There is a 4% chance for rewards to be doubled when the player enters the reward gameplay in the City of Aeterna</li><li class=\"mod\">+8% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Aeterna"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Magic",
     "name": "Shocket - Dark Night",
-    "effect": "<ul><li class=\"mod\">While escaping from the Nightmare, whenever you remove Nightmare Roots, there is a 2% chance that all <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Dream Bubbles</div><div>The rewards obtained in Twinightmare are collectively called Dream Bubbles and only become real after you escape from the Nightmare.</div></div>\">Dream Bubbles</span> you have obtained will drop 1 additional time.</li><li class=\"mod\">+8% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\">While escaping from the Nightmare, whenever you remove Nightmare Roots, there is a 2% chance that all <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Dream Bubbles</div><div>The rewards obtained in Twinightmare are collectively called Dream Bubbles and only become real after you escape from the Nightmare.</div></div>\">Dream Bubbles</span> you have obtained will drop 1 additional time.</li><li class=\"mod\">+8% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Nightmare"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Magic",
     "name": "Spiny Snail - Cloud",
-    "effect": "<ul><li class=\"mod\"><span class=\"val\">+8</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\"><span class=\"val\">+10</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Divinity Stone</div><div>An incarnation of the power of the Six Gods. You can use them to exchange for items in Blessings from Gods.<br/>(Blessings from Gods can be accessed at the Spacetime Wanderer in Ember's Rest.)</div></div>\">Divinity Stone</span> Drop Quantity.</li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\"><span class=\"val\">+8</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\"><span class=\"val\">+10</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Divinity Stone</div><div>An incarnation of the power of the Six Gods. You can use them to exchange for items in Blessings from Gods.<br/>(Blessings from Gods can be accessed at the Spacetime Wanderer in Ember's Rest.)</div></div>\">Divinity Stone</span> Drop Quantity.</li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Cube"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Magic",
     "name": "Sprouting Grass",
-    "effect": "<ul><li class=\"mod\">When opening a Chest of Destiny in Fateful Contest, there is a 1% chance to double the Chest of Destiny rewards (takes effect immediately after entering Fateful Contest)</li><li class=\"mod\">+8% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\">When opening a Chest of Destiny in Fateful Contest, there is a 1% chance to double the Chest of Destiny rewards (takes effect immediately after entering Fateful Contest)</li><li class=\"mod\">+8% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Arcana"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Magic",
     "name": "Sprouting Grass - Purple Sand",
-    "effect": "<ul><li class=\"mod\"><span class=\"val\">+8</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\"><span class=\"val\">+5</span>% additional Compass Drop Quantity</li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\"><span class=\"val\">+8</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\"><span class=\"val\">+5</span>% additional Compass Drop Quantity</li><li class=\"mod\"><span class=\"val\">+6</span>% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Compass"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Magic",
     "name": "Sprouting Grass - White Porcelain",
-    "effect": "<ul><li class=\"mod\">+8% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\">When returning from a raid, there is a 2.5% chance to bring back 1 laborer</li><li class=\"mod\">When returning from a trade, there is a 2.5% chance to bring back 1 laborer</li></ul>"
+    "effect": "<ul><li class=\"mod\">+8% <span class=\"tooltip\" data-title=\"<div class=&quot;text-start&quot;><div>Drop quantity</div><div>Affects the quantity of items dropped (all types)</div></div>\">Drop Quantity</span></li><li class=\"mod\">When returning from a raid, there is a 2.5% chance to bring back 1 laborer</li><li class=\"mod\">When returning from a trade, there is a 2.5% chance to bring back 1 laborer</li></ul>",
+    "tags": [
+      "Sandlord"
+    ]
   },
   {
     "type": "Attack",
@@ -981,18 +1146,27 @@
     "type": "Drop",
     "rarity": "Magic",
     "name": "Meowth - Violet",
-    "effect": "<ul><li class=\"mod\">Upon entering the gameplay area, Avatar of Moon has a <span class=\"val\">2.5</span>% chance to bless several random statues, increasing its <span class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Drop quantity&lt;/div&gt;&lt;div&gt;Affects the quantity of items dropped (all types)&lt;/div&gt;&lt;/div&gt;\">Drop Quantity</span> by an additional <span class=\"val\">100</span>%</li><li class=\"mod\"><span class=\"val\">+8</span>% <span class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Drop quantity&lt;/div&gt;&lt;div&gt;Affects the quantity of items dropped (all types)&lt;/div&gt;&lt;/div&gt;\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\">Upon entering the gameplay area, Avatar of Moon has a <span class=\"val\">2.5</span>% chance to bless several random statues, increasing its <span class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Drop quantity&lt;/div&gt;&lt;div&gt;Affects the quantity of items dropped (all types)&lt;/div&gt;&lt;/div&gt;\">Drop Quantity</span> by an additional <span class=\"val\">100</span>%</li><li class=\"mod\"><span class=\"val\">+8</span>% <span class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Drop quantity&lt;/div&gt;&lt;div&gt;Affects the quantity of items dropped (all types)&lt;/div&gt;&lt;/div&gt;\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Lunaria"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Rare",
     "name": "Miss Melancholy - Cyan",
-    "effect": "<ul><li class=\"mod\">Upon entering the gameplay area, Avatar of Moon has a <span class=\"val\">5</span>% chance to bless several random statues, increasing its <span class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Drop quantity&lt;/div&gt;&lt;div&gt;Affects the quantity of items dropped (all types)&lt;/div&gt;&lt;/div&gt;\">Drop Quantity</span> by an additional <span class=\"val\">100</span>%</li><li class=\"mod\"><span class=\"val\">+8</span>% <span class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Drop quantity&lt;/div&gt;&lt;div&gt;Affects the quantity of items dropped (all types)&lt;/div&gt;&lt;/div&gt;\">Drop Quantity</span></li></ul>"
+    "effect": "<ul><li class=\"mod\">Upon entering the gameplay area, Avatar of Moon has a <span class=\"val\">5</span>% chance to bless several random statues, increasing its <span class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Drop quantity&lt;/div&gt;&lt;div&gt;Affects the quantity of items dropped (all types)&lt;/div&gt;&lt;/div&gt;\">Drop Quantity</span> by an additional <span class=\"val\">100</span>%</li><li class=\"mod\"><span class=\"val\">+8</span>% <span class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Drop quantity&lt;/div&gt;&lt;div&gt;Affects the quantity of items dropped (all types)&lt;/div&gt;&lt;/div&gt;\">Drop Quantity</span></li></ul>",
+    "tags": [
+      "Lunaria"
+    ]
   },
   {
     "type": "Drop",
     "rarity": "Legendary",
     "name": "Avatar of Moon",
-    "effect": "<ul><li class=\"mod\">When Strumming, there is a <span class=\"val\">25</span>% chance to buff all activated units, replicating their drops <span class=\"val\">1</span> time</li><li class=\"mod\">When replicated, all items dropped have a <span class=\"val\">100</span>% chance to be replicated <span class=\"val\">1</span> additional time</li><li class=\"mod\">Upon entering the gameplay area, Avatar of Moon has a <span class=\"val\">10</span>% chance to bless several random statues, increasing its <span class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Drop quantity&lt;/div&gt;&lt;div&gt;Affects the quantity of items dropped (all types)&lt;/div&gt;&lt;/div&gt;\">Drop Quantity</span> by an additional <span class=\"val\">100</span>%</li></ul>"
+    "effect": "<ul><li class=\"mod\">When Strumming, there is a <span class=\"val\">25</span>% chance to buff all activated units, replicating their drops <span class=\"val\">1</span> time</li><li class=\"mod\">When replicated, all items dropped have a <span class=\"val\">100</span>% chance to be replicated <span class=\"val\">1</span> additional time</li><li class=\"mod\">Upon entering the gameplay area, Avatar of Moon has a <span class=\"val\">10</span>% chance to bless several random statues, increasing its <span class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Drop quantity&lt;/div&gt;&lt;div&gt;Affects the quantity of items dropped (all types)&lt;/div&gt;&lt;/div&gt;\">Drop Quantity</span> by an additional <span class=\"val\">100</span>%</li></ul>",
+    "tags": [
+      "Lunaria"
+    ]
   }
 ]

@@ -115,14 +115,125 @@ function getIconPath(spirit: PactSpirit): string {
   return `/icons/pactspirits/${spirit.type === "Drop" ? "drop" : "battle"}/${spirit.name}.webp`;
 }
 
+// ─── Pactspirit tooltip card ──────────────────────────────────────────────────
+
+const PS_TT_CARD_W  = 296;
+const PS_TT_ICON_W  = 88;
+const PS_TT_ICON_H  = 112;
+
+function PactSpiritTooltipCard({ spirit, cx: cursorX, cy: cursorY }: { spirit: PactSpirit; cx: number; cy: number }) {
+  const [imgError, setImgError] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [cardH, setCardH] = useState(640);
+  useEffect(() => { setImgError(false); }, [spirit.name]);
+  useEffect(() => { if (cardRef.current) setCardH(cardRef.current.offsetHeight); });
+
+  const rarityColor   = RARITY_COLOR[spirit.rarity]    ?? "#686867";
+  const rarityBg      = RARITY_BG[spirit.rarity]       ?? "#161616";
+  const rarityBarEdge = RARITY_BAR_EDGE[spirit.rarity] ?? "#686867";
+
+  const vpW      = window.innerWidth;
+  const vpH      = window.innerHeight;
+  const taskbar  = Math.max(0, window.screen.height - window.screen.availHeight);
+  const safeH    = vpH - (taskbar || 48);
+  const GAP      = 18;
+  const cardLeft = cursorX + GAP + PS_TT_CARD_W <= vpW ? cursorX + GAP : cursorX - GAP - PS_TT_CARD_W;
+  const cardTop  = Math.max(PS_TT_ICON_H / 2 + 8, Math.min(safeH - cardH, cursorY - 24));
+
+  return createPortal(
+    <div ref={cardRef} style={{
+      position: "fixed", left: cardLeft, top: cardTop,
+      width: PS_TT_CARD_W,
+      background: "#1d1b1c",
+      border: "1px solid #2a2a2a",
+      borderRadius: "0 12px 0 12px",
+      pointerEvents: "none",
+      zIndex: 9999,
+      overflow: "visible",
+      boxShadow: "0 8px 32px rgba(0,0,0,0.7)",
+    }}>
+      {/* Rectangular icon hanging above the card */}
+      <div style={{
+        position: "absolute",
+        top: -(PS_TT_ICON_H / 2),
+        left: "50%",
+        transform: "translateX(-50%)",
+        zIndex: 1,
+        width: PS_TT_ICON_W,
+        height: PS_TT_ICON_H,
+        borderRadius: "0 14px 0 14px",
+        overflow: "hidden",
+        border: `3px solid ${rarityColor}`,
+        background: rarityBg,
+        boxShadow: "0 4px 16px rgba(0,0,0,0.8)",
+      }}>
+        {!imgError ? (
+          <img src={getIconPath(spirit)} alt={spirit.name} onError={() => setImgError(true)}
+            style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center", display: "block" }} />
+        ) : (
+          <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <span style={{ color: "#444", fontSize: 22 }}>?</span>
+          </div>
+        )}
+        <div style={{
+          position: "absolute", bottom: 0, left: 0, right: 0, height: 6,
+          background: `linear-gradient(to right, ${rarityBarEdge}, ${rarityColor} 40%, ${rarityColor} 60%, ${rarityBarEdge})`,
+        }} />
+      </div>
+
+      {/* Header */}
+      <div style={{
+        background: `linear-gradient(to bottom, ${rarityBg}ee ${PS_TT_ICON_H / 2}px, #1d1b1c 90%)`,
+        borderRadius: "0 12px 0 0",
+        paddingTop: PS_TT_ICON_H / 2 + 12,
+        padding: `${PS_TT_ICON_H / 2 + 12}px 12px 12px`,
+      }}>
+        <div style={{ color: rarityColor, fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", textAlign: "center", marginBottom: 2 }}>
+          {spirit.rarity} · {spirit.type}
+        </div>
+        <div style={{ color: "#ffffff", fontSize: 15, fontWeight: 700, textAlign: "center", lineHeight: 1.3, marginBottom: spirit.type === "Drop" && spirit.tags?.length ? 8 : 0 }}>
+          {spirit.name}
+        </div>
+        {spirit.type === "Drop" && spirit.tags?.length > 0 && (
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 4, justifyContent: "center" }}>
+            {spirit.tags.map((tag) => (
+              <span key={tag} style={{
+                background: "#595757",
+                border: "1px solid rgba(255,255,255,0.18)",
+                borderRadius: "0 4px 0 4px",
+                padding: "1px 7px",
+                fontSize: 10,
+                color: "#bfbfbf",
+                letterSpacing: "0.05em",
+              }}>
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Effect body */}
+      <div style={{ padding: "10px 14px 14px" }}>
+        {spirit.effect && (
+          <div className="skill-effect" dangerouslySetInnerHTML={{ __html: spirit.effect }} />
+        )}
+      </div>
+    </div>,
+    document.body
+  );
+}
+
 // ─── Left-panel slot card ─────────────────────────────────────────────────────
 
 function PactSpiritSlot({
-  spirit, isPicking, onClick,
+  spirit, isPicking, onClick, onHover, onLeave,
 }: {
   spirit:    PactSpirit | null;
   isPicking: boolean;
   onClick:   () => void;
+  onHover?:  (spirit: PactSpirit, x: number, y: number) => void;
+  onLeave?:  () => void;
 }) {
   const [imgError, setImgError] = useState(false);
   const [hovered,  setHovered]  = useState(false);
@@ -133,8 +244,9 @@ function PactSpiritSlot({
   return (
     <div
       onClick={onClick}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      onMouseEnter={(e) => { setHovered(true); if (spirit) onHover?.(spirit, e.clientX, e.clientY); }}
+      onMouseMove={(e)  => { if (spirit) onHover?.(spirit, e.clientX, e.clientY); }}
+      onMouseLeave={() => { setHovered(false); onLeave?.(); }}
       style={{ flex: 1, minWidth: 0, display: "flex", flexDirection: "column", alignItems: "center", gap: 6, cursor: "pointer" }}
     >
       {/* Card image */}
@@ -207,12 +319,14 @@ function PactSpiritSlot({
 // ─── Right-panel picker card ──────────────────────────────────────────────────
 
 function PactSpiritCard({
-  spirit, selected, disabled, onClick,
+  spirit, selected, disabled, onClick, onHover, onLeave,
 }: {
   spirit:   PactSpirit;
   selected: boolean;
   disabled: boolean;
   onClick:  () => void;
+  onHover?: (spirit: PactSpirit, x: number, y: number) => void;
+  onLeave?: () => void;
 }) {
   const [imgError, setImgError] = useState(false);
   const [hovered,  setHovered]  = useState(false);
@@ -226,14 +340,16 @@ function PactSpiritCard({
     <div
       ref={wrapperRef}
       onClick={disabled ? undefined : onClick}
-      onMouseEnter={() => {
+      onMouseEnter={(e) => {
         setHovered(true);
         if (disabled && wrapperRef.current) {
           const r = wrapperRef.current.getBoundingClientRect();
           setTipPos({ x: r.left + r.width / 2, y: r.top });
         }
+        onHover?.(spirit, e.clientX, e.clientY);
       }}
-      onMouseLeave={() => { setHovered(false); setTipPos(null); }}
+      onMouseMove={(e) => onHover?.(spirit, e.clientX, e.clientY)}
+      onMouseLeave={() => { setHovered(false); setTipPos(null); onLeave?.(); }}
       style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6, cursor: disabled ? "not-allowed" : "pointer", position: "relative" }}
     >
       {/* Card image */}
@@ -321,6 +437,10 @@ export default function PactspiritsPage() {
   const [searchQuery,    setSearchQuery]    = useState("");
   const [activeTagFilters, setActiveTagFilters] = useState<Set<string>>(new Set());
   const [hoveredTag,       setHoveredTag]       = useState<string | null>(null);
+  const [hoveredTooltip,   setHoveredTooltip]   = useState<{ spirit: PactSpirit; x: number; y: number } | null>(null);
+
+  function handleSpiritHover(spirit: PactSpirit, x: number, y: number) { setHoveredTooltip({ spirit, x, y }); }
+  function handleSpiritLeave() { setHoveredTooltip(null); }
 
   useEffect(() => {
     fetch("/api/pactspirits?category=battle").then((r) => r.json()).then(setBattleSpirits).catch(console.error);
@@ -437,6 +557,8 @@ export default function PactspiritsPage() {
                   spirit={getAssignedSpirit("battle", i)}
                   isPicking={selectedSlot?.category === "battle" && selectedSlot?.index === i}
                   onClick={() => handleSlotClick("battle", i)}
+                  onHover={handleSpiritHover}
+                  onLeave={handleSpiritLeave}
                 />
               ))}
             </div>
@@ -454,6 +576,8 @@ export default function PactspiritsPage() {
                   spirit={getAssignedSpirit("drop", i)}
                   isPicking={selectedSlot?.category === "drop" && selectedSlot?.index === i}
                   onClick={() => handleSlotClick("drop", i)}
+                  onHover={handleSpiritHover}
+                  onLeave={handleSpiritLeave}
                 />
               ))}
             </div>
@@ -491,9 +615,9 @@ export default function PactspiritsPage() {
                     onMouseEnter={() => setHoveredTag(tag)}
                     onMouseLeave={() => setHoveredTag(null)}
                     style={{
-                      width: 120,
+                      width: 160,
                       height: 42,
-                      padding: "0 16px 0 12px",
+                      padding: "0 10px 0 6px",
                       background: (active || hovered) ? color : "#464646",
                       border: "3px solid #686867",
                       borderRadius: "0 14px 0 14px",
@@ -509,8 +633,18 @@ export default function PactspiritsPage() {
                       outline: active ? "3px solid #fbdb58" : "none",
                       outlineOffset: "0px",
                       boxShadow: "3px 3px 10px rgba(0,0,0,0.55)",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: !isBattle && tag !== "Others" ? 6 : 0,
                     }}
                   >
+                    {!isBattle && tag !== "Others" && (
+                      <img
+                        src={`/icons/pactspirits/tags/${tag}.webp`}
+                        alt=""
+                        style={{ width: 26, height: 26, objectFit: "contain", flexShrink: 0, filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.6))" }}
+                      />
+                    )}
                     {tag}
                   </button>
                 );
@@ -582,6 +716,8 @@ export default function PactspiritsPage() {
                           selected={currentSelection === spirit.name}
                           disabled={takenNames.has(spirit.name)}
                           onClick={() => handleCardClick(spirit.name)}
+                          onHover={handleSpiritHover}
+                          onLeave={handleSpiritLeave}
                         />
                       ))}
                     </div>
@@ -594,6 +730,10 @@ export default function PactspiritsPage() {
 
         <div style={{ borderTop: "2px solid #333333", flexShrink: 0, padding: "12px 24px", minHeight: 80, marginTop: "auto" }} />
       </div>
+
+      {hoveredTooltip && (
+        <PactSpiritTooltipCard spirit={hoveredTooltip.spirit} cx={hoveredTooltip.x} cy={hoveredTooltip.y} />
+      )}
 
     </div>
   );
