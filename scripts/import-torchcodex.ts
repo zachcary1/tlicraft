@@ -170,14 +170,17 @@ async function importLegendary() {
 
 // ── Pact Spirit ────────────────────────────────────────────────────────────────
 
+const BATTLE_PACTSPIRIT_TYPES = new Set(["Attack", "Spell", "Persistent", "Summon", "Survival", "Lightning", "Fire", "Cold", "Erosion"]);
+
 async function importPactSpirit() {
   const rows = await readJson<{ type: string; rarity: string; name: string; effect: string }>("pactspirit");
   for (const row of rows) {
     const id = `pactspirit_${slugify(row.name)}`;
+    const tags = BATTLE_PACTSPIRIT_TYPES.has(row.type) ? [row.type] : [];
     await prisma.pactSpirit.upsert({
       where: { id },
-      update: { type: row.type, rarity: row.rarity, name: row.name, effect: row.effect },
-      create: { id, type: row.type, rarity: row.rarity, name: row.name, effect: row.effect },
+      update: { type: row.type, rarity: row.rarity, name: row.name, tags, effect: row.effect },
+      create: { id, type: row.type, rarity: row.rarity, name: row.name, tags, effect: row.effect },
     });
   }
   console.log(`Imported ${rows.length} pact spirit entries.`);

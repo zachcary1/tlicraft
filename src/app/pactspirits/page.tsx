@@ -35,6 +35,47 @@ const REMOVED = new Set([
   "5,0","5,1","5,4","5,5",
 ]);
 
+// ─── Tag filters ──────────────────────────────────────────────────────────────
+
+const TAG_COLORS: Record<string, string> = {
+  Attack:     "#ff6467",
+  Spell:      "#50a2ff",
+  Persistent: "#fdc700",
+  Summon:     "#f97316",
+  Survival:   "#00bc7d",
+  Lightning:  "#e8c75a",
+  Cold:       "#7ec8ee",
+  Fire:       "#e24c4b",
+  Erosion:    "#54c981",
+  Elixir:     "#dab2ff",
+};
+
+const TAG_ORDER = ["Attack", "Spell", "Persistent", "Summon", "Survival", "Lightning", "Cold", "Fire", "Erosion", "Elixir"];
+
+const DROP_TAG_COLORS: Record<string, string> = {
+  Lunaria:          "#b8a0e8",
+  Vorax:            "#dc5050",
+  Overrealm:        "#4870e0",
+  Outlaw:           "#c87c2a",
+  Sandlord:         "#d4aa40",
+  Arcana:           "#9040c8",
+  Compass:          "#18b0a8",
+  "Dark Surge":     "#5448a0",
+  Blacksail:        "#1e8080",
+  Cube:             "#3ea858",
+  Aeterna:          "#c8a040",
+  Nightmare:        "#7a3f78",
+  Mistville:        "#7898b0",
+  Doll:             "#e06898",
+  "Frozen Canvas":  "#58b8d8",
+  Fuel:             "#e07028",
+  Fluorescent:      "#18c898",
+  Ember:            "#d84818",
+  Others:           "#787878",
+};
+
+const DROP_TAG_ORDER = ["Lunaria", "Vorax", "Overrealm", "Outlaw", "Sandlord", "Arcana", "Compass", "Dark Surge", "Blacksail", "Cube", "Aeterna", "Nightmare", "Mistville", "Doll", "Frozen Canvas", "Fuel", "Fluorescent", "Ember", "Others"];
+
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 type Category = "battle" | "drop";
@@ -44,6 +85,7 @@ interface PactSpirit {
   type:   string;
   rarity: string;
   name:   string;
+  tags:   string[];
   effect: string;
 }
 
@@ -277,6 +319,8 @@ export default function PactspiritsPage() {
   const [battleSpirits,  setBattleSpirits]  = useState<PactSpirit[]>([]);
   const [dropSpirits,    setDropSpirits]    = useState<PactSpirit[]>([]);
   const [searchQuery,    setSearchQuery]    = useState("");
+  const [activeTagFilters, setActiveTagFilters] = useState<Set<string>>(new Set());
+  const [hoveredTag,       setHoveredTag]       = useState<string | null>(null);
 
   useEffect(() => {
     fetch("/api/pactspirits?category=battle").then((r) => r.json()).then(setBattleSpirits).catch(console.error);
@@ -293,10 +337,18 @@ export default function PactspiritsPage() {
   }
 
   function handleSlotClick(cat: Category, idx: number) {
-    setSelectedSlot((prev) =>
-      prev?.category === cat && prev?.index === idx ? null : { category: cat, index: idx }
-    );
+    const isSameSlot = selectedSlot?.category === cat && selectedSlot?.index === idx;
+    setSelectedSlot(isSameSlot ? null : { category: cat, index: idx });
     setSearchQuery("");
+    if (!isSameSlot && cat !== selectedSlot?.category) setActiveTagFilters(new Set());
+  }
+
+  function toggleTagFilter(tag: string) {
+    setActiveTagFilters((prev) => {
+      const next = new Set(prev);
+      if (next.has(tag)) next.delete(tag); else next.add(tag);
+      return next;
+    });
   }
 
   function handleCardClick(name: string) {
@@ -311,8 +363,13 @@ export default function PactspiritsPage() {
   }
 
   const pool = selectedSlot?.category === "battle" ? battleSpirits : selectedSlot?.category === "drop" ? dropSpirits : [];
-  const needle   = searchQuery.replace(/\s/g, "").toLowerCase();
-  const filtered = needle ? pool.filter((s) => s.name.toLowerCase().includes(needle)) : pool;
+  const needle = searchQuery.replace(/\s/g, "").toLowerCase();
+  const filtered = (() => {
+    let result = needle ? pool.filter((s) => s.name.toLowerCase().includes(needle)) : pool;
+    if (activeTagFilters.size > 0)
+      result = result.filter((s) => (s.tags ?? []).some((t) => activeTagFilters.has(t)));
+    return result;
+  })();
 
   const takenNames: Set<string> = selectedSlot
     ? new Set(
@@ -411,8 +468,56 @@ export default function PactspiritsPage() {
       <div
         className="absolute flex flex-col"
         onClick={(e) => e.stopPropagation()}
-        style={{ left: `calc(50% + ${svgW / 2}px + ${PANEL_GAP}px)`, top: 0, width: PANEL_W, height: "100vh", background: PANEL_BG }}
+        style={{ left: `calc(50% + ${svgW / 2}px + ${PANEL_GAP}px)`, top: 0, width: PANEL_W, height: "100vh", background: PANEL_BG, overflow: "visible" }}
       >
+        {/* Tag filter tabs — attached to right edge of panel, sticking outward */}
+        {selectedSlot && (() => {
+          const isBattle = selectedSlot.category === "battle";
+          const tagOrder = isBattle ? TAG_ORDER : DROP_TAG_ORDER;
+          const tagColors = isBattle ? TAG_COLORS : DROP_TAG_COLORS;
+          return (
+            <div
+              onClick={(e) => e.stopPropagation()}
+              style={{ position: "absolute", left: "100%", top: 140, display: "flex", flexDirection: "column", gap: 5, zIndex: 10, padding: "24px 28px 24px 6px" }}
+            >
+              {tagOrder.map((tag) => {
+                const color = tagColors[tag];
+                const active = activeTagFilters.has(tag);
+                const hovered = hoveredTag === tag;
+                return (
+                  <button
+                    key={tag}
+                    onClick={(e) => { e.stopPropagation(); toggleTagFilter(tag); }}
+                    onMouseEnter={() => setHoveredTag(tag)}
+                    onMouseLeave={() => setHoveredTag(null)}
+                    style={{
+                      width: 120,
+                      height: 42,
+                      padding: "0 16px 0 12px",
+                      background: (active || hovered) ? color : "#464646",
+                      border: "3px solid #686867",
+                      borderRadius: "0 14px 0 14px",
+                      color: "#ffffff",
+                      textShadow: "-1px -1px 0 rgba(0,0,0,0.7), 1px -1px 0 rgba(0,0,0,0.7), -1px 1px 0 rgba(0,0,0,0.7), 1px 1px 0 rgba(0,0,0,0.7)",
+                      fontSize: 13,
+                      fontWeight: 700,
+                      letterSpacing: "0.05em",
+                      cursor: "pointer",
+                      textAlign: "left",
+                      transition: "background 0.12s",
+                      whiteSpace: "nowrap",
+                      outline: active ? "3px solid #fbdb58" : "none",
+                      outlineOffset: "0px",
+                      boxShadow: "3px 3px 10px rgba(0,0,0,0.55)",
+                    }}
+                  >
+                    {tag}
+                  </button>
+                );
+              })}
+            </div>
+          );
+        })()}
         {/* Header */}
         <div className="px-4 pt-5 pb-3" style={{ borderBottom: "2px solid #333333", flexShrink: 0 }}>
           <p style={{ color: "#52525b", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 3 }}>

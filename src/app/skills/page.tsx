@@ -1032,7 +1032,7 @@ export default function SkillsPage() {
             const slotId = selectedCenterSlot;
             let gx: number, gy: number;
             if (slotId === "skill") {
-              gx = cx; gy = cy;
+              gx = cx; gy = layoutMode === "passive" ? cy - 35 : cy - 20;
             } else {
               const slotNum = parseInt(slotId.replace("support-", ""));
               const outerSlots = layoutMode === "active" ? activeOuterSlots : passiveOuterSlots;

@@ -226,10 +226,11 @@ model Legendary {
 }
 
 model PactSpirit {
-  id     String @id
+  id     String   @id
   type   String
   rarity String
   name   String
+  tags   String[]
   effect String
 
   @@index([type])
