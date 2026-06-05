@@ -22,26 +22,16 @@ async function main() {
   const raw = await readFile(filePath, "utf8");
   const skills: SkillEntry[] = JSON.parse(raw);
 
-  for (const skill of skills) {
-    const id = slugify(skill.name);
-
-    await prisma.skill.upsert({
-      where: { id },
-      update: {
-        name: skill.name,
-        type: skill.type,
-        tags: skill.tags,
-        effect: skill.effect,
-      },
-      create: {
-        id,
-        name: skill.name,
-        type: skill.type,
-        tags: skill.tags,
-        effect: skill.effect,
-      },
-    });
-  }
+  await prisma.skill.deleteMany({});
+  await prisma.skill.createMany({
+    data: skills.map((skill) => ({
+      id: slugify(skill.name),
+      name: skill.name,
+      type: skill.type,
+      tags: skill.tags,
+      effect: skill.effect,
+    })),
+  });
 
   console.log(`Imported ${skills.length} skills.`);
 }

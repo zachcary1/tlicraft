@@ -1,0 +1,489 @@
+[
+  {
+    "type": "Lunar",
+    "name": "Ancestral Hate",
+    "hero": "",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003E对护盾返还间隔的额外加成也会作用于生命返还间隔\u003Cbr/\u003E愠怒之灵 2 秒内每使用一次攻击技能，额外 +4% 玩家自身受到的击中伤害，最多 40%\u003Cbr/\u003E愠怒之灵使用技能时，消耗 30% 当前生命\u003Cbr/\u003E\u003Cbr/\u003E英雄特性限定：狂人·雷恩|怒影\u003C/div\u003E\u003C/div\u003E"
+  },
+  {
+    "type": "Lunar",
+    "name": "Artificial Moon: Discipline",
+    "hero": "",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003EBase Traits now have Special Memory slots that can be installed with an Ultimate or lower Discipline Memory. Reduces the Base Stats and the value of Random Affixes of Memories installed in this slot by 20%\u003Cbr/\u003EBase Traits gain additional affixes upon reaching max level\u003C/div\u003E\u003C/div\u003E"
+  },
+  {
+    "type": "Lunar",
+    "name": "Artificial Moon: Origin",
+    "hero": "",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003EBase Traits now have Special Memory slots that can be installed with an Ultimate or lower Origin Memory. Reduces the Base Stats and Random Affixes of Memories installed in this slot by 20%\u003Cbr/\u003EBase Traits gain additional affixes upon reaching max level\u003C/div\u003E\u003C/div\u003E"
+  },
+  {
+    "type": "Lunar",
+    "name": "Artificial Moon: Progress",
+    "hero": "",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003EBase Traits now have Special Memory slots that can be installed with an Ultimate or lower Progress Memory. Reduces the Base Stats and Random Affixes of Memories installed in this slot by 20%\u003Cbr/\u003EBase Traits gain additional affixes upon reaching max level\u003C/div\u003E\u003C/div\u003E"
+  },
+  {
+    "type": "Lunar",
+    "name": "Bing's Big Bang Pack",
+    "hero": "",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003E炸弹造成伤害时可额外生成 3 个备用炸弹，生成几率为炸弹暴击率的 33%；额外 -20% 备用炸弹伤害\u003Cbr/\u003E\u003Cbr/\u003E英雄特性限定：逃脱者·宾|爆破新星\u003C/div\u003E\u003C/div\u003E"
+  },
+  {
+    "type": "Lunar",
+    "name": "Discord of the Second Will",
+    "hero": "",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003EWhen dealing damage, inflicts a random crowd control effect (except Freeze and Knockback), prioritizing effects that have not yet been inflicted. Interval: 1s\u003Cbr/\u003E+200% inflicted Paralysis and Weaken Effect\u003C/div\u003E\u003C/div\u003E"
+  },
+  {
+    "type": "Lunar",
+    "name": "Nourishing Spring Rain",
+    "hero": "",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003E润物可以施加给智械召唤物\u003Cbr/\u003E存在魔灵时，每 10 点生长值使智械召唤物额外 +9% 伤害，上限 +540%\u003Cbr/\u003E存在魔灵时，每 1% 强化技能使用几率，智械召唤物 -2% 几率失去润物\u003Cbr/\u003E模组化技能的冷却时间降低至 0.1 秒\u003Cbr/\u003E\u003Cbr/\u003E英雄特性限定：遗世魔灵·伊瑞斯|生长的微风\u003C/div\u003E\u003C/div\u003E"
+  },
+  {
+    "type": "Lunar",
+    "name": "Radical Evolution Theory: Cruelty",
+    "hero": "",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003E100% of the final bonus applied to Origin of Spirit Magus Effect is also applied to Cruelty's Aura Effect bonus\u003C/div\u003E\u003C/div\u003E"
+  },
+  {
+    "type": "Lunar",
+    "name": "Radical Evolution Theory: Deep Pain",
+    "hero": "",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003E100% of the final bonus applied to Origin of Spirit Magus Effect is also applied to Deep Pain's Aura Effect bonus\u003C/div\u003E\u003C/div\u003E"
+  },
+  {
+    "type": "Lunar",
+    "name": "Radical Evolution Theory: Radical Order",
+    "hero": "",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003E100% of the final bonus applied to Origin of Spirit Magus Effect is also applied to Radical Order's Aura Effect bonus\u003C/div\u003E\u003C/div\u003E"
+  },
+  {
+    "type": "Lunar",
+    "name": "Radical Evolution Theory: Spell Amplification",
+    "hero": "",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003E100% of the final bonus applied to Origin of Spirit Magus Effect is also applied to Spell Amplification's Aura Effect bonus\u003C/div\u003E\u003C/div\u003E"
+  },
+  {
+    "type": "Lunar",
+    "name": "Reactive Rainbow",
+    "hero": "",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003EFor every 1% excess chance to avoid Elemental Ailments, +0.5% chance to deem your Max Elemental Resistance as the effective Elemental Resistance\u003Cbr/\u003EFor every 1% excess chance to avoid Elemental Ailments, +0.5% chance to inflict Elemental Resistance Reversal on enemies when dealing Elemental Damage\u003C/div\u003E\u003C/div\u003E"
+  },
+  {
+    "type": "Lunar",
+    "name": "To Myself in Another Spacetime",
+    "hero": "",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003E对扭曲时空中的敌人造成伤害时，收割 1.5 秒持续伤害，该效果对同一目标有 2 秒回复时间\u003Cbr/\u003E扭曲时空的释放间隔降低为 1 秒\u003Cbr/\u003E+20% 扭曲时空记录的所有伤害\u003Cbr/\u003E\u003Cbr/\u003E英雄特性限定：时空见证者·尤加|时空流逝\u003C/div\u003E\u003C/div\u003E"
+  },
+  {
+    "type": "Lunar",
+    "name": "Furious Roar",
+    "hero": "Berserker Rehan: Anger (#1)",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003EAttacks trigger Burst once on Attack Critical Strike while Berserk is active. Cooldown: 0.3s",
+    "hero-group": "Rehan"
+  },
+  {
+    "type": "Lunar",
+    "name": "Hero's Resourcefulness",
+    "hero": "Berserker Rehan: Anger (#1)",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003EBurst becomes Burst Blast and can activate Spell Burst\u003Cbr/\u003EAll conditions of this trait that trigger on attack are changed to trigger on hit\u003Cbr/\u003EThe Base Trait effect that generates Rage from using Melee Skills is changed to generating Rage upon skill use. The effect that triggers Burst on attack hit is changed to triggering Burst Blaston hit",
+    "hero-group": "Rehan"
+  },
+  {
+    "type": "Lunar",
+    "name": "Starfall Wasteland",
+    "hero": "Berserker Rehan: Seething Silhouette (#2)",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003ESeething Spirit now only uses Ranged Projectile Skills (except Channeled and Parabolic Skills)\u003Cbr/\u003EGenerates 15 Rage when using a Ranged Skill\u003Cbr/\u003E+2 to Projectile Quantity, +2 Horizontal Projectile Jump(s), +2 Horizontal Projectile Penetration(s), +22% Projectile Size\u003Cbr/\u003E for Ranged Skills cast by Seething Spirit66% chance for Ranged Projectiles launched by Seething Spirit to return after reaching their max range",
+    "hero-group": "Rehan"
+  },
+  {
+    "type": "Lunar",
+    "name": "Charging Tail",
+    "hero": "Cateye Erika: Lightning Shadow (#2)",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003EFeline Figure can now land Critical Strikes\u003Cbr/\u003EOn Critical Strike, the effect of Numbed inflicted within 10s by Feline Figure is doubled",
+    "hero-group": "Erika"
+  },
+  {
+    "type": "Lunar",
+    "name": "Vengeful Night Wraith",
+    "hero": "Cateye Erika: Vendetta's Sting (#3)",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003EVengeful Wraith\u003C/div\u003E\u003Cdiv\u003EFor every 3 casts of Vendetta, generates 1 Phantom that casts Vendetta 1 additional time on a random target within 9m. The Phantom deals triple damage",
+    "hero-group": "Erika"
+  },
+  {
+    "type": "Lunar",
+    "name": "Cat's Night Safari",
+    "hero": "Cateye Erika: Wind Stalker (#1)",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003EGains 1 stack of Interest upon dealing damage to an Elite enemy. Interval: 1s\u003Cbr/\u003EGains Hunting Instinct when having 5 stack(s) of Interest",
+    "hero-group": "Erika"
+  },
+  {
+    "type": "Lunar",
+    "name": "Peril of Synthetic Troops",
+    "hero": "Commander Moto: Charge Calling (#2)",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003EAdds 18% of the player's Max Life to the Base Life of Synthetic Troop Minions\u003Cbr/\u003EAdds 12% of the player's Max Energy Shield to the Base Energy Shield of Synthetic Troop ",
+    "hero-group": "Moto"
+  },
+  {
+    "type": "Lunar",
+    "name": "Machine's Joy",
+    "hero": "Commander Moto: Order Calling (#1)",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003E+4% additional Overload Effect on hit. Stacks up to 30 time(s) (multiplies). Removes all stacks when casting a Trait Skill",
+    "hero-group": "Moto"
+  },
+  {
+    "type": "Lunar",
+    "name": "Neural Synchronization Training",
+    "hero": "Commander Moto: Order Calling (#1)",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003EAfter a Summon Skill is cast, you gain Overload for 4s\u003Cbr/\u003EWhile a Synthetic Troop Minion exists, +125% additional Overload effect granted on yourself\u003Cbr/\u003EFor every 1 Command, +3% additional damage for you",
+    "hero-group": "Moto"
+  },
+  {
+    "type": "Lunar",
+    "name": "Into the Night",
+    "hero": "Divineshot Carino: Lethal Flash (#2)",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003E+2 to Max Deflection\u003Cbr/\u003EDeflection is no longer consumed when hit, but Deflection now only lasts for 3s\u003Cbr/\u003E+50% additional Projectile Damage when Deflection is active",
+    "hero-group": "Carino"
+  },
+  {
+    "type": "Lunar",
+    "name": "Royal Arsenal",
+    "hero": "Divineshot Carino: Ranger of Glory (#1)",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003EFor every activated Magnificent Support Skill, +100% Projectile Speed, up to 300%\u003Cbr/\u003EFor every activated Noble Support Skill, +20% additional Projectile Damage, up to 60%",
+    "hero-group": "Carino"
+  },
+  {
+    "type": "Lunar",
+    "name": "Self-Imposed Shackles",
+    "hero": "Divineshot Carino: Zealot of War (#3)",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003EWhile standing still, +20% additional Heat Up Effect every 0.5s, up to 60%\u003Cbr/\u003EWhile standing still, Heat Up gains an additional effect: +1% Skill Area for every stack of Heat Up\u003Cbr/\u003E+20% Attack and Spell Block Chance and +20% Block Ratio Upper Limit for 8s when stopping moving\u003Cbr/\u003EWhile moving, -60% Max Elemental Resistance and Erosion Resistance",
+    "hero-group": "Carino"
+  },
+  {
+    "type": "Lunar",
+    "name": "Genius Idea Generator",
+    "hero": "Escapist Bing: Creative Genius (#2)",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003E+2 to Whimsy Explosion Projectile Quantity, +100% Whimsy Effect, +50% Whimsy Signal Effect\u003Cbr/\u003E+2 to Max Spell Burst and +100% additional Spell Damage for Spells triggered by Ingenuity Overload",
+    "hero-group": "Bing"
+  },
+  {
+    "type": "Lunar",
+    "name": "Sweet Pain",
+    "hero": "Frostfire Gemma: Flame of Pleasure (#3)",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003EConverts 99% Fire Damage to Erosion Damage\u003Cbr/\u003EYou have a Lv. 20 Precise: Erosion Amplification\u003Cbr/\u003EYou have a Lv. 20 Precise: Corrosion Focus\u003Cbr/\u003EYou have a Lv. 20 Erosion Magus Origin of Spirit Magus Effect",
+    "hero-group": "Gemma"
+  },
+  {
+    "type": "Lunar",
+    "name": "First Flake of Strange Snow",
+    "hero": "Frostfire Gemma: Frostbitten Heart (#2)",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003E-50% additional Frostbite Effect\u003Cbr/\u003EEach type of Crowd Control Effect, Ailment, and Curse afflicting an enemy is deemed to have 50 additional Frostbite Rating, up to 500",
+    "hero-group": "Gemma"
+  },
+  {
+    "type": "Lunar",
+    "name": "Three-Chambered Heart",
+    "hero": "Frostfire Gemma: Ice-Fire Fusion (#1)",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003EThe Main Skill is supported by a Lv. 40 Advanced Elemental Impact",
+    "hero-group": "Gemma"
+  },
+  {
+    "type": "Lunar",
+    "name": "Between the Holy Land and Hell",
+    "hero": "Lightbringer Rosa: High Court Chariot (#1)",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003EGains Repent to the Light for 8s after casting the Trait Skill",
+    "hero-group": "Rosa"
+  },
+  {
+    "type": "Lunar",
+    "name": "Apathy Blade",
+    "hero": "Lightbringer Rosa: Unsullied Blade (#2)",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003EIntelligence no longer grants a damage bonus\u003Cbr/\u003EIntelligence is the sum of Strength and Dexterity\u003Cbr/\u003E+120% Strength and Dexterity",
+    "hero-group": "Rosa"
+  },
+  {
+    "type": "Lunar",
+    "name": "Mercury Purged",
+    "hero": "Lightbringer Rosa: Unsullied Blade (#2)",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003ERealm of Mercury keeps removing Elemental Ailments\u003Cbr/\u003EWhen inflicting or removing Frostbite, grants Baptism: Impassive for 8s\u003Cbr/\u003EWhen inflicting or removing Ignite, grants Baptism: Rage for 8s\u003Cbr/\u003EWhen inflicting or removing Numbed, grants Baptism: Indolent for 8s",
+    "hero-group": "Rosa"
+  },
+  {
+    "type": "Lunar",
+    "name": "Inverted Shrine",
+    "hero": "Oracle Thea: Blasphemer (#3)",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003EInflicts Desecration on yourself when inflicting Desecration\u003Cbr/\u003E on enemies+99% additional Erosion Damage when inflicted with Desecration",
+    "hero-group": "Thea"
+  },
+  {
+    "type": "Lunar",
+    "name": "Crossing the Divine Threshold",
+    "hero": "Oracle Thea: Incarnation of The Gods (#1)",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003EImmune to Ailments, Crowd Control Effects, and Curses while inside the Divine Realm\u003Cbr/\u003E+2 to max stacks of all Blessings when outside the Divine Realm",
+    "hero-group": "Thea"
+  },
+  {
+    "type": "Lunar",
+    "name": "Immolating World",
+    "hero": "Oracle Thea: Wisdom of The Gods (#2)",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003EReplaces the Main Skill with True Flame Immolation\u003Cbr/\u003EDuring God's Boon, triggers True Flame Immolation once every 0.6s. The Interval is affected by Cast Speed\u003Cbr/\u003EDuring God's Boon, each True Flame Immolation cast extends the duration of God's Boon by 0.2s",
+    "hero-group": "Thea"
+  },
+  {
+    "type": "Lunar",
+    "name": "The Place of Oracle",
+    "hero": "Oracle Thea: Wisdom of The Gods (#2)",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003EDuring God's Boon, Tenacity Blessing and Agility Blessing gain an additional effect: +5% additional damage",
+    "hero-group": "Thea"
+  },
+  {
+    "type": "Lunar",
+    "name": "Basic Pharmacology Manuscript",
+    "hero": "Scent Weaver Sage: Licorice Note (#1)",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003E+150% additional Ingredient Effect applied to Basic Scent Bottles",
+    "hero-group": "Sage"
+  },
+  {
+    "type": "Lunar",
+    "name": "Omni-Elixir Side Effect",
+    "hero": "Scent Weaver Sage: Licorice Note (#1)",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003EScent Bottles add unselected Potion Ingredient effects, and the selected ingredients and their base effects will no longer take effect",
+    "hero-group": "Sage"
+  },
+  {
+    "type": "Lunar",
+    "name": "Private Universe",
+    "hero": "Spacetime Witness Youga: Spacetime Elapse (#2)",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003E+200% additional Twisted Spacetime Skill Area\u003Cbr/\u003E+80% Spacetime Turbulence Duration\u003Cbr/\u003ETwisted Spacetime only follows you",
+    "hero-group": "Youga"
+  },
+  {
+    "type": "Lunar",
+    "name": "Fifth Cosmic Velocity",
+    "hero": "Spacetime Witness Youga: Spacetime Illusion (#1)",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003E-99% additional Spell Burst Charge Speed\u003Cbr/\u003E100% chance to immediately gain 2 stack(s) of Spell Burst Charge. Interval: 0.03s",
+    "hero-group": "Youga"
+  },
+  {
+    "type": "Lunar",
+    "name": "Telepathy Expert",
+    "hero": "Spacetime Witness Youga: Spacetime Illusion (#1)",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003EWhen Spacetime Illusion consumes Spell Burst, it also attempts to consume Spell Burst for Youga",
+    "hero-group": "Youga"
+  },
+  {
+    "type": "Lunar",
+    "name": "Nature's Party",
+    "hero": "The Forsaken Iris: Growing Breeze (#1)",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003ENourishment applies additional base effects:\u003Cbr/\u003EFrost Magus: Restores 5% of Missing Life and Energy Shield to you on hit. Interval: 0.2s. +8 Max Frostbite Rating per Nourishment stack\u003Cbr/\u003EThunder Magus: Inflicts Numbed on hit. Interval: 0.2s. +4% additional Lightning Damage dealt to Numbed enemies per Nourishment stack\u003Cbr/\u003EFire Magus: +16% additional Critical Strike Damage and -20% Critical Strike Rating per Nourishment stack\u003Cbr/\u003ERock Magus: Transfers 20% of damage taken to this Minion, and adds Physical Damage equal to 0.05% of Armor per Nourishment stack, up to 100 Physical Damage per stack\u003Cbr/\u003EErosion Magus: Inflicts Deterioration on hit and +4% Deterioration Damage per Nourishment stack",
+    "hero-group": "Iris"
+  },
+  {
+    "type": "Lunar",
+    "name": "Blowing Breeze",
+    "hero": "The Forsaken Iris: Vigilant Breeze (#2)",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003EWhile in Vigilant, for every 1 use(s) of the Ultimate by Spirit Magi, +1 to Max Breeze Stacks, up to 15 to Max Breeze Stacks, lasting until Reconjuring",
+    "hero-group": "Iris"
+  },
+  {
+    "type": "Lunar",
+    "name": "Soft Storm",
+    "hero": "The Forsaken Iris: Vigilant Breeze (#2)",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003EWhile in Vigilant, for every 2 use(s) of Enhanced Skills by Spirit Magi, triggers the Ultimate\u003Cbr/\u003ESpirit Magi cannot use the Ultimate. -30% additional Ultimate Damage",
+    "hero-group": "Iris"
+  },
+  {
+    "type": "Lunar",
+    "name": "Ceaseless Tide",
+    "hero": "Tide Whisper Selena: Sing with the Tide",
+    "effect": "\u003Cdiv class=\"text-start\"\u003E\u003Cdiv\u003EDeemed to be in the Loud Song state while in the Bard state\u003Cbr/\u003EAttack, Cast, and Movement Speed are no longer additionally reduced while in the Loud Song state",
+    "hero-group": "Selena"
+  },
+  {
+    "type": "Random",
+    "name": "",
+    "effect": "+ \u003Cspan class=\"val\"\u003E(7–8)\u003C/span\u003E \u003Cspan class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Command&lt;/div&gt;&lt;div&gt;Every point of Command will grant Synthetic Troop Minions +3% additional damage, +-2% additional damage taken, ++2% Movement Speed, and a bigger Tracking Area.&lt;br/&gt;The lowest Command is -100 while the highest is 100. When Command is not 0, 13 point(s) will be returned (reduced/granted) every second until it becomes 0. For every 10 Command increased, +7 additional points will be returned.&lt;br/&gt;Synthetic Troop Minions&#039; Duration will not reduce when Command is a positive value.&lt;/div&gt;&lt;/div&gt;\"\u003ECommand\u003C/span\u003E per second"
+  },
+  {
+    "type": "Random",
+    "name": "",
+    "effect": "\u003Cspan class=\"val\"\u003E(13–15)\u003C/span\u003E% of damage is taken from Mana before life"
+  },
+  {
+    "type": "Random",
+    "name": "",
+    "effect": "\u003Cspan class=\"val\"\u003E+(10–12)\u003C/span\u003E% Armor DMG Mitigation Penetration"
+  },
+  {
+    "type": "Random",
+    "name": "",
+    "effect": "\u003Cspan class=\"val\"\u003E+(10–13)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Block Ratio&lt;/div&gt;&lt;div&gt;By default, Blocking absorbs 30% damage. Increase Block Ratio to increase the damage absorption ratio.&lt;/div&gt;&lt;/div&gt;\"\u003EBlock Ratio\u003C/span\u003E"
+  },
+  {
+    "type": "Random",
+    "name": "",
+    "effect": "\u003Cspan class=\"val\"\u003E+(12–15)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Barrier&lt;/div&gt;&lt;div&gt;Gains a Shield equal to 20% of the sum of Max Life and Max Energy Shield, absorbing 50% of the Hit Damage taken. Cannot gain another Barrier when a Barrier is present.&lt;/div&gt;&lt;/div&gt;\"\u003EBarrier\u003C/span\u003E Absorption Rate"
+  },
+  {
+    "type": "Random",
+    "name": "",
+    "effect": "\u003Cspan class=\"val\"\u003E+(12–15)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Injury Buffer&lt;/div&gt;&lt;div&gt;Delays a portion of Hit Damage taken in the next 4s.&lt;/div&gt;&lt;/div&gt;\"\u003EInjury Buffer\u003C/span\u003E"
+  },
+  {
+    "type": "Random",
+    "name": "",
+    "effect": "\u003Cspan class=\"val\"\u003E+(12–15)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Sealed Mana&lt;/div&gt;&lt;div&gt;A portion of Mana is reserved to maintain persistent effects such as auras&lt;/div&gt;&lt;/div&gt;\"\u003ESealed Mana\u003C/span\u003E Compensation"
+  },
+  {
+    "type": "Random",
+    "name": "",
+    "effect": "\u003Cspan class=\"val\"\u003E+(12–15)\u003C/span\u003E% Aura Effect"
+  },
+  {
+    "type": "Random",
+    "name": "",
+    "effect": "\u003Cspan class=\"val\"\u003E+(12–15)\u003C/span\u003E% Elemental and Erosion Resistance Penetration"
+  },
+  {
+    "type": "Random",
+    "name": "",
+    "effect": "\u003Cspan class=\"val\"\u003E+(21–24)\u003C/span\u003E to Max \u003Cspan class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Frostbite&lt;/div&gt;&lt;div&gt;Enemies are inflicted with a fixed amount of Frostbite Rating when they are Frostbitten. This can be increased by raising Max Frostbite Rating. The Max Frostbite Rating is 120.&lt;/div&gt;&lt;/div&gt;\"\u003EFrostbite Rating\u003C/span\u003E"
+  },
+  {
+    "type": "Random",
+    "name": "",
+    "effect": "\u003Cspan class=\"val\"\u003E+(25–28)\u003C/span\u003E% chance to inflict \u003Cspan class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Damaging Ailment&lt;/div&gt;&lt;div&gt;Trauma, Ignite, and Wilt&lt;/div&gt;&lt;/div&gt;\"\u003EDamaging Ailments\u003C/span\u003E"
+  },
+  {
+    "type": "Random",
+    "name": "",
+    "effect": "\u003Cspan class=\"val\"\u003E+(26–28)\u003C/span\u003E% additional Evasion on Spell Damage"
+  },
+  {
+    "type": "Random",
+    "name": "",
+    "effect": "\u003Cspan class=\"val\"\u003E+(31–35)\u003C/span\u003E% Elixir Skill Effect"
+  },
+  {
+    "type": "Random",
+    "name": "",
+    "effect": "\u003Cspan class=\"val\"\u003E+(32–36)\u003C/span\u003E% Warcry Effect"
+  },
+  {
+    "type": "Random",
+    "name": "",
+    "effect": "\u003Cspan class=\"val\"\u003E+(50–54)\u003C/span\u003E initial \u003Cspan class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Growth&lt;/div&gt;&lt;div&gt;Spirit Magi grow into the next Stage for every 100 Growth. They start at Stage 1 and can grow until they reach Stage 5. For every 8 Growth they have, Spirit Magi gain +1% Physique, +10% additional Skill Area, and a bonus every stage:&lt;br/&gt;At Stage 2, +30% chance for them to use Enhanced Skill chance.&lt;br/&gt;At Stage 3, their Enhanced Skills become stronger.&lt;br/&gt;At Stage 4, their Empower Skills become stronger.&lt;br/&gt;At Stage 5, they +50% additional damage, +10% additional Skill Area, and gain increased Movement Speed and Tracking Area.&lt;br/&gt;The max Growth is 1000.&lt;/div&gt;&lt;/div&gt;\"\u003EGrowth\u003C/span\u003E for Spirit Magi"
+  },
+  {
+    "type": "Random",
+    "name": "",
+    "effect": "\u003Cspan class=\"val\"\u003E+(9–10)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Armor Effective Rate&lt;/div&gt;&lt;div&gt;Effective Damage Reduction Provided by Armor: 100% by default for Physical Damage. 60% by default for Non-Physical Damage.&lt;/div&gt;&lt;/div&gt;\"\u003EArmor Effective Rate\u003C/span\u003E for Non-Physical Damage"
+  },
+  {
+    "type": "Random",
+    "name": "",
+    "effect": "\u003Cspan class=\"val\"\u003E+4\u003C/span\u003E% Max \u003Cspan class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Elemental&lt;/div&gt;&lt;div&gt;Fire, Cold, and Lightning&lt;/div&gt;&lt;/div&gt;\"\u003EElemental\u003C/span\u003E \u003Cspan class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Max Resistance&lt;/div&gt;&lt;div&gt;By default, the Max Resistance is 60%. This limit can be increased.&lt;/div&gt;&lt;/div&gt;\"\u003EResistance\u003C/span\u003E"
+  },
+  {
+    "type": "Random",
+    "name": "",
+    "effect": "Converts \u003Cspan class=\"val\"\u003E(13–15)\u003C/span\u003E% of Physical Damage taken to random \u003Cspan class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Elemental&lt;/div&gt;&lt;div&gt;Fire, Cold, and Lightning&lt;/div&gt;&lt;/div&gt;\"\u003EElemental\u003C/span\u003E Damage"
+  },
+  {
+    "type": "Random",
+    "name": "",
+    "effect": "Converts \u003Cspan class=\"val\"\u003E(28–30)\u003C/span\u003E% of Erosion Damage taken to random Elemental Damage"
+  },
+  {
+    "type": "Revived",
+    "name": "",
+    "effect": "\u003Cspan class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Torment&lt;/div&gt;&lt;div&gt;Each stack of Torment additionally increases Damage Over Time dealt by 5% for 4s. Stacks up to 3 times&lt;/div&gt;&lt;/div&gt;\"\u003ETorment\u003C/span\u003E gains an additional effect: \u003Cspan class=\"val\"\u003E+10\u003C/span\u003E% additional \u003Cspan class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Reaping&lt;/div&gt;&lt;div&gt;Deals a certain amount of True Damage to the target, equivalent to the damage from all DoT effects over a certain period of time&lt;/div&gt;&lt;/div&gt;\"\u003EReaping\u003C/span\u003E Recovery Speed\u003Cbr\u003ERestores \u003Cspan class=\"val\"\u003E(12–15)\u003C/span\u003E% of Missing Life and Energy Shield when gaining \u003Cspan class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Torment&lt;/div&gt;&lt;div&gt;Each stack of Torment additionally increases Damage Over Time dealt by 5% for 4s. Stacks up to 3 times&lt;/div&gt;&lt;/div&gt;\"\u003ETorment\u003C/span\u003E. Interval: \u003Cspan class=\"val\"\u003E0.3\u003C/span\u003E s"
+  },
+  {
+    "type": "Revived",
+    "name": "",
+    "effect": "\u003Cspan class=\"val\"\u003E-40\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;All Stats&lt;/div&gt;&lt;div&gt;Strength, Dexterity, and Intelligence&lt;/div&gt;&lt;/div&gt;\"\u003EAll Stats\u003C/span\u003E\u003Cbr\u003E\u003Cspan class=\"val\"\u003E+(195–200)\u003C/span\u003E to \u003Cspan class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;All Stats&lt;/div&gt;&lt;div&gt;Strength, Dexterity, and Intelligence&lt;/div&gt;&lt;/div&gt;\"\u003EAll Stats\u003C/span\u003E"
+  },
+  {
+    "type": "Revived",
+    "name": "",
+    "effect": "\u003Cspan class=\"val\"\u003E-50\u003C/span\u003E% additional \u003Cspan class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Ailment&lt;/div&gt;&lt;div&gt;Trauma, Ignite, Frostbite, Freeze, Numbed, and Wilt&lt;/div&gt;&lt;/div&gt;\"\u003EAilment\u003C/span\u003E Duration\u003Cbr\u003E\u003Cspan class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Additional Settlement&lt;/div&gt;&lt;div&gt;This settlement does not count as Reaping.&lt;/div&gt;&lt;/div&gt;\"\u003EAdditionally settles\u003C/span\u003E \u003Cspan class=\"val\"\u003E(32–35)\u003C/span\u003E% of the remaining total Damage Over Time when \u003Cspan class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Reaping&lt;/div&gt;&lt;div&gt;Deals a certain amount of True Damage to the target, equivalent to the damage from all DoT effects over a certain period of time&lt;/div&gt;&lt;/div&gt;\"\u003EReaping\u003C/span\u003E, then removes all Damage Over Time acting on the target"
+  },
+  {
+    "type": "Revived",
+    "name": "",
+    "effect": "\u003Cspan class=\"val\"\u003E+(13–15)\u003C/span\u003E% Armor DMG Mitigation Penetration against \u003Cspan class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Trauma&lt;/div&gt;&lt;div&gt;An Ailment that may be triggered on hit, dealing Physical Damage per second for 4s based on Base Trauma Damage. Unable to stack&lt;br/&gt;Trauma cannot be inflicted when Base Trauma Damage is 0&lt;/div&gt;&lt;/div&gt;\"\u003ETraumatized\u003C/span\u003E enemies\u003Cbr\u003EEliminates \u003Cspan class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Trauma&lt;/div&gt;&lt;div&gt;An Ailment that may be triggered on hit, dealing Physical Damage per second for 4s based on Base Trauma Damage. Unable to stack&lt;br/&gt;Trauma cannot be inflicted when Base Trauma Damage is 0&lt;/div&gt;&lt;/div&gt;\"\u003ETraumatized\u003C/span\u003E enemies with less than \u003Cspan class=\"val\"\u003E15\u003C/span\u003E% Life"
+  },
+  {
+    "type": "Revived",
+    "name": "",
+    "effect": "\u003Cspan class=\"val\"\u003E+(260–270)\u003C/span\u003E Critical Strike Rating against \u003Cspan class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Frostbite&lt;/div&gt;&lt;div&gt;Frostbite is an Ailment that may be triggered on Cold Damage hits. Frostbitten enemies -10% Attack, Cast, and Movement Speed. Base Frostbite Rating: 10. For every 1 Frostbite Rating, +1% additional Cold Damage taken. The enemy will be Frozen once they have more than 100 Frostbite Rating.&lt;/div&gt;&lt;/div&gt;\"\u003EFrostbitten\u003C/span\u003E enemies"
+  },
+  {
+    "type": "Revived",
+    "name": "",
+    "effect": "\u003Cspan class=\"val\"\u003E+(56–60)\u003C/span\u003E% additional damage if you have dealt a Critical Strike recently\u003Cbr\u003ECritical Strikes do not deal additional damage"
+  },
+  {
+    "type": "Revived",
+    "name": "",
+    "effect": "\u003Cspan class=\"val\"\u003E+(6–7)\u003C/span\u003E% Attack Speed for every Main Attack Skill cast recently. Stacks up to \u003Cspan class=\"val\"\u003E6\u003C/span\u003E time(s). At max stacks, this skill is guaranteed to deal Double Damage after every \u003Cspan class=\"val\"\u003E3\u003C/span\u003E cast(s) of the Main Attack Skill (except Sentry and Channeled Skills)"
+  },
+  {
+    "type": "Revived",
+    "name": "",
+    "effect": "\u003Cspan class=\"val\"\u003E2.5\u003C/span\u003E% Spell Critical Strike Rating for every \u003Cspan class=\"val\"\u003E1\u003C/span\u003E Intelligence. Up to \u003Cspan class=\"val\"\u003E+(420–430)\u003C/span\u003E%"
+  },
+  {
+    "type": "Revived",
+    "name": "",
+    "effect": "\u003Cspan class=\"val\"\u003E40\u003C/span\u003E% of the bonus to Erosion Damage also applied to \u003Cspan class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Deterioration&lt;/div&gt;&lt;div&gt;Lasts for 1s. When the duration ends, deals True Damage equal to 60% of the Hit Erosion Damage dealt. Stacks up to 99 times. Each stack is calculated independently&lt;/div&gt;&lt;/div&gt;\"\u003EDeterioration\u003C/span\u003E Damage, up to \u003Cspan class=\"val\"\u003E+80\u003C/span\u003E%"
+  },
+  {
+    "type": "Revived",
+    "name": "",
+    "effect": "Base Traits now have \u003Cspan class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Base Trait Slot&lt;/div&gt;&lt;div&gt;Memory slots that affect a Hero&#039;s Base Traits, provided by the Revived Affixes of Hero Memories.&lt;/div&gt;&lt;/div&gt;\"\u003EBase Trait slots\u003C/span\u003E that can be installed with a \u003Cspan class=\"val\"\u003EEpic\u003C/span\u003E or lower \u003Cspan class=\"val\"\u003EDiscipline\u003C/span\u003E Memory. Base Stats and the value of Random Affixes of the Memory installed in this slot: \u003Cspan class=\"val\"\u003E(-35–-30)\u003C/span\u003E%\u003Cbr\u003E\u003Cspan class=\"val\"\u003E\u003C/span\u003E"
+  },
+  {
+    "type": "Revived",
+    "name": "",
+    "effect": "Base Traits now have \u003Cspan class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Base Trait Slot&lt;/div&gt;&lt;div&gt;Memory slots that affect a Hero&#039;s Base Traits, provided by the Revived Affixes of Hero Memories.&lt;/div&gt;&lt;/div&gt;\"\u003EBase Trait slots\u003C/span\u003E that can be installed with a \u003Cspan class=\"val\"\u003EEpic\u003C/span\u003E or lower \u003Cspan class=\"val\"\u003EOrigin\u003C/span\u003E Memory. Base Stats and the value of Random Affixes of the Memory installed in this slot: \u003Cspan class=\"val\"\u003E(-35–-30)\u003C/span\u003E%\u003Cbr\u003E\u003Cspan class=\"val\"\u003E\u003C/span\u003E"
+  },
+  {
+    "type": "Revived",
+    "name": "",
+    "effect": "Base Traits now have \u003Cspan class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Base Trait Slot&lt;/div&gt;&lt;div&gt;Memory slots that affect a Hero&#039;s Base Traits, provided by the Revived Affixes of Hero Memories.&lt;/div&gt;&lt;/div&gt;\"\u003EBase Trait slots\u003C/span\u003E that can be installed with a \u003Cspan class=\"val\"\u003EEpic\u003C/span\u003E or lower \u003Cspan class=\"val\"\u003EProgress\u003C/span\u003E Memory. Base Stats and the value of Random Affixes of the Memory installed in this slot: \u003Cspan class=\"val\"\u003E(-35–-30)\u003C/span\u003E%\u003Cbr\u003E\u003Cspan class=\"val\"\u003E\u003C/span\u003E"
+  },
+  {
+    "type": "Revived",
+    "name": "",
+    "effect": "Elixir Skills gain 4 Charging Progress every second and \u003Cspan class=\"val\"\u003E+(75–80)\u003C/span\u003E% Elixir Skill Effect if there are at least \u003Cspan class=\"val\"\u003E1\u003C/span\u003E empty Active Skill slot(s)\u003Cbr\u003E\u003Cspan class=\"val\"\u003E+(210–225)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Origin of Spirit Magus&lt;/div&gt;&lt;div&gt;Buff effect gained after Activating a Spirit Magus summoning skill.&lt;/div&gt;&lt;/div&gt;\"\u003EOrigin of Spirit Magus\u003C/span\u003E Effect if there are at least \u003Cspan class=\"val\"\u003E2\u003C/span\u003E empty Passive Skill Slot(s)"
+  },
+  {
+    "type": "Revived",
+    "name": "",
+    "effect": "Elixir Skills gain 4 Charging Progress every second and \u003Cspan class=\"val\"\u003E+(75–80)\u003C/span\u003E% Elixir Skill Effect if there are at least \u003Cspan class=\"val\"\u003E1\u003C/span\u003E empty Active Skill slot(s)\u003Cbr\u003E\u003Cspan class=\"val\"\u003E+(210–225)\u003C/span\u003E% Focus Effect if there are at least \u003Cspan class=\"val\"\u003E2\u003C/span\u003E empty Passive Skill Slot(s)"
+  },
+  {
+    "type": "Revived",
+    "name": "",
+    "effect": "Elixir Skills gain 4 Charging Progress every second and \u003Cspan class=\"val\"\u003E+(75–80)\u003C/span\u003E% Elixir Skill Effect if there are at least \u003Cspan class=\"val\"\u003E1\u003C/span\u003E empty Active Skill slot(s)\u003Cbr\u003E\u003Cspan class=\"val\"\u003E+(70–75)\u003C/span\u003E% Aura Effect if there are at least \u003Cspan class=\"val\"\u003E2\u003C/span\u003E empty Passive Skill Slot(s)"
+  },
+  {
+    "type": "Revived",
+    "name": "",
+    "effect": "Every \u003Cspan class=\"val\"\u003E10\u003C/span\u003E time(s) Lightning Damage is dealt, inflicts \u003Cspan class=\"val\"\u003E5\u003C/span\u003E stack(s) of Numbed on enemies within \u003Cspan class=\"val\"\u003E10\u003C/span\u003E m nearby. Interval: \u003Cspan class=\"val\"\u003E0.5\u003C/span\u003E s\u003Cbr\u003E\u003Cspan class=\"val\"\u003E+(50–54)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Numbed&lt;/div&gt;&lt;div&gt;An Elemental Ailment that has a chance to be inflicted when Lightning Damage hits its target.&lt;br/&gt;When hitting a Numbed enemy, Lightning Damage inflicts 1 stack of Numbed for every 10% of the sum of Max Energy Shield and Life dealt by Lightning Damage. This threshold can be lowered or raised, but the minimum is 1%.&lt;br/&gt;The default duration of Numbed is 2s, and the duration of each stack is calculated independently.&lt;br/&gt;Max Numbed stacks: 10. Each stack of Numbed increases the Lightning Damage taken by an additional +5%.&lt;/div&gt;&lt;/div&gt;\"\u003ENumbed\u003C/span\u003E Effect"
+  },
+  {
+    "type": "Revived",
+    "name": "",
+    "effect": "For \u003Cspan class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Enemy Count&lt;/div&gt;&lt;div&gt;Each Normal or Magic monster counts as 1 monster&lt;br/&gt;Each Rare monster counts as 2 monsters&lt;br/&gt;Each Boss counts as 5 monsters&lt;/div&gt;&lt;/div&gt;\"\u003Eevery enemy\u003C/span\u003E within \u003Cspan class=\"val\"\u003E20\u003C/span\u003E m nearby, \u003Cspan class=\"val\"\u003E+(32–35)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"&lt;div class=&quot;text-start&quot;&gt;&lt;div&gt;Affliction&lt;/div&gt;&lt;div&gt;When the Affliction inflicted per second is not 0, the Damage Over Time dealt will continuously inflicts Affliction on the target&lt;br/&gt;The target takes 1% additional Damage Over Time for every Affliction point&lt;br/&gt;The max Affliction is 100&lt;/div&gt;&lt;/div&gt;\"\u003EAffliction\u003C/span\u003E Effect, up to \u003Cspan class=\"val\"\u003E+235\u003C/span\u003E%"
+  },
+  {
+    "type": "Revived",
+    "name": "",
+    "effect": "Loses \u003Cspan class=\"val\"\u003E50\u003C/span\u003E Life and \u003Cspan class=\"val\"\u003E80\u003C/span\u003E Energy Shield every second\u003Cbr\u003E\u003Cspan class=\"val\"\u003E+(48–50)\u003C/span\u003E% additional Minion Damage when Life or Energy Shield is \u003Cspan class=\"val\"\u003E50\u003C/span\u003E% or higher"
+  }
+]

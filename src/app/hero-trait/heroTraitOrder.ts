@@ -26,9 +26,9 @@ export const HERO_TRAIT_ORDER: Record<string, Record<string, Record<number, stri
     },
     "Lethal Flash": {
       1:  ["Lethal Flash"],
-      45: ["Dart Shot", "Shadow Magazine"],
-      60: ["Evil Ouroboros", "Lethal Interval"],
-      75: ["Desperate Measure", "Malice Charge"],
+      45: ["Evil Ouroboros", "Impending Doom"],
+      60: ["Shadow Magazine"],
+      75: ["Weightless Step", "Born in the Breeze"],
     },
     "Zealot of War": {
       1:  ["Zealot of War"],
@@ -94,9 +94,9 @@ export const HERO_TRAIT_ORDER: Record<string, Record<string, Record<number, stri
   Iris: {
     "Growing Breeze": {
       1:  ["Growing Breeze"],
-      45: ["Embrace the World", "Struggle Free"],
-      60: ["Socialite", "Amazing Friends"],
-      75: ["Run With the Wind", "Grow With It"],
+      45: ["Socialite"],
+      60: ["Gentle Zephyr", "World Within"],
+      75: ["Run With the Wind", "Grow With Them"],
     },
     "Vigilant Breeze": {
       1:  ["Vigilant Breeze"],
@@ -109,8 +109,8 @@ export const HERO_TRAIT_ORDER: Record<string, Record<string, Record<number, stri
     "Order Calling": {
       1:  ["Order Calling"],
       45: ["Veteran", "All In"],
-      60: ["Last Stand", "Tough as Nails"],
-      75: ["Charge Forward", "Go for Broke"],
+      60: ["Overload Program", "Self-Reconstruct"],
+      75: ["Charge Forward", "Radiation Field"],
     },
     "Charge Calling": {
       1:  ["Charge Calling"],
@@ -144,13 +144,13 @@ export const HERO_TRAIT_ORDER: Record<string, Record<string, Record<number, stri
   Thea: {
     "Wisdom of The Gods": {
       1:  ["Wisdom of The Gods"],
-      45: ["Finale Prophecy", "Predicted Harvest"],
+      45: ["Divine Prophecy"],
       60: ["Predicted Reincarnation", "Predicted Hope"],
       75: ["Farewell Prophecy", "Predicted Justice"],
     },
     "Incarnation of The Gods": {
       1:  ["Incarnation of the Gods"],
-      45: ["Divinity"],
+      45: ["Agile Godhood", "Tenacious Divinity"],
       60: ["Might Flow", "Divine Realm Power"],
       75: ["Incarnation", "Divine Spirit"],
     },

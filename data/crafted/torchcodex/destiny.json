@@ -1,6 +1,11 @@
 [
   {
     "type": "Dual Kismet",
+    "name": "Banshee",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EInflicts 2 additional stacks of \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EIll Omen\u003C/div\u003E\u003Cdiv\u003EInflicts enemies affected by Ominous Curse with 1 stack of Ill Omen whenever their Damage Over Time, Reaping Damage, Spacetime Turbulence Damage, and additional damage taken reaches a certain percentage of their Max Life (8% for non-Elite enemies and 5% for Elite enemies)\u003Cbr/\u003EMaximum stacks of Ill Omen: 10\u003Cbr/\u003EUpon reaching max stacks, eliminates non-Elite enemies and deals True Damage equal to 20% of Max Life to Elite enemies\u003C/div\u003E\u003C/div\u003E\"\u003EIll Omen\u003C/span\u003E when inflicting \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EIll Omen\u003C/div\u003E\u003Cdiv\u003EInflicts enemies affected by Ominous Curse with 1 stack of Ill Omen whenever their Damage Over Time, Reaping Damage, Spacetime Turbulence Damage, and additional damage taken reaches a certain percentage of their Max Life (8% for non-Elite enemies and 5% for Elite enemies)\u003Cbr/\u003EMaximum stacks of Ill Omen: 10\u003Cbr/\u003EUpon reaching max stacks, eliminates non-Elite enemies and deals True Damage equal to 20% of Max Life to Elite enemies\u003C/div\u003E\u003C/div\u003E\"\u003EIll Omen\u003C/span\u003E for the first time\u003C/li\u003E\u003Cli class=\"mod\"\u003EInflicts \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EWeaken\u003C/div\u003E\u003Cdiv\u003EReduces damage dealt by 10%\u003C/div\u003E\u003C/div\u003E\"\u003EWeaken\u003C/span\u003E on enemies who have \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EIll Omen\u003C/div\u003E\u003Cdiv\u003EInflicts enemies affected by Ominous Curse with 1 stack of Ill Omen whenever their Damage Over Time, Reaping Damage, Spacetime Turbulence Damage, and additional damage taken reaches a certain percentage of their Max Life (8% for non-Elite enemies and 5% for Elite enemies)\u003Cbr/\u003EMaximum stacks of Ill Omen: 10\u003Cbr/\u003EUpon reaching max stacks, eliminates non-Elite enemies and deals True Damage equal to 20% of Max Life to Elite enemies\u003C/div\u003E\u003C/div\u003E\"\u003EIll Omen\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
     "name": "Bird in a Pond",
     "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EImmune to crowd control effects\u003C/li\u003E\u003Cli class=\"mod\"\u003E-25% Defense\u003C/li\u003E\u003C/ul\u003E"
   },
@@ -186,6 +191,11 @@
   },
   {
     "type": "Dual Kismet",
+    "name": "Shackles",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EGains 45% Movement Speed when consuming Demolisher Charge. This effect gradually falls off to 0 within 2s\u003C/li\u003E\u003Cli class=\"mod\"\u003E+10% additional Demolisher Skill Area\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Dual Kismet",
     "name": "Shadow",
     "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E+2,000 Evasion\u003C/li\u003E\u003Cli class=\"mod\"\u003E-20% Chance to Avoid Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E+30% Movement Speed after evading. The effect falls off to 0 within 10s\u003C/li\u003E\u003C/ul\u003E"
   },
@@ -237,12 +247,12 @@
   {
     "type": "Dual Kismet",
     "name": "Two-Headed Crow",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EYou can inflict 1 additional Curse\u003C/li\u003E\u003Cli class=\"mod\"\u003EEnemies are immune to Curse until they have max Affliction\u003C/li\u003E\u003C/ul\u003E"
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EYou can inflict 1 additional Curse\u003C/li\u003E\u003Cli class=\"mod\"\u003E-5% Curse Effect\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Dual Kismet",
     "name": "Unholy Grail",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E-40% Restoration Duration for Restoration Skills\u003C/li\u003E\u003Cli class=\"mod\"\u003EWhen casting a Restoration Skill, gains 4 stacks of a random Blessing\u003C/li\u003E\u003C/ul\u003E"
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E-40% Restoration Duration for Restoration Skills\u003C/li\u003E\u003Cli class=\"mod\"\u003EWhen casting an Elixir Skill, gains 4 stacks of a random Blessing\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Dual Kismet",
@@ -287,7 +297,12 @@
   {
     "type": "Kismet",
     "name": "Creek",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003ERestoration Skills gain \u003Cspan class=\"val\"\u003E1\u003C/span\u003E Charging Progress every second\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(6–9)\u003C/span\u003E% Movement Speed while the Restoration Skill lasts\u003C/li\u003E\u003C/ul\u003E"
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EElixir Skills gain \u003Cspan class=\"val\"\u003E1\u003C/span\u003E Charging Progress every second\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(6–9)\u003C/span\u003E% Movement Speed while an Elixir Skill is active\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Kismet",
+    "name": "Deeproot",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EObtain a Lv. 20 Precise: Rejuvenation buff\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Kismet",
@@ -317,7 +332,7 @@
   {
     "type": "Kismet",
     "name": "Green Shoot",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(50–60)\u003C/span\u003E initial \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EGrowth\u003C/div\u003E\u003Cdiv\u003ESpirit Magi grow into the next Stage for every 100 Growth. They start at Stage 1 and can grow until they reach Stage 5. For every 8 Growth they have, Spirit Magi gain +1% Physique, +5% additional Skill Area, and a bonus every stage:\u003Cbr/\u003EAt Stage 2, +30% chance for them to use Enhanced Skill chance.\u003Cbr/\u003EAt Stage 3, their Enhanced Skills become stronger.\u003Cbr/\u003EAt Stage 4, their Empower Skills become stronger.\u003Cbr/\u003EAt Stage 5, they +25% additional damage, +10% additional Skill Area, and gain increased Movement Speed and Tracking Area.\u003Cbr/\u003EThe max Growth is 1000.\u003C/div\u003E\u003C/div\u003E\"\u003EGrowth\u003C/span\u003E for Spirit Magi\u003C/li\u003E\u003Cli class=\"mod\"\u003ESpirit Magi \u003Cspan class=\"val\"\u003E+20\u003C/span\u003E% Cooldown Recovery Speed\u003C/li\u003E\u003C/ul\u003E"
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(50–60)\u003C/span\u003E initial \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EGrowth\u003C/div\u003E\u003Cdiv\u003ESpirit Magi grow into the next Stage for every 100 Growth. They start at Stage 1 and can grow until they reach Stage 5. For every 8 Growth they have, Spirit Magi gain +1% Physique, +10% additional Skill Area, and a bonus every stage:\u003Cbr/\u003EAt Stage 2, +30% chance for them to use Enhanced Skill chance.\u003Cbr/\u003EAt Stage 3, their Enhanced Skills become stronger.\u003Cbr/\u003EAt Stage 4, their Empower Skills become stronger.\u003Cbr/\u003EAt Stage 5, they +50% additional damage, +10% additional Skill Area, and gain increased Movement Speed and Tracking Area.\u003Cbr/\u003EThe max Growth is 1000.\u003C/div\u003E\u003C/div\u003E\"\u003EGrowth\u003C/span\u003E for Spirit Magi\u003C/li\u003E\u003Cli class=\"mod\"\u003ESpirit Magi \u003Cspan class=\"val\"\u003E+20\u003C/span\u003E% Cooldown Recovery Speed\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Kismet",
@@ -357,7 +372,7 @@
   {
     "type": "Kismet",
     "name": "Leader",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E+ \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECommand\u003C/div\u003E\u003Cdiv\u003EEvery point of Command will grant Synthetic Troop Minions +3% additional damage and a bigger Tracking Area.\u003Cbr/\u003EThe lowest Command is -100 while the highest is 100. When Command is not 0, 13 point(s) will be returned (reduced/granted) every second until it becomes 0. For every 10 Command increased, +7 additional points will be returned.\u003Cbr/\u003ESynthetic Troop Minions' Duration will not reduce when Command is a positive value.\u003C/div\u003E\u003C/div\u003E\"\u003ECommand\u003C/span\u003E per second\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(15–20)\u003C/span\u003E% Minion Max Life\u003C/li\u003E\u003C/ul\u003E"
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E+ \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECommand\u003C/div\u003E\u003Cdiv\u003EEvery point of Command will grant Synthetic Troop Minions +3% additional damage, +-2% additional damage taken, ++2% Movement Speed, and a bigger Tracking Area.\u003Cbr/\u003EThe lowest Command is -100 while the highest is 100. When Command is not 0, 13 point(s) will be returned (reduced/granted) every second until it becomes 0. For every 10 Command increased, +7 additional points will be returned.\u003Cbr/\u003ESynthetic Troop Minions' Duration will not reduce when Command is a positive value.\u003C/div\u003E\u003C/div\u003E\"\u003ECommand\u003C/span\u003E per second\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(15–20)\u003C/span\u003E% Minion Max Life\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Kismet",
@@ -421,11 +436,6 @@
   },
   {
     "type": "Kismet",
-    "name": "Shackles",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EGains \u003Cspan class=\"val\"\u003E(30–35)\u003C/span\u003E% Movement Speed when consuming Demolisher Charge. The effect gradually falls off to 0 within \u003Cspan class=\"val\"\u003E1\u003C/span\u003E s.\u003C/li\u003E\u003C/ul\u003E"
-  },
-  {
-    "type": "Kismet",
     "name": "Shadow Mage",
     "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(40–50)\u003C/span\u003E% Sentry Duration\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E% additional Cast Speed for Sentry Skills\u003C/li\u003E\u003C/ul\u003E"
   },
@@ -437,7 +447,7 @@
   {
     "type": "Kismet",
     "name": "Spades",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(8–10)\u003C/span\u003E% Max Life\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+5\u003C/span\u003E% additional Damage Over Time\u003C/li\u003E\u003Cli class=\"mod\"\u003ERegenerates \u003Cspan class=\"val\"\u003E1\u003C/span\u003E% Life per second\u003C/li\u003E\u003C/ul\u003E"
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(8–10)\u003C/span\u003E% Max Life\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+5\u003C/span\u003E% additional Damage Over Time\u003C/li\u003E\u003Cli class=\"mod\"\u003ERegenerates \u003Cspan class=\"val\"\u003E2\u003C/span\u003E% Life per second\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Kismet",
@@ -532,7 +542,7 @@
   {
     "type": "Medium Fate",
     "name": "Command",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E+ \u003Cspan class=\"val\"\u003E(2–4)\u003C/span\u003E \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECommand\u003C/div\u003E\u003Cdiv\u003EEvery point of Command will grant Synthetic Troop Minions +3% additional damage and a bigger Tracking Area.\u003Cbr/\u003EThe lowest Command is -100 while the highest is 100. When Command is not 0, 13 point(s) will be returned (reduced/granted) every second until it becomes 0. For every 10 Command increased, +7 additional points will be returned.\u003Cbr/\u003ESynthetic Troop Minions' Duration will not reduce when Command is a positive value.\u003C/div\u003E\u003C/div\u003E\"\u003ECommand\u003C/span\u003E per second\u003C/li\u003E\u003C/ul\u003E"
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E+ \u003Cspan class=\"val\"\u003E(2–4)\u003C/span\u003E \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECommand\u003C/div\u003E\u003Cdiv\u003EEvery point of Command will grant Synthetic Troop Minions +3% additional damage, +-2% additional damage taken, ++2% Movement Speed, and a bigger Tracking Area.\u003Cbr/\u003EThe lowest Command is -100 while the highest is 100. When Command is not 0, 13 point(s) will be returned (reduced/granted) every second until it becomes 0. For every 10 Command increased, +7 additional points will be returned.\u003Cbr/\u003ESynthetic Troop Minions' Duration will not reduce when Command is a positive value.\u003C/div\u003E\u003C/div\u003E\"\u003ECommand\u003C/span\u003E per second\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Medium Fate",
@@ -597,7 +607,7 @@
   {
     "type": "Medium Fate",
     "name": "Growth",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–24)\u003C/span\u003E initial \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EGrowth\u003C/div\u003E\u003Cdiv\u003ESpirit Magi grow into the next Stage for every 100 Growth. They start at Stage 1 and can grow until they reach Stage 5. For every 8 Growth they have, Spirit Magi gain +1% Physique, +5% additional Skill Area, and a bonus every stage:\u003Cbr/\u003EAt Stage 2, +30% chance for them to use Enhanced Skill chance.\u003Cbr/\u003EAt Stage 3, their Enhanced Skills become stronger.\u003Cbr/\u003EAt Stage 4, their Empower Skills become stronger.\u003Cbr/\u003EAt Stage 5, they +25% additional damage, +10% additional Skill Area, and gain increased Movement Speed and Tracking Area.\u003Cbr/\u003EThe max Growth is 1000.\u003C/div\u003E\u003C/div\u003E\"\u003EGrowth\u003C/span\u003E for Spirit Magi\u003C/li\u003E\u003C/ul\u003E"
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–24)\u003C/span\u003E initial \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EGrowth\u003C/div\u003E\u003Cdiv\u003ESpirit Magi grow into the next Stage for every 100 Growth. They start at Stage 1 and can grow until they reach Stage 5. For every 8 Growth they have, Spirit Magi gain +1% Physique, +10% additional Skill Area, and a bonus every stage:\u003Cbr/\u003EAt Stage 2, +30% chance for them to use Enhanced Skill chance.\u003Cbr/\u003EAt Stage 3, their Enhanced Skills become stronger.\u003Cbr/\u003EAt Stage 4, their Empower Skills become stronger.\u003Cbr/\u003EAt Stage 5, they +50% additional damage, +10% additional Skill Area, and gain increased Movement Speed and Tracking Area.\u003Cbr/\u003EThe max Growth is 1000.\u003C/div\u003E\u003C/div\u003E\"\u003EGrowth\u003C/span\u003E for Spirit Magi\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Medium Fate",
@@ -607,7 +617,7 @@
   {
     "type": "Medium Fate",
     "name": "Life Regeneration",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(6–10)\u003C/span\u003E% Life Regeneration Speed\u003C/li\u003E\u003C/ul\u003E"
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–15)\u003C/span\u003E% Life Regeneration Speed\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Medium Fate",
@@ -677,7 +687,7 @@
   {
     "type": "Medium Fate",
     "name": "Seal Compensation",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(4–6)\u003C/span\u003E% Sealed Mana Compensation\u003C/li\u003E\u003C/ul\u003E"
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(4–6)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESealed Mana\u003C/div\u003E\u003Cdiv\u003EA portion of Mana is reserved to maintain persistent effects such as auras\u003C/div\u003E\u003C/div\u003E\"\u003ESealed Mana\u003C/span\u003E Compensation\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Medium Fate",
@@ -737,7 +747,7 @@
   {
     "type": "Micro Fate",
     "name": "Command",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E+ \u003Cspan class=\"val\"\u003E(1–2)\u003C/span\u003E \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECommand\u003C/div\u003E\u003Cdiv\u003EEvery point of Command will grant Synthetic Troop Minions +3% additional damage and a bigger Tracking Area.\u003Cbr/\u003EThe lowest Command is -100 while the highest is 100. When Command is not 0, 13 point(s) will be returned (reduced/granted) every second until it becomes 0. For every 10 Command increased, +7 additional points will be returned.\u003Cbr/\u003ESynthetic Troop Minions' Duration will not reduce when Command is a positive value.\u003C/div\u003E\u003C/div\u003E\"\u003ECommand\u003C/span\u003E per second\u003C/li\u003E\u003C/ul\u003E"
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E+ \u003Cspan class=\"val\"\u003E(1–2)\u003C/span\u003E \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECommand\u003C/div\u003E\u003Cdiv\u003EEvery point of Command will grant Synthetic Troop Minions +3% additional damage, +-2% additional damage taken, ++2% Movement Speed, and a bigger Tracking Area.\u003Cbr/\u003EThe lowest Command is -100 while the highest is 100. When Command is not 0, 13 point(s) will be returned (reduced/granted) every second until it becomes 0. For every 10 Command increased, +7 additional points will be returned.\u003Cbr/\u003ESynthetic Troop Minions' Duration will not reduce when Command is a positive value.\u003C/div\u003E\u003C/div\u003E\"\u003ECommand\u003C/span\u003E per second\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Micro Fate",
@@ -812,7 +822,7 @@
   {
     "type": "Micro Fate",
     "name": "Growth",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–12)\u003C/span\u003E initial \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EGrowth\u003C/div\u003E\u003Cdiv\u003ESpirit Magi grow into the next Stage for every 100 Growth. They start at Stage 1 and can grow until they reach Stage 5. For every 8 Growth they have, Spirit Magi gain +1% Physique, +5% additional Skill Area, and a bonus every stage:\u003Cbr/\u003EAt Stage 2, +30% chance for them to use Enhanced Skill chance.\u003Cbr/\u003EAt Stage 3, their Enhanced Skills become stronger.\u003Cbr/\u003EAt Stage 4, their Empower Skills become stronger.\u003Cbr/\u003EAt Stage 5, they +25% additional damage, +10% additional Skill Area, and gain increased Movement Speed and Tracking Area.\u003Cbr/\u003EThe max Growth is 1000.\u003C/div\u003E\u003C/div\u003E\"\u003EGrowth\u003C/span\u003E for Spirit Magi\u003C/li\u003E\u003C/ul\u003E"
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(10–12)\u003C/span\u003E initial \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EGrowth\u003C/div\u003E\u003Cdiv\u003ESpirit Magi grow into the next Stage for every 100 Growth. They start at Stage 1 and can grow until they reach Stage 5. For every 8 Growth they have, Spirit Magi gain +1% Physique, +10% additional Skill Area, and a bonus every stage:\u003Cbr/\u003EAt Stage 2, +30% chance for them to use Enhanced Skill chance.\u003Cbr/\u003EAt Stage 3, their Enhanced Skills become stronger.\u003Cbr/\u003EAt Stage 4, their Empower Skills become stronger.\u003Cbr/\u003EAt Stage 5, they +50% additional damage, +10% additional Skill Area, and gain increased Movement Speed and Tracking Area.\u003Cbr/\u003EThe max Growth is 1000.\u003C/div\u003E\u003C/div\u003E\"\u003EGrowth\u003C/span\u003E for Spirit Magi\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Micro Fate",
@@ -827,7 +837,7 @@
   {
     "type": "Micro Fate",
     "name": "Life Regeneration",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(3–5)\u003C/span\u003E% Life Regeneration Speed\u003C/li\u003E\u003C/ul\u003E"
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(5–7.5)\u003C/span\u003E% Life Regeneration Speed\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Micro Fate",
@@ -907,7 +917,7 @@
   {
     "type": "Micro Fate",
     "name": "Seal Compensation",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(1–3)\u003C/span\u003E% Sealed Mana Compensation\u003C/li\u003E\u003C/ul\u003E"
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(1–3)\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESealed Mana\u003C/div\u003E\u003Cdiv\u003EA portion of Mana is reserved to maintain persistent effects such as auras\u003C/div\u003E\u003C/div\u003E\"\u003ESealed Mana\u003C/span\u003E Compensation\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Micro Fate",
@@ -946,6 +956,6 @@
   },
   {
     "type": "Undetermined Fate",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EUndetermined Fate\u003C/li\u003E\u003C/ul\u003E"
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003ECan be installed in an Undetermined Fate Slot to replace the original effects and unlock several additional Fate Slots (up to 5).\u003C/li\u003E\u003C/ul\u003E"
   }
 ]

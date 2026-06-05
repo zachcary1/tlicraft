@@ -177,6 +177,16 @@
   {
     "type": "Fixed Affix",
     "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–25)\u003C/span\u003E% Armor\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–25)\u003C/span\u003E% Evasion\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
     "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–26)\u003C/span\u003E% Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
   },
   {
@@ -187,17 +197,7 @@
   {
     "type": "Fixed Affix",
     "item": "Memory of Origin",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–28)\u003C/span\u003E% Armor\u003C/li\u003E\u003C/ul\u003E"
-  },
-  {
-    "type": "Fixed Affix",
-    "item": "Memory of Origin",
     "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–28)\u003C/span\u003E% damage\u003C/li\u003E\u003C/ul\u003E"
-  },
-  {
-    "type": "Fixed Affix",
-    "item": "Memory of Origin",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–28)\u003C/span\u003E% Evasion\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Fixed Affix",
@@ -217,7 +217,17 @@
   {
     "type": "Fixed Affix",
     "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(26–30)\u003C/span\u003E% Armor\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
     "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(26–30)\u003C/span\u003E% chance to avoid \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EElemental Ailment\u003C/div\u003E\u003Cdiv\u003EIgnite, Frostbite, Freeze, and Numbed\u003C/div\u003E\u003C/div\u003E\"\u003EElemental Ailments\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(26–30)\u003C/span\u003E% Evasion\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Fixed Affix",
@@ -227,17 +237,7 @@
   {
     "type": "Fixed Affix",
     "item": "Memory of Origin",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(30–42)\u003C/span\u003E% Armor\u003C/li\u003E\u003C/ul\u003E"
-  },
-  {
-    "type": "Fixed Affix",
-    "item": "Memory of Origin",
     "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(30–42)\u003C/span\u003E% damage\u003C/li\u003E\u003C/ul\u003E"
-  },
-  {
-    "type": "Fixed Affix",
-    "item": "Memory of Origin",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(30–42)\u003C/span\u003E% Evasion\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Fixed Affix",
@@ -427,6 +427,11 @@
   {
     "type": "Fixed Affix",
     "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EImmune to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EIgnite\u003C/div\u003E\u003Cdiv\u003EAn Ailment that may be triggered on hit, dealing Fire Damage per second for 4s based on Base Ignite Damage. Unable to stack\u003Cbr/\u003EIgnite cannot be inflicted when Base Ignite Damage is 0\u003C/div\u003E\u003C/div\u003E\"\u003EIgnite\u003C/span\u003E Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-100\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EIgnite\u003C/div\u003E\u003Cdiv\u003EAn Ailment that may be triggered on hit, dealing Fire Damage per second for 4s based on Base Ignite Damage. Unable to stack\u003Cbr/\u003EIgnite cannot be inflicted when Base Ignite Damage is 0\u003C/div\u003E\u003C/div\u003E\"\u003EIgnite\u003C/span\u003E Effect received\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
     "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EImmune to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EParalysis\u003C/div\u003E\u003Cdiv\u003EIncreases damage taken by 15%\u003C/div\u003E\u003C/div\u003E\"\u003EParalysis\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
   },
   {
@@ -437,7 +442,17 @@
   {
     "type": "Fixed Affix",
     "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EImmune to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ETrauma\u003C/div\u003E\u003Cdiv\u003EAn Ailment that may be triggered on hit, dealing Physical Damage per second for 4s based on Base Trauma Damage. Unable to stack\u003Cbr/\u003ETrauma cannot be inflicted when Base Trauma Damage is 0\u003C/div\u003E\u003C/div\u003E\"\u003ETrauma\u003C/span\u003E Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
     "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EImmune to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EWeaken\u003C/div\u003E\u003Cdiv\u003EReduces damage dealt by 10%\u003C/div\u003E\u003C/div\u003E\"\u003EWeaken\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EImmune to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EWilt\u003C/div\u003E\u003Cdiv\u003EAn Ailment that may be triggered on hit, dealing Erosion Damage per second for 1.5s based on Base Wilt Damage. Stacks up to 30 time(s)\u003Cbr/\u003EWilt cannot be inflicted when Base Wilt Damage is 0\u003C/div\u003E\u003C/div\u003E\"\u003EWilt\u003C/span\u003E Damage\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Fixed Affix",
@@ -542,6 +557,16 @@
   {
     "type": "Fixed Affix",
     "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–25)\u003C/span\u003E% Armor\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–25)\u003C/span\u003E% Evasion\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
     "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–26)\u003C/span\u003E% Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
   },
   {
@@ -552,17 +577,7 @@
   {
     "type": "Fixed Affix",
     "item": "Memory of Discipline",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–28)\u003C/span\u003E% Armor\u003C/li\u003E\u003C/ul\u003E"
-  },
-  {
-    "type": "Fixed Affix",
-    "item": "Memory of Discipline",
     "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–28)\u003C/span\u003E% damage\u003C/li\u003E\u003C/ul\u003E"
-  },
-  {
-    "type": "Fixed Affix",
-    "item": "Memory of Discipline",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–28)\u003C/span\u003E% Evasion\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Fixed Affix",
@@ -582,7 +597,17 @@
   {
     "type": "Fixed Affix",
     "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(26–30)\u003C/span\u003E% Armor\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
     "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(26–30)\u003C/span\u003E% chance to avoid \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EElemental Ailment\u003C/div\u003E\u003Cdiv\u003EIgnite, Frostbite, Freeze, and Numbed\u003C/div\u003E\u003C/div\u003E\"\u003EElemental Ailments\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(26–30)\u003C/span\u003E% Evasion\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Fixed Affix",
@@ -598,16 +623,6 @@
     "type": "Fixed Affix",
     "item": "Memory of Discipline",
     "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(30–42)\u003C/span\u003E% Minion Damage\u003C/li\u003E\u003C/ul\u003E"
-  },
-  {
-    "type": "Fixed Affix",
-    "item": "Memory of Discipline",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(34–38)\u003C/span\u003E% Armor\u003C/li\u003E\u003C/ul\u003E"
-  },
-  {
-    "type": "Fixed Affix",
-    "item": "Memory of Discipline",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(34–38)\u003C/span\u003E% Evasion\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Fixed Affix",
@@ -792,6 +807,11 @@
   {
     "type": "Fixed Affix",
     "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EImmune to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EIgnite\u003C/div\u003E\u003Cdiv\u003EAn Ailment that may be triggered on hit, dealing Fire Damage per second for 4s based on Base Ignite Damage. Unable to stack\u003Cbr/\u003EIgnite cannot be inflicted when Base Ignite Damage is 0\u003C/div\u003E\u003C/div\u003E\"\u003EIgnite\u003C/span\u003E Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-100\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EIgnite\u003C/div\u003E\u003Cdiv\u003EAn Ailment that may be triggered on hit, dealing Fire Damage per second for 4s based on Base Ignite Damage. Unable to stack\u003Cbr/\u003EIgnite cannot be inflicted when Base Ignite Damage is 0\u003C/div\u003E\u003C/div\u003E\"\u003EIgnite\u003C/span\u003E Effect received\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
     "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EImmune to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EParalysis\u003C/div\u003E\u003Cdiv\u003EIncreases damage taken by 15%\u003C/div\u003E\u003C/div\u003E\"\u003EParalysis\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
   },
   {
@@ -802,7 +822,17 @@
   {
     "type": "Fixed Affix",
     "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EImmune to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ETrauma\u003C/div\u003E\u003Cdiv\u003EAn Ailment that may be triggered on hit, dealing Physical Damage per second for 4s based on Base Trauma Damage. Unable to stack\u003Cbr/\u003ETrauma cannot be inflicted when Base Trauma Damage is 0\u003C/div\u003E\u003C/div\u003E\"\u003ETrauma\u003C/span\u003E Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
     "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EImmune to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EWeaken\u003C/div\u003E\u003Cdiv\u003EReduces damage dealt by 10%\u003C/div\u003E\u003C/div\u003E\"\u003EWeaken\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EImmune to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EWilt\u003C/div\u003E\u003Cdiv\u003EAn Ailment that may be triggered on hit, dealing Erosion Damage per second for 1.5s based on Base Wilt Damage. Stacks up to 30 time(s)\u003Cbr/\u003EWilt cannot be inflicted when Base Wilt Damage is 0\u003C/div\u003E\u003C/div\u003E\"\u003EWilt\u003C/span\u003E Damage\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Fixed Affix",
@@ -907,6 +937,16 @@
   {
     "type": "Fixed Affix",
     "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–25)\u003C/span\u003E% Armor\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–25)\u003C/span\u003E% Evasion\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
     "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–26)\u003C/span\u003E% Critical Strike Damage\u003C/li\u003E\u003C/ul\u003E"
   },
   {
@@ -917,17 +957,7 @@
   {
     "type": "Fixed Affix",
     "item": "Memory of Progress",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–28)\u003C/span\u003E% Armor\u003C/li\u003E\u003C/ul\u003E"
-  },
-  {
-    "type": "Fixed Affix",
-    "item": "Memory of Progress",
     "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–28)\u003C/span\u003E% damage\u003C/li\u003E\u003C/ul\u003E"
-  },
-  {
-    "type": "Fixed Affix",
-    "item": "Memory of Progress",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(20–28)\u003C/span\u003E% Evasion\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Fixed Affix",
@@ -947,7 +977,17 @@
   {
     "type": "Fixed Affix",
     "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(26–30)\u003C/span\u003E% Armor\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
     "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(26–30)\u003C/span\u003E% chance to avoid \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EElemental Ailment\u003C/div\u003E\u003Cdiv\u003EIgnite, Frostbite, Freeze, and Numbed\u003C/div\u003E\u003C/div\u003E\"\u003EElemental Ailments\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(26–30)\u003C/span\u003E% Evasion\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Fixed Affix",
@@ -963,16 +1003,6 @@
     "type": "Fixed Affix",
     "item": "Memory of Progress",
     "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(30–42)\u003C/span\u003E% Minion Damage\u003C/li\u003E\u003C/ul\u003E"
-  },
-  {
-    "type": "Fixed Affix",
-    "item": "Memory of Progress",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(34–38)\u003C/span\u003E% Armor\u003C/li\u003E\u003C/ul\u003E"
-  },
-  {
-    "type": "Fixed Affix",
-    "item": "Memory of Progress",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(34–38)\u003C/span\u003E% Evasion\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Fixed Affix",
@@ -1157,6 +1187,11 @@
   {
     "type": "Fixed Affix",
     "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EImmune to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EIgnite\u003C/div\u003E\u003Cdiv\u003EAn Ailment that may be triggered on hit, dealing Fire Damage per second for 4s based on Base Ignite Damage. Unable to stack\u003Cbr/\u003EIgnite cannot be inflicted when Base Ignite Damage is 0\u003C/div\u003E\u003C/div\u003E\"\u003EIgnite\u003C/span\u003E Damage\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-100\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EIgnite\u003C/div\u003E\u003Cdiv\u003EAn Ailment that may be triggered on hit, dealing Fire Damage per second for 4s based on Base Ignite Damage. Unable to stack\u003Cbr/\u003EIgnite cannot be inflicted when Base Ignite Damage is 0\u003C/div\u003E\u003C/div\u003E\"\u003EIgnite\u003C/span\u003E Effect received\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
     "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EImmune to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EParalysis\u003C/div\u003E\u003Cdiv\u003EIncreases damage taken by 15%\u003C/div\u003E\u003C/div\u003E\"\u003EParalysis\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
   },
   {
@@ -1167,7 +1202,17 @@
   {
     "type": "Fixed Affix",
     "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EImmune to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ETrauma\u003C/div\u003E\u003Cdiv\u003EAn Ailment that may be triggered on hit, dealing Physical Damage per second for 4s based on Base Trauma Damage. Unable to stack\u003Cbr/\u003ETrauma cannot be inflicted when Base Trauma Damage is 0\u003C/div\u003E\u003C/div\u003E\"\u003ETrauma\u003C/span\u003E Damage\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
     "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EImmune to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EWeaken\u003C/div\u003E\u003Cdiv\u003EReduces damage dealt by 10%\u003C/div\u003E\u003C/div\u003E\"\u003EWeaken\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Fixed Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EImmune to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EWilt\u003C/div\u003E\u003Cdiv\u003EAn Ailment that may be triggered on hit, dealing Erosion Damage per second for 1.5s based on Base Wilt Damage. Stacks up to 30 time(s)\u003Cbr/\u003EWilt cannot be inflicted when Base Wilt Damage is 0\u003C/div\u003E\u003C/div\u003E\"\u003EWilt\u003C/span\u003E Damage\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Random Affix",
@@ -1192,17 +1237,17 @@
   {
     "type": "Random Affix",
     "item": "Memory of Origin",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(21–31)\u003C/span\u003E% Attack Block Chance\u003C/li\u003E\u003C/ul\u003E"
-  },
-  {
-    "type": "Random Affix",
-    "item": "Memory of Origin",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(21–31)\u003C/span\u003E% Spell Block Chance\u003C/li\u003E\u003C/ul\u003E"
-  },
-  {
-    "type": "Random Affix",
-    "item": "Memory of Origin",
     "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(22–27)\u003C/span\u003E% Max Mana\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(25–31)\u003C/span\u003E% Attack Block Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Origin",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(25–31)\u003C/span\u003E% Spell Block Chance\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Random Affix",
@@ -1367,17 +1412,17 @@
   {
     "type": "Random Affix",
     "item": "Memory of Discipline",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(21–31)\u003C/span\u003E% Attack Block Chance\u003C/li\u003E\u003C/ul\u003E"
-  },
-  {
-    "type": "Random Affix",
-    "item": "Memory of Discipline",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(21–31)\u003C/span\u003E% Spell Block Chance\u003C/li\u003E\u003C/ul\u003E"
-  },
-  {
-    "type": "Random Affix",
-    "item": "Memory of Discipline",
     "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(22–27)\u003C/span\u003E% Max Mana\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(25–31)\u003C/span\u003E% Attack Block Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Discipline",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(25–31)\u003C/span\u003E% Spell Block Chance\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Random Affix",
@@ -1542,17 +1587,17 @@
   {
     "type": "Random Affix",
     "item": "Memory of Progress",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(21–31)\u003C/span\u003E% Attack Block Chance\u003C/li\u003E\u003C/ul\u003E"
-  },
-  {
-    "type": "Random Affix",
-    "item": "Memory of Progress",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(21–31)\u003C/span\u003E% Spell Block Chance\u003C/li\u003E\u003C/ul\u003E"
-  },
-  {
-    "type": "Random Affix",
-    "item": "Memory of Progress",
     "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(22–27)\u003C/span\u003E% Max Mana\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(25–31)\u003C/span\u003E% Attack Block Chance\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Random Affix",
+    "item": "Memory of Progress",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+(25–31)\u003C/span\u003E% Spell Block Chance\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Random Affix",

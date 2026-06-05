@@ -18,15 +18,15 @@ function slugify(s: string): string {
 
 async function importBlend() {
   const rows = await readJson<{ type: string; name?: string; effect: string }>("blend");
-  for (let i = 0; i < rows.length; i++) {
-    const { type, name = "", effect } = rows[i];
-    const id = `blend_${i}`;
-    await prisma.blend.upsert({
-      where: { id },
-      update: { type, name, effect },
-      create: { id, type, name, effect },
-    });
-  }
+  await prisma.blend.deleteMany({ where: { id: { startsWith: "blend_" } } });
+  await prisma.blend.createMany({
+    data: rows.map((r, i) => ({
+      id: `blend_${i}`,
+      type: r.type,
+      name: r.name ?? "",
+      effect: r.effect,
+    })),
+  });
   console.log(`Imported ${rows.length} blend entries.`);
 }
 
@@ -34,15 +34,15 @@ async function importBlend() {
 
 async function importDestiny() {
   const rows = await readJson<{ type: string; name?: string; effect: string }>("destiny");
-  for (let i = 0; i < rows.length; i++) {
-    const { type, name = "", effect } = rows[i];
-    const id = `destiny_${i}`;
-    await prisma.destiny.upsert({
-      where: { id },
-      update: { type, name, effect },
-      create: { id, type, name, effect },
-    });
-  }
+  await prisma.destiny.deleteMany({ where: { id: { startsWith: "destiny_" } } });
+  await prisma.destiny.createMany({
+    data: rows.map((r, i) => ({
+      id: `destiny_${i}`,
+      type: r.type,
+      name: r.name ?? "",
+      effect: r.effect,
+    })),
+  });
   console.log(`Imported ${rows.length} destiny entries.`);
 }
 
@@ -50,17 +50,15 @@ async function importDestiny() {
 
 async function importEtherealPrism() {
   const rows = await readJson<{ type?: string; rarity?: string; effect: string }>("etherealPrism");
-  for (let i = 0; i < rows.length; i++) {
-    const type = rows[i].type ?? "";
-    const rarity = rows[i].rarity ?? "";
-    const { effect } = rows[i];
-    const id = `ethereal_prism_${i}`;
-    await prisma.etherealPrism.upsert({
-      where: { id },
-      update: { type, rarity, effect },
-      create: { id, type, rarity, effect },
-    });
-  }
+  await prisma.etherealPrism.deleteMany({ where: { id: { startsWith: "ethereal_prism_" } } });
+  await prisma.etherealPrism.createMany({
+    data: rows.map((r, i) => ({
+      id: `ethereal_prism_${i}`,
+      type: r.type ?? "",
+      rarity: r.rarity ?? "",
+      effect: r.effect,
+    })),
+  });
   console.log(`Imported ${rows.length} ethereal prism entries.`);
 }
 
@@ -76,10 +74,10 @@ async function importGearAffixes() {
     tier: string | undefined;
     effect: string;
   }>("gear");
-  for (let i = 0; i < rows.length; i++) {
-    const r = rows[i];
-    const id = `gear_affix_${i}`;
-    const data = {
+  await prisma.gearAffix.deleteMany({ where: { id: { startsWith: "gear_affix_" } } });
+  await prisma.gearAffix.createMany({
+    data: rows.map((r, i) => ({
+      id: `gear_affix_${i}`,
       category: r.category ?? "",
       item: r.item ?? "",
       itemGroup: r["item-group"] ?? "",
@@ -87,13 +85,8 @@ async function importGearAffixes() {
       pool: r.pool ?? "",
       tier: r.tier ?? "",
       effect: r.effect ?? "",
-    };
-    await prisma.gearAffix.upsert({
-      where: { id },
-      update: data,
-      create: { id, ...data },
-    });
-  }
+    })),
+  });
   console.log(`Imported ${rows.length} gear affix entries.`);
 }
 
@@ -101,17 +94,15 @@ async function importGearAffixes() {
 
 async function importHeroMemory() {
   const rows = await readJson<{ type?: string; item?: string; effect: string }>("heroMemory");
-  for (let i = 0; i < rows.length; i++) {
-    const type = rows[i].type ?? "";
-    const item = rows[i].item ?? "";
-    const { effect } = rows[i];
-    const id = `hero_memory_${i}`;
-    await prisma.heroMemory.upsert({
-      where: { id },
-      update: { type, item, effect },
-      create: { id, type, item, effect },
-    });
-  }
+  await prisma.heroMemory.deleteMany({ where: { id: { startsWith: "hero_memory_" } } });
+  await prisma.heroMemory.createMany({
+    data: rows.map((r, i) => ({
+      id: `hero_memory_${i}`,
+      type: r.type ?? "",
+      item: r.item ?? "",
+      effect: r.effect,
+    })),
+  });
   console.log(`Imported ${rows.length} hero memory entries.`);
 }
 
@@ -125,22 +116,17 @@ async function importHeroTrait() {
     level: number;
     effect: string;
   }>("heroTrait");
-  for (let i = 0; i < rows.length; i++) {
-    const r = rows[i];
-    const id = `hero_trait_${i}`;
-    const data = {
+  await prisma.heroTrait.deleteMany({ where: { id: { startsWith: "hero_trait_" } } });
+  await prisma.heroTrait.createMany({
+    data: rows.map((r, i) => ({
+      id: `hero_trait_${i}`,
       heroGroup: r["hero-group"] ?? "",
       hero: r.hero ?? "",
       name: r.name ?? "",
       level: r.level,
       effect: r.effect,
-    };
-    await prisma.heroTrait.upsert({
-      where: { id },
-      update: data,
-      create: { id, ...data },
-    });
-  }
+    })),
+  });
   console.log(`Imported ${rows.length} hero trait entries.`);
 }
 
@@ -153,18 +139,16 @@ async function importLegendary() {
     name?: string;
     affixes?: string;
   }>("legendary");
-  for (let i = 0; i < rows.length; i++) {
-    const category = rows[i].category ?? "";
-    const item = rows[i].item ?? "";
-    const name = rows[i].name ?? "";
-    const affixes = rows[i].affixes ?? "";
-    const id = `legendary_${i}`;
-    await prisma.legendary.upsert({
-      where: { id },
-      update: { category, item, name, affixes },
-      create: { id, category, item, name, affixes },
-    });
-  }
+  await prisma.legendary.deleteMany({ where: { id: { startsWith: "legendary_" } } });
+  await prisma.legendary.createMany({
+    data: rows.map((r, i) => ({
+      id: `legendary_${i}`,
+      category: r.category ?? "",
+      item: r.item ?? "",
+      name: r.name ?? "",
+      affixes: r.affixes ?? "",
+    })),
+  });
   console.log(`Imported ${rows.length} legendary entries.`);
 }
 
@@ -174,15 +158,17 @@ const BATTLE_PACTSPIRIT_TYPES = new Set(["Attack", "Spell", "Persistent", "Summo
 
 async function importPactSpirit() {
   const rows = await readJson<{ type: string; rarity: string; name: string; tags?: string[]; effect: string }>("pactspirit");
-  for (const row of rows) {
-    const id = `pactspirit_${slugify(row.name)}`;
-    const tags = row.tags ?? (BATTLE_PACTSPIRIT_TYPES.has(row.type) ? [row.type] : []);
-    await prisma.pactSpirit.upsert({
-      where: { id },
-      update: { type: row.type, rarity: row.rarity, name: row.name, tags, effect: row.effect },
-      create: { id, type: row.type, rarity: row.rarity, name: row.name, tags, effect: row.effect },
-    });
-  }
+  await prisma.pactSpirit.deleteMany({ where: { id: { startsWith: "pactspirit_" } } });
+  await prisma.pactSpirit.createMany({
+    data: rows.map((r) => ({
+      id: `pactspirit_${slugify(r.name)}`,
+      type: r.type,
+      rarity: r.rarity,
+      name: r.name,
+      tags: r.tags ?? (BATTLE_PACTSPIRIT_TYPES.has(r.type) ? [r.type] : []),
+      effect: r.effect,
+    })),
+  });
   console.log(`Imported ${rows.length} pact spirit entries.`);
 }
 
@@ -196,20 +182,52 @@ async function importTalent() {
     name: string;
     effect: string;
   }>("talent");
-  for (let i = 0; i < rows.length; i++) {
-    const god = rows[i].god ?? "";
-    const tree = rows[i].tree ?? "";
-    const type = rows[i].type ?? "";
-    const name = rows[i].name ?? "";
-    const effect = rows[i].effect ?? "";
-    const id = `talent_${i}`;
-    await prisma.talent.upsert({
-      where: { id },
-      update: { god, tree, type, name, effect },
-      create: { id, god, tree, type, name, effect },
-    });
-  }
+  await prisma.talent.deleteMany({ where: { id: { startsWith: "talent_" } } });
+  await prisma.talent.createMany({
+    data: rows.map((r, i) => ({
+      id: `talent_${i}`,
+      god: r.god ?? "",
+      tree: r.tree ?? "",
+      type: r.type ?? "",
+      name: r.name ?? "",
+      effect: r.effect ?? "",
+    })),
+  });
   console.log(`Imported ${rows.length} talent entries.`);
+}
+
+// ── Memory Revival ─────────────────────────────────────────────────────────────
+
+async function importMemoryRevival() {
+  const rows = await readJson<{ type: string; name: string; hero?: string; effect: string }>("memoryRevival");
+  await prisma.memoryRevival.deleteMany({ where: { id: { startsWith: "memory_revival_" } } });
+  await prisma.memoryRevival.createMany({
+    data: rows.map((r, i) => ({
+      id: `memory_revival_${i}`,
+      type: r.type ?? "",
+      name: r.name ?? "",
+      hero: r.hero ?? "",
+      effect: r.effect ?? "",
+    })),
+  });
+  console.log(`Imported ${rows.length} memory revival entries.`);
+}
+
+// ── Renewed Memory ─────────────────────────────────────────────────────────────
+
+async function importRenewedMemory() {
+  const rows = await readJson<{ type: string; name: string; hero?: string; effect: string }>("renewedMemory");
+  await prisma.renewedMemory.deleteMany({ where: { id: { startsWith: "renewed_memory_" } } });
+  await prisma.renewedMemory.createMany({
+    data: rows.map((r, i) => ({
+      id: `renewed_memory_${i}`,
+      type: r.type ?? "",
+      name: r.name ?? "",
+      hero: r.hero ?? "",
+      effect: r.effect ?? "",
+    })),
+  });
+  console.log(`Imported ${rows.length} renewed memory entries.`);
 }
 
 // ── Main ───────────────────────────────────────────────────────────────────────
@@ -222,7 +240,9 @@ async function main() {
   await importHeroMemory();
   await importHeroTrait();
   await importLegendary();
+  await importMemoryRevival();
   await importPactSpirit();
+  await importRenewedMemory();
   await importTalent();
   console.log("Torchcodex import complete.");
 }

@@ -102,7 +102,7 @@
   {
     "type": "Base Affix",
     "rarity": "",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EReplaces the Core Talent on the \u003Cspan class=\"dim\"\u003EGod of Might/Goddess of Hunting/Goddess of Knowledge/God of War/Goddess of Deception/God of Machines\u003C/span\u003E Advanced Talent Panel with \u003Cspan class=\"tooltip\" data-title=\"Gains Defense equal to 2% of Armor and absorbs 100% of Non-True Damage taken every 10s. Defense is refreshed when gained again\u003Cbr/\u003EMax Life is fixed at 100\u003Cbr/\u003EYour Evasion and Max Energy Shield are fixed at 0\"\u003EUnwavering Fortress\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EReplaces the Core Talent on the \u003Cspan class=\"dim\"\u003EGod of Might/Goddess of Hunting/Goddess of Knowledge/God of War/Goddess of Deception/God of Machines\u003C/span\u003E Advanced Talent Panel with \u003Cspan class=\"tooltip\" data-title=\"Gains Defense equal to 1.5% of Armor and absorbs 100% of Non-True Damage taken every 10s. Defense is refreshed when gained again\u003Cbr/\u003EMax Life is fixed at 100\u003Cbr/\u003EYour Evasion and Max Energy Shield are fixed at 0\"\u003EUnwavering Fortress\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Base Affix",
@@ -152,7 +152,7 @@
   {
     "type": "Base Affix",
     "rarity": "",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EReplaces the Core Talent on the \u003Cspan class=\"dim\"\u003EGod of Might/Goddess of Hunting/Goddess of Knowledge/God of War/Goddess of Deception/God of Machines\u003C/span\u003E Advanced Talent Panel with \u003Cspan class=\"tooltip\" data-title=\"Triggers Miraculous Gain when casting a Restoration Skill\u003Cbr/\u003ERestoration Skills gain 1 Charging Progress every second\"\u003EMiraculous Touch\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EReplaces the Core Talent on the \u003Cspan class=\"dim\"\u003EGod of Might/Goddess of Hunting/Goddess of Knowledge/God of War/Goddess of Deception/God of Machines\u003C/span\u003E Advanced Talent Panel with \u003Cspan class=\"tooltip\" data-title=\"Triggers \u003Ce id=814\u003EMiraculous Gain\u003C/e\u003E when casting an Elixir Skill\u003Cbr/\u003EElixir Skills gain 1 Charging Progress every second\"\u003EMiraculous Touch\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Base Affix",
@@ -292,17 +292,32 @@
   {
     "type": "Prism Gauge",
     "rarity": "Legendary",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003EHas \u003Cspan class=\"val\"\u003E100\u003C/span\u003E point(s) of fixed \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EBlur Rating\u003C/div\u003E\u003Cdiv\u003E+0.3% Evasion and +0.2% chance to avoid damage for every point of Blur Rating you have. The Max Blur Rating is 100\u003C/div\u003E\u003C/div\u003E\"\u003EBlur Rating\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003EHas \u003Cspan class=\"val\"\u003E100\u003C/span\u003E point(s) of fixed \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EBlur Rating\u003C/div\u003E\u003Cdiv\u003E每拥有 1 点迷踪值，+0.25% 几率避免伤害。迷踪值上限为100。\u003C/div\u003E\u003C/div\u003E\"\u003EBlur Rating\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Prism Gauge",
     "rarity": "Legendary",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003EHas \u003Cspan class=\"val\"\u003E120\u003C/span\u003E point(s) of fixed \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EBlur Rating\u003C/div\u003E\u003Cdiv\u003E+0.3% Evasion and +0.2% chance to avoid damage for every point of Blur Rating you have. The Max Blur Rating is 100\u003C/div\u003E\u003C/div\u003E\"\u003EBlur Rating\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003EHas \u003Cspan class=\"val\"\u003E120\u003C/span\u003E point(s) of fixed \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EBlur Rating\u003C/div\u003E\u003Cdiv\u003E每拥有 1 点迷踪值，+0.25% 几率避免伤害。迷踪值上限为100。\u003C/div\u003E\u003C/div\u003E\"\u003EBlur Rating\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Prism Gauge",
     "rarity": "Legendary",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003EImmune to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EParalysis\u003C/div\u003E\u003Cdiv\u003EIncreases damage taken by 15%\u003C/div\u003E\u003C/div\u003E\"\u003EParalysis\u003C/span\u003E and \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESlow\u003C/div\u003E\u003Cdiv\u003EEach stack reduces Attack Speed, Cast Speed, and Movement Speed by 6%. Stacks up to 5 times\u003C/div\u003E\u003C/div\u003E\"\u003ESlow\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003EImmune to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECrowd Control Effects\u003C/div\u003E\u003Cdiv\u003EFrostbite, Freeze, Paralysis, Knockback, Weaken, Slow, Taunt, and Blinding\u003C/div\u003E\u003C/div\u003E\"\u003Ecrowd control effects\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003EImmune to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECrowd Control Effects\u003C/div\u003E\u003Cdiv\u003EFrostbite, Freeze, Paralysis, Knockback, Weaken, Slow, Taunt, and Blinding\u003C/div\u003E\u003C/div\u003E\"\u003Ecrowd control effects\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-25\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EDefense\u003C/div\u003E\u003Cdiv\u003EThe sum of Armor, Evasion, and Energy Shield\u003C/div\u003E\u003C/div\u003E\"\u003EDefense\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003EImmune to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EElemental Ailment\u003C/div\u003E\u003Cdiv\u003EIgnite, Frostbite, Freeze, and Numbed\u003C/div\u003E\u003C/div\u003E\"\u003EElemental Ailments\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Legendary",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EWhen activating \u003Cspan class=\"val\"\u003E2\u003C/span\u003E \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area:\u003C/li\u003E\u003Cli class=\"mod\"\u003EImmune to \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EElemental Ailment\u003C/div\u003E\u003Cdiv\u003EIgnite, Frostbite, Freeze, and Numbed\u003C/div\u003E\u003C/div\u003E\"\u003EElemental Ailments\u003C/span\u003E\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E-8\u003C/span\u003E% Elemental Resistance\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Prism Gauge",
@@ -352,12 +367,12 @@
   {
     "type": "Prism Gauge",
     "rarity": "Rare",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E+ \u003Cspan class=\"val\"\u003E3\u003C/span\u003E \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECommand\u003C/div\u003E\u003Cdiv\u003EEvery point of Command will grant Synthetic Troop Minions +3% additional damage and a bigger Tracking Area.\u003Cbr/\u003EThe lowest Command is -100 while the highest is 100. When Command is not 0, 13 point(s) will be returned (reduced/granted) every second until it becomes 0. For every 10 Command increased, +7 additional points will be returned.\u003Cbr/\u003ESynthetic Troop Minions' Duration will not reduce when Command is a positive value.\u003C/div\u003E\u003C/div\u003E\"\u003ECommand\u003C/span\u003E per second\u003C/li\u003E\u003C/ul\u003E"
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E+ \u003Cspan class=\"val\"\u003E3\u003C/span\u003E \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECommand\u003C/div\u003E\u003Cdiv\u003EEvery point of Command will grant Synthetic Troop Minions +3% additional damage, +-2% additional damage taken, ++2% Movement Speed, and a bigger Tracking Area.\u003Cbr/\u003EThe lowest Command is -100 while the highest is 100. When Command is not 0, 13 point(s) will be returned (reduced/granted) every second until it becomes 0. For every 10 Command increased, +7 additional points will be returned.\u003Cbr/\u003ESynthetic Troop Minions' Duration will not reduce when Command is a positive value.\u003C/div\u003E\u003C/div\u003E\"\u003ECommand\u003C/span\u003E per second\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Prism Gauge",
     "rarity": "Rare",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E+ \u003Cspan class=\"val\"\u003E5.5\u003C/span\u003E \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECommand\u003C/div\u003E\u003Cdiv\u003EEvery point of Command will grant Synthetic Troop Minions +3% additional damage and a bigger Tracking Area.\u003Cbr/\u003EThe lowest Command is -100 while the highest is 100. When Command is not 0, 13 point(s) will be returned (reduced/granted) every second until it becomes 0. For every 10 Command increased, +7 additional points will be returned.\u003Cbr/\u003ESynthetic Troop Minions' Duration will not reduce when Command is a positive value.\u003C/div\u003E\u003C/div\u003E\"\u003ECommand\u003C/span\u003E per second\u003C/li\u003E\u003C/ul\u003E"
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E+ \u003Cspan class=\"val\"\u003E5.5\u003C/span\u003E \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ECommand\u003C/div\u003E\u003Cdiv\u003EEvery point of Command will grant Synthetic Troop Minions +3% additional damage, +-2% additional damage taken, ++2% Movement Speed, and a bigger Tracking Area.\u003Cbr/\u003EThe lowest Command is -100 while the highest is 100. When Command is not 0, 13 point(s) will be returned (reduced/granted) every second until it becomes 0. For every 10 Command increased, +7 additional points will be returned.\u003Cbr/\u003ESynthetic Troop Minions' Duration will not reduce when Command is a positive value.\u003C/div\u003E\u003C/div\u003E\"\u003ECommand\u003C/span\u003E per second\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Prism Gauge",
@@ -372,7 +387,7 @@
   {
     "type": "Prism Gauge",
     "rarity": "Rare",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E to Max \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFrostbite\u003C/div\u003E\u003Cdiv\u003EEnemies are inflicted with a fixed amount of Frostbite Rating when they are Frostbitten. This can be increased by raising Max Frostbite Rating. The Max Frostbite Rating is 100.\u003C/div\u003E\u003C/div\u003E\"\u003EFrostbite Rating\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+10\u003C/span\u003E to Max \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFrostbite\u003C/div\u003E\u003Cdiv\u003EEnemies are inflicted with a fixed amount of Frostbite Rating when they are Frostbitten. This can be increased by raising Max Frostbite Rating. The Max Frostbite Rating is 120.\u003C/div\u003E\u003C/div\u003E\"\u003EFrostbite Rating\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Prism Gauge",
@@ -402,7 +417,7 @@
   {
     "type": "Prism Gauge",
     "rarity": "Rare",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+24\u003C/span\u003E initial \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EGrowth\u003C/div\u003E\u003Cdiv\u003ESpirit Magi grow into the next Stage for every 100 Growth. They start at Stage 1 and can grow until they reach Stage 5. For every 8 Growth they have, Spirit Magi gain +1% Physique, +5% additional Skill Area, and a bonus every stage:\u003Cbr/\u003EAt Stage 2, +30% chance for them to use Enhanced Skill chance.\u003Cbr/\u003EAt Stage 3, their Enhanced Skills become stronger.\u003Cbr/\u003EAt Stage 4, their Empower Skills become stronger.\u003Cbr/\u003EAt Stage 5, they +25% additional damage, +10% additional Skill Area, and gain increased Movement Speed and Tracking Area.\u003Cbr/\u003EThe max Growth is 1000.\u003C/div\u003E\u003C/div\u003E\"\u003EGrowth\u003C/span\u003E for Spirit Magi\u003C/li\u003E\u003C/ul\u003E"
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+24\u003C/span\u003E initial \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EGrowth\u003C/div\u003E\u003Cdiv\u003ESpirit Magi grow into the next Stage for every 100 Growth. They start at Stage 1 and can grow until they reach Stage 5. For every 8 Growth they have, Spirit Magi gain +1% Physique, +10% additional Skill Area, and a bonus every stage:\u003Cbr/\u003EAt Stage 2, +30% chance for them to use Enhanced Skill chance.\u003Cbr/\u003EAt Stage 3, their Enhanced Skills become stronger.\u003Cbr/\u003EAt Stage 4, their Empower Skills become stronger.\u003Cbr/\u003EAt Stage 5, they +50% additional damage, +10% additional Skill Area, and gain increased Movement Speed and Tracking Area.\u003Cbr/\u003EThe max Growth is 1000.\u003C/div\u003E\u003C/div\u003E\"\u003EGrowth\u003C/span\u003E for Spirit Magi\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Prism Gauge",
@@ -422,7 +437,7 @@
   {
     "type": "Prism Gauge",
     "rarity": "Rare",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+42\u003C/span\u003E initial \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EGrowth\u003C/div\u003E\u003Cdiv\u003ESpirit Magi grow into the next Stage for every 100 Growth. They start at Stage 1 and can grow until they reach Stage 5. For every 8 Growth they have, Spirit Magi gain +1% Physique, +5% additional Skill Area, and a bonus every stage:\u003Cbr/\u003EAt Stage 2, +30% chance for them to use Enhanced Skill chance.\u003Cbr/\u003EAt Stage 3, their Enhanced Skills become stronger.\u003Cbr/\u003EAt Stage 4, their Empower Skills become stronger.\u003Cbr/\u003EAt Stage 5, they +25% additional damage, +10% additional Skill Area, and gain increased Movement Speed and Tracking Area.\u003Cbr/\u003EThe max Growth is 1000.\u003C/div\u003E\u003C/div\u003E\"\u003EGrowth\u003C/span\u003E for Spirit Magi\u003C/li\u003E\u003C/ul\u003E"
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+42\u003C/span\u003E initial \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EGrowth\u003C/div\u003E\u003Cdiv\u003ESpirit Magi grow into the next Stage for every 100 Growth. They start at Stage 1 and can grow until they reach Stage 5. For every 8 Growth they have, Spirit Magi gain +1% Physique, +10% additional Skill Area, and a bonus every stage:\u003Cbr/\u003EAt Stage 2, +30% chance for them to use Enhanced Skill chance.\u003Cbr/\u003EAt Stage 3, their Enhanced Skills become stronger.\u003Cbr/\u003EAt Stage 4, their Empower Skills become stronger.\u003Cbr/\u003EAt Stage 5, they +50% additional damage, +10% additional Skill Area, and gain increased Movement Speed and Tracking Area.\u003Cbr/\u003EThe max Growth is 1000.\u003C/div\u003E\u003C/div\u003E\"\u003EGrowth\u003C/span\u003E for Spirit Magi\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Prism Gauge",
@@ -433,6 +448,11 @@
     "type": "Prism Gauge",
     "rarity": "Rare",
     "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+5\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EBlock Ratio\u003C/div\u003E\u003Cdiv\u003EBy default, Blocking absorbs 30% damage. Increase Block Ratio to increase the damage absorption ratio.\u003C/div\u003E\u003C/div\u003E\"\u003EBlock Ratio\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+6\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESealed Mana\u003C/div\u003E\u003Cdiv\u003EA portion of Mana is reserved to maintain persistent effects such as auras\u003C/div\u003E\u003C/div\u003E\"\u003ESealed Mana\u003C/span\u003E Compensation\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Prism Gauge",
@@ -462,6 +482,11 @@
   {
     "type": "Prism Gauge",
     "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E10.5\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESealed Mana\u003C/div\u003E\u003Cdiv\u003EA portion of Mana is reserved to maintain persistent effects such as auras\u003C/div\u003E\u003C/div\u003E\"\u003ESealed Mana\u003C/span\u003E Compensation\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
     "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E10.5\u003C/span\u003E% additional \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EPhantom\u003C/div\u003E\u003Cdiv\u003EShadow Strike creates a Shadow that strikes at other targets with the same attack. If no other targets are present, it will strike the character's target.\u003Cbr/\u003EMultiple Shadows can attack the same target, and the Shadows' Shotgun Effect falloff coefficient is 70%\u003Cbr/\u003EShadow damage and character damage are independent of each other\u003C/div\u003E\u003C/div\u003E\"\u003EShadow\u003C/span\u003E Damage\u003C/li\u003E\u003C/ul\u003E"
   },
   {
@@ -477,7 +502,7 @@
   {
     "type": "Prism Gauge",
     "rarity": "Rare",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E17.5\u003C/span\u003E to Max \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFrostbite\u003C/div\u003E\u003Cdiv\u003EEnemies are inflicted with a fixed amount of Frostbite Rating when they are Frostbitten. This can be increased by raising Max Frostbite Rating. The Max Frostbite Rating is 100.\u003C/div\u003E\u003C/div\u003E\"\u003EFrostbite Rating\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003ELegendary Medium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E17.5\u003C/span\u003E to Max \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003EFrostbite\u003C/div\u003E\u003Cdiv\u003EEnemies are inflicted with a fixed amount of Frostbite Rating when they are Frostbitten. This can be increased by raising Max Frostbite Rating. The Max Frostbite Rating is 120.\u003C/div\u003E\u003C/div\u003E\"\u003EFrostbite Rating\u003C/span\u003E\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Prism Gauge",
@@ -532,6 +557,11 @@
   {
     "type": "Prism Gauge",
     "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESealed Mana\u003C/div\u003E\u003Cdiv\u003EA portion of Mana is reserved to maintain persistent effects such as auras\u003C/div\u003E\u003C/div\u003E\"\u003ESealed Mana\u003C/span\u003E Compensation\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
     "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E% Attack and Cast Speed\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E% Minion Attack and Cast Speed\u003C/li\u003E\u003C/ul\u003E"
   },
   {
@@ -548,11 +578,6 @@
     "type": "Prism Gauge",
     "rarity": "Rare",
     "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E% Max Life\u003C/li\u003E\u003C/ul\u003E"
-  },
-  {
-    "type": "Prism Gauge",
-    "rarity": "Rare",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E% Sealed Mana Compensation\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Prism Gauge",
@@ -717,6 +742,11 @@
   {
     "type": "Prism Gauge",
     "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E3.5\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESealed Mana\u003C/div\u003E\u003Cdiv\u003EA portion of Mana is reserved to maintain persistent effects such as auras\u003C/div\u003E\u003C/div\u003E\"\u003ESealed Mana\u003C/span\u003E Compensation\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
     "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E3.5\u003C/span\u003E% Attack and Cast Speed\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E3.5\u003C/span\u003E% Minion Attack and Cast Speed\u003C/li\u003E\u003C/ul\u003E"
   },
   {
@@ -733,11 +763,6 @@
     "type": "Prism Gauge",
     "rarity": "Rare",
     "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E3.5\u003C/span\u003E% Max Life\u003C/li\u003E\u003C/ul\u003E"
-  },
-  {
-    "type": "Prism Gauge",
-    "rarity": "Rare",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMedium Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E3.5\u003C/span\u003E% Sealed Mana Compensation\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Prism Gauge",
@@ -782,6 +807,11 @@
   {
     "type": "Prism Gauge",
     "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESealed Mana\u003C/div\u003E\u003Cdiv\u003EA portion of Mana is reserved to maintain persistent effects such as auras\u003C/div\u003E\u003C/div\u003E\"\u003ESealed Mana\u003C/span\u003E Compensation\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
     "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E% Attack and Cast Speed\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E% Minion Attack and Cast Speed\u003C/li\u003E\u003C/ul\u003E"
   },
   {
@@ -798,11 +828,6 @@
     "type": "Prism Gauge",
     "rarity": "Rare",
     "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E% Max Life\u003C/li\u003E\u003C/ul\u003E"
-  },
-  {
-    "type": "Prism Gauge",
-    "rarity": "Rare",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E+2\u003C/span\u003E% Sealed Mana Compensation\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "Prism Gauge",
@@ -967,6 +992,11 @@
   {
     "type": "Prism Gauge",
     "rarity": "Rare",
+    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E3.5\u003C/span\u003E% \u003Cspan class=\"tooltip\" data-title=\"\u003Cdiv class=&quot;text-start&quot;\u003E\u003Cdiv\u003ESealed Mana\u003C/div\u003E\u003Cdiv\u003EA portion of Mana is reserved to maintain persistent effects such as auras\u003C/div\u003E\u003C/div\u003E\"\u003ESealed Mana\u003C/span\u003E Compensation\u003C/li\u003E\u003C/ul\u003E"
+  },
+  {
+    "type": "Prism Gauge",
+    "rarity": "Rare",
     "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E3.5\u003C/span\u003E% Attack and Cast Speed\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E3.5\u003C/span\u003E% Minion Attack and Cast Speed\u003C/li\u003E\u003C/ul\u003E"
   },
   {
@@ -983,11 +1013,6 @@
     "type": "Prism Gauge",
     "rarity": "Rare",
     "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E3.5\u003C/span\u003E% Max Life\u003C/li\u003E\u003C/ul\u003E"
-  },
-  {
-    "type": "Prism Gauge",
-    "rarity": "Rare",
-    "effect": "\u003Cul\u003E\u003Cli class=\"mod\"\u003EAll \u003Cspan class=\"dim\"\u003EMicro Talent\u003C/span\u003E within the area also gain:\u003C/li\u003E\u003Cli class=\"mod\"\u003E\u003Cspan class=\"val\"\u003E3.5\u003C/span\u003E% Sealed Mana Compensation\u003C/li\u003E\u003C/ul\u003E"
   },
   {
     "type": "",

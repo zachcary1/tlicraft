@@ -249,3 +249,23 @@ model Talent {
   @@index([tree])
   @@index([type])
 }
+
+model MemoryRevival {
+  id     String @id
+  type   String
+  name   String
+  hero   String
+  effect String
+
+  @@index([type])
+}
+
+model RenewedMemory {
+  id     String @id
+  type   String
+  name   String
+  hero   String
+  effect String
+
+  @@index([type])
+}
