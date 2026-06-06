@@ -93,7 +93,7 @@ async function importGearAffixes() {
 // ── Hero Memory ────────────────────────────────────────────────────────────────
 
 async function importHeroMemory() {
-  const rows = await readJson<{ type?: string; item?: string; effect: string }>("heroMemory");
+  const rows = await readJson<{ type?: string; item?: string; effect: string; tier?: string }>("heroMemory");
   await prisma.heroMemory.deleteMany({ where: { id: { startsWith: "hero_memory_" } } });
   await prisma.heroMemory.createMany({
     data: rows.map((r, i) => ({
@@ -101,6 +101,7 @@ async function importHeroMemory() {
       type: r.type ?? "",
       item: r.item ?? "",
       effect: r.effect,
+      tier: r.tier ?? "",
     })),
   });
   console.log(`Imported ${rows.length} hero memory entries.`);

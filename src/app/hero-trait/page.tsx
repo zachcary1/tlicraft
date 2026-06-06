@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { createPortal } from "react-dom";
 import { HERO_TRAIT_ORDER } from "./heroTraitOrder";
+import type { ActiveSlotId } from "../crafting/ItemCard";
 
 const BG_STYLE = {
   backgroundImage: [
@@ -16,23 +17,48 @@ const BG_STYLE = {
 
 const PANEL_BG  = "linear-gradient(to bottom, #1e1d1d 0%, #2b2929 10%, #2b2929 90%, #1e1d1d 100%)";
 const PANEL_W   = 560;
-const CIRCLE_D  = 128;
+const CIRCLE_D  = 150;
 const PANEL_GAP = 50;
 
 // ─── Right grid layout ────────────────────────────────────────────────────────
 
-const SLOT_SIZE  = 112;
-const COL_GAP    = 32;
-const ROW_GAP    = 24;
-const CIRCLE2_D  = 80;
-const HEX_R      = 52;
-const GRID_GAP   = 90;
+const SLOT_SIZE  = 132;
+const COL_GAP    = 48;
+const ROW_GAP    = 36;
+const CIRCLE2_D  = 96;
+const HEX_R      = 62;
+const GRID_GAP   = 120;
 const ARC_OFFSET = 28;
 
 const GRID_W = 3 * SLOT_SIZE + 2 * COL_GAP + ARC_OFFSET;
 const GRID_H = 3 * SLOT_SIZE + 2 * ROW_GAP;
 
 const MEMORY_LABELS = ["Memory of Origin", "Memory of Discipline", "Memory of Progress"] as const;
+
+type MemoryQuality = "epic" | "ultimate";
+
+const MEMORY_QUALITY_CONFIG: Record<MemoryQuality, { bg: string; border: string; glow: string; bgGlow: string; accentBg: string; label: string; traitLevel: number; maxLevel: number }> = {
+  epic: {
+    bg:       "linear-gradient(to bottom, #0e0300 0%, #cc6624 100%)",
+    border:   "#feba67",
+    glow:     "0 0 12px rgba(254,186,103,0.6), 0 0 28px rgba(254,186,103,0.28)",
+    bgGlow:   "0 0 24px rgba(204,102,36,0.75), 0 0 60px rgba(204,102,36,0.4)",
+    accentBg: "linear-gradient(to right, #7a3a12, #1a0800)",
+    label:    "Epic",
+    traitLevel: 2,
+    maxLevel: 40,
+  },
+  ultimate: {
+    bg:       "linear-gradient(to bottom, #080002 0%, #ae1727 100%)",
+    border:   "#ff8e98",
+    glow:     "0 0 12px rgba(255,142,152,0.6), 0 0 28px rgba(255,142,152,0.28)",
+    bgGlow:   "0 0 24px rgba(174,23,39,0.75), 0 0 60px rgba(174,23,39,0.4)",
+    accentBg: "linear-gradient(to right, #6b0f18, #100003)",
+    label:    "Ultimate",
+    traitLevel: 3,
+    maxLevel: 50,
+  },
+};
 
 function slotPos(row: number, col: number) {
   return {
@@ -210,6 +236,7 @@ function TraitSlot({
   lockReason,
   trait,
   selected,
+  dimmed,
   onClick,
 }: {
   withHex: boolean;
@@ -220,6 +247,7 @@ function TraitSlot({
   lockReason?: string;
   trait?: HeroTrait | null;
   selected?: boolean;
+  dimmed?: boolean;
   onClick?: () => void;
 }) {
   const [hovered,      setHovered]      = useState(false);
@@ -235,12 +263,12 @@ function TraitSlot({
   const showIcon = !!iconPath && !imgError;
   const showTooltip = !locked && !inactive && !!trait;
 
-  const hexStroke   = selected ? "#ffffff" : locked ? "#333333" : "#555555";
+  const hexStroke   = selected ? "#ffffff" : locked ? "#333333" : dimmed ? "#3a3a3a" : "#555555";
   const circleBorder = selected
     ? "2px solid #ffffff"
     : !locked && isInteractive && hovered
     ? "2px solid #3b82f6"
-    : locked ? "2px solid #2a2a2a" : "2px solid #555555";
+    : locked ? "2px solid #2a2a2a" : dimmed ? "2px solid #333333" : "2px solid #555555";
   const circleGlow = selected
     ? "0 0 12px rgba(255,255,255,0.55), 0 0 28px rgba(255,255,255,0.2)"
     : !locked && isInteractive && hovered
@@ -265,7 +293,7 @@ function TraitSlot({
         position: "relative",
         display: "flex", alignItems: "center", justifyContent: "center",
         cursor: locked ? "not-allowed" : isInteractive ? "pointer" : "default",
-        opacity: inactive ? 0.25 : 1,
+        opacity: inactive ? 0.25 : dimmed ? (hovered ? 0.75 : 0.4) : 1,
         transition: "opacity 0.2s",
       }}
     >
@@ -342,25 +370,35 @@ function TraitSlot({
 function MemorySlot({
   label,
   filled,
+  quality,
   locked,
   lockReason,
   onClick,
 }: {
   label: string;
   filled: boolean;
+  quality: MemoryQuality | null;
   locked: boolean;
   lockReason?: string;
   onClick: () => void;
 }) {
-  const [hovered, setHovered] = useState(false);
-  const [tipPos,  setTipPos]  = useState<{ x: number; y: number } | null>(null);
+  const [hovered,  setHovered]  = useState(false);
+  const [tipPos,   setTipPos]   = useState<{ x: number; y: number } | null>(null);
+  const [imgError, setImgError] = useState(false);
+  const iconPath = `/icons/equipment/${label}.webp`;
+  useEffect(() => { setImgError(false); }, [label]);
+
+  const qc = filled && quality ? MEMORY_QUALITY_CONFIG[quality] : null;
 
   const borderColor = !locked && hovered
     ? "#3b82f6"
-    : filled
-    ? "#2a4a7a"
+    : qc ? qc.border
+    : filled ? "#686867"
     : "#555555";
-  const glow = !locked && hovered ? "0 0 14px rgba(59,130,246,0.3)" : "none";
+  const glow = !locked && hovered
+    ? "0 0 14px rgba(59,130,246,0.3)"
+    : qc ? qc.glow
+    : "none";
 
   return (
     <div
@@ -384,7 +422,7 @@ function MemorySlot({
       <div style={{
         width: CIRCLE2_D, height: CIRCLE2_D,
         borderRadius: "50%",
-        background: filled ? "#091829" : "#000000",
+        background: qc ? qc.bg : filled ? "#1a1a1a" : "#000000",
         border: `2px solid ${borderColor}`,
         boxShadow: glow,
         display: "flex", alignItems: "center", justifyContent: "center",
@@ -392,7 +430,16 @@ function MemorySlot({
         flexShrink: 0,
       }}>
         {filled ? (
-          <div style={{ color: "#4a7ab5", fontSize: 22, lineHeight: 1, userSelect: "none" }}>M</div>
+          !imgError ? (
+            <img
+              src={iconPath}
+              alt={label}
+              onError={() => setImgError(true)}
+              style={{ width: "80%", height: "80%", objectFit: "contain", display: "block" }}
+            />
+          ) : (
+            <div style={{ color: "#4a7ab5", fontSize: 22, lineHeight: 1, userSelect: "none" }}>M</div>
+          )
         ) : (
           <div style={{
             color: !locked && hovered ? "#60a5fa" : "#3b82f6",
@@ -404,7 +451,7 @@ function MemorySlot({
         )}
       </div>
       <div style={{
-        color: filled ? "#7a9ab5" : "#52525b",
+        color: qc ? qc.border : filled ? "#7a9ab5" : "#52525b",
         fontSize: 8, letterSpacing: "0.07em", textTransform: "uppercase",
         textAlign: "center", lineHeight: 1.4,
         maxWidth: SLOT_SIZE - 8,
@@ -417,6 +464,530 @@ function MemorySlot({
         <LockedTooltip reason={lockReason} x={tipPos.x} y={tipPos.y} />,
         document.body
       )}
+    </div>
+  );
+}
+
+// ─── Memory affix panel ──────────────────────────────────────────────────────
+
+type MemoryAffix = { id: string; type: string; item: string; effect: string; tier: string };
+
+type MemorySlotKey = "base" | "prefix1" | "prefix2" | "suffix1" | "suffix2";
+type MemorySlotValue = { id: string; text: string; tier: string } | null;
+type MemorySlotSelections = Record<MemorySlotKey, MemorySlotValue>;
+
+const EMPTY_MEMORY_SELECTIONS: MemorySlotSelections = {
+  base: null, prefix1: null, prefix2: null, suffix1: null, suffix2: null,
+};
+
+const SLOT_TYPE_MAP: Record<MemorySlotKey, string> = {
+  base:    "Base Stats",
+  prefix1: "Fixed Affix",
+  prefix2: "Fixed Affix",
+  suffix1: "Random Affix",
+  suffix2: "Random Affix",
+};
+
+function parseEffect(html: string): string {
+  return html
+    .replace(/ data-title="[^"]*"/g, "")   // strip tooltip data before tag removal
+    .replace(/<span[^>]*class="val"[^>]*>/g, "")
+    .replace(/<\/span>/g, "")
+    .replace(/<[^>]+>/g, " ")  // space preserves word boundaries between adjacent tags
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+type StatGroup = { key: string; displayName: string; tiers: MemoryAffix[] };
+
+function normalizeStatKey(text: string): string {
+  return text
+    .replace(/\([+-]?\d+[–\-][+-]?\d+\)/g, "NUM")
+    .replace(/[+-]?\d+(\.\d+)?/g, "NUM")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function statDisplayName(text: string): string {
+  const stripped = text
+    .replace(/^\+\([^)]+\)\s*%?\s*/, "")
+    .replace(/^\+\d+(\.\d+)?\s*%?\s*/, "")
+    .replace(/^\([^)]+\)\s*%?\s*/, "")
+    .trim();
+  return stripped || text;
+}
+
+function extractValuePart(text: string): string {
+  const m = text.match(/^[+\-]?\(?\s*[+\-]?\d+(?:[–\-][+\-]?\d+)?\s*\)?\s*%?/);
+  return m ? m[0].trim() : "";
+}
+
+function MemoryTierBadge({ tier }: { tier: string }) {
+  const textColor = tier === "T0" ? "#fe3333" : tier === "T1" ? "#ff7c1c" : tier === "T2" ? "#c192ff" : "";
+  const fillColor = tier === "T0" ? "#603020" : tier === "T1" ? "#6f3f22" : tier === "T2" ? "#5f2b90" : "";
+  if (!textColor || !fillColor) {
+    return <span className="font-bold text-zinc-400 shrink-0 text-[11px]">{tier}</span>;
+  }
+  return (
+    <span className="font-bold shrink-0" style={{
+      color: textColor, border: `1px solid ${textColor}`, borderRadius: "3px 0 3px 0",
+      background: `linear-gradient(to bottom, #111111, ${fillColor})`,
+      padding: "1px 11px", fontSize: "13px", lineHeight: "1.4", height: "20px",
+      display: "inline-flex", alignItems: "center", whiteSpace: "nowrap",
+    }}>
+      {tier}
+    </span>
+  );
+}
+
+function MemoryTierPicker({
+  tiers,
+  selectedAffixId,
+  onSelect,
+}: {
+  tiers: MemoryAffix[];
+  selectedAffixId: string;
+  onSelect: (affix: MemoryAffix) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const [pos, setPos] = useState<{ bottom: number; left: number } | null>(null);
+  const btnRef = useRef<HTMLButtonElement>(null);
+  const dropRef = useRef<HTMLDivElement>(null);
+  const selectedAffix = tiers.find((a) => a.id === selectedAffixId) ?? tiers[0];
+
+  useEffect(() => {
+    if (!open) return;
+    function onDown(e: MouseEvent) {
+      if (
+        btnRef.current && !btnRef.current.contains(e.target as Node) &&
+        dropRef.current && !dropRef.current.contains(e.target as Node)
+      ) setOpen(false);
+    }
+    document.addEventListener("mousedown", onDown);
+    return () => document.removeEventListener("mousedown", onDown);
+  }, [open]);
+
+  function handleToggle(e: React.MouseEvent) {
+    e.stopPropagation();
+    if (!open && btnRef.current) {
+      const rect = btnRef.current.getBoundingClientRect();
+      setPos({ bottom: window.innerHeight - rect.top + 4, left: rect.left });
+    }
+    setOpen((o) => !o);
+  }
+
+  return (
+    <div className="shrink-0 self-stretch">
+      <button
+        ref={btnRef}
+        onClick={handleToggle}
+        className="h-full flex items-center gap-1.5 px-2 bg-[#2a2929] border border-[#535357] hover:bg-[#343333] transition-colors focus:outline-none"
+        style={{ borderRadius: "0 8px 0 8px" }}
+      >
+        <MemoryTierBadge tier={selectedAffix.tier} />
+        <svg className="w-3 h-3 text-zinc-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      {open && pos && typeof document !== "undefined" && createPortal(
+        <div
+          ref={dropRef}
+          style={{ position: "fixed", bottom: pos.bottom, left: pos.left, zIndex: 9999, minWidth: 130, background: "#1a1919", border: "1px solid #535357", borderRadius: "0 8px 0 8px" }}
+          className="py-0.5 shadow-xl"
+        >
+          {tiers.map((affix) => {
+            const valuePart = extractValuePart(parseEffect(affix.effect));
+            const isSelected = affix.id === selectedAffixId;
+            return (
+              <button
+                key={affix.id}
+                onClick={(e) => { e.stopPropagation(); onSelect(affix); setOpen(false); }}
+                className={`w-full text-left px-3 py-2 flex items-center gap-2 transition-colors ${isSelected ? "bg-[#3a3838]" : "hover:bg-[#2e2d2d]"}`}
+              >
+                <MemoryTierBadge tier={affix.tier} />
+                {valuePart && <span className="text-zinc-400 text-[11px]">{valuePart}</span>}
+              </button>
+            );
+          })}
+        </div>,
+        document.body
+      )}
+    </div>
+  );
+}
+
+function MemoryAffixPanel({
+  memoryItem,
+  activeSlot,
+  selectedIds,
+  onSelect,
+}: {
+  memoryItem: string;
+  activeSlot: ActiveSlotId | null;
+  selectedIds: MemorySlotSelections;
+  onSelect: (slotKey: MemorySlotKey, affixId: string, affixText: string, tier: string) => void;
+}) {
+  const [affixes, setAffixes] = useState<MemoryAffix[]>([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    fetch(`/api/hero-memory?item=${encodeURIComponent(memoryItem)}`)
+      .then((r) => r.json())
+      .then((data: MemoryAffix[]) => { setAffixes(data); setLoading(false); })
+      .catch(() => setLoading(false));
+  }, [memoryItem]);
+
+  const slotKey = activeSlot as MemorySlotKey | null;
+  const slotType = slotKey ? SLOT_TYPE_MAP[slotKey] : null;
+  const filtered = useMemo(
+    () => (slotType ? affixes.filter((a) => a.type === slotType) : []),
+    [affixes, slotType],
+  );
+  const selectedId = slotKey ? selectedIds[slotKey]?.id ?? null : null;
+
+  const groups = useMemo<StatGroup[]>(() => {
+    const map = new Map<string, StatGroup>();
+    for (const affix of filtered) {
+      const text = parseEffect(affix.effect);
+      const key = normalizeStatKey(text);
+      if (!map.has(key)) map.set(key, { key, displayName: statDisplayName(text), tiers: [] });
+      map.get(key)!.tiers.push(affix);
+    }
+    const tierOrder = ["T0", "T1", "T2", "T3", ""];
+    for (const g of map.values()) {
+      g.tiers.sort((a, b) => tierOrder.indexOf(a.tier) - tierOrder.indexOf(b.tier));
+    }
+    return [...map.values()];
+  }, [filtered]);
+
+  function selectAffix(affix: MemoryAffix) {
+    if (!slotKey) return;
+    const text = parseEffect(affix.effect);
+    if (selectedId === affix.id) {
+      onSelect(slotKey, "", "", "");  // clear
+    } else {
+      onSelect(slotKey, affix.id, text, affix.tier);
+    }
+  }
+
+  return (
+    <div
+      className="w-full flex flex-col"
+      style={{ height: "100vh", background: "linear-gradient(to bottom, #1e1d1d 0%, #2b2929 10%, #2b2929 90%, #1e1d1d 100%)" }}
+    >
+      {!activeSlot ? (
+        <div className="flex-1 flex items-center justify-center">
+          <p className="text-center text-[20px] font-semibold whitespace-nowrap" style={{ color: "#d92020" }}>
+            Select the affix location for crafting
+          </p>
+        </div>
+      ) : loading ? (
+        <div className="flex-1 flex items-center justify-center">
+          <p className="text-zinc-500 text-[14px]">Loading…</p>
+        </div>
+      ) : (
+        <>
+          <div className="px-4 pt-5 pb-3 border-b border-[#3a3838]">
+            <p className="text-[11px] uppercase tracking-widest text-zinc-500 mb-0.5">{slotType}</p>
+            <p className="text-[15px] font-semibold text-[#e0ddd8]">{memoryItem}</p>
+          </div>
+          <div className="flex-1 overflow-y-auto px-3 py-3 space-y-1">
+            {groups.map((group) => {
+              const selectedAffix = group.tiers.find((a) => a.id === selectedId) ?? null;
+              const isSelected = !!selectedAffix;
+              const defaultAffix = group.tiers.find((a) => a.tier === "T1") ?? group.tiers[0];
+              const displayTier = isSelected ? selectedAffix.tier : (defaultAffix?.tier ?? "");
+              const showTierPicker = isSelected && group.tiers.length > 1;
+
+              return (
+                <div key={group.key} className="flex gap-0">
+                  {showTierPicker && (
+                    <MemoryTierPicker
+                      tiers={group.tiers}
+                      selectedAffixId={selectedAffix!.id}
+                      onSelect={(affix) => slotKey && onSelect(slotKey, affix.id, parseEffect(affix.effect), affix.tier)}
+                    />
+                  )}
+                  <button
+                    onClick={() => selectAffix(isSelected ? selectedAffix! : defaultAffix)}
+                    className={`flex-1 min-w-0 text-left px-3 py-4 text-[14px] leading-snug transition-all ${!isSelected ? "hover:brightness-110" : ""}`}
+                    style={{
+                      border: "2px solid #535357",
+                      backgroundColor: isSelected ? "#e0ddd8" : "#3d3c3c",
+                      borderRadius: "0 10px 0 10px",
+                      cursor: "pointer",
+                      color: isSelected ? "#1a2028" : "#ffffff",
+                      boxShadow: "0 3px 6px rgba(0,0,0,0.4)",
+                    }}
+                  >
+                    <span className="flex items-center gap-2">
+                      {displayTier && !showTierPicker && <MemoryTierBadge tier={displayTier} />}
+                      <span>{group.displayName}</span>
+                    </span>
+                  </button>
+                </div>
+              );
+            })}
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
+
+// ─── Memory craft panel ──────────────────────────────────────────────────────
+
+const ITEM_CARD_METALLIC_ZINC =
+  "linear-gradient(145deg, #b8b8bc 0%, #4a4a4e 15%, #d8d8dc 35%, #6a6a70 55%, #2c2c30 75%, #9a9a9e 100%)";
+
+function MemorySlotRow({ slotKey, active, value, onClick }: {
+  slotKey: ActiveSlotId;
+  active: boolean;
+  value: MemorySlotValue;
+  onClick: () => void;
+}) {
+  return (
+    <div className="flex items-center gap-2 py-1">
+      <button
+        onClick={onClick}
+        className="flex-1 min-w-0 relative flex items-center pl-3 pr-[48px] py-3 rounded-sm border-0 overflow-hidden focus:outline-none text-sm cursor-pointer transition-colors"
+        style={{
+          backgroundColor: active ? "#c5cfe8" : "#dedfdf",
+          outline: active ? "2px solid #3b82f6" : "none",
+          outlineOffset: "-2px",
+        }}
+      >
+        <span className="w-full text-center truncate" style={{ color: value ? "#1a1a1a" : active ? "#1e3a6e" : "#939393" }}>
+          {value ? value.text : "Empty affix"}
+        </span>
+        <span
+          className="absolute right-0 top-0 bottom-0 w-10 flex items-center justify-center"
+          style={{ backgroundColor: active ? "#4a70b8" : "#979798" }}
+        >
+          <span
+            className="w-6 h-6 rounded-full flex items-center justify-center"
+            style={{ backgroundColor: active ? "#2a509a" : "#6c6b6c" }}
+          >
+            <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+              <path d="M1 4L3.5 6.5L9 1" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </span>
+        </span>
+      </button>
+    </div>
+  );
+}
+
+function MemorySectionBox({ label, children }: { label: string; children: React.ReactNode }) {
+  return (
+    <div
+      className="relative border border-[#bec4c9] mt-6 pt-5 px-3 pb-3"
+      style={{ borderRadius: "0 12px 0 12px" }}
+    >
+      <div className="absolute top-0 left-[20px] right-[40px] -translate-y-1/2 z-[100]">
+        <div
+          className="flex items-center px-3 py-0.5"
+          style={{ background: "linear-gradient(to right, #bdc3c9, #eaeaea)" }}
+        >
+          <span className="font-semibold uppercase tracking-wider text-[16px] text-[#555]">{label}</span>
+        </div>
+      </div>
+      {children}
+    </div>
+  );
+}
+
+function MemoryCraftPanel({
+  memoryLabel,
+  filled,
+  currentQuality,
+  activeSlot,
+  onActiveSlotChange,
+  selectedIds,
+  onInsert,
+  onRemove,
+}: {
+  memoryLabel: string;
+  filled: boolean;
+  currentQuality: MemoryQuality | null;
+  activeSlot: ActiveSlotId | null;
+  onActiveSlotChange: (id: ActiveSlotId | null) => void;
+  selectedIds: MemorySlotSelections;
+  onInsert: (quality: MemoryQuality) => void;
+  onRemove: () => void;
+}) {
+  const [imgErr, setImgErr] = useState(false);
+  const [selectedQuality, setSelectedQuality] = useState<MemoryQuality>(currentQuality ?? "epic");
+  const iconPath = `/icons/equipment/${memoryLabel}.webp`;
+  const qc = MEMORY_QUALITY_CONFIG[selectedQuality];
+
+  return (
+    <div
+      className="absolute flex items-center justify-center"
+      onClick={(e) => e.stopPropagation()}
+      style={{
+        right: `calc(50% + ${CIRCLE_D / 2}px + ${PANEL_GAP}px)`,
+        top: 0, width: PANEL_W, height: "100vh",
+        zIndex: 10,
+      }}
+    >
+      <div style={{ width: "100%", padding: "70px 20px 0", filter: "drop-shadow(0 20px 60px rgba(0,0,0,0.85))" }}>
+        <div className="relative">
+
+          {/* Accent back panel */}
+          <div
+            className="absolute inset-x-0 bottom-0"
+            style={{
+              top: "-70px",
+              background: qc.accentBg,
+              borderRadius: "0 36px 0 36px",
+              zIndex: 0,
+              boxShadow: "0 0 40px 8px rgba(0,0,0,0.45)",
+            }}
+          />
+
+          {/* Memory name */}
+          <h2
+            className="absolute z-10 text-[20px] font-semibold text-white leading-tight"
+            style={{ top: "-58px", left: "150px", right: "44px" }}
+          >
+            {memoryLabel}
+          </h2>
+
+          {/* Trash button (only when editing a filled slot) */}
+          {filled && (
+            <button
+              onClick={onRemove}
+              title="Remove memory"
+              className="absolute z-10 rounded p-1.5 text-white/60 hover:text-white transition-colors cursor-pointer"
+              style={{ top: "-63px", right: "8px" }}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/>
+              </svg>
+            </button>
+          )}
+
+
+          {/* Quality underline plate */}
+          <div
+            className="absolute z-[19]"
+            style={{
+              top: "-55px",
+              left: "20px",
+              width: "110px",
+              height: "110px",
+              background: qc.border,
+              borderRadius: "0 28px 0 28px",
+            }}
+          />
+
+          {/* Memory icon */}
+          <div
+            className="absolute z-20 flex items-center justify-center overflow-hidden"
+            style={{
+              top: "-61px",
+              left: "20px",
+              width: "110px",
+              height: "110px",
+              background: qc.bg,
+              borderRadius: "0 28px 0 28px",
+            }}
+          >
+            {!imgErr ? (
+              <img
+                src={iconPath}
+                alt={memoryLabel}
+                onError={() => setImgErr(true)}
+                className="w-full h-full object-contain p-1"
+              />
+            ) : (
+              <span style={{ color: "#666", fontSize: 28, fontWeight: 700 }}>M</span>
+            )}
+          </div>
+
+          {/* Main card */}
+          <div
+            className="relative z-10 border border-[#bec4c9] bg-[#eaeaea] text-[#1a1a1a] px-5 pb-5 pt-1"
+            style={{ borderRadius: "0 36px 0 36px" }}
+          >
+            {/* Header spacer for icon */}
+            <div className="flex items-start gap-2 mb-1 min-h-[52px]">
+              <div className="w-[110px] shrink-0" />
+              <div className="flex-1 min-w-0 pt-0">
+                <p className="text-sm text-[#1a1a1a]">Trait Level: {qc.traitLevel}</p>
+              </div>
+            </div>
+
+            {/* Quality selector */}
+            <div style={{ display: "flex", gap: 10, marginBottom: 4 }}>
+              {(["epic", "ultimate"] as MemoryQuality[]).map((q) => {
+                const qc = MEMORY_QUALITY_CONFIG[q];
+                const active = selectedQuality === q;
+                return (
+                  <button
+                    key={q}
+                    onClick={() => setSelectedQuality(q)}
+                    style={{
+                      flex: 1,
+                      padding: "10px 0",
+                      border: `2px solid ${active ? qc.border : "#bec4c9"}`,
+                      borderRadius: "0 10px 0 10px",
+                      background: active ? qc.bg : "#e0e0e0",
+                      color: active ? qc.border : "#888888",
+                      fontWeight: 700,
+                      fontSize: 12,
+                      letterSpacing: "0.08em",
+                      textTransform: "uppercase",
+                      cursor: "pointer",
+                      boxShadow: active ? qc.glow : "none",
+                      transition: "all 0.15s",
+                    }}
+                  >
+                    {qc.label}
+                    <span style={{ display: "block", fontWeight: 400, fontSize: 10, opacity: 0.75, marginTop: 2 }}>
+                      Max Lv {qc.maxLevel}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Base Stats — 1 slot */}
+            <MemorySectionBox label="Base Stats">
+              <MemorySlotRow slotKey="base" active={activeSlot === "base"} value={selectedIds.base} onClick={() => onActiveSlotChange(activeSlot === "base" ? null : "base")} />
+            </MemorySectionBox>
+
+            {/* Fixed Affix — 2 slots */}
+            <MemorySectionBox label="Fixed Affix">
+              <MemorySlotRow slotKey="prefix1" active={activeSlot === "prefix1"} value={selectedIds.prefix1} onClick={() => onActiveSlotChange(activeSlot === "prefix1" ? null : "prefix1")} />
+              <MemorySlotRow slotKey="prefix2" active={activeSlot === "prefix2"} value={selectedIds.prefix2} onClick={() => onActiveSlotChange(activeSlot === "prefix2" ? null : "prefix2")} />
+            </MemorySectionBox>
+
+            {/* Random Affix — 2 slots */}
+            <MemorySectionBox label="Random Affix">
+              <MemorySlotRow slotKey="suffix1" active={activeSlot === "suffix1"} value={selectedIds.suffix1} onClick={() => onActiveSlotChange(activeSlot === "suffix1" ? null : "suffix1")} />
+              <MemorySlotRow slotKey="suffix2" active={activeSlot === "suffix2"} value={selectedIds.suffix2} onClick={() => onActiveSlotChange(activeSlot === "suffix2" ? null : "suffix2")} />
+            </MemorySectionBox>
+
+            {/* Insert button */}
+            <div className="mt-6 flex justify-end">
+              <button
+                onClick={() => onInsert(selectedQuality)}
+                className="px-6 py-2.5 text-sm font-semibold text-white transition-colors cursor-pointer"
+                style={{
+                  background: "linear-gradient(to right, #1d4ed8, #1e40af)",
+                  borderRadius: "0 10px 0 10px",
+                  border: "none",
+                  boxShadow: "0 3px 8px rgba(0,0,0,0.35)",
+                }}
+              >
+                {filled ? "Save Changes" : "Insert Memory"}
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
   );
 }
@@ -498,7 +1069,11 @@ export default function HeroTraitPage() {
   const [circleImgError,   setCircleImgError]   = useState(false);
   const [centerTooltipPos, setCenterTooltipPos] = useState<{ x: number; y: number } | null>(null);
   const [memoryFilled,     setMemoryFilled]     = useState<[boolean, boolean, boolean]>([false, false, false]);
+  const [memoryQuality,    setMemoryQuality]    = useState<[MemoryQuality | null, MemoryQuality | null, MemoryQuality | null]>([null, null, null]);
+  const [memorySelections, setMemorySelections] = useState<[MemorySlotSelections, MemorySlotSelections, MemorySlotSelections]>([{ ...EMPTY_MEMORY_SELECTIONS }, { ...EMPTY_MEMORY_SELECTIONS }, { ...EMPTY_MEMORY_SELECTIONS }]);
   const [traitSelections,  setTraitSelections]  = useState<[string | null, string | null, string | null]>([null, null, null]);
+  const [craftPanelCol,    setCraftPanelCol]    = useState<number | null>(null);
+  const [activeMemorySlot, setActiveMemorySlot] = useState<ActiveSlotId | null>(null);
 
   useEffect(() => {
     fetch("/api/hero-traits")
@@ -511,6 +1086,7 @@ export default function HeroTraitPage() {
     setHeroTraits([]);
     setCircleImgError(false);
     setMemoryFilled([false, false, false]);
+    setMemoryQuality([null, null, null]);
     setTraitSelections([null, null, null]);
     if (!selectedHero) return;
     fetch(`/api/hero-traits?hero=${encodeURIComponent(selectedHero.hero)}`)
@@ -548,6 +1124,29 @@ export default function HeroTraitPage() {
     }
   }
 
+  function insertMemory(col: number, quality: MemoryQuality) {
+    setMemoryFilled((prev) => {
+      const next = [...prev] as [boolean, boolean, boolean];
+      next[col] = true;
+      return next;
+    });
+    setMemoryQuality((prev) => {
+      const next = [...prev] as [MemoryQuality | null, MemoryQuality | null, MemoryQuality | null];
+      next[col] = quality;
+      return next;
+    });
+    setCraftPanelCol(null);
+    setActiveMemorySlot(null);
+  }
+
+  function selectMemoryAffix(col: number, slotKey: MemorySlotKey, affixId: string, affixText: string, tier: string) {
+    setMemorySelections((prev) => {
+      const next = [...prev] as [MemorySlotSelections, MemorySlotSelections, MemorySlotSelections];
+      next[col] = { ...next[col], [slotKey]: affixId ? { id: affixId, text: affixText, tier } : null };
+      return next;
+    });
+  }
+
   function selectTrait(col: number, traitName: string) {
     setTraitSelections((prev) => {
       const next = [...prev] as [string | null, string | null, string | null];
@@ -564,6 +1163,7 @@ export default function HeroTraitPage() {
   function handleCircleClick(e: React.MouseEvent) {
     e.stopPropagation();
     setPanelOpen((prev) => !prev);
+    setCraftPanelCol(null);
     setSearchQuery("");
   }
 
@@ -587,8 +1187,51 @@ export default function HeroTraitPage() {
     <div
       className="min-h-screen relative"
       style={BG_STYLE}
-      onClick={() => setPanelOpen(false)}
+      onClick={() => { setPanelOpen(false); setCraftPanelCol(null); setActiveMemorySlot(null); }}
     >
+
+      {/* Memory craft panel */}
+      {craftPanelCol !== null && (
+        <MemoryCraftPanel
+          memoryLabel={MEMORY_LABELS[craftPanelCol]}
+          filled={memoryFilled[craftPanelCol]}
+          currentQuality={memoryQuality[craftPanelCol]}
+          activeSlot={activeMemorySlot}
+          onActiveSlotChange={setActiveMemorySlot}
+          selectedIds={memorySelections[craftPanelCol]}
+          onInsert={(quality) => insertMemory(craftPanelCol, quality)}
+          onRemove={() => {
+            toggleMemory(craftPanelCol);
+            setMemoryQuality((prev) => {
+              const next = [...prev] as [MemoryQuality | null, MemoryQuality | null, MemoryQuality | null];
+              next[craftPanelCol] = null;
+              return next;
+            });
+            setCraftPanelCol(null);
+            setActiveMemorySlot(null);
+          }}
+        />
+      )}
+
+      {/* Memory affix panel (right of center, when memory craft panel is open) */}
+      {craftPanelCol !== null && (
+        <div
+          className="absolute"
+          onClick={(e) => e.stopPropagation()}
+          style={{
+            left: `calc(50% + ${CIRCLE_D / 2}px + ${PANEL_GAP}px)`,
+            top: 0, width: PANEL_W, height: "100vh",
+            zIndex: 10,
+          }}
+        >
+          <MemoryAffixPanel
+            memoryItem={MEMORY_LABELS[craftPanelCol]}
+            activeSlot={activeMemorySlot}
+            selectedIds={memorySelections[craftPanelCol]}
+            onSelect={(slotKey, affixId, affixText, tier) => selectMemoryAffix(craftPanelCol, slotKey, affixId, affixText, tier)}
+          />
+        </div>
+      )}
 
       {/* Left selection panel */}
       {panelOpen && (
@@ -712,9 +1355,13 @@ export default function HeroTraitPage() {
                 <MemorySlot
                   label={MEMORY_LABELS[col]}
                   filled={memoryFilled[col]}
+                  quality={memoryQuality[col]}
                   locked={memLocked}
                   lockReason={memLocked ? "Select a hero first" : undefined}
-                  onClick={() => toggleMemory(col)}
+                  onClick={() => {
+                    setPanelOpen(false);
+                    setCraftPanelCol((prev) => prev === col ? null : col);
+                  }}
                 />
               </div>
             );
@@ -736,6 +1383,7 @@ export default function HeroTraitPage() {
             ? getTraitIconPath(selectedHero.heroGroup, variantName, level, slot, trait.name)
             : null;
           const selected     = !!trait && traitSelections[col] === trait.name;
+          const dimmed       = !!trait && !!traitSelections[col] && traitSelections[col] !== trait.name;
 
           return (
             <div key={id} style={{ position: "absolute", left: x, top: y }}>
@@ -748,6 +1396,7 @@ export default function HeroTraitPage() {
                 lockReason={locked ? lockReason : undefined}
                 trait={trait}
                 selected={selected}
+                dimmed={dimmed}
                 onClick={trait ? () => selectTrait(col, trait.name) : undefined}
               />
             </div>

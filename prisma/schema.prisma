@@ -197,6 +197,7 @@ model HeroMemory {
   type   String
   item   String
   effect String
+  tier   String @default("")
 
   @@index([type])
   @@index([item])
