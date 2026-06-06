@@ -523,8 +523,8 @@ function extractValuePart(text: string): string {
 }
 
 function MemoryTierBadge({ tier }: { tier: string }) {
-  const textColor = tier === "T0" ? "#fe3333" : tier === "T1" ? "#ff7c1c" : tier === "T2" ? "#c192ff" : "";
-  const fillColor = tier === "T0" ? "#603020" : tier === "T1" ? "#6f3f22" : tier === "T2" ? "#5f2b90" : "";
+  const textColor = tier === "T0" ? "#fe3333" : tier === "T1" ? "#ff7c1c" : (tier === "T2" || tier === "T3") ? "#c192ff" : "";
+  const fillColor = tier === "T0" ? "#603020" : tier === "T1" ? "#6f3f22" : (tier === "T2" || tier === "T3") ? "#5f2b90" : "";
   if (!textColor || !fillColor) {
     return <span className="font-bold text-zinc-400 shrink-0 text-[11px]">{tier}</span>;
   }
@@ -544,13 +544,15 @@ function MemoryTierPicker({
   tiers,
   selectedAffixId,
   onSelect,
+  epicRestricted,
 }: {
   tiers: MemoryAffix[];
   selectedAffixId: string;
   onSelect: (affix: MemoryAffix) => void;
+  epicRestricted?: boolean;
 }) {
   const [open, setOpen] = useState(false);
-  const [pos, setPos] = useState<{ bottom: number; left: number } | null>(null);
+  const [pos, setPos] = useState<{ top: number; left: number } | null>(null);
   const btnRef = useRef<HTMLButtonElement>(null);
   const dropRef = useRef<HTMLDivElement>(null);
   const selectedAffix = tiers.find((a) => a.id === selectedAffixId) ?? tiers[0];
@@ -558,10 +560,11 @@ function MemoryTierPicker({
   useEffect(() => {
     if (!open) return;
     function onDown(e: MouseEvent) {
-      if (
-        btnRef.current && !btnRef.current.contains(e.target as Node) &&
-        dropRef.current && !dropRef.current.contains(e.target as Node)
-      ) setOpen(false);
+      const btn = btnRef.current;
+      const drop = dropRef.current;
+      if (btn && !btn.contains(e.target as Node) && (!drop || !drop.contains(e.target as Node))) {
+        setOpen(false);
+      }
     }
     document.addEventListener("mousedown", onDown);
     return () => document.removeEventListener("mousedown", onDown);
@@ -569,9 +572,9 @@ function MemoryTierPicker({
 
   function handleToggle(e: React.MouseEvent) {
     e.stopPropagation();
-    if (!open && btnRef.current) {
+    if (btnRef.current) {
       const rect = btnRef.current.getBoundingClientRect();
-      setPos({ bottom: window.innerHeight - rect.top + 4, left: rect.left });
+      setPos({ top: rect.bottom + 4, left: rect.left });
     }
     setOpen((o) => !o);
   }
@@ -580,31 +583,46 @@ function MemoryTierPicker({
     <div className="shrink-0 self-stretch">
       <button
         ref={btnRef}
-        onClick={handleToggle}
-        className="h-full flex items-center gap-1.5 px-2 bg-[#2a2929] border border-[#535357] hover:bg-[#343333] transition-colors focus:outline-none"
-        style={{ borderRadius: "0 8px 0 8px" }}
+        onClick={tiers.length > 1 ? handleToggle : undefined}
+        className={`h-full flex items-center gap-1.5 px-2 bg-[#2a2929] border border-[#535357] focus:outline-none ${tiers.length > 1 ? "hover:bg-[#343333] transition-colors" : ""}`}
+        style={{ borderRadius: "0 8px 0 8px", cursor: tiers.length > 1 ? "pointer" : "default" }}
       >
         <MemoryTierBadge tier={selectedAffix.tier} />
-        <svg className="w-3 h-3 text-zinc-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="m6 9 6 6 6-6"/></svg>
+        {tiers.length > 1 && (
+          <svg className="w-3 h-3 text-zinc-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="m6 9 6 6 6-6"/></svg>
+        )}
       </button>
-      {open && pos && typeof document !== "undefined" && createPortal(
+      {open && pos && createPortal(
         <div
           ref={dropRef}
-          style={{ position: "fixed", bottom: pos.bottom, left: pos.left, zIndex: 9999, minWidth: 130, background: "#1a1919", border: "1px solid #535357", borderRadius: "0 8px 0 8px" }}
+          style={{ position: "fixed", top: pos.top, left: pos.left, zIndex: 9999, minWidth: 140, background: "#1a1919", border: "1px solid #535357", borderRadius: "0 8px 0 8px" }}
           className="py-0.5 shadow-xl"
         >
           {tiers.map((affix) => {
             const valuePart = extractValuePart(parseEffect(affix.effect));
             const isSelected = affix.id === selectedAffixId;
+            const isLocked = !!(epicRestricted && affix.tier === "T0");
             return (
-              <button
-                key={affix.id}
-                onClick={(e) => { e.stopPropagation(); onSelect(affix); setOpen(false); }}
-                className={`w-full text-left px-3 py-2 flex items-center gap-2 transition-colors ${isSelected ? "bg-[#3a3838]" : "hover:bg-[#2e2d2d]"}`}
-              >
-                <MemoryTierBadge tier={affix.tier} />
-                {valuePart && <span className="text-zinc-400 text-[11px]">{valuePart}</span>}
-              </button>
+              <div key={affix.id} className="relative group">
+                <button
+                  onClick={(e) => { e.stopPropagation(); if (!isLocked) { onSelect(affix); setOpen(false); } }}
+                  className={`w-full text-left px-3 py-2 flex items-center gap-2 transition-colors ${
+                    isLocked ? "opacity-50" : isSelected ? "bg-[#3a3838]" : "hover:bg-[#2e2d2d]"
+                  }`}
+                  style={{ cursor: isLocked ? "not-allowed" : "pointer" }}
+                >
+                  <MemoryTierBadge tier={affix.tier} />
+                  {valuePart && <span className="text-zinc-400 text-[11px]">{valuePart}</span>}
+                </button>
+                {isLocked && (
+                  <div
+                    className="absolute left-full top-0 ml-2 px-2.5 py-1.5 text-[11px] text-zinc-300 whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity z-50"
+                    style={{ background: "#1a1919", border: "1px solid #535357", borderRadius: "0 6px 0 6px" }}
+                  >
+                    Only available on Ultimate memories
+                  </div>
+                )}
+              </div>
             );
           })}
         </div>,
@@ -619,14 +637,43 @@ function MemoryAffixPanel({
   activeSlot,
   selectedIds,
   onSelect,
+  quality,
 }: {
   memoryItem: string;
   activeSlot: ActiveSlotId | null;
   selectedIds: MemorySlotSelections;
   onSelect: (slotKey: MemorySlotKey, affixId: string, affixText: string, tier: string) => void;
+  quality: MemoryQuality;
 }) {
   const [affixes, setAffixes] = useState<MemoryAffix[]>([]);
   const [loading, setLoading] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  // Downgrade T0 → T1 for Random Affix slots when switching from Ultimate to Epic
+  const prevQualityRef = useRef<MemoryQuality>(quality);
+  const affixesRef = useRef(affixes);
+  affixesRef.current = affixes;
+  const selectedIdsRef = useRef(selectedIds);
+  selectedIdsRef.current = selectedIds;
+  const onSelectRef = useRef(onSelect);
+  onSelectRef.current = onSelect;
+  useEffect(() => {
+    if (prevQualityRef.current === quality) return;
+    const prev = prevQualityRef.current;
+    prevQualityRef.current = quality;
+    if (prev !== "ultimate" || quality !== "epic") return;
+    const cur = affixesRef.current;
+    const sel = selectedIdsRef.current;
+    for (const sk of ["suffix1", "suffix2"] as MemorySlotKey[]) {
+      const slot = sel[sk];
+      if (!slot || slot.tier !== "T0") continue;
+      const af = cur.find((a) => a.id === slot.id);
+      if (!af) continue;
+      const key = normalizeStatKey(parseEffect(af.effect));
+      const t1 = cur.find((a) => a.type === "Random Affix" && a.tier === "T1" && normalizeStatKey(parseEffect(a.effect)) === key);
+      onSelectRef.current(sk, t1 ? t1.id : "", t1 ? parseEffect(t1.effect) : "", t1 ? t1.tier : "");
+    }
+  }, [quality]);
 
   useEffect(() => {
     setLoading(true);
@@ -636,8 +683,11 @@ function MemoryAffixPanel({
       .catch(() => setLoading(false));
   }, [memoryItem]);
 
+  useEffect(() => { setSearchQuery(""); }, [activeSlot]);
+
   const slotKey = activeSlot as MemorySlotKey | null;
   const slotType = slotKey ? SLOT_TYPE_MAP[slotKey] : null;
+  const isEpicRandomAffix = quality === "epic" && slotType === "Random Affix";
   const filtered = useMemo(
     () => (slotType ? affixes.filter((a) => a.type === slotType) : []),
     [affixes, slotType],
@@ -659,11 +709,20 @@ function MemoryAffixPanel({
     return [...map.values()];
   }, [filtered]);
 
+  const hasSelection = selectedId !== null;
+
+  const visibleGroups = useMemo(() => {
+    const needle = searchQuery.replace(/\s/g, "").toLowerCase();
+    return needle
+      ? groups.filter((g) => g.displayName.toLowerCase().replace(/\s/g, "").includes(needle))
+      : groups;
+  }, [groups, searchQuery]);
+
   function selectAffix(affix: MemoryAffix) {
     if (!slotKey) return;
     const text = parseEffect(affix.effect);
     if (selectedId === affix.id) {
-      onSelect(slotKey, "", "", "");  // clear
+      onSelect(slotKey, "", "", "");  // toggle off
     } else {
       onSelect(slotKey, affix.id, text, affix.tier);
     }
@@ -690,12 +749,53 @@ function MemoryAffixPanel({
             <p className="text-[11px] uppercase tracking-widest text-zinc-500 mb-0.5">{slotType}</p>
             <p className="text-[15px] font-semibold text-[#e0ddd8]">{memoryItem}</p>
           </div>
-          <div className="flex-1 overflow-y-auto px-3 py-3 space-y-1">
-            {groups.map((group) => {
+          {/* Search + clear row */}
+          <div style={{ display: "flex", gap: 8, padding: "10px 16px", flexShrink: 0 }}>
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value.replace(/[^a-zA-Z ]/g, ""))}
+              placeholder="Search affixes…"
+              style={{
+                flex: 1,
+                background: "#111111",
+                border: "1px solid #2a2a2a",
+                borderRadius: "0 8px 0 8px",
+                color: "#e4e4e7",
+                fontSize: 12,
+                padding: "6px 10px",
+                outline: "none",
+              }}
+            />
+            <button
+              onClick={hasSelection ? () => slotKey && onSelect(slotKey, "", "", "") : undefined}
+              disabled={!hasSelection}
+              style={{
+                padding: "5px 12px",
+                borderRadius: "0 8px 0 8px",
+                background: hasSelection ? "#c0392b" : "#1e1e1e",
+                border: "none",
+                color: hasSelection ? "#ffffff" : "#555555",
+                fontSize: 11,
+                fontWeight: 600,
+                cursor: hasSelection ? "pointer" : "not-allowed",
+                transition: "background 0.15s",
+                flexShrink: 0,
+              }}
+            >
+              ✕ Clear
+            </button>
+          </div>
+          <div className="flex-1 overflow-y-auto px-3 pb-3 space-y-1">
+            {visibleGroups.map((group) => {
               const selectedAffix = group.tiers.find((a) => a.id === selectedId) ?? null;
               const isSelected = !!selectedAffix;
-              const defaultAffix = group.tiers.find((a) => a.tier === "T1") ?? group.tiers[0];
-              const displayTier = isSelected ? selectedAffix.tier : (defaultAffix?.tier ?? "");
+              const defaultAffix = group.tiers.find((a) => a.tier === "T1") ??
+                (isEpicRandomAffix ? group.tiers.find((a) => a.tier !== "T0") : null) ??
+                group.tiers[0];
+              // show badge inside button only when unselected
+              const unselectedTier = !isSelected ? (defaultAffix?.tier ?? "") : "";
+              // show tier picker to the left whenever selected and multiple tiers exist
               const showTierPicker = isSelected && group.tiers.length > 1;
 
               return (
@@ -703,12 +803,18 @@ function MemoryAffixPanel({
                   {showTierPicker && (
                     <MemoryTierPicker
                       tiers={group.tiers}
-                      selectedAffixId={selectedAffix!.id}
+                      selectedAffixId={selectedAffix.id}
                       onSelect={(affix) => slotKey && onSelect(slotKey, affix.id, parseEffect(affix.effect), affix.tier)}
+                      epicRestricted={isEpicRandomAffix}
                     />
                   )}
+                  {isSelected && group.tiers.length === 1 && selectedAffix && selectedAffix.tier !== "" && (
+                    <div className="shrink-0 self-stretch flex items-center px-2 bg-[#2a2929] border border-[#535357]" style={{ borderRadius: "0 8px 0 8px" }}>
+                      <MemoryTierBadge tier={selectedAffix.tier} />
+                    </div>
+                  )}
                   <button
-                    onClick={() => selectAffix(isSelected ? selectedAffix! : defaultAffix)}
+                    onClick={() => selectAffix(isSelected ? selectedAffix : defaultAffix)}
                     className={`flex-1 min-w-0 text-left px-3 py-4 text-[14px] leading-snug transition-all ${!isSelected ? "hover:brightness-110" : ""}`}
                     style={{
                       border: "2px solid #535357",
@@ -720,8 +826,8 @@ function MemoryAffixPanel({
                     }}
                   >
                     <span className="flex items-center gap-2">
-                      {displayTier && !showTierPicker && <MemoryTierBadge tier={displayTier} />}
-                      <span>{group.displayName}</span>
+                      {unselectedTier && <MemoryTierBadge tier={unselectedTier} />}
+                      <span>{parseEffect((isSelected && selectedAffix ? selectedAffix : defaultAffix).effect)}</span>
                     </span>
                   </button>
                 </div>
@@ -756,9 +862,14 @@ function MemorySlotRow({ slotKey, active, value, onClick }: {
           outlineOffset: "-2px",
         }}
       >
-        <span className="w-full text-center truncate" style={{ color: value ? "#1a1a1a" : active ? "#1e3a6e" : "#939393" }}>
-          {value ? value.text : "Empty affix"}
-        </span>
+        {value ? (
+          <span className="flex items-center gap-2 min-w-0">
+            {value.tier && <MemoryTierBadge tier={value.tier} />}
+            <span className="truncate" style={{ color: "#1a1a1a" }}>{value.text}</span>
+          </span>
+        ) : (
+          <span className="w-full text-center truncate" style={{ color: active ? "#1e3a6e" : "#939393" }}>Empty affix</span>
+        )}
         <span
           className="absolute right-0 top-0 bottom-0 w-10 flex items-center justify-center"
           style={{ backgroundColor: active ? "#4a70b8" : "#979798" }}
@@ -799,7 +910,8 @@ function MemorySectionBox({ label, children }: { label: string; children: React.
 function MemoryCraftPanel({
   memoryLabel,
   filled,
-  currentQuality,
+  quality,
+  onQualityChange,
   activeSlot,
   onActiveSlotChange,
   selectedIds,
@@ -808,7 +920,8 @@ function MemoryCraftPanel({
 }: {
   memoryLabel: string;
   filled: boolean;
-  currentQuality: MemoryQuality | null;
+  quality: MemoryQuality;
+  onQualityChange: (q: MemoryQuality) => void;
   activeSlot: ActiveSlotId | null;
   onActiveSlotChange: (id: ActiveSlotId | null) => void;
   selectedIds: MemorySlotSelections;
@@ -816,9 +929,8 @@ function MemoryCraftPanel({
   onRemove: () => void;
 }) {
   const [imgErr, setImgErr] = useState(false);
-  const [selectedQuality, setSelectedQuality] = useState<MemoryQuality>(currentQuality ?? "epic");
   const iconPath = `/icons/equipment/${memoryLabel}.webp`;
-  const qc = MEMORY_QUALITY_CONFIG[selectedQuality];
+  const qc = MEMORY_QUALITY_CONFIG[quality];
 
   return (
     <div
@@ -922,11 +1034,11 @@ function MemoryCraftPanel({
             <div style={{ display: "flex", gap: 10, marginBottom: 4 }}>
               {(["epic", "ultimate"] as MemoryQuality[]).map((q) => {
                 const qc = MEMORY_QUALITY_CONFIG[q];
-                const active = selectedQuality === q;
+                const active = quality === q;
                 return (
                   <button
                     key={q}
-                    onClick={() => setSelectedQuality(q)}
+                    onClick={() => onQualityChange(q)}
                     style={{
                       flex: 1,
                       padding: "10px 0",
@@ -972,7 +1084,7 @@ function MemoryCraftPanel({
             {/* Insert button */}
             <div className="mt-6 flex justify-end">
               <button
-                onClick={() => onInsert(selectedQuality)}
+                onClick={() => onInsert(quality)}
                 className="px-6 py-2.5 text-sm font-semibold text-white transition-colors cursor-pointer"
                 style={{
                   background: "linear-gradient(to right, #1d4ed8, #1e40af)",
@@ -1074,6 +1186,12 @@ export default function HeroTraitPage() {
   const [traitSelections,  setTraitSelections]  = useState<[string | null, string | null, string | null]>([null, null, null]);
   const [craftPanelCol,    setCraftPanelCol]    = useState<number | null>(null);
   const [activeMemorySlot, setActiveMemorySlot] = useState<ActiveSlotId | null>(null);
+  const [craftQuality,     setCraftQuality]     = useState<MemoryQuality>("epic");
+
+  useEffect(() => {
+    if (craftPanelCol === null) return;
+    setCraftQuality(memoryQuality[craftPanelCol] ?? "epic");
+  }, [craftPanelCol]);
 
   useEffect(() => {
     fetch("/api/hero-traits")
@@ -1195,7 +1313,8 @@ export default function HeroTraitPage() {
         <MemoryCraftPanel
           memoryLabel={MEMORY_LABELS[craftPanelCol]}
           filled={memoryFilled[craftPanelCol]}
-          currentQuality={memoryQuality[craftPanelCol]}
+          quality={craftQuality}
+          onQualityChange={setCraftQuality}
           activeSlot={activeMemorySlot}
           onActiveSlotChange={setActiveMemorySlot}
           selectedIds={memorySelections[craftPanelCol]}
@@ -1229,6 +1348,7 @@ export default function HeroTraitPage() {
             activeSlot={activeMemorySlot}
             selectedIds={memorySelections[craftPanelCol]}
             onSelect={(slotKey, affixId, affixText, tier) => selectMemoryAffix(craftPanelCol, slotKey, affixId, affixText, tier)}
+            quality={craftQuality}
           />
         </div>
       )}
