@@ -529,6 +529,7 @@ export default function PactspiritsPage() {
             <clipPath id="node-clip-1"><circle cx={327} cy={97}  r={35} /></clipPath>
             <clipPath id="node-clip-2"><circle cx={250} cy={234} r={35} /></clipPath>
           </defs>
+          <g transform="translate(0, 50)">
           {/* Original: A(250,15) B(60,240) C(440,240), G(250,144) — overall height 225px, bottom ~90px */}
           {/* Each sub-triangle is shrunk 6% toward its own centroid to create cut gaps */}
           {/* Top-left: A, B, G */}
@@ -581,14 +582,74 @@ export default function PactspiritsPage() {
           <path d="M 610 492 Q 575 542 525 577" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
           {/* Node 15 extension: 345° direction (0.966, 0.259), 120px, very slight curve */}
           <path d="M 356 -364 Q 417 -358 472 -333" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 33 extension: 75° direction (0.259, -0.966), 60px straight */}
+          <line x1={91} y1={640} x2={107} y2={582} stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 27 extension: 180° direction (-1, 0), 220px, curved; nodes at t=0.5 and end */}
+          <path d="M 409 640 Q 250 680 91 640" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
           {/* Node 24 extension: 280° direction (0.174, 0.985), 60px straight */}
           <line x1={399} y1={581} x2={409} y2={640} stroke="#444444" strokeWidth={8} strokeLinecap="square" />
           {/* Node 21 extension: 210° direction (-0.866, 0.5), 100px, slight curve */}
           <path d="M 486 531 Q 447 563 399 581" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 26 extension: 315° direction (0.707, 0.707), 248px, curved; nodes at t=0.5 and end */}
+          <path d="M 577 -273 Q 682 -204 752 -98" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 31 extension: 210° direction (-0.866, 0.5), 60px straight */}
+          <line x1={752} y1={-98} x2={700} y2={-68} stroke="#444444" strokeWidth={8} strokeLinecap="square" />
           {/* Node 23 extension: 50° direction (0.643, -0.766), 60px straight */}
           <line x1={538} y1={-227} x2={577} y2={-273} stroke="#444444" strokeWidth={8} strokeLinecap="square" />
           {/* Node 20 extension: 330° direction (0.866, 0.5), 100px, slight curve */}
           <path d="M 451 -277 Q 499 -259 538 -227" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 25 extension: 65° direction (0.423, -0.906), 248px, curved; nodes at t=0.5 and end */}
+          <path d="M -267 -21 Q -237 -144 -162 -246" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 34 extension: 45° direction (0.707, -0.707), 120px, slight curve */}
+          <path d="M -116 -207 Q -84 -260 -31 -292" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 35 extension: 280° direction (0.174, 0.985), 120px, slight curve */}
+          <path d="M 700 -68 Q 725 -12 721 50" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 36 extension: 170° direction (-0.985, -0.174), 120px, slight curve */}
+          <path d="M 107 582 Q 45 586 -11 561" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 38 extension: 0° direction (1, 0), 60px straight */}
+          <line x1={721} y1={50} x2={781} y2={50} stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 37 extension: 120° direction (-0.5, -0.866), 60px straight */}
+          <line x1={-31} y1={-292} x2={-61} y2={-344} stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 39 extension: 240° direction (-0.5, 0.866), 60px straight */}
+          <line x1={-11} y1={561} x2={-41} y2={613} stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 41 extension: 15° direction (0.966, -0.259), 150px, slight curve */}
+          <path d="M -61 -344 Q 8 -378 84 -383" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 40 extension: 260° direction (-0.174, 0.985), 150px, slight curve */}
+          <path d="M 781 50 Q 783 127 755 198" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 42 extension: 150° direction (-0.866, -0.5), 150px, slight curve */}
+          <path d="M -41 613 Q -113 588 -171 538" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 43 extension: 290° direction (0.342, 0.940), 250px straight */}
+          <line x1={84} y1={-383} x2={170} y2={-148} stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 44 extension: 170° direction (-0.985, -0.174), 250px straight */}
+          <line x1={755} y1={198} x2={509} y2={155} stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 45 extension: 45° direction (0.707, -0.707), 250px straight */}
+          <line x1={-171} y1={538} x2={6} y2={361} stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 46 extension: 210° direction (-0.866, 0.5), 200px, curved */}
+          <path d="M 170 -148 Q 69 -124 -3 -48" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 47 extension: 95° direction (-0.087, -0.996), 200px, curved */}
+          <path d="M 509 155 Q 530 53 492 -44" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 49 extension: 250° direction (-0.342, 0.940), 150px, curved; nodes at t=0.5 and end */}
+          <path d="M -3 -48 Q -42 17 -54 93" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 50 extension: 135° direction (-0.707, -0.707), 135px, curved; nodes at t=0.5 and end */}
+          <path d="M 492 -44 Q 455 -102 397 -139" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 53 extension: 180° direction (-1, 0), 100px straight */}
+          <line x1={-54} y1={93} x2={-154} y2={93} stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 55 extension: 65° direction (0.423, -0.906), 100px straight */}
+          <line x1={397} y1={-139} x2={439} y2={-230} stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 57 extension: 310° direction (0.643, 0.766), 100px straight */}
+          <line x1={385} y1={400} x2={449} y2={477} stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 59 extension: curved to (621, 50), 5 evenly spaced nodes */}
+          <path d="M 439 -230 Q 597 -134 621 50" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 60 extension: 180° direction (-1, 0), 400px, curved; 5 evenly spaced nodes */}
+          <path d="M 449 477 Q 249 567 49 477" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 58 extension: 58° direction (0.530, -0.848), 340px, curved */}
+          <path d="M -154 93 Q -132 -93 26 -195" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 51 extension: 20° direction (0.940, -0.342), 145px, curved; nodes at t=0.5 and end */}
+          <path d="M 249 450 Q 322 439 385 400" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 48 extension: 340° direction (0.940, 0.342), 259px, curved */}
+          <path d="M 6 361 Q 117 434 249 450" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 29 extension: 320° direction (0.766, 0.643), 60px straight */}
+          <line x1={-162} y1={-246} x2={-116} y2={-207} stroke="#444444" strokeWidth={8} strokeLinecap="square" />
           {/* Node 22 extension: 170° direction (-0.985, -0.174), 50px straight */}
           <line x1={-208} y1={-11} x2={-267} y2={-21} stroke="#444444" strokeWidth={8} strokeLinecap="square" />
           {/* Node 19 extension: 85° direction (0.087, -0.996), 100px, slight curve */}
@@ -610,13 +671,58 @@ export default function PactspiritsPage() {
             { cx: -217, cy: 89,   label: "19" },
             { cx: -208, cy: -11,  label: "22" },
             { cx: -267, cy: -21,  label: "25" },
+            { cx: -226, cy: -139, label: "28" },
+            { cx: -162, cy: -246, label: "29" },
+            { cx: -116, cy: -207, label: "34" },
+            { cx: -31,  cy: -292, label: "37" },
+            { cx: -61,  cy: -344, label: "41" },
+            { cx: 84,   cy: -383, label: "43" },
+            { cx: 170,  cy: -148, label: "46" },
+            { cx: -3,   cy: -48,  label: "49" },
+            { cx: -35,  cy: 20,   label: "52" },
+            { cx: -54,  cy: 93,   label: "53" },
+            { cx: -154, cy: 93,   label: "58" },
+            { cx: -135, cy: 5,    label: "62" },
+            { cx: -98,  cy: -72,  label: "63" },
+            { cx: -45,  cy: -139, label: "64" },
+            { cx: 26,   cy: -195, label: "61" },
+            { cx: 450,  cy: -97,  label: "54" },
+            { cx: 397,  cy: -139, label: "55" },
+            { cx: 439,  cy: -230, label: "59" },
+            { cx: 510,  cy: -177, label: "65" },
+            { cx: 564,  cy: -112, label: "66" },
+            { cx: 601,  cy: -37,  label: "67" },
+            { cx: 621,  cy: 50,   label: "68" },
             { cx: 472,  cy: -333, label: "17" },
             { cx: 451,  cy: -277, label: "20" },
             { cx: 538,  cy: -227, label: "23" },
             { cx: 577,  cy: -273, label: "26" },
+            { cx: 673,  cy: -195, label: "30" },
+            { cx: 752,  cy: -98,  label: "31" },
+            { cx: 700,  cy: -68,  label: "35" },
+            { cx: 721,  cy: 50,   label: "38" },
+            { cx: 781,  cy: 50,   label: "40" },
+            { cx: 755,  cy: 198,  label: "44" },
+            { cx: 509,  cy: 155,  label: "47" },
+            { cx: 492,  cy: -44,  label: "50" },
+            { cx: -11,  cy: 561,  label: "39" },
+            { cx: -41,  cy: 613,  label: "42" },
+            { cx: -171, cy: 538,  label: "45" },
+            { cx: 6,    cy: 361,  label: "48" },
+            { cx: 249,  cy: 450,  label: "51" },
+            { cx: 320,  cy: 432,  label: "56" },
+            { cx: 385,  cy: 400,  label: "57" },
+            { cx: 449,  cy: 477,  label: "60" },
+            { cx: 349,  cy: 511,  label: "69" },
+            { cx: 249,  cy: 522,  label: "70" },
+            { cx: 149,  cy: 511,  label: "71" },
+            { cx: 49,   cy: 477,  label: "72" },
             { cx: 486,  cy: 531,  label: "21" },
             { cx: 399,  cy: 581,  label: "24" },
             { cx: 409,  cy: 640,  label: "27" },
+            { cx: 250,  cy: 660,  label: "32" },
+            { cx: 91,   cy: 640,  label: "33" },
+            { cx: 107,  cy: 582,  label: "36" },
             { cx: 525,  cy: 577,  label: "18" },
             { cx: -59,  cy: 172,  label: "10" },
             { cx: -157, cy: 190,  label: "11" },
@@ -699,6 +805,7 @@ export default function PactspiritsPage() {
               </g>
             );
           })}
+          </g>
         </svg>
       </div>
 
