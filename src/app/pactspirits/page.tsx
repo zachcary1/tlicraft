@@ -78,6 +78,93 @@ interface PactSpirit {
 
 interface SelectedSlot { category: Category; index: number }
 
+// ─── Undetermined fate ────────────────────────────────────────────────────────
+
+type FateNodeType = "micro" | "medium";
+type FateKey = "left" | "right" | "bottom";
+type FateState = { nodes: FateNodeType[] };
+
+type FateSeg =
+  | { type: "path"; d: string }
+  | { type: "line"; x1: number; y1: number; x2: number; y2: number };
+
+const FATE_DEFS: Record<FateKey, {
+  nodeCx: number; nodeCy: number; nodeLabel: string;
+  gateway: FateSeg[];
+  positions: { cx: number; cy: number }[];
+  segments: string[];
+}> = {
+  left: {
+    nodeCx: -35, nodeCy: 20, nodeLabel: "18",
+    gateway: [
+      { type: "path", d: "M -35 20 Q -48 55 -54 93" },
+      { type: "line", x1: -54, y1: 93, x2: -154, y2: 93 },
+    ],
+    positions: [
+      { cx: -154, cy: 93 },
+      { cx: -135, cy: 5 },
+      { cx: -98,  cy: -72 },
+      { cx: -45,  cy: -139 },
+      { cx: 26,   cy: -195 },
+    ],
+    segments: [
+      "M -154 93 Q -148.5 46.5 -134.5 5.25",
+      "M -134.5 5.25 Q -120.5 -36 -98 -72",
+      "M -98 -72 Q -75.5 -108 -44.5 -138.75",
+      "M -44.5 -138.75 Q -13.5 -169.5 26 -195",
+    ],
+  },
+  right: {
+    nodeCx: 450, nodeCy: -97, nodeLabel: "42",
+    gateway: [
+      { type: "path", d: "M 450 -97 Q 426 -120.5 397 -139" },
+      { type: "line", x1: 397, y1: -139, x2: 439, y2: -230 },
+    ],
+    positions: [
+      { cx: 439, cy: -230 },
+      { cx: 510, cy: -177 },
+      { cx: 564, cy: -112 },
+      { cx: 601, cy: -37 },
+      { cx: 621, cy: 50 },
+    ],
+    segments: [
+      "M 439 -230 Q 478.5 -206 509.625 -176.5",
+      "M 509.625 -176.5 Q 540.75 -147 563.5 -112",
+      "M 563.5 -112 Q 586.25 -77 600.625 -36.5",
+      "M 600.625 -36.5 Q 615 4 621 50",
+    ],
+  },
+  bottom: {
+    nodeCx: 320, nodeCy: 432, nodeLabel: "66",
+    gateway: [
+      { type: "path", d: "M 320 432 Q 353.5 419.5 385 400" },
+      { type: "line", x1: 385, y1: 400, x2: 449, y2: 477 },
+    ],
+    positions: [
+      { cx: 449, cy: 477 },
+      { cx: 349, cy: 518 },
+      { cx: 249, cy: 532 },
+      { cx: 149, cy: 518 },
+      { cx: 49,  cy: 477 },
+    ],
+    segments: [
+      "M 449 477 Q 399 504.5 349 518",
+      "M 349 518 Q 299 531.75 249 532",
+      "M 249 532 Q 199 532 149 518",
+      "M 149 518 Q 99 504.25 49 477",
+    ],
+  },
+};
+
+function canAddFateNode(nodes: FateNodeType[], type: FateNodeType): boolean {
+  const next = [...nodes, type];
+  const med = next.filter(n => n === "medium").length;
+  const mic = next.filter(n => n === "micro").length;
+  if (med === 0) return mic <= 5;
+  if (mic === 0) return med <= 3;
+  return med + mic <= 3;
+}
+
 // ─── Rarity helpers ───────────────────────────────────────────────────────────
 
 const RARITY_COLOR: Record<string, string> = {
@@ -445,6 +532,22 @@ export default function PactspiritsPage() {
   const [panelMinimized,   setPanelMinimized]   = useState(false);
   const [headerHovered,    setHeaderHovered]    = useState(false);
   const [hoveredBattleLink, setHoveredBattleLink] = useState<number | null>(null);
+  const [fates, setFates] = useState<Record<FateKey, FateState>>({
+    left:   { nodes: [] },
+    right:  { nodes: [] },
+    bottom: { nodes: [] },
+  });
+  const [selectedFate, setSelectedFate] = useState<FateKey | null>(null);
+
+  function addFateNode(key: FateKey, type: FateNodeType) {
+    setFates(prev => ({ ...prev, [key]: { nodes: [...prev[key].nodes, type] } }));
+  }
+  function removeFateNodeLast(key: FateKey) {
+    setFates(prev => ({ ...prev, [key]: { nodes: prev[key].nodes.slice(0, -1) } }));
+  }
+  function clearFate(key: FateKey) {
+    setFates(prev => ({ ...prev, [key]: { nodes: [] } }));
+  }
 
   function handleSpiritHover(spirit: PactSpirit, x: number, y: number) { setHoveredTooltip({ spirit, x, y }); }
   function handleSpiritLeave() { setHoveredTooltip(null); }
@@ -512,7 +615,7 @@ export default function PactspiritsPage() {
   const selectionLabel = selectedSlot ? CATEGORY_LABEL[selectedSlot.category] : "—";
 
   return (
-    <div className="min-h-screen relative" style={BG_STYLE} onClick={() => setSelectedSlot(null)}>
+    <div className="min-h-screen relative" style={BG_STYLE} onClick={() => { setSelectedSlot(null); setSelectedFate(null); }}>
 
       {/* Center diagram */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -547,9 +650,6 @@ export default function PactspiritsPage() {
           <line x1={250} y1={234} x2={250} y2={374} stroke="#444444" strokeWidth={8} />
           {/* DEV: visible labeled turning point nodes */}
           {([
-            { cx: 66,  cy: 7,   label: "1" },
-            { cx: 434, cy: 7,   label: "25" },
-            { cx: 250, cy: 374, label: "49" },
           ] as { cx: number; cy: number; label: string }[]).map(({ cx, cy, label }) => (
             <g key={label}>
               <circle cx={cx} cy={cy} r={8} fill="#e85d04" stroke="#fff" strokeWidth={1.5} />
@@ -560,8 +660,6 @@ export default function PactspiritsPage() {
           <path d="M 66 7 Q 28 77 40 155" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
           {/* DEV: endpoint nodes */}
           {([
-            { cx: 40,  cy: 155, label: "2" },
-            { cx: 304, cy: -68, label: "26" },
           ] as { cx: number; cy: number; label: string }[]).map(({ cx, cy, label }) => (
             <g key={label}>
               <circle cx={cx} cy={cy} r={8} fill="#e85d04" stroke="#fff" strokeWidth={1.5} />
@@ -629,23 +727,36 @@ export default function PactspiritsPage() {
           {/* Node 47 extension: 95° direction (-0.087, -0.996), 200px, curved */}
           <path d="M 509 155 Q 530 53 492 -44" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
           {/* Node 49 extension: 250° direction (-0.342, 0.940), 150px, curved; nodes at t=0.5 and end */}
-          <path d="M -3 -48 Q -42 17 -54 93" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          <path d="M -3 -48 Q -22.5 -15.5 -35 20" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
           {/* Node 50 extension: 135° direction (-0.707, -0.707), 135px, curved; nodes at t=0.5 and end */}
-          <path d="M 492 -44 Q 455 -102 397 -139" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
-          {/* Node 53 extension: 180° direction (-1, 0), 100px straight */}
-          <line x1={-54} y1={93} x2={-154} y2={93} stroke="#444444" strokeWidth={8} strokeLinecap="square" />
-          {/* Node 55 extension: 65° direction (0.423, -0.906), 100px straight */}
-          <line x1={397} y1={-139} x2={439} y2={-230} stroke="#444444" strokeWidth={8} strokeLinecap="square" />
-          {/* Node 57 extension: 310° direction (0.643, 0.766), 100px straight */}
-          <line x1={385} y1={400} x2={449} y2={477} stroke="#444444" strokeWidth={8} strokeLinecap="square" />
-          {/* Node 59 extension: curved to (621, 50), 5 evenly spaced nodes */}
-          <path d="M 439 -230 Q 597 -134 621 50" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
-          {/* Node 60 extension: 180° direction (-1, 0), 400px, curved; 5 evenly spaced nodes */}
-          <path d="M 449 477 Q 249 587 49 477" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
-          {/* Node 58 extension: 58° direction (0.530, -0.848), 340px, curved */}
-          <path d="M -154 93 Q -132 -93 26 -195" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          <path d="M 492 -44 Q 473.5 -73 450 -97" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
           {/* Node 51 extension: 20° direction (0.940, -0.342), 145px, curved; nodes at t=0.5 and end */}
-          <path d="M 249 450 Q 322 439 385 400" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          <path d="M 249 450 Q 285.5 444.5 320 432" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Undetermined fate branches — gateway lines, segments, and nodes rendered conditionally */}
+          {(["left", "right", "bottom"] as FateKey[]).map((key) => {
+            const def = FATE_DEFS[key];
+            const { nodes } = fates[key];
+            if (nodes.length === 0) return null;
+            return (
+              <g key={key}>
+                {def.gateway.map((seg, i) =>
+                  seg.type === "path"
+                    ? <path key={i} d={seg.d} fill="none" stroke="#22c55e" strokeWidth={8} strokeLinecap="square" />
+                    : <line key={i} x1={seg.x1} y1={seg.y1} x2={seg.x2} y2={seg.y2} stroke="#22c55e" strokeWidth={8} strokeLinecap="square" />
+                )}
+                {nodes.map((type, i) => {
+                  const pos = def.positions[i];
+                  const r = type === "medium" ? 30 : 18;
+                  return (
+                    <g key={i}>
+                      {i > 0 && <path d={def.segments[i - 1]} fill="none" stroke="#22c55e" strokeWidth={8} strokeLinecap="square" />}
+                      <circle cx={pos.cx} cy={pos.cy} r={r} fill="#22c55e" stroke="#fff" strokeWidth={1.5} />
+                    </g>
+                  );
+                })}
+              </g>
+            );
+          })}
           {/* Node 48 extension: 340° direction (0.940, 0.342), 259px, curved */}
           <path d="M 6 361 Q 117 434 249 450" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
           {/* Node 29 extension: 320° direction (0.766, 0.643), 60px straight */}
@@ -663,79 +774,64 @@ export default function PactspiritsPage() {
           {/* E extension: 80° direction (0.174, -0.985), 300px straight line */}
           <line x1={304} y1={-68} x2={356} y2={-364} stroke="#444444" strokeWidth={8} strokeLinecap="square" />
           {([
-            { cx: 380,  cy: 299,  label: "50" },
-            { cx: 457,  cy: 363,  label: "51" },
-            { cx: 533,  cy: 428,  label: "52" },
-            { cx: 610,  cy: 492,  label: "53" },
-            { cx: -277, cy: 89,   label: "6" },
-            { cx: -217, cy: 89,   label: "7" },
-            { cx: -208, cy: -11,  label: "8" },
-            { cx: -267, cy: -21,  label: "9" },
-            { cx: -226, cy: -139, label: "10" },
-            { cx: -162, cy: -246, label: "11" },
-            { cx: -116, cy: -207, label: "12" },
-            { cx: -31,  cy: -292, label: "13" },
-            { cx: -61,  cy: -344, label: "14" },
-            { cx: 84,   cy: -383, label: "15" },
-            { cx: 170,  cy: -148, label: "16" },
-            { cx: -3,   cy: -48,  label: "17" },
-            { cx: -35,  cy: 20,   label: "18" },
-            { cx: -54,  cy: 93,   label: "19" },
-            { cx: -154, cy: 93,   label: "20" },
-            { cx: -135, cy: 5,    label: "21" },
-            { cx: -98,  cy: -72,  label: "22" },
-            { cx: -45,  cy: -139, label: "23" },
-            { cx: 26,   cy: -195, label: "24" },
-            { cx: 450,  cy: -97,  label: "42" },
-            { cx: 397,  cy: -139, label: "43" },
-            { cx: 439,  cy: -230, label: "44" },
-            { cx: 510,  cy: -177, label: "45" },
-            { cx: 564,  cy: -112, label: "46" },
-            { cx: 601,  cy: -37,  label: "47" },
-            { cx: 621,  cy: 50,   label: "48" },
-            { cx: 472,  cy: -333, label: "30" },
-            { cx: 451,  cy: -277, label: "31" },
-            { cx: 538,  cy: -227, label: "32" },
-            { cx: 577,  cy: -273, label: "33" },
-            { cx: 673,  cy: -195, label: "34" },
-            { cx: 752,  cy: -98,  label: "35" },
-            { cx: 700,  cy: -68,  label: "36" },
-            { cx: 721,  cy: 50,   label: "37" },
-            { cx: 781,  cy: 50,   label: "38" },
-            { cx: 755,  cy: 198,  label: "39" },
-            { cx: 509,  cy: 155,  label: "40" },
-            { cx: 492,  cy: -44,  label: "41" },
-            { cx: -11,  cy: 561,  label: "61" },
-            { cx: -41,  cy: 613,  label: "62" },
-            { cx: -171, cy: 538,  label: "63" },
-            { cx: 6,    cy: 361,  label: "64" },
-            { cx: 249,  cy: 450,  label: "65" },
-            { cx: 320,  cy: 432,  label: "66" },
-            { cx: 385,  cy: 400,  label: "67" },
-            { cx: 449,  cy: 477,  label: "68" },
-            { cx: 349,  cy: 518,  label: "69" },
-            { cx: 249,  cy: 532,  label: "70" },
-            { cx: 149,  cy: 518,  label: "71" },
-            { cx: 49,   cy: 477,  label: "72" },
-            { cx: 486,  cy: 531,  label: "55" },
-            { cx: 399,  cy: 581,  label: "56" },
-            { cx: 409,  cy: 640,  label: "57" },
-            { cx: 250,  cy: 660,  label: "58" },
-            { cx: 91,   cy: 640,  label: "59" },
-            { cx: 107,  cy: 582,  label: "60" },
-            { cx: 525,  cy: 577,  label: "54" },
-            { cx: -59,  cy: 172,  label: "3" },
-            { cx: -157, cy: 190,  label: "4" },
-            { cx: -256, cy: 207,  label: "5" },
-            { cx: 321,  cy: -167, label: "27" },
-            { cx: 339,  cy: -265, label: "28" },
-            { cx: 356,  cy: -364, label: "29" },
-          ] as { cx: number; cy: number; label: string }[]).map(({ cx, cy, label }) => (
+            { cx: 457,  cy: 363,  label: "51", size: "small" },
+            { cx: 533,  cy: 428,  label: "52", size: "small" },
+            { cx: 610,  cy: 492,  label: "53", size: "medium" },
+            { cx: -217, cy: 89,   label: "7",  size: "small" },
+            { cx: -208, cy: -11,  label: "8",  size: "small" },
+            { cx: -226, cy: -139, label: "10", size: "medium" },
+            { cx: -116, cy: -207, label: "12", size: "small" },
+            { cx: -31,  cy: -292, label: "13", size: "small" },
+            { cx: 84,   cy: -383, label: "15", size: "medium" },
+            { cx: -3,   cy: -48,  label: "17", size: "large" },
+            { cx: 451,  cy: -277, label: "31", size: "small" },
+            { cx: 538,  cy: -227, label: "32", size: "small" },
+            { cx: 673,  cy: -195, label: "34", size: "medium" },
+            { cx: 700,  cy: -68,  label: "36", size: "small" },
+            { cx: 721,  cy: 50,   label: "37", size: "small" },
+            { cx: 755,  cy: 198,  label: "39", size: "medium" },
+            { cx: 492,  cy: -44,  label: "41", size: "large" },
+            { cx: -11,  cy: 561,  label: "61", size: "small" },
+            { cx: -171, cy: 538,  label: "63", size: "medium" },
+            { cx: 249,  cy: 450,  label: "65", size: "large" },
+            { cx: 486,  cy: 531,  label: "55", size: "small" },
+            { cx: 399,  cy: 581,  label: "56", size: "small" },
+            { cx: 250,  cy: 660,  label: "58", size: "medium" },
+            { cx: 107,  cy: 582,  label: "60", size: "small" },
+            { cx: -59,  cy: 172,  label: "3",  size: "small" },
+            { cx: -157, cy: 190,  label: "4",  size: "small" },
+            { cx: -256, cy: 207,  label: "5",  size: "medium" },
+            { cx: 321,  cy: -167, label: "27", size: "small" },
+            { cx: 339,  cy: -265, label: "28", size: "small" },
+            { cx: 356,  cy: -364, label: "29", size: "medium" },
+          ] as { cx: number; cy: number; label: string; size: string; color?: string }[]).map(({ cx, cy, label, size, color }) => {
+            const r = size === "large" ? 40 : size === "medium" ? 30 : 18;
+            const fill = color ?? "#e85d04";
+            return (
             <g key={label}>
-              <circle cx={cx} cy={cy} r={8} fill="#e85d04" stroke="#fff" strokeWidth={1.5} />
-              <text x={cx + 12} y={cy + 5} fontSize={13} fontWeight="bold" fill="#e85d04" stroke="#000" strokeWidth={3} paintOrder="stroke">{label}</text>
+              <circle cx={cx} cy={cy} r={r} fill={fill} stroke="#fff" strokeWidth={1.5} />
+              <text x={cx + r + 4} y={cy + 5} fontSize={13} fontWeight="bold" fill={fill} stroke="#000" strokeWidth={3} paintOrder="stroke">{label}</text>
             </g>
-          ))}
+            );
+          })}
+          {/* Fate nodes (18, 42, 66) — always visible, clickable to configure */}
+          {(["left", "right", "bottom"] as FateKey[]).map((key) => {
+            const def = FATE_DEFS[key];
+            const isSelected = selectedFate === key;
+            const hasNodes = fates[key].nodes.length > 0;
+            return (
+              <g key={key} style={{ pointerEvents: "all", cursor: "pointer" }}
+                onClick={(e) => { e.stopPropagation(); setSelectedFate(isSelected ? null : key); }}>
+                <circle cx={def.nodeCx} cy={def.nodeCy} r={18}
+                  fill={hasNodes ? "#22c55e" : "#e85d04"}
+                  stroke={isSelected ? "#fff" : "#fff"} strokeWidth={isSelected ? 3 : 1.5} />
+                <text x={def.nodeCx + 22} y={def.nodeCy + 5} fontSize={13} fontWeight="bold"
+                  fill={hasNodes ? "#22c55e" : "#e85d04"} stroke="#000" strokeWidth={3} paintOrder="stroke">
+                  {def.nodeLabel}
+                </text>
+              </g>
+            );
+          })}
           {/* Ring centered on G */}
           <circle cx={250} cy={144} r={90} fill="none" stroke="#262626" strokeWidth={8} filter="url(#ring-shadow)" />
           <circle cx={250} cy={144} r={90} fill="none" stroke="#32364d" strokeWidth={3} />
