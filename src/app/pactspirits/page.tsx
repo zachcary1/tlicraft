@@ -19,21 +19,8 @@ const PANEL_BG  = "linear-gradient(to bottom, #1e1d1d 0%, #2b2929 10%, #2b2929 9
 const PANEL_W   = 560;
 const PANEL_GAP = 50;
 
-const slot = 100;
-const gap  = 8;
-const step = slot + gap;
-const pad  = 12;
-const rows = 6;
-const cols = 6;
-const svgW = pad + cols * slot + (cols - 1) * gap + pad;
-const svgH = pad + rows * slot + (rows - 1) * gap + pad;
-
-const REMOVED = new Set([
-  "0,0","0,1","0,4","0,5",
-  "1,0",            "1,5",
-  "4,0",            "4,5",
-  "5,0","5,1","5,4","5,5",
-]);
+const svgW = 664;
+const svgH = 664;
 
 // ─── Tag filters ──────────────────────────────────────────────────────────────
 
@@ -227,10 +214,11 @@ function PactSpiritTooltipCard({ spirit, cx: cursorX, cy: cursorY }: { spirit: P
 // ─── Left-panel slot card ─────────────────────────────────────────────────────
 
 function PactSpiritSlot({
-  spirit, isPicking, onClick, onHover, onLeave,
+  spirit, isPicking, minimized, onClick, onHover, onLeave,
 }: {
   spirit:    PactSpirit | null;
   isPicking: boolean;
+  minimized: boolean;
   onClick:   () => void;
   onHover?:  (spirit: PactSpirit, x: number, y: number) => void;
   onLeave?:  () => void;
@@ -243,7 +231,7 @@ function PactSpiritSlot({
 
   return (
     <div
-      onClick={onClick}
+      onClick={(e) => { e.stopPropagation(); onClick(); }}
       onMouseEnter={(e) => { setHovered(true); if (spirit) onHover?.(spirit, e.clientX, e.clientY); }}
       onMouseMove={(e)  => { if (spirit) onHover?.(spirit, e.clientX, e.clientY); }}
       onMouseLeave={() => { setHovered(false); onLeave?.(); }}
@@ -251,16 +239,16 @@ function PactSpiritSlot({
     >
       {/* Card image */}
       <div style={{
-        width: "100%", height: 240,
+        width: "100%", height: minimized ? 126 : 240,
         position: "relative", overflow: "hidden",
-        borderRadius: "0 24px 0 24px",
-        border: "4px solid #686867",
+        borderRadius: minimized ? "0 13px 0 13px" : "0 24px 0 24px",
+        border: minimized ? "2px solid #686867" : "4px solid #686867",
         outline: isPicking ? "4px solid #fbdb58" : "none",
         outlineOffset: "1px",
         background: spirit
           ? `linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, transparent 70%), ${RARITY_BG[spirit.rarity] ?? "#161616"}`
           : "#464646",
-        filter: hovered ? "brightness(0.75)" : "none",
+        filter: !minimized && hovered ? "brightness(0.75)" : "none",
         transition: "filter 0.15s",
       }}>
         {spirit ? (
@@ -279,13 +267,13 @@ function PactSpiritSlot({
             )}
             {/* Rarity glow */}
             <div style={{
-              position: "absolute", bottom: 10, left: 0, right: 0, height: 60, zIndex: 1,
+              position: "absolute", bottom: minimized ? 5 : 10, left: 0, right: 0, height: minimized ? 32 : 60, zIndex: 1,
               background: `linear-gradient(to top, ${RARITY_COLOR[spirit.rarity] ?? "#686867"}aa 0%, ${RARITY_COLOR[spirit.rarity] ?? "#686867"}77 30%, ${RARITY_COLOR[spirit.rarity] ?? "#686867"}33 65%, transparent 100%)`,
               pointerEvents: "none",
             }} />
             {/* Rarity bar */}
             <div style={{
-              position: "absolute", bottom: 0, left: 0, right: 0, height: 10,
+              position: "absolute", bottom: 0, left: 0, right: 0, height: minimized ? 5 : 10,
               background: `linear-gradient(to right, ${RARITY_BAR_EDGE[spirit.rarity] ?? "#686867"}, ${RARITY_COLOR[spirit.rarity] ?? "#686867"} 40%, ${RARITY_COLOR[spirit.rarity] ?? "#686867"} 60%, ${RARITY_BAR_EDGE[spirit.rarity] ?? "#686867"})`,
               pointerEvents: "none",
             }} />
@@ -300,18 +288,20 @@ function PactSpiritSlot({
         )}
       </div>
 
-      {/* Name below card — always reserves space to prevent layout shift */}
-      <div style={{ height: 34, display: "flex", alignItems: "flex-start", justifyContent: "center", paddingTop: 2 }}>
-        {spirit && (
-          <div style={{
-            color: "#e4e4e7", fontSize: 14, fontWeight: 600, textAlign: "center", lineHeight: 1.3,
-            overflow: "hidden",
-            display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical",
-          }}>
-            {spirit.name}
-          </div>
-        )}
-      </div>
+      {/* Name below card — hidden when minimized */}
+      {!minimized && (
+        <div style={{ height: 22, display: "flex", alignItems: "flex-start", justifyContent: "center", paddingTop: 2 }}>
+          {spirit && (
+            <div style={{
+              color: "#e4e4e7", fontSize: 14, fontWeight: 600, textAlign: "center", lineHeight: 1.3,
+              overflow: "hidden",
+              display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical",
+            }}>
+              {spirit.name}
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }
@@ -429,7 +419,6 @@ const CATEGORY_LABEL: Record<Category, string> = {
 };
 
 export default function PactspiritsPage() {
-  const [gridHovered,    setGridHovered]    = useState<string | null>(null);
   const [selectedSlot,   setSelectedSlot]   = useState<SelectedSlot | null>(null);
   const [slotSelections, setSlotSelections] = useState<Record<string, string>>({});
   const [battleSpirits,  setBattleSpirits]  = useState<PactSpirit[]>([]);
@@ -438,6 +427,7 @@ export default function PactspiritsPage() {
   const [activeTagFilters, setActiveTagFilters] = useState<Set<string>>(new Set());
   const [hoveredTag,       setHoveredTag]       = useState<string | null>(null);
   const [hoveredTooltip,   setHoveredTooltip]   = useState<{ spirit: PactSpirit; x: number; y: number } | null>(null);
+  const [panelMinimized,   setPanelMinimized]   = useState(false);
 
   function handleSpiritHover(spirit: PactSpirit, x: number, y: number) { setHoveredTooltip({ spirit, x, y }); }
   function handleSpiritLeave() { setHoveredTooltip(null); }
@@ -507,55 +497,63 @@ export default function PactspiritsPage() {
   return (
     <div className="min-h-screen relative" style={BG_STYLE} onClick={() => setSelectedSlot(null)}>
 
-      {/* Center diagram — decorative, no selection */}
+      {/* Center diagram */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <svg width={svgW} height={svgH}>
-          {Array.from({ length: rows }, (_, r) =>
-            Array.from({ length: cols }, (_, c) => {
-              const key = `${r},${c}`;
-              if (REMOVED.has(key)) return null;
-              const x = pad + c * step;
-              const y = pad + r * step;
-              return (
-                <rect
-                  key={key}
-                  x={x} y={y} width={slot} height={slot} rx="6"
-                  fill={gridHovered === key ? "#3d3c3c" : "#2b2929"}
-                  stroke={gridHovered === key ? "#535357" : "#3a3a3a"}
-                  strokeWidth="2"
-                  style={{ transition: "fill 0.1s, stroke 0.1s" }}
-                />
-              );
-            })
-          )}
+        <svg width={500} height={310}>
+          {/* Original: A(250,15) B(60,240) C(440,240), G(250,144) — overall height 225px, bottom ~90px */}
+          {/* Each sub-triangle is shrunk 6% toward its own centroid to create cut gaps */}
+          {/* Top-left: A, B, G */}
+          <polygon points="246,22 68,234 246,143" fill="#000000" />
+          {/* Bottom: B, C, G */}
+          <polygon points="71,238 429,238 250,148" fill="#000000" />
+          {/* Top-right: A, C, G */}
+          <polygon points="254,22 432,234 254,143" fill="#000000" />
         </svg>
       </div>
 
-      {/* Left panel */}
+      {/* Left panel — top-left, height auto */}
       <div
         className="absolute flex flex-col"
-        onClick={(e) => e.stopPropagation()}
-        style={{ right: `calc(50% + ${svgW / 2}px + ${PANEL_GAP}px)`, top: 0, width: PANEL_W, height: "100vh", background: PANEL_BG }}
+        onClick={(e) => { e.stopPropagation(); if (panelMinimized) setPanelMinimized(false); }}
+        style={{ top: 20, left: 200, width: panelMinimized ? 320 : PANEL_W, background: PANEL_BG, borderRadius: "0 16px 0 16px", boxShadow: "0 8px 32px rgba(0,0,0,0.7)", transition: "width 0.2s ease", cursor: panelMinimized ? "pointer" : "default" }}
       >
-        {/* Title */}
-        <div className="flex items-center px-6" style={{ height: "6vh", borderBottom: "2px solid #333333", flexShrink: 0 }}>
+        {/* Title + minimize button — entire header is the toggle hitbox */}
+        <div
+          className="flex items-center px-6"
+          onClick={(e) => { e.stopPropagation(); setPanelMinimized((v) => !v); }}
+          style={{ height: 46, borderBottom: "2px solid #333333", flexShrink: 0, position: "relative", cursor: "pointer" }}
+        >
           <span className="text-xl font-semibold tracking-wide" style={{ color: "#e4e4e7" }}>Pactspirits</span>
+          <div style={{ position: "absolute", right: 12, top: "50%", transform: "translateY(-50%)", color: "#71717a" }}>
+            {panelMinimized ? (
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M2 9l5-5 5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            ) : (
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M2 5l5 5 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            )}
+          </div>
         </div>
 
-        {/* Centered slot rows */}
-        <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "stretch", justifyContent: "center", padding: "0 20px", gap: 28 }}>
+        {/* Slot rows */}
+        <div style={{ display: "flex", flexDirection: "column", padding: "8px 20px 6px", gap: 6 }}>
 
           {/* Battle row */}
           <div>
-            <p style={{ color: "#a1a1aa", fontSize: 20, fontWeight: 600, marginBottom: 10 }}>
-              Battle Pactspirit
-            </p>
+            {!panelMinimized && (
+              <p style={{ color: "#a1a1aa", fontSize: 20, fontWeight: 600, marginBottom: 4 }}>
+                Battle Pactspirit
+              </p>
+            )}
             <div style={{ display: "flex", gap: 8 }}>
               {[0, 1, 2].map((i) => (
                 <PactSpiritSlot
                   key={i}
                   spirit={getAssignedSpirit("battle", i)}
                   isPicking={selectedSlot?.category === "battle" && selectedSlot?.index === i}
+                  minimized={panelMinimized}
                   onClick={() => handleSlotClick("battle", i)}
                   onHover={handleSpiritHover}
                   onLeave={handleSpiritLeave}
@@ -564,172 +562,170 @@ export default function PactspiritsPage() {
             </div>
           </div>
 
-          {/* Drop row */}
-          <div>
-            <p style={{ color: "#a1a1aa", fontSize: 20, fontWeight: 600, marginBottom: 10 }}>
-              Drop Pactspirit
-            </p>
-            <div style={{ display: "flex", gap: 8 }}>
-              {[0, 1, 2].map((i) => (
-                <PactSpiritSlot
-                  key={i}
-                  spirit={getAssignedSpirit("drop", i)}
-                  isPicking={selectedSlot?.category === "drop" && selectedSlot?.index === i}
-                  onClick={() => handleSlotClick("drop", i)}
-                  onHover={handleSpiritHover}
-                  onLeave={handleSpiritLeave}
-                />
-              ))}
+          {/* Drop row — hidden when minimized */}
+          {!panelMinimized && (
+            <div style={{ marginTop: 12 }}>
+              <p style={{ color: "#a1a1aa", fontSize: 20, fontWeight: 600, marginBottom: 4 }}>
+                Drop Pactspirit
+              </p>
+              <div style={{ display: "flex", gap: 8 }}>
+                {[0, 1, 2].map((i) => (
+                  <PactSpiritSlot
+                    key={i}
+                    spirit={getAssignedSpirit("drop", i)}
+                    isPicking={selectedSlot?.category === "drop" && selectedSlot?.index === i}
+                    minimized={false}
+                    onClick={() => handleSlotClick("drop", i)}
+                    onHover={handleSpiritHover}
+                    onLeave={handleSpiritLeave}
+                  />
+                ))}
+              </div>
             </div>
+          )}
+
+        </div>
+      </div>
+
+      {/* Right panel — only visible when a slot is selected */}
+      {selectedSlot && (
+        <div
+          className="absolute flex flex-col"
+          onClick={(e) => e.stopPropagation()}
+          style={{ left: `calc(50% + ${svgW / 2}px + ${PANEL_GAP}px)`, top: 0, width: PANEL_W, height: "100vh", background: PANEL_BG, overflow: "visible" }}
+        >
+          {/* Tag filter tabs — attached to right edge of panel, sticking outward */}
+          {(() => {
+            const isBattle = selectedSlot.category === "battle";
+            const tagOrder = isBattle ? TAG_ORDER : DROP_TAG_ORDER;
+            const tagColors = isBattle ? TAG_COLORS : DROP_TAG_COLORS;
+            return (
+              <div
+                onClick={(e) => e.stopPropagation()}
+                style={{ position: "absolute", left: "100%", top: 140, display: "flex", flexDirection: "column", gap: 5, zIndex: 10, padding: "24px 28px 24px 6px" }}
+              >
+                {tagOrder.map((tag) => {
+                  const color = tagColors[tag];
+                  const active = activeTagFilters.has(tag);
+                  const hovered = hoveredTag === tag;
+                  return (
+                    <button
+                      key={tag}
+                      onClick={(e) => { e.stopPropagation(); toggleTagFilter(tag); }}
+                      onMouseEnter={() => setHoveredTag(tag)}
+                      onMouseLeave={() => setHoveredTag(null)}
+                      style={{
+                        width: 160,
+                        height: 42,
+                        padding: "0 10px 0 6px",
+                        background: (active || hovered) ? color : "#464646",
+                        border: "3px solid #686867",
+                        borderRadius: "0 14px 0 14px",
+                        color: "#ffffff",
+                        textShadow: "-1px -1px 0 rgba(0,0,0,0.7), 1px -1px 0 rgba(0,0,0,0.7), -1px 1px 0 rgba(0,0,0,0.7), 1px 1px 0 rgba(0,0,0,0.7)",
+                        fontSize: 13,
+                        fontWeight: 700,
+                        letterSpacing: "0.05em",
+                        cursor: "pointer",
+                        textAlign: "left",
+                        transition: "background 0.12s",
+                        whiteSpace: "nowrap",
+                        outline: active ? "3px solid #fbdb58" : "none",
+                        outlineOffset: "0px",
+                        boxShadow: "3px 3px 10px rgba(0,0,0,0.55)",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: !isBattle && tag !== "Others" ? 6 : 0,
+                      }}
+                    >
+                      {!isBattle && tag !== "Others" && (
+                        <img
+                          src={`/icons/pactspirits/tags/${tag}.webp`}
+                          alt=""
+                          style={{ width: 26, height: 26, objectFit: "contain", flexShrink: 0, filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.6))" }}
+                        />
+                      )}
+                      {tag}
+                    </button>
+                  );
+                })}
+              </div>
+            );
+          })()}
+
+          {/* Header */}
+          <div className="px-4 pt-5 pb-3" style={{ borderBottom: "2px solid #333333", flexShrink: 0 }}>
+            <p style={{ color: "#52525b", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 3 }}>
+              Selecting
+            </p>
+            <p style={{ color: "#e4e4e7", fontSize: 15, fontWeight: 600 }}>
+              {selectionLabel}
+            </p>
           </div>
 
-        </div>
-
-        <div style={{ borderTop: "2px solid #333333", flexShrink: 0, padding: "12px 24px", minHeight: 80 }} />
-      </div>
-
-      {/* Right panel */}
-      <div
-        className="absolute flex flex-col"
-        onClick={(e) => e.stopPropagation()}
-        style={{ left: `calc(50% + ${svgW / 2}px + ${PANEL_GAP}px)`, top: 0, width: PANEL_W, height: "100vh", background: PANEL_BG, overflow: "visible" }}
-      >
-        {/* Tag filter tabs — attached to right edge of panel, sticking outward */}
-        {selectedSlot && (() => {
-          const isBattle = selectedSlot.category === "battle";
-          const tagOrder = isBattle ? TAG_ORDER : DROP_TAG_ORDER;
-          const tagColors = isBattle ? TAG_COLORS : DROP_TAG_COLORS;
-          return (
-            <div
-              onClick={(e) => e.stopPropagation()}
-              style={{ position: "absolute", left: "100%", top: 140, display: "flex", flexDirection: "column", gap: 5, zIndex: 10, padding: "24px 28px 24px 6px" }}
+          {/* Search + clear */}
+          <div style={{ display: "flex", gap: 8, padding: "10px 16px", flexShrink: 0 }}>
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value.replace(/[^a-zA-Z '.0-9-]/g, ""))}
+              placeholder="Search…"
+              style={{
+                flex: 1, background: "#111111", border: "1px solid #2a2a2a",
+                borderRadius: "0 8px 0 8px", color: "#e4e4e7", fontSize: 12,
+                padding: "6px 10px", outline: "none",
+              }}
+            />
+            <button
+              onClick={hasSelection ? clearSelection : undefined}
+              disabled={!hasSelection}
+              style={{
+                padding: "5px 12px", borderRadius: "0 8px 0 8px",
+                background: hasSelection ? "#c0392b" : "#1e1e1e",
+                border: "none",
+                color: hasSelection ? "#ffffff" : "#555555",
+                fontSize: 11, fontWeight: 600,
+                cursor: hasSelection ? "pointer" : "not-allowed",
+                transition: "background 0.15s", flexShrink: 0,
+              }}
             >
-              {tagOrder.map((tag) => {
-                const color = tagColors[tag];
-                const active = activeTagFilters.has(tag);
-                const hovered = hoveredTag === tag;
-                return (
-                  <button
-                    key={tag}
-                    onClick={(e) => { e.stopPropagation(); toggleTagFilter(tag); }}
-                    onMouseEnter={() => setHoveredTag(tag)}
-                    onMouseLeave={() => setHoveredTag(null)}
-                    style={{
-                      width: 160,
-                      height: 42,
-                      padding: "0 10px 0 6px",
-                      background: (active || hovered) ? color : "#464646",
-                      border: "3px solid #686867",
-                      borderRadius: "0 14px 0 14px",
-                      color: "#ffffff",
-                      textShadow: "-1px -1px 0 rgba(0,0,0,0.7), 1px -1px 0 rgba(0,0,0,0.7), -1px 1px 0 rgba(0,0,0,0.7), 1px 1px 0 rgba(0,0,0,0.7)",
-                      fontSize: 13,
-                      fontWeight: 700,
-                      letterSpacing: "0.05em",
-                      cursor: "pointer",
-                      textAlign: "left",
-                      transition: "background 0.12s",
-                      whiteSpace: "nowrap",
-                      outline: active ? "3px solid #fbdb58" : "none",
-                      outlineOffset: "0px",
-                      boxShadow: "3px 3px 10px rgba(0,0,0,0.55)",
-                      display: "flex",
-                      alignItems: "center",
-                      gap: !isBattle && tag !== "Others" ? 6 : 0,
-                    }}
-                  >
-                    {!isBattle && tag !== "Others" && (
-                      <img
-                        src={`/icons/pactspirits/tags/${tag}.webp`}
-                        alt=""
-                        style={{ width: 26, height: 26, objectFit: "contain", flexShrink: 0, filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.6))" }}
-                      />
-                    )}
-                    {tag}
-                  </button>
-                );
-              })}
-            </div>
-          );
-        })()}
-        {/* Header */}
-        <div className="px-4 pt-5 pb-3" style={{ borderBottom: "2px solid #333333", flexShrink: 0 }}>
-          <p style={{ color: "#52525b", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 3 }}>
-            Selecting
-          </p>
-          <p style={{ color: "#e4e4e7", fontSize: 15, fontWeight: 600 }}>
-            {selectionLabel}
-          </p>
-        </div>
+              ✕ Clear Selection
+            </button>
+          </div>
 
-        {selectedSlot && (
-          <>
-            {/* Search + clear */}
-            <div style={{ display: "flex", gap: 8, padding: "10px 16px", flexShrink: 0 }}>
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value.replace(/[^a-zA-Z '.0-9-]/g, ""))}
-                placeholder="Search…"
-                style={{
-                  flex: 1, background: "#111111", border: "1px solid #2a2a2a",
-                  borderRadius: "0 8px 0 8px", color: "#e4e4e7", fontSize: 12,
-                  padding: "6px 10px", outline: "none",
-                }}
-              />
-              <button
-                onClick={hasSelection ? clearSelection : undefined}
-                disabled={!hasSelection}
-                style={{
-                  padding: "5px 12px", borderRadius: "0 8px 0 8px",
-                  background: hasSelection ? "#c0392b" : "#1e1e1e",
-                  border: "none",
-                  color: hasSelection ? "#ffffff" : "#555555",
-                  fontSize: 11, fontWeight: 600,
-                  cursor: hasSelection ? "pointer" : "not-allowed",
-                  transition: "background 0.15s", flexShrink: 0,
-                }}
-              >
-                ✕ Clear Selection
-              </button>
-            </div>
-
-            {/* Scrollable card grid, grouped by rarity */}
-            <div className="overflow-y-auto" style={{ flex: 1, padding: "0 16px 16px" }}>
-              {["Legendary", "Rare", "Magic"].map((rarity) => {
-                const group = filtered.filter((s) => s.rarity === rarity);
-                if (!group.length) return null;
-                return (
-                  <div key={rarity} style={{ marginBottom: 12 }}>
-                    <div style={{
-                      color: RARITY_COLOR[rarity],
-                      fontSize: 9, letterSpacing: "0.1em", textTransform: "uppercase",
-                      marginBottom: 6, paddingTop: 6, borderTop: "1px solid #2a2a2a",
-                    }}>
-                      {rarity}
-                    </div>
-                    <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 8 }}>
-                      {group.map((spirit) => (
-                        <PactSpiritCard
-                          key={spirit.id}
-                          spirit={spirit}
-                          selected={currentSelection === spirit.name}
-                          disabled={takenNames.has(spirit.name)}
-                          onClick={() => handleCardClick(spirit.name)}
-                          onHover={handleSpiritHover}
-                          onLeave={handleSpiritLeave}
-                        />
-                      ))}
-                    </div>
+          {/* Scrollable card grid, grouped by rarity */}
+          <div className="overflow-y-auto" style={{ flex: 1, padding: "0 16px 16px" }}>
+            {["Legendary", "Rare", "Magic"].map((rarity) => {
+              const group = filtered.filter((s) => s.rarity === rarity);
+              if (!group.length) return null;
+              return (
+                <div key={rarity} style={{ marginBottom: 12 }}>
+                  <div style={{
+                    color: RARITY_COLOR[rarity],
+                    fontSize: 9, letterSpacing: "0.1em", textTransform: "uppercase",
+                    marginBottom: 6, paddingTop: 6, borderTop: "1px solid #2a2a2a",
+                  }}>
+                    {rarity}
                   </div>
-                );
-              })}
-            </div>
-          </>
-        )}
-
-        <div style={{ borderTop: "2px solid #333333", flexShrink: 0, padding: "12px 24px", minHeight: 80, marginTop: "auto" }} />
-      </div>
+                  <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 8 }}>
+                    {group.map((spirit) => (
+                      <PactSpiritCard
+                        key={spirit.id}
+                        spirit={spirit}
+                        selected={currentSelection === spirit.name}
+                        disabled={takenNames.has(spirit.name)}
+                        onClick={() => handleCardClick(spirit.name)}
+                        onHover={handleSpiritHover}
+                        onLeave={handleSpiritLeave}
+                      />
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
 
       {hoveredTooltip && (
         <PactSpiritTooltipCard spirit={hoveredTooltip.spirit} cx={hoveredTooltip.x} cy={hoveredTooltip.y} />
