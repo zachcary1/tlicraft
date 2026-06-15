@@ -98,6 +98,18 @@ const RARITY_BAR_EDGE: Record<string, string> = {
   Magic:     "#4294ef",
 };
 
+function wrapNodeName(name: string): [string, string | null] {
+  if (name.length <= 15) return [name, null];
+  const words = name.split(" ");
+  if (words.length === 1) return [name, null];
+  let best = 1, bestDiff = Infinity;
+  for (let i = 1; i < words.length; i++) {
+    const diff = Math.abs(words.slice(0, i).join(" ").length - words.slice(i).join(" ").length);
+    if (diff < bestDiff) { bestDiff = diff; best = i; }
+  }
+  return [words.slice(0, best).join(" "), words.slice(best).join(" ")];
+}
+
 function getIconPath(spirit: PactSpirit): string {
   return `/icons/pactspirits/${spirit.type === "Drop" ? "drop" : "battle"}/${spirit.name}.webp`;
 }
@@ -214,14 +226,16 @@ function PactSpiritTooltipCard({ spirit, cx: cursorX, cy: cursorY }: { spirit: P
 // ─── Left-panel slot card ─────────────────────────────────────────────────────
 
 function PactSpiritSlot({
-  spirit, isPicking, minimized, onClick, onHover, onLeave,
+  spirit, isPicking, minimized, isLinked, onClick, onHover, onLeave, onSlotEnter,
 }: {
-  spirit:    PactSpirit | null;
-  isPicking: boolean;
-  minimized: boolean;
-  onClick:   () => void;
-  onHover?:  (spirit: PactSpirit, x: number, y: number) => void;
-  onLeave?:  () => void;
+  spirit:       PactSpirit | null;
+  isPicking:    boolean;
+  minimized:    boolean;
+  isLinked?:    boolean;
+  onClick:      () => void;
+  onHover?:     (spirit: PactSpirit, x: number, y: number) => void;
+  onLeave?:     () => void;
+  onSlotEnter?: () => void;
 }) {
   const [imgError, setImgError] = useState(false);
   const [hovered,  setHovered]  = useState(false);
@@ -232,7 +246,7 @@ function PactSpiritSlot({
   return (
     <div
       onClick={(e) => { e.stopPropagation(); onClick(); }}
-      onMouseEnter={(e) => { setHovered(true); if (spirit) onHover?.(spirit, e.clientX, e.clientY); }}
+      onMouseEnter={(e) => { setHovered(true); onSlotEnter?.(); if (spirit) onHover?.(spirit, e.clientX, e.clientY); }}
       onMouseMove={(e)  => { if (spirit) onHover?.(spirit, e.clientX, e.clientY); }}
       onMouseLeave={() => { setHovered(false); onLeave?.(); }}
       style={{ flex: 1, minWidth: 0, display: "flex", flexDirection: "column", alignItems: "center", gap: 6, cursor: "pointer" }}
@@ -243,12 +257,13 @@ function PactSpiritSlot({
         position: "relative", overflow: "hidden",
         borderRadius: minimized ? "0 13px 0 13px" : "0 24px 0 24px",
         border: minimized ? "2px solid #686867" : "4px solid #686867",
-        outline: isPicking ? "4px solid #fbdb58" : "none",
+        outline: isPicking ? "4px solid #fbdb58" : isLinked ? "3px solid rgba(120,120,200,0.55)" : "none",
+        boxShadow: isLinked && !isPicking ? "0 0 18px rgba(100,100,200,0.25)" : "none",
         outlineOffset: "1px",
         background: spirit
           ? `linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, transparent 70%), ${RARITY_BG[spirit.rarity] ?? "#161616"}`
           : "#464646",
-        filter: !minimized && hovered ? "brightness(0.75)" : "none",
+        filter: hovered ? "brightness(0.75)" : "none",
         transition: "filter 0.15s",
       }}>
         {spirit ? (
@@ -428,6 +443,8 @@ export default function PactspiritsPage() {
   const [hoveredTag,       setHoveredTag]       = useState<string | null>(null);
   const [hoveredTooltip,   setHoveredTooltip]   = useState<{ spirit: PactSpirit; x: number; y: number } | null>(null);
   const [panelMinimized,   setPanelMinimized]   = useState(false);
+  const [headerHovered,    setHeaderHovered]    = useState(false);
+  const [hoveredBattleLink, setHoveredBattleLink] = useState<number | null>(null);
 
   function handleSpiritHover(spirit: PactSpirit, x: number, y: number) { setHoveredTooltip({ spirit, x, y }); }
   function handleSpiritLeave() { setHoveredTooltip(null); }
@@ -499,7 +516,19 @@ export default function PactspiritsPage() {
 
       {/* Center diagram */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <svg width={500} height={310}>
+        <svg width={500} height={390} overflow="visible">
+          <defs>
+            <filter id="ring-shadow" x="-30%" y="-30%" width="160%" height="160%">
+              <feDropShadow dx="0" dy="0" stdDeviation="8" floodColor="#000000" floodOpacity="0.9" />
+            </filter>
+            <filter id="node-glow" x="-60%" y="-60%" width="220%" height="220%">
+              <feGaussianBlur stdDeviation="6" result="blur" />
+              <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+            </filter>
+            <clipPath id="node-clip-0"><circle cx={173} cy={97}  r={35} /></clipPath>
+            <clipPath id="node-clip-1"><circle cx={327} cy={97}  r={35} /></clipPath>
+            <clipPath id="node-clip-2"><circle cx={250} cy={234} r={35} /></clipPath>
+          </defs>
           {/* Original: A(250,15) B(60,240) C(440,240), G(250,144) — overall height 225px, bottom ~90px */}
           {/* Each sub-triangle is shrunk 6% toward its own centroid to create cut gaps */}
           {/* Top-left: A, B, G */}
@@ -508,23 +537,187 @@ export default function PactspiritsPage() {
           <polygon points="71,238 429,238 250,148" fill="#000000" />
           {/* Top-right: A, C, G */}
           <polygon points="254,22 432,234 254,143" fill="#000000" />
+          {/* Outward lines from each node, perpendicular to their triangle edge */}
+          {/* Node 0 → left edge normal (-0.764, -0.645), 140px */}
+          <line x1={173} y1={97}  x2={66}  y2={7}   stroke="#444444" strokeWidth={8} />
+          {/* Node 1 → right edge normal (0.764, -0.645), 140px */}
+          <line x1={327} y1={97}  x2={434} y2={7}   stroke="#444444" strokeWidth={8} />
+          {/* Node 2 → bottom edge normal (0, 1), 140px */}
+          <line x1={250} y1={234} x2={250} y2={374} stroke="#444444" strokeWidth={8} />
+          {/* DEV: visible labeled turning point nodes */}
+          {([
+            { cx: 66,  cy: 7,   label: "1" },
+            { cx: 434, cy: 7,   label: "2" },
+            { cx: 250, cy: 374, label: "3" },
+          ] as { cx: number; cy: number; label: string }[]).map(({ cx, cy, label }) => (
+            <g key={label}>
+              <circle cx={cx} cy={cy} r={8} fill="#e85d04" stroke="#fff" strokeWidth={1.5} />
+              <text x={cx + 12} y={cy + 5} fontSize={13} fontWeight="bold" fill="#e85d04" stroke="#000" strokeWidth={3} paintOrder="stroke">{label}</text>
+            </g>
+          ))}
+          {/* TP0 extension: 260° direction (-0.174, 0.985), ~150px, slight outward curve */}
+          <path d="M 66 7 Q 28 77 40 155" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* DEV: endpoint nodes */}
+          {([
+            { cx: 40,  cy: 155, label: "4" },
+            { cx: 304, cy: -68, label: "5" },
+          ] as { cx: number; cy: number; label: string }[]).map(({ cx, cy, label }) => (
+            <g key={label}>
+              <circle cx={cx} cy={cy} r={8} fill="#e85d04" stroke="#fff" strokeWidth={1.5} />
+              <text x={cx + 12} y={cy + 5} fontSize={13} fontWeight="bold" fill="#e85d04" stroke="#000" strokeWidth={3} paintOrder="stroke">{label}</text>
+            </g>
+          ))}
+          {/* TP1 extension: 150° direction (-0.866, -0.5), ~150px, slight outward curve */}
+          <path d="M 434 7 Q 382 -52 304 -68" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* TP2 extension: 30° direction (0.866, -0.5), ~150px, slight outward curve */}
+          <path d="M 250 374 Q 328 358 380 299" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* F extension: 320° direction (0.766, 0.643), 300px straight line */}
+          <line x1={380} y1={299} x2={610} y2={492} stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 18 extension: 130° direction (-0.643, -0.766), 60px straight */}
+          <line x1={525} y1={577} x2={486} y2={531} stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 17 extension: 250° direction (-0.342, 0.940), 60px straight */}
+          <line x1={472} y1={-333} x2={451} y2={-277} stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 9 extension: 225° direction (-0.707, 0.707), 120px, very slight curve */}
+          <path d="M 610 492 Q 575 542 525 577" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 15 extension: 345° direction (0.966, 0.259), 120px, very slight curve */}
+          <path d="M 356 -364 Q 417 -358 472 -333" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 24 extension: 280° direction (0.174, 0.985), 60px straight */}
+          <line x1={399} y1={581} x2={409} y2={640} stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 21 extension: 210° direction (-0.866, 0.5), 100px, slight curve */}
+          <path d="M 486 531 Q 447 563 399 581" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 23 extension: 50° direction (0.643, -0.766), 60px straight */}
+          <line x1={538} y1={-227} x2={577} y2={-273} stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 20 extension: 330° direction (0.866, 0.5), 100px, slight curve */}
+          <path d="M 451 -277 Q 499 -259 538 -227" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 22 extension: 170° direction (-0.985, -0.174), 50px straight */}
+          <line x1={-208} y1={-11} x2={-267} y2={-21} stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 19 extension: 85° direction (0.087, -0.996), 100px, slight curve */}
+          <path d="M -217 89 Q -220 38 -208 -11" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 16 extension: 0° direction (1, 0), 50px straight */}
+          <line x1={-277} y1={89} x2={-217} y2={89} stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* Node 12 extension: 100° direction (-0.174, -0.985), 80px, very slight curve */}
+          <path d="M -256 207 Q -276 150 -277 89" fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* D extension: 190° direction (-0.985, 0.174), 300px straight line */}
+          <line x1={40} y1={155} x2={-256} y2={207} stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {/* E extension: 80° direction (0.174, -0.985), 300px straight line */}
+          <line x1={304} y1={-68} x2={356} y2={-364} stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+          {([
+            { cx: 380,  cy: 299,  label: "6" },
+            { cx: 457,  cy: 363,  label: "7" },
+            { cx: 533,  cy: 428,  label: "8" },
+            { cx: 610,  cy: 492,  label: "9" },
+            { cx: -277, cy: 89,   label: "16" },
+            { cx: -217, cy: 89,   label: "19" },
+            { cx: -208, cy: -11,  label: "22" },
+            { cx: -267, cy: -21,  label: "25" },
+            { cx: 472,  cy: -333, label: "17" },
+            { cx: 451,  cy: -277, label: "20" },
+            { cx: 538,  cy: -227, label: "23" },
+            { cx: 577,  cy: -273, label: "26" },
+            { cx: 486,  cy: 531,  label: "21" },
+            { cx: 399,  cy: 581,  label: "24" },
+            { cx: 409,  cy: 640,  label: "27" },
+            { cx: 525,  cy: 577,  label: "18" },
+            { cx: -59,  cy: 172,  label: "10" },
+            { cx: -157, cy: 190,  label: "11" },
+            { cx: -256, cy: 207,  label: "12" },
+            { cx: 321,  cy: -167, label: "13" },
+            { cx: 339,  cy: -265, label: "14" },
+            { cx: 356,  cy: -364, label: "15" },
+          ] as { cx: number; cy: number; label: string }[]).map(({ cx, cy, label }) => (
+            <g key={label}>
+              <circle cx={cx} cy={cy} r={8} fill="#e85d04" stroke="#fff" strokeWidth={1.5} />
+              <text x={cx + 12} y={cy + 5} fontSize={13} fontWeight="bold" fill="#e85d04" stroke="#000" strokeWidth={3} paintOrder="stroke">{label}</text>
+            </g>
+          ))}
+          {/* Ring centered on G */}
+          <circle cx={250} cy={144} r={90} fill="none" stroke="#262626" strokeWidth={8} filter="url(#ring-shadow)" />
+          <circle cx={250} cy={144} r={90} fill="none" stroke="#32364d" strokeWidth={3} />
+          {/* Battle Pactspirit nodes */}
+          {([
+            { cx: 173, cy: 97,  idx: 0 },
+            { cx: 327, cy: 97,  idx: 1 },
+            { cx: 250, cy: 234, idx: 2 },
+          ] as { cx: number; cy: number; idx: number }[]).map(({ cx, cy, idx }) => {
+            const spirit = getAssignedSpirit("battle", idx);
+            const isPicking = selectedSlot?.category === "battle" && selectedSlot?.index === idx;
+            return (
+              <g
+                key={idx}
+                style={{ pointerEvents: "all", cursor: "pointer" }}
+                onMouseEnter={() => setHoveredBattleLink(idx)}
+                onMouseLeave={() => setHoveredBattleLink(null)}
+                onClick={(e) => { e.stopPropagation(); handleSlotClick("battle", idx); }}
+              >
+                {/* Fill */}
+                <circle
+                  cx={cx} cy={cy} r={35}
+                  fill={spirit ? (RARITY_BG[spirit.rarity] ?? "#272626") : hoveredBattleLink === idx ? "#353333" : "#272626"}
+                  stroke="none"
+                  style={{ transition: "fill 0.15s" }}
+                />
+                {/* Image clipped to circle */}
+                {spirit && (
+                  <image
+                    href={getIconPath(spirit)}
+                    x={cx - 35} y={cy - 35}
+                    width={70} height={70}
+                    preserveAspectRatio="xMidYMin slice"
+                    clipPath={`url(#node-clip-${idx})`}
+                    style={{ pointerEvents: "none" }}
+                  />
+                )}
+                {/* Stroke on top so it always overlays the image */}
+                <circle
+                  cx={cx} cy={cy} r={35}
+                  fill="none"
+                  stroke={isPicking ? "#fbdb58" : hoveredBattleLink === idx ? "#7878b8" : "#444444"}
+                  strokeWidth={isPicking ? 3 : hoveredBattleLink === idx ? 2.5 : 2}
+                  style={{ transition: "stroke 0.15s" }}
+                />
+                {/* Name below node */}
+                {spirit && (() => {
+                  const [line1, line2] = wrapNodeName(spirit.name);
+                  const baseY = cy + 35 + 16;
+                  const textProps = {
+                    textAnchor: "middle" as const,
+                    fill: "#ffffff",
+                    fontSize: 12,
+                    fontWeight: "bold",
+                    stroke: "#000000",
+                    strokeWidth: 2,
+                    paintOrder: "stroke" as const,
+                    style: { pointerEvents: "none" as const, userSelect: "none" as const },
+                  };
+                  return (
+                    <>
+                      <text x={cx} y={baseY} {...textProps}>{line1}</text>
+                      {line2 && <text x={cx} y={baseY + 15} {...textProps}>{line2}</text>}
+                    </>
+                  );
+                })()}
+              </g>
+            );
+          })}
         </svg>
       </div>
 
       {/* Left panel — top-left, height auto */}
       <div
         className="absolute flex flex-col"
-        onClick={(e) => { e.stopPropagation(); if (panelMinimized) setPanelMinimized(false); }}
-        style={{ top: 20, left: 200, width: panelMinimized ? 320 : PANEL_W, background: PANEL_BG, borderRadius: "0 16px 0 16px", boxShadow: "0 8px 32px rgba(0,0,0,0.7)", transition: "width 0.2s ease", cursor: panelMinimized ? "pointer" : "default" }}
+        onClick={(e) => e.stopPropagation()}
+        style={{ top: 20, left: 200, width: panelMinimized ? 320 : PANEL_W, background: PANEL_BG, borderRadius: "0 16px 0 16px", boxShadow: "0 8px 32px rgba(0,0,0,0.7)", transition: "width 0.2s ease" }}
       >
         {/* Title + minimize button — entire header is the toggle hitbox */}
         <div
           className="flex items-center px-6"
           onClick={(e) => { e.stopPropagation(); setPanelMinimized((v) => !v); }}
-          style={{ height: 46, borderBottom: "2px solid #333333", flexShrink: 0, position: "relative", cursor: "pointer" }}
+          onMouseEnter={() => setHeaderHovered(true)}
+          onMouseLeave={() => setHeaderHovered(false)}
+          style={{ height: 46, borderBottom: "2px solid #333333", flexShrink: 0, position: "relative", cursor: "pointer", background: headerHovered ? "rgba(255,255,255,0.04)" : "transparent", transition: "background 0.15s", borderRadius: "0 16px 0 0" }}
         >
           <span className="text-xl font-semibold tracking-wide" style={{ color: "#e4e4e7" }}>Pactspirits</span>
-          <div style={{ position: "absolute", right: 12, top: "50%", transform: "translateY(-50%)", color: "#71717a" }}>
+          <div style={{ position: "absolute", right: 12, top: "50%", transform: "translateY(-50%)", color: headerHovered ? "#e4e4e7" : "#71717a", transition: "color 0.15s" }}>
             {panelMinimized ? (
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                 <path d="M2 9l5-5 5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -554,9 +747,11 @@ export default function PactspiritsPage() {
                   spirit={getAssignedSpirit("battle", i)}
                   isPicking={selectedSlot?.category === "battle" && selectedSlot?.index === i}
                   minimized={panelMinimized}
+                  isLinked={hoveredBattleLink === i}
                   onClick={() => handleSlotClick("battle", i)}
                   onHover={handleSpiritHover}
-                  onLeave={handleSpiritLeave}
+                  onLeave={() => { setHoveredBattleLink(null); handleSpiritLeave(); }}
+                  onSlotEnter={() => setHoveredBattleLink(i)}
                 />
               ))}
             </div>
