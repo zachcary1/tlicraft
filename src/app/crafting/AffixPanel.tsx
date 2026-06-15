@@ -81,28 +81,40 @@ function getDreamGroup(affix: PoolAffix): DreamGroup {
 // ─── Portaled tooltip row ─────────────────────────────────────────────────────
 
 function TooltipRow({ tooltip, children, rowKey }: { tooltip: string | null; children: React.ReactNode; rowKey: string }) {
-  const [pos, setPos] = useState<{ bottom: number; left: number } | null>(null);
-  const ref = useRef<HTMLDivElement>(null);
+  const [pos, setPos] = useState<{ x: number; y: number } | null>(null);
   return (
     <div
       key={rowKey}
-      ref={ref}
       className="relative flex gap-1"
-      onMouseEnter={() => {
-        if (!tooltip || !ref.current) return;
-        const rect = ref.current.getBoundingClientRect();
-        setPos({ bottom: window.innerHeight - rect.top + 6, left: rect.left + rect.width / 2 });
-      }}
+      onMouseEnter={(e) => { if (tooltip) setPos({ x: e.clientX, y: e.clientY }); }}
+      onMouseMove={(e) => { if (tooltip) setPos({ x: e.clientX, y: e.clientY }); }}
       onMouseLeave={() => setPos(null)}
     >
       {children}
       {tooltip && pos && typeof document !== "undefined" && createPortal(
-        <span
-          style={{ position: "fixed", bottom: pos.bottom, left: pos.left, transform: "translateX(-50%)", zIndex: 9999 }}
-          className="px-2.5 py-1.5 rounded text-xs text-white bg-[#1a1a1a] border border-[#535357] whitespace-nowrap pointer-events-none"
+        <div
+          style={{
+            position: "fixed", left: pos.x, top: pos.y - 42, transform: "translateX(-50%)", zIndex: 9999,
+            background: "#1a1919",
+            border: "1px solid #c0392b",
+            borderRadius: "0 6px 0 6px",
+            padding: "6px 12px",
+            color: "#f87171",
+            fontSize: 11,
+            whiteSpace: "nowrap",
+            pointerEvents: "none",
+            letterSpacing: "0.03em",
+            display: "flex",
+            alignItems: "center",
+            gap: 6,
+          }}
         >
+          <svg viewBox="0 0 16 16" width="12" height="12" fill="none">
+            <circle cx="8" cy="8" r="7" stroke="#c0392b" strokeWidth="1.5"/>
+            <path d="M5 5l6 6M11 5l-6 6" stroke="#c0392b" strokeWidth="1.5" strokeLinecap="round"/>
+          </svg>
           {tooltip}
-        </span>,
+        </div>,
         document.body
       )}
     </div>
@@ -126,6 +138,7 @@ function InlineTierPicker({
 }) {
   const [open, setOpen] = useState(false);
   const [pos, setPos] = useState<{ bottom: number; left: number } | null>(null);
+  const [disabledTipPos, setDisabledTipPos] = useState<{ x: number; y: number } | null>(null);
   const btnRef = useRef<HTMLButtonElement>(null);
   const dropRef = useRef<HTMLDivElement>(null);
 
@@ -177,7 +190,12 @@ function InlineTierPicker({
                 }).join(", ")
               : "";
             return (
-              <div key={t.tier} className="relative group/tdisabled">
+              <div
+                key={t.tier}
+                onMouseEnter={isDisabled ? (e) => setDisabledTipPos({ x: e.clientX, y: e.clientY }) : undefined}
+                onMouseMove={isDisabled ? (e) => setDisabledTipPos({ x: e.clientX, y: e.clientY }) : undefined}
+                onMouseLeave={isDisabled ? () => setDisabledTipPos(null) : undefined}
+              >
                 <button
                   onClick={isDisabled ? undefined : (e) => { e.stopPropagation(); onSelect(t.tier); setOpen(false); }}
                   className={`w-full text-left px-3 py-2 flex items-center gap-2 transition-colors ${
@@ -190,14 +208,35 @@ function InlineTierPicker({
                   <TierBadge tier={t.tier} />
                   {stats && <span className="text-zinc-400 text-[11px]">{stats}</span>}
                 </button>
-                {isDisabled && (
-                  <span className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-1 px-2.5 py-1.5 rounded text-xs text-white bg-[#1a1a1a] border border-[#535357] whitespace-nowrap opacity-0 group-hover/tdisabled:opacity-100 transition-opacity z-[10000]">
-                    {disabledTierMessage}
-                  </span>
-                )}
               </div>
             );
           })}
+        </div>,
+        document.body
+      )}
+      {disabledTipPos && typeof document !== "undefined" && createPortal(
+        <div
+          style={{
+            position: "fixed", left: disabledTipPos.x, top: disabledTipPos.y - 42, transform: "translateX(-50%)", zIndex: 10001,
+            background: "#1a1919",
+            border: "1px solid #c0392b",
+            borderRadius: "0 6px 0 6px",
+            padding: "6px 12px",
+            color: "#f87171",
+            fontSize: 11,
+            whiteSpace: "nowrap",
+            pointerEvents: "none",
+            letterSpacing: "0.03em",
+            display: "flex",
+            alignItems: "center",
+            gap: 6,
+          }}
+        >
+          <svg viewBox="0 0 16 16" width="12" height="12" fill="none">
+            <circle cx="8" cy="8" r="7" stroke="#c0392b" strokeWidth="1.5"/>
+            <path d="M5 5l6 6M11 5l-6 6" stroke="#c0392b" strokeWidth="1.5" strokeLinecap="round"/>
+          </svg>
+          {disabledTierMessage}
         </div>,
         document.body
       )}
@@ -569,31 +608,27 @@ export default function AffixPanel({
                       const displayLabel = buildAffixLabel(affix, isSelected ? currentValue?.tier : undefined);
                       const tier = getEffectiveTier(sourceGroup, affix);
                       return (
-                        <button
-                          key={`${sourceGroup}-${affix.id}`}
-                          onClick={() => !isUnavailable && selectAffix(affix.id, sourceGroup)}
-                          className={`relative w-full text-left px-3 py-3 text-[14px] transition-all leading-snug group/tip ${
-                            !isUnavailable && !isSelected ? "hover:brightness-110" : ""
-                          }`}
-                          style={{
-                            border: `2px solid ${isUnavailable ? "#383737" : "#535357"}`,
-                            backgroundColor: isSelected ? "#e0ddd8" : isUnavailable ? "#252424" : "#3d3c3c",
-                            borderRadius: "0 10px 0 10px",
-                            cursor: isUnavailable ? "not-allowed" : "pointer",
-                            color: isSelected ? "#1a2028" : isUnavailable ? "#555555" : "#ffffff",
-                            boxShadow: "0 3px 6px rgba(0,0,0,0.4)",
-                          }}
-                        >
-                          <span className="flex items-center gap-2">
-                            {tier && <TierBadge tier={tier} />}
-                            <span>{displayLabel}</span>
-                          </span>
-                          {isUnavailable && tooltipText && (
-                            <span className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2.5 py-1.5 rounded text-xs text-white bg-[#1a1a1a] border border-[#535357] whitespace-nowrap opacity-0 group-hover/tip:opacity-100 transition-opacity z-50">
-                              {tooltipText}
+                        <TooltipRow key={`${sourceGroup}-${affix.id}`} rowKey={`${sourceGroup}-${affix.id}`} tooltip={isUnavailable ? (tooltipText ?? null) : null}>
+                          <button
+                            onClick={() => !isUnavailable && selectAffix(affix.id, sourceGroup)}
+                            className={`w-full text-left px-3 py-3 text-[14px] transition-all leading-snug ${
+                              !isUnavailable && !isSelected ? "hover:brightness-110" : ""
+                            }`}
+                            style={{
+                              border: `2px solid ${isUnavailable ? "#383737" : "#535357"}`,
+                              backgroundColor: isSelected ? "#e0ddd8" : isUnavailable ? "#252424" : "#3d3c3c",
+                              borderRadius: "0 10px 0 10px",
+                              cursor: isUnavailable ? "not-allowed" : "pointer",
+                              color: isSelected ? "#1a2028" : isUnavailable ? "#555555" : "#ffffff",
+                              boxShadow: "0 3px 6px rgba(0,0,0,0.4)",
+                            }}
+                          >
+                            <span className="flex items-center gap-2">
+                              {tier && <TierBadge tier={tier} />}
+                              <span>{displayLabel}</span>
                             </span>
-                          )}
-                        </button>
+                          </button>
+                        </TooltipRow>
                       );
                     })}
                   </div>

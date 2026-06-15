@@ -106,12 +106,13 @@ function getTraitIconPath(heroGroup: string, variantName: string, level: number,
 const TT_ICON_R  = 40;
 const TT_CARD_W  = 276;
 
-function TraitTooltipCard({ trait, iconPath, selected, cx: cursorX, cy: cursorY }: {
+function TraitTooltipCard({ trait, iconPath, selected, cx: cursorX, cy: cursorY, traitLevel }: {
   trait: HeroTrait;
   iconPath: string | null;
   selected: boolean;
   cx: number;
   cy: number;
+  traitLevel?: number;
 }) {
   const [imgError, setImgError] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
@@ -166,11 +167,23 @@ function TraitTooltipCard({ trait, iconPath, selected, cx: cursorX, cy: cursorY 
         )}
       </div>
 
-      {/* Name */}
+      {/* Name + optional level */}
       <div style={{ paddingTop: TT_ICON_R + 14, paddingBottom: 10, paddingLeft: 14, paddingRight: 14, textAlign: "center" }}>
         <div style={{ color: "#ffffff", fontSize: 15, fontWeight: 700, lineHeight: 1.3 }}>
           {trait.name}
         </div>
+        {traitLevel !== undefined && (
+          <div style={{
+            marginTop: 5,
+            color: "#a0b4ff",
+            fontSize: 11,
+            fontWeight: 600,
+            letterSpacing: "0.1em",
+            textTransform: "uppercase",
+          }}>
+            Level {traitLevel}
+          </div>
+        )}
       </div>
 
       {/* Divider */}
@@ -237,6 +250,7 @@ function TraitSlot({
   trait,
   selected,
   dimmed,
+  traitLevel,
   onClick,
 }: {
   withHex: boolean;
@@ -248,6 +262,7 @@ function TraitSlot({
   trait?: HeroTrait | null;
   selected?: boolean;
   dimmed?: boolean;
+  traitLevel?: number;
   onClick?: () => void;
 }) {
   const [hovered,      setHovered]      = useState(false);
@@ -353,12 +368,31 @@ function TraitSlot({
           </div>
         )}
       </div>
+      {selected && traitLevel !== undefined && (
+        <div style={{
+          position: "absolute",
+          top: -16,
+          left: 0, right: 0,
+          textAlign: "center",
+          color: "#c8d4ff",
+          fontSize: 10,
+          fontWeight: 700,
+          letterSpacing: "0.1em",
+          textTransform: "uppercase",
+          pointerEvents: "none",
+          zIndex: 2,
+          textShadow: "0 1px 4px rgba(0,0,0,0.9)",
+          userSelect: "none",
+        }}>
+          Level {traitLevel}
+        </div>
+      )}
       {locked && lockReason && tipPos && createPortal(
         <LockedTooltip reason={lockReason} x={tipPos.x} y={tipPos.y} />,
         document.body
       )}
       {showTooltip && trait && tooltipPos && createPortal(
-        <TraitTooltipCard trait={trait} iconPath={iconPath ?? null} selected={!!selected} cx={tooltipPos.x} cy={tooltipPos.y} />,
+        <TraitTooltipCard trait={trait} iconPath={iconPath ?? null} selected={!!selected} cx={tooltipPos.x} cy={tooltipPos.y} traitLevel={selected ? traitLevel : undefined} />,
         document.body
       )}
     </div>
@@ -374,6 +408,7 @@ function MemorySlot({
   locked,
   lockReason,
   onClick,
+  selectedIds,
 }: {
   label: string;
   filled: boolean;
@@ -381,10 +416,12 @@ function MemorySlot({
   locked: boolean;
   lockReason?: string;
   onClick: () => void;
+  selectedIds?: MemorySlotSelections;
 }) {
-  const [hovered,  setHovered]  = useState(false);
-  const [tipPos,   setTipPos]   = useState<{ x: number; y: number } | null>(null);
-  const [imgError, setImgError] = useState(false);
+  const [hovered,    setHovered]    = useState(false);
+  const [tipPos,     setTipPos]     = useState<{ x: number; y: number } | null>(null);
+  const [tooltipPos, setTooltipPos] = useState<{ x: number; y: number } | null>(null);
+  const [imgError,   setImgError]   = useState(false);
   const iconPath = `/icons/equipment/${label}.webp`;
   useEffect(() => { setImgError(false); }, [label]);
 
@@ -405,9 +442,13 @@ function MemorySlot({
       onMouseEnter={(e) => {
         if (!locked) setHovered(true);
         if (locked) setTipPos({ x: e.clientX, y: e.clientY });
+        if (!locked && filled) setTooltipPos({ x: e.clientX, y: e.clientY });
       }}
-      onMouseMove={(e) => { if (locked) setTipPos({ x: e.clientX, y: e.clientY }); }}
-      onMouseLeave={() => { setHovered(false); setTipPos(null); }}
+      onMouseMove={(e) => {
+        if (locked) setTipPos({ x: e.clientX, y: e.clientY });
+        if (!locked && filled) setTooltipPos({ x: e.clientX, y: e.clientY });
+      }}
+      onMouseLeave={() => { setHovered(false); setTipPos(null); setTooltipPos(null); }}
       onClick={locked ? undefined : onClick}
       style={{
         width: SLOT_SIZE, height: SLOT_SIZE,
@@ -464,6 +505,15 @@ function MemorySlot({
         <LockedTooltip reason={lockReason} x={tipPos.x} y={tipPos.y} />,
         document.body
       )}
+      {filled && quality && tooltipPos && selectedIds && (
+        <MemoryTooltipCard
+          label={label}
+          quality={quality}
+          selectedIds={selectedIds}
+          cx={tooltipPos.x}
+          cy={tooltipPos.y}
+        />
+      )}
     </div>
   );
 }
@@ -487,6 +537,186 @@ const SLOT_TYPE_MAP: Record<MemorySlotKey, string> = {
   suffix1: "Random Affix",
   suffix2: "Random Affix",
 };
+
+const SIBLING_SLOT: Partial<Record<MemorySlotKey, MemorySlotKey>> = {
+  prefix1: "prefix2",
+  prefix2: "prefix1",
+  suffix1: "suffix2",
+  suffix2: "suffix1",
+};
+
+const TRAIT_LEVEL_AFFIX = "+2 to Hero Trait Level";
+
+function effectiveTraitLevel(quality: MemoryQuality, selections: MemorySlotSelections): number {
+  const base = MEMORY_QUALITY_CONFIG[quality].traitLevel;
+  const hasBonus =
+    selections.prefix1?.text === TRAIT_LEVEL_AFFIX ||
+    selections.prefix2?.text === TRAIT_LEVEL_AFFIX;
+  return base + (hasBonus ? 2 : 0);
+}
+
+// ─── Memory tooltip card ─────────────────────────────────────────────────────
+
+const MEM_CARD_W    = 272;
+const MEM_ICON_H    = 79;
+const MEM_ICON_W    = 86;
+const MEM_ICON_HALF = MEM_ICON_H / 2;
+
+function TierSquare({ tier }: { tier: string }) {
+  const color = tier === "T0" ? "#fe3333"
+    : tier === "T1" ? "#ff7c1c"
+    : (tier === "T2" || tier === "T3") ? "#c192ff"
+    : "#52525b";
+  return (
+    <div style={{ width: 8, height: 8, flexShrink: 0, marginTop: 3, background: color, borderRadius: "2px 0 2px 0" }} />
+  );
+}
+
+function MemoryTooltipCard({
+  label, quality, selectedIds,
+  cx: cursorX, cy: cursorY,
+}: {
+  label: string;
+  quality: MemoryQuality;
+  selectedIds: MemorySlotSelections;
+  cx: number;
+  cy: number;
+}) {
+  const [imgErr, setImgErr] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [cardH, setCardH] = useState(360);
+
+  useEffect(() => { if (cardRef.current) setCardH(cardRef.current.offsetHeight); });
+
+  const qc = MEMORY_QUALITY_CONFIG[quality];
+  const traitLvl = effectiveTraitLevel(quality, selectedIds);
+  const iconPath = `/icons/equipment/${label}.webp`;
+
+  const vpW = window.innerWidth;
+  const vpH = window.innerHeight;
+  const GAP = 18;
+  const cardLeft = cursorX + GAP + MEM_CARD_W <= vpW ? cursorX + GAP : cursorX - GAP - MEM_CARD_W;
+  const cardTop  = Math.max(MEM_ICON_HALF + 8, Math.min(vpH - cardH - 8, cursorY - 24));
+
+  const baseText = selectedIds.base
+    ? (label === "Memory of Origin" && quality === "ultimate"
+        ? selectedIds.base.text.replace(/\b90\b/g, "120")
+        : selectedIds.base.text)
+    : null;
+
+  const fixedAffixes  = [selectedIds.prefix1, selectedIds.prefix2];
+  const randomAffixes = [selectedIds.suffix1,  selectedIds.suffix2];
+
+  const gradientColor = quality === "ultimate" ? "rgba(174,23,39,0.35)" : "rgba(204,102,36,0.35)";
+  const divider       = <div style={{ height: 1, background: "#3a3838", margin: "8px 0" }} />;
+
+  return createPortal(
+    <div ref={cardRef} style={{
+      position: "fixed", left: cardLeft, top: cardTop,
+      width: MEM_CARD_W, pointerEvents: "none", zIndex: 9999,
+      overflow: "visible",
+      filter: "drop-shadow(0 8px 24px rgba(0,0,0,0.85))",
+      fontFamily: "'TLFont', Arial, Helvetica, sans-serif",
+    }}>
+      {/* Icon — top half protrudes above card */}
+      <div style={{
+        position: "absolute", top: -MEM_ICON_HALF, left: "50%",
+        transform: "translateX(-50%)",
+        width: MEM_ICON_W, height: MEM_ICON_H, zIndex: 10,
+      }}>
+        <div style={{
+          position: "absolute", top: 4, left: 0,
+          width: MEM_ICON_W, height: MEM_ICON_H,
+          background: qc.border, borderRadius: "0 12px 0 12px", zIndex: 0,
+        }} />
+        <div style={{
+          position: "absolute", top: 0, left: 0,
+          width: MEM_ICON_W, height: MEM_ICON_H,
+          background: qc.bg, borderRadius: "0 12px 0 12px",
+          overflow: "hidden", zIndex: 1,
+          display: "flex", alignItems: "center", justifyContent: "center",
+        }}>
+          {!imgErr ? (
+            <img src={iconPath} alt={label} onError={() => setImgErr(true)}
+              style={{ width: "auto", height: "92%", objectFit: "contain" }} />
+          ) : (
+            <span style={{ color: "#666", fontSize: 18, fontWeight: 700 }}>M</span>
+          )}
+        </div>
+      </div>
+
+      {/* Card body */}
+      <div style={{ overflow: "hidden", borderRadius: "0 12px 0 12px" }}>
+
+        {/* Top section */}
+        <div style={{
+          background: "#1f1f21", position: "relative",
+          padding: `${MEM_ICON_H / 2 + 10}px 10px 12px`, overflow: "hidden",
+        }}>
+          <div style={{
+            position: "absolute", top: 10, left: 10, right: 10, bottom: 0,
+            background: `linear-gradient(to bottom, ${gradientColor}, transparent)`,
+            borderRadius: "4px 4px 0 0",
+            pointerEvents: "none",
+          }} />
+          <div style={{
+            position: "relative", zIndex: 1, textAlign: "center",
+            color: "#ffffff", fontSize: 16, fontWeight: 700, letterSpacing: "0.05em",
+          }}>
+            {label}
+          </div>
+        </div>
+
+        {/* Bottom section */}
+        <div style={{ background: "#242325", padding: "10px 14px 14px" }}>
+          <div style={{ color: "#ffffff", fontSize: 13, letterSpacing: "0.04em", marginBottom: 3, textAlign: "center" }}>
+            Enhancement Level {qc.maxLevel}/{qc.maxLevel}
+          </div>
+          <div style={{ color: "#ffffff", fontSize: 13, fontWeight: 600, letterSpacing: "0.04em", textAlign: "center" }}>
+            Trait Level +{traitLvl}
+          </div>
+
+          <>
+            {divider}
+            <div style={{ textAlign: "center", color: baseText ? "#ffffff" : "#52525b", fontSize: 13 }}>
+              {baseText ?? "empty"}
+            </div>
+          </>
+
+          <>
+            {divider}
+            <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
+              {fixedAffixes.map((affix, i) => (
+                <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 7, justifyContent: affix ? "flex-start" : "center" }}>
+                  {affix && <TierSquare tier={affix.tier} />}
+                  <span style={{ color: affix ? "#ffffff" : "#52525b", fontSize: 13, lineHeight: 1.4 }}>
+                    {affix ? affix.text : "empty"}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </>
+
+          <>
+            {divider}
+            <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
+              {randomAffixes.map((affix, i) => (
+                <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 7, justifyContent: affix ? "flex-start" : "center" }}>
+                  {affix && <TierSquare tier={affix.tier} />}
+                  <span style={{ color: affix ? "#ffffff" : "#52525b", fontSize: 13, lineHeight: 1.4 }}>
+                    {affix ? affix.text : "empty"}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </>
+        </div>
+
+      </div>
+    </div>,
+    document.body
+  );
+}
 
 function parseEffect(html: string): string {
   return html
@@ -530,7 +760,7 @@ function MemoryTierBadge({ tier }: { tier: string }) {
   }
   return (
     <span className="font-bold shrink-0" style={{
-      color: textColor, border: `1px solid ${textColor}`, borderRadius: "3px 0 3px 0",
+      color: textColor, border: `1px solid ${textColor}`, borderRadius: "2px 0 2px 0",
       background: `linear-gradient(to bottom, #111111, ${fillColor})`,
       padding: "1px 11px", fontSize: "13px", lineHeight: "1.4", height: "20px",
       display: "inline-flex", alignItems: "center", whiteSpace: "nowrap",
@@ -648,6 +878,7 @@ function MemoryAffixPanel({
   const [affixes, setAffixes] = useState<MemoryAffix[]>([]);
   const [loading, setLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [blockedTipPos, setBlockedTipPos] = useState<{ x: number; y: number } | null>(null);
 
   // Downgrade T0 → T1 for Random Affix slots when switching from Ultimate to Epic
   const prevQualityRef = useRef<MemoryQuality>(quality);
@@ -693,6 +924,18 @@ function MemoryAffixPanel({
     [affixes, slotType],
   );
   const selectedId = slotKey ? selectedIds[slotKey]?.id ?? null : null;
+
+  const siblingKey = slotKey ? SIBLING_SLOT[slotKey] : undefined;
+  const siblingValue = siblingKey ? selectedIds[siblingKey] : null;
+  const siblingStatKey = useMemo(() => {
+    if (!siblingValue?.id) return null;
+    const sibAf = affixes.find((a) => a.id === siblingValue.id);
+    return sibAf ? normalizeStatKey(parseEffect(sibAf.effect)) : null;
+  }, [siblingValue?.id, affixes]);
+
+  const isOriginBaseStats = slotType === "Base Stats" && memoryItem === "Memory of Origin";
+  const applyBaseTransform = (text: string) =>
+    isOriginBaseStats && quality === "ultimate" ? text.replace(/\b90\b/g, "120") : text;
 
   const groups = useMemo<StatGroup[]>(() => {
     const map = new Map<string, StatGroup>();
@@ -786,6 +1029,34 @@ function MemoryAffixPanel({
               ✕ Clear
             </button>
           </div>
+          {blockedTipPos && createPortal(
+            <div style={{
+              position: "fixed",
+              left: blockedTipPos.x,
+              top: blockedTipPos.y - 42,
+              transform: "translateX(-50%)",
+              background: "#1a1919",
+              border: "1px solid #c0392b",
+              borderRadius: "0 6px 0 6px",
+              padding: "6px 12px",
+              color: "#f87171",
+              fontSize: 11,
+              whiteSpace: "nowrap",
+              pointerEvents: "none",
+              zIndex: 9999,
+              letterSpacing: "0.03em",
+              display: "flex",
+              alignItems: "center",
+              gap: 6,
+            }}>
+              <svg viewBox="0 0 16 16" width="12" height="12" fill="none">
+                <circle cx="8" cy="8" r="7" stroke="#c0392b" strokeWidth="1.5"/>
+                <path d="M5 5l6 6M11 5l-6 6" stroke="#c0392b" strokeWidth="1.5" strokeLinecap="round"/>
+              </svg>
+              Already selected in another slot
+            </div>,
+            document.body
+          )}
           <div className="flex-1 overflow-y-auto px-3 pb-3 space-y-1">
             {visibleGroups.map((group) => {
               const selectedAffix = group.tiers.find((a) => a.id === selectedId) ?? null;
@@ -797,9 +1068,17 @@ function MemoryAffixPanel({
               const unselectedTier = !isSelected ? (defaultAffix?.tier ?? "") : "";
               // show tier picker to the left whenever selected and multiple tiers exist
               const showTierPicker = isSelected && group.tiers.length > 1;
+              const isBlockedByDuplicate = siblingStatKey !== null && group.key === siblingStatKey;
 
               return (
-                <div key={group.key} className="flex gap-0">
+                <div
+                  key={group.key}
+                  className="flex gap-0"
+                  style={isBlockedByDuplicate ? { opacity: 0.35, cursor: "not-allowed" } : undefined}
+                  onMouseEnter={isBlockedByDuplicate ? (e) => setBlockedTipPos({ x: e.clientX, y: e.clientY }) : undefined}
+                  onMouseMove={isBlockedByDuplicate ? (e) => setBlockedTipPos({ x: e.clientX, y: e.clientY }) : undefined}
+                  onMouseLeave={isBlockedByDuplicate ? () => setBlockedTipPos(null) : undefined}
+                >
                   {showTierPicker && (
                     <MemoryTierPicker
                       tiers={group.tiers}
@@ -814,20 +1093,21 @@ function MemoryAffixPanel({
                     </div>
                   )}
                   <button
-                    onClick={() => selectAffix(isSelected ? selectedAffix : defaultAffix)}
+                    onClick={!isBlockedByDuplicate ? () => selectAffix(isSelected ? selectedAffix : defaultAffix) : undefined}
                     className={`flex-1 min-w-0 text-left px-3 py-4 text-[14px] leading-snug transition-all ${!isSelected ? "hover:brightness-110" : ""}`}
                     style={{
                       border: "2px solid #535357",
                       backgroundColor: isSelected ? "#e0ddd8" : "#3d3c3c",
                       borderRadius: "0 10px 0 10px",
-                      cursor: "pointer",
+                      cursor: isBlockedByDuplicate ? "not-allowed" : "pointer",
                       color: isSelected ? "#1a2028" : "#ffffff",
                       boxShadow: "0 3px 6px rgba(0,0,0,0.4)",
+                      pointerEvents: isBlockedByDuplicate ? "none" : undefined,
                     }}
                   >
                     <span className="flex items-center gap-2">
                       {unselectedTier && <MemoryTierBadge tier={unselectedTier} />}
-                      <span>{parseEffect((isSelected && selectedAffix ? selectedAffix : defaultAffix).effect)}</span>
+                      <span>{applyBaseTransform(parseEffect((isSelected && selectedAffix ? selectedAffix : defaultAffix).effect))}</span>
                     </span>
                   </button>
                 </div>
@@ -1026,7 +1306,17 @@ function MemoryCraftPanel({
             <div className="flex items-start gap-2 mb-1 min-h-[52px]">
               <div className="w-[110px] shrink-0" />
               <div className="flex-1 min-w-0 pt-0">
-                <p className="text-sm text-[#1a1a1a]">Trait Level: {qc.traitLevel}</p>
+                {(() => {
+                  const hasBonus =
+                    selectedIds.prefix1?.text === TRAIT_LEVEL_AFFIX ||
+                    selectedIds.prefix2?.text === TRAIT_LEVEL_AFFIX;
+                  const level = qc.traitLevel + (hasBonus ? 2 : 0);
+                  return (
+                    <p className="text-sm text-[#1a1a1a]">
+                      Trait Level: <span style={hasBonus ? { fontWeight: 700, color: "#1d4ed8" } : undefined}>{level}</span>
+                    </p>
+                  );
+                })()}
               </div>
             </div>
 
@@ -1066,7 +1356,16 @@ function MemoryCraftPanel({
 
             {/* Base Stats — 1 slot */}
             <MemorySectionBox label="Base Stats">
-              <MemorySlotRow slotKey="base" active={activeSlot === "base"} value={selectedIds.base} onClick={() => onActiveSlotChange(activeSlot === "base" ? null : "base")} />
+              <MemorySlotRow
+                slotKey="base"
+                active={activeSlot === "base"}
+                value={
+                  memoryLabel === "Memory of Origin" && quality === "ultimate" && selectedIds.base
+                    ? { ...selectedIds.base, text: selectedIds.base.text.replace(/\b90\b/g, "120") }
+                    : selectedIds.base
+                }
+                onClick={() => onActiveSlotChange(activeSlot === "base" ? null : "base")}
+              />
             </MemorySectionBox>
 
             {/* Fixed Affix — 2 slots */}
@@ -1478,6 +1777,7 @@ export default function HeroTraitPage() {
                   quality={memoryQuality[col]}
                   locked={memLocked}
                   lockReason={memLocked ? "Select a hero first" : undefined}
+                  selectedIds={memorySelections[col]}
                   onClick={() => {
                     setPanelOpen(false);
                     setCraftPanelCol((prev) => prev === col ? null : col);
@@ -1504,6 +1804,9 @@ export default function HeroTraitPage() {
             : null;
           const selected     = !!trait && traitSelections[col] === trait.name;
           const dimmed       = !!trait && !!traitSelections[col] && traitSelections[col] !== trait.name;
+          const colTraitLevel = memoryFilled[col] && memoryQuality[col]
+            ? effectiveTraitLevel(memoryQuality[col]!, memorySelections[col])
+            : undefined;
 
           return (
             <div key={id} style={{ position: "absolute", left: x, top: y }}>
@@ -1517,6 +1820,7 @@ export default function HeroTraitPage() {
                 trait={trait}
                 selected={selected}
                 dimmed={dimmed}
+                traitLevel={colTraitLevel}
                 onClick={trait ? () => selectTrait(col, trait.name) : undefined}
               />
             </div>
