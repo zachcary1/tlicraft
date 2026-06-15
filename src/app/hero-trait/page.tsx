@@ -565,7 +565,7 @@ const MEM_ICON_HALF = MEM_ICON_H / 2;
 function TierSquare({ tier }: { tier: string }) {
   const color = tier === "T0" ? "#fe3333"
     : tier === "T1" ? "#ff7c1c"
-    : (tier === "T2" || tier === "T3") ? "#c192ff"
+    : (tier === "T2" || tier === "T3") ? "#a457ff"
     : "#52525b";
   return (
     <div style={{ width: 8, height: 8, flexShrink: 0, marginTop: 3, background: color, borderRadius: "2px 0 2px 0" }} />

@@ -1,7 +1,9 @@
 "use client";
 
 import { useRef, useEffect, useLayoutEffect, useState } from "react";
-import { FEIcon } from "./ItemCard";
+import { createPortal } from "react-dom";
+import { FEIcon, GroupDot, buildAffixLabel, type ItemSlots, type SlotValue } from "./ItemCard";
+import type { CraftedPool } from "@/services/crafting/types";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -33,6 +35,203 @@ type PoolSummary = {
   baseItemCategory: { id: string; name: string };
   weaponType: { id: string; name: string } | null;
 };
+
+// ─── Gear tooltip card ────────────────────────────────────────────────────────
+
+const G_CARD_W    = 272;
+const G_ICON_H    = 79;
+const G_ICON_W    = 86;
+
+function GearTierSquare({ tier }: { tier: string }) {
+  const color = tier === "T0_PLUS" || tier === "T0" ? "#fe3333"
+    : tier === "T1" ? "#ff7c1c"
+    : tier === "T2" ? "#a457ff"
+    : "#52525b";
+  return <div style={{ width: 8, height: 8, flexShrink: 0, marginTop: 3, background: color, borderRadius: "2px 0 2px 0" }} />;
+}
+
+function GearTooltipCard({ pool, itemSlots, poolData, psCount, cx, cy }: {
+  pool: PoolSummary;
+  itemSlots: ItemSlots;
+  poolData?: CraftedPool | null;
+  psCount: number;
+  cx: number;
+  cy: number;
+}) {
+  const [imgErr, setImgErr] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [cardH, setCardH] = useState(420);
+  useEffect(() => { if (cardRef.current) setCardH(cardRef.current.offsetHeight); });
+
+  const iconPath = getPoolIconPath(pool);
+  const isWeapon = pool.weaponType !== null || ["one_hand_weapon", "two_hand_weapon"].includes(pool.baseItemCategory.id);
+  const { border: rarityBorder, metallicKey, gradientEnd } = getPSRarityColors(psCount);
+  const gradientColor = `${rarityBorder}44`;
+  const displayName = pool.name.replace(/\s*armor\b/gi, "").trim();
+
+  const vpW = window.innerWidth;
+  const vpH = window.innerHeight;
+  const GAP = 18;
+  const cardLeft = cx + GAP + G_CARD_W <= vpW ? cx + GAP : cx - GAP - G_CARD_W;
+  const cardTop  = Math.max(G_ICON_H / 2 + 8, Math.min(vpH - cardH - 8, cy - 24));
+
+  const dreamTier = itemSlots.dream?.tier ?? "";
+  const prefixes  = [itemSlots.prefix1, itemSlots.prefix2, itemSlots.prefix3];
+  const suffixes  = [itemSlots.suffix1, itemSlots.suffix2, itemSlots.suffix3];
+  const divider   = <div style={{ height: 1, background: "#3a3838", margin: "8px 0" }} />;
+
+  function lookupAffix(affixId: string) {
+    if (!poolData) return null;
+    for (const affixes of Object.values(poolData.groups)) {
+      const found = affixes.find((a) => a.id === affixId);
+      if (found) return found;
+    }
+    return null;
+  }
+
+  function slotLabel(slot: SlotValue): string {
+    if (!slot) return "empty";
+    const affix = lookupAffix(slot.affixId);
+    return affix ? buildAffixLabel(affix, slot.tier) : slot.affixName;
+  }
+
+  function slotColor(slot: SlotValue): string {
+    if (!slot) return "#52525b";
+    return slot.tier === "T0_PLUS" ? "#5e56e1" : "#ffffff";
+  }
+
+  function AffixRow({ slot, emptyLabel }: { slot: SlotValue | null | undefined; emptyLabel: string }) {
+    return (
+      <div style={{ display: "flex", alignItems: "flex-start", gap: 7, justifyContent: slot ? "flex-start" : "center" }}>
+        {slot && <GearTierSquare tier={slot.tier} />}
+        <span style={{ color: slotColor(slot ?? null), fontSize: 13, lineHeight: 1.4 }}>
+          {slot ? slotLabel(slot) : emptyLabel}
+        </span>
+      </div>
+    );
+  }
+
+  return createPortal(
+    <div ref={cardRef} style={{
+      position: "fixed", left: cardLeft, top: cardTop,
+      width: G_CARD_W, pointerEvents: "none", zIndex: 9999,
+      overflow: "visible",
+      filter: "drop-shadow(0 8px 24px rgba(0,0,0,0.85))",
+      fontFamily: "'TLFont', Arial, Helvetica, sans-serif",
+    }}>
+      {/* Icon */}
+      <div style={{
+        position: "absolute", top: -(G_ICON_H / 2), left: "50%",
+        transform: "translateX(-50%)", width: G_ICON_W, height: G_ICON_H, zIndex: 10,
+        border: "5px solid transparent",
+        background: `linear-gradient(to bottom, #1a1a1a 0%, ${gradientEnd} 100%) padding-box, ${METALLIC_GRADIENTS[metallicKey]} border-box`,
+        borderRadius: "0 12px 0 12px",
+        overflow: "hidden",
+        display: "flex", alignItems: "center", justifyContent: "center",
+      }}>
+        {!imgErr ? (
+          <img src={iconPath} alt={displayName} onError={() => setImgErr(true)}
+            style={{ width: "auto", height: "92%", objectFit: "contain" }} />
+        ) : (
+          <span style={{ color: "#666", fontSize: 18, fontWeight: 700 }}>?</span>
+        )}
+      </div>
+
+      {/* Card body */}
+      <div style={{ overflow: "hidden", borderRadius: "0 12px 0 12px" }}>
+
+        {/* Top section */}
+        <div style={{
+          background: "#1f1f21", position: "relative",
+          padding: `${G_ICON_H / 2 + 10}px 10px 12px`, overflow: "hidden",
+        }}>
+          <div style={{
+            position: "absolute", top: 10, left: 10, right: 10, bottom: 0,
+            background: `linear-gradient(to bottom, ${gradientColor}, transparent)`,
+            borderRadius: "4px 4px 0 0", pointerEvents: "none",
+          }} />
+          <div style={{
+            position: "relative", zIndex: 1, textAlign: "center",
+            color: "#ffffff", fontSize: 16, fontWeight: 700, letterSpacing: "0.05em",
+          }}>
+            {displayName}
+          </div>
+        </div>
+
+        {/* Bottom section */}
+        <div style={{ background: "#242325", padding: "10px 14px 14px", display: "flex", flexDirection: "column", gap: 0 }}>
+
+          {/* Base */}
+          <AffixRow slot={itemSlots.base} emptyLabel="empty base" />
+
+          {/* Dream */}
+          {itemSlots.dream ? (
+            <div style={{ display: "flex", alignItems: "flex-start", gap: 7, marginTop: 5 }}>
+              <GearTierSquare tier={itemSlots.dream.tier} />
+              <span style={{ color: "#48b8ff", fontSize: 13, lineHeight: 1.4 }}>{slotLabel(itemSlots.dream)}</span>
+            </div>
+          ) : (
+            <div style={{ textAlign: "center", color: "#52525b", fontSize: 13, marginTop: 5 }}>empty dream</div>
+          )}
+
+          {/* Nightmare */}
+          {itemSlots.nightmare.length === 0 ? (
+            <div style={{ textAlign: "center", color: "#52525b", fontSize: 13, marginTop: 5 }}>empty nightmare</div>
+          ) : itemSlots.nightmare.length === 1 ? (
+            <div style={{ display: "flex", alignItems: "flex-start", gap: 7, marginTop: 5 }}>
+              <GearTierSquare tier={dreamTier} />
+              <span style={{ color: "#c74a28", fontSize: 13, lineHeight: 1.4 }}>{itemSlots.nightmare[0].affixName}</span>
+            </div>
+          ) : (
+            <div style={{ display: "flex", alignItems: "flex-start", gap: 7, marginTop: 5 }}>
+              <GearTierSquare tier={dreamTier} />
+              <span style={{ color: "#c74a28", fontSize: 13, lineHeight: 1.4 }}>
+                ({itemSlots.nightmare.length} nightmare affixes selected)
+              </span>
+            </div>
+          )}
+
+          {/* Sequence — weapons only */}
+          {isWeapon && (
+            itemSlots.sequence ? (
+              <div style={{ display: "flex", alignItems: "flex-start", gap: 7, marginTop: 5 }}>
+                <span style={{ width: 10, height: 10, flexShrink: 0, marginTop: 2, borderRadius: 4, backgroundColor: itemSlots.sequence.sourceGroup === "ADVANCED_SEQUENCES" ? "#fd0000" : "#fd7c1c", display: "inline-flex", alignItems: "center", justifyContent: "center" }}>
+                  <span style={{ width: 4, height: 4, borderRadius: 2, backgroundColor: "#3a3a3a" }} />
+                </span>
+                <span style={{ color: "#ffffff", fontSize: 13, lineHeight: 1.4 }}>{slotLabel(itemSlots.sequence)}</span>
+              </div>
+            ) : (
+              <div style={{ textAlign: "center", color: "#52525b", fontSize: 13, marginTop: 5 }}>empty sequence</div>
+            )
+          )}
+
+          {/* Prefixes + Suffixes */}
+          {divider}
+          <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
+            {prefixes.map((slot, i) => (
+              <div key={`p${i}`} style={{ display: "flex", alignItems: "flex-start", gap: 7, justifyContent: slot ? "flex-start" : "center" }}>
+                {slot && <GearTierSquare tier={slot.tier} />}
+                <span style={{ color: slotColor(slot), fontSize: 13, lineHeight: 1.4 }}>
+                  {slot ? slotLabel(slot) : "empty prefix"}
+                </span>
+              </div>
+            ))}
+            {suffixes.map((slot, i) => (
+              <div key={`s${i}`} style={{ display: "flex", alignItems: "flex-start", gap: 7, justifyContent: slot ? "flex-start" : "center" }}>
+                {slot && <GearTierSquare tier={slot.tier} />}
+                <span style={{ color: slotColor(slot), fontSize: 13, lineHeight: 1.4 }}>
+                  {slot ? slotLabel(slot) : "empty suffix"}
+                </span>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
 
 // ─── Slot definitions ─────────────────────────────────────────────────────────
 
@@ -325,6 +524,8 @@ type SlotTileProps = {
   corrosionTotal: number | null;
   costSide: "left" | "right";
   hasDream: boolean;
+  itemSlots?: ItemSlots | null;
+  poolData?: CraftedPool | null;
   onOpen: () => void;
   onFocus: () => void;
   onSelect: (poolId: string) => void;
@@ -345,9 +546,10 @@ const METALLIC_GRADIENTS = {
   pink:   "linear-gradient(145deg, #fce7f3 0%, #be185d 15%, #fdf2f8 35%, #f472b6 55%, #9d174d 75%, #f9a8d4 100%)",
 };
 
-function SlotTile({ slotId, pools, loadout, psCount, isOpen, isFocused, craftTotal, corrosionTotal, costSide, hasDream, onOpen, onFocus, onSelect, onClose }: SlotTileProps) {
+function SlotTile({ slotId, pools, loadout, psCount, isOpen, isFocused, craftTotal, corrosionTotal, costSide, hasDream, itemSlots, poolData, onOpen, onFocus, onSelect, onClose }: SlotTileProps) {
   const triggerRef = useRef<HTMLButtonElement>(null);
   const [isHovered, setIsHovered] = useState(false);
+  const [tooltipPos, setTooltipPos] = useState<{ x: number; y: number } | null>(null);
   const selectedPool = pools.find((p) => p.id === loadout[slotId]);
   const locked = slotId === "off_hand" && isMainHandTwoHanded(loadout, pools);
 
@@ -384,8 +586,9 @@ function SlotTile({ slotId, pools, loadout, psCount, isOpen, isFocused, craftTot
   return (
     <div
       className="flex flex-col items-center gap-0.5"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={(e) => { setIsHovered(true); if (selectedPool && itemSlots && !isOpen) setTooltipPos({ x: e.clientX, y: e.clientY }); }}
+      onMouseMove={(e) => { if (selectedPool && itemSlots && !isOpen) setTooltipPos({ x: e.clientX, y: e.clientY }); }}
+      onMouseLeave={() => { setIsHovered(false); setTooltipPos(null); }}
     >
       <span className={`relative z-10 text-xs uppercase tracking-wider font-medium transition-colors ${isActive ? "text-white" : isHovered && !locked ? "text-[#e0ddd8]" : "text-zinc-600"}`}>
         {SLOT_LABELS[slotId]}
@@ -485,6 +688,16 @@ function SlotTile({ slotId, pools, loadout, psCount, isOpen, isFocused, craftTot
           </div>
         )}
       </div>
+      {selectedPool && itemSlots && tooltipPos && !isOpen && (
+        <GearTooltipCard
+          pool={selectedPool}
+          itemSlots={itemSlots}
+          poolData={poolData}
+          psCount={psCount}
+          cx={tooltipPos.x}
+          cy={tooltipPos.y}
+        />
+      )}
     </div>
   );
 }
@@ -500,13 +713,15 @@ type GearPanelProps = {
   costTotals: Partial<Record<GearSlotId, { craft: number | null; corrosion: number | null }>>;
   dreamCount: number;
   dreamFlags: Partial<Record<GearSlotId, boolean>>;
+  slotItemSlots?: Partial<Record<GearSlotId, ItemSlots | null>>;
+  slotPoolData?: Partial<Record<GearSlotId, CraftedPool | null>>;
   onSlotOpen: (id: GearSlotId) => void;
   onSlotFocus: (id: GearSlotId) => void;
   onSlotClose: () => void;
   onSelect: (slotId: GearSlotId, poolId: string) => void;
 };
 
-export default function GearPanel({ pools, loadout, activeSlotId, focusedSlotId, psCounts, costTotals, dreamCount, dreamFlags, onSlotOpen, onSlotFocus, onSlotClose, onSelect }: GearPanelProps) {
+export default function GearPanel({ pools, loadout, activeSlotId, focusedSlotId, psCounts, costTotals, dreamCount, dreamFlags, slotItemSlots, slotPoolData, onSlotOpen, onSlotFocus, onSlotClose, onSelect }: GearPanelProps) {
   const allSlots = LAYOUT.flat();
 
   // Sum craft totals; NaN if any contributing slot is NaN
@@ -533,13 +748,13 @@ export default function GearPanel({ pools, loadout, activeSlotId, focusedSlotId,
         {/* Left column — costs on right */}
         <div className="flex flex-col gap-12">
           {LAYOUT.map(([left]) => (
-            <SlotTile key={left} slotId={left} pools={pools} loadout={loadout} psCount={psCounts[left] ?? 0} isOpen={activeSlotId === left} isFocused={focusedSlotId === left} craftTotal={costTotals[left]?.craft ?? null} corrosionTotal={costTotals[left]?.corrosion ?? null} costSide="right" hasDream={dreamFlags[left] ?? false} onOpen={() => onSlotOpen(left)} onFocus={() => onSlotFocus(left)} onSelect={(id) => onSelect(left, id)} onClose={onSlotClose} />
+            <SlotTile key={left} slotId={left} pools={pools} loadout={loadout} psCount={psCounts[left] ?? 0} isOpen={activeSlotId === left} isFocused={focusedSlotId === left} craftTotal={costTotals[left]?.craft ?? null} corrosionTotal={costTotals[left]?.corrosion ?? null} costSide="right" hasDream={dreamFlags[left] ?? false} itemSlots={slotItemSlots?.[left]} poolData={slotPoolData?.[left]} onOpen={() => onSlotOpen(left)} onFocus={() => onSlotFocus(left)} onSelect={(id) => onSelect(left, id)} onClose={onSlotClose} />
           ))}
         </div>
         {/* Right column — costs on left */}
         <div className="flex flex-col gap-12">
           {LAYOUT.map(([, right]) => (
-            <SlotTile key={right} slotId={right} pools={pools} loadout={loadout} psCount={psCounts[right] ?? 0} isOpen={activeSlotId === right} isFocused={focusedSlotId === right} craftTotal={costTotals[right]?.craft ?? null} corrosionTotal={costTotals[right]?.corrosion ?? null} costSide="left" hasDream={dreamFlags[right] ?? false} onOpen={() => onSlotOpen(right)} onFocus={() => onSlotFocus(right)} onSelect={(id) => onSelect(right, id)} onClose={onSlotClose} />
+            <SlotTile key={right} slotId={right} pools={pools} loadout={loadout} psCount={psCounts[right] ?? 0} isOpen={activeSlotId === right} isFocused={focusedSlotId === right} craftTotal={costTotals[right]?.craft ?? null} corrosionTotal={costTotals[right]?.corrosion ?? null} costSide="left" hasDream={dreamFlags[right] ?? false} itemSlots={slotItemSlots?.[right]} poolData={slotPoolData?.[right]} onOpen={() => onSlotOpen(right)} onFocus={() => onSlotFocus(right)} onSelect={(id) => onSelect(right, id)} onClose={onSlotClose} />
           ))}
         </div>
       </div>

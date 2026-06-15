@@ -246,6 +246,12 @@ export default function CraftingPage() {
             costTotals={costTotals}
             dreamCount={dreamCount}
             dreamFlags={dreamFlags}
+            slotItemSlots={Object.fromEntries(
+              (Object.keys(slotDataMap) as GearSlotId[]).map((id) => [id, slotDataMap[id]?.itemSlots ?? null])
+            ) as Partial<Record<GearSlotId, ItemSlots | null>>}
+            slotPoolData={Object.fromEntries(
+              (Object.keys(slotDataMap) as GearSlotId[]).map((id) => [id, slotDataMap[id]?.poolData ?? null])
+            ) as Partial<Record<GearSlotId, import("@/services/crafting/types").CraftedPool | null>>}
             onSlotOpen={(id) => setActiveSlotId((prev) => (prev === id ? null : id))}
             onSlotFocus={(id) => setFocusedSlotId(id)}
             onSlotClose={() => setActiveSlotId(null)}
