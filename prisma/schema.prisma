@@ -238,6 +238,19 @@ model PactSpirit {
   @@index([rarity])
 }
 
+model PactSpiritTree {
+  id              String @id
+  name            String @unique
+  description     String
+  mainSkillName   String
+  mainSkillEffect String
+  slots           Json
+  upgradeRanks    Json
+  glossary        Json
+
+  @@index([name])
+}
+
 model Talent {
   id     String @id
   god    String

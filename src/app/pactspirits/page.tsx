@@ -78,6 +78,56 @@ interface PactSpirit {
 
 interface SelectedSlot { category: Category; index: number }
 
+// ─── Pactspirit tree ──────────────────────────────────────────────────────────
+
+interface SpiritTreeSlot {
+  name:   string;
+  effect: string[];
+  ring:   "inner" | "mid" | "outer";
+}
+
+interface SpiritTreeData {
+  id:              string;
+  name:            string;
+  description:     string;
+  mainSkillName:   string;
+  mainSkillEffect: string;
+  slots:           SpiritTreeSlot[];
+  upgradeRanks:    { rank: number; modifiers: string[] }[];
+  glossary:        Record<string, { name: string; description: string }>;
+}
+
+// ARM_NODES[armIdx][posIdx] = diagram node label (arm 0 = battle slot 0, etc.)
+const ARM_NODES: readonly [readonly string[], readonly string[], readonly string[]] = [
+  ["3","4","5","7","8","10","12","13","15","17"],
+  ["27","28","29","31","32","34","36","37","39","41"],
+  ["51","52","53","55","56","58","60","61","63","65"],
+] as const;
+
+// slots array order: [inner0..5, mid0..2, outer0]
+// maps arm position (0-9) → index in that flat slots array
+const POS_TO_SLOT_IDX = [0, 1, 6, 2, 3, 7, 4, 5, 8, 9] as const;
+
+// maps arm position (0-9) → ring type
+const POS_TO_RING: Record<number, "inner" | "mid" | "outer"> = {
+  0: "inner", 1: "inner", 2: "mid",
+  3: "inner", 4: "inner", 5: "mid",
+  6: "inner", 7: "inner", 8: "mid",
+  9: "outer",
+};
+
+// reverse lookup: node label → [armIdx, posIdx]
+const NODE_LABEL_TO_ARM_POS: Record<string, [number, number]> = {};
+ARM_NODES.forEach((arm, armIdx) => {
+  arm.forEach((label, posIdx) => { NODE_LABEL_TO_ARM_POS[label] = [armIdx, posIdx]; });
+});
+
+const NODE_RING_COLOR: Record<string, string> = {
+  inner: "#3b82f6",
+  mid:   "#a855f7",
+  outer: "#f59e0b",
+};
+
 // ─── Undetermined fate ────────────────────────────────────────────────────────
 
 type FateNodeType = "micro" | "medium";
@@ -163,6 +213,26 @@ function canAddFateNode(nodes: FateNodeType[], type: FateNodeType): boolean {
   if (med === 0) return mic <= 5;
   if (mic === 0) return med <= 3;
   return med + mic <= 3;
+}
+
+function fateOptionLayout(micro: number, medium: number) {
+  const h = 36, cy = 18;
+  const microR = 8, mediumR = 13, gap = 5, pad = 10;
+  const circles: { cx: number; cy: number; r: number }[] = [];
+  let pen = pad;
+  for (let i = 0; i < micro; i++) {
+    if (i > 0) pen += gap;
+    const cx = pen + microR;
+    circles.push({ cx, cy, r: microR });
+    pen = cx + microR;
+  }
+  for (let j = 0; j < medium; j++) {
+    if (circles.length > 0) pen += gap;
+    const cx = pen + mediumR;
+    circles.push({ cx, cy, r: mediumR });
+    pen = cx + mediumR;
+  }
+  return { circles, w: pen + pad, h };
 }
 
 // ─── Rarity helpers ───────────────────────────────────────────────────────────
@@ -513,6 +583,93 @@ function PactSpiritCard({
   );
 }
 
+// ─── Node tooltip card ────────────────────────────────────────────────────────
+
+function NodeTooltipCard({ slot, ring, cx: cursorX, cy: cursorY }: { slot: SpiritTreeSlot | null; ring: "inner" | "mid" | "outer"; cx: number; cy: number }) {
+  const W = 220;
+  const GAP = 14;
+  const vpW = typeof window !== "undefined" ? window.innerWidth : 1920;
+  const left = cursorX + GAP + W <= vpW ? cursorX + GAP : cursorX - GAP - W;
+  const color = NODE_RING_COLOR[ring] ?? "#e4e4e7";
+  const ringLabel = ring === "outer" ? "Large Node" : ring === "mid" ? "Medium Node" : "Micro Node";
+
+  return createPortal(
+    <div style={{
+      position: "fixed", left, top: cursorY - 16,
+      width: W,
+      background: "#1d1b1c",
+      border: "1px solid #2a2a2a",
+      borderRadius: "0 10px 0 10px",
+      pointerEvents: "none",
+      zIndex: 9999,
+      padding: "10px 12px 12px",
+      boxShadow: "0 6px 24px rgba(0,0,0,0.7)",
+    }}>
+      <div style={{ color, fontSize: 10, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 4 }}>
+        {ringLabel}
+      </div>
+      {slot ? (
+        <>
+          <div style={{ color: "#e4e4e7", fontSize: 15, fontWeight: 700, marginBottom: 6 }}>
+            {slot.name}
+          </div>
+          {slot.effect.map((eff, i) => (
+            <div key={i} style={{ color: "#a1a1aa", fontSize: 13, lineHeight: 1.5 }}>{eff}</div>
+          ))}
+        </>
+      ) : (
+        <div style={{ color: "#52525b", fontSize: 13, fontStyle: "italic" }}>
+          Select a pactspirit to view node data
+        </div>
+      )}
+    </div>,
+    document.body
+  );
+}
+
+// ─── Fate option card ─────────────────────────────────────────────────────────
+
+function FateOptionCard({
+  micro, medium, selected, onClick,
+}: {
+  micro: number; medium: number; selected: boolean; onClick: () => void;
+}) {
+  const [hovered, setHovered] = useState(false);
+  const { circles, w, h } = fateOptionLayout(micro, medium);
+  const labelA = micro > 0 ? `${micro} Micro` : `${medium} Medium`;
+  const labelB = micro > 0 && medium > 0 ? `${medium} Medium` : null;
+
+  return (
+    <div
+      onClick={onClick}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        display: "flex", flexDirection: "column", alignItems: "center", gap: 6,
+        padding: "10px 8px 8px",
+        background: selected ? "#0f2818" : hovered ? "#222222" : "#1a1a1a",
+        border: "1px solid #2a2a2a",
+        outline: selected ? "2px solid #fbdb58" : "none",
+        outlineOffset: "1px",
+        borderRadius: "0 10px 0 10px",
+        cursor: "pointer",
+        transition: "background 0.12s",
+      }}
+    >
+      <svg width={w} height={h}>
+        {circles.map((c, i) => (
+          <circle key={i} cx={c.cx} cy={c.cy} r={c.r}
+            fill="#22c55e" stroke="#ffffff" strokeWidth={1.5} />
+        ))}
+      </svg>
+      <div style={{ color: selected ? "#a8e6b8" : "#71717a", fontSize: 9, fontWeight: 600, textAlign: "center", textTransform: "uppercase", letterSpacing: "0.05em", lineHeight: 1.4 }}>
+        <div>{labelA}</div>
+        {labelB && <div>{labelB}</div>}
+      </div>
+    </div>
+  );
+}
+
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 const CATEGORY_LABEL: Record<Category, string> = {
@@ -529,7 +686,7 @@ export default function PactspiritsPage() {
   const [activeTagFilters, setActiveTagFilters] = useState<Set<string>>(new Set());
   const [hoveredTag,       setHoveredTag]       = useState<string | null>(null);
   const [hoveredTooltip,   setHoveredTooltip]   = useState<{ spirit: PactSpirit; x: number; y: number } | null>(null);
-  const [panelMinimized,   setPanelMinimized]   = useState(false);
+  const [panelMinimized,   setPanelMinimized]   = useState(true);
   const [headerHovered,    setHeaderHovered]    = useState(false);
   const [hoveredBattleLink, setHoveredBattleLink] = useState<number | null>(null);
   const [fates, setFates] = useState<Record<FateKey, FateState>>({
@@ -538,6 +695,9 @@ export default function PactspiritsPage() {
     bottom: { nodes: [] },
   });
   const [selectedFate, setSelectedFate] = useState<FateKey | null>(null);
+  const [treeData,        setTreeData]        = useState<Record<number, SpiritTreeData | null>>({ 0: null, 1: null, 2: null });
+  const [nodeTooltip,     setNodeTooltip]     = useState<{ slot: SpiritTreeSlot | null; ring: "inner" | "mid" | "outer"; x: number; y: number } | null>(null);
+  const [fateNodeTooltip, setFateNodeTooltip] = useState<{ x: number; y: number } | null>(null);
 
   function addFateNode(key: FateKey, type: FateNodeType) {
     setFates(prev => ({ ...prev, [key]: { nodes: [...prev[key].nodes, type] } }));
@@ -549,6 +709,29 @@ export default function PactspiritsPage() {
     setFates(prev => ({ ...prev, [key]: { nodes: [] } }));
   }
 
+  const currentFateNodes = selectedFate ? fates[selectedFate].nodes : [];
+  const currentFate = {
+    micro:  currentFateNodes.filter(n => n === "micro").length,
+    medium: currentFateNodes.filter(n => n === "medium").length,
+  };
+  const hasFate = currentFateNodes.length > 0;
+
+  function handleFateSelect(micro: number, medium: number) {
+    if (!selectedFate) return;
+    const same = hasFate && currentFate.micro === micro && currentFate.medium === medium;
+    const nodes: FateNodeType[] = [];
+    if (!same) {
+      for (let i = 0; i < micro; i++) nodes.push("micro");
+      for (let j = 0; j < medium; j++) nodes.push("medium");
+    }
+    setFates(prev => ({ ...prev, [selectedFate]: { nodes } }));
+  }
+
+  function clearFateSelection() {
+    if (!selectedFate) return;
+    setFates(prev => ({ ...prev, [selectedFate]: { nodes: [] } }));
+  }
+
   function handleSpiritHover(spirit: PactSpirit, x: number, y: number) { setHoveredTooltip({ spirit, x, y }); }
   function handleSpiritLeave() { setHoveredTooltip(null); }
 
@@ -556,6 +739,37 @@ export default function PactspiritsPage() {
     fetch("/api/pactspirits?category=battle").then((r) => r.json()).then(setBattleSpirits).catch(console.error);
     fetch("/api/pactspirits?category=drop").then((r) => r.json()).then(setDropSpirits).catch(console.error);
   }, []);
+
+  useEffect(() => {
+    [0, 1, 2].forEach((armIdx) => {
+      const name = slotSelections[`battle-${armIdx}`];
+      const spirit = name ? battleSpirits.find((s) => s.name === name) ?? null : null;
+      if (!spirit) {
+        setTreeData((prev) => ({ ...prev, [armIdx]: null }));
+        return;
+      }
+      fetch(`/api/pactspirit-tree?name=${encodeURIComponent(spirit.name)}`)
+        .then((r) => r.json())
+        .then((data) => setTreeData((prev) => ({ ...prev, [armIdx]: data })))
+        .catch(() => setTreeData((prev) => ({ ...prev, [armIdx]: null })));
+    });
+  }, [slotSelections, battleSpirits]);
+
+  function getNodeSlot(label: string): SpiritTreeSlot | null {
+    const armPos = NODE_LABEL_TO_ARM_POS[label];
+    if (!armPos) return null;
+    const [armIdx, posIdx] = armPos;
+    const tree = treeData[armIdx];
+    if (!tree) return null;
+    const slotIdx = POS_TO_SLOT_IDX[posIdx];
+    return (tree.slots[slotIdx] as SpiritTreeSlot) ?? null;
+  }
+
+  function getNodeRing(label: string): "inner" | "mid" | "outer" | null {
+    const armPos = NODE_LABEL_TO_ARM_POS[label];
+    if (!armPos) return null;
+    return POS_TO_RING[armPos[1]] ?? null;
+  }
 
   function slotKey(cat: Category, idx: number) { return `${cat}-${idx}`; }
 
@@ -569,6 +783,7 @@ export default function PactspiritsPage() {
   function handleSlotClick(cat: Category, idx: number) {
     const isSameSlot = selectedSlot?.category === cat && selectedSlot?.index === idx;
     setSelectedSlot(isSameSlot ? null : { category: cat, index: idx });
+    setSelectedFate(null);
     setSearchQuery("");
     if (!isSameSlot && cat !== selectedSlot?.category) setActiveTagFilters(new Set());
   }
@@ -806,9 +1021,16 @@ export default function PactspiritsPage() {
             { cx: 356,  cy: -364, label: "29", size: "medium" },
           ] as { cx: number; cy: number; label: string; size: string; color?: string }[]).map(({ cx, cy, label, size, color }) => {
             const r = size === "large" ? 40 : size === "medium" ? 30 : 18;
-            const fill = color ?? "#e85d04";
+            const slot = getNodeSlot(label);
+            const ring = getNodeRing(label);
+            const fill = slot ? (NODE_RING_COLOR[slot.ring] ?? "#e85d04") : (color ?? "#e85d04");
             return (
-            <g key={label}>
+            <g key={label}
+              style={{ pointerEvents: ring ? "all" : "none", cursor: "default" }}
+              onMouseEnter={(e) => { if (ring) setNodeTooltip({ slot, ring, x: e.clientX, y: e.clientY }); }}
+              onMouseMove={(e)  => { if (ring) setNodeTooltip((prev) => prev ? { ...prev, x: e.clientX, y: e.clientY } : null); }}
+              onMouseLeave={() => setNodeTooltip(null)}
+            >
               <circle cx={cx} cy={cy} r={r} fill={fill} stroke="#fff" strokeWidth={1.5} />
               <text x={cx + r + 4} y={cy + 5} fontSize={13} fontWeight="bold" fill={fill} stroke="#000" strokeWidth={3} paintOrder="stroke">{label}</text>
             </g>
@@ -821,10 +1043,13 @@ export default function PactspiritsPage() {
             const hasNodes = fates[key].nodes.length > 0;
             return (
               <g key={key} style={{ pointerEvents: "all", cursor: "pointer" }}
-                onClick={(e) => { e.stopPropagation(); setSelectedFate(isSelected ? null : key); }}>
+                onClick={(e) => { e.stopPropagation(); setSelectedFate(isSelected ? null : key); setSelectedSlot(null); }}
+                onMouseEnter={(e) => setFateNodeTooltip({ x: e.clientX, y: e.clientY })}
+                onMouseMove={(e)  => setFateNodeTooltip((prev) => prev ? { ...prev, x: e.clientX, y: e.clientY } : null)}
+                onMouseLeave={() => setFateNodeTooltip(null)}>
                 <circle cx={def.nodeCx} cy={def.nodeCy} r={18}
                   fill={hasNodes ? "#22c55e" : "#e85d04"}
-                  stroke={isSelected ? "#fff" : "#fff"} strokeWidth={isSelected ? 3 : 1.5} />
+                  stroke={isSelected ? "#fbdb58" : "#fff"} strokeWidth={isSelected ? 3 : 1.5} />
                 <text x={def.nodeCx + 22} y={def.nodeCy + 5} fontSize={13} fontWeight="bold"
                   fill={hasNodes ? "#22c55e" : "#e85d04"} stroke="#000" strokeWidth={3} paintOrder="stroke">
                   {def.nodeLabel}
@@ -847,8 +1072,9 @@ export default function PactspiritsPage() {
               <g
                 key={idx}
                 style={{ pointerEvents: "all", cursor: "pointer" }}
-                onMouseEnter={() => setHoveredBattleLink(idx)}
-                onMouseLeave={() => setHoveredBattleLink(null)}
+                onMouseEnter={(e) => { setHoveredBattleLink(idx); if (spirit) handleSpiritHover(spirit, e.clientX, e.clientY); }}
+                onMouseMove={(e)  => { if (spirit) handleSpiritHover(spirit, e.clientX, e.clientY); }}
+                onMouseLeave={() => { setHoveredBattleLink(null); handleSpiritLeave(); }}
                 onClick={(e) => { e.stopPropagation(); handleSlotClick("battle", idx); }}
               >
                 {/* Fill */}
@@ -1125,8 +1351,136 @@ export default function PactspiritsPage() {
         </div>
       )}
 
+      {/* Fate selector panel — right side, shown when an undetermined fate node is selected */}
+      {selectedFate && (
+        <div
+          className="absolute flex flex-col"
+          onClick={(e) => e.stopPropagation()}
+          style={{ left: `calc(50% + ${svgW / 2}px + ${PANEL_GAP}px)`, top: 0, width: PANEL_W, height: "100vh", background: PANEL_BG, overflow: "hidden" }}
+        >
+          {/* Header */}
+          <div className="px-4 pt-5 pb-3" style={{ borderBottom: "2px solid #333333", flexShrink: 0 }}>
+            <p style={{ color: "#52525b", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 3 }}>
+              Undetermined Fate · Node {FATE_DEFS[selectedFate].nodeLabel}
+            </p>
+            <p style={{ color: "#e4e4e7", fontSize: 15, fontWeight: 600 }}>
+              Choose Fate Configuration
+            </p>
+          </div>
+
+          {/* Clear button */}
+          <div style={{ padding: "10px 16px", flexShrink: 0 }}>
+            <button
+              onClick={clearFateSelection}
+              disabled={!hasFate}
+              style={{
+                padding: "5px 12px", borderRadius: "0 8px 0 8px",
+                background: hasFate ? "#c0392b" : "#1e1e1e",
+                border: "none",
+                color: hasFate ? "#ffffff" : "#555555",
+                fontSize: 11, fontWeight: 600,
+                cursor: hasFate ? "pointer" : "not-allowed",
+                transition: "background 0.15s",
+              }}
+            >
+              ✕ Clear Fate
+            </button>
+          </div>
+
+          {/* Scrollable sections */}
+          <div className="overflow-y-auto" style={{ flex: 1, padding: "0 16px 16px" }}>
+
+            {/* Micro Fates */}
+            <div style={{ marginBottom: 20 }}>
+              <div style={{ color: "#71717a", fontSize: 9, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 4, paddingTop: 8, borderTop: "1px solid #2a2a2a" }}>
+                Micro Fates
+              </div>
+              <p style={{ color: "#3f3f46", fontSize: 10, marginBottom: 8 }}>Up to 5 small fate slots</p>
+              <div style={{ display: "flex", gap: 8 }}>
+                {[1, 2, 3, 4, 5].map((n) => (
+                  <FateOptionCard
+                    key={n}
+                    micro={n} medium={0}
+                    selected={hasFate && currentFate.micro === n && currentFate.medium === 0}
+                    onClick={() => handleFateSelect(n, 0)}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Medium Fates */}
+            <div style={{ marginBottom: 20 }}>
+              <div style={{ color: "#71717a", fontSize: 9, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 4, paddingTop: 8, borderTop: "1px solid #2a2a2a" }}>
+                Medium Fates
+              </div>
+              <p style={{ color: "#3f3f46", fontSize: 10, marginBottom: 8 }}>Up to 3 large fate slots</p>
+              <div style={{ display: "flex", gap: 8 }}>
+                {[1, 2, 3].map((n) => (
+                  <FateOptionCard
+                    key={n}
+                    micro={0} medium={n}
+                    selected={hasFate && currentFate.medium === n && currentFate.micro === 0}
+                    onClick={() => handleFateSelect(0, n)}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Mixed Fates */}
+            <div>
+              <div style={{ color: "#71717a", fontSize: 9, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 4, paddingTop: 8, borderTop: "1px solid #2a2a2a" }}>
+                Mixed Fates
+              </div>
+              <p style={{ color: "#3f3f46", fontSize: 10, marginBottom: 8 }}>Up to 3 total fate slots (micro + medium)</p>
+              <div style={{ display: "flex", gap: 8 }}>
+                {([
+                  { micro: 1, medium: 1 },
+                  { micro: 1, medium: 2 },
+                  { micro: 2, medium: 1 },
+                ] as { micro: number; medium: number }[]).map((opt) => (
+                  <FateOptionCard
+                    key={`${opt.micro}-${opt.medium}`}
+                    micro={opt.micro} medium={opt.medium}
+                    selected={hasFate && currentFate.micro === opt.micro && currentFate.medium === opt.medium}
+                    onClick={() => handleFateSelect(opt.micro, opt.medium)}
+                  />
+                ))}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      )}
+
       {hoveredTooltip && (
         <PactSpiritTooltipCard spirit={hoveredTooltip.spirit} cx={hoveredTooltip.x} cy={hoveredTooltip.y} />
+      )}
+
+      {nodeTooltip && (
+        <NodeTooltipCard slot={nodeTooltip.slot} ring={nodeTooltip.ring} cx={nodeTooltip.x} cy={nodeTooltip.y} />
+      )}
+
+      {fateNodeTooltip && createPortal(
+        <div style={{
+          position: "fixed",
+          left: fateNodeTooltip.x + 14,
+          top:  fateNodeTooltip.y - 16,
+          width: 180,
+          background: "#1d1b1c",
+          border: "1px solid #2a2a2a",
+          borderRadius: "0 10px 0 10px",
+          pointerEvents: "none",
+          zIndex: 9999,
+          padding: "10px 12px 12px",
+          boxShadow: "0 6px 24px rgba(0,0,0,0.7)",
+        }}>
+          <div style={{ color: "#22c55e", fontSize: 10, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 4 }}>
+            Undetermined Fate
+          </div>
+          <div style={{ color: "#a1a1aa", fontSize: 13, lineHeight: 1.5 }}>+6% damage</div>
+          <div style={{ color: "#a1a1aa", fontSize: 13, lineHeight: 1.5 }}>+6% minion damage</div>
+        </div>,
+        document.body
       )}
 
     </div>

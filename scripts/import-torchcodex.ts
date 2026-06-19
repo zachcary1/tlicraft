@@ -173,6 +173,38 @@ async function importPactSpirit() {
   console.log(`Imported ${rows.length} pact spirit entries.`);
 }
 
+// ── Pact Spirit Tree ───────────────────────────────────────────────────────────
+
+async function importPactSpiritTree() {
+  const raw = await readFile(path.join(DIR, "pactspirit_nodes.json"), "utf8");
+  const data = JSON.parse(raw) as {
+    spirits: {
+      item_id: string;
+      name: string;
+      description?: string;
+      main_skill_name?: string;
+      main_skill_effect?: string;
+      slots: { name: string; effect: string[]; ring: string }[];
+      upgrade_ranks?: { rank: number; modifiers: string[] }[];
+      glossary?: Record<string, { name: string; description: string }>;
+    }[];
+  };
+  await prisma.pactSpiritTree.deleteMany({});
+  await prisma.pactSpiritTree.createMany({
+    data: data.spirits.map((r) => ({
+      id:              r.item_id,
+      name:            r.name,
+      description:     r.description     ?? "",
+      mainSkillName:   r.main_skill_name  ?? "",
+      mainSkillEffect: r.main_skill_effect ?? "",
+      slots:           r.slots,
+      upgradeRanks:    r.upgrade_ranks ?? [],
+      glossary:        r.glossary      ?? {},
+    })),
+  });
+  console.log(`Imported ${data.spirits.length} pact spirit tree entries.`);
+}
+
 // ── Talent ─────────────────────────────────────────────────────────────────────
 
 async function importTalent() {
@@ -243,6 +275,7 @@ async function main() {
   await importLegendary();
   await importMemoryRevival();
   await importPactSpirit();
+  await importPactSpiritTree();
   await importRenewedMemory();
   await importTalent();
   console.log("Torchcodex import complete.");
