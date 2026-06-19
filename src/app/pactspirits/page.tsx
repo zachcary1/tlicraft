@@ -92,6 +92,13 @@ function getFateIconPath(type: string, name: string): string {
   return `/icons/fates/${folder}/${file}.webp`;
 }
 
+// Micro Fate icon art only fills ~60% of its canvas (vs ~89-91% for Medium Fate/Kismet/Dual
+// Kismet), so it needs to be rendered oversized and cropped by the circular clip to visually
+// fill the node the same way the others do.
+function getFateIconScale(type: string): number {
+  return type === "Micro Fate" ? 1.47 : 1;
+}
+
 function parseFateEffectLines(html: string): string[] {
   const clean = html.replace(/ data-title="[^"]*"/g, "");
   const liItems = [...clean.matchAll(/<li[^>]*>(.*?)<\/li>/gs)];
@@ -106,6 +113,18 @@ function getFateTypeColors(type: string): { bg: string; nodeBg: string; accent: 
   if (type === "Micro Fate")  return { bg: "#091929", nodeBg: "#0d2035", accent: "#48b8ff" };
   if (type === "Medium Fate") return { bg: "#170923", nodeBg: "#1f0d30", accent: "#c192ff" };
   return { bg: "#271405", nodeBg: "#331a06", accent: "#ff7c1c" };
+}
+
+// Card/tooltip backgrounds for a placed fate: Kismet/Dual Kismet are always orange,
+// while Micro/Medium Fate depend on tier (T1 purple, T2 light blue). The background is a
+// gradient from near-black at the top down to the tier's own color at the bottom, matching
+// the TierBadge gradient used on the gear page (linear-gradient(to bottom, #111111, fillColor)).
+function getFateTierColors(type: string, tier: string): { bg: string; nodeBg: string; accent: string } {
+  const accent = (type === "Kismet" || type === "Dual Kismet") ? "#ff7c1c"
+    : tier === "T2" ? "#48b8ff"
+    : "#a457ff";
+  const gradient = `linear-gradient(to bottom, #111111 0%, ${accent} 100%)`;
+  return { bg: gradient, nodeBg: gradient, accent };
 }
 
 // ─── Pactspirit tree ──────────────────────────────────────────────────────────
@@ -626,7 +645,14 @@ function PactSpiritCard({
 const NODE_TT_W      = 240;
 const NODE_TT_ICON_R = 36; // radius → diameter 72px
 
-function NodeTooltipCard({ slot, ring, cx: cursorX, cy: cursorY }: { slot: SpiritTreeSlot | null; ring: "inner" | "mid" | "outer"; cx: number; cy: number }) {
+function NodeTooltipCard({
+  slot, ring, override, cx: cursorX, cy: cursorY,
+}: {
+  slot: SpiritTreeSlot | null;
+  ring: "inner" | "mid" | "outer";
+  override?: DestinyEntry | null;
+  cx: number; cy: number;
+}) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [cardH, setCardH] = useState(200);
   useEffect(() => { if (cardRef.current) setCardH(cardRef.current.offsetHeight); });
@@ -640,6 +666,11 @@ function NodeTooltipCard({ slot, ring, cx: cursorX, cy: cursorY }: { slot: Spiri
   const cardTop  = Math.max(iconHalf + 8, Math.min(vpH - cardH - 8, cursorY - 24));
 
   const ringLabel = ring === "outer" ? "Large Node" : ring === "mid" ? "Medium Node" : "Micro Node";
+  const overrideColors = override ? getFateTierColors(override.type, override.tier) : null;
+  const iconHref = override ? getFateIconPath(override.type, override.name) : slot ? getNodeIconPath(slot.name) : null;
+  const title = override ? override.name : slot ? slot.name : ringLabel;
+  const subtitle = override ? `${override.type} · Socketed` : ringLabel;
+  const lines = override ? parseFateEffectLines(override.effect) : slot ? slot.effect : null;
 
   return createPortal(
     <div ref={cardRef} style={{
@@ -655,9 +686,9 @@ function NodeTooltipCard({ slot, ring, cx: cursorX, cy: cursorY }: { slot: Spiri
         transform: "translateX(-50%)",
         width: iconD, height: iconD, borderRadius: "50%",
         overflow: "hidden", zIndex: 10,
-        background: "#1a1a1a",
+        background: overrideColors?.nodeBg ?? "#1a1a1a",
       }}>
-        {slot && <img src={getNodeIconPath(slot.name)} alt={slot.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />}
+        {iconHref && <img src={iconHref} alt={title} style={{ width: "100%", height: "100%", objectFit: "cover", transform: `scale(${override ? getFateIconScale(override.type) : 1})` }} />}
       </div>
 
       {/* Card body */}
@@ -665,24 +696,37 @@ function NodeTooltipCard({ slot, ring, cx: cursorX, cy: cursorY }: { slot: Spiri
 
         {/* Top section */}
         <div style={{
-          background: "#1f1f21",
-          padding: `${iconHalf + 10}px 10px 12px`,
-          textAlign: "center",
+          background: "#1f1f21", position: "relative",
+          padding: `${iconHalf + 10}px 10px 12px`, overflow: "hidden",
         }}>
-          <div style={{ color: "#ffffff", fontSize: 17, fontWeight: 700, letterSpacing: "0.05em" }}>
-            {slot ? slot.name : ringLabel}
-          </div>
-          <div style={{ color: "#a1a1aa", fontSize: 13, textTransform: "uppercase", letterSpacing: "0.1em", marginTop: 3 }}>
-            {ringLabel}
+          {overrideColors && (
+            <div style={{
+              position: "absolute", top: 10, left: 10, right: 10, bottom: 0,
+              background: `linear-gradient(to bottom, ${overrideColors.accent}59 0%, transparent 65%)`,
+              borderRadius: "4px 4px 0 0", pointerEvents: "none",
+            }} />
+          )}
+          <div style={{ position: "relative", zIndex: 1, textAlign: "center" }}>
+            <div style={{ color: "#ffffff", fontSize: 17, fontWeight: 700, letterSpacing: "0.05em" }}>
+              {title}
+            </div>
+            <div style={{ color: "#a1a1aa", fontSize: 13, textTransform: "uppercase", letterSpacing: "0.1em", marginTop: 3 }}>
+              {subtitle}
+            </div>
           </div>
         </div>
 
         {/* Bottom section */}
-        <div style={{ background: "#242325", padding: "10px 14px 14px" }}>
-          {slot ? (
-            slot.effect.map((eff, i) => (
-              <div key={i} style={{ color: "#c3c3c3", fontSize: 15, lineHeight: 1.6 }}>{eff}</div>
-            ))
+        <div style={{ background: "#242325", padding: "10px 14px 14px", display: lines ? "flex" : "block", gap: 7 }}>
+          {lines ? (
+            <>
+              {override && <TierSquare tier={override.tier} />}
+              <div>
+                {lines.map((eff, i) => (
+                  <div key={i} style={{ color: "#c3c3c3", fontSize: 15, lineHeight: 1.6 }}>{eff}</div>
+                ))}
+              </div>
+            </>
           ) : (
             <div style={{ color: "#52525b", fontSize: 15, fontStyle: "italic", textAlign: "center" }}>
               Select a pactspirit to view node data
@@ -698,7 +742,14 @@ function NodeTooltipCard({ slot, ring, cx: cursorX, cy: cursorY }: { slot: Spiri
 
 // ─── Fate node tooltip card ───────────────────────────────────────────────────
 
-function FateNodeTooltipCard({ fateKey, hasSpirit, cx: cursorX, cy: cursorY }: { fateKey: FateKey; hasSpirit: boolean; cx: number; cy: number }) {
+function FateNodeTooltipCard({
+  fateKey, hasSpirit, nodes, cx: cursorX, cy: cursorY,
+}: {
+  fateKey: FateKey;
+  hasSpirit: boolean;
+  nodes: FateNodeType[];
+  cx: number; cy: number;
+}) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [cardH, setCardH] = useState(200);
   useEffect(() => { if (cardRef.current) setCardH(cardRef.current.offsetHeight); });
@@ -710,6 +761,23 @@ function FateNodeTooltipCard({ fateKey, hasSpirit, cx: cursorX, cy: cursorY }: {
   const vpH = typeof window !== "undefined" ? window.innerHeight : 1080;
   const cardLeft = cursorX + GAP + NODE_TT_W <= vpW ? cursorX + GAP : cursorX - GAP - NODE_TT_W;
   const cardTop  = Math.max(iconHalf + 8, Math.min(vpH - cardH - 8, cursorY - 24));
+
+  const hasNodes    = nodes.length > 0;
+  const mediumCount = nodes.filter((n) => n === "medium").length;
+  const microCount  = nodes.filter((n) => n === "micro").length;
+  const iconHref = hasNodes
+    ? "/icons/fates/Undetermined%20Fate.webp"
+    : "/icons/pactspirits/nodes/Undetermined%20Fate%20Slots.webp";
+
+  function slotLine(count: number, label: "Medium" | "Micro") {
+    const word = count === 1 ? "Slot" : "Slots";
+    return (
+      <div style={{ color: "#ffa800", fontSize: 15, lineHeight: 1.6 }}>
+        {`Adds ${count} ${label} `}
+        <span style={{ color: "#00ffff" }}>{`Destiny ${word}`}</span>
+      </div>
+    );
+  }
 
   return createPortal(
     <div ref={cardRef} style={{
@@ -727,7 +795,7 @@ function FateNodeTooltipCard({ fateKey, hasSpirit, cx: cursorX, cy: cursorY }: {
         overflow: "hidden", zIndex: 10,
         display: "flex", alignItems: "center", justifyContent: "center",
       }}>
-        <img src="/icons/pactspirits/nodes/Undetermined%20Fate%20Slots.webp" alt="Undetermined Fate"
+        <img src={iconHref} alt="Undetermined Fate"
           style={{ width: "100%", height: "100%", objectFit: "cover" }} />
       </div>
 
@@ -736,28 +804,142 @@ function FateNodeTooltipCard({ fateKey, hasSpirit, cx: cursorX, cy: cursorY }: {
 
         {/* Top section */}
         <div style={{
-          background: "#1f1f21",
-          padding: `${iconHalf + 10}px 10px 12px`,
-          textAlign: "center",
+          background: "#1f1f21", position: "relative",
+          padding: `${iconHalf + 10}px 10px 12px`, overflow: "hidden",
         }}>
-          <div style={{ color: "#ffffff", fontSize: 17, fontWeight: 700, letterSpacing: "0.05em" }}>
-            Undetermined Fate
-          </div>
-          <div style={{ color: "#a1a1aa", fontSize: 13, textTransform: "uppercase", letterSpacing: "0.1em", marginTop: 3 }}>
-            Fate Node
+          {hasNodes && (
+            <div style={{
+              position: "absolute", top: 10, left: 10, right: 10, bottom: 0,
+              background: "linear-gradient(to bottom, #fe333359 0%, transparent 65%)",
+              borderRadius: "4px 4px 0 0", pointerEvents: "none",
+            }} />
+          )}
+          <div style={{ position: "relative", zIndex: 1, textAlign: "center" }}>
+            <div style={{ color: "#ffffff", fontSize: 17, fontWeight: 700, letterSpacing: "0.05em" }}>
+              {hasNodes ? "Undetermined Fate" : "Undetermined Fate Slot"}
+            </div>
+            <div style={{ color: "#a1a1aa", fontSize: 13, textTransform: "uppercase", letterSpacing: "0.1em", marginTop: 3 }}>
+              Fate Node
+            </div>
           </div>
         </div>
 
         {/* Bottom section */}
         <div style={{ background: "#242325", padding: "10px 14px 14px" }}>
           {hasSpirit ? (
-            <>
-              <div style={{ color: "#c3c3c3", fontSize: 15, lineHeight: 1.6 }}>+6% damage</div>
-              <div style={{ color: "#c3c3c3", fontSize: 15, lineHeight: 1.6 }}>+6% minion damage</div>
-            </>
+            hasNodes ? (
+              <>
+                {mediumCount > 0 && slotLine(mediumCount, "Medium")}
+                {microCount > 0 && slotLine(microCount, "Micro")}
+              </>
+            ) : (
+              <>
+                <div style={{ color: "#c3c3c3", fontSize: 15, lineHeight: 1.6 }}>+6% damage</div>
+                <div style={{ color: "#c3c3c3", fontSize: 15, lineHeight: 1.6 }}>+6% minion damage</div>
+              </>
+            )
           ) : (
             <div style={{ color: "#52525b", fontSize: 15, fontStyle: "italic", textAlign: "center" }}>
               Select a pactspirit to view node data
+            </div>
+          )}
+        </div>
+
+      </div>
+    </div>,
+    document.body
+  );
+}
+
+// ─── Destiny slot tooltip card ─────────────────────────────────────────────────
+
+function DestinySlotTooltipCard({
+  entry, size, cx: cursorX, cy: cursorY,
+}: {
+  entry: DestinyEntry | null;
+  size: FateNodeType;
+  cx: number; cy: number;
+}) {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [cardH, setCardH] = useState(200);
+  useEffect(() => { if (cardRef.current) setCardH(cardRef.current.offsetHeight); });
+
+  const iconD    = NODE_TT_ICON_R * 2;
+  const iconHalf = NODE_TT_ICON_R;
+  const GAP = 18;
+  const vpW = typeof window !== "undefined" ? window.innerWidth : 1920;
+  const vpH = typeof window !== "undefined" ? window.innerHeight : 1080;
+  const cardLeft = cursorX + GAP + NODE_TT_W <= vpW ? cursorX + GAP : cursorX - GAP - NODE_TT_W;
+  const cardTop  = Math.max(iconHalf + 8, Math.min(vpH - cardH - 8, cursorY - 24));
+
+  const sizeLabel = size === "medium" ? "Medium Node" : "Micro Node";
+  const colors    = entry ? getFateTierColors(entry.type, entry.tier) : null;
+  const iconHref  = entry ? getFateIconPath(entry.type, entry.name) : "/icons/pactspirits/nodes/Destiny%20Slot.webp";
+  const iconScale = entry ? getFateIconScale(entry.type) : 1;
+  const title     = entry ? entry.name : "Destiny Slot";
+  const subtitle  = entry
+    ? `${entry.type}${(entry.tier && entry.type !== "Kismet" && entry.type !== "Dual Kismet") ? ` · ${entry.tier}` : ""}`
+    : sizeLabel;
+
+  return createPortal(
+    <div ref={cardRef} style={{
+      position: "fixed", left: cardLeft, top: cardTop,
+      width: NODE_TT_W, pointerEvents: "none", zIndex: 9999,
+      overflow: "visible",
+      filter: "drop-shadow(0 8px 24px rgba(0,0,0,0.85))",
+      fontFamily: "'TLFont', Arial, Helvetica, sans-serif",
+    }}>
+      {/* Circular icon — top half protrudes above card */}
+      <div style={{
+        position: "absolute", top: -iconHalf, left: "50%",
+        transform: "translateX(-50%)",
+        width: iconD, height: iconD, borderRadius: "50%",
+        overflow: "hidden", zIndex: 10,
+        background: colors?.nodeBg ?? "#1a1a1a",
+      }}>
+        <img src={iconHref} alt={title} style={{ width: "100%", height: "100%", objectFit: "cover", transform: `scale(${iconScale})` }} />
+      </div>
+
+      {/* Card body */}
+      <div style={{ overflow: "hidden", borderRadius: "0 12px 0 12px" }}>
+
+        {/* Top section */}
+        <div style={{
+          background: "#1f1f21", position: "relative",
+          padding: `${iconHalf + 10}px 10px 12px`, overflow: "hidden",
+        }}>
+          {colors && (
+            <div style={{
+              position: "absolute", top: 10, left: 10, right: 10, bottom: 0,
+              background: `linear-gradient(to bottom, ${colors.accent}59 0%, transparent 65%)`,
+              borderRadius: "4px 4px 0 0", pointerEvents: "none",
+            }} />
+          )}
+          <div style={{ position: "relative", zIndex: 1, textAlign: "center" }}>
+            <div style={{ color: "#ffffff", fontSize: 17, fontWeight: 700, letterSpacing: "0.05em" }}>
+              {title}
+            </div>
+            <div style={{ color: "#a1a1aa", fontSize: 13, textTransform: "uppercase", letterSpacing: "0.1em", marginTop: 3 }}>
+              {subtitle}
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom section */}
+        <div style={{ background: "#242325", padding: "10px 14px 14px", display: "flex", gap: 7 }}>
+          {entry ? (
+            <>
+              <TierSquare tier={entry.tier} />
+              <div>
+                {parseFateEffectLines(entry.effect).map((line, i) => (
+                  <div key={i} style={{ color: "#c3c3c3", fontSize: 15, lineHeight: 1.6 }}>{line}</div>
+                ))}
+              </div>
+            </>
+          ) : (
+            <div>
+              <div style={{ color: "#c3c3c3", fontSize: 15, lineHeight: 1.6 }}>+6% damage</div>
+              <div style={{ color: "#c3c3c3", fontSize: 15, lineHeight: 1.6 }}>+6% minion damage</div>
             </div>
           )}
         </div>
@@ -788,7 +970,7 @@ function FateOptionCard({
       style={{
         display: "flex", flexDirection: "column", alignItems: "center", gap: 6,
         padding: "10px 8px 8px",
-        background: selected ? "#0f2818" : hovered ? "#222222" : "#1a1a1a",
+        background: hovered ? "#222222" : "#1a1a1a",
         border: "1px solid #2a2a2a",
         outline: selected ? "2px solid #fbdb58" : "none",
         outlineOffset: "1px",
@@ -800,14 +982,154 @@ function FateOptionCard({
       <svg width={w} height={h}>
         {circles.map((c, i) => (
           <circle key={i} cx={c.cx} cy={c.cy} r={c.r}
-            fill="#22c55e" stroke="#ffffff" strokeWidth={1.5} />
+            fill={i < micro ? NODE_RING_COLOR.inner : NODE_RING_COLOR.mid} stroke="#ffffff" strokeWidth={1.5} />
         ))}
       </svg>
-      <div style={{ color: selected ? "#a8e6b8" : "#71717a", fontSize: 9, fontWeight: 600, textAlign: "center", textTransform: "uppercase", letterSpacing: "0.05em", lineHeight: 1.4 }}>
+      <div style={{ color: "#71717a", fontSize: 9, fontWeight: 600, textAlign: "center", textTransform: "uppercase", letterSpacing: "0.05em", lineHeight: 1.4 }}>
         <div>{labelA}</div>
         {labelB && <div>{labelB}</div>}
       </div>
     </div>
+  );
+}
+
+// ─── Destiny (Fate / Kismet) picker card ──────────────────────────────────────
+
+function DestinyCard({
+  entry, selected, onClick, onHover, onLeave,
+}: {
+  entry:    DestinyEntry;
+  selected: boolean;
+  onClick:  () => void;
+  onHover?: (entry: DestinyEntry, x: number, y: number) => void;
+  onLeave?: () => void;
+}) {
+  const [imgError, setImgError] = useState(false);
+  const [hovered,  setHovered]  = useState(false);
+  useEffect(() => { setImgError(false); }, [entry.name]);
+
+  const colors = getFateTierColors(entry.type, entry.tier);
+
+  return (
+    <div
+      onClick={onClick}
+      onMouseEnter={(e) => { setHovered(true); onHover?.(entry, e.clientX, e.clientY); }}
+      onMouseMove={(e) => onHover?.(entry, e.clientX, e.clientY)}
+      onMouseLeave={() => { setHovered(false); onLeave?.(); }}
+      style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6, cursor: "pointer" }}
+    >
+      <div style={{
+        width: "100%", aspectRatio: "1", position: "relative", overflow: "hidden",
+        borderRadius: "0 16px 0 16px",
+        border: "3px solid #686867",
+        outline: selected ? "3px solid #fbdb58" : "none",
+        outlineOffset: "1px",
+        background: colors.bg,
+        filter: hovered ? "brightness(0.75)" : "none",
+        transition: "filter 0.15s",
+      }}>
+        {!imgError ? (
+          <img
+            src={getFateIconPath(entry.type, entry.name)}
+            alt={entry.name}
+            onError={() => setImgError(true)}
+            style={{ width: "100%", height: "100%", objectFit: "cover", pointerEvents: "none", display: "block", transform: `scale(${getFateIconScale(entry.type)})` }}
+          />
+        ) : (
+          <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <span style={{ color: "#444", fontSize: 18 }}>?</span>
+          </div>
+        )}
+      </div>
+
+      <div style={{ height: 28, display: "flex", alignItems: "flex-start", justifyContent: "center", paddingTop: 2 }}>
+        <div style={{
+          color: "#e4e4e7", fontSize: 11, fontWeight: 600, textAlign: "center", lineHeight: 1.3,
+          overflow: "hidden",
+          display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical",
+        }}>
+          {entry.name}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function TierSquare({ tier }: { tier: string }) {
+  const color = tier === "T0" ? "#fe3333"
+    : tier === "T1" ? "#ff7c1c"
+    : (tier === "T2" || tier === "T3") ? "#a457ff"
+    : "#52525b";
+  return (
+    <div style={{ width: 8, height: 8, flexShrink: 0, marginTop: 3, background: color, borderRadius: "2px 0 2px 0" }} />
+  );
+}
+
+function DestinyTooltipCard({ entry, cx: cursorX, cy: cursorY }: { entry: DestinyEntry; cx: number; cy: number }) {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [cardH, setCardH] = useState(200);
+  useEffect(() => { if (cardRef.current) setCardH(cardRef.current.offsetHeight); });
+
+  const colors = getFateTierColors(entry.type, entry.tier);
+  const lines  = parseFateEffectLines(entry.effect);
+
+  const iconD    = NODE_TT_ICON_R * 2;
+  const iconHalf = NODE_TT_ICON_R;
+  const GAP = 18;
+  const vpW = typeof window !== "undefined" ? window.innerWidth : 1920;
+  const vpH = typeof window !== "undefined" ? window.innerHeight : 1080;
+  const cardLeft = cursorX + GAP + NODE_TT_W <= vpW ? cursorX + GAP : cursorX - GAP - NODE_TT_W;
+  const cardTop  = Math.max(iconHalf + 8, Math.min(vpH - cardH - 8, cursorY - 24));
+
+  return createPortal(
+    <div ref={cardRef} style={{
+      position: "fixed", left: cardLeft, top: cardTop,
+      width: NODE_TT_W, pointerEvents: "none", zIndex: 9999,
+      overflow: "visible",
+      filter: "drop-shadow(0 8px 24px rgba(0,0,0,0.85))",
+      fontFamily: "'TLFont', Arial, Helvetica, sans-serif",
+    }}>
+      <div style={{
+        position: "absolute", top: -iconHalf, left: "50%",
+        transform: "translateX(-50%)",
+        width: iconD, height: iconD, borderRadius: "50%",
+        overflow: "hidden", zIndex: 10,
+        background: colors.nodeBg,
+      }}>
+        <img src={getFateIconPath(entry.type, entry.name)} alt={entry.name} style={{ width: "100%", height: "100%", objectFit: "cover", transform: `scale(${getFateIconScale(entry.type)})` }} />
+      </div>
+
+      <div style={{ overflow: "hidden", borderRadius: "0 12px 0 12px" }}>
+        <div style={{
+          background: "#1f1f21", position: "relative",
+          padding: `${iconHalf + 10}px 10px 12px`, overflow: "hidden",
+        }}>
+          <div style={{
+            position: "absolute", top: 10, left: 10, right: 10, bottom: 0,
+            background: `linear-gradient(to bottom, ${colors.accent}59 0%, transparent 65%)`,
+            borderRadius: "4px 4px 0 0", pointerEvents: "none",
+          }} />
+          <div style={{ position: "relative", zIndex: 1, textAlign: "center" }}>
+            <div style={{ color: "#ffffff", fontSize: 17, fontWeight: 700, letterSpacing: "0.05em" }}>
+              {entry.name}
+            </div>
+            <div style={{ color: "#a1a1aa", fontSize: 13, textTransform: "uppercase", letterSpacing: "0.1em", marginTop: 3 }}>
+              {entry.type}{(entry.tier && entry.type !== "Kismet" && entry.type !== "Dual Kismet") ? ` · ${entry.tier}` : ""}
+            </div>
+          </div>
+        </div>
+
+        <div style={{ background: "#242325", padding: "10px 14px 14px", display: "flex", gap: 7 }}>
+          <TierSquare tier={entry.tier} />
+          <div>
+            {lines.map((line, i) => (
+              <div key={i} style={{ color: "#c3c3c3", fontSize: 15, lineHeight: 1.6 }}>{line}</div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>,
+    document.body
   );
 }
 
@@ -837,9 +1159,15 @@ export default function PactspiritsPage() {
   });
   const [selectedFate, setSelectedFate] = useState<FateKey | null>(null);
   const [treeData,        setTreeData]        = useState<Record<number, SpiritTreeData | null>>({ 0: null, 1: null, 2: null });
-  const [nodeTooltip,        setNodeTooltip]        = useState<{ slot: SpiritTreeSlot | null; ring: "inner" | "mid" | "outer"; x: number; y: number } | null>(null);
+  const [nodeTooltip,        setNodeTooltip]        = useState<{ slot: SpiritTreeSlot | null; ring: "inner" | "mid" | "outer"; override: DestinyEntry | null; x: number; y: number } | null>(null);
   const [fateNodeTooltip,    setFateNodeTooltip]    = useState<{ key: FateKey; x: number; y: number } | null>(null);
-  const [destinySlotTooltip, setDestinySlotTooltip] = useState<{ x: number; y: number } | null>(null);
+  const [destinySlotTooltip, setDestinySlotTooltip] = useState<{ id: string; size: FateNodeType; x: number; y: number } | null>(null);
+  const [destinyEntries,     setDestinyEntries]     = useState<DestinyEntry[]>([]);
+  // selectedFateSlot covers BOTH undetermined-fate destiny slots and ordinary micro/mid tree nodes —
+  // any micro/medium node can have a Fate/Kismet socketed into it to override its stats.
+  const [selectedFateSlot,   setSelectedFateSlot]   = useState<{ id: string; size: FateNodeType } | null>(null);
+  const [fateSelections,     setFateSelections]     = useState<Record<string, string>>({});
+  const [hoveredDestiny,     setHoveredDestiny]     = useState<{ entry: DestinyEntry; x: number; y: number } | null>(null);
 
   function addFateNode(key: FateKey, type: FateNodeType) {
     setFates(prev => ({ ...prev, [key]: { nodes: [...prev[key].nodes, type] } }));
@@ -847,8 +1175,16 @@ export default function PactspiritsPage() {
   function removeFateNodeLast(key: FateKey) {
     setFates(prev => ({ ...prev, [key]: { nodes: prev[key].nodes.slice(0, -1) } }));
   }
+  function clearFateSelectionsForKey(key: FateKey) {
+    setFateSelections((prev) => {
+      const next: Record<string, string> = {};
+      for (const k in prev) if (!k.startsWith(`${key}-`)) next[k] = prev[k];
+      return next;
+    });
+  }
   function clearFate(key: FateKey) {
     setFates(prev => ({ ...prev, [key]: { nodes: [] } }));
+    clearFateSelectionsForKey(key);
   }
 
   const currentFateNodes = selectedFate ? fates[selectedFate].nodes : [];
@@ -867,19 +1203,49 @@ export default function PactspiritsPage() {
       for (let j = 0; j < medium; j++) nodes.push("medium");
     }
     setFates(prev => ({ ...prev, [selectedFate]: { nodes } }));
+    clearFateSelectionsForKey(selectedFate);
   }
 
   function clearFateSelection() {
     if (!selectedFate) return;
     setFates(prev => ({ ...prev, [selectedFate]: { nodes: [] } }));
+    clearFateSelectionsForKey(selectedFate);
   }
 
   function handleSpiritHover(spirit: PactSpirit, x: number, y: number) { setHoveredTooltip({ spirit, x, y }); }
   function handleSpiritLeave() { setHoveredTooltip(null); }
 
+  function destinySlotKey(key: FateKey, index: number) { return `${key}-${index}`; }
+
+  function getFateSelection(id: string): DestinyEntry | null {
+    const entryId = fateSelections[id];
+    if (!entryId) return null;
+    return destinyEntries.find((e) => e.id === entryId) ?? null;
+  }
+
+  function handleFateSlotClick(id: string, size: FateNodeType) {
+    const isSame = selectedFateSlot?.id === id;
+    setSelectedFateSlot(isSame ? null : { id, size });
+    setSelectedSlot(null);
+    setSelectedFate(null);
+    setSearchQuery("");
+  }
+
+  function handleDestinyCardClick(entry: DestinyEntry) {
+    if (!selectedFateSlot) return;
+    const id = selectedFateSlot.id;
+    setFateSelections((prev) => ({ ...prev, [id]: prev[id] === entry.id ? "" : entry.id }));
+  }
+
+  function clearFateSlotSelection() {
+    if (!selectedFateSlot) return;
+    setFateSelections((prev) => ({ ...prev, [selectedFateSlot.id]: "" }));
+  }
+
   useEffect(() => {
     fetch("/api/pactspirits?category=battle").then((r) => r.json()).then(setBattleSpirits).catch(console.error);
     fetch("/api/pactspirits?category=drop").then((r) => r.json()).then(setDropSpirits).catch(console.error);
+    fetch("/api/destiny").then((r) => r.json()).then(setDestinyEntries).catch(console.error);
   }, []);
 
   useEffect(() => {
@@ -926,6 +1292,7 @@ export default function PactspiritsPage() {
     const isSameSlot = selectedSlot?.category === cat && selectedSlot?.index === idx;
     setSelectedSlot(isSameSlot ? null : { category: cat, index: idx });
     setSelectedFate(null);
+    setSelectedFateSlot(null);
     setSearchQuery("");
     if (!isSameSlot && cat !== selectedSlot?.category) setActiveTagFilters(new Set());
   }
@@ -976,7 +1343,7 @@ export default function PactspiritsPage() {
   const anyPactSpiritSelected = Object.values(slotSelections).some(Boolean);
 
   return (
-    <div className="min-h-screen relative" style={BG_STYLE} onClick={() => { setSelectedSlot(null); setSelectedFate(null); }}>
+    <div className="min-h-screen relative" style={BG_STYLE} onClick={() => { setSelectedSlot(null); setSelectedFate(null); setSelectedFateSlot(null); }}>
 
       {/* Center diagram */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -1107,30 +1474,38 @@ export default function PactspiritsPage() {
                 {/* All lines first so circles render on top */}
                 {def.gateway.map((seg, i) =>
                   seg.type === "path"
-                    ? <path key={i} d={seg.d} fill="none" stroke="#22c55e" strokeWidth={8} strokeLinecap="square" />
-                    : <line key={i} x1={seg.x1} y1={seg.y1} x2={seg.x2} y2={seg.y2} stroke="#22c55e" strokeWidth={8} strokeLinecap="square" />
+                    ? <path key={i} d={seg.d} fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" />
+                    : <line key={i} x1={seg.x1} y1={seg.y1} x2={seg.x2} y2={seg.y2} stroke="#444444" strokeWidth={8} strokeLinecap="square" />
                 )}
                 {nodes.map((_, i) =>
-                  i > 0 ? <path key={i} d={def.segments[i - 1]} fill="none" stroke="#22c55e" strokeWidth={8} strokeLinecap="square" /> : null
+                  i > 0 ? <path key={i} d={def.segments[i - 1]} fill="none" stroke="#444444" strokeWidth={8} strokeLinecap="square" /> : null
                 )}
                 {/* Circles + icons on top of all lines */}
                 {nodes.map((type, i) => {
                   const pos = def.positions[i];
                   const r = type === "medium" ? 30 : 18;
+                  const id = destinySlotKey(key, i);
+                  const entry = getFateSelection(id);
+                  const isPicking = selectedFateSlot?.id === id;
+                  const iconHref = entry
+                    ? getFateIconPath(entry.type, entry.name)
+                    : "/icons/pactspirits/nodes/Destiny%20Slot.webp";
+                  const iconScale = entry ? getFateIconScale(entry.type) : 1;
                   return (
                     <g key={i} style={{ pointerEvents: "all", cursor: "pointer" }}
-                      onMouseEnter={(e) => setDestinySlotTooltip({ x: e.clientX, y: e.clientY })}
+                      onClick={(e) => { e.stopPropagation(); handleFateSlotClick(id, type); }}
+                      onMouseEnter={(e) => setDestinySlotTooltip({ id, size: type, x: e.clientX, y: e.clientY })}
                       onMouseMove={(e)  => setDestinySlotTooltip((prev) => prev ? { ...prev, x: e.clientX, y: e.clientY } : null)}
                       onMouseLeave={() => setDestinySlotTooltip(null)}>
-                      <circle cx={pos.cx} cy={pos.cy} r={r} fill="#22c55e" />
+                      <circle cx={pos.cx} cy={pos.cy} r={r} fill={entry ? "#111111" : (type === "medium" ? NODE_RING_COLOR.mid : NODE_RING_COLOR.inner)} />
                       <image
-                        href="/icons/pactspirits/nodes/Destiny%20Slot.webp"
-                        x={pos.cx - r} y={pos.cy - r}
-                        width={r * 2} height={r * 2}
+                        href={iconHref}
+                        x={pos.cx - r * iconScale} y={pos.cy - r * iconScale}
+                        width={r * 2 * iconScale} height={r * 2 * iconScale}
                         preserveAspectRatio="xMidYMid slice"
-                        style={{ clipPath: `circle(${r}px at ${r}px ${r}px)`, pointerEvents: "none" }}
+                        style={{ clipPath: `circle(${r}px at ${r * iconScale}px ${r * iconScale}px)`, pointerEvents: "none" }}
                       />
-                      <circle cx={pos.cx} cy={pos.cy} r={r} fill="none" stroke="#fff" strokeWidth={1.5} />
+                      <circle cx={pos.cx} cy={pos.cy} r={r} fill="none" stroke={isPicking ? "#fbdb58" : "#c8cbd3"} strokeWidth={isPicking ? 3 : 1.5} />
                     </g>
                   );
                 })}
@@ -1188,25 +1563,37 @@ export default function PactspiritsPage() {
             const r = size === "large" ? 40 : size === "medium" ? 30 : 18;
             const slot = getNodeSlot(label);
             const ring = getNodeRing(label);
-            const fill = slot ? (NODE_RING_COLOR[slot.ring] ?? "#e85d04") : ring ? "#272626" : (color ?? "#e85d04");
+            // Only micro (inner) and medium (mid) nodes can take a Fate/Kismet override — large/outer nodes cannot.
+            const fateSize: FateNodeType | null = ring === "inner" ? "micro" : ring === "mid" ? "medium" : null;
+            const clickable = !!slot && fateSize !== null;
+            const overrideEntry = fateSize ? getFateSelection(label) : null;
+            const isPicking = selectedFateSlot?.id === label;
+            const fill = overrideEntry ? "#111111" : slot ? (NODE_RING_COLOR[slot.ring] ?? "#e85d04") : ring ? "#272626" : (color ?? "#e85d04");
+            const iconHref = overrideEntry
+              ? getFateIconPath(overrideEntry.type, overrideEntry.name)
+              : slot ? getNodeIconPath(slot.name) : null;
+            const iconScale = overrideEntry ? getFateIconScale(overrideEntry.type) : 1;
             return (
             <g key={label}
-              style={{ pointerEvents: ring ? "all" : "none", cursor: "default" }}
-              onMouseEnter={(e) => { if (ring) setNodeTooltip({ slot, ring, x: e.clientX, y: e.clientY }); }}
+              style={{ pointerEvents: ring ? "all" : "none", cursor: clickable ? "pointer" : "default" }}
+              onClick={(e) => { if (!clickable || !fateSize) return; e.stopPropagation(); handleFateSlotClick(label, fateSize); }}
+              onMouseEnter={(e) => { if (ring) setNodeTooltip({ slot, ring, override: overrideEntry, x: e.clientX, y: e.clientY }); }}
               onMouseMove={(e)  => { if (ring) setNodeTooltip((prev) => prev ? { ...prev, x: e.clientX, y: e.clientY } : null); }}
               onMouseLeave={() => setNodeTooltip(null)}
             >
               <circle cx={cx} cy={cy} r={r} fill={fill} />
-              {slot && (
+              {iconHref && (
                 <image
-                  href={getNodeIconPath(slot.name)}
-                  x={cx - r} y={cy - r}
-                  width={r * 2} height={r * 2}
+                  href={iconHref}
+                  x={cx - r * iconScale} y={cy - r * iconScale}
+                  width={r * 2 * iconScale} height={r * 2 * iconScale}
                   preserveAspectRatio="xMidYMid slice"
-                  style={{ clipPath: `circle(${r}px at ${r}px ${r}px)`, pointerEvents: "none" }}
+                  style={{ clipPath: `circle(${r}px at ${r * iconScale}px ${r * iconScale}px)`, pointerEvents: "none" }}
                 />
               )}
-              <circle cx={cx} cy={cy} r={r} fill="none" stroke={slot ? "#fff" : "#444444"} strokeWidth={slot ? 1.5 : 2} />
+              <circle cx={cx} cy={cy} r={r} fill="none"
+                stroke={isPicking ? "#fbdb58" : slot ? "#c8cbd3" : "#444444"}
+                strokeWidth={isPicking ? 3 : slot ? 1.5 : 2} />
             </g>
             );
           })}
@@ -1218,16 +1605,16 @@ export default function PactspiritsPage() {
             const armHasSpirit = !!getAssignedSpirit("battle", FATE_KEY_TO_ARM[key]);
             return (
               <g key={key} style={{ pointerEvents: "all", cursor: armHasSpirit ? "pointer" : "default" }}
-                onClick={(e) => { if (!armHasSpirit) return; e.stopPropagation(); setSelectedFate(isSelected ? null : key); setSelectedSlot(null); }}
+                onClick={(e) => { if (!armHasSpirit) return; e.stopPropagation(); setSelectedFate(isSelected ? null : key); setSelectedSlot(null); setSelectedFateSlot(null); }}
                 onMouseEnter={(e) => setFateNodeTooltip({ key, x: e.clientX, y: e.clientY })}
                 onMouseMove={(e)  => setFateNodeTooltip((prev) => prev ? { ...prev, x: e.clientX, y: e.clientY } : null)}
                 onMouseLeave={() => setFateNodeTooltip(null)}>
                 <circle cx={def.nodeCx} cy={def.nodeCy} r={18}
-                  fill={!armHasSpirit ? "#272626" : hasNodes ? "#22c55e" : "#e85d04"}
-                  stroke={isSelected ? "#fbdb58" : armHasSpirit ? "#fff" : "#444444"} strokeWidth={isSelected ? 3 : armHasSpirit ? 1.5 : 2} />
+                  fill={!armHasSpirit ? "#272626" : "#e85d04"}
+                  stroke={isSelected ? "#fbdb58" : armHasSpirit ? "#c8cbd3" : "#444444"} strokeWidth={isSelected ? 3 : armHasSpirit ? 1.5 : 2} />
                 {armHasSpirit && (
                   <image
-                    href="/icons/pactspirits/nodes/Undetermined%20Fate%20Slots.webp"
+                    href={hasNodes ? "/icons/fates/Undetermined%20Fate.webp" : "/icons/pactspirits/nodes/Undetermined%20Fate%20Slots.webp"}
                     x={def.nodeCx - 18} y={def.nodeCy - 18}
                     width={36} height={36}
                     preserveAspectRatio="xMidYMid slice"
@@ -1236,7 +1623,7 @@ export default function PactspiritsPage() {
                 )}
                 <circle cx={def.nodeCx} cy={def.nodeCy} r={18}
                   fill="none"
-                  stroke={isSelected ? "#fbdb58" : armHasSpirit ? "#fff" : "#444444"} strokeWidth={isSelected ? 3 : armHasSpirit ? 1.5 : 2} />
+                  stroke={isSelected ? "#fbdb58" : armHasSpirit ? "#c8cbd3" : "#444444"} strokeWidth={isSelected ? 3 : armHasSpirit ? 1.5 : 2} />
               </g>
             );
           })}
@@ -1643,44 +2030,129 @@ export default function PactspiritsPage() {
         </div>
       )}
 
+      {/* Destiny picker panel — right side, shown when any micro/medium node (destiny slot or tree node) is selected */}
+      {selectedFateSlot && (() => {
+        const slotType = selectedFateSlot.size;
+        const allowedTypes = slotType === "medium"
+          ? ["Medium Fate", "Kismet", "Dual Kismet"]
+          : ["Micro Fate"];
+        const pool = destinyEntries.filter((e) => allowedTypes.includes(e.type));
+        const needle = searchQuery.replace(/\s/g, "").toLowerCase();
+        const filteredDestiny = needle ? pool.filter((e) => e.name.toLowerCase().includes(needle)) : pool;
+        const currentEntry = getFateSelection(selectedFateSlot.id);
+
+        return (
+          <div
+            className="absolute flex flex-col"
+            onClick={(e) => e.stopPropagation()}
+            style={{ left: `calc(50% + ${svgW / 2}px + ${PANEL_GAP}px)`, top: 0, width: PANEL_W, height: "100vh", background: PANEL_BG, overflow: "hidden" }}
+          >
+            {/* Header */}
+            <div className="px-4 pt-5 pb-3" style={{ borderBottom: "2px solid #333333", flexShrink: 0 }}>
+              <p style={{ color: "#52525b", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 3 }}>
+                {slotType === "medium" ? "Medium Destiny Slot" : "Micro Destiny Slot"}
+              </p>
+              <p style={{ color: "#e4e4e7", fontSize: 15, fontWeight: 600 }}>
+                Choose a Fate or Kismet
+              </p>
+            </div>
+
+            {/* Search + clear */}
+            <div style={{ display: "flex", gap: 8, padding: "10px 16px", flexShrink: 0 }}>
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value.replace(/[^a-zA-Z '.0-9-]/g, ""))}
+                placeholder="Search…"
+                style={{
+                  flex: 1, background: "#111111", border: "1px solid #2a2a2a",
+                  borderRadius: "0 8px 0 8px", color: "#e4e4e7", fontSize: 12,
+                  padding: "6px 10px", outline: "none",
+                }}
+              />
+              <button
+                onClick={currentEntry ? clearFateSlotSelection : undefined}
+                disabled={!currentEntry}
+                style={{
+                  padding: "5px 12px", borderRadius: "0 8px 0 8px",
+                  background: currentEntry ? "#c0392b" : "#1e1e1e",
+                  border: "none",
+                  color: currentEntry ? "#ffffff" : "#555555",
+                  fontSize: 11, fontWeight: 600,
+                  cursor: currentEntry ? "pointer" : "not-allowed",
+                  transition: "background 0.15s", flexShrink: 0,
+                }}
+              >
+                ✕ Clear Selection
+              </button>
+            </div>
+
+            {/* Scrollable card grid, grouped by type */}
+            <div className="overflow-y-auto" style={{ flex: 1, padding: "0 16px 16px" }}>
+              {allowedTypes.map((type) => {
+                const group = filteredDestiny
+                  .filter((e) => e.type === type)
+                  .sort((a, b) => (a.tier === "T2" ? 0 : 1) - (b.tier === "T2" ? 0 : 1));
+                if (!group.length) return null;
+                const colors = getFateTypeColors(type);
+                return (
+                  <div key={type} style={{ marginBottom: 12 }}>
+                    <div style={{
+                      color: colors.accent,
+                      fontSize: 9, letterSpacing: "0.1em", textTransform: "uppercase",
+                      marginBottom: 6, paddingTop: 6, borderTop: "1px solid #2a2a2a",
+                    }}>
+                      {type}
+                    </div>
+                    <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 8 }}>
+                      {group.map((entry) => (
+                        <DestinyCard
+                          key={entry.id}
+                          entry={entry}
+                          selected={currentEntry?.id === entry.id}
+                          onClick={() => handleDestinyCardClick(entry)}
+                          onHover={(e, x, y) => setHoveredDestiny({ entry: e, x, y })}
+                          onLeave={() => setHoveredDestiny(null)}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        );
+      })()}
+
       {hoveredTooltip && (
         <PactSpiritTooltipCard spirit={hoveredTooltip.spirit} cx={hoveredTooltip.x} cy={hoveredTooltip.y} />
       )}
 
       {nodeTooltip && (
-        <NodeTooltipCard slot={nodeTooltip.slot} ring={nodeTooltip.ring} cx={nodeTooltip.x} cy={nodeTooltip.y} />
+        <NodeTooltipCard slot={nodeTooltip.slot} ring={nodeTooltip.ring} override={nodeTooltip.override} cx={nodeTooltip.x} cy={nodeTooltip.y} />
       )}
 
       {fateNodeTooltip && (
         <FateNodeTooltipCard
           fateKey={fateNodeTooltip.key}
           hasSpirit={!!getAssignedSpirit("battle", FATE_KEY_TO_ARM[fateNodeTooltip.key])}
+          nodes={fates[fateNodeTooltip.key].nodes}
           cx={fateNodeTooltip.x}
           cy={fateNodeTooltip.y}
         />
       )}
 
-      {destinySlotTooltip && createPortal(
-        <div style={{
-          position: "fixed",
-          left: destinySlotTooltip.x + 14,
-          top:  destinySlotTooltip.y - 16,
-          width: 180,
-          background: "#1d1b1c",
-          border: "1px solid #2a2a2a",
-          borderRadius: "0 10px 0 10px",
-          pointerEvents: "none",
-          zIndex: 9999,
-          padding: "10px 12px 12px",
-          boxShadow: "0 6px 24px rgba(0,0,0,0.7)",
-        }}>
-          <div style={{ color: "#22c55e", fontSize: 10, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 4 }}>
-            Destiny Slot
-          </div>
-          <div style={{ color: "#a1a1aa", fontSize: 13, lineHeight: 1.5 }}>+6% damage</div>
-          <div style={{ color: "#a1a1aa", fontSize: 13, lineHeight: 1.5 }}>+6% minion damage</div>
-        </div>,
-        document.body
+      {destinySlotTooltip && (
+        <DestinySlotTooltipCard
+          entry={getFateSelection(destinySlotTooltip.id)}
+          size={destinySlotTooltip.size}
+          cx={destinySlotTooltip.x}
+          cy={destinySlotTooltip.y}
+        />
+      )}
+
+      {hoveredDestiny && (
+        <DestinyTooltipCard entry={hoveredDestiny.entry} cx={hoveredDestiny.x} cy={hoveredDestiny.y} />
       )}
 
     </div>

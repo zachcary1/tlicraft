@@ -607,25 +607,25 @@
     },
     {
         "type":  "Medium Fate",
-        "tier":  "T1",
+        "tier":  "T2",
         "name":  "Armor",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(14–18)\u003c/span\u003e% Armor\u003c/li\u003e\u003c/ul\u003e"
     },
     {
         "type":  "Medium Fate",
-        "tier":  "T1",
+        "tier":  "T2",
         "name":  "Attack Block Chance",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(12–15)\u003c/span\u003e% Attack Block Chance\u003c/li\u003e\u003c/ul\u003e"
     },
     {
         "type":  "Medium Fate",
-        "tier":  "T1",
+        "tier":  "T2",
         "name":  "Attack Cast Speed",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(10–12)\u003c/span\u003e% Attack and Cast Speed\u003c/li\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(10–12)\u003c/span\u003e% Minion Attack and Cast Speed\u003c/li\u003e\u003c/ul\u003e"
     },
     {
         "type":  "Medium Fate",
-        "tier":  "T1",
+        "tier":  "T2",
         "name":  "Attack Damage",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(28–36)\u003c/span\u003e% Attack Damage\u003c/li\u003e\u003c/ul\u003e"
     },
@@ -643,7 +643,7 @@
     },
     {
         "type":  "Medium Fate",
-        "tier":  "T1",
+        "tier":  "T2",
         "name":  "Cold Resistance",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(10–14)\u003c/span\u003e% Cold Resistance\u003c/li\u003e\u003c/ul\u003e"
     },
@@ -661,7 +661,7 @@
     },
     {
         "type":  "Medium Fate",
-        "tier":  "T1",
+        "tier":  "T2",
         "name":  "Critical Strike Rating",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(48–60)\u003c/span\u003e% Critical Strike Rating\u003c/li\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(48–60)\u003c/span\u003e% Minion Critical Strike Rating\u003c/li\u003e\u003c/ul\u003e"
     },
@@ -673,7 +673,7 @@
     },
     {
         "type":  "Medium Fate",
-        "tier":  "T1",
+        "tier":  "T2",
         "name":  "Dexterity",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(24–30)\u003c/span\u003e Dexterity\u003c/li\u003e\u003c/ul\u003e"
     },
@@ -685,13 +685,13 @@
     },
     {
         "type":  "Medium Fate",
-        "tier":  "T1",
+        "tier":  "T2",
         "name":  "Energy Shield",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(10–12)\u003c/span\u003e% Max Energy Shield\u003c/li\u003e\u003c/ul\u003e"
     },
     {
         "type":  "Medium Fate",
-        "tier":  "T1",
+        "tier":  "T2",
         "name":  "Energy Shield Charge Speed",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(6–10)\u003c/span\u003e% Energy Shield \u003cspan class=\"tooltip\" data-title=\"\u003cdiv class=\u0026quot;text-start\u0026quot;\u003e\u003cdiv\u003eCharge\u003c/div\u003e\u003cdiv\u003eEnergy Shield starts to charge after the character hasn\u0027t taken any damage for 2s at the rate of 20% of Max Energy Shield per second and stops charging if the character takes damage\u003c/div\u003e\u003c/div\u003e\"\u003eCharge\u003c/span\u003e Speed\u003c/li\u003e\u003c/ul\u003e"
     },
@@ -703,25 +703,25 @@
     },
     {
         "type":  "Medium Fate",
-        "tier":  "T1",
+        "tier":  "T2",
         "name":  "Erosion Resistance",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(10–14)\u003c/span\u003e% Erosion Resistance\u003c/li\u003e\u003c/ul\u003e"
     },
     {
         "type":  "Medium Fate",
-        "tier":  "T1",
+        "tier":  "T2",
         "name":  "Evade",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(14–18)\u003c/span\u003e% Evasion\u003c/li\u003e\u003c/ul\u003e"
     },
     {
         "type":  "Medium Fate",
-        "tier":  "T1",
+        "tier":  "T2",
         "name":  "Fire Resistance",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(10–14)\u003c/span\u003e% Fire Resistance\u003c/li\u003e\u003c/ul\u003e"
     },
     {
         "type":  "Medium Fate",
-        "tier":  "T1",
+        "tier":  "T2",
         "name":  "Focus Speed",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(14–18)\u003c/span\u003e% Focus Speed\u003c/li\u003e\u003c/ul\u003e"
     },
@@ -733,13 +733,13 @@
     },
     {
         "type":  "Medium Fate",
-        "tier":  "T1",
+        "tier":  "T2",
         "name":  "Intelligence",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(24–30)\u003c/span\u003e Intelligence\u003c/li\u003e\u003c/ul\u003e"
     },
     {
         "type":  "Medium Fate",
-        "tier":  "T1",
+        "tier":  "T2",
         "name":  "Life Regeneration",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(10–15)\u003c/span\u003e% Life Regeneration Speed\u003c/li\u003e\u003c/ul\u003e"
     },
@@ -751,13 +751,13 @@
     },
     {
         "type":  "Medium Fate",
-        "tier":  "T1",
+        "tier":  "T2",
         "name":  "Lightning Resistance",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(10–14)\u003c/span\u003e% Lightning Resistance\u003c/li\u003e\u003c/ul\u003e"
     },
     {
         "type":  "Medium Fate",
-        "tier":  "T1",
+        "tier":  "T2",
         "name":  "Mana%",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(12–16)\u003c/span\u003e% Max Mana\u003c/li\u003e\u003c/ul\u003e"
     },
@@ -793,7 +793,7 @@
     },
     {
         "type":  "Medium Fate",
-        "tier":  "T1",
+        "tier":  "T2",
         "name":  "Multistrike Chance",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(20–24)\u003c/span\u003e% chance to \u003cspan class=\"tooltip\" data-title=\"\u003cdiv class=\u0026quot;text-start\u0026quot;\u003e\u003cdiv\u003eMultistrike\u003c/div\u003e\u003cdiv\u003eChance to perform an additional attack when using Attack Skills. If the chance exceeds 100%, one additional attack will be performed with every 100% of the chance.\u003cbr/\u003e\u003cbr/\u003e+20% Attack Speed during Multistrikes.\u003cbr/\u003eMultistrikes consume skill resources as normal and will be interrupted if there are insufficient resources. Moving or using other non-instant skills will interrupt Multistrike.\u003cbr/\u003eMobility, Channeled Skills, and Sentry skills cannot Multistrike\u003c/div\u003e\u003c/div\u003e\"\u003eMultistrike\u003c/span\u003e\u003c/li\u003e\u003c/ul\u003e"
     },
@@ -817,7 +817,7 @@
     },
     {
         "type":  "Medium Fate",
-        "tier":  "T1",
+        "tier":  "T2",
         "name":  "Reaping Duration",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(20–26)\u003c/span\u003e% \u003cspan class=\"tooltip\" data-title=\"\u003cdiv class=\u0026quot;text-start\u0026quot;\u003e\u003cdiv\u003eReaping\u003c/div\u003e\u003cdiv\u003eDeals a certain amount of True Damage to the target, equivalent to the damage from all DoT effects over a certain period of time\u003c/div\u003e\u003c/div\u003e\"\u003eReaping\u003c/span\u003e Duration\u003c/li\u003e\u003c/ul\u003e"
     },
@@ -829,25 +829,25 @@
     },
     {
         "type":  "Medium Fate",
-        "tier":  "T1",
+        "tier":  "T2",
         "name":  "Spell Block Chance",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(12–15)\u003c/span\u003e% Spell Block Chance\u003c/li\u003e\u003c/ul\u003e"
     },
     {
         "type":  "Medium Fate",
-        "tier":  "T1",
+        "tier":  "T2",
         "name":  "Spell Damage",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(28–36)\u003c/span\u003e% Spell Damage\u003c/li\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(28–36)\u003c/span\u003e% Minion Damage\u003c/li\u003e\u003c/ul\u003e"
     },
     {
         "type":  "Medium Fate",
-        "tier":  "T1",
+        "tier":  "T2",
         "name":  "Strength",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(24–30)\u003c/span\u003e Strength\u003c/li\u003e\u003c/ul\u003e"
     },
     {
         "type":  "Micro Fate",
-        "tier":  "T2",
+        "tier":  "T1",
         "name":  "Affliction Effect",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(10–13)\u003c/span\u003e% \u003cspan class=\"tooltip\" data-title=\"\u003cdiv class=\u0026quot;text-start\u0026quot;\u003e\u003cdiv\u003eAffliction\u003c/div\u003e\u003cdiv\u003eWhen the Affliction inflicted per second is not 0, the Damage Over Time dealt will continuously inflicts Affliction on the target\u003cbr/\u003eThe target takes 1% additional Damage Over Time for every Affliction point\u003cbr/\u003eThe max Affliction is 100\u003c/div\u003e\u003c/div\u003e\"\u003eAffliction\u003c/span\u003e Effect\u003c/li\u003e\u003c/ul\u003e"
     },
@@ -877,13 +877,13 @@
     },
     {
         "type":  "Micro Fate",
-        "tier":  "T2",
+        "tier":  "T1",
         "name":  "Aura Effect",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(2–3)\u003c/span\u003e% Aura Effect\u003c/li\u003e\u003c/ul\u003e"
     },
     {
         "type":  "Micro Fate",
-        "tier":  "T2",
+        "tier":  "T1",
         "name":  "Block Ratio",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(1–3)\u003c/span\u003e% \u003cspan class=\"tooltip\" data-title=\"\u003cdiv class=\u0026quot;text-start\u0026quot;\u003e\u003cdiv\u003eBlock Ratio\u003c/div\u003e\u003cdiv\u003eBy default, Blocking absorbs 30% damage. Increase Block Ratio to increase the damage absorption ratio.\u003c/div\u003e\u003c/div\u003e\"\u003eBlock Ratio\u003c/span\u003e\u003c/li\u003e\u003c/ul\u003e"
     },
@@ -895,13 +895,13 @@
     },
     {
         "type":  "Micro Fate",
-        "tier":  "T2",
+        "tier":  "T1",
         "name":  "Command",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e+ \u003cspan class=\"val\"\u003e(1–2)\u003c/span\u003e \u003cspan class=\"tooltip\" data-title=\"\u003cdiv class=\u0026quot;text-start\u0026quot;\u003e\u003cdiv\u003eCommand\u003c/div\u003e\u003cdiv\u003eEvery point of Command will grant Synthetic Troop Minions +3% additional damage, +-2% additional damage taken, ++2% Movement Speed, and a bigger Tracking Area.\u003cbr/\u003eThe lowest Command is -100 while the highest is 100. When Command is not 0, 13 point(s) will be returned (reduced/granted) every second until it becomes 0. For every 10 Command increased, +7 additional points will be returned.\u003cbr/\u003eSynthetic Troop Minions\u0027 Duration will not reduce when Command is a positive value.\u003c/div\u003e\u003c/div\u003e\"\u003eCommand\u003c/span\u003e per second\u003c/li\u003e\u003c/ul\u003e"
     },
     {
         "type":  "Micro Fate",
-        "tier":  "T2",
+        "tier":  "T1",
         "name":  "Critical Strike Damage",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(12–15)\u003c/span\u003e% Critical Strike Damage\u003c/li\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(12–15)\u003c/span\u003e% Minion Critical Strike Damage\u003c/li\u003e\u003c/ul\u003e"
     },
@@ -913,19 +913,19 @@
     },
     {
         "type":  "Micro Fate",
-        "tier":  "T2",
+        "tier":  "T1",
         "name":  "Curse Effect",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(1–3)\u003c/span\u003e% Curse Effect\u003c/li\u003e\u003c/ul\u003e"
     },
     {
         "type":  "Micro Fate",
-        "tier":  "T2",
+        "tier":  "T1",
         "name":  "Deterioration Chance",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(2–4)\u003c/span\u003e% \u003cspan class=\"tooltip\" data-title=\"\u003cdiv class=\u0026quot;text-start\u0026quot;\u003e\u003cdiv\u003eDeterioration\u003c/div\u003e\u003cdiv\u003eLasts for 1s. When the duration ends, deals True Damage equal to 60% of the Hit Erosion Damage dealt. Stacks up to 99 times. Each stack is calculated independently\u003c/div\u003e\u003c/div\u003e\"\u003eDeterioration\u003c/span\u003e Chance\u003c/li\u003e\u003c/ul\u003e"
     },
     {
         "type":  "Micro Fate",
-        "tier":  "T2",
+        "tier":  "T1",
         "name":  "Deterioration Duration",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(3–5)\u003c/span\u003e% additional \u003cspan class=\"tooltip\" data-title=\"\u003cdiv class=\u0026quot;text-start\u0026quot;\u003e\u003cdiv\u003eDeterioration\u003c/div\u003e\u003cdiv\u003eLasts for 1s. When the duration ends, deals True Damage equal to 60% of the Hit Erosion Damage dealt. Stacks up to 99 times. Each stack is calculated independently\u003c/div\u003e\u003c/div\u003e\"\u003eDeterioration\u003c/span\u003e Duration\u003c/li\u003e\u003c/ul\u003e"
     },
@@ -937,7 +937,7 @@
     },
     {
         "type":  "Micro Fate",
-        "tier":  "T2",
+        "tier":  "T1",
         "name":  "Double Damage Chance",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(1–3)\u003c/span\u003e% chance to deal Double Damage\u003c/li\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(1–3)\u003c/span\u003e% chance for Minions to deal Double Damage\u003c/li\u003e\u003c/ul\u003e"
     },
@@ -955,7 +955,7 @@
     },
     {
         "type":  "Micro Fate",
-        "tier":  "T2",
+        "tier":  "T1",
         "name":  "Energy Shield Restored on Defeat",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003eRestores \u003cspan class=\"val\"\u003e(0.1–0.2)\u003c/span\u003e% of Energy Shield on defeat\u003c/li\u003e\u003c/ul\u003e"
     },
@@ -985,13 +985,13 @@
     },
     {
         "type":  "Micro Fate",
-        "tier":  "T2",
+        "tier":  "T1",
         "name":  "Growth",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(10–12)\u003c/span\u003e initial \u003cspan class=\"tooltip\" data-title=\"\u003cdiv class=\u0026quot;text-start\u0026quot;\u003e\u003cdiv\u003eGrowth\u003c/div\u003e\u003cdiv\u003eSpirit Magi grow into the next Stage for every 100 Growth. They start at Stage 1 and can grow until they reach Stage 5. For every 8 Growth they have, Spirit Magi gain +1% Physique, +10% additional Skill Area, and a bonus every stage:\u003cbr/\u003eAt Stage 2, +30% chance for them to use Enhanced Skill chance.\u003cbr/\u003eAt Stage 3, their Enhanced Skills become stronger.\u003cbr/\u003eAt Stage 4, their Empower Skills become stronger.\u003cbr/\u003eAt Stage 5, they +50% additional damage, +10% additional Skill Area, and gain increased Movement Speed and Tracking Area.\u003cbr/\u003eThe max Growth is 1000.\u003c/div\u003e\u003c/div\u003e\"\u003eGrowth\u003c/span\u003e for Spirit Magi\u003c/li\u003e\u003c/ul\u003e"
     },
     {
         "type":  "Micro Fate",
-        "tier":  "T2",
+        "tier":  "T1",
         "name":  "Ignite Damage Mitigation",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e(-36–-30)\u003c/span\u003e% additional Ignite Damage taken\u003c/li\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e(-36–-30)\u003c/span\u003e% \u003cspan class=\"tooltip\" data-title=\"\u003cdiv class=\u0026quot;text-start\u0026quot;\u003e\u003cdiv\u003eIgnite\u003c/div\u003e\u003cdiv\u003eAn Ailment that may be triggered on hit, dealing Fire Damage per second for 4s based on Base Ignite Damage. Unable to stack\u003cbr/\u003eIgnite cannot be inflicted when Base Ignite Damage is 0\u003c/div\u003e\u003c/div\u003e\"\u003eIgnite\u003c/span\u003e Effect received\u003c/li\u003e\u003c/ul\u003e"
     },
@@ -1009,7 +1009,7 @@
     },
     {
         "type":  "Micro Fate",
-        "tier":  "T2",
+        "tier":  "T1",
         "name":  "Life Restored on Defeat",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003eRestores \u003cspan class=\"val\"\u003e(0.2–0.3)\u003c/span\u003e% of Life on defeat\u003c/li\u003e\u003c/ul\u003e"
     },
@@ -1027,31 +1027,31 @@
     },
     {
         "type":  "Micro Fate",
-        "tier":  "T2",
+        "tier":  "T1",
         "name":  "Max Cold Resistance",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(1–2)\u003c/span\u003e% \u003cspan class=\"tooltip\" data-title=\"\u003cdiv class=\u0026quot;text-start\u0026quot;\u003e\u003cdiv\u003eMax Resistance\u003c/div\u003e\u003cdiv\u003eBy default, the Max Resistance is 60%. This limit can be increased.\u003c/div\u003e\u003c/div\u003e\"\u003eMax Cold Resistance\u003c/span\u003e\u003c/li\u003e\u003c/ul\u003e"
     },
     {
         "type":  "Micro Fate",
-        "tier":  "T2",
+        "tier":  "T1",
         "name":  "Max Erosion Resistance",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(1–2)\u003c/span\u003e% \u003cspan class=\"tooltip\" data-title=\"\u003cdiv class=\u0026quot;text-start\u0026quot;\u003e\u003cdiv\u003eMax Resistance\u003c/div\u003e\u003cdiv\u003eBy default, the Max Resistance is 60%. This limit can be increased.\u003c/div\u003e\u003c/div\u003e\"\u003eMax Erosion Resistance\u003c/span\u003e\u003c/li\u003e\u003c/ul\u003e"
     },
     {
         "type":  "Micro Fate",
-        "tier":  "T2",
+        "tier":  "T1",
         "name":  "Max Fire Resistance",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(1–2)\u003c/span\u003e% \u003cspan class=\"tooltip\" data-title=\"\u003cdiv class=\u0026quot;text-start\u0026quot;\u003e\u003cdiv\u003eMax Resistance\u003c/div\u003e\u003cdiv\u003eBy default, the Max Resistance is 60%. This limit can be increased.\u003c/div\u003e\u003c/div\u003e\"\u003eMax Fire Resistance\u003c/span\u003e\u003c/li\u003e\u003c/ul\u003e"
     },
     {
         "type":  "Micro Fate",
-        "tier":  "T2",
+        "tier":  "T1",
         "name":  "Max Lightning Resistance",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(1–2)\u003c/span\u003e% \u003cspan class=\"tooltip\" data-title=\"\u003cdiv class=\u0026quot;text-start\u0026quot;\u003e\u003cdiv\u003eMax Resistance\u003c/div\u003e\u003cdiv\u003eBy default, the Max Resistance is 60%. This limit can be increased.\u003c/div\u003e\u003c/div\u003e\"\u003eMax Lightning Resistance\u003c/span\u003e\u003c/li\u003e\u003c/ul\u003e"
     },
     {
         "type":  "Micro Fate",
-        "tier":  "T2",
+        "tier":  "T1",
         "name":  "Movement Speed",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(1–3)\u003c/span\u003e% Movement Speed\u003c/li\u003e\u003c/ul\u003e"
     },
@@ -1063,31 +1063,31 @@
     },
     {
         "type":  "Micro Fate",
-        "tier":  "T2",
+        "tier":  "T1",
         "name":  "Multistrike Increment",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"tooltip\" data-title=\"\u003cdiv class=\u0026quot;text-start\u0026quot;\u003e\u003cdiv\u003eMultistrike\u003c/div\u003e\u003cdiv\u003eChance to perform an additional attack when using Attack Skills. If the chance exceeds 100%, one additional attack will be performed with every 100% of the chance.\u003cbr/\u003e\u003cbr/\u003e+20% Attack Speed during Multistrikes.\u003cbr/\u003eMultistrikes consume skill resources as normal and will be interrupted if there are insufficient resources. Moving or using other non-instant skills will interrupt Multistrike.\u003cbr/\u003eMobility, Channeled Skills, and Sentry skills cannot Multistrike\u003c/div\u003e\u003c/div\u003e\"\u003eMultistrikes\u003c/span\u003e deal \u003cspan class=\"val\"\u003e(4–6)\u003c/span\u003e% increasing damage\u003c/li\u003e\u003c/ul\u003e"
     },
     {
         "type":  "Micro Fate",
-        "tier":  "T2",
+        "tier":  "T1",
         "name":  "Numbed Effect",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(6–8)\u003c/span\u003e% \u003cspan class=\"tooltip\" data-title=\"\u003cdiv class=\u0026quot;text-start\u0026quot;\u003e\u003cdiv\u003eNumbed\u003c/div\u003e\u003cdiv\u003eAn Elemental Ailment that has a chance to be inflicted when Lightning Damage hits its target.\u003cbr/\u003eWhen hitting a Numbed enemy, Lightning Damage inflicts 1 stack of Numbed for every 10% of the sum of Max Energy Shield and Life dealt by Lightning Damage. This threshold can be lowered or raised, but the minimum is 1%.\u003cbr/\u003eThe default duration of Numbed is 2s, and the duration of each stack is calculated independently.\u003cbr/\u003eMax Numbed stacks: 10. Each stack of Numbed increases the Lightning Damage taken by an additional +5%.\u003c/div\u003e\u003c/div\u003e\"\u003eNumbed\u003c/span\u003e Effect\u003c/li\u003e\u003c/ul\u003e"
     },
     {
         "type":  "Micro Fate",
-        "tier":  "T2",
+        "tier":  "T1",
         "name":  "Numbed Effect Mitigation",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e(-55–-45)\u003c/span\u003e% \u003cspan class=\"tooltip\" data-title=\"\u003cdiv class=\u0026quot;text-start\u0026quot;\u003e\u003cdiv\u003eNumbed\u003c/div\u003e\u003cdiv\u003eAn Elemental Ailment that has a chance to be inflicted when Lightning Damage hits its target.\u003cbr/\u003eWhen hitting a Numbed enemy, Lightning Damage inflicts 1 stack of Numbed for every 10% of the sum of Max Energy Shield and Life dealt by Lightning Damage. This threshold can be lowered or raised, but the minimum is 1%.\u003cbr/\u003eThe default duration of Numbed is 2s, and the duration of each stack is calculated independently.\u003cbr/\u003eMax Numbed stacks: 10. Each stack of Numbed increases the Lightning Damage taken by an additional +5%.\u003c/div\u003e\u003c/div\u003e\"\u003eNumbed\u003c/span\u003e Effect received\u003c/li\u003e\u003c/ul\u003e"
     },
     {
         "type":  "Micro Fate",
-        "tier":  "T2",
+        "tier":  "T1",
         "name":  "Origin of Spirit Magus",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(7–9)\u003c/span\u003e% \u003cspan class=\"tooltip\" data-title=\"\u003cdiv class=\u0026quot;text-start\u0026quot;\u003e\u003cdiv\u003eOrigin of Spirit Magus\u003c/div\u003e\u003cdiv\u003eBuff effect gained after Activating a Spirit Magus summoning skill.\u003c/div\u003e\u003c/div\u003e\"\u003eOrigin of Spirit Magus\u003c/span\u003e effect\u003c/li\u003e\u003c/ul\u003e"
     },
     {
         "type":  "Micro Fate",
-        "tier":  "T2",
+        "tier":  "T1",
         "name":  "Paralysis Effect Mitigation",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e(-55–-45)\u003c/span\u003e% \u003cspan class=\"tooltip\" data-title=\"\u003cdiv class=\u0026quot;text-start\u0026quot;\u003e\u003cdiv\u003eParalysis\u003c/div\u003e\u003cdiv\u003eIncreases damage taken by 15%\u003c/div\u003e\u003c/div\u003e\"\u003eParalysis\u003c/span\u003e Effect received\u003c/li\u003e\u003c/ul\u003e"
     },
@@ -1099,13 +1099,13 @@
     },
     {
         "type":  "Micro Fate",
-        "tier":  "T2",
+        "tier":  "T1",
         "name":  "Seal Compensation",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e+(1–3)\u003c/span\u003e% \u003cspan class=\"tooltip\" data-title=\"\u003cdiv class=\u0026quot;text-start\u0026quot;\u003e\u003cdiv\u003eSealed Mana\u003c/div\u003e\u003cdiv\u003eA portion of Mana is reserved to maintain persistent effects such as auras\u003c/div\u003e\u003c/div\u003e\"\u003eSealed Mana\u003c/span\u003e Compensation\u003c/li\u003e\u003c/ul\u003e"
     },
     {
         "type":  "Micro Fate",
-        "tier":  "T2",
+        "tier":  "T1",
         "name":  "Slow Effect Mitigation",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e(-55–-45)\u003c/span\u003e% \u003cspan class=\"tooltip\" data-title=\"\u003cdiv class=\u0026quot;text-start\u0026quot;\u003e\u003cdiv\u003eSlow\u003c/div\u003e\u003cdiv\u003eEach stack reduces Attack Speed, Cast Speed, and Movement Speed by 6%. Stacks up to 5 times\u003c/div\u003e\u003c/div\u003e\"\u003eSlow\u003c/span\u003e Effect received\u003c/li\u003e\u003c/ul\u003e"
     },
@@ -1129,19 +1129,19 @@
     },
     {
         "type":  "Micro Fate",
-        "tier":  "T2",
+        "tier":  "T1",
         "name":  "Trauma Damage Mitigation",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e(-36–-30)\u003c/span\u003e% Trauma Damage taken\u003c/li\u003e\u003c/ul\u003e"
     },
     {
         "type":  "Micro Fate",
-        "tier":  "T2",
+        "tier":  "T1",
         "name":  "Weaken Effect Mitigation",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e(-55–-45)\u003c/span\u003e% \u003cspan class=\"tooltip\" data-title=\"\u003cdiv class=\u0026quot;text-start\u0026quot;\u003e\u003cdiv\u003eWeaken\u003c/div\u003e\u003cdiv\u003eReduces damage dealt by 10%\u003c/div\u003e\u003c/div\u003e\"\u003eWeaken\u003c/span\u003e Effect received\u003c/li\u003e\u003c/ul\u003e"
     },
     {
         "type":  "Micro Fate",
-        "tier":  "T2",
+        "tier":  "T1",
         "name":  "Wilt Damage Mitigation",
         "effect":  "\u003cul\u003e\u003cli class=\"mod\"\u003e\u003cspan class=\"val\"\u003e(-36–-30)\u003c/span\u003e% Wilt Damage taken\u003c/li\u003e\u003c/ul\u003e"
     },
