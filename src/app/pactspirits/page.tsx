@@ -78,6 +78,36 @@ interface PactSpirit {
 
 interface SelectedSlot { category: Category; index: number }
 
+interface DestinyEntry {
+  id:     string;
+  type:   string;
+  tier:   string;
+  name:   string;
+  effect: string;
+}
+
+function getFateIconPath(type: string, name: string): string {
+  const folder = encodeURIComponent(type.toLowerCase());
+  const file   = encodeURIComponent(`${type} - ${name}`);
+  return `/icons/fates/${folder}/${file}.webp`;
+}
+
+function parseFateEffectLines(html: string): string[] {
+  const clean = html.replace(/ data-title="[^"]*"/g, "");
+  const liItems = [...clean.matchAll(/<li[^>]*>(.*?)<\/li>/gs)];
+  if (liItems.length === 0)
+    return [clean.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim()];
+  return liItems
+    .map(([, inner]) => inner.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim())
+    .filter(Boolean);
+}
+
+function getFateTypeColors(type: string): { bg: string; nodeBg: string; accent: string } {
+  if (type === "Micro Fate")  return { bg: "#091929", nodeBg: "#0d2035", accent: "#48b8ff" };
+  if (type === "Medium Fate") return { bg: "#170923", nodeBg: "#1f0d30", accent: "#c192ff" };
+  return { bg: "#271405", nodeBg: "#331a06", accent: "#ff7c1c" };
+}
+
 // ─── Pactspirit tree ──────────────────────────────────────────────────────────
 
 interface SpiritTreeSlot {
@@ -132,6 +162,9 @@ const NODE_RING_COLOR: Record<string, string> = {
 
 type FateNodeType = "micro" | "medium";
 type FateKey = "left" | "right" | "bottom";
+
+const FATE_KEY_TO_ARM: Record<FateKey, number> = { left: 0, right: 1, bottom: 2 };
+const ARM_TO_FATE_KEY: Record<number, FateKey> = { 0: "left", 1: "right", 2: "bottom" };
 type FateState = { nodes: FateNodeType[] };
 
 type FateSeg =
@@ -269,6 +302,11 @@ function wrapNodeName(name: string): [string, string | null] {
 
 function getIconPath(spirit: PactSpirit): string {
   return `/icons/pactspirits/${spirit.type === "Drop" ? "drop" : "battle"}/${spirit.name}.webp`;
+}
+
+function getNodeIconPath(slotName: string): string {
+  const safe = slotName.replace(/[\\/:*?"<>|]/g, "_");
+  return `/icons/pactspirits/nodes/${encodeURIComponent(safe)}.webp`;
 }
 
 // ─── Pactspirit tooltip card ──────────────────────────────────────────────────
@@ -585,43 +623,146 @@ function PactSpiritCard({
 
 // ─── Node tooltip card ────────────────────────────────────────────────────────
 
+const NODE_TT_W      = 240;
+const NODE_TT_ICON_R = 36; // radius → diameter 72px
+
 function NodeTooltipCard({ slot, ring, cx: cursorX, cy: cursorY }: { slot: SpiritTreeSlot | null; ring: "inner" | "mid" | "outer"; cx: number; cy: number }) {
-  const W = 220;
-  const GAP = 14;
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [cardH, setCardH] = useState(200);
+  useEffect(() => { if (cardRef.current) setCardH(cardRef.current.offsetHeight); });
+
+  const iconD = NODE_TT_ICON_R * 2;
+  const iconHalf = NODE_TT_ICON_R;
+  const GAP = 18;
   const vpW = typeof window !== "undefined" ? window.innerWidth : 1920;
-  const left = cursorX + GAP + W <= vpW ? cursorX + GAP : cursorX - GAP - W;
-  const color = NODE_RING_COLOR[ring] ?? "#e4e4e7";
+  const vpH = typeof window !== "undefined" ? window.innerHeight : 1080;
+  const cardLeft = cursorX + GAP + NODE_TT_W <= vpW ? cursorX + GAP : cursorX - GAP - NODE_TT_W;
+  const cardTop  = Math.max(iconHalf + 8, Math.min(vpH - cardH - 8, cursorY - 24));
+
   const ringLabel = ring === "outer" ? "Large Node" : ring === "mid" ? "Medium Node" : "Micro Node";
 
   return createPortal(
-    <div style={{
-      position: "fixed", left, top: cursorY - 16,
-      width: W,
-      background: "#1d1b1c",
-      border: "1px solid #2a2a2a",
-      borderRadius: "0 10px 0 10px",
-      pointerEvents: "none",
-      zIndex: 9999,
-      padding: "10px 12px 12px",
-      boxShadow: "0 6px 24px rgba(0,0,0,0.7)",
+    <div ref={cardRef} style={{
+      position: "fixed", left: cardLeft, top: cardTop,
+      width: NODE_TT_W, pointerEvents: "none", zIndex: 9999,
+      overflow: "visible",
+      filter: "drop-shadow(0 8px 24px rgba(0,0,0,0.85))",
+      fontFamily: "'TLFont', Arial, Helvetica, sans-serif",
     }}>
-      <div style={{ color, fontSize: 10, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 4 }}>
-        {ringLabel}
+      {/* Circular icon — top half protrudes above card */}
+      <div style={{
+        position: "absolute", top: -iconHalf, left: "50%",
+        transform: "translateX(-50%)",
+        width: iconD, height: iconD, borderRadius: "50%",
+        overflow: "hidden", zIndex: 10,
+        background: "#1a1a1a",
+      }}>
+        {slot && <img src={getNodeIconPath(slot.name)} alt={slot.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />}
       </div>
-      {slot ? (
-        <>
-          <div style={{ color: "#e4e4e7", fontSize: 15, fontWeight: 700, marginBottom: 6 }}>
-            {slot.name}
+
+      {/* Card body */}
+      <div style={{ overflow: "hidden", borderRadius: "0 12px 0 12px" }}>
+
+        {/* Top section */}
+        <div style={{
+          background: "#1f1f21",
+          padding: `${iconHalf + 10}px 10px 12px`,
+          textAlign: "center",
+        }}>
+          <div style={{ color: "#ffffff", fontSize: 17, fontWeight: 700, letterSpacing: "0.05em" }}>
+            {slot ? slot.name : ringLabel}
           </div>
-          {slot.effect.map((eff, i) => (
-            <div key={i} style={{ color: "#a1a1aa", fontSize: 13, lineHeight: 1.5 }}>{eff}</div>
-          ))}
-        </>
-      ) : (
-        <div style={{ color: "#52525b", fontSize: 13, fontStyle: "italic" }}>
-          Select a pactspirit to view node data
+          <div style={{ color: "#a1a1aa", fontSize: 13, textTransform: "uppercase", letterSpacing: "0.1em", marginTop: 3 }}>
+            {ringLabel}
+          </div>
         </div>
-      )}
+
+        {/* Bottom section */}
+        <div style={{ background: "#242325", padding: "10px 14px 14px" }}>
+          {slot ? (
+            slot.effect.map((eff, i) => (
+              <div key={i} style={{ color: "#c3c3c3", fontSize: 15, lineHeight: 1.6 }}>{eff}</div>
+            ))
+          ) : (
+            <div style={{ color: "#52525b", fontSize: 15, fontStyle: "italic", textAlign: "center" }}>
+              Select a pactspirit to view node data
+            </div>
+          )}
+        </div>
+
+      </div>
+    </div>,
+    document.body
+  );
+}
+
+// ─── Fate node tooltip card ───────────────────────────────────────────────────
+
+function FateNodeTooltipCard({ fateKey, hasSpirit, cx: cursorX, cy: cursorY }: { fateKey: FateKey; hasSpirit: boolean; cx: number; cy: number }) {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [cardH, setCardH] = useState(200);
+  useEffect(() => { if (cardRef.current) setCardH(cardRef.current.offsetHeight); });
+
+  const iconD    = NODE_TT_ICON_R * 2;
+  const iconHalf = NODE_TT_ICON_R;
+  const GAP = 18;
+  const vpW = typeof window !== "undefined" ? window.innerWidth : 1920;
+  const vpH = typeof window !== "undefined" ? window.innerHeight : 1080;
+  const cardLeft = cursorX + GAP + NODE_TT_W <= vpW ? cursorX + GAP : cursorX - GAP - NODE_TT_W;
+  const cardTop  = Math.max(iconHalf + 8, Math.min(vpH - cardH - 8, cursorY - 24));
+
+  return createPortal(
+    <div ref={cardRef} style={{
+      position: "fixed", left: cardLeft, top: cardTop,
+      width: NODE_TT_W, pointerEvents: "none", zIndex: 9999,
+      overflow: "visible",
+      filter: "drop-shadow(0 8px 24px rgba(0,0,0,0.85))",
+      fontFamily: "'TLFont', Arial, Helvetica, sans-serif",
+    }}>
+      {/* Circular icon */}
+      <div style={{
+        position: "absolute", top: -iconHalf, left: "50%",
+        transform: "translateX(-50%)",
+        width: iconD, height: iconD, borderRadius: "50%",
+        overflow: "hidden", zIndex: 10,
+        display: "flex", alignItems: "center", justifyContent: "center",
+      }}>
+        <img src="/icons/pactspirits/nodes/Undetermined%20Fate%20Slots.webp" alt="Undetermined Fate"
+          style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+      </div>
+
+      {/* Card body */}
+      <div style={{ overflow: "hidden", borderRadius: "0 12px 0 12px" }}>
+
+        {/* Top section */}
+        <div style={{
+          background: "#1f1f21",
+          padding: `${iconHalf + 10}px 10px 12px`,
+          textAlign: "center",
+        }}>
+          <div style={{ color: "#ffffff", fontSize: 17, fontWeight: 700, letterSpacing: "0.05em" }}>
+            Undetermined Fate
+          </div>
+          <div style={{ color: "#a1a1aa", fontSize: 13, textTransform: "uppercase", letterSpacing: "0.1em", marginTop: 3 }}>
+            Fate Node
+          </div>
+        </div>
+
+        {/* Bottom section */}
+        <div style={{ background: "#242325", padding: "10px 14px 14px" }}>
+          {hasSpirit ? (
+            <>
+              <div style={{ color: "#c3c3c3", fontSize: 15, lineHeight: 1.6 }}>+6% damage</div>
+              <div style={{ color: "#c3c3c3", fontSize: 15, lineHeight: 1.6 }}>+6% minion damage</div>
+            </>
+          ) : (
+            <div style={{ color: "#52525b", fontSize: 15, fontStyle: "italic", textAlign: "center" }}>
+              Select a pactspirit to view node data
+            </div>
+          )}
+        </div>
+
+      </div>
     </div>,
     document.body
   );
@@ -696,8 +837,9 @@ export default function PactspiritsPage() {
   });
   const [selectedFate, setSelectedFate] = useState<FateKey | null>(null);
   const [treeData,        setTreeData]        = useState<Record<number, SpiritTreeData | null>>({ 0: null, 1: null, 2: null });
-  const [nodeTooltip,     setNodeTooltip]     = useState<{ slot: SpiritTreeSlot | null; ring: "inner" | "mid" | "outer"; x: number; y: number } | null>(null);
-  const [fateNodeTooltip, setFateNodeTooltip] = useState<{ x: number; y: number } | null>(null);
+  const [nodeTooltip,        setNodeTooltip]        = useState<{ slot: SpiritTreeSlot | null; ring: "inner" | "mid" | "outer"; x: number; y: number } | null>(null);
+  const [fateNodeTooltip,    setFateNodeTooltip]    = useState<{ key: FateKey; x: number; y: number } | null>(null);
+  const [destinySlotTooltip, setDestinySlotTooltip] = useState<{ x: number; y: number } | null>(null);
 
   function addFateNode(key: FateKey, type: FateNodeType) {
     setFates(prev => ({ ...prev, [key]: { nodes: [...prev[key].nodes, type] } }));
@@ -800,11 +942,13 @@ export default function PactspiritsPage() {
     if (!selectedSlot) return;
     const key = slotKey(selectedSlot.category, selectedSlot.index);
     setSlotSelections((prev) => ({ ...prev, [key]: prev[key] === name ? "" : name }));
+    if (selectedSlot.category === "battle") clearFate(ARM_TO_FATE_KEY[selectedSlot.index]);
   }
 
   function clearSelection() {
     if (!selectedSlot) return;
     setSlotSelections((prev) => ({ ...prev, [slotKey(selectedSlot.category, selectedSlot.index)]: "" }));
+    if (selectedSlot.category === "battle") clearFate(ARM_TO_FATE_KEY[selectedSlot.index]);
   }
 
   const pool = selectedSlot?.category === "battle" ? battleSpirits : selectedSlot?.category === "drop" ? dropSpirits : [];
@@ -829,6 +973,8 @@ export default function PactspiritsPage() {
 
   const selectionLabel = selectedSlot ? CATEGORY_LABEL[selectedSlot.category] : "—";
 
+  const anyPactSpiritSelected = Object.values(slotSelections).some(Boolean);
+
   return (
     <div className="min-h-screen relative" style={BG_STYLE} onClick={() => { setSelectedSlot(null); setSelectedFate(null); }}>
 
@@ -846,6 +992,10 @@ export default function PactspiritsPage() {
             <clipPath id="node-clip-0"><circle cx={173} cy={97}  r={35} /></clipPath>
             <clipPath id="node-clip-1"><circle cx={327} cy={97}  r={35} /></clipPath>
             <clipPath id="node-clip-2"><circle cx={250} cy={234} r={35} /></clipPath>
+            <filter id="plus-glow" x="-60%" y="-60%" width="220%" height="220%">
+              <feGaussianBlur stdDeviation="4" result="blur" />
+              <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+            </filter>
           </defs>
           <g transform="translate(0, 50)">
           {/* Original: A(250,15) B(60,240) C(440,240), G(250,144) — overall height 225px, bottom ~90px */}
@@ -954,18 +1104,33 @@ export default function PactspiritsPage() {
             if (nodes.length === 0) return null;
             return (
               <g key={key}>
+                {/* All lines first so circles render on top */}
                 {def.gateway.map((seg, i) =>
                   seg.type === "path"
                     ? <path key={i} d={seg.d} fill="none" stroke="#22c55e" strokeWidth={8} strokeLinecap="square" />
                     : <line key={i} x1={seg.x1} y1={seg.y1} x2={seg.x2} y2={seg.y2} stroke="#22c55e" strokeWidth={8} strokeLinecap="square" />
                 )}
+                {nodes.map((_, i) =>
+                  i > 0 ? <path key={i} d={def.segments[i - 1]} fill="none" stroke="#22c55e" strokeWidth={8} strokeLinecap="square" /> : null
+                )}
+                {/* Circles + icons on top of all lines */}
                 {nodes.map((type, i) => {
                   const pos = def.positions[i];
                   const r = type === "medium" ? 30 : 18;
                   return (
-                    <g key={i}>
-                      {i > 0 && <path d={def.segments[i - 1]} fill="none" stroke="#22c55e" strokeWidth={8} strokeLinecap="square" />}
-                      <circle cx={pos.cx} cy={pos.cy} r={r} fill="#22c55e" stroke="#fff" strokeWidth={1.5} />
+                    <g key={i} style={{ pointerEvents: "all", cursor: "pointer" }}
+                      onMouseEnter={(e) => setDestinySlotTooltip({ x: e.clientX, y: e.clientY })}
+                      onMouseMove={(e)  => setDestinySlotTooltip((prev) => prev ? { ...prev, x: e.clientX, y: e.clientY } : null)}
+                      onMouseLeave={() => setDestinySlotTooltip(null)}>
+                      <circle cx={pos.cx} cy={pos.cy} r={r} fill="#22c55e" />
+                      <image
+                        href="/icons/pactspirits/nodes/Destiny%20Slot.webp"
+                        x={pos.cx - r} y={pos.cy - r}
+                        width={r * 2} height={r * 2}
+                        preserveAspectRatio="xMidYMid slice"
+                        style={{ clipPath: `circle(${r}px at ${r}px ${r}px)`, pointerEvents: "none" }}
+                      />
+                      <circle cx={pos.cx} cy={pos.cy} r={r} fill="none" stroke="#fff" strokeWidth={1.5} />
                     </g>
                   );
                 })}
@@ -1023,7 +1188,7 @@ export default function PactspiritsPage() {
             const r = size === "large" ? 40 : size === "medium" ? 30 : 18;
             const slot = getNodeSlot(label);
             const ring = getNodeRing(label);
-            const fill = slot ? (NODE_RING_COLOR[slot.ring] ?? "#e85d04") : (color ?? "#e85d04");
+            const fill = slot ? (NODE_RING_COLOR[slot.ring] ?? "#e85d04") : ring ? "#272626" : (color ?? "#e85d04");
             return (
             <g key={label}
               style={{ pointerEvents: ring ? "all" : "none", cursor: "default" }}
@@ -1031,8 +1196,17 @@ export default function PactspiritsPage() {
               onMouseMove={(e)  => { if (ring) setNodeTooltip((prev) => prev ? { ...prev, x: e.clientX, y: e.clientY } : null); }}
               onMouseLeave={() => setNodeTooltip(null)}
             >
-              <circle cx={cx} cy={cy} r={r} fill={fill} stroke="#fff" strokeWidth={1.5} />
-              <text x={cx + r + 4} y={cy + 5} fontSize={13} fontWeight="bold" fill={fill} stroke="#000" strokeWidth={3} paintOrder="stroke">{label}</text>
+              <circle cx={cx} cy={cy} r={r} fill={fill} />
+              {slot && (
+                <image
+                  href={getNodeIconPath(slot.name)}
+                  x={cx - r} y={cy - r}
+                  width={r * 2} height={r * 2}
+                  preserveAspectRatio="xMidYMid slice"
+                  style={{ clipPath: `circle(${r}px at ${r}px ${r}px)`, pointerEvents: "none" }}
+                />
+              )}
+              <circle cx={cx} cy={cy} r={r} fill="none" stroke={slot ? "#fff" : "#444444"} strokeWidth={slot ? 1.5 : 2} />
             </g>
             );
           })}
@@ -1041,19 +1215,28 @@ export default function PactspiritsPage() {
             const def = FATE_DEFS[key];
             const isSelected = selectedFate === key;
             const hasNodes = fates[key].nodes.length > 0;
+            const armHasSpirit = !!getAssignedSpirit("battle", FATE_KEY_TO_ARM[key]);
             return (
-              <g key={key} style={{ pointerEvents: "all", cursor: "pointer" }}
-                onClick={(e) => { e.stopPropagation(); setSelectedFate(isSelected ? null : key); setSelectedSlot(null); }}
-                onMouseEnter={(e) => setFateNodeTooltip({ x: e.clientX, y: e.clientY })}
+              <g key={key} style={{ pointerEvents: "all", cursor: armHasSpirit ? "pointer" : "default" }}
+                onClick={(e) => { if (!armHasSpirit) return; e.stopPropagation(); setSelectedFate(isSelected ? null : key); setSelectedSlot(null); }}
+                onMouseEnter={(e) => setFateNodeTooltip({ key, x: e.clientX, y: e.clientY })}
                 onMouseMove={(e)  => setFateNodeTooltip((prev) => prev ? { ...prev, x: e.clientX, y: e.clientY } : null)}
                 onMouseLeave={() => setFateNodeTooltip(null)}>
                 <circle cx={def.nodeCx} cy={def.nodeCy} r={18}
-                  fill={hasNodes ? "#22c55e" : "#e85d04"}
-                  stroke={isSelected ? "#fbdb58" : "#fff"} strokeWidth={isSelected ? 3 : 1.5} />
-                <text x={def.nodeCx + 22} y={def.nodeCy + 5} fontSize={13} fontWeight="bold"
-                  fill={hasNodes ? "#22c55e" : "#e85d04"} stroke="#000" strokeWidth={3} paintOrder="stroke">
-                  {def.nodeLabel}
-                </text>
+                  fill={!armHasSpirit ? "#272626" : hasNodes ? "#22c55e" : "#e85d04"}
+                  stroke={isSelected ? "#fbdb58" : armHasSpirit ? "#fff" : "#444444"} strokeWidth={isSelected ? 3 : armHasSpirit ? 1.5 : 2} />
+                {armHasSpirit && (
+                  <image
+                    href="/icons/pactspirits/nodes/Undetermined%20Fate%20Slots.webp"
+                    x={def.nodeCx - 18} y={def.nodeCy - 18}
+                    width={36} height={36}
+                    preserveAspectRatio="xMidYMid slice"
+                    style={{ clipPath: "circle(18px at 18px 18px)", pointerEvents: "none" }}
+                  />
+                )}
+                <circle cx={def.nodeCx} cy={def.nodeCy} r={18}
+                  fill="none"
+                  stroke={isSelected ? "#fbdb58" : armHasSpirit ? "#fff" : "#444444"} strokeWidth={isSelected ? 3 : armHasSpirit ? 1.5 : 2} />
               </g>
             );
           })}
@@ -1084,8 +1267,8 @@ export default function PactspiritsPage() {
                   stroke="none"
                   style={{ transition: "fill 0.15s" }}
                 />
-                {/* Image clipped to circle */}
-                {spirit && (
+                {/* Image clipped to circle, or plus sign when empty */}
+                {spirit ? (
                   <image
                     href={getIconPath(spirit)}
                     x={cx - 35} y={cy - 35}
@@ -1094,6 +1277,14 @@ export default function PactspiritsPage() {
                     clipPath={`url(#node-clip-${idx})`}
                     style={{ pointerEvents: "none" }}
                   />
+                ) : (
+                  <text
+                    x={cx} y={cy}
+                    textAnchor="middle" dominantBaseline="central"
+                    fontSize={32} fontWeight={300} fill="#dcdcdc"
+                    filter="url(#plus-glow)"
+                    style={{ pointerEvents: "none", userSelect: "none" }}
+                  >+</text>
                 )}
                 {/* Stroke on top so it always overlays the image */}
                 <circle
@@ -1460,11 +1651,20 @@ export default function PactspiritsPage() {
         <NodeTooltipCard slot={nodeTooltip.slot} ring={nodeTooltip.ring} cx={nodeTooltip.x} cy={nodeTooltip.y} />
       )}
 
-      {fateNodeTooltip && createPortal(
+      {fateNodeTooltip && (
+        <FateNodeTooltipCard
+          fateKey={fateNodeTooltip.key}
+          hasSpirit={!!getAssignedSpirit("battle", FATE_KEY_TO_ARM[fateNodeTooltip.key])}
+          cx={fateNodeTooltip.x}
+          cy={fateNodeTooltip.y}
+        />
+      )}
+
+      {destinySlotTooltip && createPortal(
         <div style={{
           position: "fixed",
-          left: fateNodeTooltip.x + 14,
-          top:  fateNodeTooltip.y - 16,
+          left: destinySlotTooltip.x + 14,
+          top:  destinySlotTooltip.y - 16,
           width: 180,
           background: "#1d1b1c",
           border: "1px solid #2a2a2a",
@@ -1475,7 +1675,7 @@ export default function PactspiritsPage() {
           boxShadow: "0 6px 24px rgba(0,0,0,0.7)",
         }}>
           <div style={{ color: "#22c55e", fontSize: 10, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 4 }}>
-            Undetermined Fate
+            Destiny Slot
           </div>
           <div style={{ color: "#a1a1aa", fontSize: 13, lineHeight: 1.5 }}>+6% damage</div>
           <div style={{ color: "#a1a1aa", fontSize: 13, lineHeight: 1.5 }}>+6% minion damage</div>

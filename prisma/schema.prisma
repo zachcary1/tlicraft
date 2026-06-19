@@ -162,6 +162,7 @@ model Blend {
 model Destiny {
   id     String @id
   type   String
+  tier   String @default("")
   name   String
   effect String
 

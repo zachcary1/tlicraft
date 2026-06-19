@@ -33,12 +33,13 @@ async function importBlend() {
 // ── Destiny ────────────────────────────────────────────────────────────────────
 
 async function importDestiny() {
-  const rows = await readJson<{ type: string; name?: string; effect: string }>("destiny");
+  const rows = await readJson<{ type: string; tier?: string; name?: string; effect: string }>("destiny");
   await prisma.destiny.deleteMany({ where: { id: { startsWith: "destiny_" } } });
   await prisma.destiny.createMany({
     data: rows.map((r, i) => ({
       id: `destiny_${i}`,
       type: r.type,
+      tier: r.tier ?? "",
       name: r.name ?? "",
       effect: r.effect,
     })),
