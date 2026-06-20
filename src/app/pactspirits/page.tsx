@@ -267,6 +267,21 @@ function canAddFateNode(nodes: FateNodeType[], type: FateNodeType): boolean {
   return med + mic <= 3;
 }
 
+// ─── Build-wide Fate/Kismet socket limits ─────────────────────────────────────
+// At most 9 tree micro nodes and 4 tree medium nodes may have a Fate/Kismet socketed
+// into them. Destiny slots added by Undetermined Fates (ids like "left-0") are not
+// tree nodes and don't count toward this limit.
+
+const MICRO_FATE_SOCKET_LIMIT  = 9;
+const MEDIUM_FATE_SOCKET_LIMIT = 4;
+
+function getTreeNodeFateSize(id: string): FateNodeType | null {
+  const armPos = NODE_LABEL_TO_ARM_POS[id];
+  if (!armPos) return null;
+  const ring = POS_TO_RING[armPos[1]];
+  return ring === "inner" ? "micro" : ring === "mid" ? "medium" : null;
+}
+
 function fateOptionLayout(micro: number, medium: number) {
   const h = 36, cy = 18;
   const microR = 8, mediumR = 13, gap = 5, pad = 10;
@@ -996,27 +1011,38 @@ function FateOptionCard({
 // ─── Destiny (Fate / Kismet) picker card ──────────────────────────────────────
 
 function DestinyCard({
-  entry, selected, onClick, onHover, onLeave,
+  entry, selected, disabled, onClick, onHover, onLeave,
 }: {
-  entry:    DestinyEntry;
-  selected: boolean;
-  onClick:  () => void;
-  onHover?: (entry: DestinyEntry, x: number, y: number) => void;
-  onLeave?: () => void;
+  entry:     DestinyEntry;
+  selected:  boolean;
+  disabled?: boolean;
+  onClick:   () => void;
+  onHover?:  (entry: DestinyEntry, x: number, y: number) => void;
+  onLeave?:  () => void;
 }) {
   const [imgError, setImgError] = useState(false);
   const [hovered,  setHovered]  = useState(false);
+  const [tipPos,   setTipPos]   = useState<{ x: number; y: number } | null>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
   useEffect(() => { setImgError(false); }, [entry.name]);
 
   const colors = getFateTierColors(entry.type, entry.tier);
 
   return (
     <div
-      onClick={onClick}
-      onMouseEnter={(e) => { setHovered(true); onHover?.(entry, e.clientX, e.clientY); }}
+      ref={wrapperRef}
+      onClick={disabled ? undefined : onClick}
+      onMouseEnter={(e) => {
+        setHovered(true);
+        if (disabled && wrapperRef.current) {
+          const r = wrapperRef.current.getBoundingClientRect();
+          setTipPos({ x: r.left + r.width / 2, y: r.top });
+        }
+        onHover?.(entry, e.clientX, e.clientY);
+      }}
       onMouseMove={(e) => onHover?.(entry, e.clientX, e.clientY)}
-      onMouseLeave={() => { setHovered(false); onLeave?.(); }}
-      style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6, cursor: "pointer" }}
+      onMouseLeave={() => { setHovered(false); setTipPos(null); onLeave?.(); }}
+      style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6, cursor: disabled ? "not-allowed" : "pointer", position: "relative" }}
     >
       <div style={{
         width: "100%", aspectRatio: "1", position: "relative", overflow: "hidden",
@@ -1025,7 +1051,7 @@ function DestinyCard({
         outline: selected ? "3px solid #fbdb58" : "none",
         outlineOffset: "1px",
         background: colors.bg,
-        filter: hovered ? "brightness(0.75)" : "none",
+        filter: disabled ? "grayscale(0.7) brightness(0.45)" : hovered ? "brightness(0.75)" : "none",
         transition: "filter 0.15s",
       }}>
         {!imgError ? (
@@ -1041,6 +1067,21 @@ function DestinyCard({
           </div>
         )}
       </div>
+
+      {/* Disabled tooltip — portaled to body to escape overflow clipping */}
+      {disabled && tipPos && createPortal(
+        <div style={{
+          position: "fixed",
+          left: tipPos.x, top: tipPos.y - 8,
+          transform: "translate(-50%, -100%)",
+          background: "#1a1a1a", border: "1px solid #3a3a3a", borderRadius: "0 6px 0 6px",
+          padding: "5px 9px", color: "#a1a1aa", fontSize: 10, whiteSpace: "nowrap",
+          zIndex: 9999, pointerEvents: "none",
+        }}>
+          Socket limit reached
+        </div>,
+        document.body
+      )}
 
       <div style={{ height: 28, display: "flex", alignItems: "flex-start", justifyContent: "center", paddingTop: 2 }}>
         <div style={{
@@ -1133,6 +1174,47 @@ function DestinyTooltipCard({ entry, cx: cursorX, cy: cursorY }: { entry: Destin
   );
 }
 
+// ─── Fate/Kismet socket limit display ─────────────────────────────────────────
+
+function FateLimitLine({ label, used, max, highlighted }: { label: string; used: number; max: number; highlighted?: boolean }) {
+  const atLimit = used >= max;
+  return (
+    <div style={{
+      display: "flex", alignItems: "baseline", justifyContent: "flex-end", gap: 6, whiteSpace: "nowrap",
+      width: 240,
+      background: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.85) 25%, rgba(0,0,0,0.85) 100%)",
+      borderRadius: 8,
+      padding: "8px 20px",
+      outline: highlighted ? "2px solid #ff6467" : "2px solid transparent",
+      outlineOffset: -2,
+      boxShadow: highlighted ? "0 0 12px rgba(255,100,103,0.6)" : "none",
+      transition: "outline-color 0.15s, box-shadow 0.15s",
+    }}>
+      <span style={{ fontSize: 13, fontWeight: 600, color: "#e4e4e7" }}>{label}</span>
+      <span style={{ fontSize: 17, fontWeight: 700, color: atLimit ? "#ff6467" : "#e4e4e7" }}>{used}/{max}</span>
+    </div>
+  );
+}
+
+function FateSocketLimitsPanel({ micro, medium, highlightMicro, highlightMedium }: {
+  micro: number; medium: number; highlightMicro?: boolean; highlightMedium?: boolean;
+}) {
+  return (
+    <div
+      className="absolute"
+      style={{
+        top: 20,
+        right: `calc(50% - ${svgW / 2}px - ${PANEL_GAP}px + 16px)`,
+        display: "flex", flexDirection: "column", gap: 6, alignItems: "flex-end",
+        pointerEvents: "none",
+      }}
+    >
+      <FateLimitLine label="Micro Destiny"  used={micro}  max={MICRO_FATE_SOCKET_LIMIT}  highlighted={highlightMicro} />
+      <FateLimitLine label="Medium Destiny" used={medium} max={MEDIUM_FATE_SOCKET_LIMIT} highlighted={highlightMedium} />
+    </div>
+  );
+}
+
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 const CATEGORY_LABEL: Record<Category, string> = {
@@ -1168,6 +1250,9 @@ export default function PactspiritsPage() {
   const [selectedFateSlot,   setSelectedFateSlot]   = useState<{ id: string; size: FateNodeType } | null>(null);
   const [fateSelections,     setFateSelections]     = useState<Record<string, string>>({});
   const [hoveredDestiny,     setHoveredDestiny]     = useState<{ entry: DestinyEntry; x: number; y: number } | null>(null);
+  const [cappedHoverSize,    setCappedHoverSize]    = useState<FateNodeType | null>(null);
+
+  useEffect(() => { setCappedHoverSize(null); }, [selectedFateSlot?.id]);
 
   function addFateNode(key: FateKey, type: FateNodeType) {
     setFates(prev => ({ ...prev, [key]: { nodes: [...prev[key].nodes, type] } }));
@@ -1182,9 +1267,18 @@ export default function PactspiritsPage() {
       return next;
     });
   }
+  function clearTreeNodeFateSelectionsForArm(armIdx: number) {
+    const labels: readonly string[] = ARM_NODES[armIdx];
+    setFateSelections((prev) => {
+      const next: Record<string, string> = {};
+      for (const k in prev) if (!labels.includes(k)) next[k] = prev[k];
+      return next;
+    });
+  }
   function clearFate(key: FateKey) {
     setFates(prev => ({ ...prev, [key]: { nodes: [] } }));
     clearFateSelectionsForKey(key);
+    clearTreeNodeFateSelectionsForArm(FATE_KEY_TO_ARM[key]);
   }
 
   const currentFateNodes = selectedFate ? fates[selectedFate].nodes : [];
@@ -1223,6 +1317,17 @@ export default function PactspiritsPage() {
     return destinyEntries.find((e) => e.id === entryId) ?? null;
   }
 
+  // A tree node socket counts against the build-wide 9-micro/4-medium cap only while it's
+  // empty — swapping an already-socketed node's Fate/Kismet doesn't change the count.
+  // Destiny slots added by Undetermined Fates aren't tree nodes, so they're never capped here.
+  function isFateSlotAtCap(id: string): boolean {
+    if (fateSelections[id]) return false;
+    const size = getTreeNodeFateSize(id);
+    if (!size) return false;
+    const count = Object.entries(fateSelections).filter(([k, v]) => v && getTreeNodeFateSize(k) === size).length;
+    return size === "micro" ? count >= MICRO_FATE_SOCKET_LIMIT : count >= MEDIUM_FATE_SOCKET_LIMIT;
+  }
+
   function handleFateSlotClick(id: string, size: FateNodeType) {
     const isSame = selectedFateSlot?.id === id;
     setSelectedFateSlot(isSame ? null : { id, size });
@@ -1234,6 +1339,7 @@ export default function PactspiritsPage() {
   function handleDestinyCardClick(entry: DestinyEntry) {
     if (!selectedFateSlot) return;
     const id = selectedFateSlot.id;
+    if (isFateSlotAtCap(id)) return;
     setFateSelections((prev) => ({ ...prev, [id]: prev[id] === entry.id ? "" : entry.id }));
   }
 
@@ -1341,6 +1447,11 @@ export default function PactspiritsPage() {
   const selectionLabel = selectedSlot ? CATEGORY_LABEL[selectedSlot.category] : "—";
 
   const anyPactSpiritSelected = Object.values(slotSelections).some(Boolean);
+
+  const socketedMicroCount = Object.entries(fateSelections)
+    .filter(([id, entryId]) => entryId && getTreeNodeFateSize(id) === "micro").length;
+  const socketedMediumCount = Object.entries(fateSelections)
+    .filter(([id, entryId]) => entryId && getTreeNodeFateSize(id) === "medium").length;
 
   return (
     <div className="min-h-screen relative" style={BG_STYLE} onClick={() => { setSelectedSlot(null); setSelectedFate(null); setSelectedFateSlot(null); }}>
@@ -1709,6 +1820,14 @@ export default function PactspiritsPage() {
         </svg>
       </div>
 
+      {/* Fate/Kismet socket limits — top-right of diagram, left of the selection panel */}
+      <FateSocketLimitsPanel
+        micro={socketedMicroCount}
+        medium={socketedMediumCount}
+        highlightMicro={cappedHoverSize === "micro"}
+        highlightMedium={cappedHoverSize === "medium"}
+      />
+
       {/* Left panel — top-left, height auto */}
       <div
         className="absolute flex flex-col"
@@ -2040,6 +2159,7 @@ export default function PactspiritsPage() {
         const needle = searchQuery.replace(/\s/g, "").toLowerCase();
         const filteredDestiny = needle ? pool.filter((e) => e.name.toLowerCase().includes(needle)) : pool;
         const currentEntry = getFateSelection(selectedFateSlot.id);
+        const atCap = isFateSlotAtCap(selectedFateSlot.id);
 
         return (
           <div
@@ -2110,9 +2230,10 @@ export default function PactspiritsPage() {
                           key={entry.id}
                           entry={entry}
                           selected={currentEntry?.id === entry.id}
+                          disabled={atCap}
                           onClick={() => handleDestinyCardClick(entry)}
-                          onHover={(e, x, y) => setHoveredDestiny({ entry: e, x, y })}
-                          onLeave={() => setHoveredDestiny(null)}
+                          onHover={(e, x, y) => { setHoveredDestiny({ entry: e, x, y }); if (atCap) setCappedHoverSize(slotType); }}
+                          onLeave={() => { setHoveredDestiny(null); if (atCap) setCappedHoverSize(null); }}
                         />
                       ))}
                     </div>
