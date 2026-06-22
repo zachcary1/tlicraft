@@ -31,14 +31,16 @@ function CountGraphic({ c, count = 0 }: { c: Constraint; count?: number }) {
 type SlateTileProps = {
   label: string;
   selected: boolean;
+  disabled: boolean;
   onClick: () => void;
 };
 
-function SlateTile({ label, selected, onClick }: SlateTileProps) {
+function SlateTile({ label, selected, disabled, onClick }: SlateTileProps) {
   return (
     <div
       className="transition-all duration-150 group-hover:brightness-125"
-      onClick={onClick}
+      onClick={disabled ? undefined : onClick}
+      title={disabled ? "Limit reached" : undefined}
       style={{
         height: 155,
         background: "#1e1e1e",
@@ -46,7 +48,8 @@ function SlateTile({ label, selected, onClick }: SlateTileProps) {
         boxShadow: selected ? "0 0 0 1px #fbdb58, 0 4px 16px rgba(0,0,0,0.6)" : "0 4px 16px rgba(0,0,0,0.6)",
         borderRadius: 4,
         overflow: "hidden",
-        cursor: "pointer",
+        cursor: disabled ? "not-allowed" : "pointer",
+        opacity: disabled ? 0.4 : 1,
       }}
     >
       <img src={getCatalogIconPath(label)} alt={label} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
@@ -54,12 +57,17 @@ function SlateTile({ label, selected, onClick }: SlateTileProps) {
   );
 }
 
+function getMaxForSlate(label: string): number | null {
+  return CONSTRAINTS.find((c) => c.label === label)?.max ?? null;
+}
+
 type Props = {
   selected: string | null;
+  counts: Record<string, number>;
   onSelect: (label: string) => void;
 };
 
-export default function SlatesPanel({ selected, onSelect }: Props) {
+export default function SlatesPanel({ selected, counts, onSelect }: Props) {
   return (
     <div
       className="flex flex-col"
@@ -93,7 +101,7 @@ export default function SlatesPanel({ selected, onSelect }: Props) {
               <div style={{ height: 26, display: "flex", alignItems: "flex-end", paddingBottom: 3 }}>
                 <span className="text-xs uppercase tracking-wide text-[#52525b] group-hover:text-[#a1a1aa] transition-colors duration-150">{title}</span>
               </div>
-              <SlateTile label={title} selected={selected === title} onClick={() => onSelect(title)} />
+              <SlateTile label={title} selected={selected === title} disabled={false} onClick={() => onSelect(title)} />
             </div>
           ))}
         </div>
@@ -106,7 +114,7 @@ export default function SlatesPanel({ selected, onSelect }: Props) {
               <div style={{ height: 26, display: "flex", alignItems: "flex-end", paddingBottom: 3 }}>
                 <span className="text-xs uppercase tracking-wide text-[#52525b] group-hover:text-[#a1a1aa] transition-colors duration-150">{title}</span>
               </div>
-              <SlateTile label={title} selected={selected === title} onClick={() => onSelect(title)} />
+              <SlateTile label={title} selected={selected === title} disabled={false} onClick={() => onSelect(title)} />
             </div>
           ))}
         </div>
@@ -125,7 +133,7 @@ export default function SlatesPanel({ selected, onSelect }: Props) {
               <div style={{ height: 26, display: "flex", alignItems: "flex-end", paddingBottom: 3 }}>
                 <span className="text-xs uppercase tracking-wide text-[#52525b] group-hover:text-[#a1a1aa] transition-colors duration-150">{label}</span>
               </div>
-              <SlateTile label={label} selected={selected === label} onClick={() => onSelect(label)} />
+              <SlateTile label={label} selected={selected === label} disabled={(counts[label] ?? 0) >= (getMaxForSlate(label) ?? Infinity)} onClick={() => onSelect(label)} />
             </div>
           ))}
         </div>
@@ -138,7 +146,7 @@ export default function SlatesPanel({ selected, onSelect }: Props) {
               <div style={{ height: 26, display: "flex", alignItems: "flex-end", paddingBottom: 3 }}>
                 <span className="text-xs uppercase tracking-wide text-[#52525b] group-hover:text-[#a1a1aa] transition-colors duration-150">{label}</span>
               </div>
-              <SlateTile label={label} selected={selected === label} onClick={() => onSelect(label)} />
+              <SlateTile label={label} selected={selected === label} disabled={(counts[label] ?? 0) >= (getMaxForSlate(label) ?? Infinity)} onClick={() => onSelect(label)} />
             </div>
           ))}
         </div>
@@ -154,23 +162,26 @@ export default function SlatesPanel({ selected, onSelect }: Props) {
         <div className="grid gap-x-4 gap-y-2" style={{ gridTemplateColumns: "1fr 1fr" }}>
           {[CONSTRAINTS.slice(0, 3), CONSTRAINTS.slice(3)].map((col, ci) => (
             <div key={ci} className="flex flex-col gap-2">
-              {col.map((c) => (
-                <div key={c.label} className="group relative flex items-center gap-2 px-2 py-1 rounded-md transition-all duration-150 hover:bg-white/5">
-                  <div className="pointer-events-none absolute bottom-full left-0 mb-2 whitespace-nowrap rounded px-3 py-1 text-xs opacity-0 transition-opacity duration-150 group-hover:opacity-100" style={{ background: "#141414", border: "1px solid #3a3a3a", color: "#a1a1aa" }}>
-                    Divinity Slate effect limit: 0 / {c.max}
+              {col.map((c) => {
+                const count = counts[c.label] ?? 0;
+                return (
+                  <div key={c.label} className="group relative flex items-center gap-2 px-2 py-1 rounded-md transition-all duration-150 hover:bg-white/5">
+                    <div className="pointer-events-none absolute bottom-full left-0 mb-2 whitespace-nowrap rounded px-3 py-1 text-xs opacity-0 transition-opacity duration-150 group-hover:opacity-100" style={{ background: "#141414", border: "1px solid #3a3a3a", color: "#a1a1aa" }}>
+                      Divinity Slate effect limit: {count} / {c.max}
+                    </div>
+                    <img
+                      src={getCatalogIconPath(c.label)}
+                      alt={c.label}
+                      className="transition-all duration-150 group-hover:brightness-125"
+                      style={{ width: 40, height: 40, objectFit: "contain", flexShrink: 0 }}
+                    />
+                    <div className="flex flex-col gap-1">
+                      <span className="text-sm transition-colors duration-150 group-hover:text-[#e4e4e7]" style={{ color: "#a1a1aa" }}>{c.label}</span>
+                      <CountGraphic c={c} count={count} />
+                    </div>
                   </div>
-                  <img
-                    src={getCatalogIconPath(c.label)}
-                    alt={c.label}
-                    className="transition-all duration-150 group-hover:brightness-125"
-                    style={{ width: 40, height: 40, objectFit: "contain", flexShrink: 0 }}
-                  />
-                  <div className="flex flex-col gap-1">
-                    <span className="text-sm transition-colors duration-150 group-hover:text-[#e4e4e7]" style={{ color: "#a1a1aa" }}>{c.label}</span>
-                    <CountGraphic c={c} count={0} />
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           ))}
         </div>

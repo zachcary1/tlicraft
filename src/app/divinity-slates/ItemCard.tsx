@@ -5,7 +5,7 @@ import {
   SHAPES,
   ROTATIONS,
   getGodSlateIconPath,
-  getOtherSlateIconPath,
+  getInstanceIconPath,
   parseTalentEffectLines,
   getSlateQuality,
   getOrientationConfig,
@@ -121,7 +121,7 @@ function ShapeButton({ god, shape, selected, quality, onClick }: { god: GodName;
     <div className="flex flex-col items-center gap-1">
       <button
         onClick={onClick}
-        className="overflow-hidden transition-all"
+        className="overflow-hidden transition-all cursor-pointer"
         style={{
           width: 56, height: 56, borderRadius: "0 10px 0 10px",
           border: `2px solid ${selected ? quality.border : "#bec4c9"}`,
@@ -139,7 +139,7 @@ function ToggleButton({ label, selected, quality, onClick }: { label: string; se
   return (
     <button
       onClick={onClick}
-      className="px-3 py-1.5 text-xs font-semibold transition-colors"
+      className="px-3 py-1.5 text-xs font-semibold transition-colors cursor-pointer"
       style={{
         borderRadius: "0 6px 0 6px",
         background: selected ? "#eaeaea" : "#e0e0e0",
@@ -152,6 +152,16 @@ function ToggleButton({ label, selected, quality, onClick }: { label: string; se
     </button>
   );
 }
+
+// Same yellow used for the AffixPanel's active Micro/Medium/Legendary Medium/Core tabs, but
+// with a plain black shadow instead of their yellow glow.
+const INSTALL_BUTTON_STYLE = {
+  background: "#ffde1f",
+  color: "#000000",
+  borderRadius: "12px 0 12px 0",
+  border: "none",
+  boxShadow: "0 3px 8px rgba(0,0,0,0.45)",
+};
 
 function getIconTransform(config: SlateConfig): string | undefined {
   return config.rotation ? `rotate(${config.rotation}deg)` : undefined;
@@ -168,14 +178,18 @@ type Props = {
   onActiveSlotKeyChange: (key: string | null) => void;
   onConfigChange: (config: SlateConfig) => void;
   onClose: () => void;
+  mode: "draft" | "placed";
+  onPlace?: () => void;
+  onRemove?: () => void;
+  // True once placed if the instance doesn't fully fit — overlapping another slate or hanging
+  // off the board. Placement is never blocked; this just surfaces a warning.
+  hasConflict?: boolean;
 };
 
-export default function ItemCard({ slateName, def, config, talents, activeSlotKey, onActiveSlotKeyChange, onConfigChange, onClose }: Props) {
+export default function ItemCard({ slateName, def, config, talents, activeSlotKey, onActiveSlotKeyChange, onConfigChange, onClose, mode, onPlace, onRemove, hasConflict }: Props) {
   const [imgErr, setImgErr] = useState(false);
   const quality = getSlateQuality(def);
-  const iconPath = def.kind === "god"
-    ? getGodSlateIconPath(def.name, config.shape)
-    : getOtherSlateIconPath(def.name);
+  const iconPath = getInstanceIconPath(def, config);
 
   function setSlotActive(key: string) {
     onActiveSlotKeyChange(activeSlotKey === key ? null : key);
@@ -252,6 +266,15 @@ export default function ItemCard({ slateName, def, config, talents, activeSlotKe
       >
         <div className="min-h-[52px]" />
 
+        {hasConflict && (
+          <div
+            className="mb-3 px-3 py-2 text-xs font-semibold text-center"
+            style={{ background: "#fde2e1", color: "#b91c1c", borderRadius: "0 8px 0 8px", border: "1px solid #f3a6a4" }}
+          >
+            ⚠ Doesn&apos;t fit — overlapping another slate or off the board
+          </div>
+        )}
+
         {def.kind === "god" ? (
           <>
             {/* Shape */}
@@ -265,7 +288,7 @@ export default function ItemCard({ slateName, def, config, talents, activeSlotKe
                     shape={shape}
                     quality={quality}
                     selected={config.shape === shape}
-                    onClick={() => onConfigChange({ ...config, shape })}
+                    onClick={() => onConfigChange({ ...config, shape, rotation: 0 })}
                   />
                 ))}
               </div>
@@ -319,11 +342,33 @@ export default function ItemCard({ slateName, def, config, talents, activeSlotKe
               );
             })()}
 
-            <SectionBox label="Affixes">
+            <SectionBox label="Fixed Talent Nodes">
               {renderSlotRows(def.slots)}
             </SectionBox>
           </>
         )}
+
+        {/* Install / Confirm / Remove */}
+        <div className="mt-6 flex justify-end gap-3">
+          {mode === "draft" ? (
+            <button onClick={onPlace} className="px-6 py-2.5 text-sm font-semibold transition-colors cursor-pointer" style={INSTALL_BUTTON_STYLE}>
+              Install
+            </button>
+          ) : (
+            <>
+              <button
+                onClick={onRemove}
+                className="px-6 py-2.5 text-sm font-semibold text-white transition-colors cursor-pointer"
+                style={{ background: "#c0392b", borderRadius: "0 10px 0 10px", border: "none", boxShadow: "0 3px 8px rgba(0,0,0,0.35)" }}
+              >
+                ✕ Remove from Grid
+              </button>
+              <button onClick={onClose} className="px-6 py-2.5 text-sm font-semibold transition-colors cursor-pointer" style={INSTALL_BUTTON_STYLE}>
+                Confirm
+              </button>
+            </>
+          )}
+        </div>
       </div>
     </div>
   );

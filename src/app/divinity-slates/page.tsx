@@ -1,16 +1,26 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import SlatesPanel from "./SlatesPanel";
 import AffixPanel from "./AffixPanel";
 import ItemCard from "./ItemCard";
 import {
   SLATE_DEFS,
   EMPTY_SLATE_CONFIG,
+  GRID_ROWS,
+  GRID_COLS,
+  GRID_REMOVED,
   getAllSlots,
   getSlateDisplayName,
+  getShapeCells,
+  getSlateQuality,
+  getInstanceIconPath,
+  isValidPlacement,
+  isInstanceValid,
+  cellKey,
   type SlateConfig,
   type Talent,
+  type PlacedInstance,
 } from "./slateData";
 
 const BG_STYLE = {
@@ -23,61 +33,78 @@ const BG_STYLE = {
   backgroundRepeat: "no-repeat",
 };
 
-const removed = new Set([
-  "0,0","0,1","0,4","0,5",
-  "1,0",            "1,5",
-  "4,0",            "4,5",
-  "5,0","5,1","5,4","5,5",
-]);
-
 const slot = 100;
 const gap  = 8;
 const step = slot + gap;
 const pad  = 12;
-const rows = 6;
-const cols = 6;
-const svgW = pad + cols * slot + (cols - 1) * gap + pad;
-const svgH = pad + rows * slot + (rows - 1) * gap + pad;
+// Visible diamond dimensions — unchanged, and what the side panels position themselves
+// relative to, so the extra border below doesn't shift anything on screen.
+const svgW = pad + GRID_COLS * slot + (GRID_COLS - 1) * gap + pad;
+const svgH = pad + GRID_ROWS * slot + (GRID_ROWS - 1) * gap + pad;
+
+// The board is rendered 1 extra (invisible) tile wider on every side than the playable
+// diamond, so a shape can be anchored with part of it hanging just off the edge — letting
+// pieces be tucked snugly into a corner that would otherwise need an anchor cell that doesn't
+// exist. Anything occupying the border (or the original corner cutouts) is still flagged
+// incompatible by isValidPlacement/isInstanceValid; this purely widens what's clickable.
+const EXT = 1;
+const boardSvgW = svgW + 2 * EXT * step;
+const boardSvgH = svgH + 2 * EXT * step;
 
 const PANEL_W = 560;
 const PANEL_GAP = 50;
 
 export default function DivinitySlatesPage() {
-  const [hovered, setHovered] = useState<string | null>(null);
+  const [hoverCell, setHoverCell] = useState<{ row: number; col: number } | null>(null);
   const [talents, setTalents] = useState<Talent[]>([]);
 
-  const [selectedSlateName, setSelectedSlateName] = useState<string | null>(null);
-  const [slateConfigs, setSlateConfigs] = useState<Record<string, SlateConfig>>({});
+  const [placedInstances, setPlacedInstances] = useState<PlacedInstance[]>([]);
+  const [draft, setDraft] = useState<{ slateName: string; config: SlateConfig } | null>(null);
+  const [editingId, setEditingId] = useState<string | null>(null);
+  const [placing, setPlacing] = useState(false);
   const [activeSlotKey, setActiveSlotKey] = useState<string | null>(null);
+
+  // Press-and-drag state for repositioning a placed instance directly on the board. Set on
+  // mousedown over an occupied cell; promoted into the existing `placing` flow once the
+  // cursor actually moves to a different cell (so a plain click still just opens the card).
+  const [dragCandidate, setDragCandidate] = useState<{
+    instanceId: string;
+    grabOffset: { dr: number; dc: number };
+    startCell: { row: number; col: number };
+  } | null>(null);
+  const hoverCellRef = useRef(hoverCell);
+  useEffect(() => { hoverCellRef.current = hoverCell; }, [hoverCell]);
+  const placingRef = useRef(placing);
+  useEffect(() => { placingRef.current = placing; }, [placing]);
+  const suppressClickRef = useRef(false);
 
   useEffect(() => {
     fetch("/api/talents").then((r) => r.json()).then(setTalents).catch(console.error);
   }, []);
 
-  // Deselect the active affix slot when clicking outside any interactive element.
+  const editingInstance = editingId ? placedInstances.find((i) => i.id === editingId) ?? null : null;
+  const activeSlateName = draft?.slateName ?? editingInstance?.slateName ?? null;
+  const activeDef = activeSlateName ? SLATE_DEFS[activeSlateName] : null;
+  const activeConfig = draft?.config ?? editingInstance?.config ?? null;
+  const overlayOpen = (!!draft || !!editingInstance) && !placing;
+  const mode: "draft" | "placed" = editingInstance ? "placed" : "draft";
+
+  // Deselect the active affix slot when clicking outside any interactive element. For a
+  // placed-instance card (mode "placed") there's no dimming backdrop to catch the click (the
+  // board stays fully usable while it's open), so this also closes the card itself — same
+  // effect, just driven from here instead of a backdrop's onClick.
   useEffect(() => {
     function handleMouseDown(e: MouseEvent) {
       const target = e.target as Element;
       if (!target.closest("button, input, label, select, textarea, a, [data-affix-panel]")) {
         setActiveSlotKey(null);
+        if (overlayOpen && mode === "placed") closeOverlay();
       }
     }
     document.addEventListener("mousedown", handleMouseDown);
     return () => document.removeEventListener("mousedown", handleMouseDown);
-  }, []);
+  }, [overlayOpen, mode]);
 
-  function handleSelectSlate(name: string) {
-    setSelectedSlateName((prev) => (prev === name ? null : name));
-    setActiveSlotKey(null);
-  }
-
-  function closeOverlay() {
-    setSelectedSlateName(null);
-    setActiveSlotKey(null);
-  }
-
-  const activeDef = selectedSlateName ? SLATE_DEFS[selectedSlateName] : null;
-  const activeConfig = selectedSlateName ? slateConfigs[selectedSlateName] ?? EMPTY_SLATE_CONFIG : null;
   const activeSlot = activeDef && activeSlotKey
     ? getAllSlots(activeDef).find((s) => s.key === activeSlotKey) ?? null
     : null;
@@ -90,22 +117,201 @@ export default function DivinitySlatesPage() {
       : [],
   );
 
+  // Cell key -> instance ids occupying it. Placement is never blocked, so a cell can end up
+  // with more than one occupant (an overlap) — that's flagged as a conflict, not prevented.
+  const cellOccupants = useMemo(() => {
+    const map = new Map<string, string[]>();
+    for (const inst of placedInstances) {
+      const def = SLATE_DEFS[inst.slateName];
+      for (const { r, c } of getShapeCells(def, inst.config)) {
+        const row = inst.anchor.row + r;
+        const col = inst.anchor.col + c;
+        // Still render (as a conflict) anywhere within the invisible border; only truly
+        // beyond that has nowhere to draw.
+        if (row < -EXT || row >= GRID_ROWS + EXT || col < -EXT || col >= GRID_COLS + EXT) continue;
+        const key = cellKey(row, col);
+        const existing = map.get(key);
+        if (existing) existing.push(inst.id); else map.set(key, [inst.id]);
+      }
+    }
+    return map;
+  }, [placedInstances]);
+
+  // Instances that don't fully fit — hanging off the board and/or overlapping another instance.
+  const invalidInstanceIds = useMemo(() => {
+    const set = new Set<string>();
+    for (const inst of placedInstances) if (!isInstanceValid(inst, placedInstances)) set.add(inst.id);
+    return set;
+  }, [placedInstances]);
+
+  const placedCounts = useMemo(() => {
+    const counts: Record<string, number> = {};
+    for (const inst of placedInstances) counts[inst.slateName] = (counts[inst.slateName] ?? 0) + 1;
+    return counts;
+  }, [placedInstances]);
+
+  // While placing — either a new draft or moving an already-placed instance — the footprint
+  // anchored at the hovered cell. When dragging, `grabOffset` keeps whichever cell was
+  // originally grabbed under the cursor, instead of always snapping the shape's (0,0) cell
+  // there. A move excludes the instance's own current cells from the green/red check so it
+  // can hover back over (or near) its own position. Red is just a warning, not a block.
+  const hoverFootprint = useMemo(() => {
+    if (!placing || !hoverCell) return null;
+    const slateName = draft?.slateName ?? editingInstance?.slateName;
+    const config = draft?.config ?? editingInstance?.config;
+    if (!slateName || !config) return null;
+    const def = SLATE_DEFS[slateName];
+    const cells = getShapeCells(def, config);
+    const grabOffset = dragCandidate?.grabOffset ?? { dr: 0, dc: 0 };
+    const anchor = { row: hoverCell.row - grabOffset.dr, col: hoverCell.col - grabOffset.dc };
+    const valid = isValidPlacement(anchor, cells, cellOccupants, editingInstance?.id);
+    const keys = new Set(cells.map(({ r, c }) => cellKey(anchor.row + r, anchor.col + c)));
+    return { keys, valid };
+  }, [placing, draft, editingInstance, hoverCell, cellOccupants, dragCandidate]);
+
   function updateActiveConfig(patch: Partial<SlateConfig>) {
-    if (!selectedSlateName) return;
-    setSlateConfigs((prev) => ({
-      ...prev,
-      [selectedSlateName]: { ...(prev[selectedSlateName] ?? EMPTY_SLATE_CONFIG), ...patch },
-    }));
+    if (editingId) {
+      setPlacedInstances((prev) => prev.map((inst) => (inst.id === editingId ? { ...inst, config: { ...inst.config, ...patch } } : inst)));
+    } else if (draft) {
+      setDraft((prev) => (prev ? { ...prev, config: { ...prev.config, ...patch } } : prev));
+    }
   }
 
   function handleAffixSelect(value: string) {
-    if (!selectedSlateName || !activeSlotKey || !activeConfig) return;
+    if (!activeSlotKey || !activeConfig) return;
     updateActiveConfig({ slots: { ...activeConfig.slots, [activeSlotKey]: value } });
   }
 
   function handleAffixClear() {
-    if (!selectedSlateName || !activeSlotKey || !activeConfig) return;
+    if (!activeSlotKey || !activeConfig) return;
     updateActiveConfig({ slots: { ...activeConfig.slots, [activeSlotKey]: null } });
+  }
+
+  function handleSelectSlate(name: string) {
+    setDraft((prev) => (prev?.slateName === name && !placing ? null : { slateName: name, config: EMPTY_SLATE_CONFIG }));
+    setEditingId(null);
+    setPlacing(false);
+    setActiveSlotKey(null);
+  }
+
+  function closeOverlay() {
+    setDraft(null);
+    setEditingId(null);
+    setPlacing(false);
+    setActiveSlotKey(null);
+  }
+
+  function handleStartPlacing() {
+    if (!draft) return;
+    setPlacing(true);
+    setActiveSlotKey(null);
+    setHoverCell(null);
+  }
+
+  function handleCancelPlacing() {
+    setPlacing(false);
+    setHoverCell(null);
+  }
+
+  function handleRemoveInstance() {
+    if (!editingId) return;
+    setPlacedInstances((prev) => prev.filter((i) => i.id !== editingId));
+    closeOverlay();
+  }
+
+  // Press-and-drag: grab whichever instance occupies the cell the mouse went down on, but
+  // don't act yet — a plain click (no movement) should still just open the card.
+  function handleCellMouseDown(row: number, col: number) {
+    if (placing) return;
+    const occupants = cellOccupants.get(cellKey(row, col));
+    if (!occupants || occupants.length === 0) return;
+    const instance = placedInstances.find((i) => i.id === occupants[occupants.length - 1]);
+    if (!instance) return;
+    setDragCandidate({
+      instanceId: instance.id,
+      grabOffset: { dr: row - instance.anchor.row, dc: col - instance.anchor.col },
+      startCell: { row, col },
+    });
+  }
+
+  // While a drag candidate exists, watch for the cursor actually leaving its starting cell
+  // (promoting to the existing `placing` flow so the green/red footprint preview kicks in)
+  // and for mouseup anywhere (committing the move, or — if it never left the starting cell —
+  // treating it as a plain click).
+  useEffect(() => {
+    if (!dragCandidate) return;
+    const candidate = dragCandidate;
+
+    function handleMouseMove() {
+      const hc = hoverCellRef.current;
+      if (!placingRef.current && hc && (hc.row !== candidate.startCell.row || hc.col !== candidate.startCell.col)) {
+        setEditingId(candidate.instanceId);
+        setDraft(null);
+        setPlacing(true);
+        setActiveSlotKey(null);
+      }
+    }
+
+    function handleMouseUp() {
+      if (placingRef.current) {
+        const hc = hoverCellRef.current;
+        if (hc) {
+          const anchor = { row: hc.row - candidate.grabOffset.dr, col: hc.col - candidate.grabOffset.dc };
+          setPlacedInstances((prev) => prev.map((inst) => (inst.id === candidate.instanceId ? { ...inst, anchor } : inst)));
+        }
+        setPlacing(false);
+        setHoverCell(null);
+        setEditingId(null); // a direct drag drops the slate and is done — don't reopen the card
+        suppressClickRef.current = true; // the upcoming native click landed mid-drag, ignore it
+      } else {
+        setEditingId(candidate.instanceId);
+        setDraft(null);
+        setActiveSlotKey(null);
+      }
+      setDragCandidate(null);
+    }
+
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mouseup", handleMouseUp);
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseup", handleMouseUp);
+    };
+  }, [dragCandidate]);
+
+  function handleGridCellClick(row: number, col: number) {
+    if (suppressClickRef.current) {
+      suppressClickRef.current = false;
+      return;
+    }
+    if (placing) {
+      const slateName = draft?.slateName ?? editingInstance?.slateName;
+      const config = draft?.config ?? editingInstance?.config;
+      if (!slateName || !config) return;
+      const grabOffset = dragCandidate?.grabOffset ?? { dr: 0, dc: 0 };
+      const anchor = { row: row - grabOffset.dr, col: col - grabOffset.dc };
+
+      // Placement is never blocked — an overlapping or off-board spot is still allowed, just
+      // flagged afterward (see invalidInstanceIds / the ItemCard's conflict warning).
+      if (editingInstance) {
+        // Moving an already-placed instance — keep editing it at its new spot.
+        setPlacedInstances((prev) => prev.map((inst) => (inst.id === editingInstance.id ? { ...inst, anchor } : inst)));
+      } else if (draft) {
+        const newInstance: PlacedInstance = { id: crypto.randomUUID(), slateName: draft.slateName, anchor, config: draft.config };
+        setPlacedInstances((prev) => [...prev, newInstance]);
+        setDraft(null);
+      }
+      setPlacing(false);
+      setHoverCell(null);
+      return;
+    }
+    const occupants = cellOccupants.get(cellKey(row, col));
+    if (occupants && occupants.length > 0) {
+      setEditingId(occupants[occupants.length - 1]);
+      setDraft(null);
+      setPlacing(false);
+      setActiveSlotKey(null);
+    }
   }
 
   return (
@@ -114,32 +320,122 @@ export default function DivinitySlatesPage() {
       {/* Grid — exactly centered */}
       <div
         className="absolute inset-0 flex items-center justify-center pointer-events-none transition-all duration-200"
-        style={{ filter: selectedSlateName ? "brightness(0.35)" : "none" }}
+        style={{ filter: overlayOpen ? "brightness(0.35)" : "none" }}
       >
-        <svg width={svgW} height={svgH} style={{ pointerEvents: "auto" }}>
-          {Array.from({ length: rows }, (_, r) =>
-            Array.from({ length: cols }, (_, c) => {
-              if (removed.has(`${r},${c}`)) return null;
-              const x = pad + c * step;
-              const y = pad + r * step;
-              return (
-                <rect
-                  key={`${r},${c}`}
-                  x={x} y={y}
-                  width={slot} height={slot}
-                  rx="6"
-                  fill={hovered === `${r},${c}` ? "#3d3c3c" : "#2b2929"}
-                  stroke={hovered === `${r},${c}` ? "#535357" : "#3a3a3a"}
-                  strokeWidth="2"
-                  style={{ transition: "fill 0.1s, stroke 0.1s" }}
-                  onMouseEnter={() => setHovered(`${r},${c}`)}
-                  onMouseLeave={() => setHovered(null)}
-                />
-              );
-            })
-          )}
-        </svg>
+        <div style={{ position: "relative", width: boardSvgW, height: boardSvgH }}>
+          <svg width={boardSvgW} height={boardSvgH} style={{ position: "absolute", top: 0, left: 0, pointerEvents: "auto" }}>
+            {Array.from({ length: GRID_ROWS + 2 * EXT }, (_, ri) => ri - EXT).map((r) =>
+              Array.from({ length: GRID_COLS + 2 * EXT }, (_, ci) => ci - EXT).map((c) => {
+                const key = cellKey(r, c);
+                const isBorder = r < 0 || r >= GRID_ROWS || c < 0 || c >= GRID_COLS;
+                const isHidden = isBorder || GRID_REMOVED.has(key); // invisible by default; still fully interactive
+                const x = pad + (c + EXT) * step;
+                const y = pad + (r + EXT) * step;
+
+                const occupants = cellOccupants.get(key) ?? [];
+                const hasConflict = occupants.length > 1 || occupants.some((id) => invalidInstanceIds.has(id));
+                const topOccupant = occupants.length > 0 ? placedInstances.find((i) => i.id === occupants[occupants.length - 1]) : null;
+                const occupantQuality = topOccupant ? getSlateQuality(SLATE_DEFS[topOccupant.slateName]) : null;
+                const inFootprint = hoverFootprint?.keys.has(key) ?? false;
+                const isHovered = !placing && hoverCell?.row === r && hoverCell?.col === c;
+
+                let fill = isHidden ? "transparent" : "#2b2929";
+                let stroke = isHidden ? "transparent" : "#3a3a3a";
+                if (occupantQuality) {
+                  fill = occupantQuality.indicatorActiveInner;
+                  stroke = occupantQuality.border;
+                }
+                if (hasConflict) {
+                  fill = "#7f1d1d";
+                  stroke = "#ef4444";
+                }
+                if (inFootprint) {
+                  fill = hoverFootprint!.valid ? "rgba(34,197,94,0.55)" : "rgba(239,68,68,0.55)";
+                  stroke = hoverFootprint!.valid ? "#22c55e" : "#ef4444";
+                } else if (isHovered && occupants.length === 0 && !isHidden) {
+                  fill = "#3d3c3c";
+                  stroke = "#535357";
+                }
+
+                const cursor = placing ? "pointer" : occupants.length > 0 ? "grab" : "default";
+
+                return (
+                  <rect
+                    key={key}
+                    x={x} y={y}
+                    width={slot} height={slot}
+                    rx="6"
+                    fill={fill}
+                    stroke={stroke}
+                    strokeWidth="2"
+                    style={{ transition: "fill 0.1s, stroke 0.1s", cursor }}
+                    onMouseEnter={() => setHoverCell({ row: r, col: c })}
+                    onMouseLeave={() => setHoverCell(null)}
+                    onMouseDown={(e) => { e.preventDefault(); handleCellMouseDown(r, c); }}
+                    onClick={() => handleGridCellClick(r, c)}
+                  />
+                );
+              })
+            )}
+          </svg>
+
+          {/* Slate artwork — every shape icon is actually a square 1:1 image (the silhouette
+              look comes from transparent padding inside it, not its canvas shape), so rather
+              than stretch one image across a non-square multi-cell box (which doesn't line up
+              with the art's own proportions), each occupied cell gets its own square tile of
+              the same icon — guaranteed to fit, since a square always fits a square slot. */}
+          <div style={{ position: "absolute", top: 0, left: 0, width: boardSvgW, height: boardSvgH, pointerEvents: "none" }}>
+            {placedInstances.map((inst) => {
+              const def = SLATE_DEFS[inst.slateName];
+              const iconPath = getInstanceIconPath(def, inst.config);
+              const opacity = invalidInstanceIds.has(inst.id) ? 0.55 : 1;
+              return getShapeCells(def, inst.config).map(({ r, c }) => {
+                const row = inst.anchor.row + r;
+                const col = inst.anchor.col + c;
+                if (row < -EXT || row >= GRID_ROWS + EXT || col < -EXT || col >= GRID_COLS + EXT) return null;
+                return (
+                  <div
+                    key={`${inst.id}-${r}-${c}`}
+                    style={{
+                      position: "absolute",
+                      left: pad + (col + EXT) * step,
+                      top: pad + (row + EXT) * step,
+                      width: slot, height: slot,
+                      overflow: "hidden",
+                      borderRadius: 6,
+                    }}
+                  >
+                    <img
+                      src={iconPath}
+                      alt=""
+                      style={{ width: "100%", height: "100%", objectFit: "cover", transform: `rotate(${inst.config.rotation}deg)`, opacity }}
+                    />
+                  </div>
+                );
+              });
+            })}
+          </div>
+        </div>
       </div>
+
+      {/* Placement mode banner */}
+      {placing && (draft || editingInstance) && (
+        <div
+          className="fixed top-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 px-4 py-2.5 rounded-md"
+          style={{ background: "#141414", border: "1px solid #3a3a3a", boxShadow: "0 4px 16px rgba(0,0,0,0.6)" }}
+        >
+          <span className="text-sm text-[#e4e4e7]">
+            {editingInstance ? "Moving" : "Placing"} <span className="font-semibold">{getSlateDisplayName(SLATE_DEFS[(draft ?? editingInstance)!.slateName])}</span> — click a highlighted cell
+          </span>
+          <button
+            onClick={handleCancelPlacing}
+            className="text-xs px-2.5 py-1 rounded text-[#e4e4e7] cursor-pointer transition-colors"
+            style={{ background: "#3a3a3a" }}
+          >
+            Cancel
+          </button>
+        </div>
+      )}
 
       {/* Slates catalog panel — left of the grid. Sits above the overlay backdrop (z-40) so it
           stays clickable (e.g. switching slates) while the ItemCard overlay is open. */}
@@ -147,7 +443,7 @@ export default function DivinitySlatesPage() {
         className="absolute z-50"
         style={{ left: `calc(50% - ${svgW / 2}px - ${PANEL_GAP}px - ${PANEL_W}px)`, top: 0, width: PANEL_W, height: "100vh" }}
       >
-        <SlatesPanel selected={selectedSlateName} onSelect={handleSelectSlate} />
+        <SlatesPanel selected={activeSlateName} counts={placedCounts} onSelect={handleSelectSlate} />
       </div>
 
       {/* Affix panel — right of the grid, same position the catalog used to occupy. Only
@@ -169,24 +465,40 @@ export default function DivinitySlatesPage() {
         </div>
       )}
 
-      {/* ItemCard overlay */}
-      {selectedSlateName && activeDef && activeConfig && (
-        <div
-          className="fixed inset-0 z-40 flex items-center justify-center"
-          style={{ background: "rgba(0,0,0,0.55)" }}
-          onClick={closeOverlay}
-        >
-          <ItemCard
-            slateName={getSlateDisplayName(activeDef)}
-            def={activeDef}
-            config={activeConfig}
-            talents={talents}
-            activeSlotKey={activeSlotKey}
-            onActiveSlotKeyChange={setActiveSlotKey}
-            onConfigChange={(config) => updateActiveConfig(config)}
-            onClose={closeOverlay}
-          />
-        </div>
+      {/* ItemCard overlay — centered over the board for a new (draft) slate, but over the left
+          catalog panel when editing one that's already placed, so the board stays visible.
+          The backdrop (dim + click-to-close) is a separate element from the card's wrapper:
+          the card wrapper sits above the z-50 side panels (so it's usable even though it now
+          overlaps the catalog panel), while the backdrop stays below them (so the panels —
+          e.g. the affix panel — remain clickable while the card is open, same as before). */}
+      {overlayOpen && activeDef && activeConfig && (
+        <>
+          <div className="fixed inset-0 z-40" style={{ background: "rgba(0,0,0,0.55)" }} onClick={closeOverlay} />
+          <div
+            className="fixed z-[60] flex items-center justify-center"
+            style={{
+              left: mode === "placed" ? `calc(50% - ${svgW / 2}px - ${PANEL_GAP}px - ${PANEL_W / 2}px)` : "50%",
+              top: 0,
+              height: "100vh",
+              transform: "translateX(-50%)",
+            }}
+          >
+            <ItemCard
+              slateName={getSlateDisplayName(activeDef)}
+              def={activeDef}
+              config={activeConfig}
+              talents={talents}
+              activeSlotKey={activeSlotKey}
+              onActiveSlotKeyChange={setActiveSlotKey}
+              onConfigChange={(config) => updateActiveConfig(config)}
+              onClose={closeOverlay}
+              mode={mode}
+              onPlace={handleStartPlacing}
+              onRemove={handleRemoveInstance}
+              hasConflict={editingInstance ? invalidInstanceIds.has(editingInstance.id) : false}
+            />
+          </div>
+        </>
       )}
 
     </div>

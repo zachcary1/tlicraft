@@ -65,6 +65,98 @@ export type Shape = (typeof SHAPES)[number];
 export const ROTATIONS = [0, 90, 180, 270] as const;
 export type Rotation = (typeof ROTATIONS)[number];
 
+// ─── Grid geometry ────────────────────────────────────────────────────────────────
+// The divinity board is a 6x6 grid with the 12 corner cells removed, forming a diamond of
+// 24 valid cells. Shared between the page (rendering) and the placement-validity helpers
+// below.
+
+export const GRID_ROWS = 6;
+export const GRID_COLS = 6;
+
+export const GRID_REMOVED = new Set([
+  "0,0", "0,1", "0,4", "0,5",
+  "1,0",                 "1,5",
+  "4,0",                 "4,5",
+  "5,0", "5,1", "5,4", "5,5",
+]);
+
+export function cellKey(r: number, c: number): string {
+  return `${r},${c}`;
+}
+
+// ─── Polyomino shapes ─────────────────────────────────────────────────────────────
+// Each shape is defined once at rotation 0° as a list of cells relative to its own
+// bounding-box origin (0,0). Other rotations are derived generically by rotating the cell
+// list 90° clockwise around its own bounding box and re-normalizing — this works uniformly
+// for every shape, including the 6 god tetrominoes.
+
+export type Cell = { r: number; c: number };
+
+export function rotateCells90(cells: Cell[]): Cell[] {
+  const maxR = Math.max(...cells.map((p) => p.r));
+  const rotated = cells.map(({ r, c }) => ({ r: c, c: maxR - r }));
+  return rotated;
+}
+
+function rotateCellsBy(cells: Cell[], rotation: Rotation): Cell[] {
+  let result = cells;
+  for (let i = 0; i < rotation / 90; i++) result = rotateCells90(result);
+  return result;
+}
+
+// God slates' shapes are exactly the 6 tetrominoes their icon art depicts.
+export const GOD_SHAPE_CELLS: Record<Shape, Cell[]> = {
+  Square:   [{ r: 0, c: 0 }, { r: 0, c: 1 }, { r: 1, c: 0 }, { r: 1, c: 1 }],
+  L:        [{ r: 0, c: 0 }, { r: 1, c: 0 }, { r: 1, c: 1 }, { r: 1, c: 2 }],
+  "L Flip": [{ r: 0, c: 2 }, { r: 1, c: 0 }, { r: 1, c: 1 }, { r: 1, c: 2 }],
+  T:        [{ r: 0, c: 0 }, { r: 0, c: 1 }, { r: 0, c: 2 }, { r: 1, c: 1 }],
+  Z:        [{ r: 0, c: 0 }, { r: 1, c: 0 }, { r: 1, c: 1 }, { r: 2, c: 1 }],
+  "Z Flip": [{ r: 0, c: 1 }, { r: 1, c: 0 }, { r: 1, c: 1 }, { r: 2, c: 0 }],
+};
+
+// The shape's cells at rotation 0° (before any rotation is applied) — i.e. the same
+// orientation its icon art was drawn in.
+function getBaseShapeCells(def: SlateDef, config: SlateConfig): Cell[] {
+  return def.kind === "god" ? GOD_SHAPE_CELLS[config.shape] : def.baseCells;
+}
+
+// Returns the rotated cell footprint a configured slate instance occupies.
+export function getShapeCells(def: SlateDef, config: SlateConfig): Cell[] {
+  return rotateCellsBy(getBaseShapeCells(def, config), config.rotation);
+}
+
+// ─── Placed instances ─────────────────────────────────────────────────────────────
+
+export type PlacedInstance = {
+  id: string;
+  slateName: string;
+  anchor: { row: number; col: number };
+  config: SlateConfig;
+};
+
+// Whether `cells` (relative to `anchor`) would fit cleanly — in bounds and not overlapping
+// another instance. This is purely advisory now (placement is never blocked): it drives the
+// green/red hover preview, but committing an invalid spot is still allowed.
+// `occupied` maps "row,col" -> the instance ids occupying it; `excludeId` lets an instance
+// ignore its own previously-occupied cells (e.g. while being re-placed).
+export function isValidPlacement(
+  anchor: { row: number; col: number },
+  cells: Cell[],
+  occupied: Map<string, string[]>,
+  excludeId?: string,
+): boolean {
+  for (const { r, c } of cells) {
+    const row = anchor.row + r;
+    const col = anchor.col + c;
+    if (row < 0 || row >= GRID_ROWS || col < 0 || col >= GRID_COLS) return false;
+    const key = cellKey(row, col);
+    if (GRID_REMOVED.has(key)) return false;
+    const occupants = occupied.get(key);
+    if (occupants && occupants.some((id) => id !== excludeId)) return false;
+  }
+  return true;
+}
+
 // ─── Slot definitions ─────────────────────────────────────────────────────────────
 
 export type TalentSlot = {
@@ -112,6 +204,7 @@ export type OtherSlateDef = {
   displayName?: string; // full in-game name shown on the ItemCard, if different from `name`
   slots: Slot[];
   orientation?: OrientationConfig; // defaults to NO_ORIENTATION when omitted
+  baseCells: Cell[]; // grid footprint at rotation 0°
 };
 
 export type SlateDef = GodSlateDef | OtherSlateDef;
@@ -158,6 +251,14 @@ export const SLATE_DEFS: Record<string, SlateDef> = {
     ],
     // Can be rotated 0° or 180°.
     orientation: { rotations: [0, 180] },
+    // 3x3 square with the top-right and bottom-left corners removed (7 cells). Centrally
+    // symmetric, so 0°/180° look identical — same as "Square" being rotation-invariant for
+    // god slates.
+    baseCells: [
+      { r: 0, c: 0 }, { r: 0, c: 1 },
+      { r: 1, c: 0 }, { r: 1, c: 1 }, { r: 1, c: 2 },
+      { r: 2, c: 1 }, { r: 2, c: 2 },
+    ],
   },
 
   "Corner of Divinity": {
@@ -169,6 +270,8 @@ export const SLATE_DEFS: Record<string, SlateDef> = {
     ],
     // Can be rotated freely (0/90/180/270).
     orientation: FULL_ROTATION,
+    // L-tromino — matches its icon art.
+    baseCells: [{ r: 0, c: 0 }, { r: 1, c: 0 }, { r: 1, c: 1 }],
   },
 
   "Fallen Starlight": {
@@ -182,6 +285,8 @@ export const SLATE_DEFS: Record<string, SlateDef> = {
     ],
     // Only 0° or 90° rotation.
     orientation: { rotations: [0, 90] },
+    // Vertical domino — matches its icon art.
+    baseCells: [{ r: 0, c: 0 }, { r: 1, c: 0 }],
   },
 
   Prairie: {
@@ -196,6 +301,7 @@ export const SLATE_DEFS: Record<string, SlateDef> = {
         options: ["Copies the last Talent on all adjacent slates. Unable to copy Core Talents."],
       },
     ],
+    baseCells: [{ r: 0, c: 0 }],
   },
 
   "Sparks of Moth Fire": {
@@ -211,6 +317,7 @@ export const SLATE_DEFS: Record<string, SlateDef> = {
         ),
       },
     ],
+    baseCells: [{ r: 0, c: 0 }],
   },
 
   "Space Rift": {
@@ -226,11 +333,37 @@ export const SLATE_DEFS: Record<string, SlateDef> = {
         ),
       },
     ],
+    // Vertical 5-cell bar — matches its icon art. No rotation control.
+    baseCells: [{ r: 0, c: 0 }, { r: 1, c: 0 }, { r: 2, c: 0 }, { r: 3, c: 0 }, { r: 4, c: 0 }],
   },
 };
 
 export function getAllSlots(def: SlateDef): Slot[] {
   return def.kind === "god" ? [...def.fixedSlots, ...def.randomSlots] : def.slots;
+}
+
+// Placement is never blocked, but the UI still flags an instance that doesn't fully fit —
+// hanging off the board, or overlapping another placed instance.
+export function isInstanceValid(instance: PlacedInstance, allInstances: PlacedInstance[]): boolean {
+  const def = SLATE_DEFS[instance.slateName];
+  const cells = getShapeCells(def, instance.config);
+  const myKeys = new Set<string>();
+  for (const { r, c } of cells) {
+    const row = instance.anchor.row + r;
+    const col = instance.anchor.col + c;
+    if (row < 0 || row >= GRID_ROWS || col < 0 || col >= GRID_COLS) return false;
+    const key = cellKey(row, col);
+    if (GRID_REMOVED.has(key)) return false;
+    myKeys.add(key);
+  }
+  for (const other of allInstances) {
+    if (other.id === instance.id) continue;
+    const otherDef = SLATE_DEFS[other.slateName];
+    for (const { r, c } of getShapeCells(otherDef, other.config)) {
+      if (myKeys.has(cellKey(other.anchor.row + r, other.anchor.col + c))) return false;
+    }
+  }
+  return true;
 }
 
 // ─── Quality color configs (ItemCard chrome) ──────────────────────────────────────
@@ -282,6 +415,12 @@ export function getGodSlateIconPath(god: GodName, shape: Shape): string {
 
 export function getOtherSlateIconPath(name: string): string {
   return `/icons/slates/${name}.webp`;
+}
+
+// Icon for a configured instance — the chosen shape variant for god slates, or the single
+// fixed icon for everything else.
+export function getInstanceIconPath(def: SlateDef, config: SlateConfig): string {
+  return def.kind === "god" ? getGodSlateIconPath(def.name, config.shape) : getOtherSlateIconPath(def.name);
 }
 
 // The catalog panel always shows the Square variant for god slates — actual shape is chosen
