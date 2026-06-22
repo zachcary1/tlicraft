@@ -88,10 +88,10 @@ export default function SlatesPanel({ selected, onSelect }: Props) {
             <div key={i} className="group flex flex-col px-3 pt-3"
               style={{ flex: 1, borderRight: i < 2 ? "1px solid #2a2a2a" : undefined }}>
               <div style={{ height: 28 }}>
-                {i === 0 && <span className="text-xs uppercase tracking-widest" style={{ color: "#71717a", marginBottom: 4, display: "block" }}>Non-Legendary</span>}
+                {i === 0 && <span className="text-sm uppercase tracking-wide" style={{ color: "#71717a", marginBottom: 4, display: "block" }}>Non-Legendary</span>}
               </div>
               <div style={{ height: 26, display: "flex", alignItems: "flex-end", paddingBottom: 3 }}>
-                <span className="text-[10px] uppercase tracking-widest text-[#52525b] group-hover:text-[#a1a1aa] transition-colors duration-150">{title}</span>
+                <span className="text-xs uppercase tracking-wide text-[#52525b] group-hover:text-[#a1a1aa] transition-colors duration-150">{title}</span>
               </div>
               <SlateTile label={title} selected={selected === title} onClick={() => onSelect(title)} />
             </div>
@@ -104,7 +104,7 @@ export default function SlatesPanel({ selected, onSelect }: Props) {
             <div key={i} className="group flex flex-col px-3"
               style={{ flex: 1, paddingTop: 10, paddingBottom: 32, borderRight: i < 2 ? "1px solid #2a2a2a" : undefined }}>
               <div style={{ height: 26, display: "flex", alignItems: "flex-end", paddingBottom: 3 }}>
-                <span className="text-[10px] uppercase tracking-widest text-[#52525b] group-hover:text-[#a1a1aa] transition-colors duration-150">{title}</span>
+                <span className="text-xs uppercase tracking-wide text-[#52525b] group-hover:text-[#a1a1aa] transition-colors duration-150">{title}</span>
               </div>
               <SlateTile label={title} selected={selected === title} onClick={() => onSelect(title)} />
             </div>
@@ -120,10 +120,10 @@ export default function SlatesPanel({ selected, onSelect }: Props) {
             <div key={i} className="group flex flex-col px-3 pt-4"
               style={{ flex: 1, borderRight: i < 2 ? "1px solid #2a2a2a" : undefined }}>
               <div style={{ height: 28 }}>
-                {i === 0 && <span className="text-xs uppercase tracking-widest" style={{ color: "#71717a", marginBottom: 4, display: "block" }}>Legendary</span>}
+                {i === 0 && <span className="text-sm uppercase tracking-wide" style={{ color: "#71717a", marginBottom: 4, display: "block" }}>Legendary</span>}
               </div>
               <div style={{ height: 26, display: "flex", alignItems: "flex-end", paddingBottom: 3 }}>
-                <span className="text-[10px] uppercase tracking-widest text-[#52525b] group-hover:text-[#a1a1aa] transition-colors duration-150">{label}</span>
+                <span className="text-xs uppercase tracking-wide text-[#52525b] group-hover:text-[#a1a1aa] transition-colors duration-150">{label}</span>
               </div>
               <SlateTile label={label} selected={selected === label} onClick={() => onSelect(label)} />
             </div>
@@ -136,7 +136,7 @@ export default function SlatesPanel({ selected, onSelect }: Props) {
             <div key={i} className="group flex flex-col px-3"
               style={{ flex: 1, paddingTop: 10, paddingBottom: 20, borderRight: i < 2 ? "1px solid #2a2a2a" : undefined }}>
               <div style={{ height: 26, display: "flex", alignItems: "flex-end", paddingBottom: 3 }}>
-                <span className="text-[10px] uppercase tracking-widest text-[#52525b] group-hover:text-[#a1a1aa] transition-colors duration-150">{label}</span>
+                <span className="text-xs uppercase tracking-wide text-[#52525b] group-hover:text-[#a1a1aa] transition-colors duration-150">{label}</span>
               </div>
               <SlateTile label={label} selected={selected === label} onClick={() => onSelect(label)} />
             </div>

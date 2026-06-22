@@ -109,6 +109,7 @@ export const FULL_ROTATION: OrientationConfig = { rotations: [0, 90, 180, 270] }
 export type OtherSlateDef = {
   kind: "other";
   name: string;
+  displayName?: string; // full in-game name shown on the ItemCard, if different from `name`
   slots: Slot[];
   orientation?: OrientationConfig; // defaults to NO_ORIENTATION when omitted
 };
@@ -118,6 +119,10 @@ export type SlateDef = GodSlateDef | OtherSlateDef;
 export function getOrientationConfig(def: SlateDef): OrientationConfig {
   if (def.kind === "god") return FULL_ROTATION;
   return def.orientation ?? NO_ORIENTATION;
+}
+
+export function getSlateDisplayName(def: SlateDef): string {
+  return def.kind === "other" ? def.displayName ?? def.name : def.name;
 }
 
 function godSlateDef(name: GodName): GodSlateDef {
@@ -182,6 +187,7 @@ export const SLATE_DEFS: Record<string, SlateDef> = {
   Prairie: {
     kind: "other",
     name: "Prairie",
+    displayName: "When Sparks Set the Prairie Ablaze",
     slots: [
       {
         key: "slot1",

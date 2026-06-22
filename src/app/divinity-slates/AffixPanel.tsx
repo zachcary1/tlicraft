@@ -151,7 +151,7 @@ function matchesQuery(haystack: string, needle: string): boolean {
 
 type Props = {
   talents: Talent[];
-  activeSlot: Slot | null;
+  activeSlot: Slot;
   selectedValue: string | null;
   takenIds: Set<string>;
   onSelect: (value: string) => void;
@@ -166,11 +166,11 @@ export default function AffixPanel({ talents, activeSlot, selectedValue, takenId
   // this is purely derived from props, so we adjust state during render rather than in an
   // effect (https://react.dev/learn/you-might-not-need-an-effect#adjusting-some-state-when-a-prop-changes).
   const [syncKey, setSyncKey] = useState<string | null>(null);
-  const nextSyncKey = `${activeSlot?.key ?? ""}|${selectedValue ?? ""}`;
+  const nextSyncKey = `${activeSlot.key}|${selectedValue ?? ""}`;
   if (nextSyncKey !== syncKey) {
     setSyncKey(nextSyncKey);
     let nextIdx = 0;
-    if (activeSlot && activeSlot.kind === "talent" && selectedValue) {
+    if (activeSlot.kind === "talent" && selectedValue) {
       const selected = talents.find((t) => t.id === selectedValue);
       const idx = selected ? activeSlot.allowedTypes.indexOf(selected.type as TalentType) : -1;
       nextIdx = idx >= 0 ? idx : 0;
@@ -180,25 +180,14 @@ export default function AffixPanel({ talents, activeSlot, selectedValue, takenId
 
   // Clear the search box when switching to a different slot (but not on every selection change).
   const [syncedSlotKey, setSyncedSlotKey] = useState<string | null>(null);
-  const slotKey = activeSlot?.key ?? null;
-  if (slotKey !== syncedSlotKey) {
-    setSyncedSlotKey(slotKey);
+  if (activeSlot.key !== syncedSlotKey) {
+    setSyncedSlotKey(activeSlot.key);
     if (query !== "") setQuery("");
   }
 
   const needle = query.trim().toLowerCase();
 
   const PANEL_BG = "linear-gradient(to bottom, #1e1d1d 0%, #2b2929 10%, #2b2929 90%, #1e1d1d 100%)";
-
-  if (!activeSlot) {
-    return (
-      <div className="w-full flex items-center justify-center" style={{ height: "100vh", background: PANEL_BG }}>
-        <p className="text-center text-[20px] font-semibold whitespace-nowrap" style={{ color: "#d92020" }}>
-          Select an affix slot
-        </p>
-      </div>
-    );
-  }
 
   const hasSelection = selectedValue !== null && selectedValue !== undefined;
 

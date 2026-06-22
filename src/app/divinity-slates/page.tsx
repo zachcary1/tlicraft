@@ -8,6 +8,7 @@ import {
   SLATE_DEFS,
   EMPTY_SLATE_CONFIG,
   getAllSlots,
+  getSlateDisplayName,
   type SlateConfig,
   type Talent,
 } from "./slateData";
@@ -149,21 +150,24 @@ export default function DivinitySlatesPage() {
         <SlatesPanel selected={selectedSlateName} onSelect={handleSelectSlate} />
       </div>
 
-      {/* Affix panel — right of the grid, same position the catalog used to occupy. Also above
-          the overlay backdrop so its options stay clickable while the ItemCard is open. */}
-      <div
-        className="absolute z-50"
-        style={{ left: `calc(50% + ${svgW / 2}px + ${PANEL_GAP}px)`, top: 0, width: PANEL_W, height: "100vh" }}
-      >
-        <AffixPanel
-          talents={talents}
-          activeSlot={activeSlot}
-          selectedValue={activeSlotKey && activeConfig ? activeConfig.slots[activeSlotKey] ?? null : null}
-          takenIds={takenIds}
-          onSelect={handleAffixSelect}
-          onClear={handleAffixClear}
-        />
-      </div>
+      {/* Affix panel — right of the grid, same position the catalog used to occupy. Only
+          rendered once an affix slot is actually active; sits above the overlay backdrop so
+          its options stay clickable while the ItemCard is open. */}
+      {activeSlot && (
+        <div
+          className="absolute z-50"
+          style={{ left: `calc(50% + ${svgW / 2}px + ${PANEL_GAP}px)`, top: 0, width: PANEL_W, height: "100vh" }}
+        >
+          <AffixPanel
+            talents={talents}
+            activeSlot={activeSlot}
+            selectedValue={activeSlotKey && activeConfig ? activeConfig.slots[activeSlotKey] ?? null : null}
+            takenIds={takenIds}
+            onSelect={handleAffixSelect}
+            onClear={handleAffixClear}
+          />
+        </div>
+      )}
 
       {/* ItemCard overlay */}
       {selectedSlateName && activeDef && activeConfig && (
@@ -173,7 +177,7 @@ export default function DivinitySlatesPage() {
           onClick={closeOverlay}
         >
           <ItemCard
-            slateName={selectedSlateName}
+            slateName={getSlateDisplayName(activeDef)}
             def={activeDef}
             config={activeConfig}
             talents={talents}
