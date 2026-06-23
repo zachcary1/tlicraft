@@ -89,22 +89,6 @@ export default function DivinitySlatesPage() {
   const overlayOpen = (!!draft || !!editingInstance) && !placing;
   const mode: "draft" | "placed" = editingInstance ? "placed" : "draft";
 
-  // Deselect the active affix slot when clicking outside any interactive element. For a
-  // placed-instance card (mode "placed") there's no dimming backdrop to catch the click (the
-  // board stays fully usable while it's open), so this also closes the card itself — same
-  // effect, just driven from here instead of a backdrop's onClick.
-  useEffect(() => {
-    function handleMouseDown(e: MouseEvent) {
-      const target = e.target as Element;
-      if (!target.closest("button, input, label, select, textarea, a, [data-affix-panel]")) {
-        setActiveSlotKey(null);
-        if (overlayOpen && mode === "placed") closeOverlay();
-      }
-    }
-    document.addEventListener("mousedown", handleMouseDown);
-    return () => document.removeEventListener("mousedown", handleMouseDown);
-  }, [overlayOpen, mode]);
-
   const activeSlot = activeDef && activeSlotKey
     ? getAllSlots(activeDef).find((s) => s.key === activeSlotKey) ?? null
     : null;
@@ -200,6 +184,22 @@ export default function DivinitySlatesPage() {
     setPlacing(false);
     setActiveSlotKey(null);
   }
+
+  // Deselect the active affix slot when clicking outside any interactive element. For a
+  // placed-instance card (mode "placed") there's no dimming backdrop to catch the click (the
+  // board stays fully usable while it's open), so this also closes the card itself — same
+  // effect, just driven from here instead of a backdrop's onClick.
+  useEffect(() => {
+    function handleMouseDown(e: MouseEvent) {
+      const target = e.target as Element;
+      if (!target.closest("button, input, label, select, textarea, a, [data-affix-panel]")) {
+        setActiveSlotKey(null);
+        if (overlayOpen && mode === "placed") closeOverlay();
+      }
+    }
+    document.addEventListener("mousedown", handleMouseDown);
+    return () => document.removeEventListener("mousedown", handleMouseDown);
+  }, [overlayOpen, mode]);
 
   function handleStartPlacing() {
     if (!draft) return;
@@ -317,10 +317,11 @@ export default function DivinitySlatesPage() {
   return (
     <div className="min-h-screen relative" style={BG_STYLE}>
 
-      {/* Grid — exactly centered */}
+      {/* Grid — exactly centered. Only dimmed for a draft (centered) card — a placed-instance
+          card sits over the left panel instead, and the board stays fully visible/usable. */}
       <div
         className="absolute inset-0 flex items-center justify-center pointer-events-none transition-all duration-200"
-        style={{ filter: overlayOpen ? "brightness(0.35)" : "none" }}
+        style={{ filter: overlayOpen && mode === "draft" ? "brightness(0.35)" : "none" }}
       >
         <div style={{ position: "relative", width: boardSvgW, height: boardSvgH }}>
           <svg width={boardSvgW} height={boardSvgH} style={{ position: "absolute", top: 0, left: 0, pointerEvents: "auto" }}>
@@ -465,15 +466,19 @@ export default function DivinitySlatesPage() {
         </div>
       )}
 
-      {/* ItemCard overlay — centered over the board for a new (draft) slate, but over the left
-          catalog panel when editing one that's already placed, so the board stays visible.
-          The backdrop (dim + click-to-close) is a separate element from the card's wrapper:
-          the card wrapper sits above the z-50 side panels (so it's usable even though it now
-          overlaps the catalog panel), while the backdrop stays below them (so the panels —
-          e.g. the affix panel — remain clickable while the card is open, same as before). */}
+      {/* ItemCard overlay — centered over the dimmed, click-blocked board for a new (draft)
+          slate (backdrop click closes it), but over the left catalog panel — with no dimming
+          and no blocking backdrop — when editing one that's already placed, so the board stays
+          fully visible and usable; the click-outside-closes effect above handles closing it
+          instead. The card wrapper sits above the z-50 side panels either way (so it's usable
+          even though it now overlaps the catalog panel in "placed" mode), while the draft-mode
+          backdrop stays below them (so the panels — e.g. the affix panel — remain clickable
+          while the card is open, same as before). */}
       {overlayOpen && activeDef && activeConfig && (
         <>
-          <div className="fixed inset-0 z-40" style={{ background: "rgba(0,0,0,0.55)" }} onClick={closeOverlay} />
+          {mode === "draft" && (
+            <div className="fixed inset-0 z-40" style={{ background: "rgba(0,0,0,0.55)" }} onClick={closeOverlay} />
+          )}
           <div
             className="fixed z-[60] flex items-center justify-center"
             style={{
@@ -481,22 +486,29 @@ export default function DivinitySlatesPage() {
               top: 0,
               height: "100vh",
               transform: "translateX(-50%)",
+              // In "placed" mode there's no backdrop, so this wrapper's own empty flex space
+              // (e.g. above/below a card shorter than 100vh) would otherwise still swallow
+              // clicks meant for the board/panels underneath. Let those pass through, and
+              // re-enable pointer events just on the card itself below.
+              pointerEvents: mode === "placed" ? "none" : undefined,
             }}
           >
-            <ItemCard
-              slateName={getSlateDisplayName(activeDef)}
-              def={activeDef}
-              config={activeConfig}
-              talents={talents}
-              activeSlotKey={activeSlotKey}
-              onActiveSlotKeyChange={setActiveSlotKey}
-              onConfigChange={(config) => updateActiveConfig(config)}
-              onClose={closeOverlay}
-              mode={mode}
-              onPlace={handleStartPlacing}
-              onRemove={handleRemoveInstance}
-              hasConflict={editingInstance ? invalidInstanceIds.has(editingInstance.id) : false}
-            />
+            <div style={{ pointerEvents: "auto" }}>
+              <ItemCard
+                slateName={getSlateDisplayName(activeDef)}
+                def={activeDef}
+                config={activeConfig}
+                talents={talents}
+                activeSlotKey={activeSlotKey}
+                onActiveSlotKeyChange={setActiveSlotKey}
+                onConfigChange={(config) => updateActiveConfig(config)}
+                onClose={closeOverlay}
+                mode={mode}
+                onPlace={handleStartPlacing}
+                onRemove={handleRemoveInstance}
+                hasConflict={editingInstance ? invalidInstanceIds.has(editingInstance.id) : false}
+              />
+            </div>
           </div>
         </>
       )}
