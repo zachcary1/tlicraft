@@ -19,7 +19,7 @@ const PANEL_BG  = "linear-gradient(to bottom, #1e1d1d 0%, #2b2929 10%, #2b2929 9
 const PANEL_W   = 560;
 const PANEL_GAP = 50;
 
-const svgW = 664;
+const svgW = 1010;
 const svgH = 664;
 
 // ─── Tag filters ──────────────────────────────────────────────────────────────
@@ -1923,7 +1923,7 @@ export default function PactspiritsPage() {
             return (
               <div
                 onClick={(e) => e.stopPropagation()}
-                style={{ position: "absolute", left: "100%", top: 140, display: "flex", flexDirection: "column", gap: 5, zIndex: 10, padding: "24px 28px 24px 6px" }}
+                style={{ position: "absolute", left: "100%", top: 140, display: "flex", flexDirection: "column", gap: 5, zIndex: 10, padding: "24px 0 24px 6px" }}
               >
                 {tagOrder.map((tag) => {
                   const color = tagColors[tag];
@@ -1936,7 +1936,7 @@ export default function PactspiritsPage() {
                       onMouseEnter={() => setHoveredTag(tag)}
                       onMouseLeave={() => setHoveredTag(null)}
                       style={{
-                        width: 160,
+                        width: 150,
                         height: 42,
                         padding: "0 10px 0 6px",
                         background: (active || hovered) ? color : "#464646",

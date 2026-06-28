@@ -550,7 +550,6 @@ export default function DivinitySlatesPage() {
                 const hasConflict = occupants.length > 1 || occupants.some((id) => invalidInstanceIds.has(id));
                 const topOccupant = occupants.length > 0 ? placedInstances.find((i) => i.id === occupants[occupants.length - 1]) : null;
                 const occupantQuality = topOccupant ? getSlateQuality(SLATE_DEFS[topOccupant.slateName]) : null;
-                const inFootprint = hoverFootprint?.keys.has(key) ?? false;
                 const isHovered = !placing && hoverCell?.row === r && hoverCell?.col === c;
 
                 let fill = isHidden ? "transparent" : "#2b2929";
@@ -563,10 +562,7 @@ export default function DivinitySlatesPage() {
                   fill = "#7f1d1d";
                   stroke = "#ef4444";
                 }
-                if (inFootprint) {
-                  fill = hoverFootprint!.valid ? "rgba(34,197,94,0.55)" : "rgba(239,68,68,0.55)";
-                  stroke = hoverFootprint!.valid ? "#22c55e" : "#ef4444";
-                } else if (isHovered && occupants.length === 0 && !isHidden) {
+                if (isHovered && occupants.length === 0 && !isHidden) {
                   fill = "#3d3c3c";
                   stroke = "#535357";
                 }
@@ -591,6 +587,24 @@ export default function DivinitySlatesPage() {
                 );
               })
             )}
+
+            {/* Footprint overlay — rendered after all base cells so the green/red strokes
+                are never overwritten by adjacent non-footprint cells drawn later in SVG order. */}
+            {hoverFootprint && Array.from(hoverFootprint.keys).map((key) => {
+              const [fr, fc] = key.split(",").map(Number);
+              return (
+                <rect
+                  key={`fp-${key}`}
+                  x={pad + (fc + EXT) * step}
+                  y={pad + (fr + EXT) * step}
+                  width={slot} height={slot}
+                  fill={hoverFootprint.valid ? "rgba(34,197,94,0.55)" : "rgba(239,68,68,0.55)"}
+                  stroke={hoverFootprint.valid ? "#22c55e" : "#ef4444"}
+                  strokeWidth="2"
+                  style={{ pointerEvents: "none" }}
+                />
+              );
+            })}
 
             {/* Per-instance hover groups — transparent rects on top of the cell rects so
                 mouseenter/mouseleave fire at the slate level without flickering between cells. */}
