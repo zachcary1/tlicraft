@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useMemo, useRef } from "react";
+import { createPortal } from "react-dom";
 import SlatesPanel from "./SlatesPanel";
 import AffixPanel from "./AffixPanel";
 import ItemCard from "./ItemCard";
@@ -19,8 +20,14 @@ import {
   isValidPlacement,
   isInstanceValid,
   cellKey,
+  parseTalentEffectLines,
+  TALENT_TYPE_TIER_COLOR,
+  COPY_AFFIX_TIER_COLOR,
+  type SlateDef,
+  type QualityConfig,
   type SlateConfig,
   type Talent,
+  type TalentType,
   type PlacedInstance,
 } from "./slateData";
 
@@ -105,11 +112,150 @@ function buildSlateOutlinePath(cells: { r: number; c: number }[], anchor: { row:
   return subpaths.join(' ');
 }
 
+// ─── Slate tooltip card ───────────────────────────────────────────────────────
+
+const TT_CARD_W  = 280;
+const TT_ICON_W  = 80;
+const TT_ICON_H  = 80;
+
+function SlateTooltipCard({
+  def, config, displayName, quality, iconPath, talents, hasConflict, cx: cursorX, cy: cursorY,
+}: {
+  def: SlateDef;
+  config: SlateConfig;
+  displayName: string;
+  quality: QualityConfig;
+  iconPath: string;
+  talents: Talent[];
+  hasConflict: boolean;
+  cx: number;
+  cy: number;
+}) {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [cardH, setCardH] = useState(300);
+  const [imgErr, setImgErr] = useState(false);
+
+  useEffect(() => { if (cardRef.current) setCardH(cardRef.current.offsetHeight); });
+
+  const vpW    = window.innerWidth;
+  const vpH    = window.innerHeight;
+  const GAP    = 16;
+  const left   = cursorX + GAP + TT_CARD_W <= vpW ? cursorX + GAP : cursorX - GAP - TT_CARD_W;
+  const top    = Math.max(TT_ICON_H / 2 + 8, Math.min(vpH - cardH - 8, cursorY - 24));
+
+  const slots  = getAllSlots(def);
+
+  return createPortal(
+    <div ref={cardRef} style={{
+      position: "fixed", left, top,
+      width: TT_CARD_W, pointerEvents: "none", zIndex: 9999,
+      filter: "drop-shadow(0 8px 24px rgba(0,0,0,0.85))",
+      overflow: "visible",
+    }}>
+      {/* Icon protrudes above the card */}
+      <div style={{
+        position: "absolute", top: -(TT_ICON_H / 2), left: "50%",
+        transform: "translateX(-50%)", width: TT_ICON_W, height: TT_ICON_H, zIndex: 10,
+      }}>
+        <div style={{
+          position: "absolute", top: 4, left: 0,
+          width: TT_ICON_W, height: TT_ICON_H,
+          background: quality.border, borderRadius: "0 12px 0 12px", zIndex: 0,
+        }} />
+        <div style={{
+          position: "absolute", top: 0, left: 0,
+          width: TT_ICON_W, height: TT_ICON_H,
+          background: quality.bg, borderRadius: "0 12px 0 12px",
+          overflow: "hidden", zIndex: 1,
+          display: "flex", alignItems: "center", justifyContent: "center",
+        }}>
+          {!imgErr ? (
+            <img src={iconPath} alt={displayName} onError={() => setImgErr(true)}
+              style={{ width: "90%", height: "90%", objectFit: "contain",
+                       transform: getIconTransform(def, config) }} />
+          ) : (
+            <span style={{ color: "#666", fontSize: 22, fontWeight: 700 }}>?</span>
+          )}
+        </div>
+      </div>
+
+      {/* Card body */}
+      <div style={{ overflow: "hidden", borderRadius: "0 12px 0 12px" }}>
+
+        {/* Header */}
+        <div style={{
+          background: "#1c1c1e", position: "relative",
+          padding: `${TT_ICON_H / 2 + 12}px 12px 12px`, overflow: "hidden",
+        }}>
+          <div style={{
+            position: "absolute", top: 0, left: 0, right: 0, bottom: 0,
+            background: `linear-gradient(to bottom, ${quality.border}22, transparent)`,
+            pointerEvents: "none",
+          }} />
+          <div style={{
+            position: "relative", zIndex: 1, textAlign: "center",
+            color: "#ffffff", fontSize: 14, fontWeight: 700, lineHeight: 1.3,
+          }}>
+            {displayName}
+          </div>
+          {hasConflict && (
+            <div style={{ textAlign: "center", color: "#f87171", fontSize: 11, marginTop: 5 }}>
+              ⚠ Doesn&apos;t fit
+            </div>
+          )}
+        </div>
+
+        {/* Divider */}
+        <div style={{ height: 1, background: "#2a2a2a" }} />
+
+        {/* Talent slots */}
+        <div style={{ background: "#242325", padding: "10px 14px 12px" }}>
+          {slots.map((slot) => {
+            const talentId  = config.slots[slot.key];
+            const talent    = talentId ? talents.find((t) => t.id === talentId) : null;
+            const label     = talent
+              ? (talent.name || parseTalentEffectLines(talent.effect)[0] || "—")
+              : null;
+            const dotColor  = talent
+              ? slot.kind === "choice"
+                ? COPY_AFFIX_TIER_COLOR
+                : TALENT_TYPE_TIER_COLOR[talent.type as TalentType]
+              : "#3a3a3a";
+            return (
+              <div key={slot.key} style={{ display: "flex", alignItems: "flex-start", gap: 7, marginBottom: 5 }}>
+                <div style={{
+                  width: 7, height: 7, borderRadius: 1, flexShrink: 0, marginTop: 4,
+                  background: dotColor,
+                }} />
+                <span style={{ color: talent ? "#e4e4e7" : "#52525b", fontSize: 12, lineHeight: 1.45 }}>
+                  {label ?? "Empty affix"}
+                </span>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Footer */}
+        <div style={{ height: 1, background: "#2a2a2a" }} />
+        <div style={{ background: "#1c1c1e", padding: "7px 14px 9px", textAlign: "center" }}>
+          <span style={{ color: "#52525b", fontSize: 10, letterSpacing: "0.08em", textTransform: "uppercase" }}>
+            Click to edit
+          </span>
+        </div>
+
+      </div>
+    </div>,
+    document.body
+  );
+}
+
 const PANEL_W = 560;
 const PANEL_GAP = 50;
 
 export default function DivinitySlatesPage() {
   const [hoverCell, setHoverCell] = useState<{ row: number; col: number } | null>(null);
+  const [hoveredInstanceId, setHoveredInstanceId] = useState<string | null>(null);
+  const [tooltipPos, setTooltipPos] = useState<{ x: number; y: number } | null>(null);
   const [talents, setTalents] = useState<Talent[]>([]);
 
   const [placedInstances, setPlacedInstances] = useState<PlacedInstance[]>([]);
@@ -142,6 +288,15 @@ export default function DivinitySlatesPage() {
   const activeConfig = draft?.config ?? editingInstance?.config ?? null;
   const overlayOpen = (!!draft || !!editingInstance) && !placing;
   const mode: "draft" | "placed" = editingInstance ? "placed" : "draft";
+
+  // Clear hover state when the overlay opens or placing starts — the hover groups unmount at
+  // that point so onMouseLeave never fires, leaving the tooltip/glow stuck on screen.
+  useEffect(() => {
+    if (overlayOpen || placing) {
+      setHoveredInstanceId(null);
+      setTooltipPos(null);
+    }
+  }, [overlayOpen, placing]);
 
   const activeSlot = activeDef && activeSlotKey
     ? getAllSlots(activeDef).find((s) => s.key === activeSlotKey) ?? null
@@ -437,6 +592,42 @@ export default function DivinitySlatesPage() {
               })
             )}
 
+            {/* Per-instance hover groups — transparent rects on top of the cell rects so
+                mouseenter/mouseleave fire at the slate level without flickering between cells. */}
+            {!overlayOpen && !placing && placedInstances.map((inst) => {
+              const def = SLATE_DEFS[inst.slateName];
+              const cells = getShapeCells(def, inst.config);
+              return (
+                <g
+                  key={`hg-${inst.id}`}
+                  onMouseEnter={(e) => { setHoveredInstanceId(inst.id); setTooltipPos({ x: e.clientX, y: e.clientY }); }}
+                  onMouseMove={(e) => setTooltipPos({ x: e.clientX, y: e.clientY })}
+                  onMouseLeave={() => { setHoveredInstanceId(null); setTooltipPos(null); }}
+                  style={{ cursor: "pointer" }}
+                >
+                  {cells.map(({ r, c }) => {
+                    const cr = inst.anchor.row + r;
+                    const cc = inst.anchor.col + c;
+                    const x = pad + (cc + EXT) * step;
+                    const y = pad + (cr + EXT) * step;
+                    return (
+                      <rect
+                        key={`${r},${c}`}
+                        x={x} y={y}
+                        width={slot} height={slot}
+                        fill="transparent"
+                        style={{ pointerEvents: "all" }}
+                        onMouseEnter={() => setHoverCell({ row: cr, col: cc })}
+                        onMouseLeave={() => setHoverCell(null)}
+                        onMouseDown={(e) => { e.preventDefault(); handleCellMouseDown(cr, cc); }}
+                        onClick={() => handleGridCellClick(cr, cc)}
+                      />
+                    );
+                  })}
+                </g>
+              );
+            })}
+
           </svg>
 
           {/* Slate artwork — every shape icon is actually a square 1:1 image (the silhouette
@@ -449,6 +640,8 @@ export default function DivinitySlatesPage() {
               const def = SLATE_DEFS[inst.slateName];
               const iconPath = getInstanceIconPath(def, inst.config);
               const opacity = invalidInstanceIds.has(inst.id) ? 0.55 : 1;
+              const isHovered = hoveredInstanceId === inst.id;
+              const isSelected = editingId === inst.id;
               return getShapeCells(def, inst.config).map(({ r, c }) => {
                 const row = inst.anchor.row + r;
                 const col = inst.anchor.col + c;
@@ -463,6 +656,7 @@ export default function DivinitySlatesPage() {
                       width: slot, height: slot,
                       overflow: "hidden",
                       borderRadius: 0,
+                      filter: "none",
                     }}
                   >
                     <img
@@ -482,11 +676,25 @@ export default function DivinitySlatesPage() {
               const def = SLATE_DEFS[inst.slateName];
               const cells = getShapeCells(def, inst.config);
               const quality = getSlateQuality(def);
+              const isHovered = hoveredInstanceId === inst.id;
+              const isSelected = editingId === inst.id;
               const color = invalidInstanceIds.has(inst.id) ? "#ef4444" : quality.border;
               const pathD = buildSlateOutlinePath(cells, inst.anchor);
               if (!pathD) return null;
               return (
-                <path key={`outline-${inst.id}`} d={pathD} stroke={color} strokeWidth="3" fill="none" style={{ filter: "none" }} />
+                <path
+                  key={`outline-${inst.id}`}
+                  d={pathD}
+                  stroke={isSelected ? "#ffffff" : color}
+                  strokeWidth={isSelected ? 5 : isHovered ? 4 : 3}
+                  fill="none"
+                  style={{
+                    filter: isSelected
+                      ? `drop-shadow(0 0 6px ${color})`
+                      : isHovered ? `drop-shadow(0 0 6px ${color})` : "none",
+                    transition: "stroke-width 0.12s",
+                  }}
+                />
               );
             })}
           </svg>
@@ -586,6 +794,27 @@ export default function DivinitySlatesPage() {
           </div>
         </>
       )}
+
+      {/* Slate tooltip — follows cursor, rendered via portal above everything */}
+      {!overlayOpen && !placing && hoveredInstanceId && tooltipPos && (() => {
+        const inst = placedInstances.find((i) => i.id === hoveredInstanceId);
+        if (!inst) return null;
+        const def     = SLATE_DEFS[inst.slateName];
+        const quality = getSlateQuality(def);
+        return (
+          <SlateTooltipCard
+            def={def}
+            config={inst.config}
+            displayName={getSlateDisplayName(def)}
+            quality={quality}
+            iconPath={getInstanceIconPath(def, inst.config)}
+            talents={talents}
+            hasConflict={invalidInstanceIds.has(inst.id)}
+            cx={tooltipPos.x}
+            cy={tooltipPos.y}
+          />
+        );
+      })()}
 
     </div>
   );
