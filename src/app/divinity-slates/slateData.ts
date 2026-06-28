@@ -104,6 +104,11 @@ function rotateCellsBy(cells: Cell[], rotation: Rotation): Cell[] {
   return result;
 }
 
+function flipCellsY(cells: Cell[]): Cell[] {
+  const maxC = Math.max(...cells.map((p) => p.c));
+  return cells.map(({ r, c }) => ({ r, c: maxC - c }));
+}
+
 // God slates' shapes are exactly the 6 tetrominoes their icon art depicts.
 export const GOD_SHAPE_CELLS: Record<Shape, Cell[]> = {
   Square:   [{ r: 0, c: 0 }, { r: 0, c: 1 }, { r: 1, c: 0 }, { r: 1, c: 1 }],
@@ -120,9 +125,19 @@ function getBaseShapeCells(def: SlateDef, config: SlateConfig): Cell[] {
   return def.kind === "god" ? GOD_SHAPE_CELLS[config.shape] : def.baseCells;
 }
 
-// Returns the rotated cell footprint a configured slate instance occupies.
+// Returns the rotated/flipped cell footprint a configured slate instance occupies.
 export function getShapeCells(def: SlateDef, config: SlateConfig): Cell[] {
-  return rotateCellsBy(getBaseShapeCells(def, config), config.rotation);
+  const base = getBaseShapeCells(def, config);
+  if (def.kind !== "god" && def.orientation?.flipY && config.rotation === 180)
+    return flipCellsY(base);
+  return rotateCellsBy(base, config.rotation);
+}
+
+// Returns the CSS transform for a slate's icon given its config.
+export function getIconTransform(def: SlateDef, config: SlateConfig): string | undefined {
+  if (def.kind !== "god" && def.orientation?.flipY && config.rotation === 180)
+    return "scaleX(-1)";
+  return config.rotation ? `rotate(${config.rotation}deg)` : undefined;
 }
 
 // ─── Placed instances ─────────────────────────────────────────────────────────────
@@ -190,9 +205,11 @@ export type GodSlateDef = {
 };
 
 // Which rotation values a non-god slate's orientation control offers. A single-element
-// list means no rotation control is shown at all.
+// list means no rotation control is shown at all. When `flipY` is true the second
+// orientation (rotation=180) is a y-axis mirror instead of a 180° rotation.
 export type OrientationConfig = {
   rotations: Rotation[];
+  flipY?: true;
 };
 
 export const NO_ORIENTATION: OrientationConfig = { rotations: [0] };
@@ -249,11 +266,10 @@ export const SLATE_DEFS: Record<string, SlateDef> = {
       talentSlot("slot3", "Affix 3", ["Medium", "Legendary Medium", "Core"], "all"),
       talentSlot("slot4", "Affix 4", ["Core"], "all"),
     ],
-    // Can be rotated 0° or 180°.
-    orientation: { rotations: [0, 180] },
-    // 3x3 square with the top-right and bottom-left corners removed (7 cells). Centrally
-    // symmetric, so 0°/180° look identical — same as "Square" being rotation-invariant for
-    // god slates.
+    // Second orientation is a y-axis flip (not a 180° rotation).
+    orientation: { rotations: [0, 180], flipY: true },
+    // 3x3 square with the top-right and bottom-left corners removed (7 cells). The flip
+    // mirrors it horizontally, producing the complementary L-shape footprint.
     baseCells: [
       { r: 0, c: 0 }, { r: 0, c: 1 },
       { r: 1, c: 0 }, { r: 1, c: 1 }, { r: 1, c: 2 },

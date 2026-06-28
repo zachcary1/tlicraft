@@ -6,6 +6,7 @@ import {
   ROTATIONS,
   getGodSlateIconPath,
   getInstanceIconPath,
+  getIconTransform,
   parseTalentEffectLines,
   getSlateQuality,
   getOrientationConfig,
@@ -163,10 +164,6 @@ const INSTALL_BUTTON_STYLE = {
   boxShadow: "0 3px 8px rgba(0,0,0,0.45)",
 };
 
-function getIconTransform(config: SlateConfig): string | undefined {
-  return config.rotation ? `rotate(${config.rotation}deg)` : undefined;
-}
-
 // ─── ItemCard ─────────────────────────────────────────────────────────────────────
 
 type Props = {
@@ -252,7 +249,7 @@ export default function ItemCard({ slateName, def, config, talents, activeSlotKe
             alt={slateName}
             onError={() => setImgErr(true)}
             className="w-full h-full object-contain p-1"
-            style={{ transform: getIconTransform(config) }}
+            style={{ transform: getIconTransform(def, config) }}
           />
         ) : (
           <span style={{ color: "#666", fontSize: 28, fontWeight: 700 }}>?</span>

@@ -15,6 +15,7 @@ import {
   getShapeCells,
   getSlateQuality,
   getInstanceIconPath,
+  getIconTransform,
   isValidPlacement,
   isInstanceValid,
   cellKey,
@@ -34,7 +35,7 @@ const BG_STYLE = {
 };
 
 const slot = 100;
-const gap  = 8;
+const gap  = 0;
 const step = slot + gap;
 const pad  = 12;
 // Visible diamond dimensions — unchanged, and what the side panels position themselves
@@ -50,6 +51,59 @@ const svgH = pad + GRID_ROWS * slot + (GRID_ROWS - 1) * gap + pad;
 const EXT = 1;
 const boardSvgW = svgW + 2 * EXT * step;
 const boardSvgH = svgH + 2 * EXT * step;
+
+// Builds the closed SVG path string for the perimeter outline of a slate's cell group.
+// d = gap/2 ensures every segment endpoint coincides exactly with its neighbor at every
+// corner type (convex, concave, collinear) — no bridges or diagonal closes needed.
+// The stroke is made wide enough that its inner edge sits close to the cell boundary.
+const OUTLINE_D = gap / 2; // must equal gap/2 for endpoint coincidence at all corner types
+type Seg = { x1: number; y1: number; x2: number; y2: number };
+
+function buildSlateOutlinePath(cells: { r: number; c: number }[], anchor: { row: number; col: number }): string {
+  const inSet = new Set(cells.map(({ r, c }) => `${r},${c}`));
+  const has = (r: number, c: number) => inSet.has(`${r},${c}`);
+  const d = OUTLINE_D;
+  const segs: Seg[] = [];
+
+  for (const { r, c } of cells) {
+    const x = pad + (anchor.col + c + EXT) * step;
+    const y = pad + (anchor.row + r + EXT) * step;
+    if (!has(r - 1, c)) segs.push({ x1: x - d, y1: y - d, x2: x + slot + d, y2: y - d });
+    if (!has(r, c + 1)) segs.push({ x1: x + slot + d, y1: y - d, x2: x + slot + d, y2: y + slot + d });
+    if (!has(r + 1, c)) segs.push({ x1: x - d, y1: y + slot + d, x2: x + slot + d, y2: y + slot + d });
+    if (!has(r, c - 1)) segs.push({ x1: x - d, y1: y - d, x2: x - d, y2: y + slot + d });
+  }
+
+  // Chain segments into a closed path by walking the endpoint adjacency graph.
+  // With d=gap/2 every endpoint coincides with its neighbor, so this always produces
+  // a single continuous closed polygon with no gaps or diagonal shortcuts.
+  const ptk = (x: number, y: number) => `${x},${y}`;
+  const adj = new Map<string, number[]>();
+  segs.forEach((s, i) => {
+    const ka = ptk(s.x1, s.y1), kb = ptk(s.x2, s.y2);
+    adj.set(ka, [...(adj.get(ka) ?? []), i]);
+    adj.set(kb, [...(adj.get(kb) ?? []), i]);
+  });
+  const used = new Set<number>();
+  const subpaths: string[] = [];
+  for (let si = 0; si < segs.length; si++) {
+    if (used.has(si)) continue;
+    used.add(si);
+    const pts: string[] = [`${segs[si].x1} ${segs[si].y1}`, `${segs[si].x2} ${segs[si].y2}`];
+    let cur = ptk(segs[si].x2, segs[si].y2);
+    for (;;) {
+      const next = (adj.get(cur) ?? []).find(i => !used.has(i));
+      if (next === undefined) break;
+      used.add(next);
+      const s = segs[next];
+      const [nx, ny] = ptk(s.x1, s.y1) === cur ? [s.x2, s.y2] : [s.x1, s.y1];
+      pts.push(`${nx} ${ny}`);
+      cur = ptk(nx, ny);
+    }
+    subpaths.push(`M ${pts.join(' L ')} Z`);
+  }
+  return subpaths.join(' ');
+}
 
 const PANEL_W = 560;
 const PANEL_GAP = 50;
@@ -140,7 +194,7 @@ export default function DivinitySlatesPage() {
   // there. A move excludes the instance's own current cells from the green/red check so it
   // can hover back over (or near) its own position. Red is just a warning, not a block.
   const hoverFootprint = useMemo(() => {
-    if (!placing || !hoverCell) return null;
+    if ((!placing && !draft) || !hoverCell) return null;
     const slateName = draft?.slateName ?? editingInstance?.slateName;
     const config = draft?.config ?? editingInstance?.config;
     if (!slateName || !config) return null;
@@ -195,6 +249,9 @@ export default function DivinitySlatesPage() {
       if (!target.closest("button, input, label, select, textarea, a, [data-affix-panel]")) {
         setActiveSlotKey(null);
         if (overlayOpen && mode === "placed") closeOverlay();
+        // Draft mode: close when clicking outside the card and outside the grid SVG.
+        // Grid clicks are handled by handleGridCellClick (direct placement), so skip them.
+        if (overlayOpen && mode === "draft" && !(target instanceof SVGElement)) closeOverlay();
       }
     }
     document.addEventListener("mousedown", handleMouseDown);
@@ -222,7 +279,7 @@ export default function DivinitySlatesPage() {
   // Press-and-drag: grab whichever instance occupies the cell the mouse went down on, but
   // don't act yet — a plain click (no movement) should still just open the card.
   function handleCellMouseDown(row: number, col: number) {
-    if (placing) return;
+    if (placing || draft) return;
     const occupants = cellOccupants.get(cellKey(row, col));
     if (!occupants || occupants.length === 0) return;
     const instance = placedInstances.find((i) => i.id === occupants[occupants.length - 1]);
@@ -263,6 +320,7 @@ export default function DivinitySlatesPage() {
         setHoverCell(null);
         setEditingId(null); // a direct drag drops the slate and is done — don't reopen the card
         suppressClickRef.current = true; // the upcoming native click landed mid-drag, ignore it
+        setTimeout(() => { suppressClickRef.current = false; }, 0); // auto-clear if click landed off-grid
       } else {
         setEditingId(candidate.instanceId);
         setDraft(null);
@@ -284,7 +342,7 @@ export default function DivinitySlatesPage() {
       suppressClickRef.current = false;
       return;
     }
-    if (placing) {
+    if (placing || draft) {
       const slateName = draft?.slateName ?? editingInstance?.slateName;
       const config = draft?.config ?? editingInstance?.config;
       if (!slateName || !config) return;
@@ -324,7 +382,7 @@ export default function DivinitySlatesPage() {
         style={{ filter: overlayOpen && mode === "draft" ? "brightness(0.35)" : "none" }}
       >
         <div style={{ position: "relative", width: boardSvgW, height: boardSvgH }}>
-          <svg width={boardSvgW} height={boardSvgH} style={{ position: "absolute", top: 0, left: 0, pointerEvents: "auto" }}>
+          <svg width={boardSvgW} height={boardSvgH} style={{ position: "absolute", top: 0, left: 0, pointerEvents: "auto", filter: "drop-shadow(0 6px 32px rgba(0,0,0,0.8))" }}>
             {Array.from({ length: GRID_ROWS + 2 * EXT }, (_, ri) => ri - EXT).map((r) =>
               Array.from({ length: GRID_COLS + 2 * EXT }, (_, ci) => ci - EXT).map((c) => {
                 const key = cellKey(r, c);
@@ -344,7 +402,7 @@ export default function DivinitySlatesPage() {
                 let stroke = isHidden ? "transparent" : "#3a3a3a";
                 if (occupantQuality) {
                   fill = occupantQuality.indicatorActiveInner;
-                  stroke = occupantQuality.border;
+                  stroke = occupantQuality.indicatorActiveInner;
                 }
                 if (hasConflict) {
                   fill = "#7f1d1d";
@@ -358,14 +416,14 @@ export default function DivinitySlatesPage() {
                   stroke = "#535357";
                 }
 
-                const cursor = placing ? "pointer" : occupants.length > 0 ? "grab" : "default";
+                const cursor = (placing || draft) ? "pointer" : occupants.length > 0 ? "grab" : "default";
 
                 return (
                   <rect
                     key={key}
                     x={x} y={y}
                     width={slot} height={slot}
-                    rx="6"
+                    rx="0"
                     fill={fill}
                     stroke={stroke}
                     strokeWidth="2"
@@ -378,6 +436,7 @@ export default function DivinitySlatesPage() {
                 );
               })
             )}
+
           </svg>
 
           {/* Slate artwork — every shape icon is actually a square 1:1 image (the silhouette
@@ -403,19 +462,34 @@ export default function DivinitySlatesPage() {
                       top: pad + (row + EXT) * step,
                       width: slot, height: slot,
                       overflow: "hidden",
-                      borderRadius: 6,
+                      borderRadius: 0,
                     }}
                   >
                     <img
                       src={iconPath}
                       alt=""
-                      style={{ width: "100%", height: "100%", objectFit: "cover", transform: `rotate(${inst.config.rotation}deg)`, opacity }}
+                      style={{ width: "100%", height: "100%", objectFit: "cover", transform: getIconTransform(def, inst.config), opacity }}
                     />
                   </div>
                 );
               });
             })}
           </div>
+
+          {/* Slate perimeter outlines — separate top-layer SVG so lines sit above the artwork */}
+          <svg width={boardSvgW} height={boardSvgH} style={{ position: "absolute", top: 0, left: 0, pointerEvents: "none" }}>
+            {placedInstances.map((inst) => {
+              const def = SLATE_DEFS[inst.slateName];
+              const cells = getShapeCells(def, inst.config);
+              const quality = getSlateQuality(def);
+              const color = invalidInstanceIds.has(inst.id) ? "#ef4444" : quality.border;
+              const pathD = buildSlateOutlinePath(cells, inst.anchor);
+              if (!pathD) return null;
+              return (
+                <path key={`outline-${inst.id}`} d={pathD} stroke={color} strokeWidth="3" fill="none" style={{ filter: "none" }} />
+              );
+            })}
+          </svg>
         </div>
       </div>
 
@@ -477,7 +551,7 @@ export default function DivinitySlatesPage() {
       {overlayOpen && activeDef && activeConfig && (
         <>
           {mode === "draft" && (
-            <div className="fixed inset-0 z-40" style={{ background: "rgba(0,0,0,0.55)" }} onClick={closeOverlay} />
+            <div className="fixed inset-0 z-40" style={{ background: "rgba(0,0,0,0.55)", pointerEvents: "none" }} />
           )}
           <div
             className="fixed z-[60] flex items-center justify-center"
