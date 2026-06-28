@@ -670,8 +670,29 @@ export default function DivinitySlatesPage() {
             })}
           </div>
 
-          {/* Slate perimeter outlines — separate top-layer SVG so lines sit above the artwork */}
+          {/* Slate perimeter outlines — separate top-layer SVG so lines sit above the artwork.
+              Each outline is clipped to its own cell area so adjacent slates never overdraw
+              each other. Stroke-width is doubled because the clip cuts off the outer half,
+              leaving the inner half visible at the intended visual thickness. */}
           <svg width={boardSvgW} height={boardSvgH} style={{ position: "absolute", top: 0, left: 0, pointerEvents: "none" }}>
+            <defs>
+              {placedInstances.map((inst) => {
+                const def   = SLATE_DEFS[inst.slateName];
+                const cells = getShapeCells(def, inst.config);
+                return (
+                  <clipPath key={inst.id} id={`oclip-${inst.id}`}>
+                    {cells.map(({ r, c }) => (
+                      <rect
+                        key={`${r},${c}`}
+                        x={pad + (inst.anchor.col + c + EXT) * step}
+                        y={pad + (inst.anchor.row + r + EXT) * step}
+                        width={slot} height={slot}
+                      />
+                    ))}
+                  </clipPath>
+                );
+              })}
+            </defs>
             {placedInstances.map((inst) => {
               const def = SLATE_DEFS[inst.slateName];
               const cells = getShapeCells(def, inst.config);
@@ -681,22 +702,59 @@ export default function DivinitySlatesPage() {
               const color = invalidInstanceIds.has(inst.id) ? "#ef4444" : quality.border;
               const pathD = buildSlateOutlinePath(cells, inst.anchor);
               if (!pathD) return null;
+              // Visual width = strokeWidth / 2 because the clip cuts the outer half.
+              // Normal 3 → sw 6, hover 4 → sw 8, selected 5 → sw 10.
+              const sw = isSelected ? 10 : isHovered ? 8 : 6;
               return (
                 <path
                   key={`outline-${inst.id}`}
                   d={pathD}
                   stroke={isSelected ? "#ffffff" : color}
-                  strokeWidth={isSelected ? 5 : isHovered ? 4 : 3}
+                  strokeWidth={sw}
                   fill="none"
+                  clipPath={`url(#oclip-${inst.id})`}
                   style={{
-                    filter: isSelected
-                      ? `drop-shadow(0 0 6px ${color})`
-                      : isHovered ? `drop-shadow(0 0 6px ${color})` : "none",
+                    filter: (isSelected || isHovered) ? `drop-shadow(0 0 6px ${color})` : "none",
                     transition: "stroke-width 0.12s",
                   }}
                 />
               );
             })}
+            {/* Dark 2px separator lines at every cell edge shared between two different slates.
+                Without these, same-rarity adjacent slates blend into one thick stripe. */}
+            {(() => {
+              const cellOwner = new Map<string, string>();
+              for (const inst of placedInstances) {
+                const def = SLATE_DEFS[inst.slateName];
+                for (const { r, c } of getShapeCells(def, inst.config)) {
+                  cellOwner.set(`${inst.anchor.row + r},${inst.anchor.col + c}`, inst.id);
+                }
+              }
+              const lines: { x1: number; y1: number; x2: number; y2: number; key: string }[] = [];
+              const seen = new Set<string>();
+              for (const inst of placedInstances) {
+                const def = SLATE_DEFS[inst.slateName];
+                for (const { r, c } of getShapeCells(def, inst.config)) {
+                  const row = inst.anchor.row + r;
+                  const col = inst.anchor.col + c;
+                  const x = pad + (col + EXT) * step;
+                  const y = pad + (row + EXT) * step;
+                  const rNeighbor = cellOwner.get(`${row},${col + 1}`);
+                  if (rNeighbor && rNeighbor !== inst.id) {
+                    const k = `v:${row}:${col + 1}`;
+                    if (!seen.has(k)) { seen.add(k); lines.push({ x1: x + slot, y1: y, x2: x + slot, y2: y + slot, key: k }); }
+                  }
+                  const bNeighbor = cellOwner.get(`${row + 1},${col}`);
+                  if (bNeighbor && bNeighbor !== inst.id) {
+                    const k = `h:${row + 1}:${col}`;
+                    if (!seen.has(k)) { seen.add(k); lines.push({ x1: x, y1: y + slot, x2: x + slot, y2: y + slot, key: k }); }
+                  }
+                }
+              }
+              return lines.map(({ x1, y1, x2, y2, key }) => (
+                <line key={key} x1={x1} y1={y1} x2={x2} y2={y2} stroke="rgba(0,0,0,0.65)" strokeWidth={2} />
+              ));
+            })()}
           </svg>
         </div>
       </div>
