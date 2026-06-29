@@ -180,7 +180,7 @@ export default function TalentsPage() {
     if (!s) return null;
     const god = GODS.find(g => g.key === selGodKey(s));
     if (!god) return null;
-    if (isGodSel(s)) return { icon: godIconPath(god), name: god.name };
+    if (isGodSel(s)) return { icon: godTreeIconPath(god), name: god.name };
     const hero = god.heroes.find(h => h.name === selHeroName(s));
     if (!hero) return null;
     return { icon: heroIconPath(god, hero.folder), name: hero.name };

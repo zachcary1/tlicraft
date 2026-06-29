@@ -96,6 +96,39 @@ function getVariantName(hero: string): string {
   return hero.slice(colonIdx + 2).replace(/ \(#\d+\)$/, "").trim();
 }
 
+// Per-hero artwork positioning overrides. Key: "HeroGroup:VariantName" or "HeroGroup" for base.
+// top: vertical anchor (% or px), height: image size, right: px from right edge of container.
+interface ArtworkOverride { height?: string; width?: string; top?: string; left?: number; file?: string }
+const ARTWORK_OVERRIDES: Record<string, ArtworkOverride> = {
+  "Bing:Blast Nova": { height: "110vh", top: "38%", left: -360 },
+  "Bing:Creative Genius": { height: "70vh", top: "50%", left: 80 },
+  "Carino:Lethal Flash": { height: "100vh", top: "58%", left: -80 },
+  "Carino:Ranger of Glory": { height: "90vh", top: "60%", left: -100 },
+  "Carino:Zealot of War": { height: "110vh", top: "44%", left: -480 },
+  "Erika:Lightning Shadow": { height: "100vh", top: "50%", left: -300 },
+  "Erika:Vendetta's Sting": { height: "100vh", top: "50%", left: -260 },
+  "Erika:Wind Stalker": { height: "100vh", top: "50%", left: -160 },
+  "Gemma:Frostbitten Heart": { height: "110vh", top: "43%", left: -80 },
+  "Gemma:Ice-Fire Fusion": { height: "100vh", top: "58%", left: -80 },
+  "Iris:Growing Breeze": { height: "100vh", top: "50%", left: -220 },
+  "Iris:Vigilant Breeze": { height: "100vh", top: "50%", left: -80 },
+  "Moto:Charge Calling": { height: "100vh", top: "43%", left: -120 },
+  "Moto:Order Calling": { height: "100vh", top: "43%", left: -120 },
+  "Rehan:Anger": { height: "90vh", top: "50%", left: 60 },
+  "Rehan:Seething Silhouette": { height: "100vh", top: "43%", left: -120 },
+  "Rosa:High Court Chariot": { height: "115vh", top: "50%", left: -180 },
+  "Rosa:Unsullied Blade": { height: "110vh", top: "38%", left: -120 },
+  "Selena:Sing with the Tide": { height: "100vh", top: "50%", left: -120 },
+  "Thea:Wisdom of The Gods": { height: "100vh", top: "38%", left: 0 },
+  "Youga:Spacetime Elapse": { height: "100vh", top: "50%", left: -220 },
+  "Youga:Spacetime Illusion": { height: "115vh", top: "43%", left: 0 },
+};
+function getArtworkOverride(heroGroup: string, variantName: string): ArtworkOverride {
+  return ARTWORK_OVERRIDES[`${heroGroup}:${variantName}`]
+    ?? ARTWORK_OVERRIDES[heroGroup]
+    ?? {};
+}
+
 // e.g. ("Rehan", "Anger", 45, 1, "Righteous Fury") → "/heroes/Rehan/traits/Anger/45-1 Righteous Fury.webp"
 function getTraitIconPath(heroGroup: string, variantName: string, level: number, slot: number, traitName: string): string {
   return `/heroes/${heroGroup}/traits/${variantName}/${level}-${slot} ${traitName}.webp`;
@@ -1478,6 +1511,8 @@ export default function HeroTraitPage() {
   const [searchQuery,    setSearchQuery]    = useState("");
   const [circleHovered,    setCircleHovered]    = useState(false);
   const [circleImgError,   setCircleImgError]   = useState(false);
+  const [artworkExt,       setArtworkExt]       = useState<"webp" | "png">("webp");
+  const [artworkFailed,    setArtworkFailed]    = useState(false);
   const [centerTooltipPos, setCenterTooltipPos] = useState<{ x: number; y: number } | null>(null);
   const [memoryFilled,     setMemoryFilled]     = useState<[boolean, boolean, boolean]>([false, false, false]);
   const [memoryQuality,    setMemoryQuality]    = useState<[MemoryQuality | null, MemoryQuality | null, MemoryQuality | null]>([null, null, null]);
@@ -1502,6 +1537,8 @@ export default function HeroTraitPage() {
   useEffect(() => {
     setHeroTraits([]);
     setCircleImgError(false);
+    setArtworkExt("webp");
+    setArtworkFailed(false);
     setMemoryFilled([false, false, false]);
     setMemoryQuality([null, null, null]);
     setTraitSelections([null, null, null]);
@@ -1704,6 +1741,65 @@ export default function HeroTraitPage() {
               ))}
             </div>
           </div>
+        </div>
+      )}
+
+      {/* Hero artwork — left side background */}
+      {selectedHero && !artworkFailed && (
+        <div style={{
+          position: "fixed",
+          left: 0,
+          top: 0,
+          bottom: 0,
+          width: `calc(50% - ${CIRCLE_D / 2}px)`,
+          zIndex: 0,
+          pointerEvents: "none",
+        }}>
+          {(() => {
+            const ov = getArtworkOverride(selectedHero.heroGroup, variantName);
+            return (
+              <img
+                key={`${selectedHero.hero}-${artworkExt}`}
+                src={`/heroes/${selectedHero.heroGroup}/artwork/${ov.file ?? variantName}.${artworkExt}`}
+                alt={variantName}
+                onError={() => {
+                  if (artworkExt === "webp") setArtworkExt("png");
+                  else setArtworkFailed(true);
+                }}
+                style={{
+                  position: "absolute",
+                  top: ov.top ?? "50%",
+                  left: ov.left ?? 0,
+                  transform: "translateY(-50%)",
+                  height: ov.height ?? (ov.width ? "auto" : "100vh"),
+                  width: ov.width ?? "auto",
+                  maxWidth: "none",
+                  maxHeight: "none",
+                }}
+              />
+            );
+          })()}
+        </div>
+      )}
+
+      {/* Hero name — bottom left */}
+      {selectedHero && (
+        <div style={{
+          position: "fixed",
+          left: 280,
+          bottom: 40,
+          zIndex: 1,
+          pointerEvents: "none",
+          lineHeight: 1.1,
+        }}>
+          <div style={{ color: "#ffffff", fontSize: 58, fontWeight: 700, letterSpacing: "0.01em", textShadow: "0 2px 12px rgba(0,0,0,0.8)" }}>
+            {selectedHero.heroGroup}
+          </div>
+          {variantName !== selectedHero.heroGroup && (
+            <div style={{ color: "#c8c6c0", fontSize: 38, fontWeight: 400, letterSpacing: "0.02em", textShadow: "0 2px 10px rgba(0,0,0,0.8)" }}>
+              {variantName}
+            </div>
+          )}
         </div>
       )}
 
