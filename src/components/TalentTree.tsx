@@ -1,6 +1,8 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import type { TalentTreeData, TalentNodeData, CoreTalentData } from "../../data/crafted/torchcodex/talent-tree/types";
+import { TALENT_TYPE_TIER_COLOR } from "../app/divinity-slates/slateData";
 
 // ── Grid constants ─────────────────────────────────────────────────────────────
 
@@ -110,139 +112,167 @@ function canDeallocate(
 }
 
 // ── Tooltips ───────────────────────────────────────────────────────────────────
+// Shared card styling/layout for both node and core tooltips, matching the hero-trait
+// page's memory-card tooltips: a protruding icon (cut-corner shape) above a two-part
+// dark card — name up top, point allocation + details below — following the cursor.
 
-interface TooltipInfo {
-  nodeType:  string;
-  rawAffix:  string;
-  current:   number;
-  maxPoints: number;
-  locked:    boolean;
-  lockMsg?:  string;
-  px:        number;
-  py:        number;
+function nodeTypeLabel(nodeType: string): string {
+  return nodeType === "micro"     ? "Micro Talent"
+       : nodeType === "medium"    ? "Medium Talent"
+       : nodeType === "legendary" ? "Legendary Medium Talent"
+       : nodeType;
 }
 
-function NodeTooltip({ info, W }: { info: TooltipInfo; W: number }) {
-  const TOOLTIP_W = 220;
-  const lines     = info.rawAffix.split("\n").filter(Boolean);
-  const isRight   = info.px < W - TOOLTIP_W - 24;
-  const r         = NODE_R;
+// Node affix text lists the per-point value (e.g. "+9% Damage"); scale every number in it
+// by however many points are invested so the tooltip shows the stacked total (3/3 -> +27%).
+// At 0 points this correctly zeroes out — the tooltip's "Next Level" section (scaled to
+// current+1) is what shows the 1-point value when nothing is allocated yet.
+function scaleAffixText(text: string, points: number): string {
+  if (points === 1) return text;
+  return text.replace(/([+-]?)(\d+(?:\.\d+)?)/g, (_, sign: string, numStr: string) => {
+    const scaled = Math.round(parseFloat(numStr) * points * 100) / 100;
+    return `${sign}${scaled}`;
+  });
+}
 
-  return (
-    <div style={{
-      position:     "absolute",
-      left:         isRight ? info.px + r + 12 : info.px - r - TOOLTIP_W - 12,
-      top:          info.py - 18,
-      width:        TOOLTIP_W,
-      background:   "rgba(10,8,5,0.97)",
-      border:       `1px solid ${info.nodeType === "legendary" ? "#d4a820" : "rgba(130,105,55,0.5)"}`,
-      borderRadius: 8,
-      padding:      "10px 12px",
-      pointerEvents:"none",
-      zIndex:       50,
-      boxShadow:    "0 4px 20px rgba(0,0,0,0.75)",
+// Tooltip gradient tint: Micro/Medium borrow the same tier colors used for their
+// tier-tag diamonds elsewhere (divinity-slates); other node types keep the tree's own color.
+function nodeTypeAccentColor(nodeType: string, fallback: string): string {
+  return nodeType === "micro"  ? TALENT_TYPE_TIER_COLOR.Micro
+       : nodeType === "medium" ? TALENT_TYPE_TIER_COLOR.Medium
+       : fallback;
+}
+
+const TIP_CARD_W    = 270;
+const TIP_ICON_SIZE = 72;
+const TIP_ICON_HALF = TIP_ICON_SIZE / 2;
+
+function TalentTooltipCard({
+  iconSrc, name, subtitle, details, nextDetails, lockMsg, accentColor, cx: cursorX, cy: cursorY,
+}: {
+  iconSrc:     string | null;
+  name:        string;
+  subtitle?:   string;
+  details?:    string;
+  nextDetails?: string;
+  lockMsg?:    string;
+  accentColor: string;
+  cx:          number;
+  cy:          number;
+}) {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [cardH, setCardH] = useState(200);
+  useEffect(() => { if (cardRef.current) setCardH(cardRef.current.offsetHeight); });
+
+  const vpW  = window.innerWidth;
+  const vpH  = window.innerHeight;
+  const GAP  = 18;
+  const cardLeft = cursorX + GAP + TIP_CARD_W <= vpW ? cursorX + GAP : cursorX - GAP - TIP_CARD_W;
+  const cardTop  = Math.max(TIP_ICON_HALF + 8, Math.min(vpH - cardH - 8, cursorY - 24));
+
+  const lines     = details ? details.split("\n").filter(Boolean) : [];
+  const nextLines = nextDetails ? nextDetails.split("\n").filter(Boolean) : [];
+
+  return createPortal(
+    <div ref={cardRef} style={{
+      position: "fixed", left: cardLeft, top: cardTop,
+      width: TIP_CARD_W, pointerEvents: "none", zIndex: 9999,
+      overflow: "visible",
+      filter: "drop-shadow(0 8px 24px rgba(0,0,0,0.85))",
     }}>
+      {/* Icon — top half protrudes above the card */}
       <div style={{
-        fontSize:      9,
-        fontWeight:    700,
-        letterSpacing: "0.12em",
-        textTransform: "uppercase",
-        color:
-          info.nodeType === "legendary" ? "#d4a820" :
-          info.nodeType === "medium"    ? "rgba(210,180,95,0.9)" :
-          "rgba(155,135,75,0.7)",
-        marginBottom:  6,
-        display:       "flex",
-        alignItems:    "baseline",
-        gap:           6,
+        position: "absolute", top: -TIP_ICON_HALF, left: "50%", transform: "translateX(-50%)",
+        width: TIP_ICON_SIZE, height: TIP_ICON_SIZE, zIndex: 10,
       }}>
-        {info.nodeType}
-        <span style={{ color: "rgba(130,110,65,0.6)", fontSize: 8 }}>
-          ({info.current}/{info.maxPoints} pts)
-        </span>
-      </div>
-      {lines.map((line, i) => (
-        <div key={i} style={{
-          fontSize:     12,
-          color:        "rgba(220,205,165,0.92)",
-          lineHeight:   1.45,
-          marginBottom: i < lines.length - 1 ? 3 : 0,
-        }}>
-          {line}
-        </div>
-      ))}
-      {info.locked && info.lockMsg && (
         <div style={{
-          fontSize:  10,
-          color:     "rgba(200,90,80,0.85)",
-          marginTop: 8,
-          paddingTop:8,
-          borderTop: "1px solid rgba(130,105,55,0.3)",
+          position: "absolute", top: 0, left: 0,
+          width: TIP_ICON_SIZE, height: TIP_ICON_SIZE,
+          background: "#2a2a2c", borderRadius: "0 12px 0 12px",
+          overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center",
         }}>
-          {info.lockMsg}
+          {iconSrc && <img src={iconSrc} alt="" style={{ width: "80%", height: "80%", objectFit: "contain" }} />}
         </div>
-      )}
-    </div>
-  );
-}
-
-interface CoreTooltipInfo {
-  name:     string;
-  rawAffix: string;
-  locked:   boolean;
-  reqPts:   number;
-  px:       number;
-  py:       number;
-}
-
-function CoreTooltip({ info }: { info: CoreTooltipInfo }) {
-  const TOOLTIP_W = 220;
-  const lines     = info.rawAffix.split("\n").filter(Boolean);
-
-  return (
-    <div style={{
-      position:     "absolute",
-      left:         info.px - TOOLTIP_W / 2,
-      top:          info.py,
-      width:        TOOLTIP_W,
-      background:   "rgba(10,8,5,0.97)",
-      border:       "1px solid #d4a820",
-      borderRadius: 8,
-      padding:      "10px 12px",
-      pointerEvents:"none",
-      zIndex:       50,
-      boxShadow:    "0 4px 20px rgba(0,0,0,0.75)",
-    }}>
-      <div style={{
-        fontSize:      11,
-        fontWeight:    700,
-        color:         "#d4a820",
-        marginBottom:  6,
-      }}>
-        {info.name}
       </div>
-      {lines.map((line, i) => (
-        <div key={i} style={{
-          fontSize:     12,
-          color:        "rgba(220,205,165,0.92)",
-          lineHeight:   1.45,
-          marginBottom: i < lines.length - 1 ? 3 : 0,
-        }}>
-          {line}
-        </div>
-      ))}
-      {info.locked && (
+
+      {/* Card body */}
+      <div style={{ overflow: "hidden", borderRadius: "0 12px 0 12px" }}>
+
+        {/* Top section: name */}
         <div style={{
-          fontSize:  10,
-          color:     "rgba(200,90,80,0.85)",
-          marginTop: 8,
-          paddingTop:8,
-          borderTop: "1px solid rgba(130,105,55,0.3)",
+          background: "#1f1f21", position: "relative",
+          padding: `${TIP_ICON_HALF + 10}px 10px 10px`, overflow: "hidden",
         }}>
-          Requires {info.reqPts} points allocated in this tree
+          <div style={{
+            position: "absolute", top: 10, left: 10, right: 10, bottom: 0,
+            background: `linear-gradient(to bottom, ${accentColor}55, transparent)`,
+            borderRadius: "4px 4px 0 0",
+            pointerEvents: "none",
+          }} />
+          <div style={{
+            position: "relative", zIndex: 1, textAlign: "center",
+            color: "#ffffff", fontSize: 17, fontWeight: 700, letterSpacing: "0.05em",
+          }}>
+            {name}
+          </div>
         </div>
-      )}
-    </div>
+
+        {/* Bottom section: point allocation + details */}
+        <div style={{ background: "#242325", padding: "10px 14px 14px" }}>
+          {subtitle && (
+            <div style={{
+              color: "#ffffff", fontSize: 15, fontWeight: 600, letterSpacing: "0.04em",
+              textAlign: "center",
+            }}>
+              {subtitle}
+            </div>
+          )}
+          {lines.length > 0 && (
+            <>
+              {subtitle && <div style={{ height: 1, background: "#3a3838", margin: "8px 0" }} />}
+              {lines.map((line, i) => (
+                <div key={i} style={{
+                  color: "rgba(220,220,222,0.92)", fontSize: 15, lineHeight: 1.45,
+                  textAlign: "center",
+                  marginBottom: i < lines.length - 1 ? 4 : 0,
+                }}>
+                  {line}
+                </div>
+              ))}
+            </>
+          )}
+          {nextLines.length > 0 && (
+            <>
+              <div style={{ height: 1, background: "#3a3838", margin: "8px 0" }} />
+              <div style={{
+                fontSize: 12, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase",
+                color: "rgba(180,180,182,0.75)", textAlign: "center", marginBottom: 4,
+              }}>
+                Next Level
+              </div>
+              {nextLines.map((line, i) => (
+                <div key={i} style={{
+                  color: "rgba(180,180,182,0.75)", fontSize: 15, lineHeight: 1.45,
+                  textAlign: "center",
+                  marginBottom: i < nextLines.length - 1 ? 4 : 0,
+                }}>
+                  {line}
+                </div>
+              ))}
+            </>
+          )}
+          {lockMsg && (
+            <div style={{
+              fontSize: 13, color: "rgba(220,90,80,0.9)", textAlign: "center",
+              marginTop: 8, paddingTop: 8, borderTop: "1px solid #3a3838",
+            }}>
+              {lockMsg}
+            </div>
+          )}
+        </div>
+      </div>
+    </div>,
+    document.body
   );
 }
 
@@ -280,28 +310,25 @@ interface CoreRowProps {
   tier:         1 | 2;
   entries:      CoreTalentData[];
   iconFolder:   string;
+  godColor:     string;
   totalPoints:  number;
   selected?:    string;
   onSelect:     (iconName: string | null) => void;
 }
 
-function CoreRow({ tier, entries, iconFolder, totalPoints, selected, onSelect }: CoreRowProps) {
-  const [hovered, setHovered]         = useState<string | null>(null);
-  const [tooltip, setTooltip]         = useState<CoreTooltipInfo | null>(null);
+function CoreRow({ tier, entries, iconFolder, godColor, totalPoints, selected, onSelect }: CoreRowProps) {
+  const [hovered, setHovered]     = useState<CoreTalentData | null>(null);
+  const [cursorPos, setCursorPos] = useState<{ x: number; y: number } | null>(null);
   const unlocked = totalPoints >= CORE_REQ[tier];
 
   function onEnter(e: React.MouseEvent, entry: CoreTalentData) {
-    const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
-    const parentRect = (e.currentTarget as HTMLElement).closest("[data-core-container]")?.getBoundingClientRect();
-    const px = parentRect ? rect.left - parentRect.left + rect.width / 2 : 0;
-    const py = parentRect ? rect.bottom - parentRect.top + 8 : 0;
-    setHovered(entry.iconName);
-    setTooltip({ name: entry.name, rawAffix: entry.rawAffix, locked: !unlocked, reqPts: CORE_REQ[tier], px, py });
+    setHovered(entry);
+    setCursorPos({ x: e.clientX, y: e.clientY });
   }
 
   function onLeave() {
     setHovered(null);
-    setTooltip(null);
+    setCursorPos(null);
   }
 
   return (
@@ -342,7 +369,7 @@ function CoreRow({ tier, entries, iconFolder, totalPoints, selected, onSelect }:
         </div>
         {entries.map((entry) => {
           const isSelected = selected === entry.iconName;
-          const isHovered  = hovered === entry.iconName;
+          const isHovered  = hovered?.iconName === entry.iconName;
           const iconSrc    = `/icons/talents/${iconFolder}/${entry.iconName}.webp`;
           // Once a choice has been made for this tier, the unchosen options dim (unless hovered,
           // which previews them at full strength since clicking still swaps the selection).
@@ -352,6 +379,7 @@ function CoreRow({ tier, entries, iconFolder, totalPoints, selected, onSelect }:
             <div
               key={entry.iconName}
               onMouseEnter={(e) => onEnter(e, entry)}
+              onMouseMove={(e) => onEnter(e, entry)}
               onMouseLeave={onLeave}
               onClick={() => unlocked && onSelect(isSelected ? null : entry.iconName)}
               onContextMenu={(e) => { e.preventDefault(); if (unlocked && isSelected) onSelect(null); }}
@@ -386,7 +414,17 @@ function CoreRow({ tier, entries, iconFolder, totalPoints, selected, onSelect }:
             </div>
           );
         })}
-        {tooltip && <CoreTooltip info={tooltip} />}
+        {hovered && cursorPos && (
+          <TalentTooltipCard
+            iconSrc={`/icons/talents/${iconFolder}/${hovered.iconName}.webp`}
+            name={hovered.name}
+            details={hovered.rawAffix}
+            lockMsg={!unlocked ? `Requires ${CORE_REQ[tier]} points allocated in this tree` : undefined}
+            accentColor={godColor}
+            cx={cursorPos.x}
+            cy={cursorPos.y}
+          />
+        )}
       </div>
     </div>
   );
@@ -407,7 +445,8 @@ interface Props {
 }
 
 export function TalentTree({ tree, iconFolder, godColor, allocated, coreSelected, onAllocate, onSelectCore, onReselect, onReset }: Props) {
-  const [hovered, setHovered] = useState<string | null>(null);
+  const [hovered, setHovered]     = useState<string | null>(null);
+  const [cursorPos, setCursorPos] = useState<{ x: number; y: number } | null>(null);
 
   const W = COLS * CELL_W;
   const H = ROWS * CELL_H + HEADER_H;
@@ -420,10 +459,9 @@ export function TalentTree({ tree, iconFolder, godColor, allocated, coreSelected
   // Derived from `hovered` + current props each render (rather than snapshotted at hover time)
   // so the tooltip's point count / lock state stays live while clicking without re-hovering.
   const hoveredNode = hovered ? tree.nodes.find((n) => posId(n.position) === hovered) : undefined;
-  let tooltipInfo: TooltipInfo | null = null;
+  let tooltipInfo: { current: number; locked: boolean; lockMsg?: string } | null = null;
   if (hoveredNode) {
     const id      = posId(hoveredNode.position);
-    const pos     = gridPx(hoveredNode.position.x, hoveredNode.position.y);
     const current = allocated[id] ?? 0;
     const colLocked = pointsBeforeColumn(tree, allocated, hoveredNode.position.x) < colRequirement(hoveredNode.position.x);
     const preOk     = prerequisiteSatisfied(tree, hoveredNode, allocated);
@@ -432,20 +470,17 @@ export function TalentTree({ tree, iconFolder, godColor, allocated, coreSelected
       ? `Requires ${colRequirement(hoveredNode.position.x)} points allocated in this tree`
       : !preOk ? "Requires prerequisite node fully unlocked" : undefined;
 
-    tooltipInfo = {
-      nodeType: hoveredNode.nodeType, rawAffix: hoveredNode.rawAffix,
-      current, maxPoints: hoveredNode.maxPoints,
-      locked, lockMsg,
-      px: pos.x, py: pos.y,
-    };
+    tooltipInfo = { current, locked, lockMsg };
   }
 
-  function onEnter(node: TalentNodeData) {
+  function onEnter(e: React.MouseEvent, node: TalentNodeData) {
     setHovered(posId(node.position));
+    setCursorPos({ x: e.clientX, y: e.clientY });
   }
 
   function onLeave() {
     setHovered(null);
+    setCursorPos(null);
   }
 
   function handleLeftClick(node: TalentNodeData) {
@@ -469,20 +504,32 @@ export function TalentTree({ tree, iconFolder, godColor, allocated, coreSelected
 
       {/* ── Top bar: core tiers (leftmost icon on the 0/3 column boundary), points + actions top-right ─── */}
       <div style={{ position: "relative", width: W, minHeight: 110 }}>
+        {/* Large faded tree emblem, watermark-style behind the core icons */}
+        <img
+          src={`/icons/talents/${iconFolder}/${iconFolder.split("/").pop()}.webp`}
+          alt=""
+          style={{
+            position: "absolute", top: -90, left: -90,
+            width: 220, height: 220, objectFit: "contain",
+            opacity: 0.35, filter: "brightness(0.75)",
+            pointerEvents: "none",
+          }}
+        />
+
         <div style={{
           position: "absolute", left: CELL_W - CORE_R, top: -10,
           display: "flex", flexDirection: "row", gap: 110,
         }}>
           {core1.length > 0 && (
             <CoreRow
-              tier={1} entries={core1} iconFolder={iconFolder}
+              tier={1} entries={core1} iconFolder={iconFolder} godColor={godColor}
               totalPoints={totalPoints} selected={coreSelected[1]}
               onSelect={(iconName) => onSelectCore(1, iconName)}
             />
           )}
           {core2.length > 0 && (
             <CoreRow
-              tier={2} entries={core2} iconFolder={iconFolder}
+              tier={2} entries={core2} iconFolder={iconFolder} godColor={godColor}
               totalPoints={totalPoints} selected={coreSelected[2]}
               onSelect={(iconName) => onSelectCore(2, iconName)}
             />
@@ -611,7 +658,8 @@ export function TalentTree({ tree, iconFolder, godColor, allocated, coreSelected
           return (
             <div
               key={id}
-              onMouseEnter={() => onEnter(node)}
+              onMouseEnter={(e) => onEnter(e, node)}
+              onMouseMove={(e) => onEnter(e, node)}
               onMouseLeave={onLeave}
               onClick={() => handleLeftClick(node)}
               onContextMenu={(e) => handleRightClick(e, node)}
@@ -683,7 +731,23 @@ export function TalentTree({ tree, iconFolder, godColor, allocated, coreSelected
         })}
 
         {/* ── Tooltip ────────────────────────────────────────────────── */}
-        {tooltipInfo && <NodeTooltip info={tooltipInfo} W={W} />}
+        {tooltipInfo && hoveredNode && cursorPos && (
+          <TalentTooltipCard
+            iconSrc={hoveredNode.iconName ? `/icons/talents/${iconFolder}/${hoveredNode.iconName}.webp` : null}
+            name={nodeTypeLabel(hoveredNode.nodeType)}
+            subtitle={`${tooltipInfo.current}/${hoveredNode.maxPoints}`}
+            details={tooltipInfo.current > 0 ? scaleAffixText(hoveredNode.rawAffix, tooltipInfo.current) : undefined}
+            nextDetails={
+              tooltipInfo.current < hoveredNode.maxPoints
+                ? scaleAffixText(hoveredNode.rawAffix, tooltipInfo.current + 1)
+                : undefined
+            }
+            lockMsg={tooltipInfo.locked ? tooltipInfo.lockMsg : undefined}
+            accentColor={nodeTypeAccentColor(hoveredNode.nodeType, godColor)}
+            cx={cursorPos.x}
+            cy={cursorPos.y}
+          />
+        )}
       </div>
     </div>
   );

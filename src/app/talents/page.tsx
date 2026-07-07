@@ -224,10 +224,17 @@ export default function TalentsPage() {
     setViewedTree(slots[idx] ?? null);
   }
 
-  // ── Force selection mode for a slot (CHANGE button) ───────────────────────
+  // ── Reselect: clear this slot's tree entirely and drop back to selection mode ──
   function selectSlot(idx: SlotIdx) {
     setActive(idx);
     setViewedTree(null);
+    setSlots(prev => {
+      const next = [...prev];
+      next[idx] = null;
+      // Clearing the god slot orphans any hero already picked for it.
+      if (idx === 0 && next[1]) next[1] = null;
+      return next;
+    });
   }
 
   // ── Can a node be picked in the current active slot? ────────────────────────
