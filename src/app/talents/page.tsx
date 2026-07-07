@@ -109,8 +109,6 @@ const GOD_COLORS: Record<string, string> = {
 type Sel = string;
 type SlotIdx = 0 | 1 | 2 | 3;
 
-const SLOT_LABELS = ["Tree I", "Tree II", "Tree III", "Tree IV"];
-
 function godSel(key: string): Sel  { return `god:${key}`; }
 function heroSel(godKey: string, heroName: string): Sel { return `hero:${godKey}:${heroName}`; }
 function isGodSel(s: Sel)          { return s.startsWith("god:"); }
@@ -156,12 +154,50 @@ function selToIconFolder(sel: Sel): string {
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
+interface TreeProgress {
+  points: Record<string, number>;
+  core:   Partial<Record<1 | 2, string>>;
+}
+
+const EMPTY_PROGRESS: TreeProgress = { points: {}, core: {} };
+
 export default function TalentsPage() {
   const [slots,        setSlots]        = useState<(Sel | null)[]>([null, null, null, null]);
   const [active,       setActive]       = useState<SlotIdx>(0);
   const [hoveredNode,  setHoveredNode]  = useState<string | null>(null);
   const [viewedTree,   setViewedTree]   = useState<Sel | null>(null);
-  const [hoveredChange,setHoveredChange]= useState<SlotIdx | null>(null);
+  const [progress,     setProgress]     = useState<Record<string, TreeProgress>>({});
+
+  function getProgress(name: string): TreeProgress {
+    return progress[name] ?? EMPTY_PROGRESS;
+  }
+
+  function updateProgress(name: string, updater: (p: TreeProgress) => TreeProgress) {
+    setProgress(prev => ({ ...prev, [name]: updater(prev[name] ?? EMPTY_PROGRESS) }));
+  }
+
+  function handleAllocate(name: string, nodeId: string, delta: 1 | -1, maxPoints: number) {
+    updateProgress(name, p => {
+      // Clamp against the freshest state here (not the click handler's guard) so a burst of
+      // rapid clicks landing in the same React batch can never push a node past its bounds.
+      const next = Math.max(0, Math.min(maxPoints, (p.points[nodeId] ?? 0) + delta));
+      const points = { ...p.points };
+      if (next <= 0) delete points[nodeId]; else points[nodeId] = next;
+      return { ...p, points };
+    });
+  }
+
+  function handleSelectCore(name: string, tier: 1 | 2, iconName: string | null) {
+    updateProgress(name, p => {
+      const core = { ...p.core };
+      if (iconName === null) delete core[tier]; else core[tier] = iconName;
+      return { ...p, core };
+    });
+  }
+
+  function handleResetTree(name: string) {
+    setProgress(prev => ({ ...prev, [name]: EMPTY_PROGRESS }));
+  }
 
   const godKey0 = slots[0] ? selGodKey(slots[0]) : null;
   const god0    = godKey0 ? (GODS.find(g => g.key === godKey0) ?? null) : null;
@@ -258,95 +294,60 @@ export default function TalentsPage() {
             const isViewing   = viewedTree !== null && viewedTree === slots[idx];
             const slotGodKey  = slots[idx] ? selGodKey(slots[idx]!) : null;
             const slotColor   = slotGodKey ? (GOD_COLORS[slotGodKey] ?? "#888") : "#888";
-            const chgHov      = hoveredChange === idx;
 
-            // Border / background / shadow vary by state
-            const border     = isViewing  ? `2px solid ${slotColor}`
-                             : isActive   ? "2px solid #fbdb58"
-                             :              "2px solid #333130";
-            const bg         = isViewing  ? "linear-gradient(145deg, #1e1c17 0%, #191714 100%)"
-                             : isActive   ? "linear-gradient(145deg, #2c2916 0%, #211f10 100%)"
-                             :              "linear-gradient(145deg, #222120 0%, #1b1a19 100%)";
-            const shadow     = isViewing  ? `0 0 20px ${slotColor}44, inset 0 0 10px ${slotColor}08`
-                             : isActive   ? "0 0 18px rgba(251,219,88,0.22), inset 0 0 10px rgba(251,219,88,0.04)"
-                             :              "0 2px 6px rgba(0,0,0,0.4)";
-            const labelColor = isViewing  ? slotColor
-                             : isActive   ? "#fbdb58"
-                             :              "#4a4846";
+            // The gradient tint only appears once a tree has actually been picked for this
+            // slot; the outline stays gray except on whichever slot is currently focused.
+            const isFocused   = active === idx;
+            const bg          = info ? `linear-gradient(145deg, ${slotColor}55 0%, #1b1a19 65%)`
+                                      : "linear-gradient(145deg, #2a2827 0%, #1b1a19 100%)";
+            const border      = isFocused ? "2px solid #ffffff" : "2px solid #4a4846";
+            const shadow      = isViewing  ? `0 0 20px ${slotColor}44, inset 0 0 10px ${slotColor}08`
+                              : isActive   ? "0 0 18px rgba(251,219,88,0.22), inset 0 0 10px rgba(251,219,88,0.04)"
+                              :              "0 2px 6px rgba(0,0,0,0.4)";
 
             return (
-              <div key={idx} style={{ display: "flex", flexDirection: "column", gap: 5 }}>
-                <span style={{
-                  fontSize: 9, fontWeight: 700, letterSpacing: "0.1em",
-                  textTransform: "uppercase", color: labelColor, paddingLeft: 2,
-                  transition: "color 0.15s",
-                }}>
-                  {SLOT_LABELS[idx]}
-                </span>
-
-                <div
-                  onClick={() => activateSlot(idx)}
-                  style={{
-                    position: "relative",
-                    width: 270, height: 90, borderRadius: 14,
-                    background: bg, border, cursor: "pointer",
-                    display: "flex", flexDirection: "row", alignItems: "center",
-                    padding: "0 16px", gap: 14,
-                    boxShadow: shadow,
-                    transition: "border-color 0.15s, box-shadow 0.15s, background 0.15s",
-                  }}
-                >
-                  {info ? (
-                    <>
-                      <div style={{
-                        width: 56, height: 56, borderRadius: "50%",
-                        overflow: "hidden", flexShrink: 0,
-                        border: `1px solid ${isViewing ? slotColor + "66" : "#444240"}`,
-                        background: "#1e1c1c",
-                        transition: "border-color 0.15s",
-                      }}>
-                        <img src={info.icon} alt={info.name}
-                          style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                      </div>
-                      <span style={{
-                        fontSize: 13, color: "#c8c6c6", fontWeight: 600, lineHeight: 1.3,
-                        overflow: "hidden", display: "-webkit-box",
-                        WebkitLineClamp: 2, WebkitBoxOrient: "vertical",
-                        flex: 1,
-                      }}>
-                        {info.name}
-                      </span>
-
-                      {/* ── CHANGE button ── */}
-                      <button
-                        onClick={(e) => { e.stopPropagation(); selectSlot(idx); }}
-                        onMouseEnter={() => setHoveredChange(idx)}
-                        onMouseLeave={() => setHoveredChange(null)}
-                        style={{
-                          position: "absolute", top: 7, right: 9,
-                          background: "none",
-                          border: `1px solid ${chgHov ? "rgba(200,175,110,0.55)" : "rgba(130,105,60,0.2)"}`,
-                          borderRadius: 4, padding: "2px 7px",
-                          fontSize: 8, fontWeight: 700, letterSpacing: "0.1em",
-                          textTransform: "uppercase",
-                          color: chgHov ? "rgba(215,190,125,0.95)" : "rgba(130,105,60,0.45)",
-                          cursor: "pointer",
-                          transition: "color 0.12s, border-color 0.12s",
-                          lineHeight: 1.6,
-                        }}
-                      >
-                        change
-                      </button>
-                    </>
-                  ) : (
-                    <span style={{
-                      fontSize: 28, color: "#3e3c3a", fontWeight: 200, lineHeight: 1,
-                      userSelect: "none", width: "100%", textAlign: "center",
+              <div
+                key={idx}
+                onClick={() => activateSlot(idx)}
+                style={{
+                  position: "relative",
+                  width: 270, height: 78, borderRadius: 14,
+                  background: bg, border, cursor: "pointer",
+                  display: "flex", flexDirection: "row", alignItems: "center",
+                  padding: "0 16px", gap: 14,
+                  boxShadow: shadow,
+                  transition: "border-color 0.15s, box-shadow 0.15s, background 0.15s",
+                }}
+              >
+                {info ? (
+                  <>
+                    <div style={{
+                      width: 56, height: 56, borderRadius: "50%",
+                      overflow: "hidden", flexShrink: 0,
+                      border: `1px solid ${isViewing ? slotColor + "66" : "#444240"}`,
+                      background: "#1e1c1c",
+                      transition: "border-color 0.15s",
                     }}>
-                      +
+                      <img src={info.icon} alt={info.name}
+                        style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                    </div>
+                    <span style={{
+                      fontSize: 13, color: "#c8c6c6", fontWeight: 600, lineHeight: 1.3,
+                      overflow: "hidden", display: "-webkit-box",
+                      WebkitLineClamp: 2, WebkitBoxOrient: "vertical",
+                      flex: 1,
+                    }}>
+                      {info.name}
                     </span>
-                  )}
-                </div>
+                  </>
+                ) : (
+                  <span style={{
+                    fontSize: 28, color: "#3e3c3a", fontWeight: 200, lineHeight: 1,
+                    userSelect: "none", width: "100%", textAlign: "center",
+                  }}>
+                    +
+                  </span>
+                )}
               </div>
             );
           })}
@@ -357,19 +358,21 @@ export default function TalentsPage() {
 
           {viewedTree && treeDef ? (
             /* ── TREE VIEW ─────────────────────────────────────────────── */
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 18 }}>
-              <div style={{
-                fontSize: 11,
-                fontWeight: 700,
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                color: treeColor,
-                textShadow: `0 0 12px ${treeColor}66`,
-              }}>
-                {treeName}
-              </div>
-              <TalentTree tree={treeDef} iconFolder={iconFolder} godColor={treeColor} />
-            </div>
+            <TalentTree
+              tree={treeDef}
+              iconFolder={iconFolder}
+              godColor={treeColor}
+              allocated={dataName ? getProgress(dataName).points : {}}
+              coreSelected={dataName ? getProgress(dataName).core : {}}
+              onAllocate={(nodeId, delta) => {
+                if (!dataName) return;
+                const node = treeDef.nodes.find(n => `${n.position.x},${n.position.y}` === nodeId);
+                if (node) handleAllocate(dataName, nodeId, delta, node.maxPoints);
+              }}
+              onSelectCore={(tier, iconName) => dataName && handleSelectCore(dataName, tier, iconName)}
+              onReselect={() => selectSlot(active)}
+              onReset={() => dataName && handleResetTree(dataName)}
+            />
 
           ) : viewedTree && !treeDef ? (
             /* ── TREE COMING SOON ──────────────────────────────────────── */

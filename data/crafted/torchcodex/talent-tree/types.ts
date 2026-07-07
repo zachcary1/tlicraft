@@ -56,7 +56,15 @@ export interface TalentNodeData {
   iconName: string;
 }
 
+export interface CoreTalentData {
+  tier: 1 | 2;
+  name: string;
+  rawAffix: string;
+  iconName: string;
+}
+
 export interface TalentTreeData {
   name: TreeName;
   nodes: TalentNodeData[];
+  core?: CoreTalentData[];
 }
