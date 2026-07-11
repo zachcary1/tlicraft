@@ -11,7 +11,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+9% Minion Damage\n+9% damage",
         position: { x: 0, y: 0 },
         maxPoints: 3,
-        iconName: "talent_flask01",
+        iconName: "talent_dmgall",
       },
       {
         nodeType: "medium",
@@ -19,7 +19,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 0 },
         prerequisite: { x: 0, y: 0 },
         maxPoints: 3,
-        iconName: "talent_flask01",
+        iconName: "talent_dmgall",
       },
       {
         nodeType: "micro",
@@ -42,7 +42,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+9% Spirit Magus Skill Damage",
         position: { x: 5, y: 0 },
         maxPoints: 3,
-        iconName: "talent_dmgall",
+        iconName: "talent_area",
       },
       {
         nodeType: "legendary",
@@ -51,7 +51,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 0 },
         prerequisite: { x: 5, y: 0 },
         maxPoints: 1,
-        iconName: "talent_flask01",
+        iconName: "talent_area",
       },
       {
         nodeType: "micro",
@@ -73,7 +73,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+2% chance for Spirit Magi to use an Enhanced Skill",
         position: { x: 3, y: 1 },
         maxPoints: 3,
-        iconName: "talent_flask01",
+        iconName: "talent_area",
       },
       {
         nodeType: "medium",
@@ -81,14 +81,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 1 },
         prerequisite: { x: 3, y: 1 },
         maxPoints: 3,
-        iconName: "talent_flask01",
+        iconName: "talent_area",
       },
       {
         nodeType: "micro",
         rawAffix: "+4% Origin of Spirit Magus effect",
         position: { x: 5, y: 1 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_flask02",
       },
       {
         nodeType: "legendary",
@@ -97,7 +97,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 1 },
         prerequisite: { x: 5, y: 1 },
         maxPoints: 1,
-        iconName: "talent_flask01",
+        iconName: "talent_flask02",
       },
       {
         nodeType: "micro",
@@ -134,7 +134,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+9% Minion Damage\n+9% damage",
         position: { x: 5, y: 2 },
         maxPoints: 3,
-        iconName: "talent_flask01",
+        iconName: "talent_dmgall",
       },
       {
         nodeType: "legendary",
@@ -167,7 +167,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
           "+12% Spirit Magus Ultimate Damage and Ailment Damage dealt by Ultimate.",
         position: { x: 3, y: 3 },
         maxPoints: 3,
-        iconName: "talent_dmgextra",
+        iconName: "talent_dmgele",
       },
       {
         nodeType: "medium",
@@ -176,14 +176,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 3 },
         prerequisite: { x: 3, y: 3 },
         maxPoints: 3,
-        iconName: "talent_dmgextra",
+        iconName: "talent_dmgele",
       },
       {
         nodeType: "micro",
         rawAffix: "12.5% Sealed Mana Compensation for Spirit Magus Skills",
         position: { x: 5, y: 3 },
         maxPoints: 3,
-        iconName: "talent_flask02",
+        iconName: "talent_dmgele",
       },
       {
         nodeType: "legendary",
@@ -192,7 +192,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 3 },
         prerequisite: { x: 5, y: 3 },
         maxPoints: 1,
-        iconName: "talent_flask01",
+        iconName: "talent_dmgele",
       },
       {
         nodeType: "micro",
@@ -214,7 +214,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "3.75% Energy Shield Charge Speed",
         position: { x: 2, y: 4 },
         maxPoints: 3,
-        iconName: "talent_es",
+        iconName: "talent_dmgele",
       },
       {
         nodeType: "medium",
@@ -222,7 +222,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 4 },
         prerequisite: { x: 2, y: 4 },
         maxPoints: 3,
-        iconName: "talent_es",
+        iconName: "talent_dmgele",
       },
       {
         nodeType: "micro",
@@ -315,14 +315,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 0 },
         prerequisite: { x: 3, y: 1 },
         maxPoints: 1,
-        iconName: "talent_atk",
+        iconName: "talent_defence03",
       },
       {
         nodeType: "micro",
         rawAffix: "+4% Max Mana",
         position: { x: 5, y: 0 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_defence03",
       },
       {
         nodeType: "legendary",
@@ -330,7 +330,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 0 },
         prerequisite: { x: 5, y: 0 },
         maxPoints: 1,
-        iconName: "talent_dmgextra",
+        iconName: "talent_defence03",
       },
       {
         nodeType: "micro",
@@ -352,7 +352,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+4% Max Mana",
         position: { x: 3, y: 1 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_defence03",
       },
       {
         nodeType: "legendary",
@@ -360,7 +360,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 1 },
         prerequisite: { x: 3, y: 1 },
         maxPoints: 1,
-        iconName: "talent_dmgextra",
+        iconName: "talent_defence03",
       },
       {
         nodeType: "micro",
@@ -368,7 +368,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
           "+10% Focus Blessing Duration\n+10% damage while Focus Blessing is active",
         position: { x: 5, y: 1 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_crit01",
       },
       {
         nodeType: "legendary",
@@ -377,14 +377,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 1 },
         prerequisite: { x: 5, y: 1 },
         maxPoints: 1,
-        iconName: "talent_bow03",
+        iconName: "talent_crit01",
       },
       {
         nodeType: "micro",
         rawAffix: "+3% Max Energy Shield",
         position: { x: 0, y: 2 },
         maxPoints: 3,
-        iconName: "talent_es",
+        iconName: "talent_defence02",
       },
       {
         nodeType: "medium",
@@ -392,14 +392,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 2 },
         prerequisite: { x: 0, y: 2 },
         maxPoints: 3,
-        iconName: "talent_es",
+        iconName: "talent_defence02",
       },
       {
         nodeType: "micro",
         rawAffix: "1.25% Energy Shield Regain",
         position: { x: 2, y: 2 },
         maxPoints: 3,
-        iconName: "talent_es",
+        iconName: "talent_defence02",
       },
       {
         nodeType: "medium",
@@ -407,14 +407,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 2 },
         prerequisite: { x: 2, y: 2 },
         maxPoints: 3,
-        iconName: "talent_es",
+        iconName: "talent_defence02",
       },
       {
         nodeType: "micro",
         rawAffix: "+4% Max Mana",
         position: { x: 4, y: 2 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_defence03",
       },
       {
         nodeType: "medium",
@@ -422,14 +422,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 2 },
         prerequisite: { x: 4, y: 2 },
         maxPoints: 3,
-        iconName: "talent_flask02",
+        iconName: "talent_defence03",
       },
       {
         nodeType: "micro",
         rawAffix: "+15 Max Mana",
         position: { x: 1, y: 3 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_bow03",
       },
       {
         nodeType: "medium",
@@ -437,7 +437,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 2, y: 3 },
         prerequisite: { x: 1, y: 3 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_bow03",
       },
       {
         nodeType: "micro",
@@ -459,7 +459,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+8 Intelligence",
         position: { x: 5, y: 3 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_blind",
       },
       {
         nodeType: "legendary",
@@ -467,14 +467,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 3 },
         prerequisite: { x: 5, y: 3 },
         maxPoints: 1,
-        iconName: "talent_atk",
+        iconName: "talent_blind",
       },
       {
         nodeType: "micro",
         rawAffix: "+6% Max Mana",
         position: { x: 0, y: 4 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_defence03",
       },
       {
         nodeType: "medium",
@@ -482,14 +482,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 4 },
         prerequisite: { x: 0, y: 4 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_defence03",
       },
       {
         nodeType: "micro",
         rawAffix: "Regenerates 0.6% Mana per second",
         position: { x: 2, y: 4 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_flask02",
       },
       {
         nodeType: "medium",
@@ -497,7 +497,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 4 },
         prerequisite: { x: 2, y: 4 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_flask02",
       },
       {
         nodeType: "micro",
@@ -551,7 +551,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+12% Sentry Damage",
         position: { x: 0, y: 0 },
         maxPoints: 3,
-        iconName: "talent_bow01",
+        iconName: "talent_channel01",
       },
       {
         nodeType: "medium",
@@ -559,14 +559,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 0 },
         prerequisite: { x: 0, y: 0 },
         maxPoints: 3,
-        iconName: "talent_bow01",
+        iconName: "talent_channel01",
       },
       {
         nodeType: "micro",
         rawAffix: "+8% Sentry Skill Critical Strike Damage",
         position: { x: 2, y: 0 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_dagger02",
       },
       {
         nodeType: "medium",
@@ -574,14 +574,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 0 },
         prerequisite: { x: 2, y: 0 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_dagger02",
       },
       {
         nodeType: "micro",
         rawAffix: "+12% Sentry Damage",
         position: { x: 5, y: 0 },
         maxPoints: 3,
-        iconName: "talent_bow01",
+        iconName: "talent_channel01",
       },
       {
         nodeType: "legendary",
@@ -589,7 +589,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 0 },
         prerequisite: { x: 5, y: 0 },
         maxPoints: 1,
-        iconName: "talent_bow01",
+        iconName: "talent_channel01",
       },
       {
         nodeType: "micro",
@@ -611,7 +611,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+12% Sentry Damage",
         position: { x: 3, y: 1 },
         maxPoints: 3,
-        iconName: "talent_bow01",
+        iconName: "talent_channel01",
       },
       {
         nodeType: "medium",
@@ -620,7 +620,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 1 },
         prerequisite: { x: 3, y: 1 },
         maxPoints: 3,
-        iconName: "talent_bow01",
+        iconName: "talent_channel01",
       },
       {
         nodeType: "micro",
@@ -643,7 +643,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+3% Max Life",
         position: { x: 0, y: 2 },
         maxPoints: 3,
-        iconName: "talent_defence02",
+        iconName: "talent_agi",
       },
       {
         nodeType: "medium",
@@ -651,7 +651,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 2 },
         prerequisite: { x: 0, y: 2 },
         maxPoints: 3,
-        iconName: "talent_defence02",
+        iconName: "talent_agi",
       },
       {
         nodeType: "micro",
@@ -673,7 +673,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+8% Sentry Damage\n-8% additional Sentry Start Time",
         position: { x: 4, y: 2 },
         maxPoints: 3,
-        iconName: "talent_bow01",
+        iconName: "talent_agi",
       },
       {
         nodeType: "legendary",
@@ -682,14 +682,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 2 },
         prerequisite: { x: 4, y: 2 },
         maxPoints: 1,
-        iconName: "talent_bow01",
+        iconName: "talent_agi",
       },
       {
         nodeType: "micro",
         rawAffix: "+7% Barrier Shield",
         position: { x: 1, y: 3 },
         maxPoints: 3,
-        iconName: "talent_defence02",
+        iconName: "talent_flask01",
       },
       {
         nodeType: "medium",
@@ -697,7 +697,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 2, y: 3 },
         prerequisite: { x: 1, y: 3 },
         maxPoints: 3,
-        iconName: "talent_defence02",
+        iconName: "talent_flask01",
       },
       {
         nodeType: "legendary",
@@ -713,7 +713,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+7% Barrier Shield",
         position: { x: 4, y: 3 },
         maxPoints: 3,
-        iconName: "talent_defence02",
+        iconName: "talent_flask01",
       },
       {
         nodeType: "medium",
@@ -721,7 +721,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 3 },
         prerequisite: { x: 4, y: 3 },
         maxPoints: 3,
-        iconName: "talent_defence02",
+        iconName: "talent_flask01",
       },
       {
         nodeType: "legendary",
@@ -729,14 +729,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 3 },
         prerequisite: { x: 5, y: 3 },
         maxPoints: 1,
-        iconName: "talent_defence02",
+        iconName: "talent_flask01",
       },
       {
         nodeType: "micro",
         rawAffix: "+15% Sentry Skill Critical Strike Rating",
         position: { x: 0, y: 4 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_channel02",
       },
       {
         nodeType: "medium",
@@ -744,7 +744,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 4 },
         prerequisite: { x: 0, y: 4 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_channel02",
       },
       {
         nodeType: "micro",
@@ -774,7 +774,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 4 },
         prerequisite: { x: 4, y: 4 },
         maxPoints: 1,
-        iconName: "talent_defence02",
+        iconName: "talent_armor",
       },
       {
         nodeType: "legendary",
@@ -782,7 +782,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 4 },
         prerequisite: { x: 5, y: 3 },
         maxPoints: 1,
-        iconName: "talent_defence02",
+        iconName: "talent_flask01",
       },
     ],
     core: [
@@ -820,7 +820,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+9% Lightning Damage\n+9% Minion Lightning Damage",
         position: { x: 0, y: 0 },
         maxPoints: 3,
-        iconName: "talent_dmgall",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "medium",
@@ -828,7 +828,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 0 },
         prerequisite: { x: 0, y: 0 },
         maxPoints: 3,
-        iconName: "talent_dmgall",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "micro",
@@ -852,7 +852,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 0 },
         prerequisite: { x: 5, y: 1 },
         maxPoints: 1,
-        iconName: "talent_area",
+        iconName: "talent_dmgall",
       },
       {
         nodeType: "micro",
@@ -874,7 +874,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+9% Lightning Damage\n+9% Minion Lightning Damage",
         position: { x: 3, y: 1 },
         maxPoints: 3,
-        iconName: "talent_dmgall",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "legendary",
@@ -883,14 +883,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 1 },
         prerequisite: { x: 3, y: 1 },
         maxPoints: 1,
-        iconName: "talent_dmgall",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "micro",
         rawAffix: "+9% Lightning Damage",
         position: { x: 5, y: 1 },
         maxPoints: 3,
-        iconName: "talent_dmgall",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "legendary",
@@ -899,14 +899,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 1 },
         prerequisite: { x: 5, y: 1 },
         maxPoints: 1,
-        iconName: "talent_defence02",
+        iconName: "talent_dmgall",
       },
       {
         nodeType: "micro",
         rawAffix: "+3% Max Life\n+3% Max Energy Shield",
         position: { x: 0, y: 2 },
         maxPoints: 3,
-        iconName: "talent_defence02",
+        iconName: "talent_aura",
       },
       {
         nodeType: "medium",
@@ -914,14 +914,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 2 },
         prerequisite: { x: 0, y: 2 },
         maxPoints: 3,
-        iconName: "talent_defence02",
+        iconName: "talent_aura",
       },
       {
         nodeType: "micro",
         rawAffix: "+4% Lightning Resistance",
         position: { x: 2, y: 2 },
         maxPoints: 3,
-        iconName: "talent_area",
+        iconName: "talent_defence02",
       },
       {
         nodeType: "legendary",
@@ -929,7 +929,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 2 },
         prerequisite: { x: 2, y: 2 },
         maxPoints: 1,
-        iconName: "talent_dmgall",
+        iconName: "talent_defence02",
       },
       {
         nodeType: "legendary",
@@ -937,7 +937,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 2 },
         prerequisite: { x: 3, y: 3 },
         maxPoints: 1,
-        iconName: "talent_dmgall",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "legendary",
@@ -975,7 +975,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 3 },
         prerequisite: { x: 3, y: 3 },
         maxPoints: 1,
-        iconName: "talent_dmgall",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "micro",
@@ -983,7 +983,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
           "1.5% Lightning Penetration\n1.5% Lightning Penetration for Minions",
         position: { x: 5, y: 3 },
         maxPoints: 3,
-        iconName: "talent_dmgall",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "legendary",
@@ -991,7 +991,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 3 },
         prerequisite: { x: 5, y: 3 },
         maxPoints: 1,
-        iconName: "talent_crit04",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "micro",
@@ -1013,7 +1013,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+8 Dexterity",
         position: { x: 2, y: 4 },
         maxPoints: 3,
-        iconName: "talent_area",
+        iconName: "talent_armor",
       },
       {
         nodeType: "medium",
@@ -1021,7 +1021,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 4 },
         prerequisite: { x: 2, y: 4 },
         maxPoints: 3,
-        iconName: "talent_area",
+        iconName: "talent_armor",
       },
       {
         nodeType: "legendary",
@@ -1029,7 +1029,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 4 },
         prerequisite: { x: 3, y: 4 },
         maxPoints: 1,
-        iconName: "talent_area",
+        iconName: "talent_armor",
       },
       {
         nodeType: "micro",
@@ -1037,7 +1037,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
           "+2% additional Max Damage\n+2% additional Max Damage for Minions",
         position: { x: 5, y: 4 },
         maxPoints: 3,
-        iconName: "talent_dmgall",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "legendary",
@@ -1046,7 +1046,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 4 },
         prerequisite: { x: 5, y: 4 },
         maxPoints: 1,
-        iconName: "talent_dmgall",
+        iconName: "talent_dmgextra",
       },
     ],
     core: [
@@ -1084,7 +1084,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+9% Attack Damage",
         position: { x: 0, y: 0 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "medium",
@@ -1092,7 +1092,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 0 },
         prerequisite: { x: 0, y: 0 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "micro",
@@ -1114,7 +1114,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+9% Attack Damage while Dual Wielding",
         position: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_dmglightning",
       },
       {
         nodeType: "medium",
@@ -1122,7 +1122,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 0 },
         prerequisite: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_dmglightning",
       },
       {
         nodeType: "legendary",
@@ -1130,14 +1130,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 0 },
         prerequisite: { x: 5, y: 0 },
         maxPoints: 1,
-        iconName: "talent_atk",
+        iconName: "talent_dmglightning",
       },
       {
         nodeType: "micro",
         rawAffix: "+3% Attack Speed",
         position: { x: 1, y: 1 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_agi",
       },
       {
         nodeType: "medium",
@@ -1145,7 +1145,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 2, y: 1 },
         prerequisite: { x: 1, y: 1 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_agi",
       },
       {
         nodeType: "legendary",
@@ -1161,7 +1161,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 1 },
         prerequisite: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_dmglightning",
       },
       {
         nodeType: "legendary",
@@ -1170,14 +1170,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 1 },
         prerequisite: { x: 5, y: 1 },
         maxPoints: 1,
-        iconName: "talent_atk",
+        iconName: "talent_dmglightning",
       },
       {
         nodeType: "micro",
         rawAffix: "+3% Max Life\n+3% Max Energy Shield",
         position: { x: 0, y: 2 },
         maxPoints: 3,
-        iconName: "talent_es",
+        iconName: "talent_aura",
       },
       {
         nodeType: "medium",
@@ -1185,7 +1185,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 2 },
         prerequisite: { x: 0, y: 2 },
         maxPoints: 3,
-        iconName: "talent_es",
+        iconName: "talent_aura",
       },
       {
         nodeType: "micro",
@@ -1246,7 +1246,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+6% chance to Multistrike\n+6% Minion Multistrike chance",
         position: { x: 4, y: 3 },
         maxPoints: 3,
-        iconName: "talent_dmgextra",
+        iconName: "talent_atk",
       },
       {
         nodeType: "medium",
@@ -1262,14 +1262,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 3 },
         prerequisite: { x: 5, y: 3 },
         maxPoints: 1,
-        iconName: "talent_dmgextra",
+        iconName: "talent_atk",
       },
       {
         nodeType: "micro",
         rawAffix: "+3% Attack Speed",
         position: { x: 0, y: 4 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_agi",
       },
       {
         nodeType: "medium",
@@ -1277,7 +1277,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 4 },
         prerequisite: { x: 0, y: 4 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_agi",
       },
       {
         nodeType: "micro",
@@ -1299,7 +1299,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+8 Dexterity",
         position: { x: 5, y: 4 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_armor",
       },
       {
         nodeType: "legendary",
@@ -1307,7 +1307,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 4 },
         prerequisite: { x: 5, y: 4 },
         maxPoints: 1,
-        iconName: "talent_agi",
+        iconName: "talent_armor",
       },
     ],
     core: [
@@ -1375,7 +1375,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+12% damage if you have Regained in the last 8s",
         position: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_dmgall",
+        iconName: "talent_castspeed",
       },
       {
         nodeType: "medium",
@@ -1383,7 +1383,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 0 },
         prerequisite: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_dmgall",
+        iconName: "talent_castspeed",
       },
       {
         nodeType: "legendary",
@@ -1392,7 +1392,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 0 },
         prerequisite: { x: 5, y: 0 },
         maxPoints: 1,
-        iconName: "talent_atkspeed",
+        iconName: "talent_castspeed",
       },
       {
         nodeType: "micro",
@@ -1415,7 +1415,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 1 },
         prerequisite: { x: 3, y: 2 },
         maxPoints: 1,
-        iconName: "talent_area",
+        iconName: "talent_es",
       },
       {
         nodeType: "medium",
@@ -1423,7 +1423,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 1 },
         prerequisite: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_dmgall",
+        iconName: "talent_castspeed",
       },
       {
         nodeType: "legendary",
@@ -1439,7 +1439,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+3% Max Life\n+3% Max Energy Shield",
         position: { x: 0, y: 2 },
         maxPoints: 3,
-        iconName: "talent_es",
+        iconName: "talent_aura",
       },
       {
         nodeType: "medium",
@@ -1447,7 +1447,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 2 },
         prerequisite: { x: 0, y: 2 },
         maxPoints: 3,
-        iconName: "talent_es",
+        iconName: "talent_aura",
       },
       {
         nodeType: "micro",
@@ -1486,14 +1486,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 2 },
         prerequisite: { x: 5, y: 2 },
         maxPoints: 1,
-        iconName: "talent_area",
+        iconName: "talent_es",
       },
       {
         nodeType: "micro",
         rawAffix: "+3% Defense",
         position: { x: 1, y: 3 },
         maxPoints: 3,
-        iconName: "talent_area",
+        iconName: "talent_armor",
       },
       {
         nodeType: "medium",
@@ -1501,14 +1501,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 2, y: 3 },
         prerequisite: { x: 1, y: 3 },
         maxPoints: 3,
-        iconName: "talent_area",
+        iconName: "talent_armor",
       },
       {
         nodeType: "micro",
         rawAffix: "+3% Max Life",
         position: { x: 3, y: 3 },
         maxPoints: 3,
-        iconName: "talent_armor",
+        iconName: "talent_atkspeed",
       },
       {
         nodeType: "legendary",
@@ -1517,7 +1517,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 3 },
         prerequisite: { x: 3, y: 3 },
         maxPoints: 1,
-        iconName: "talent_armor",
+        iconName: "talent_atkspeed",
       },
       {
         nodeType: "micro",
@@ -1586,7 +1586,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+9% damage for Channeled Skills",
         position: { x: 0, y: 0 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_dmgall",
       },
       {
         nodeType: "medium",
@@ -1594,14 +1594,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 0 },
         prerequisite: { x: 0, y: 0 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_dmgall",
       },
       {
         nodeType: "micro",
         rawAffix: "+4% Max Mana",
         position: { x: 2, y: 0 },
         maxPoints: 3,
-        iconName: "talent_aura",
+        iconName: "talent_defence03",
       },
       {
         nodeType: "medium",
@@ -1609,14 +1609,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 0 },
         prerequisite: { x: 2, y: 0 },
         maxPoints: 3,
-        iconName: "talent_aura",
+        iconName: "talent_defence03",
       },
       {
         nodeType: "micro",
         rawAffix: "+3% Attack and Cast Speed for Channeled Skills",
         position: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_flask02",
       },
       {
         nodeType: "medium",
@@ -1624,7 +1624,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 0 },
         prerequisite: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_flask02",
       },
       {
         nodeType: "legendary",
@@ -1632,7 +1632,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 0 },
         prerequisite: { x: 5, y: 0 },
         maxPoints: 1,
-        iconName: "talent_atk",
+        iconName: "talent_flask02",
       },
       {
         nodeType: "micro",
@@ -1654,7 +1654,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+9% damage for Channeled Skills",
         position: { x: 3, y: 1 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_dmgall",
       },
       {
         nodeType: "legendary",
@@ -1671,7 +1671,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 1 },
         prerequisite: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_flask02",
       },
       {
         nodeType: "legendary",
@@ -1679,14 +1679,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 1 },
         prerequisite: { x: 5, y: 1 },
         maxPoints: 1,
-        iconName: "talent_atk",
+        iconName: "talent_flask02",
       },
       {
         nodeType: "micro",
         rawAffix: "+3% Max Life\n+3% Max Energy Shield",
         position: { x: 0, y: 2 },
         maxPoints: 3,
-        iconName: "talent_defence03",
+        iconName: "talent_aura",
       },
       {
         nodeType: "medium",
@@ -1694,14 +1694,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 2 },
         prerequisite: { x: 0, y: 2 },
         maxPoints: 3,
-        iconName: "talent_defence03",
+        iconName: "talent_aura",
       },
       {
         nodeType: "micro",
         rawAffix: "+3% chance to avoid Elemental Ailments",
         position: { x: 2, y: 2 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_dmgall",
       },
       {
         nodeType: "medium",
@@ -1709,14 +1709,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 2 },
         prerequisite: { x: 2, y: 2 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_dmgall",
       },
       {
         nodeType: "micro",
         rawAffix: "+8 Intelligence",
         position: { x: 4, y: 2 },
         maxPoints: 3,
-        iconName: "talent_aura",
+        iconName: "talent_blind",
       },
       {
         nodeType: "medium",
@@ -1724,7 +1724,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 2 },
         prerequisite: { x: 4, y: 2 },
         maxPoints: 3,
-        iconName: "talent_aura",
+        iconName: "talent_blind",
       },
       {
         nodeType: "legendary",
@@ -1755,7 +1755,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
           "Adds 2 - 2 Fire Damage to Attacks and Spells\nAdds 1 - 3 Lightning Damage to Attacks and Spells\nAdds 2 - 2 Cold Damage to Attacks and Spells",
         position: { x: 5, y: 3 },
         maxPoints: 3,
-        iconName: "talent_dmgele",
+        iconName: "talent_atk",
       },
       {
         nodeType: "legendary",
@@ -1785,7 +1785,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "Damage Penetrates 1.5% Elemental Resistance",
         position: { x: 2, y: 4 },
         maxPoints: 3,
-        iconName: "talent_dmgall",
+        iconName: "talent_dmgele",
       },
       {
         nodeType: "legendary",
@@ -1794,14 +1794,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 4 },
         prerequisite: { x: 2, y: 4 },
         maxPoints: 1,
-        iconName: "talent_dmgall",
+        iconName: "talent_dmgele",
       },
       {
         nodeType: "micro",
         rawAffix: "+2% Elemental Resistance",
         position: { x: 4, y: 4 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_dmgele",
       },
       {
         nodeType: "legendary",
@@ -1856,7 +1856,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+15% Minion Critical Strike Rating\n+6% Minion Skill Area",
         position: { x: 2, y: 0 },
         maxPoints: 3,
-        iconName: "talent_crit3",
+        iconName: "talent_crit03",
       },
       {
         nodeType: "medium",
@@ -1864,7 +1864,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 0 },
         prerequisite: { x: 2, y: 0 },
         maxPoints: 3,
-        iconName: "talent_crit3",
+        iconName: "talent_crit03",
       },
       {
         nodeType: "medium",
@@ -1872,7 +1872,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 0 },
         prerequisite: { x: 3, y: 1 },
         maxPoints: 3,
-        iconName: "talent_area",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "micro",
@@ -1928,14 +1928,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 1 },
         prerequisite: { x: 5, y: 2 },
         maxPoints: 1,
-        iconName: "talent_crit3",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "micro",
         rawAffix: "+9% damage\n+9% Minion Damage",
         position: { x: 0, y: 2 },
         maxPoints: 3,
-        iconName: "talent_dmgextra",
+        iconName: "talent_atkspeed",
       },
       {
         nodeType: "medium",
@@ -1943,14 +1943,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 2 },
         prerequisite: { x: 0, y: 2 },
         maxPoints: 3,
-        iconName: "talent_dmgextra",
+        iconName: "talent_atkspeed",
       },
       {
         nodeType: "micro",
         rawAffix: "+3% Max Life\n+3% Max Energy Shield",
         position: { x: 2, y: 2 },
         maxPoints: 3,
-        iconName: "talent_energy_shield",
+        iconName: "talent_es",
       },
       {
         nodeType: "medium",
@@ -1958,7 +1958,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 2 },
         prerequisite: { x: 2, y: 2 },
         maxPoints: 3,
-        iconName: "talent_energy_shield",
+        iconName: "talent_es",
       },
       {
         nodeType: "micro",
@@ -1973,7 +1973,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 2 },
         prerequisite: { x: 4, y: 2 },
         maxPoints: 1,
-        iconName: "talent_crit3",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "legendary",
@@ -1982,7 +1982,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 2 },
         prerequisite: { x: 5, y: 2 },
         maxPoints: 1,
-        iconName: "talent_crit3",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "micro",
@@ -1990,7 +1990,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
           "+7% Sentry Skill Area\n+10% Sentry Duration\n4.5% Sentry Projectile Speed",
         position: { x: 1, y: 3 },
         maxPoints: 3,
-        iconName: "talent_duration",
+        iconName: "talent_bow01",
       },
       {
         nodeType: "medium",
@@ -1999,7 +1999,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 2, y: 3 },
         prerequisite: { x: 1, y: 3 },
         maxPoints: 3,
-        iconName: "talent_duration",
+        iconName: "talent_bow01",
       },
       {
         nodeType: "micro",
@@ -2021,7 +2021,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+4% Sentry Skill cast frequency",
         position: { x: 5, y: 3 },
         maxPoints: 3,
-        iconName: "talent_dmgextra",
+        iconName: "talent_duration",
       },
       {
         nodeType: "medium",
@@ -2029,14 +2029,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 3 },
         prerequisite: { x: 5, y: 3 },
         maxPoints: 3,
-        iconName: "talent_dmgextra",
+        iconName: "talent_duration",
       },
       {
         nodeType: "micro",
         rawAffix: "+15% Sentry Skill Critical Strike Rating",
         position: { x: 2, y: 4 },
         maxPoints: 3,
-        iconName: "talent_crit3",
+        iconName: "talent_channel02",
       },
       {
         nodeType: "medium",
@@ -2045,14 +2045,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 4 },
         prerequisite: { x: 2, y: 4 },
         maxPoints: 3,
-        iconName: "talent_crit3",
+        iconName: "talent_channel02",
       },
       {
         nodeType: "micro",
         rawAffix: "+12% Sentry Damage",
         position: { x: 4, y: 4 },
         maxPoints: 3,
-        iconName: "talent_dmgextra",
+        iconName: "talent_atkspeed",
       },
       {
         nodeType: "medium",
@@ -2060,7 +2060,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 4 },
         prerequisite: { x: 4, y: 4 },
         maxPoints: 3,
-        iconName: "talent_dmgextra",
+        iconName: "talent_atkspeed",
       },
       {
         nodeType: "legendary",
@@ -2069,7 +2069,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 4 },
         prerequisite: { x: 5, y: 4 },
         maxPoints: 1,
-        iconName: "talent_dmgextra",
+        iconName: "talent_atkspeed",
       },
     ],
     core: [
@@ -2120,7 +2120,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
           "+10% Attack Critical Strike Rating\n+3% Critical Strike Damage",
         position: { x: 2, y: 0 },
         maxPoints: 3,
-        iconName: "talent_dmgele",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "medium",
@@ -2129,7 +2129,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 0 },
         prerequisite: { x: 2, y: 0 },
         maxPoints: 3,
-        iconName: "talent_dmgele",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "micro",
@@ -2152,7 +2152,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 0 },
         prerequisite: { x: 5, y: 0 },
         maxPoints: 1,
-        iconName: "talent_dmgextra",
+        iconName: "talent_atk",
       },
       {
         nodeType: "micro",
@@ -2174,7 +2174,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+2% Max Life\n1.25% Life Regain",
         position: { x: 4, y: 1 },
         maxPoints: 3,
-        iconName: "talent_armor",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "medium",
@@ -2182,7 +2182,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 1 },
         prerequisite: { x: 4, y: 1 },
         maxPoints: 3,
-        iconName: "talent_armor",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "micro",
@@ -2220,7 +2220,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
           "+10% Tenacity Blessing Duration\n+10% Attack Damage while Tenacity Blessing is active",
         position: { x: 4, y: 2 },
         maxPoints: 3,
-        iconName: "talent_armor",
+        iconName: "talent_dagger01",
       },
       {
         nodeType: "legendary",
@@ -2228,7 +2228,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 2 },
         prerequisite: { x: 4, y: 2 },
         maxPoints: 1,
-        iconName: "talent_dagger",
+        iconName: "talent_dagger01",
       },
       {
         nodeType: "micro",
@@ -2265,7 +2265,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "Regenerates 0.75% Life per second",
         position: { x: 5, y: 3 },
         maxPoints: 3,
-        iconName: "talent_armor",
+        iconName: "talent_flask01",
       },
       {
         nodeType: "legendary",
@@ -2274,14 +2274,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 3 },
         prerequisite: { x: 5, y: 3 },
         maxPoints: 1,
-        iconName: "talent_dagger",
+        iconName: "talent_flask01",
       },
       {
         nodeType: "micro",
         rawAffix: "+6% Skill Area\n+6% Projectile Speed",
         position: { x: 2, y: 4 },
         maxPoints: 3,
-        iconName: "talent_dagger",
+        iconName: "talent_dmgall",
       },
       {
         nodeType: "medium",
@@ -2289,7 +2289,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 4 },
         prerequisite: { x: 2, y: 4 },
         maxPoints: 3,
-        iconName: "talent_dagger",
+        iconName: "talent_dmgall",
       },
       {
         nodeType: "micro",
@@ -2304,7 +2304,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 4 },
         prerequisite: { x: 4, y: 4 },
         maxPoints: 3,
-        iconName: "talent_flask",
+        iconName: "talent_atk",
       },
       {
         nodeType: "legendary",
@@ -2313,7 +2313,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 4 },
         prerequisite: { x: 5, y: 4 },
         maxPoints: 1,
-        iconName: "talent_flask",
+        iconName: "talent_atk",
       },
     ],
     core: [
@@ -2363,7 +2363,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+3% Attack and Cast Speed",
         position: { x: 2, y: 0 },
         maxPoints: 3,
-        iconName: "talent_cast_speed",
+        iconName: "talent_castspeed",
       },
       {
         nodeType: "medium",
@@ -2371,14 +2371,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 0 },
         prerequisite: { x: 2, y: 0 },
         maxPoints: 3,
-        iconName: "talent_cast_speed",
+        iconName: "talent_castspeed",
       },
       {
         nodeType: "micro",
         rawAffix: "+9% Physical Damage",
         position: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "medium",
@@ -2386,7 +2386,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 0 },
         prerequisite: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "legendary",
@@ -2401,7 +2401,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+15% Critical Strike Rating",
         position: { x: 1, y: 1 },
         maxPoints: 3,
-        iconName: "talent_crit4",
+        iconName: "talent_crit04",
       },
       {
         nodeType: "medium",
@@ -2409,14 +2409,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 2, y: 1 },
         prerequisite: { x: 1, y: 1 },
         maxPoints: 3,
-        iconName: "talent_crit4",
+        iconName: "talent_crit04",
       },
       {
         nodeType: "micro",
         rawAffix: "+8% Critical Strike Damage",
         position: { x: 3, y: 1 },
         maxPoints: 3,
-        iconName: "talent_crit4",
+        iconName: "talent_dmgall",
       },
       {
         nodeType: "medium",
@@ -2424,7 +2424,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 1 },
         prerequisite: { x: 3, y: 1 },
         maxPoints: 3,
-        iconName: "talent_crit4",
+        iconName: "talent_dmgall",
       },
       {
         nodeType: "micro",
@@ -2446,7 +2446,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+2% Attack Block Chance\n+2% Spell Block Chance",
         position: { x: 2, y: 2 },
         maxPoints: 3,
-        iconName: "talent_accuracy",
+        iconName: "talent_atk",
       },
       {
         nodeType: "medium",
@@ -2454,7 +2454,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 2 },
         prerequisite: { x: 2, y: 2 },
         maxPoints: 3,
-        iconName: "talent_accuracy",
+        iconName: "talent_atk",
       },
       {
         nodeType: "legendary",
@@ -2463,7 +2463,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 2 },
         prerequisite: { x: 3, y: 2 },
         maxPoints: 1,
-        iconName: "talent_accuracy",
+        iconName: "talent_atk",
       },
       {
         nodeType: "micro",
@@ -2500,7 +2500,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+3% chance to inflict Trauma",
         position: { x: 3, y: 3 },
         maxPoints: 3,
-        iconName: "talent_accuracy",
+        iconName: "talent_bleed",
       },
       {
         nodeType: "legendary",
@@ -2508,14 +2508,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 3 },
         prerequisite: { x: 3, y: 3 },
         maxPoints: 1,
-        iconName: "talent_accuracy",
+        iconName: "talent_bleed",
       },
       {
         nodeType: "micro",
         rawAffix: "+3% Max Life\n+3% Max Energy Shield",
         position: { x: 2, y: 4 },
         maxPoints: 3,
-        iconName: "talent_accuracy",
+        iconName: "talent_aura",
       },
       {
         nodeType: "medium",
@@ -2523,14 +2523,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 4 },
         prerequisite: { x: 2, y: 4 },
         maxPoints: 3,
-        iconName: "talent_accuracy",
+        iconName: "talent_aura",
       },
       {
         nodeType: "micro",
         rawAffix: "+9% Physical Damage",
         position: { x: 5, y: 4 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "legendary",
@@ -2538,7 +2538,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 4 },
         prerequisite: { x: 5, y: 4 },
         maxPoints: 1,
-        iconName: "talent_atk",
+        iconName: "talent_dmgextra",
       },
     ],
     core: [
@@ -2596,7 +2596,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 0 },
         prerequisite: { x: 2, y: 0 },
         maxPoints: 1,
-        iconName: "talent_agility",
+        iconName: "talent_dmgall",
       },
       {
         nodeType: "micro",
@@ -2619,14 +2619,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 0 },
         prerequisite: { x: 5, y: 0 },
         maxPoints: 1,
-        iconName: "talent_dmgall",
+        iconName: "talent_dot",
       },
       {
         nodeType: "micro",
         rawAffix: "+2% Movement Speed\n+6% Skill Area",
         position: { x: 1, y: 1 },
         maxPoints: 3,
-        iconName: "talent_agility",
+        iconName: "talent_curse",
       },
       {
         nodeType: "medium",
@@ -2634,14 +2634,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 2, y: 1 },
         prerequisite: { x: 1, y: 1 },
         maxPoints: 3,
-        iconName: "talent_agility",
+        iconName: "talent_curse",
       },
       {
         nodeType: "micro",
         rawAffix: "+9% Damage Over Time",
         position: { x: 3, y: 1 },
         maxPoints: 3,
-        iconName: "talent_dot",
+        iconName: "talent_duration",
       },
       {
         nodeType: "medium",
@@ -2649,14 +2649,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 1 },
         prerequisite: { x: 3, y: 1 },
         maxPoints: 3,
-        iconName: "talent_dot",
+        iconName: "talent_duration",
       },
       {
         nodeType: "micro",
         rawAffix: "+5 Dexterity\n+5 Intelligence",
         position: { x: 5, y: 1 },
         maxPoints: 3,
-        iconName: "talent_agility",
+        iconName: "talent_defence02",
       },
       {
         nodeType: "medium",
@@ -2664,7 +2664,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 1 },
         prerequisite: { x: 5, y: 1 },
         maxPoints: 3,
-        iconName: "talent_agility",
+        iconName: "talent_defence02",
       },
       {
         nodeType: "micro",
@@ -2686,7 +2686,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+3% Max Life",
         position: { x: 2, y: 2 },
         maxPoints: 3,
-        iconName: "talent_defence2",
+        iconName: "talent_agi",
       },
       {
         nodeType: "medium",
@@ -2694,14 +2694,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 2 },
         prerequisite: { x: 2, y: 2 },
         maxPoints: 3,
-        iconName: "talent_defence2",
+        iconName: "talent_agi",
       },
       {
         nodeType: "micro",
         rawAffix: "+3% Max Energy Shield",
         position: { x: 4, y: 2 },
         maxPoints: 3,
-        iconName: "talent_defence2",
+        iconName: "talent_defence02",
       },
       {
         nodeType: "medium",
@@ -2709,14 +2709,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 2 },
         prerequisite: { x: 4, y: 2 },
         maxPoints: 3,
-        iconName: "talent_defence2",
+        iconName: "talent_defence02",
       },
       {
         nodeType: "micro",
         rawAffix: "+3% Attack and Cast Speed",
         position: { x: 1, y: 3 },
         maxPoints: 3,
-        iconName: "talent_cast_speed",
+        iconName: "talent_castspeed",
       },
       {
         nodeType: "medium",
@@ -2724,7 +2724,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 2, y: 3 },
         prerequisite: { x: 1, y: 3 },
         maxPoints: 3,
-        iconName: "talent_cast_speed",
+        iconName: "talent_castspeed",
       },
       {
         nodeType: "micro",
@@ -2746,7 +2746,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+4% Deterioration Chance",
         position: { x: 5, y: 3 },
         maxPoints: 3,
-        iconName: "talent_dot",
+        iconName: "talent_dmgchaos",
       },
       {
         nodeType: "legendary",
@@ -2755,14 +2755,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 3 },
         prerequisite: { x: 5, y: 3 },
         maxPoints: 1,
-        iconName: "talent_dot",
+        iconName: "talent_dmgchaos",
       },
       {
         nodeType: "micro",
         rawAffix: "+15% Critical Strike Rating",
         position: { x: 2, y: 4 },
         maxPoints: 3,
-        iconName: "talent_crit3",
+        iconName: "talent_crit03",
       },
       {
         nodeType: "medium",
@@ -2770,14 +2770,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 4 },
         prerequisite: { x: 2, y: 4 },
         maxPoints: 3,
-        iconName: "talent_crit3",
+        iconName: "talent_crit03",
       },
       {
         nodeType: "micro",
         rawAffix: "+9% Erosion Damage",
         position: { x: 5, y: 4 },
         maxPoints: 3,
-        iconName: "talent_dot",
+        iconName: "talent_dmgchaos",
       },
       {
         nodeType: "legendary",
@@ -2785,7 +2785,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 4 },
         prerequisite: { x: 5, y: 4 },
         maxPoints: 1,
-        iconName: "talent_dmgall",
+        iconName: "talent_dmgchaos",
       },
     ],
     core: [
@@ -2843,7 +2843,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 0 },
         prerequisite: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_armor",
+        iconName: "talent_atk",
       },
       {
         nodeType: "legendary",
@@ -2852,7 +2852,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 0 },
         prerequisite: { x: 5, y: 0 },
         maxPoints: 1,
-        iconName: "talent_armor",
+        iconName: "talent_atk",
       },
       {
         nodeType: "micro",
@@ -2875,7 +2875,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+8 Dexterity",
         position: { x: 3, y: 1 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_armor",
       },
       {
         nodeType: "medium",
@@ -2883,7 +2883,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 1 },
         prerequisite: { x: 3, y: 1 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_armor",
       },
       {
         nodeType: "medium",
@@ -2891,7 +2891,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 1 },
         prerequisite: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_armor",
+        iconName: "talent_atk",
       },
       {
         nodeType: "legendary",
@@ -2900,7 +2900,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 1 },
         prerequisite: { x: 5, y: 1 },
         maxPoints: 1,
-        iconName: "talent_armor",
+        iconName: "talent_atk",
       },
       {
         nodeType: "micro",
@@ -2922,7 +2922,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+6% Skill Area\n+6% Projectile Speed",
         position: { x: 2, y: 2 },
         maxPoints: 3,
-        iconName: "talent_dmgall",
+        iconName: "talent_armor",
       },
       {
         nodeType: "medium",
@@ -2930,14 +2930,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 2 },
         prerequisite: { x: 2, y: 2 },
         maxPoints: 3,
-        iconName: "talent_dmgall",
+        iconName: "talent_armor",
       },
       {
         nodeType: "micro",
         rawAffix: "1.25% Life Regain\n1.25% Energy Shield Regain",
         position: { x: 5, y: 2 },
         maxPoints: 3,
-        iconName: "talent_energy_shield",
+        iconName: "talent_es",
       },
       {
         nodeType: "medium",
@@ -2945,14 +2945,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 2 },
         prerequisite: { x: 5, y: 2 },
         maxPoints: 3,
-        iconName: "talent_energy_shield",
+        iconName: "talent_es",
       },
       {
         nodeType: "micro",
         rawAffix: "+3% Max Life\n+3% Max Energy Shield",
         position: { x: 1, y: 3 },
         maxPoints: 3,
-        iconName: "talent_energy_shield",
+        iconName: "talent_aura",
       },
       {
         nodeType: "medium",
@@ -2960,14 +2960,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 2, y: 3 },
         prerequisite: { x: 1, y: 3 },
         maxPoints: 3,
-        iconName: "talent_energy_shield",
+        iconName: "talent_aura",
       },
       {
         nodeType: "micro",
         rawAffix: "+12% damage if you have defeated an enemy recently",
         position: { x: 3, y: 3 },
         maxPoints: 3,
-        iconName: "talent_dmgall",
+        iconName: "talent_axe01",
       },
       {
         nodeType: "legendary",
@@ -2976,7 +2976,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 3 },
         prerequisite: { x: 3, y: 3 },
         maxPoints: 1,
-        iconName: "talent_evasion",
+        iconName: "talent_axe01",
       },
       {
         nodeType: "micro",
@@ -2984,7 +2984,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
           "+10% Agility Blessing Duration\n+3% Attack Speed and Cast Speed when having Agility Blessing",
         position: { x: 5, y: 3 },
         maxPoints: 3,
-        iconName: "talent_aura",
+        iconName: "talent_claw03",
       },
       {
         nodeType: "legendary",
@@ -2992,7 +2992,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 3 },
         prerequisite: { x: 5, y: 3 },
         maxPoints: 1,
-        iconName: "talent_armor",
+        iconName: "talent_claw03",
       },
       {
         nodeType: "micro",
@@ -3072,7 +3072,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+15% Spell Critical Strike Rating",
         position: { x: 2, y: 0 },
         maxPoints: 3,
-        iconName: "talent_crit1",
+        iconName: "talent_crit04",
       },
       {
         nodeType: "medium",
@@ -3081,14 +3081,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 0 },
         prerequisite: { x: 2, y: 0 },
         maxPoints: 3,
-        iconName: "talent_crit4",
+        iconName: "talent_crit04",
       },
       {
         nodeType: "micro",
         rawAffix: "+8 Intelligence",
         position: { x: 5, y: 0 },
         maxPoints: 3,
-        iconName: "talent_cast_speed",
+        iconName: "talent_blind",
       },
       {
         nodeType: "medium",
@@ -3096,14 +3096,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 0 },
         prerequisite: { x: 5, y: 0 },
         maxPoints: 3,
-        iconName: "talent_cast_speed",
+        iconName: "talent_blind",
       },
       {
         nodeType: "micro",
         rawAffix: "+3% Cast Speed\n+2% Movement Speed",
         position: { x: 1, y: 1 },
         maxPoints: 3,
-        iconName: "talent_cast_speed",
+        iconName: "talent_castspeed",
       },
       {
         nodeType: "medium",
@@ -3111,14 +3111,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 2, y: 1 },
         prerequisite: { x: 1, y: 1 },
         maxPoints: 3,
-        iconName: "talent_cast_speed",
+        iconName: "talent_castspeed",
       },
       {
         nodeType: "micro",
         rawAffix: "+4% Spell Burst Charge Speed",
         position: { x: 3, y: 1 },
         maxPoints: 3,
-        iconName: "talent_area",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "legendary",
@@ -3126,14 +3126,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 1 },
         prerequisite: { x: 3, y: 1 },
         maxPoints: 1,
-        iconName: "talent_area",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "micro",
         rawAffix: "+9% Spell Damage",
         position: { x: 5, y: 1 },
         maxPoints: 3,
-        iconName: "talent_dmgall",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "legendary",
@@ -3163,7 +3163,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+3% Max Life\n+3% Max Energy Shield",
         position: { x: 2, y: 2 },
         maxPoints: 3,
-        iconName: "talent_energy_shield",
+        iconName: "talent_aura",
       },
       {
         nodeType: "medium",
@@ -3171,14 +3171,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 2 },
         prerequisite: { x: 2, y: 2 },
         maxPoints: 3,
-        iconName: "talent_energy_shield",
+        iconName: "talent_aura",
       },
       {
         nodeType: "micro",
         rawAffix: "1.25% Life Regain\n1.25% Energy Shield Regain",
         position: { x: 4, y: 2 },
         maxPoints: 3,
-        iconName: "talent_energy_shield",
+        iconName: "talent_es",
       },
       {
         nodeType: "medium",
@@ -3186,14 +3186,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 2 },
         prerequisite: { x: 4, y: 2 },
         maxPoints: 3,
-        iconName: "talent_energy_shield",
+        iconName: "talent_es",
       },
       {
         nodeType: "micro",
         rawAffix: "+4% Max Mana",
         position: { x: 1, y: 3 },
         maxPoints: 3,
-        iconName: "talent_aura",
+        iconName: "talent_defence03",
       },
       {
         nodeType: "medium",
@@ -3201,14 +3201,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 2, y: 3 },
         prerequisite: { x: 1, y: 3 },
         maxPoints: 3,
-        iconName: "talent_aura",
+        iconName: "talent_defence03",
       },
       {
         nodeType: "micro",
         rawAffix: "+9% Tangle Damage\n+5% Tangle Duration",
         position: { x: 3, y: 3 },
         maxPoints: 3,
-        iconName: "talent_aura",
+        iconName: "talent_defence02",
       },
       {
         nodeType: "legendary",
@@ -3216,7 +3216,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 3 },
         prerequisite: { x: 3, y: 3 },
         maxPoints: 1,
-        iconName: "talent_area",
+        iconName: "talent_defence02",
       },
       {
         nodeType: "micro",
@@ -3224,7 +3224,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
           "+10% Focus Blessing Duration\n+10% damage while Focus Blessing is active",
         position: { x: 5, y: 3 },
         maxPoints: 3,
-        iconName: "talent_aura",
+        iconName: "talent_crit01",
       },
       {
         nodeType: "legendary",
@@ -3232,7 +3232,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 3 },
         prerequisite: { x: 5, y: 3 },
         maxPoints: 1,
-        iconName: "talent_aura",
+        iconName: "talent_crit01",
       },
       {
         nodeType: "micro",
@@ -3254,7 +3254,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+3% Max Energy Shield",
         position: { x: 5, y: 4 },
         maxPoints: 3,
-        iconName: "talent_energy_shield",
+        iconName: "talent_es",
       },
       {
         nodeType: "legendary",
@@ -3263,7 +3263,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 4 },
         prerequisite: { x: 5, y: 4 },
         maxPoints: 1,
-        iconName: "talent_energy_shield",
+        iconName: "talent_es",
       },
     ],
     core: [
@@ -3353,7 +3353,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 0 },
         prerequisite: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "legendary",
@@ -3361,7 +3361,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 0 },
         prerequisite: { x: 5, y: 0 },
         maxPoints: 1,
-        iconName: "talent_agi",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "micro",
@@ -3383,7 +3383,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+5 to All Stats",
         position: { x: 3, y: 1 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_dagger03",
       },
       {
         nodeType: "medium",
@@ -3391,7 +3391,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 1 },
         prerequisite: { x: 3, y: 1 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_dagger03",
       },
       {
         nodeType: "micro",
@@ -3413,7 +3413,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+3% Max Life\n+3% Max Energy Shield",
         position: { x: 0, y: 2 },
         maxPoints: 3,
-        iconName: "talent_es",
+        iconName: "talent_defence02",
       },
       {
         nodeType: "medium",
@@ -3421,7 +3421,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 2 },
         prerequisite: { x: 0, y: 2 },
         maxPoints: 3,
-        iconName: "talent_es",
+        iconName: "talent_defence02",
       },
       {
         nodeType: "micro",
@@ -3475,7 +3475,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "1.5% Blur Effect",
         position: { x: 3, y: 3 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_dmgele",
       },
       {
         nodeType: "legendary",
@@ -3484,14 +3484,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 3 },
         prerequisite: { x: 3, y: 3 },
         maxPoints: 1,
-        iconName: "talent_agi",
+        iconName: "talent_dmgele",
       },
       {
         nodeType: "micro",
         rawAffix: "+3% Max Life\n+3% Max Energy Shield",
         position: { x: 5, y: 3 },
         maxPoints: 3,
-        iconName: "talent_es",
+        iconName: "talent_defence02",
       },
       {
         nodeType: "legendary",
@@ -3500,14 +3500,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 3 },
         prerequisite: { x: 5, y: 3 },
         maxPoints: 1,
-        iconName: "talent_dmgextra",
+        iconName: "talent_defence02",
       },
       {
         nodeType: "micro",
         rawAffix: "+4% Max Mana",
         position: { x: 0, y: 4 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_area",
       },
       {
         nodeType: "medium",
@@ -3515,14 +3515,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 4 },
         prerequisite: { x: 0, y: 4 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_area",
       },
       {
         nodeType: "micro",
         rawAffix: "1.5% Sealed Mana Compensation",
         position: { x: 4, y: 4 },
         maxPoints: 3,
-        iconName: "talent_dmgextra",
+        iconName: "talent_bow01",
       },
       {
         nodeType: "medium",
@@ -3530,7 +3530,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 4 },
         prerequisite: { x: 4, y: 4 },
         maxPoints: 3,
-        iconName: "talent_dmgextra",
+        iconName: "talent_bow01",
       },
       {
         nodeType: "legendary",
@@ -3538,7 +3538,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 4 },
         prerequisite: { x: 5, y: 4 },
         maxPoints: 1,
-        iconName: "talent_dmgextra",
+        iconName: "talent_bow01",
       },
     ],
     core: [
@@ -3576,7 +3576,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+9% Minion Damage",
         position: { x: 0, y: 0 },
         maxPoints: 3,
-        iconName: "talent_flask02",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "medium",
@@ -3584,14 +3584,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 0 },
         prerequisite: { x: 0, y: 0 },
         maxPoints: 3,
-        iconName: "talent_flask02",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "micro",
         rawAffix: "+15% Minion Critical Strike Rating",
         position: { x: 2, y: 0 },
         maxPoints: 3,
-        iconName: "talent_crit02",
+        iconName: "talent_crit04",
       },
       {
         nodeType: "medium",
@@ -3607,7 +3607,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+9% Minion Damage",
         position: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_flask02",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "medium",
@@ -3616,7 +3616,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 0 },
         prerequisite: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_flask02",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "legendary",
@@ -3625,7 +3625,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 0 },
         prerequisite: { x: 5, y: 0 },
         maxPoints: 1,
-        iconName: "talent_flask02",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "micro",
@@ -3647,7 +3647,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+ 1 Command per second",
         position: { x: 4, y: 1 },
         maxPoints: 3,
-        iconName: "talent_armor",
+        iconName: "talent_dmgall",
       },
       {
         nodeType: "medium",
@@ -3655,7 +3655,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 1 },
         prerequisite: { x: 4, y: 1 },
         maxPoints: 3,
-        iconName: "talent_armor",
+        iconName: "talent_dmgall",
       },
       {
         nodeType: "legendary",
@@ -3663,7 +3663,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 1 },
         prerequisite: { x: 5, y: 1 },
         maxPoints: 1,
-        iconName: "talent_atk",
+        iconName: "talent_dmgall",
       },
       {
         nodeType: "micro",
@@ -3685,7 +3685,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+7% Minion Max Life",
         position: { x: 2, y: 2 },
         maxPoints: 3,
-        iconName: "talent_flask02",
+        iconName: "talent_defence02",
       },
       {
         nodeType: "medium",
@@ -3693,14 +3693,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 2 },
         prerequisite: { x: 2, y: 2 },
         maxPoints: 3,
-        iconName: "talent_flask02",
+        iconName: "talent_defence02",
       },
       {
         nodeType: "micro",
         rawAffix: "+3% Minion Life Regeneration Speed",
         position: { x: 4, y: 2 },
         maxPoints: 3,
-        iconName: "talent_flask02",
+        iconName: "talent_crit02",
       },
       {
         nodeType: "medium",
@@ -3708,7 +3708,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 2 },
         prerequisite: { x: 4, y: 2 },
         maxPoints: 3,
-        iconName: "talent_flask02",
+        iconName: "talent_crit02",
       },
       {
         nodeType: "micro",
@@ -3740,7 +3740,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+9% Minion Damage",
         position: { x: 4, y: 3 },
         maxPoints: 3,
-        iconName: "talent_flask02",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "legendary",
@@ -3748,14 +3748,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 3 },
         prerequisite: { x: 4, y: 3 },
         maxPoints: 1,
-        iconName: "talent_armor",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "micro",
         rawAffix: "+2% Max Life\nRegenerates 0.75% Life per second",
         position: { x: 0, y: 4 },
         maxPoints: 3,
-        iconName: "talent_defence02",
+        iconName: "talent_flask02",
       },
       {
         nodeType: "medium",
@@ -3763,14 +3763,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 4 },
         prerequisite: { x: 0, y: 4 },
         maxPoints: 3,
-        iconName: "talent_defence02",
+        iconName: "talent_flask02",
       },
       {
         nodeType: "micro",
         rawAffix: "+2% Max Energy Shield\n+2% Energy Shield Charge Speed",
         position: { x: 2, y: 4 },
         maxPoints: 3,
-        iconName: "talent_defence02",
+        iconName: "talent_armor",
       },
       {
         nodeType: "medium",
@@ -3778,7 +3778,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 4 },
         prerequisite: { x: 2, y: 4 },
         maxPoints: 3,
-        iconName: "talent_defence02",
+        iconName: "talent_armor",
       },
       {
         nodeType: "micro",
@@ -3786,7 +3786,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
           "+12% Minion Damage if a Synthetic Troop Skill has been cast recently",
         position: { x: 4, y: 4 },
         maxPoints: 3,
-        iconName: "talent_flask02",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "legendary",
@@ -3795,7 +3795,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 4 },
         prerequisite: { x: 4, y: 4 },
         maxPoints: 1,
-        iconName: "talent_flask02",
+        iconName: "talent_dmgextra",
       },
     ],
     core: [
@@ -3848,7 +3848,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+15% Spell Critical Strike Rating",
         position: { x: 2, y: 0 },
         maxPoints: 3,
-        iconName: "talent_crit01",
+        iconName: "talent_crit04",
       },
       {
         nodeType: "medium",
@@ -3864,7 +3864,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+4% Spell Burst Charge Speed",
         position: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_area",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "medium",
@@ -3872,7 +3872,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 0 },
         prerequisite: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_area",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "legendary",
@@ -3880,7 +3880,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 0 },
         prerequisite: { x: 5, y: 0 },
         maxPoints: 1,
-        iconName: "talent_area",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "micro",
@@ -3903,7 +3903,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
           "+10% Focus Blessing Duration\n+10% Spell Damage when having Focus Blessing",
         position: { x: 3, y: 1 },
         maxPoints: 3,
-        iconName: "talent_dmgextra",
+        iconName: "talent_crit01",
       },
       {
         nodeType: "legendary",
@@ -3912,7 +3912,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 1 },
         prerequisite: { x: 3, y: 1 },
         maxPoints: 1,
-        iconName: "talent_dmgextra",
+        iconName: "talent_crit01",
       },
       {
         nodeType: "micro",
@@ -3920,7 +3920,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
           "+10% Focus Blessing Duration\n+4% Cast Speed when Focus Blessing is active",
         position: { x: 5, y: 1 },
         maxPoints: 3,
-        iconName: "talent_area",
+        iconName: "talent_crit01",
       },
       {
         nodeType: "legendary",
@@ -3929,14 +3929,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 1 },
         prerequisite: { x: 5, y: 1 },
         maxPoints: 1,
-        iconName: "talent_crit04",
+        iconName: "talent_crit01",
       },
       {
         nodeType: "micro",
         rawAffix: "+4% Max Mana",
         position: { x: 0, y: 2 },
         maxPoints: 3,
-        iconName: "talent_castspeed",
+        iconName: "talent_defence03",
       },
       {
         nodeType: "medium",
@@ -3944,7 +3944,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 2 },
         prerequisite: { x: 0, y: 2 },
         maxPoints: 3,
-        iconName: "talent_castspeed",
+        iconName: "talent_defence03",
       },
       {
         nodeType: "micro",
@@ -3967,7 +3967,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+8 Intelligence",
         position: { x: 4, y: 2 },
         maxPoints: 3,
-        iconName: "talent_castspeed",
+        iconName: "talent_blind",
       },
       {
         nodeType: "legendary",
@@ -3975,14 +3975,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 2 },
         prerequisite: { x: 4, y: 2 },
         maxPoints: 1,
-        iconName: "talent_castspeed",
+        iconName: "talent_blind",
       },
       {
         nodeType: "micro",
         rawAffix: "+12% Spell Damage when holding a Shield",
         position: { x: 1, y: 3 },
         maxPoints: 3,
-        iconName: "talent_dmgextra",
+        iconName: "talent_area",
       },
       {
         nodeType: "medium",
@@ -3990,14 +3990,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 2, y: 3 },
         prerequisite: { x: 1, y: 3 },
         maxPoints: 3,
-        iconName: "talent_dmgextra",
+        iconName: "talent_area",
       },
       {
         nodeType: "micro",
         rawAffix: "1.25% Energy Shield Regain",
         position: { x: 3, y: 3 },
         maxPoints: 3,
-        iconName: "talent_es",
+        iconName: "talent_defence02",
       },
       {
         nodeType: "legendary",
@@ -4006,7 +4006,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 3 },
         prerequisite: { x: 3, y: 3 },
         maxPoints: 1,
-        iconName: "talent_es",
+        iconName: "talent_defence02",
       },
       {
         nodeType: "micro",
@@ -4021,7 +4021,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 3 },
         prerequisite: { x: 5, y: 3 },
         maxPoints: 1,
-        iconName: "talent_area",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "micro",
@@ -4043,7 +4043,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+4% Spell Block Chance",
         position: { x: 2, y: 4 },
         maxPoints: 3,
-        iconName: "talent_area",
+        iconName: "talent_blockspell",
       },
       {
         nodeType: "legendary",
@@ -4052,14 +4052,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 4 },
         prerequisite: { x: 2, y: 4 },
         maxPoints: 1,
-        iconName: "talent_es",
+        iconName: "talent_blockspell",
       },
       {
         nodeType: "micro",
         rawAffix: "+75 Max Energy Shield",
         position: { x: 4, y: 4 },
         maxPoints: 3,
-        iconName: "talent_es",
+        iconName: "talent_defence02",
       },
       {
         nodeType: "legendary",
@@ -4067,7 +4067,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 4 },
         prerequisite: { x: 4, y: 4 },
         maxPoints: 1,
-        iconName: "talent_es",
+        iconName: "talent_defence02",
       },
       {
         nodeType: "legendary",
@@ -4076,7 +4076,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 4 },
         prerequisite: { x: 5, y: 4 },
         maxPoints: 1,
-        iconName: "talent_es",
+        iconName: "talent_defence02",
       },
     ],
     core: [
@@ -4114,7 +4114,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+9% Projectile Damage",
         position: { x: 0, y: 0 },
         maxPoints: 3,
-        iconName: "talent_area",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "medium",
@@ -4122,14 +4122,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 0 },
         prerequisite: { x: 0, y: 0 },
         maxPoints: 3,
-        iconName: "talent_area",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "micro",
         rawAffix: "4.5% Projectile Damage\n+3% Projectile Speed",
         position: { x: 2, y: 0 },
         maxPoints: 3,
-        iconName: "talent_area",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "medium",
@@ -4137,7 +4137,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 0 },
         prerequisite: { x: 2, y: 0 },
         maxPoints: 3,
-        iconName: "talent_area",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "legendary",
@@ -4146,7 +4146,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 0 },
         prerequisite: { x: 3, y: 0 },
         maxPoints: 1,
-        iconName: "talent_area",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "legendary",
@@ -4154,7 +4154,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 0 },
         prerequisite: { x: 5, y: 1 },
         maxPoints: 1,
-        iconName: "talent_area",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "micro",
@@ -4177,7 +4177,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 1 },
         prerequisite: { x: 2, y: 0 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "legendary",
@@ -4185,14 +4185,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 1 },
         prerequisite: { x: 3, y: 1 },
         maxPoints: 1,
-        iconName: "talent_area",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "micro",
         rawAffix: "+9% Projectile Damage",
         position: { x: 5, y: 1 },
         maxPoints: 3,
-        iconName: "talent_area",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "legendary",
@@ -4200,14 +4200,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 1 },
         prerequisite: { x: 5, y: 1 },
         maxPoints: 1,
-        iconName: "talent_agi",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "micro",
         rawAffix: "+3% Max Life",
         position: { x: 0, y: 2 },
         maxPoints: 3,
-        iconName: "talent_armor",
+        iconName: "talent_atkspeed",
       },
       {
         nodeType: "medium",
@@ -4215,14 +4215,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 2 },
         prerequisite: { x: 0, y: 2 },
         maxPoints: 3,
-        iconName: "talent_armor",
+        iconName: "talent_atkspeed",
       },
       {
         nodeType: "micro",
         rawAffix: "+15% Projectile Critical Strike Rating",
         position: { x: 2, y: 2 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_es",
       },
       {
         nodeType: "medium",
@@ -4230,14 +4230,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 2 },
         prerequisite: { x: 2, y: 2 },
         maxPoints: 3,
-        iconName: "talent_dmgextra",
+        iconName: "talent_es",
       },
       {
         nodeType: "micro",
         rawAffix: "+8 Dexterity",
         position: { x: 4, y: 2 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_armor",
       },
       {
         nodeType: "legendary",
@@ -4245,7 +4245,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 2 },
         prerequisite: { x: 4, y: 2 },
         maxPoints: 1,
-        iconName: "talent_evasion",
+        iconName: "talent_armor",
       },
       {
         nodeType: "legendary",
@@ -4253,7 +4253,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 2 },
         prerequisite: { x: 5, y: 1 },
         maxPoints: 1,
-        iconName: "talent_area",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "micro",
@@ -4291,7 +4291,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
           "+10% Agility Blessing Duration\n+7% Evasion while Agility Blessing is active",
         position: { x: 5, y: 3 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_area",
       },
       {
         nodeType: "legendary",
@@ -4299,7 +4299,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 3 },
         prerequisite: { x: 5, y: 3 },
         maxPoints: 1,
-        iconName: "talent_evasion",
+        iconName: "talent_area",
       },
       {
         nodeType: "micro",
@@ -4321,7 +4321,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "1.5% chance to avoid damage",
         position: { x: 2, y: 4 },
         maxPoints: 3,
-        iconName: "talent_dmgextra",
+        iconName: "talent_defence01",
       },
       {
         nodeType: "medium",
@@ -4329,14 +4329,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 4 },
         prerequisite: { x: 2, y: 4 },
         maxPoints: 3,
-        iconName: "talent_dmgextra",
+        iconName: "talent_defence01",
       },
       {
         nodeType: "micro",
         rawAffix: "+7% Evasion",
         position: { x: 5, y: 4 },
         maxPoints: 3,
-        iconName: "talent_evasion",
+        iconName: "talent_agi",
       },
       {
         nodeType: "legendary",
@@ -4344,7 +4344,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 4 },
         prerequisite: { x: 5, y: 4 },
         maxPoints: 1,
-        iconName: "talent_dmgextra",
+        iconName: "talent_agi",
       },
     ],
     core: [
@@ -4382,7 +4382,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+9% Attack Damage",
         position: { x: 0, y: 0 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "medium",
@@ -4390,14 +4390,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 0 },
         prerequisite: { x: 0, y: 0 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "micro",
         rawAffix: "+15% Attack Critical Strike Rating",
         position: { x: 2, y: 0 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_atk",
       },
       {
         nodeType: "medium",
@@ -4406,14 +4406,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 0 },
         prerequisite: { x: 2, y: 0 },
         maxPoints: 3,
-        iconName: "talent_dmgextra",
+        iconName: "talent_atk",
       },
       {
         nodeType: "micro",
         rawAffix: "+12% Attack Damage when holding a Two-Handed Weapon",
         position: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_atkspeed",
       },
       {
         nodeType: "medium",
@@ -4421,7 +4421,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 0 },
         prerequisite: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_dmgextra",
+        iconName: "talent_atkspeed",
       },
       {
         nodeType: "legendary",
@@ -4429,14 +4429,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 0 },
         prerequisite: { x: 5, y: 0 },
         maxPoints: 1,
-        iconName: "talent_dmgextra",
+        iconName: "talent_atkspeed",
       },
       {
         nodeType: "micro",
         rawAffix: "+18% Attack Damage\n-4% Attack Speed",
         position: { x: 1, y: 1 },
         maxPoints: 3,
-        iconName: "talent_atkspeed",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "medium",
@@ -4444,7 +4444,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 2, y: 1 },
         prerequisite: { x: 1, y: 1 },
         maxPoints: 3,
-        iconName: "talent_atkspeed",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "medium",
@@ -4453,7 +4453,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 1 },
         prerequisite: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_atkspeed",
       },
       {
         nodeType: "legendary",
@@ -4462,14 +4462,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 1 },
         prerequisite: { x: 5, y: 1 },
         maxPoints: 1,
-        iconName: "talent_agi",
+        iconName: "talent_atkspeed",
       },
       {
         nodeType: "micro",
         rawAffix: "+3% Max Life",
         position: { x: 0, y: 2 },
         maxPoints: 3,
-        iconName: "talent_defence02",
+        iconName: "talent_agi",
       },
       {
         nodeType: "medium",
@@ -4477,14 +4477,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 2 },
         prerequisite: { x: 0, y: 2 },
         maxPoints: 3,
-        iconName: "talent_defence02",
+        iconName: "talent_agi",
       },
       {
         nodeType: "micro",
         rawAffix: "+3% Defense",
         position: { x: 2, y: 2 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_armor",
       },
       {
         nodeType: "medium",
@@ -4492,14 +4492,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 2 },
         prerequisite: { x: 2, y: 2 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_armor",
       },
       {
         nodeType: "micro",
         rawAffix: "-4% additional Physical Damage taken",
         position: { x: 4, y: 2 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "legendary",
@@ -4530,7 +4530,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
           "+10% Tenacity Blessing Duration\n+10% Attack Damage while Tenacity Blessing is active",
         position: { x: 3, y: 3 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_dagger01",
       },
       {
         nodeType: "legendary",
@@ -4546,7 +4546,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+4% Strength",
         position: { x: 5, y: 3 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "legendary",
@@ -4554,14 +4554,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 3 },
         prerequisite: { x: 5, y: 3 },
         maxPoints: 1,
-        iconName: "talent_atk",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "micro",
         rawAffix: "+9% Area Damage",
         position: { x: 0, y: 4 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "medium",
@@ -4569,14 +4569,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 4 },
         prerequisite: { x: 0, y: 4 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "micro",
         rawAffix: "+6% Skill Area",
         position: { x: 2, y: 4 },
         maxPoints: 3,
-        iconName: "talent_dagger01",
+        iconName: "talent_dagger03",
       },
       {
         nodeType: "medium",
@@ -4584,14 +4584,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 4 },
         prerequisite: { x: 2, y: 4 },
         maxPoints: 3,
-        iconName: "talent_dagger01",
+        iconName: "talent_dagger03",
       },
       {
         nodeType: "micro",
         rawAffix: "+9% Area Damage",
         position: { x: 4, y: 4 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "legendary",
@@ -4599,7 +4599,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 4 },
         prerequisite: { x: 4, y: 4 },
         maxPoints: 1,
-        iconName: "talent_dagger01",
+        iconName: "talent_dmgextra",
       },
     ],
     core: [
@@ -4637,7 +4637,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+9% Cold Damage",
         position: { x: 0, y: 0 },
         maxPoints: 3,
-        iconName: "talent_dmgcold",
+        iconName: "talent_claw02",
       },
       {
         nodeType: "medium",
@@ -4645,7 +4645,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 0 },
         prerequisite: { x: 0, y: 0 },
         maxPoints: 3,
-        iconName: "talent_dmgcold",
+        iconName: "talent_claw02",
       },
       {
         nodeType: "micro",
@@ -4669,7 +4669,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+2 to Max Frostbite Rating",
         position: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_bow02",
       },
       {
         nodeType: "medium",
@@ -4677,7 +4677,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 0 },
         prerequisite: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_bow02",
       },
       {
         nodeType: "legendary",
@@ -4685,7 +4685,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 0 },
         prerequisite: { x: 5, y: 0 },
         maxPoints: 1,
-        iconName: "talent_dmgextra",
+        iconName: "talent_bow02",
       },
       {
         nodeType: "micro",
@@ -4708,14 +4708,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 1 },
         prerequisite: { x: 2, y: 1 },
         maxPoints: 1,
-        iconName: "talent_dmgcold",
+        iconName: "talent_atk",
       },
       {
         nodeType: "micro",
         rawAffix: "+4% Frostbite Effect",
         position: { x: 4, y: 1 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "medium",
@@ -4723,7 +4723,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 1 },
         prerequisite: { x: 4, y: 1 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "legendary",
@@ -4731,14 +4731,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 1 },
         prerequisite: { x: 5, y: 1 },
         maxPoints: 1,
-        iconName: "talent_atk",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "micro",
         rawAffix: "+3% Max Life\n+3% Max Energy Shield",
         position: { x: 0, y: 2 },
         maxPoints: 3,
-        iconName: "talent_es",
+        iconName: "talent_aura",
       },
       {
         nodeType: "medium",
@@ -4746,14 +4746,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 2 },
         prerequisite: { x: 0, y: 2 },
         maxPoints: 3,
-        iconName: "talent_es",
+        iconName: "talent_aura",
       },
       {
         nodeType: "micro",
         rawAffix: "+4% Cold Resistance",
         position: { x: 2, y: 2 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_dual03",
       },
       {
         nodeType: "legendary",
@@ -4762,14 +4762,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 2 },
         prerequisite: { x: 2, y: 2 },
         maxPoints: 1,
-        iconName: "talent_dmgcold",
+        iconName: "talent_dual03",
       },
       {
         nodeType: "micro",
         rawAffix: "+8 Intelligence",
         position: { x: 4, y: 2 },
         maxPoints: 3,
-        iconName: "talent_aura",
+        iconName: "talent_blind",
       },
       {
         nodeType: "medium",
@@ -4777,14 +4777,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 2 },
         prerequisite: { x: 4, y: 2 },
         maxPoints: 3,
-        iconName: "talent_aura",
+        iconName: "talent_blind",
       },
       {
         nodeType: "micro",
         rawAffix: "+4% Max Mana",
         position: { x: 1, y: 3 },
         maxPoints: 3,
-        iconName: "talent_aura",
+        iconName: "talent_defence03",
       },
       {
         nodeType: "medium",
@@ -4792,14 +4792,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 2, y: 3 },
         prerequisite: { x: 1, y: 3 },
         maxPoints: 3,
-        iconName: "talent_aura",
+        iconName: "talent_defence03",
       },
       {
         nodeType: "micro",
         rawAffix: "1.25% Life Regain\n1.25% Energy Shield Regain",
         position: { x: 3, y: 3 },
         maxPoints: 3,
-        iconName: "talent_es",
+        iconName: "talent_defence02",
       },
       {
         nodeType: "medium",
@@ -4807,7 +4807,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 3 },
         prerequisite: { x: 3, y: 3 },
         maxPoints: 3,
-        iconName: "talent_es",
+        iconName: "talent_defence02",
       },
       {
         nodeType: "micro",
@@ -4815,7 +4815,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
           "+10% Focus Blessing Duration\n+10% damage while Focus Blessing is active",
         position: { x: 5, y: 3 },
         maxPoints: 3,
-        iconName: "talent_aura",
+        iconName: "talent_crit01",
       },
       {
         nodeType: "legendary",
@@ -4824,7 +4824,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 3 },
         prerequisite: { x: 5, y: 3 },
         maxPoints: 1,
-        iconName: "talent_aura",
+        iconName: "talent_crit01",
       },
       {
         nodeType: "micro",
@@ -4846,7 +4846,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "1.5% Cold Penetration\n1.5% Cold Penetration for Minions",
         position: { x: 3, y: 4 },
         maxPoints: 3,
-        iconName: "talent_dmgextra",
+        iconName: "talent_es",
       },
       {
         nodeType: "legendary",
@@ -4855,7 +4855,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 4 },
         prerequisite: { x: 3, y: 4 },
         maxPoints: 1,
-        iconName: "talent_dmgextra",
+        iconName: "talent_es",
       },
       {
         nodeType: "micro",
@@ -4909,7 +4909,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+9% Damage Over Time",
         position: { x: 0, y: 0 },
         maxPoints: 3,
-        iconName: "talent_dmgextra",
+        iconName: "talent_duration",
       },
       {
         nodeType: "medium",
@@ -4917,14 +4917,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 0 },
         prerequisite: { x: 0, y: 0 },
         maxPoints: 3,
-        iconName: "talent_dmgextra",
+        iconName: "talent_duration",
       },
       {
         nodeType: "micro",
         rawAffix: "+9% Damage Over Time",
         position: { x: 2, y: 0 },
         maxPoints: 3,
-        iconName: "talent_dmgextra",
+        iconName: "talent_duration",
       },
       {
         nodeType: "legendary",
@@ -4933,14 +4933,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 0 },
         prerequisite: { x: 2, y: 0 },
         maxPoints: 1,
-        iconName: "talent_curse",
+        iconName: "talent_duration",
       },
       {
         nodeType: "micro",
         rawAffix: "+6% Reaping Recovery Speed",
         position: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_curse",
       },
       {
         nodeType: "medium",
@@ -4948,7 +4948,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 0 },
         prerequisite: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_curse",
       },
       {
         nodeType: "legendary",
@@ -4956,7 +4956,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 0 },
         prerequisite: { x: 5, y: 0 },
         maxPoints: 1,
-        iconName: "talent_dmgextra",
+        iconName: "talent_curse",
       },
       {
         nodeType: "micro",
@@ -4978,7 +4978,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+6 Affliction inflicted per second\n+6% Affliction Effect",
         position: { x: 3, y: 1 },
         maxPoints: 3,
-        iconName: "talent_curse",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "legendary",
@@ -4987,7 +4987,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 1 },
         prerequisite: { x: 3, y: 1 },
         maxPoints: 1,
-        iconName: "talent_curse",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "medium",
@@ -4995,7 +4995,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 1 },
         prerequisite: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_duration",
+        iconName: "talent_curse",
       },
       {
         nodeType: "legendary",
@@ -5004,7 +5004,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 1 },
         prerequisite: { x: 5, y: 1 },
         maxPoints: 1,
-        iconName: "talent_defence02",
+        iconName: "talent_curse",
       },
       {
         nodeType: "micro",
@@ -5026,7 +5026,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+3% Max Life",
         position: { x: 2, y: 2 },
         maxPoints: 3,
-        iconName: "talent_defence02",
+        iconName: "talent_agi",
       },
       {
         nodeType: "medium",
@@ -5034,14 +5034,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 2 },
         prerequisite: { x: 2, y: 2 },
         maxPoints: 3,
-        iconName: "talent_defence02",
+        iconName: "talent_agi",
       },
       {
         nodeType: "micro",
         rawAffix: "1.5% Blur Effect",
         position: { x: 5, y: 2 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_dmgele",
       },
       {
         nodeType: "legendary",
@@ -5049,14 +5049,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 2 },
         prerequisite: { x: 5, y: 2 },
         maxPoints: 1,
-        iconName: "talent_agi",
+        iconName: "talent_dmgele",
       },
       {
         nodeType: "micro",
         rawAffix: "+3% Defense",
         position: { x: 1, y: 3 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_area",
       },
       {
         nodeType: "medium",
@@ -5064,14 +5064,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 2, y: 3 },
         prerequisite: { x: 1, y: 3 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_area",
       },
       {
         nodeType: "micro",
         rawAffix: "+6% Reaping Duration",
         position: { x: 3, y: 3 },
         maxPoints: 3,
-        iconName: "talent_duration",
+        iconName: "talent_curse",
       },
       {
         nodeType: "medium",
@@ -5079,7 +5079,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 3 },
         prerequisite: { x: 3, y: 3 },
         maxPoints: 3,
-        iconName: "talent_duration",
+        iconName: "talent_curse",
       },
       {
         nodeType: "legendary",
@@ -5087,7 +5087,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 3 },
         prerequisite: { x: 4, y: 3 },
         maxPoints: 1,
-        iconName: "talent_agi",
+        iconName: "talent_curse",
       },
       {
         nodeType: "micro",
@@ -5178,7 +5178,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+15% Critical Strike Rating",
         position: { x: 0, y: 0 },
         maxPoints: 3,
-        iconName: "talent_crit01",
+        iconName: "talent_crit02",
       },
       {
         nodeType: "medium",
@@ -5186,7 +5186,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 0 },
         prerequisite: { x: 0, y: 0 },
         maxPoints: 3,
-        iconName: "talent_crit01",
+        iconName: "talent_crit02",
       },
       {
         nodeType: "micro",
@@ -5208,7 +5208,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+4% Fervor effect",
         position: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_channel01",
       },
       {
         nodeType: "legendary",
@@ -5216,7 +5216,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 0 },
         prerequisite: { x: 4, y: 0 },
         maxPoints: 1,
-        iconName: "talent_crit01",
+        iconName: "talent_channel01",
       },
       {
         nodeType: "legendary",
@@ -5272,7 +5272,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 1 },
         prerequisite: { x: 5, y: 1 },
         maxPoints: 1,
-        iconName: "talent_crit01",
+        iconName: "talent_defence02",
       },
       {
         nodeType: "micro",
@@ -5309,7 +5309,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+15% Critical Strike Rating",
         position: { x: 4, y: 2 },
         maxPoints: 3,
-        iconName: "talent_crit01",
+        iconName: "talent_crit02",
       },
       {
         nodeType: "legendary",
@@ -5318,7 +5318,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 2 },
         prerequisite: { x: 4, y: 2 },
         maxPoints: 1,
-        iconName: "talent_crit01",
+        iconName: "talent_crit02",
       },
       {
         nodeType: "medium",
@@ -5326,14 +5326,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 3 },
         prerequisite: { x: 0, y: 4 },
         maxPoints: 3,
-        iconName: "talent_dmgall",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "micro",
         rawAffix: "+15% Critical Strike Rating",
         position: { x: 2, y: 3 },
         maxPoints: 3,
-        iconName: "talent_crit01",
+        iconName: "talent_crit02",
       },
       {
         nodeType: "legendary",
@@ -5341,14 +5341,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 3 },
         prerequisite: { x: 2, y: 3 },
         maxPoints: 1,
-        iconName: "talent_crit01",
+        iconName: "talent_crit02",
       },
       {
         nodeType: "micro",
         rawAffix: "+9% Melee Damage",
         position: { x: 4, y: 3 },
         maxPoints: 3,
-        iconName: "talent_dmgall",
+        iconName: "talent_flask01",
       },
       {
         nodeType: "medium",
@@ -5356,7 +5356,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 3 },
         prerequisite: { x: 4, y: 3 },
         maxPoints: 3,
-        iconName: "talent_dmgall",
+        iconName: "talent_flask01",
       },
       {
         nodeType: "legendary",
@@ -5364,14 +5364,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 3 },
         prerequisite: { x: 5, y: 3 },
         maxPoints: 1,
-        iconName: "talent_dmgall",
+        iconName: "talent_flask01",
       },
       {
         nodeType: "micro",
         rawAffix: "+9% damage",
         position: { x: 0, y: 4 },
         maxPoints: 3,
-        iconName: "talent_dmgall",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "medium",
@@ -5379,7 +5379,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 4 },
         prerequisite: { x: 0, y: 4 },
         maxPoints: 3,
-        iconName: "talent_dmgall",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "micro",
@@ -5401,7 +5401,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+10% Knockback Chance",
         position: { x: 4, y: 4 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_dual01",
       },
       {
         nodeType: "medium",
@@ -5409,7 +5409,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 4 },
         prerequisite: { x: 4, y: 4 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_dual01",
       },
       {
         nodeType: "legendary",
@@ -5418,7 +5418,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 4 },
         prerequisite: { x: 5, y: 4 },
         maxPoints: 1,
-        iconName: "talent_dmgall",
+        iconName: "talent_dual01",
       },
     ],
     core: [
@@ -5456,7 +5456,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+9% Melee Damage",
         position: { x: 0, y: 0 },
         maxPoints: 3,
-        iconName: "talent_dmgall",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "medium",
@@ -5464,7 +5464,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 0 },
         prerequisite: { x: 0, y: 0 },
         maxPoints: 3,
-        iconName: "talent_dmgall",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "micro",
@@ -5486,7 +5486,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+6% Attack Speed\n-6% Melee Damage",
         position: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_atkspeed",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "legendary",
@@ -5494,7 +5494,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 0 },
         prerequisite: { x: 4, y: 0 },
         maxPoints: 1,
-        iconName: "talent_accuracy",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "legendary",
@@ -5502,7 +5502,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 0 },
         prerequisite: { x: 5, y: 1 },
         maxPoints: 1,
-        iconName: "talent_accuracy",
+        iconName: "talent_dmgall",
       },
       {
         nodeType: "micro",
@@ -5524,7 +5524,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+6 Strength\n+6 Dexterity",
         position: { x: 3, y: 1 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_crossbow02",
       },
       {
         nodeType: "medium",
@@ -5532,7 +5532,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 1 },
         prerequisite: { x: 3, y: 1 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_crossbow02",
       },
       {
         nodeType: "micro",
@@ -5547,14 +5547,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 1 },
         prerequisite: { x: 5, y: 1 },
         maxPoints: 1,
-        iconName: "talent_accuracy",
+        iconName: "talent_dmgall",
       },
       {
         nodeType: "micro",
         rawAffix: "+3% Max Life\n+3% Max Energy Shield",
         position: { x: 0, y: 2 },
         maxPoints: 3,
-        iconName: "talent_accuracy",
+        iconName: "talent_aura",
       },
       {
         nodeType: "medium",
@@ -5562,14 +5562,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 2 },
         prerequisite: { x: 0, y: 2 },
         maxPoints: 3,
-        iconName: "talent_accuracy",
+        iconName: "talent_aura",
       },
       {
         nodeType: "micro",
         rawAffix: "+2% Attack Block Chance\n+2% Spell Block Chance",
         position: { x: 2, y: 2 },
         maxPoints: 3,
-        iconName: "talent_accuracy",
+        iconName: "talent_atk",
       },
       {
         nodeType: "medium",
@@ -5577,14 +5577,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 2 },
         prerequisite: { x: 2, y: 2 },
         maxPoints: 3,
-        iconName: "talent_accuracy",
+        iconName: "talent_atk",
       },
       {
         nodeType: "micro",
         rawAffix: "+18% Melee Damage\n-4% Attack Speed",
         position: { x: 4, y: 2 },
         maxPoints: 3,
-        iconName: "talent_atkspeed",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "legendary",
@@ -5593,7 +5593,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 2 },
         prerequisite: { x: 4, y: 2 },
         maxPoints: 1,
-        iconName: "talent_dmgall",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "legendary",
@@ -5601,7 +5601,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 2 },
         prerequisite: { x: 5, y: 1 },
         maxPoints: 1,
-        iconName: "talent_accuracy",
+        iconName: "talent_dmgall",
       },
       {
         nodeType: "micro",
@@ -5638,7 +5638,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+9% Attack Damage",
         position: { x: 0, y: 4 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "medium",
@@ -5646,14 +5646,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 4 },
         prerequisite: { x: 0, y: 4 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "micro",
         rawAffix: "+4% Fervor effect",
         position: { x: 4, y: 4 },
         maxPoints: 3,
-        iconName: "talent_accuracy",
+        iconName: "talent_channel01",
       },
       {
         nodeType: "medium",
@@ -5661,7 +5661,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 4 },
         prerequisite: { x: 4, y: 4 },
         maxPoints: 3,
-        iconName: "talent_accuracy",
+        iconName: "talent_channel01",
       },
       {
         nodeType: "legendary",
@@ -5669,7 +5669,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 4 },
         prerequisite: { x: 5, y: 4 },
         maxPoints: 1,
-        iconName: "talent_accuracy",
+        iconName: "talent_channel01",
       },
     ],
     core: [
@@ -5737,7 +5737,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+2% Attack Block Chance\n+2% Spell Block Chance",
         position: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_accuracy",
+        iconName: "talent_atk",
       },
       {
         nodeType: "legendary",
@@ -5746,7 +5746,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 0 },
         prerequisite: { x: 4, y: 0 },
         maxPoints: 1,
-        iconName: "talent_accuracy",
+        iconName: "talent_atk",
       },
       {
         nodeType: "micro",
@@ -5768,7 +5768,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+12% damage dealt when holding a Shield",
         position: { x: 3, y: 1 },
         maxPoints: 3,
-        iconName: "talent_dmgextra",
+        iconName: "talent_crit04",
       },
       {
         nodeType: "medium",
@@ -5777,7 +5777,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 1 },
         prerequisite: { x: 3, y: 1 },
         maxPoints: 3,
-        iconName: "talent_castspeed",
+        iconName: "talent_crit04",
       },
       {
         nodeType: "micro",
@@ -5815,7 +5815,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "1.25% Life Regain\n1.25% Energy Shield Regain",
         position: { x: 2, y: 2 },
         maxPoints: 3,
-        iconName: "talent_defence02",
+        iconName: "talent_accuracy",
       },
       {
         nodeType: "legendary",
@@ -5824,7 +5824,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 2 },
         prerequisite: { x: 2, y: 2 },
         maxPoints: 1,
-        iconName: "talent_defence02",
+        iconName: "talent_accuracy",
       },
       {
         nodeType: "micro",
@@ -5846,7 +5846,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+4% Spell Block Chance",
         position: { x: 1, y: 3 },
         maxPoints: 3,
-        iconName: "talent_accuracy",
+        iconName: "talent_blockspell",
       },
       {
         nodeType: "medium",
@@ -5854,7 +5854,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 2, y: 3 },
         prerequisite: { x: 1, y: 3 },
         maxPoints: 3,
-        iconName: "talent_accuracy",
+        iconName: "talent_blockspell",
       },
       {
         nodeType: "legendary",
@@ -5863,14 +5863,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 3 },
         prerequisite: { x: 2, y: 2 },
         maxPoints: 1,
-        iconName: "talent_defence02",
+        iconName: "talent_accuracy",
       },
       {
         nodeType: "micro",
         rawAffix: "+2% Attack Block Chance\n+2% Spell Block Chance",
         position: { x: 5, y: 3 },
         maxPoints: 3,
-        iconName: "talent_accuracy",
+        iconName: "talent_atk",
       },
       {
         nodeType: "legendary",
@@ -5879,14 +5879,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 3 },
         prerequisite: { x: 5, y: 3 },
         maxPoints: 1,
-        iconName: "talent_dmgextra",
+        iconName: "talent_atk",
       },
       {
         nodeType: "micro",
         rawAffix: "+2% Attack Block Chance\n+6% damage",
         position: { x: 0, y: 4 },
         maxPoints: 3,
-        iconName: "talent_dmgextra",
+        iconName: "talent_atk",
       },
       {
         nodeType: "medium",
@@ -5894,14 +5894,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 4 },
         prerequisite: { x: 0, y: 4 },
         maxPoints: 3,
-        iconName: "talent_dmgextra",
+        iconName: "talent_atk",
       },
       {
         nodeType: "micro",
         rawAffix: "+3% Defense",
         position: { x: 2, y: 4 },
         maxPoints: 3,
-        iconName: "talent_accuracy",
+        iconName: "talent_armor",
       },
       {
         nodeType: "legendary",
@@ -5909,14 +5909,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 4 },
         prerequisite: { x: 2, y: 4 },
         maxPoints: 1,
-        iconName: "talent_dmgextra",
+        iconName: "talent_armor",
       },
       {
         nodeType: "micro",
         rawAffix: "+4% Defense when holding a Shield",
         position: { x: 4, y: 4 },
         maxPoints: 3,
-        iconName: "talent_accuracy",
+        iconName: "talent_evasion",
       },
       {
         nodeType: "legendary",
@@ -5962,7 +5962,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+9% Physical Damage\n+9% Physical Damage for Minions",
         position: { x: 0, y: 0 },
         maxPoints: 3,
-        iconName: "talent_dmgall",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "medium",
@@ -5970,7 +5970,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 0 },
         prerequisite: { x: 0, y: 0 },
         maxPoints: 3,
-        iconName: "talent_dmgall",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "micro",
@@ -5994,7 +5994,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+9% Physical Damage\n+9% Physical Damage for Minions",
         position: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_dmgall",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "medium",
@@ -6003,7 +6003,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 0 },
         prerequisite: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_dmgall",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "legendary",
@@ -6020,7 +6020,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
           "+3% chance to inflict Trauma\n+6% chance for Minions to inflict Trauma",
         position: { x: 1, y: 1 },
         maxPoints: 3,
-        iconName: "talent_area",
+        iconName: "talent_bleed",
       },
       {
         nodeType: "medium",
@@ -6029,7 +6029,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 2, y: 1 },
         prerequisite: { x: 1, y: 1 },
         maxPoints: 3,
-        iconName: "talent_area",
+        iconName: "talent_bleed",
       },
       {
         nodeType: "micro",
@@ -6052,7 +6052,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+9% Physical Damage\n+9% Physical Damage for Minions",
         position: { x: 5, y: 1 },
         maxPoints: 3,
-        iconName: "talent_dmgall",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "legendary",
@@ -6061,14 +6061,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 1 },
         prerequisite: { x: 5, y: 1 },
         maxPoints: 1,
-        iconName: "talent_dmgall",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "micro",
         rawAffix: "+3% Max Life",
         position: { x: 0, y: 2 },
         maxPoints: 3,
-        iconName: "talent_defence02",
+        iconName: "talent_bow01",
       },
       {
         nodeType: "medium",
@@ -6076,7 +6076,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 2 },
         prerequisite: { x: 0, y: 2 },
         maxPoints: 3,
-        iconName: "talent_defence02",
+        iconName: "talent_bow01",
       },
       {
         nodeType: "micro",
@@ -6098,7 +6098,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+9% Trauma Damage\nAdds 8 - 8 Base Trauma Damage",
         position: { x: 5, y: 2 },
         maxPoints: 3,
-        iconName: "talent_area",
+        iconName: "talent_dmgall",
       },
       {
         nodeType: "legendary",
@@ -6106,7 +6106,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 2 },
         prerequisite: { x: 5, y: 2 },
         maxPoints: 1,
-        iconName: "talent_crit02",
+        iconName: "talent_dmgall",
       },
       {
         nodeType: "micro",
@@ -6121,14 +6121,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 2, y: 3 },
         prerequisite: { x: 1, y: 3 },
         maxPoints: 1,
-        iconName: "talent_area",
+        iconName: "talent_armor",
       },
       {
         nodeType: "micro",
         rawAffix: "+4% Fervor effect",
         position: { x: 3, y: 3 },
         maxPoints: 3,
-        iconName: "talent_area",
+        iconName: "talent_channel01",
       },
       {
         nodeType: "legendary",
@@ -6136,7 +6136,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 3 },
         prerequisite: { x: 3, y: 3 },
         maxPoints: 1,
-        iconName: "talent_area",
+        iconName: "talent_channel01",
       },
       {
         nodeType: "micro",
@@ -6176,7 +6176,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+9% damage for Triggered Skills",
         position: { x: 5, y: 4 },
         maxPoints: 3,
-        iconName: "talent_dmgall",
+        iconName: "talent_area",
       },
       {
         nodeType: "legendary",
@@ -6223,7 +6223,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+9% Erosion Damage\n+9% Minion Erosion Damage",
         position: { x: 0, y: 0 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_dmgchaos",
       },
       {
         nodeType: "medium",
@@ -6231,7 +6231,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 0 },
         prerequisite: { x: 0, y: 0 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_dmgchaos",
       },
       {
         nodeType: "micro",
@@ -6253,7 +6253,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+9% Erosion Damage",
         position: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_dmgchaos",
       },
       {
         nodeType: "medium",
@@ -6261,7 +6261,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 0 },
         prerequisite: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_dmgchaos",
       },
       {
         nodeType: "legendary",
@@ -6270,14 +6270,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 0 },
         prerequisite: { x: 5, y: 0 },
         maxPoints: 1,
-        iconName: "talent_agi",
+        iconName: "talent_dmgchaos",
       },
       {
         nodeType: "micro",
         rawAffix: "+3% Attack and Cast Speed",
         position: { x: 1, y: 1 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_atk",
       },
       {
         nodeType: "medium",
@@ -6285,14 +6285,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 2, y: 1 },
         prerequisite: { x: 1, y: 1 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_atk",
       },
       {
         nodeType: "micro",
         rawAffix: "+9% Erosion Damage\n+9% Minion Erosion Damage",
         position: { x: 3, y: 1 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_dmgchaos",
       },
       {
         nodeType: "legendary",
@@ -6300,7 +6300,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 1 },
         prerequisite: { x: 3, y: 1 },
         maxPoints: 1,
-        iconName: "talent_agi",
+        iconName: "talent_dmgchaos",
       },
       {
         nodeType: "medium",
@@ -6308,7 +6308,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 1 },
         prerequisite: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_dmgchaos",
       },
       {
         nodeType: "legendary",
@@ -6317,7 +6317,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 1 },
         prerequisite: { x: 5, y: 1 },
         maxPoints: 1,
-        iconName: "talent_agi",
+        iconName: "talent_dmgchaos",
       },
       {
         nodeType: "micro",
@@ -6339,7 +6339,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+4% Erosion Resistance",
         position: { x: 2, y: 2 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_dmgchaos",
       },
       {
         nodeType: "legendary",
@@ -6347,14 +6347,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 2 },
         prerequisite: { x: 2, y: 2 },
         maxPoints: 1,
-        iconName: "talent_agi",
+        iconName: "talent_dmgchaos",
       },
       {
         nodeType: "micro",
         rawAffix: "+9% Erosion Damage\n+9% Minion Erosion Damage",
         position: { x: 4, y: 2 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_dmgchaos",
       },
       {
         nodeType: "legendary",
@@ -6362,14 +6362,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 2 },
         prerequisite: { x: 4, y: 2 },
         maxPoints: 1,
-        iconName: "talent_agi",
+        iconName: "talent_dmgchaos",
       },
       {
         nodeType: "micro",
         rawAffix: "+4% Deterioration Chance",
         position: { x: 1, y: 3 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_dmgchaos",
       },
       {
         nodeType: "medium",
@@ -6377,14 +6377,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 2, y: 3 },
         prerequisite: { x: 1, y: 3 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_dmgchaos",
       },
       {
         nodeType: "micro",
         rawAffix: "1.25% Life Regain\n1.25% Energy Shield Regain",
         position: { x: 3, y: 3 },
         maxPoints: 3,
-        iconName: "talent_defence02",
+        iconName: "talent_agi",
       },
       {
         nodeType: "medium",
@@ -6392,14 +6392,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 3 },
         prerequisite: { x: 3, y: 3 },
         maxPoints: 3,
-        iconName: "talent_defence02",
+        iconName: "talent_agi",
       },
       {
         nodeType: "micro",
         rawAffix: "+9% Erosion Damage\n+9% Minion Erosion Damage",
         position: { x: 5, y: 3 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_dmgchaos",
       },
       {
         nodeType: "legendary",
@@ -6408,14 +6408,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 3 },
         prerequisite: { x: 5, y: 3 },
         maxPoints: 1,
-        iconName: "talent_agi",
+        iconName: "talent_dmgchaos",
       },
       {
         nodeType: "micro",
         rawAffix: "+3% Wilt chance",
         position: { x: 0, y: 4 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_channel02",
       },
       {
         nodeType: "medium",
@@ -6423,14 +6423,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 4 },
         prerequisite: { x: 0, y: 4 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_channel02",
       },
       {
         nodeType: "micro",
         rawAffix: "+3% Wilt chance\nAdds 1 - 1 Base Wilt Damage",
         position: { x: 3, y: 4 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_channel02",
       },
       {
         nodeType: "legendary",
@@ -6438,7 +6438,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 4 },
         prerequisite: { x: 3, y: 4 },
         maxPoints: 1,
-        iconName: "talent_agi",
+        iconName: "talent_channel02",
       },
       {
         nodeType: "legendary",
@@ -6446,7 +6446,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 4 },
         prerequisite: { x: 4, y: 4 },
         maxPoints: 1,
-        iconName: "talent_agi",
+        iconName: "talent_channel02",
       },
     ],
     core: [
@@ -6516,7 +6516,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+2% Aura Effect",
         position: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_accuracy",
+        iconName: "talent_bow03",
       },
       {
         nodeType: "medium",
@@ -6524,7 +6524,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 0 },
         prerequisite: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_accuracy",
+        iconName: "talent_bow03",
       },
       {
         nodeType: "micro",
@@ -6546,7 +6546,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+9% damage\n+9% Minion Damage",
         position: { x: 3, y: 1 },
         maxPoints: 3,
-        iconName: "talent_dmgextra",
+        iconName: "talent_atkspeed",
       },
       {
         nodeType: "medium",
@@ -6554,14 +6554,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 1 },
         prerequisite: { x: 3, y: 1 },
         maxPoints: 3,
-        iconName: "talent_dmgextra",
+        iconName: "talent_atkspeed",
       },
       {
         nodeType: "micro",
         rawAffix: "+9% damage\n+9% Minion Damage",
         position: { x: 5, y: 1 },
         maxPoints: 3,
-        iconName: "talent_dmgextra",
+        iconName: "talent_channel01",
       },
       {
         nodeType: "legendary",
@@ -6570,7 +6570,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 1 },
         prerequisite: { x: 5, y: 1 },
         maxPoints: 1,
-        iconName: "talent_dmgextra",
+        iconName: "talent_channel01",
       },
       {
         nodeType: "micro",
@@ -6592,7 +6592,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "1.25% Life Regain\n1.25% Energy Shield Regain",
         position: { x: 2, y: 2 },
         maxPoints: 3,
-        iconName: "talent_es",
+        iconName: "talent_accuracy",
       },
       {
         nodeType: "medium",
@@ -6600,14 +6600,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 2 },
         prerequisite: { x: 2, y: 2 },
         maxPoints: 3,
-        iconName: "talent_es",
+        iconName: "talent_accuracy",
       },
       {
         nodeType: "micro",
         rawAffix: "4.5% Focus Speed",
         position: { x: 4, y: 2 },
         maxPoints: 3,
-        iconName: "talent_accuracy",
+        iconName: "talent_area",
       },
       {
         nodeType: "medium",
@@ -6615,7 +6615,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 2 },
         prerequisite: { x: 4, y: 2 },
         maxPoints: 3,
-        iconName: "talent_accuracy",
+        iconName: "talent_area",
       },
       {
         nodeType: "legendary",
@@ -6623,14 +6623,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 2 },
         prerequisite: { x: 5, y: 2 },
         maxPoints: 1,
-        iconName: "talent_dmgextra",
+        iconName: "talent_area",
       },
       {
         nodeType: "micro",
         rawAffix: "+4% Erosion Resistance",
         position: { x: 1, y: 3 },
         maxPoints: 3,
-        iconName: "talent_accuracy",
+        iconName: "talent_dmgchaos",
       },
       {
         nodeType: "medium",
@@ -6638,14 +6638,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 2, y: 3 },
         prerequisite: { x: 1, y: 3 },
         maxPoints: 3,
-        iconName: "talent_accuracy",
+        iconName: "talent_dmgchaos",
       },
       {
         nodeType: "micro",
         rawAffix: "+12% damage while an Elixir Skill is active",
         position: { x: 4, y: 3 },
         maxPoints: 3,
-        iconName: "talent_dmgextra",
+        iconName: "talent_armor",
       },
       {
         nodeType: "medium",
@@ -6653,7 +6653,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 3 },
         prerequisite: { x: 4, y: 3 },
         maxPoints: 3,
-        iconName: "talent_accuracy",
+        iconName: "talent_armor",
       },
       {
         nodeType: "legendary",
@@ -6661,14 +6661,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 3 },
         prerequisite: { x: 5, y: 3 },
         maxPoints: 1,
-        iconName: "talent_accuracy",
+        iconName: "talent_armor",
       },
       {
         nodeType: "micro",
         rawAffix: "+2% Elemental Resistance",
         position: { x: 0, y: 4 },
         maxPoints: 3,
-        iconName: "talent_accuracy",
+        iconName: "talent_dmgele",
       },
       {
         nodeType: "medium",
@@ -6676,14 +6676,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 4 },
         prerequisite: { x: 0, y: 4 },
         maxPoints: 3,
-        iconName: "talent_accuracy",
+        iconName: "talent_dmgele",
       },
       {
         nodeType: "micro",
         rawAffix: "Elixir Skills gain 0.5 Charging Progress every second",
         position: { x: 2, y: 4 },
         maxPoints: 3,
-        iconName: "talent_accuracy",
+        iconName: "talent_area",
       },
       {
         nodeType: "legendary",
@@ -6691,14 +6691,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 4 },
         prerequisite: { x: 2, y: 4 },
         maxPoints: 1,
-        iconName: "talent_accuracy",
+        iconName: "talent_area",
       },
       {
         nodeType: "micro",
         rawAffix: "-4% additional Elemental Damage taken",
         position: { x: 4, y: 4 },
         maxPoints: 3,
-        iconName: "talent_dmgele",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "legendary",
@@ -6707,7 +6707,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 4 },
         prerequisite: { x: 4, y: 4 },
         maxPoints: 1,
-        iconName: "talent_dmgele",
+        iconName: "talent_dmgextra",
       },
     ],
     core: [
@@ -6745,7 +6745,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+9% Attack Damage",
         position: { x: 0, y: 0 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "medium",
@@ -6753,14 +6753,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 0 },
         prerequisite: { x: 0, y: 0 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "micro",
         rawAffix: "+15% Attack Critical Strike Rating",
         position: { x: 2, y: 0 },
         maxPoints: 3,
-        iconName: "talent_dmgele",
+        iconName: "talent_atk",
       },
       {
         nodeType: "medium",
@@ -6769,14 +6769,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 0 },
         prerequisite: { x: 2, y: 0 },
         maxPoints: 3,
-        iconName: "talent_dmgele",
+        iconName: "talent_atk",
       },
       {
         nodeType: "micro",
         rawAffix: "+9% Attack Damage when holding a One-Handed Weapon",
         position: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_dmgphys",
       },
       {
         nodeType: "medium",
@@ -6784,7 +6784,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 0 },
         prerequisite: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_dmgphys",
       },
       {
         nodeType: "legendary",
@@ -6793,14 +6793,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 0 },
         prerequisite: { x: 5, y: 0 },
         maxPoints: 1,
-        iconName: "talent_atk",
+        iconName: "talent_dmgphys",
       },
       {
         nodeType: "micro",
         rawAffix: "+3% Attack Speed",
         position: { x: 1, y: 1 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_agi",
       },
       {
         nodeType: "medium",
@@ -6808,7 +6808,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 2, y: 1 },
         prerequisite: { x: 1, y: 1 },
         maxPoints: 3,
-        iconName: "talent_atk",
+        iconName: "talent_agi",
       },
       {
         nodeType: "micro",
@@ -6832,7 +6832,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 1 },
         prerequisite: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_dmgextra",
+        iconName: "talent_dmgphys",
       },
       {
         nodeType: "legendary",
@@ -6840,14 +6840,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 1 },
         prerequisite: { x: 5, y: 1 },
         maxPoints: 1,
-        iconName: "talent_agi",
+        iconName: "talent_dmgphys",
       },
       {
         nodeType: "micro",
         rawAffix: "+3% Max Life",
         position: { x: 0, y: 2 },
         maxPoints: 3,
-        iconName: "talent_defence02",
+        iconName: "talent_agi",
       },
       {
         nodeType: "medium",
@@ -6855,14 +6855,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 2 },
         prerequisite: { x: 0, y: 2 },
         maxPoints: 3,
-        iconName: "talent_defence02",
+        iconName: "talent_agi",
       },
       {
         nodeType: "micro",
         rawAffix: "+4% Attack Block Chance",
         position: { x: 2, y: 2 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_atk",
       },
       {
         nodeType: "medium",
@@ -6870,14 +6870,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 2 },
         prerequisite: { x: 2, y: 2 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_atk",
       },
       {
         nodeType: "micro",
         rawAffix: "+5% Warcry Cooldown Recovery Speed",
         position: { x: 4, y: 2 },
         maxPoints: 3,
-        iconName: "talent_dmgextra",
+        iconName: "talent_crossbow02",
       },
       {
         nodeType: "medium",
@@ -6885,7 +6885,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 2 },
         prerequisite: { x: 4, y: 2 },
         maxPoints: 3,
-        iconName: "talent_dmgextra",
+        iconName: "talent_crossbow02",
       },
       {
         nodeType: "legendary",
@@ -6893,7 +6893,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 2 },
         prerequisite: { x: 5, y: 2 },
         maxPoints: 1,
-        iconName: "talent_dmgextra",
+        iconName: "talent_crossbow02",
       },
       {
         nodeType: "micro",
@@ -6916,7 +6916,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
           "+25% chance to gain 1 stacks of Tenacity Blessing when taking damage. Interval: 1 s",
         position: { x: 3, y: 3 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "legendary",
@@ -6924,7 +6924,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 3 },
         prerequisite: { x: 3, y: 3 },
         maxPoints: 1,
-        iconName: "talent_agi",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "micro",
@@ -6939,7 +6939,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 3 },
         prerequisite: { x: 5, y: 3 },
         maxPoints: 1,
-        iconName: "talent_armor",
+        iconName: "talent_dmgele",
       },
       {
         nodeType: "micro",
@@ -6976,7 +6976,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+2% Elemental Resistance\n+2% Erosion Resistance",
         position: { x: 5, y: 4 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "legendary",
@@ -6985,7 +6985,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 4 },
         prerequisite: { x: 5, y: 4 },
         maxPoints: 1,
-        iconName: "talent_agi",
+        iconName: "talent_dmgextra",
       },
     ],
     core: [
@@ -7023,7 +7023,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+9% damage\n+9% Minion Damage",
         position: { x: 0, y: 0 },
         maxPoints: 3,
-        iconName: "talent_dmgall",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "medium",
@@ -7031,14 +7031,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 0 },
         prerequisite: { x: 0, y: 0 },
         maxPoints: 3,
-        iconName: "talent_dmgall",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "micro",
         rawAffix: "+8% damage against Cursed enemies\n+8% Curse Skill Area",
         position: { x: 2, y: 0 },
         maxPoints: 3,
-        iconName: "talent_curse",
+        iconName: "talent_cannon03",
       },
       {
         nodeType: "medium",
@@ -7046,7 +7046,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 0 },
         prerequisite: { x: 2, y: 0 },
         maxPoints: 3,
-        iconName: "talent_curse",
+        iconName: "talent_cannon03",
       },
       {
         nodeType: "legendary",
@@ -7055,7 +7055,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 0 },
         prerequisite: { x: 3, y: 0 },
         maxPoints: 1,
-        iconName: "talent_curse",
+        iconName: "talent_cannon03",
       },
       {
         nodeType: "legendary",
@@ -7063,14 +7063,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 0 },
         prerequisite: { x: 5, y: 1 },
         maxPoints: 1,
-        iconName: "talent_ailment",
+        iconName: "talent_crit03",
       },
       {
         nodeType: "micro",
         rawAffix: "+6% Affliction Effect",
         position: { x: 1, y: 1 },
         maxPoints: 3,
-        iconName: "talent_ailment",
+        iconName: "talent_curse",
       },
       {
         nodeType: "medium",
@@ -7078,7 +7078,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 2, y: 1 },
         prerequisite: { x: 1, y: 1 },
         maxPoints: 3,
-        iconName: "talent_ailment",
+        iconName: "talent_curse",
       },
       {
         nodeType: "medium",
@@ -7086,7 +7086,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 1 },
         prerequisite: { x: 2, y: 0 },
         maxPoints: 3,
-        iconName: "talent_curse",
+        iconName: "talent_cannon03",
       },
       {
         nodeType: "legendary",
@@ -7094,14 +7094,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 1 },
         prerequisite: { x: 3, y: 1 },
         maxPoints: 1,
-        iconName: "talent_curse",
+        iconName: "talent_cannon03",
       },
       {
         nodeType: "micro",
         rawAffix: "+2% Crowd Control Effects",
         position: { x: 5, y: 1 },
         maxPoints: 3,
-        iconName: "talent_ailment",
+        iconName: "talent_crit03",
       },
       {
         nodeType: "legendary",
@@ -7132,7 +7132,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+3% chance to avoid Elemental Ailments",
         position: { x: 2, y: 2 },
         maxPoints: 3,
-        iconName: "talent_ailment",
+        iconName: "talent_dmgall",
       },
       {
         nodeType: "legendary",
@@ -7140,14 +7140,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 2 },
         prerequisite: { x: 2, y: 2 },
         maxPoints: 1,
-        iconName: "talent_ailment",
+        iconName: "talent_dmgall",
       },
       {
         nodeType: "micro",
         rawAffix: "1.5% Blur Effect",
         position: { x: 4, y: 2 },
         maxPoints: 3,
-        iconName: "talent_ailment",
+        iconName: "talent_dmgele",
       },
       {
         nodeType: "legendary",
@@ -7156,7 +7156,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 2 },
         prerequisite: { x: 4, y: 2 },
         maxPoints: 1,
-        iconName: "talent_ailment",
+        iconName: "talent_dmgele",
       },
       {
         nodeType: "micro",
@@ -7180,7 +7180,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+6% Affliction Effect",
         position: { x: 3, y: 3 },
         maxPoints: 3,
-        iconName: "talent_ailment",
+        iconName: "talent_curse",
       },
       {
         nodeType: "medium",
@@ -7188,14 +7188,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 3 },
         prerequisite: { x: 3, y: 3 },
         maxPoints: 3,
-        iconName: "talent_ailment",
+        iconName: "talent_curse",
       },
       {
         nodeType: "micro",
         rawAffix: "+9% damage\n+9% Minion Damage",
         position: { x: 5, y: 3 },
         maxPoints: 3,
-        iconName: "talent_dmgall",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "legendary",
@@ -7204,14 +7204,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 3 },
         prerequisite: { x: 5, y: 3 },
         maxPoints: 1,
-        iconName: "talent_dmgall",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "micro",
         rawAffix: "+9% Ailment Damage",
         position: { x: 0, y: 4 },
         maxPoints: 3,
-        iconName: "talent_ailment",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "medium",
@@ -7219,7 +7219,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 4 },
         prerequisite: { x: 0, y: 4 },
         maxPoints: 3,
-        iconName: "talent_ailment",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "micro",
@@ -7236,14 +7236,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 4 },
         prerequisite: { x: 2, y: 4 },
         maxPoints: 3,
-        iconName: "talent_crit03",
+        iconName: "talent_crit01",
       },
       {
         nodeType: "micro",
         rawAffix: "+9% Ailment Damage",
         position: { x: 4, y: 4 },
         maxPoints: 3,
-        iconName: "talent_ailment",
+        iconName: "talent_dmgextra",
       },
       {
         nodeType: "legendary",
@@ -7261,7 +7261,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 4 },
         prerequisite: { x: 5, y: 3 },
         maxPoints: 1,
-        iconName: "talent_ailment",
+        iconName: "talent_dmgextra",
       },
     ],
     core: [
@@ -7299,7 +7299,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+9% Fire Damage\n+9% Minion Fire Damage",
         position: { x: 0, y: 0 },
         maxPoints: 3,
-        iconName: "talent_dmgele",
+        iconName: "talent_dmgall",
       },
       {
         nodeType: "medium",
@@ -7307,7 +7307,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 0 },
         prerequisite: { x: 0, y: 0 },
         maxPoints: 3,
-        iconName: "talent_dmgele",
+        iconName: "talent_dmgall",
       },
       {
         nodeType: "micro",
@@ -7331,7 +7331,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+9% Fire Damage\n+9% Minion Fire Damage",
         position: { x: 4, y: 0 },
         maxPoints: 3,
-        iconName: "talent_dmgele",
+        iconName: "talent_dmgall",
       },
       {
         nodeType: "legendary",
@@ -7340,7 +7340,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 0 },
         prerequisite: { x: 4, y: 0 },
         maxPoints: 1,
-        iconName: "talent_dmgele",
+        iconName: "talent_dmgall",
       },
       {
         nodeType: "micro",
@@ -7362,7 +7362,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+9% Fire Damage\n+9% Minion Fire Damage",
         position: { x: 3, y: 1 },
         maxPoints: 3,
-        iconName: "talent_dmgele",
+        iconName: "talent_dmgall",
       },
       {
         nodeType: "medium",
@@ -7370,7 +7370,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 1 },
         prerequisite: { x: 3, y: 1 },
         maxPoints: 3,
-        iconName: "talent_dmgele",
+        iconName: "talent_dmgall",
       },
       {
         nodeType: "micro",
@@ -7408,7 +7408,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "1.25% Life Regain\n1.25% Energy Shield Regain",
         position: { x: 2, y: 2 },
         maxPoints: 3,
-        iconName: "talent_es",
+        iconName: "talent_defence02",
       },
       {
         nodeType: "medium",
@@ -7416,7 +7416,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 2 },
         prerequisite: { x: 2, y: 2 },
         maxPoints: 3,
-        iconName: "talent_es",
+        iconName: "talent_defence02",
       },
       {
         nodeType: "micro",
@@ -7424,7 +7424,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
           "+2% Fire Penetration against Ignited enemies\n+2% Minion Fire Penetration against Ignited enemies",
         position: { x: 4, y: 2 },
         maxPoints: 3,
-        iconName: "talent_dmgall",
+        iconName: "talent_es",
       },
       {
         nodeType: "legendary",
@@ -7433,14 +7433,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 2 },
         prerequisite: { x: 4, y: 2 },
         maxPoints: 1,
-        iconName: "talent_dmgele",
+        iconName: "talent_es",
       },
       {
         nodeType: "micro",
         rawAffix: "+4% Fire Resistance",
         position: { x: 1, y: 3 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_area",
       },
       {
         nodeType: "legendary",
@@ -7448,7 +7448,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 2, y: 3 },
         prerequisite: { x: 1, y: 3 },
         maxPoints: 1,
-        iconName: "talent_agi",
+        iconName: "talent_area",
       },
       {
         nodeType: "micro",
@@ -7463,14 +7463,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 3 },
         prerequisite: { x: 3, y: 3 },
         maxPoints: 1,
-        iconName: "talent_dmgele",
+        iconName: "talent_es",
       },
       {
         nodeType: "micro",
         rawAffix: "+9% Fire Damage",
         position: { x: 5, y: 3 },
         maxPoints: 3,
-        iconName: "talent_dmgele",
+        iconName: "talent_dmgall",
       },
       {
         nodeType: "legendary",
@@ -7478,14 +7478,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 3 },
         prerequisite: { x: 5, y: 3 },
         maxPoints: 1,
-        iconName: "talent_dmgele",
+        iconName: "talent_dmgall",
       },
       {
         nodeType: "micro",
         rawAffix: "+9% Fire Damage Over Time\n+9% Minion Fire Damage",
         position: { x: 0, y: 4 },
         maxPoints: 3,
-        iconName: "talent_dmgele",
+        iconName: "talent_dot",
       },
       {
         nodeType: "medium",
@@ -7493,7 +7493,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 4 },
         prerequisite: { x: 0, y: 4 },
         maxPoints: 3,
-        iconName: "talent_dmgele",
+        iconName: "talent_dot",
       },
       {
         nodeType: "micro",
@@ -7517,7 +7517,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
           "+9% Fire Damage Over Time\n+9% Minion Fire Damage\nAdds 10 - 10 Base Ignite Damage",
         position: { x: 4, y: 4 },
         maxPoints: 3,
-        iconName: "talent_dmgele",
+        iconName: "talent_dot",
       },
       {
         nodeType: "medium",
@@ -7534,7 +7534,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 4 },
         prerequisite: { x: 5, y: 4 },
         maxPoints: 1,
-        iconName: "talent_agi",
+        iconName: "talent_dot",
       },
     ],
     core: [
@@ -7648,7 +7648,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+4% Life Regeneration Speed",
         position: { x: 4, y: 1 },
         maxPoints: 3,
-        iconName: "talent_defence02",
+        iconName: "talent_flask01",
       },
       {
         nodeType: "medium",
@@ -7656,7 +7656,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 5, y: 1 },
         prerequisite: { x: 4, y: 1 },
         maxPoints: 3,
-        iconName: "talent_defence02",
+        iconName: "talent_flask01",
       },
       {
         nodeType: "legendary",
@@ -7664,14 +7664,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 1 },
         prerequisite: { x: 5, y: 1 },
         maxPoints: 1,
-        iconName: "talent_defence02",
+        iconName: "talent_flask01",
       },
       {
         nodeType: "micro",
         rawAffix: "+3% Defense",
         position: { x: 0, y: 2 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_armor",
       },
       {
         nodeType: "medium",
@@ -7679,7 +7679,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 2 },
         prerequisite: { x: 0, y: 2 },
         maxPoints: 3,
-        iconName: "talent_agi",
+        iconName: "talent_armor",
       },
       {
         nodeType: "micro",
@@ -7702,7 +7702,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         rawAffix: "+12% damage if you have taken damage recently",
         position: { x: 5, y: 2 },
         maxPoints: 3,
-        iconName: "talent_dmgall",
+        iconName: "talent_armor",
       },
       {
         nodeType: "legendary",
@@ -7710,14 +7710,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 2 },
         prerequisite: { x: 5, y: 2 },
         maxPoints: 1,
-        iconName: "talent_agi",
+        iconName: "talent_armor",
       },
       {
         nodeType: "micro",
         rawAffix: "+40 Max Life",
         position: { x: 1, y: 3 },
         maxPoints: 3,
-        iconName: "talent_defence02",
+        iconName: "talent_dmgall",
       },
       {
         nodeType: "medium",
@@ -7725,14 +7725,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 2, y: 3 },
         prerequisite: { x: 1, y: 3 },
         maxPoints: 3,
-        iconName: "talent_defence02",
+        iconName: "talent_dmgall",
       },
       {
         nodeType: "micro",
         rawAffix: "+3% Max Life",
         position: { x: 3, y: 3 },
         maxPoints: 3,
-        iconName: "talent_defence02",
+        iconName: "talent_agi",
       },
       {
         nodeType: "legendary",
@@ -7740,7 +7740,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 3 },
         prerequisite: { x: 3, y: 3 },
         maxPoints: 1,
-        iconName: "talent_agi",
+        iconName: "talent_es",
       },
       {
         nodeType: "micro",
@@ -7755,14 +7755,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 6, y: 3 },
         prerequisite: { x: 5, y: 3 },
         maxPoints: 1,
-        iconName: "talent_defence02",
+        iconName: "talent_dmgele",
       },
       {
         nodeType: "micro",
         rawAffix: "+3% Max Life",
         position: { x: 0, y: 4 },
         maxPoints: 3,
-        iconName: "talent_defence02",
+        iconName: "talent_es",
       },
       {
         nodeType: "medium",
@@ -7770,14 +7770,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 1, y: 4 },
         prerequisite: { x: 0, y: 4 },
         maxPoints: 3,
-        iconName: "talent_defence02",
+        iconName: "talent_agi",
       },
       {
         nodeType: "micro",
         rawAffix: "Regenerates 0.75% Life per second",
         position: { x: 2, y: 4 },
         maxPoints: 3,
-        iconName: "talent_defence02",
+        iconName: "talent_flask01",
       },
       {
         nodeType: "medium",
@@ -7785,7 +7785,7 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 3, y: 4 },
         prerequisite: { x: 2, y: 4 },
         maxPoints: 3,
-        iconName: "talent_defence02",
+        iconName: "talent_flask01",
       },
       {
         nodeType: "legendary",
@@ -7793,14 +7793,14 @@ export const TalentTrees: readonly TalentTreeData[] = [
         position: { x: 4, y: 4 },
         prerequisite: { x: 3, y: 4 },
         maxPoints: 1,
-        iconName: "talent_dmgall",
+        iconName: "talent_flask01",
       },
       {
         nodeType: "micro",
         rawAffix: "+3% Max Life",
         position: { x: 5, y: 4 },
         maxPoints: 3,
-        iconName: "talent_defence02",
+        iconName: "talent_agi",
       },
       {
         nodeType: "medium",
