@@ -30,6 +30,7 @@ import {
   type TalentType,
   type PlacedInstance,
 } from "./slateData";
+import { useDivinitySlatesBuild } from "@/app/state/BuildContext";
 
 const BG_STYLE = {
   backgroundImage: [
@@ -118,7 +119,7 @@ const TT_CARD_W  = 280;
 const TT_ICON_W  = 80;
 const TT_ICON_H  = 80;
 
-function SlateTooltipCard({
+export function SlateTooltipCard({
   def, config, displayName, quality, iconPath, talents, hasConflict, cx: cursorX, cy: cursorY,
 }: {
   def: SlateDef;
@@ -258,7 +259,10 @@ export default function DivinitySlatesPage() {
   const [tooltipPos, setTooltipPos] = useState<{ x: number; y: number } | null>(null);
   const [talents, setTalents] = useState<Talent[]>([]);
 
-  const [placedInstances, setPlacedInstances] = useState<PlacedInstance[]>([]);
+  const [divinitySlatesBuild, setDivinitySlatesBuild] = useDivinitySlatesBuild();
+  const placedInstances = divinitySlatesBuild.placedInstances;
+  const setPlacedInstances: React.Dispatch<React.SetStateAction<PlacedInstance[]>> = (v) =>
+    setDivinitySlatesBuild(prev => ({ ...prev, placedInstances: typeof v === "function" ? (v as (p: PlacedInstance[]) => PlacedInstance[])(prev.placedInstances) : v }));
   const [draft, setDraft] = useState<{ slateName: string; config: SlateConfig } | null>(null);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [placing, setPlacing] = useState(false);

@@ -28,7 +28,7 @@ const EMPTY_LOADOUT: GearLoadout = {
 };
 export { EMPTY_LOADOUT };
 
-type PoolSummary = {
+export type PoolSummary = {
   id: string;
   name: string;
   attributeType: "STR" | "DEX" | "INT" | null;
@@ -50,7 +50,7 @@ function GearTierSquare({ tier }: { tier: string }) {
   return <div style={{ width: 8, height: 8, flexShrink: 0, marginTop: 3, background: color, borderRadius: "2px 0 2px 0" }} />;
 }
 
-function GearTooltipCard({ pool, itemSlots, poolData, psCount, cx, cy }: {
+export function GearTooltipCard({ pool, itemSlots, poolData, psCount, cx, cy }: {
   pool: PoolSummary;
   itemSlots: ItemSlots;
   poolData?: CraftedPool | null;
@@ -373,7 +373,7 @@ export const SLOT_ICONS: Record<GearSlotId, React.ReactNode> = {
 
 // ─── Icon path helper ─────────────────────────────────────────────────────────
 
-function getPoolIconPath(pool: PoolSummary): string {
+export function getPoolIconPath(pool: PoolSummary): string {
   const catId = pool.baseItemCategory.id;
   if (pool.weaponType)
     return `/icons/equipment/${pool.weaponType.name}.webp`;
@@ -532,14 +532,14 @@ type SlotTileProps = {
   onClose: () => void;
 };
 
-function getPSRarityColors(count: number): { border: string; borderHover: string; gradientEnd: string; metallicKey: "zinc" | "blue" | "purple" | "pink" } {
+export function getPSRarityColors(count: number): { border: string; borderHover: string; gradientEnd: string; metallicKey: "zinc" | "blue" | "purple" | "pink" } {
   if (count === 0) return { border: "#71717a", borderHover: "#a1a1aa", gradientEnd: "#3f3f46", metallicKey: "zinc" };
   if (count <= 4)  return { border: "#38bdf8", borderHover: "#7dd3fc", gradientEnd: "#0c4a6e", metallicKey: "blue" };
   if (count === 5) return { border: "#c084fc", borderHover: "#d8b4fe", gradientEnd: "#6b21a8", metallicKey: "purple" };
   return                  { border: "#f472b6", borderHover: "#f9a8d4", gradientEnd: "#9d174d", metallicKey: "pink" };
 }
 
-const METALLIC_GRADIENTS = {
+export const METALLIC_GRADIENTS = {
   zinc:   "linear-gradient(145deg, #b8b8bc 0%, #4a4a4e 15%, #d8d8dc 35%, #6a6a70 55%, #2c2c30 75%, #9a9a9e 100%)",
   blue:   "linear-gradient(145deg, #bae6fd 0%, #0369a1 15%, #e0f2fe 35%, #38bdf8 55%, #075985 75%, #7dd3fc 100%)",
   purple: "linear-gradient(145deg, #e9d5ff 0%, #7e22ce 15%, #f3e8ff 35%, #c084fc 55%, #6b21a8 75%, #d8b4fe 100%)",

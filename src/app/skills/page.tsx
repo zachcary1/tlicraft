@@ -2,8 +2,9 @@
 
 import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
+import { useSkillsBuild } from "@/app/state/BuildContext";
 
-interface Skill {
+export interface Skill {
   name: string;
   type: string;
   tags: string[];
@@ -106,7 +107,9 @@ function getPreciseSortKey(name: string): [string, number] {
   return [name, 0];
 }
 
-function getSupportBaseName(name: string): string {
+// Strips the "Precise: " / "Precise " prefix so a skill/support and its precise variant
+// compare equal — used to block picking both a skill and its precise counterpart at once.
+function getSkillBaseName(name: string): string {
   if (name.startsWith("Precise: ")) return name.slice(9);
   if (name.startsWith("Precise "))  return name.slice(8);
   return name;
@@ -534,7 +537,7 @@ function getSkillIconPath(skill: Skill, isSkillSlot: boolean, layoutMode: Layout
 
 // ─── Skill tooltip card ───────────────────────────────────────────────────────
 
-function getTooltipIconPath(skill: Skill): string | undefined {
+export function getTooltipIconPath(skill: Skill): string | undefined {
   if (skill.type === "Active")                return `/icons/skills/active/${skill.name}.webp`;
   if (skill.type === "Passive")               return `/icons/skills/passive/${skill.name.replace(": ", " - ")}.webp`;
   if (skill.type === "Support")               return `/icons/skills/support/${skill.name.replace(": ", " - ")}.webp`;
@@ -613,7 +616,7 @@ function deduplicateEffect(html: string): string {
   return div.innerHTML;
 }
 
-function SkillTooltipCard({ skill, cx: cursorX, cy: cursorY }: { skill: Skill; cx: number; cy: number }) {
+export function SkillTooltipCard({ skill, cx: cursorX, cy: cursorY }: { skill: Skill; cx: number; cy: number }) {
   const [imgError, setImgError] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
   const [cardH, setCardH] = useState(TT_CARD_MAX_H);
@@ -896,9 +899,18 @@ export default function SkillsPage() {
   const [activeSkills,           setActiveSkills]           = useState<Skill[]>([]);
   const [passiveSkills,          setPassiveSkills]          = useState<Skill[]>([]);
   const [allSupportSkills,       setAllSupportSkills]       = useState<Skill[]>([]);
-  const [activeSkillSelections,  setActiveSkillSelections]  = useState<(string | null)[]>(Array(5).fill(null));
-  const [passiveSkillSelections, setPassiveSkillSelections] = useState<(string | null)[]>(Array(4).fill(null));
-  const [supportSelections,      setSupportSelections]      = useState<Record<string, string>>({});
+
+  const [skillsBuild, setSkillsBuild] = useSkillsBuild();
+  const activeSkillSelections = skillsBuild.activeSkillSelections;
+  const setActiveSkillSelections: React.Dispatch<React.SetStateAction<(string | null)[]>> = (v) =>
+    setSkillsBuild(prev => ({ ...prev, activeSkillSelections: typeof v === "function" ? (v as (p: (string | null)[]) => (string | null)[])(prev.activeSkillSelections) : v }));
+  const passiveSkillSelections = skillsBuild.passiveSkillSelections;
+  const setPassiveSkillSelections: React.Dispatch<React.SetStateAction<(string | null)[]>> = (v) =>
+    setSkillsBuild(prev => ({ ...prev, passiveSkillSelections: typeof v === "function" ? (v as (p: (string | null)[]) => (string | null)[])(prev.passiveSkillSelections) : v }));
+  const supportSelections = skillsBuild.supportSelections;
+  const setSupportSelections: React.Dispatch<React.SetStateAction<Record<string, string>>> = (v) =>
+    setSkillsBuild(prev => ({ ...prev, supportSelections: typeof v === "function" ? (v as (p: Record<string, string>) => Record<string, string>)(prev.supportSelections) : v }));
+
   const [searchQuery,            setSearchQuery]            = useState("");
   const [hoveredTooltip,         setHoveredTooltip]         = useState<{ skill: Skill; x: number; y: number } | null>(null);
   const [energyTipPos,           setEnergyTipPos]           = useState<{ x: number; y: number } | null>(null);
@@ -1307,9 +1319,18 @@ export default function SkillsPage() {
             for (const slotDef of allSupportSlots) {
               const key = `${layoutMode}-${currentSlotIdx}-${slotDef.slot}`;
               if (key !== currentSupportKey && supportSelections[key]) {
-                usedSupportBaseNames.add(getSupportBaseName(supportSelections[key]));
+                usedSupportBaseNames.add(getSkillBaseName(supportSelections[key]));
               }
             }
+          }
+
+          // A passive skill and its precise variant (e.g. "Cruelty" / "Precise: Cruelty")
+          // count as the same skill — block picking one while the other is already slotted.
+          const usedPassiveBaseNames = new Set<string>();
+          if (isSkillSlot && layoutMode === "passive" && currentSlotIdx !== null) {
+            passiveSkillSelections.forEach((name, idx) => {
+              if (idx !== currentSlotIdx && name) usedPassiveBaseNames.add(getSkillBaseName(name));
+            });
           }
 
           const needle   = searchQuery.replace(/\s/g, "").toLowerCase();
@@ -1371,7 +1392,9 @@ export default function SkillsPage() {
               <div className="overflow-y-auto" style={{ flex: 1, padding: "0 16px 16px" }}>
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 8 }}>
                   {filtered.map((skill) => {
-                    const isBlocked = !isSkillSlot && usedSupportBaseNames.has(getSupportBaseName(skill.name));
+                    const isBlocked = !isSkillSlot
+                      ? usedSupportBaseNames.has(getSkillBaseName(skill.name))
+                      : usedPassiveBaseNames.has(getSkillBaseName(skill.name));
                     return (
                       <SkillCard
                         key={skill.name}

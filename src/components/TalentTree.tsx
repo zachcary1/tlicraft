@@ -147,7 +147,7 @@ const TIP_CARD_W    = 270;
 const TIP_ICON_SIZE = 72;
 const TIP_ICON_HALF = TIP_ICON_SIZE / 2;
 
-function TalentTooltipCard({
+export function TalentTooltipCard({
   iconSrc, name, subtitle, details, nextDetails, lockMsg, accentColor, cx: cursorX, cy: cursorY,
 }: {
   iconSrc:     string | null;

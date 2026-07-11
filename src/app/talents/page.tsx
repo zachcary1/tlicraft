@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { TalentTree } from "@/components/TalentTree";
 import { TalentTrees } from "../../../data/crafted/torchcodex/talent-tree/talent-trees";
+import { useTalentsBuild } from "@/app/state/BuildContext";
 
 // ─── Background ───────────────────────────────────────────────────────────────
 
@@ -17,7 +18,7 @@ const BG_STYLE = {
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
-interface GodDef {
+export interface GodDef {
   key: string;
   name: string;
   folder: string;
@@ -25,7 +26,7 @@ interface GodDef {
   portraitZoom?: number;
 }
 
-const GODS: GodDef[] = [
+export const GODS: GodDef[] = [
   {
     key: "Might", name: "God of Might", folder: "god of might",
     heroes: [
@@ -95,7 +96,7 @@ function heroIconPath(god: GodDef, heroFolder: string) {
   return `/icons/talents/${god.folder}/${heroFolder}/${heroFolder}.webp`;
 }
 
-const GOD_COLORS: Record<string, string> = {
+export const GOD_COLORS: Record<string, string> = {
   Might:     "#ac6a28",
   Hunting:   "#568241",
   Knowledge: "#3b4ac5",
@@ -106,19 +107,19 @@ const GOD_COLORS: Record<string, string> = {
 
 // ─── Selection helpers ────────────────────────────────────────────────────────
 
-type Sel = string;
+export type Sel = string;
 type SlotIdx = 0 | 1 | 2 | 3;
 
 function godSel(key: string): Sel  { return `god:${key}`; }
 function heroSel(godKey: string, heroName: string): Sel { return `hero:${godKey}:${heroName}`; }
-function isGodSel(s: Sel)          { return s.startsWith("god:"); }
-function selGodKey(s: Sel): string {
+export function isGodSel(s: Sel)          { return s.startsWith("god:"); }
+export function selGodKey(s: Sel): string {
   return s.startsWith("god:") ? s.slice(4) : s.split(":")[1];
 }
-function selHeroName(s: Sel): string { return s.split(":").slice(2).join(":"); }
+export function selHeroName(s: Sel): string { return s.split(":").slice(2).join(":"); }
 
 // Human-readable display name for a selection
-function selToTreeName(sel: Sel): string | null {
+export function selToTreeName(sel: Sel): string | null {
   if (isGodSel(sel)) {
     const god = GODS.find(g => g.key === selGodKey(sel));
     return god ? god.name : null;
@@ -127,7 +128,7 @@ function selToTreeName(sel: Sel): string | null {
 }
 
 // Maps god key to the underscore tree name in TalentTrees
-const GOD_KEY_TO_TREE: Record<string, string> = {
+export const GOD_KEY_TO_TREE: Record<string, string> = {
   Might:     "God_of_Might",
   Hunting:   "Goddess_of_Hunting",
   Knowledge: "Goddess_of_Knowledge",
@@ -137,13 +138,13 @@ const GOD_KEY_TO_TREE: Record<string, string> = {
 };
 
 // Maps a sel to the TalentTrees name key
-function selToDataName(sel: Sel): string | null {
+export function selToDataName(sel: Sel): string | null {
   if (isGodSel(sel)) return GOD_KEY_TO_TREE[selGodKey(sel)] ?? null;
   return selHeroName(sel).replace(/ /g, "_") || null;
 }
 
 // Maps a sel to the public/icons/talents subfolder for that tree's icons
-function selToIconFolder(sel: Sel): string {
+export function selToIconFolder(sel: Sel): string {
   const god = GODS.find(g => g.key === selGodKey(sel));
   if (!god) return "god of might/god of might";
   if (isGodSel(sel)) return `${god.folder}/${god.folder}`;
@@ -154,7 +155,7 @@ function selToIconFolder(sel: Sel): string {
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
-interface TreeProgress {
+export interface TreeProgress {
   points: Record<string, number>;
   core:   Partial<Record<1 | 2, string>>;
 }
@@ -162,11 +163,17 @@ interface TreeProgress {
 const EMPTY_PROGRESS: TreeProgress = { points: {}, core: {} };
 
 export default function TalentsPage() {
-  const [slots,        setSlots]        = useState<(Sel | null)[]>([null, null, null, null]);
+  const [talentsBuild, setTalentsBuild] = useTalentsBuild();
+  const slots    = talentsBuild.slots;
+  const setSlots: React.Dispatch<React.SetStateAction<(Sel | null)[]>> = (v) =>
+    setTalentsBuild(prev => ({ ...prev, slots: typeof v === "function" ? (v as (p: (Sel | null)[]) => (Sel | null)[])(prev.slots) : v }));
+  const progress = talentsBuild.progress;
+  const setProgress: React.Dispatch<React.SetStateAction<Record<string, TreeProgress>>> = (v) =>
+    setTalentsBuild(prev => ({ ...prev, progress: typeof v === "function" ? (v as (p: Record<string, TreeProgress>) => Record<string, TreeProgress>)(prev.progress) : v }));
+
   const [active,       setActive]       = useState<SlotIdx>(0);
   const [hoveredNode,  setHoveredNode]  = useState<string | null>(null);
   const [viewedTree,   setViewedTree]   = useState<Sel | null>(null);
-  const [progress,     setProgress]     = useState<Record<string, TreeProgress>>({});
 
   function getProgress(name: string): TreeProgress {
     return progress[name] ?? EMPTY_PROGRESS;

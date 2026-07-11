@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
+import { usePactspiritsBuild } from "@/app/state/BuildContext";
 
 // ─── Layout constants ─────────────────────────────────────────────────────────
 
@@ -67,7 +68,7 @@ const DROP_TAG_ORDER = ["Lunaria", "Vorax", "Overrealm", "Outlaw", "Sandlord", "
 
 type Category = "battle" | "drop";
 
-interface PactSpirit {
+export interface PactSpirit {
   id:     string;
   type:   string;
   rarity: string;
@@ -180,11 +181,11 @@ const NODE_RING_COLOR: Record<string, string> = {
 // ─── Undetermined fate ────────────────────────────────────────────────────────
 
 type FateNodeType = "micro" | "medium";
-type FateKey = "left" | "right" | "bottom";
+export type FateKey = "left" | "right" | "bottom";
 
 const FATE_KEY_TO_ARM: Record<FateKey, number> = { left: 0, right: 1, bottom: 2 };
 const ARM_TO_FATE_KEY: Record<number, FateKey> = { 0: "left", 1: "right", 2: "bottom" };
-type FateState = { nodes: FateNodeType[] };
+export type FateState = { nodes: FateNodeType[] };
 
 type FateSeg =
   | { type: "path"; d: string }
@@ -304,7 +305,7 @@ function fateOptionLayout(micro: number, medium: number) {
 
 // ─── Rarity helpers ───────────────────────────────────────────────────────────
 
-const RARITY_COLOR: Record<string, string> = {
+export const RARITY_COLOR: Record<string, string> = {
   Legendary: "#fdc84d",
   Rare:      "#ff68ff",
   Magic:     "#59c7ff",
@@ -334,7 +335,7 @@ function wrapNodeName(name: string): [string, string | null] {
   return [words.slice(0, best).join(" "), words.slice(best).join(" ")];
 }
 
-function getIconPath(spirit: PactSpirit): string {
+export function getIconPath(spirit: PactSpirit): string {
   return `/icons/pactspirits/${spirit.type === "Drop" ? "drop" : "battle"}/${spirit.name}.webp`;
 }
 
@@ -349,7 +350,7 @@ const PS_TT_CARD_W  = 296;
 const PS_TT_ICON_W  = 88;
 const PS_TT_ICON_H  = 112;
 
-function PactSpiritTooltipCard({ spirit, cx: cursorX, cy: cursorY }: { spirit: PactSpirit; cx: number; cy: number }) {
+export function PactSpiritTooltipCard({ spirit, cx: cursorX, cy: cursorY }: { spirit: PactSpirit; cx: number; cy: number }) {
   const [imgError, setImgError] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
   const [cardH, setCardH] = useState(640);
@@ -1224,7 +1225,18 @@ const CATEGORY_LABEL: Record<Category, string> = {
 
 export default function PactspiritsPage() {
   const [selectedSlot,   setSelectedSlot]   = useState<SelectedSlot | null>(null);
-  const [slotSelections, setSlotSelections] = useState<Record<string, string>>({});
+
+  const [pactspiritsBuild, setPactspiritsBuild] = usePactspiritsBuild();
+  const slotSelections = pactspiritsBuild.slotSelections;
+  const setSlotSelections: React.Dispatch<React.SetStateAction<Record<string, string>>> = (v) =>
+    setPactspiritsBuild(prev => ({ ...prev, slotSelections: typeof v === "function" ? (v as (p: Record<string, string>) => Record<string, string>)(prev.slotSelections) : v }));
+  const fates = pactspiritsBuild.fates;
+  const setFates: React.Dispatch<React.SetStateAction<Record<FateKey, FateState>>> = (v) =>
+    setPactspiritsBuild(prev => ({ ...prev, fates: typeof v === "function" ? (v as (p: Record<FateKey, FateState>) => Record<FateKey, FateState>)(prev.fates) : v }));
+  const fateSelections = pactspiritsBuild.fateSelections;
+  const setFateSelections: React.Dispatch<React.SetStateAction<Record<string, string>>> = (v) =>
+    setPactspiritsBuild(prev => ({ ...prev, fateSelections: typeof v === "function" ? (v as (p: Record<string, string>) => Record<string, string>)(prev.fateSelections) : v }));
+
   const [battleSpirits,  setBattleSpirits]  = useState<PactSpirit[]>([]);
   const [dropSpirits,    setDropSpirits]    = useState<PactSpirit[]>([]);
   const [searchQuery,    setSearchQuery]    = useState("");
@@ -1234,11 +1246,6 @@ export default function PactspiritsPage() {
   const [panelMinimized,   setPanelMinimized]   = useState(true);
   const [headerHovered,    setHeaderHovered]    = useState(false);
   const [hoveredBattleLink, setHoveredBattleLink] = useState<number | null>(null);
-  const [fates, setFates] = useState<Record<FateKey, FateState>>({
-    left:   { nodes: [] },
-    right:  { nodes: [] },
-    bottom: { nodes: [] },
-  });
   const [selectedFate, setSelectedFate] = useState<FateKey | null>(null);
   const [treeData,        setTreeData]        = useState<Record<number, SpiritTreeData | null>>({ 0: null, 1: null, 2: null });
   const [nodeTooltip,        setNodeTooltip]        = useState<{ slot: SpiritTreeSlot | null; ring: "inner" | "mid" | "outer"; override: DestinyEntry | null; x: number; y: number } | null>(null);
@@ -1248,7 +1255,6 @@ export default function PactspiritsPage() {
   // selectedFateSlot covers BOTH undetermined-fate destiny slots and ordinary micro/mid tree nodes —
   // any micro/medium node can have a Fate/Kismet socketed into it to override its stats.
   const [selectedFateSlot,   setSelectedFateSlot]   = useState<{ id: string; size: FateNodeType } | null>(null);
-  const [fateSelections,     setFateSelections]     = useState<Record<string, string>>({});
   const [hoveredDestiny,     setHoveredDestiny]     = useState<{ entry: DestinyEntry; x: number; y: number } | null>(null);
   const [cappedHoverSize,    setCappedHoverSize]    = useState<FateNodeType | null>(null);
 

@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useMemo } from "react";
 import { createPortal } from "react-dom";
 import { HERO_TRAIT_ORDER } from "./heroTraitOrder";
 import type { ActiveSlotId } from "../crafting/ItemCard";
+import { useHeroTraitBuild } from "@/app/state/BuildContext";
 
 const BG_STYLE = {
   backgroundImage: [
@@ -33,11 +34,11 @@ const ARC_OFFSET = 28;
 const GRID_W = 3 * SLOT_SIZE + 2 * COL_GAP + ARC_OFFSET;
 const GRID_H = 3 * SLOT_SIZE + 2 * ROW_GAP;
 
-const MEMORY_LABELS = ["Memory of Origin", "Memory of Discipline", "Memory of Progress"] as const;
+export const MEMORY_LABELS = ["Memory of Origin", "Memory of Discipline", "Memory of Progress"] as const;
 
-type MemoryQuality = "epic" | "ultimate";
+export type MemoryQuality = "epic" | "ultimate";
 
-const MEMORY_QUALITY_CONFIG: Record<MemoryQuality, { bg: string; border: string; glow: string; bgGlow: string; accentBg: string; label: string; traitLevel: number; maxLevel: number }> = {
+export const MEMORY_QUALITY_CONFIG: Record<MemoryQuality, { bg: string; border: string; glow: string; bgGlow: string; accentBg: string; label: string; traitLevel: number; maxLevel: number }> = {
   epic: {
     bg:       "linear-gradient(to bottom, #0e0300 0%, #cc6624 100%)",
     border:   "#feba67",
@@ -76,12 +77,12 @@ function hexPoints(cx: number, cy: number, R: number): string {
   }).join(" ");
 }
 
-interface HeroEntry {
+export interface HeroEntry {
   heroGroup: string;
   hero: string;
 }
 
-interface HeroTrait {
+export interface HeroTrait {
   id: string;
   heroGroup: string;
   hero: string;
@@ -90,7 +91,7 @@ interface HeroTrait {
   effect: string;
 }
 
-function getVariantName(hero: string): string {
+export function getVariantName(hero: string): string {
   const colonIdx = hero.indexOf(": ");
   if (colonIdx === -1) return hero;
   return hero.slice(colonIdx + 2).replace(/ \(#\d+\)$/, "").trim();
@@ -130,7 +131,7 @@ function getArtworkOverride(heroGroup: string, variantName: string): ArtworkOver
 }
 
 // e.g. ("Rehan", "Anger", 45, 1, "Righteous Fury") → "/heroes/Rehan/traits/Anger/45-1 Righteous Fury.webp"
-function getTraitIconPath(heroGroup: string, variantName: string, level: number, slot: number, traitName: string): string {
+export function getTraitIconPath(heroGroup: string, variantName: string, level: number, slot: number, traitName: string): string {
   return `/heroes/${heroGroup}/traits/${variantName}/${level}-${slot} ${traitName}.webp`;
 }
 
@@ -139,7 +140,7 @@ function getTraitIconPath(heroGroup: string, variantName: string, level: number,
 const TT_ICON_R  = 40;
 const TT_CARD_W  = 276;
 
-function TraitTooltipCard({ trait, iconPath, selected, cx: cursorX, cy: cursorY, traitLevel }: {
+export function TraitTooltipCard({ trait, iconPath, selected, cx: cursorX, cy: cursorY, traitLevel }: {
   trait: HeroTrait;
   iconPath: string | null;
   selected: boolean;
@@ -555,11 +556,11 @@ function MemorySlot({
 
 type MemoryAffix = { id: string; type: string; item: string; effect: string; tier: string };
 
-type MemorySlotKey = "base" | "prefix1" | "prefix2" | "suffix1" | "suffix2";
-type MemorySlotValue = { id: string; text: string; tier: string } | null;
-type MemorySlotSelections = Record<MemorySlotKey, MemorySlotValue>;
+export type MemorySlotKey = "base" | "prefix1" | "prefix2" | "suffix1" | "suffix2";
+export type MemorySlotValue = { id: string; text: string; tier: string } | null;
+export type MemorySlotSelections = Record<MemorySlotKey, MemorySlotValue>;
 
-const EMPTY_MEMORY_SELECTIONS: MemorySlotSelections = {
+export const EMPTY_MEMORY_SELECTIONS: MemorySlotSelections = {
   base: null, prefix1: null, prefix2: null, suffix1: null, suffix2: null,
 };
 
@@ -580,7 +581,7 @@ const SIBLING_SLOT: Partial<Record<MemorySlotKey, MemorySlotKey>> = {
 
 const TRAIT_LEVEL_AFFIX = "+2 to Hero Trait Level";
 
-function effectiveTraitLevel(quality: MemoryQuality, selections: MemorySlotSelections): number {
+export function effectiveTraitLevel(quality: MemoryQuality, selections: MemorySlotSelections): number {
   const base = MEMORY_QUALITY_CONFIG[quality].traitLevel;
   const hasBonus =
     selections.prefix1?.text === TRAIT_LEVEL_AFFIX ||
@@ -605,7 +606,7 @@ function TierSquare({ tier }: { tier: string }) {
   );
 }
 
-function MemoryTooltipCard({
+export function MemoryTooltipCard({
   label, quality, selectedIds,
   cx: cursorX, cy: cursorY,
 }: {
@@ -1505,7 +1506,24 @@ const SLOTS = Array.from({ length: 9 }, (_, i) => ({
 
 export default function HeroTraitPage() {
   const [panelOpen,      setPanelOpen]      = useState(false);
-  const [selectedHero,   setSelectedHero]   = useState<HeroEntry | null>(null);
+
+  const [heroTraitBuild, setHeroTraitBuild] = useHeroTraitBuild();
+  const selectedHero = heroTraitBuild.selectedHero;
+  const setSelectedHero: React.Dispatch<React.SetStateAction<HeroEntry | null>> = (v) =>
+    setHeroTraitBuild(prev => ({ ...prev, selectedHero: typeof v === "function" ? (v as (p: HeroEntry | null) => HeroEntry | null)(prev.selectedHero) : v }));
+  const memoryFilled = heroTraitBuild.memoryFilled;
+  const setMemoryFilled: React.Dispatch<React.SetStateAction<[boolean, boolean, boolean]>> = (v) =>
+    setHeroTraitBuild(prev => ({ ...prev, memoryFilled: typeof v === "function" ? (v as (p: [boolean, boolean, boolean]) => [boolean, boolean, boolean])(prev.memoryFilled) : v }));
+  const memoryQuality = heroTraitBuild.memoryQuality;
+  const setMemoryQuality: React.Dispatch<React.SetStateAction<[MemoryQuality | null, MemoryQuality | null, MemoryQuality | null]>> = (v) =>
+    setHeroTraitBuild(prev => ({ ...prev, memoryQuality: typeof v === "function" ? (v as (p: [MemoryQuality | null, MemoryQuality | null, MemoryQuality | null]) => [MemoryQuality | null, MemoryQuality | null, MemoryQuality | null])(prev.memoryQuality) : v }));
+  const memorySelections = heroTraitBuild.memorySelections;
+  const setMemorySelections: React.Dispatch<React.SetStateAction<[MemorySlotSelections, MemorySlotSelections, MemorySlotSelections]>> = (v) =>
+    setHeroTraitBuild(prev => ({ ...prev, memorySelections: typeof v === "function" ? (v as (p: [MemorySlotSelections, MemorySlotSelections, MemorySlotSelections]) => [MemorySlotSelections, MemorySlotSelections, MemorySlotSelections])(prev.memorySelections) : v }));
+  const traitSelections = heroTraitBuild.traitSelections;
+  const setTraitSelections: React.Dispatch<React.SetStateAction<[string | null, string | null, string | null]>> = (v) =>
+    setHeroTraitBuild(prev => ({ ...prev, traitSelections: typeof v === "function" ? (v as (p: [string | null, string | null, string | null]) => [string | null, string | null, string | null])(prev.traitSelections) : v }));
+
   const [heroes,         setHeroes]         = useState<HeroEntry[]>([]);
   const [heroTraits,     setHeroTraits]     = useState<HeroTrait[]>([]);
   const [searchQuery,    setSearchQuery]    = useState("");
@@ -1514,10 +1532,6 @@ export default function HeroTraitPage() {
   const [artworkExt,       setArtworkExt]       = useState<"webp" | "png">("webp");
   const [artworkFailed,    setArtworkFailed]    = useState(false);
   const [centerTooltipPos, setCenterTooltipPos] = useState<{ x: number; y: number } | null>(null);
-  const [memoryFilled,     setMemoryFilled]     = useState<[boolean, boolean, boolean]>([false, false, false]);
-  const [memoryQuality,    setMemoryQuality]    = useState<[MemoryQuality | null, MemoryQuality | null, MemoryQuality | null]>([null, null, null]);
-  const [memorySelections, setMemorySelections] = useState<[MemorySlotSelections, MemorySlotSelections, MemorySlotSelections]>([{ ...EMPTY_MEMORY_SELECTIONS }, { ...EMPTY_MEMORY_SELECTIONS }, { ...EMPTY_MEMORY_SELECTIONS }]);
-  const [traitSelections,  setTraitSelections]  = useState<[string | null, string | null, string | null]>([null, null, null]);
   const [craftPanelCol,    setCraftPanelCol]    = useState<number | null>(null);
   const [activeMemorySlot, setActiveMemorySlot] = useState<ActiveSlotId | null>(null);
   const [craftQuality,     setCraftQuality]     = useState<MemoryQuality>("epic");
@@ -1534,14 +1548,27 @@ export default function HeroTraitPage() {
       .catch(console.error);
   }, []);
 
+  // Tracks the previously-seen hero so memory/trait selections are only cleared on a real
+  // hero-to-hero switch — not on the very first run of this effect, which also fires when
+  // `selectedHero` flips from null to the persisted hero as the build hydrates from
+  // localStorage (that transition must NOT wipe the selections it just restored).
+  const prevHeroRef = useRef<string | null | undefined>(undefined);
+
   useEffect(() => {
+    const newHero = selectedHero?.hero ?? null;
+    const prevHero = prevHeroRef.current;
+    const isRealSwitch = prevHero !== undefined && prevHero !== null && prevHero !== newHero;
+    prevHeroRef.current = newHero;
+
     setHeroTraits([]);
     setCircleImgError(false);
     setArtworkExt("webp");
     setArtworkFailed(false);
-    setMemoryFilled([false, false, false]);
-    setMemoryQuality([null, null, null]);
-    setTraitSelections([null, null, null]);
+    if (isRealSwitch) {
+      setMemoryFilled([false, false, false]);
+      setMemoryQuality([null, null, null]);
+      setTraitSelections([null, null, null]);
+    }
     if (!selectedHero) return;
     fetch(`/api/hero-traits?hero=${encodeURIComponent(selectedHero.hero)}`)
       .then((r) => r.json())

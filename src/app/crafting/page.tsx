@@ -18,6 +18,7 @@ import GearPanel, {
   type GearLoadout,
 } from "./GearPanel";
 import AffixPanel from "./AffixPanel";
+import { useGearBuild, type GearSlotBuildData } from "@/app/state/BuildContext";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -41,16 +42,32 @@ type SlotData = {
   activeAffixSlot: ActiveSlotId | null;
 };
 
-const EMPTY_SLOT_DATA: SlotData = {
+// Transient, per-slot fields that don't belong in the persisted build (poolData is re-fetched
+// from the loadout's pool id, loading/activeAffixSlot are pure UI state).
+type LocalSlotData = {
+  poolData: CraftedPool | null;
+  loading: boolean;
+  activeAffixSlot: ActiveSlotId | null;
+};
+
+const EMPTY_LOCAL_SLOT_DATA: LocalSlotData = {
   poolData: null,
-  itemSlots: EMPTY_SLOTS,
   loading: false,
+  activeAffixSlot: null,
+};
+
+const EMPTY_GEAR_SLOT_BUILD_DATA: GearSlotBuildData = {
+  itemSlots: EMPTY_SLOTS,
   baseCostFE: "",
   shallowCostFE: "",
   modCostFE: "",
-  resourcePrices: EMPTY_RESOURCE_PRICES,
   corrosionCostFE: "",
-  activeAffixSlot: null,
+  resourcePrices: EMPTY_RESOURCE_PRICES,
+};
+
+const EMPTY_SLOT_DATA: SlotData = {
+  ...EMPTY_LOCAL_SLOT_DATA,
+  ...EMPTY_GEAR_SLOT_BUILD_DATA,
 };
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
@@ -59,11 +76,29 @@ export default function CraftingPage() {
   const [pools, setPools] = useState<PoolSummary[]>([]);
   const [loadingPools, setLoadingPools] = useState(true);
 
-  const [loadout, setLoadout] = useState<GearLoadout>(EMPTY_LOADOUT);
+  const [gearBuild, setGearBuild] = useGearBuild();
+  const loadout = gearBuild.loadout;
+  const setLoadout: React.Dispatch<React.SetStateAction<GearLoadout>> = (v) =>
+    setGearBuild(prev => ({ ...prev, loadout: typeof v === "function" ? (v as (p: GearLoadout) => GearLoadout)(prev.loadout) : v }));
+  const persistedSlots = gearBuild.slots;
+  const setPersistedSlots: React.Dispatch<React.SetStateAction<Partial<Record<GearSlotId, GearSlotBuildData>>>> = (v) =>
+    setGearBuild(prev => ({ ...prev, slots: typeof v === "function" ? (v as (p: Partial<Record<GearSlotId, GearSlotBuildData>>) => Partial<Record<GearSlotId, GearSlotBuildData>>)(prev.slots) : v }));
+
   const [activeSlotId, setActiveSlotId] = useState<GearSlotId | null>(null);
   const [focusedSlotId, setFocusedSlotId] = useState<GearSlotId | null>(null);
 
-  const [slotDataMap, setSlotDataMap] = useState<Partial<Record<GearSlotId, SlotData>>>({});
+  const [localSlotData, setLocalSlotData] = useState<Partial<Record<GearSlotId, LocalSlotData>>>({});
+
+  // Merged read view combining the persisted (context) and transient (local) halves of a slot's
+  // data, so the rest of this file can keep reading a single SlotData shape per slot id.
+  function getSlotData(id: GearSlotId): SlotData {
+    return {
+      ...EMPTY_GEAR_SLOT_BUILD_DATA, ...persistedSlots[id],
+      ...EMPTY_LOCAL_SLOT_DATA, ...localSlotData[id],
+    };
+  }
+  const slotIds = Array.from(new Set([...Object.keys(persistedSlots), ...Object.keys(localSlotData)])) as GearSlotId[];
+  const slotDataMap = Object.fromEntries(slotIds.map((id) => [id, getSlotData(id)])) as Partial<Record<GearSlotId, SlotData>>;
 
   useEffect(() => {
     fetch("/api/pools")
@@ -74,24 +109,14 @@ export default function CraftingPage() {
       });
   }, []);
 
-  function handleSlotSelect(slotId: GearSlotId, poolId: string) {
-    setLoadout((prev) => ({ ...prev, [slotId]: poolId }));
-
-    if (!poolId) {
-      setSlotDataMap((prev) => {
-        const next = { ...prev };
-        delete next[slotId];
-        return next;
-      });
-      if (focusedSlotId === slotId) setFocusedSlotId(null);
-      return;
-    }
-
-    setSlotDataMap((prev) => ({
+  // poolData lives in localSlotData (it's re-derived from the loadout's pool id, not part of
+  // the persisted build), so it resets to empty whenever this component remounts — e.g. after
+  // navigating away and back. Fetch it here for that case.
+  function fetchPoolData(slotId: GearSlotId, poolId: string) {
+    setLocalSlotData((prev) => ({
       ...prev,
-      [slotId]: { ...EMPTY_SLOT_DATA, loading: true },
+      [slotId]: { ...EMPTY_LOCAL_SLOT_DATA, loading: true },
     }));
-    setFocusedSlotId(slotId);
 
     fetch(`/api/pools/${poolId}`)
       .then(async (r) => {
@@ -101,18 +126,62 @@ export default function CraftingPage() {
         catch { throw new Error(`Invalid JSON (status ${r.status}): ${text.slice(0, 200)}`); }
       })
       .then((data: CraftedPool) => {
-        setSlotDataMap((prev) => ({
+        setLocalSlotData((prev) => ({
           ...prev,
-          [slotId]: { ...EMPTY_SLOT_DATA, poolData: data, loading: false },
+          [slotId]: { ...EMPTY_LOCAL_SLOT_DATA, poolData: data, loading: false },
         }));
       })
       .catch((err) => {
         console.error(`[pool load] ${poolId}:`, err);
-        setSlotDataMap((prev) => ({
+        setLocalSlotData((prev) => ({
           ...prev,
-          [slotId]: { ...EMPTY_SLOT_DATA, loading: false },
+          [slotId]: { ...EMPTY_LOCAL_SLOT_DATA, loading: false },
         }));
       });
+  }
+
+  // Backfill poolData for slots that already have an equipped item (from the persisted
+  // loadout) but no cached poolData yet — otherwise clicking an already-crafted slot right
+  // after navigating here shows nothing, since the item card only renders once poolData
+  // resolves. Re-runs whenever the loadout itself changes (e.g. build hydration completing,
+  // or an import-build-code replacing the whole build) so newly-appeared slots get picked up.
+  useEffect(() => {
+    (Object.keys(loadout) as GearSlotId[]).forEach((slotId) => {
+      const poolId = loadout[slotId];
+      if (!poolId) return;
+      if (localSlotData[slotId]?.poolData || localSlotData[slotId]?.loading) return;
+      fetchPoolData(slotId, poolId);
+    });
+    // localSlotData is intentionally excluded — this effect backfills once per slot per
+    // loadout change, not every time the fetches above update localSlotData themselves.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [loadout]);
+
+  function handleSlotSelect(slotId: GearSlotId, poolId: string) {
+    setLoadout((prev) => ({ ...prev, [slotId]: poolId }));
+
+    if (!poolId) {
+      setLocalSlotData((prev) => {
+        const next = { ...prev };
+        delete next[slotId];
+        return next;
+      });
+      setPersistedSlots((prev) => {
+        const next = { ...prev };
+        delete next[slotId];
+        return next;
+      });
+      if (focusedSlotId === slotId) setFocusedSlotId(null);
+      return;
+    }
+
+    // Switching which pool/item is equipped resets that slot's crafted affixes and costs.
+    setPersistedSlots((prev) => ({
+      ...prev,
+      [slotId]: { ...EMPTY_GEAR_SLOT_BUILD_DATA },
+    }));
+    setFocusedSlotId(slotId);
+    fetchPoolData(slotId, poolId);
   }
 
   // Deselect active affix slot when clicking outside any interactive element
@@ -120,7 +189,7 @@ export default function CraftingPage() {
     function handleMouseDown(e: MouseEvent) {
       const target = e.target as Element;
       if (!target.closest("button, input, label, select, textarea, a, [data-affix-panel]")) {
-        setSlotDataMap((prev) => {
+        setLocalSlotData((prev) => {
           if (!focusedSlotId || !prev[focusedSlotId]?.activeAffixSlot) return prev;
           return { ...prev, [focusedSlotId]: { ...prev[focusedSlotId]!, activeAffixSlot: null } };
         });
@@ -130,16 +199,40 @@ export default function CraftingPage() {
     return () => document.removeEventListener("mousedown", handleMouseDown);
   }, [focusedSlotId]);
 
+  const LOCAL_SLOT_KEYS = ["poolData", "loading", "activeAffixSlot"] as const;
+
   function updateSlotData(slotId: GearSlotId, patch: Partial<SlotData>) {
-    setSlotDataMap((prev) => ({
-      ...prev,
-      [slotId]: { ...(prev[slotId] ?? EMPTY_SLOT_DATA), ...patch },
-    }));
+    const localPatch: Partial<LocalSlotData> = {};
+    const persistedPatch: Partial<GearSlotBuildData> = {};
+    for (const k of Object.keys(patch) as (keyof SlotData)[]) {
+      if ((LOCAL_SLOT_KEYS as readonly string[]).includes(k)) {
+        (localPatch as Record<string, unknown>)[k] = patch[k];
+      } else {
+        (persistedPatch as Record<string, unknown>)[k] = patch[k];
+      }
+    }
+    if (Object.keys(localPatch).length > 0) {
+      setLocalSlotData((prev) => ({
+        ...prev,
+        [slotId]: { ...(prev[slotId] ?? EMPTY_LOCAL_SLOT_DATA), ...localPatch },
+      }));
+    }
+    if (Object.keys(persistedPatch).length > 0) {
+      setPersistedSlots((prev) => ({
+        ...prev,
+        [slotId]: { ...(prev[slotId] ?? EMPTY_GEAR_SLOT_BUILD_DATA), ...persistedPatch },
+      }));
+    }
   }
 
   function clearSlot(slotId: GearSlotId) {
     setLoadout((prev) => ({ ...prev, [slotId]: "" }));
-    setSlotDataMap((prev) => {
+    setPersistedSlots((prev) => {
+      const next = { ...prev };
+      delete next[slotId];
+      return next;
+    });
+    setLocalSlotData((prev) => {
       const next = { ...prev };
       delete next[slotId];
       return next;
