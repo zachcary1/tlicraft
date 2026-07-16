@@ -517,7 +517,7 @@ function HeroTraitCard() {
                 onMouseLeave={() => setHoveredTrait(null)}
                 style={{ cursor: (i === 0 ? level1Trait : memColTrait) ? "pointer" : "default" }}
               >
-                <circle cx={cx} cy={circleY} r={cr} fill="#111" />
+                <circle cx={cx} cy={circleY} r={cr} fill="#111" stroke={(i === 0 ? centerIconPath : memColTrait) ? "none" : "#3f3f46"} strokeWidth="1.5" />
                 {((i === 0 && centerIconPath) || (i !== 0 && memColTrait)) && (
                   <defs>
                     <clipPath id={circleClipId}>
@@ -553,7 +553,7 @@ function HeroTraitCard() {
                       <path d={trBlPath(x, sqTop + 2, sq, sq, cornerR)} fill={memQc.border} />
                     </>
                   )}
-                  <path d={trBlPath(x, sqTop, sq, sq, cornerR)} fill={memQc ? `url(#ov-mem-grad-${memCol})` : "#111"} />
+                  <path d={trBlPath(x, sqTop, sq, sq, cornerR)} fill={memQc ? `url(#ov-mem-grad-${memCol})` : "#111"} stroke={memQc ? "none" : "#3f3f46"} strokeWidth="1.5" />
                   {memFilled && (
                     <image href={`/icons/equipment/${MEMORY_LABELS[memCol]}.webp`} x={x + sq * 0.1} y={sqTop + sq * 0.1} width={sq * 0.8} height={sq * 0.8} preserveAspectRatio="xMidYMid slice" />
                   )}
@@ -643,7 +643,7 @@ function TalentsCard() {
                 marginRight: "8px",
               }}
             >
-              <div style={{ position: "absolute", left: "calc(50% - 74px)", width: "36px", height: "36px", border: "2px solid #ffffff", background: "#111", borderRadius: "6px", transform: "skewY(-15deg)", overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <div style={{ position: "absolute", left: "calc(50% - 74px)", width: "36px", height: "36px", border: `2px solid ${treeIconPath ? "#ffffff" : "#3f3f46"}`, background: "#111", borderRadius: "6px", transform: "skewY(-15deg)", overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 {treeIconPath && (
                   <img
                     src={treeIconPath}
@@ -655,9 +655,9 @@ function TalentsCard() {
                   />
                 )}
               </div>
-              <div style={{ position: "absolute", left: "calc(50% - 38px)", width: "18px", height: "1px", background: "#ffffff", top: "50%", transform: "translateY(-50%)" }} />
+              <div style={{ position: "absolute", left: "calc(50% - 38px)", width: "18px", height: "1px", background: (treeIconPath && firstCircleCore) ? "#ffffff" : "#3f3f46", top: "50%", transform: "translateY(-50%)" }} />
               <svg width="40" height="40" style={{ flexShrink: 0, overflow: "visible" }}>
-                <circle cx="20" cy="20" r="19.25" fill="#111" stroke="#ffffff" strokeWidth="1.5" />
+                <circle cx="20" cy="20" r="19.25" fill="#111" stroke={firstCircleCore ? "#ffffff" : "#3f3f46"} strokeWidth="1.5" />
                 {firstCircleCore && (
                   <image
                     href={firstCircleCore.path} x="2" y="2" width="36" height="36" preserveAspectRatio="xMidYMid slice"
@@ -669,9 +669,9 @@ function TalentsCard() {
                 )}
               </svg>
               {i === 0 && <>
-                <div style={{ position: "absolute", left: "calc(50% + 20px)", width: "18px", height: "1px", background: "#ffffff", top: "50%", transform: "translateY(-50%)" }} />
+                <div style={{ position: "absolute", left: "calc(50% + 20px)", width: "18px", height: "1px", background: (core1 && core2) ? "#ffffff" : "#3f3f46", top: "50%", transform: "translateY(-50%)" }} />
                 <svg style={{ position: "absolute", left: "calc(50% + 38px)", overflow: "visible" }} width="40" height="40">
-                  <circle cx="20" cy="20" r="19.25" fill="#111" stroke="#ffffff" strokeWidth="1.5" />
+                  <circle cx="20" cy="20" r="19.25" fill="#111" stroke={core2 ? "#ffffff" : "#3f3f46"} strokeWidth="1.5" />
                   {core2 && (
                     <image
                       href={core2.path} x="2" y="2" width="36" height="36" preserveAspectRatio="xMidYMid slice"
@@ -794,7 +794,7 @@ function DivinitySlatesCard() {
               const x = pad + c * step;
               const y = pad + r * step;
               const color = occupantColor.get(cellKey(r, c));
-              return <rect key={`${r},${c}`} x={x} y={y} width={slot} height={slot} rx="0" fill={color ?? "#2b2929"} stroke={color ?? "#3a3a3a"} strokeWidth="2" />;
+              return <rect key={`${r},${c}`} x={x} y={y} width={slot} height={slot} rx="0" fill={color ?? "#111"} stroke={color ?? "#3f3f46"} strokeWidth="2" />;
             })
           )}
         </svg>
