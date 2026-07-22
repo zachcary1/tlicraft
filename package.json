@@ -9,7 +9,8 @@
     "lint": "eslint",
     "import:crafted-pools": "tsx scripts/import-crafted-pools.ts",
     "import:skills": "tsx scripts/import-skills.ts",
-    "import:torchcodex": "tsx scripts/import-torchcodex.ts"
+    "import:torchcodex": "tsx scripts/import-torchcodex.ts",
+    "test:e2e": "playwright test"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
@@ -24,6 +25,7 @@
     "react-dom": "19.2.3"
   },
   "devDependencies": {
+    "@playwright/test": "^1.61.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/pg": "^8.18.0",
