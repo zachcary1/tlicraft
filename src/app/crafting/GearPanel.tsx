@@ -467,7 +467,9 @@ export function LegendaryTooltipCard({ item, selections = {}, cx, cy }: { item: 
         borderRadius: "0 12px 0 12px",
       }} />
 
-      {/* Icon */}
+      {/* Icon — the slot/frame stays the crafted-item tooltip size; the picture itself is
+          scaled up past 100% and cropped by this box's overflow:hidden (legendary art has a
+          lot of transparent padding baked in, so a plain contain-fit reads visibly smaller). */}
       <div style={{
         position: "absolute", top: -(G_ICON_H / 2), left: "50%",
         transform: "translateX(-50%)", width: G_ICON_W, height: G_ICON_H, zIndex: 10,
@@ -478,7 +480,7 @@ export function LegendaryTooltipCard({ item, selections = {}, cx, cy }: { item: 
       }}>
         {!imgErr ? (
           <img src={iconPath} alt={displayName} onError={() => setImgErr(true)}
-            style={{ width: "auto", height: "92%", objectFit: "contain" }} />
+            style={{ width: "auto", height: "92%", objectFit: "contain", transform: "scale(1.15)" }} />
         ) : (
           <span style={{ color: "#666", fontSize: 18, fontWeight: 700 }}>?</span>
         )}
@@ -600,7 +602,10 @@ export function LegendaryItemCard({ item, slotSelections, activeLineIndex, onAct
         style={{ top: "-55px", left: "20px", width: "128px", height: "128px", background: epic.border, borderRadius: "0 28px 0 28px" }}
       />
 
-      {/* Icon */}
+      {/* Icon — the slot/frame stays the crafted-item size (128px); the picture itself is
+          scaled up past 100% and cropped by this box's overflow:hidden, since legendary art
+          has a lot of transparent padding baked in and reads visibly smaller at a plain
+          object-contain fit. */}
       <div
         className="absolute z-20 flex items-center justify-center overflow-hidden"
         style={{
@@ -612,7 +617,7 @@ export function LegendaryItemCard({ item, slotSelections, activeLineIndex, onAct
           borderRadius: "0 28px 0 28px",
         }}
       >
-        <img src={iconPath} alt={displayName} className="w-full h-full object-contain p-0.5" />
+        <img src={iconPath} alt={displayName} className="w-full h-full object-contain" style={{ transform: "scale(1.25)" }} />
       </div>
 
       {/* Main card */}
@@ -1149,7 +1154,7 @@ function SlotDropdown({ slotId, pools, legendary, loadout, triggerRef, onSelect,
                           style={isSelected && !disabled ? { color: EPIC_QUALITY.border } : undefined}
                           onClick={disabled ? undefined : () => onSelect(idStr)}
                         >
-                          <img src={getLegendaryIconPath(item)} alt="" className="w-5 h-5 object-contain flex-shrink-0" />
+                          <img src={getLegendaryIconPath(item)} alt="" className="w-8 h-8 object-contain flex-shrink-0" />
                           <span className="truncate flex-1">{displayName}</span>
                         </button>
                         {disabled && (
@@ -1289,7 +1294,7 @@ function SlotTile({ slotId, pools, legendary, legendarySelections, loadout, psCo
             <img
               src={getLegendaryIconPath(selectedLegendary)}
               alt={tileName ?? ""}
-              className="w-full h-full object-contain p-1.5"
+              className="w-full h-full object-contain p-0"
             />
           ) : (
             <div className="opacity-30">

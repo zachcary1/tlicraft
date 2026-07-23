@@ -9,7 +9,14 @@ interface SeedProfile {
   id: string;
   name: string;
   updatedAt: number;
-  state: { skills: { activeSkillSelections: (string | null)[] } };
+  state: {
+    skills?: { activeSkillSelections: (string | null)[] };
+    gear?: {
+      loadout: Record<string, string>;
+      slots: Record<string, unknown>;
+      legendarySlots: Record<string, { selections: Record<number, { optionIndex: number; corroded: boolean }> }>;
+    };
+  };
 }
 
 async function seedProfiles(target: Page | BrowserContext, profiles: SeedProfile[], activeId: string) {
@@ -68,7 +75,7 @@ test.describe("profile export/import sharing semantics", () => {
 
       const { profiles } = await readStoredProfiles(pageB);
       const imported = profiles.find((p) => p.name === "QA-Source");
-      expect(imported?.state.skills.activeSkillSelections[0]).toBe("v1");
+      expect(imported?.state.skills?.activeSkillSelections[0]).toBe("v1");
       expect(imported?.id).not.toBe("seed-a"); // fresh id, not a reference to the source profile
     });
 
@@ -83,7 +90,7 @@ test.describe("profile export/import sharing semantics", () => {
       await pageB.reload();
       const { profiles } = await readStoredProfiles(pageB);
       const imported = profiles.find((p) => p.name === "QA-Source");
-      expect(imported?.state.skills.activeSkillSelections[0]).toBe("v1");
+      expect(imported?.state.skills?.activeSkillSelections[0]).toBe("v1");
     });
 
     await test.step("User A deletes their source profile — User B's copy survives untouched", async () => {
@@ -96,7 +103,86 @@ test.describe("profile export/import sharing semantics", () => {
       await expect(pageB.getByRole("button", { name: "Options for QA-Source" })).toHaveCount(1);
       const { profiles } = await readStoredProfiles(pageB);
       const imported = profiles.find((p) => p.name === "QA-Source");
-      expect(imported?.state.skills.activeSkillSelections[0]).toBe("v1");
+      expect(imported?.state.skills?.activeSkillSelections[0]).toBe("v1");
+    });
+
+    await userA.close();
+    await userB.close();
+  });
+
+  test("legendary gear (loadout + corrosion selections) survives export/import and stays independent of the source", async ({ browser }) => {
+    const userA = await browser.newContext();
+    const userB = await browser.newContext();
+
+    await seedProfiles(
+      userA,
+      [{
+        id: "seed-a", name: "QA-Legendary", updatedAt: Date.now(),
+        state: {
+          gear: {
+            loadout: { boots: "legendary:legendary_0" },
+            slots: {},
+            legendarySlots: { boots: { selections: { 0: { optionIndex: 0, corroded: true } } } },
+          },
+        },
+      }],
+      "seed-a",
+    );
+
+    const pageA = await userA.newPage();
+    const pageB = await userB.newPage();
+
+    let code = "";
+    await test.step("User A exports a build with a legendary item equipped and one line corroded", async () => {
+      await pageA.goto("/profiles");
+      code = await generateExportCode(pageA);
+    });
+
+    await test.step("User B imports the code and gets the same legendary loadout + corrosion state", async () => {
+      await pageB.goto("/profiles");
+      await importCode(pageB, code);
+      await expect(pageB.getByText('Imported as "QA-Legendary".')).toBeVisible();
+
+      const { profiles } = await readStoredProfiles(pageB);
+      const imported = profiles.find((p) => p.name === "QA-Legendary");
+      expect(imported?.state.gear?.loadout.boots).toBe("legendary:legendary_0");
+      expect(imported?.state.gear?.legendarySlots.boots.selections[0]).toEqual({ optionIndex: 0, corroded: true });
+    });
+
+    await test.step("The imported copy actually renders correctly on the crafting page", async () => {
+      await pageB.getByRole("button", { name: "Switch" }).click();
+      // switchProfile's activeId change is debounced (WRITE_DEBOUNCE_MS) before it lands in
+      // localStorage — goto() below is a full page load, so it must wait for that write to
+      // land first, or the fresh BuildProvider hydrates the *old* active profile instead.
+      await pageB.waitForFunction(
+        (key) => JSON.parse(window.localStorage.getItem(key) ?? "{}").activeId !== "default",
+        STORAGE_KEY,
+        { timeout: 5000 },
+      );
+      await pageB.goto("/crafting");
+      await pageB.waitForLoadState("networkidle");
+      const bootsButton = pageB.locator('xpath=//span[normalize-space(text())="Boots"]/following-sibling::div//button').first();
+      await bootsButton.click();
+      const affixesBox = pageB.locator('xpath=//span[normalize-space(text())="Affixes"]/ancestor::div[contains(@class,"border")][1]');
+      const firstLineColor = await affixesBox.getByRole("button").first().evaluate((btn) => {
+        const span = btn.querySelector("span.truncate") as HTMLElement;
+        return getComputedStyle(span).color;
+      });
+      expect(firstLineColor).toBe("rgb(98, 86, 225)"); // #6256e1 — confirms the corroded selection actually took effect, not just the raw JSON
+    });
+
+    await test.step("User A changes their corrosion selection afterwards — User B's copy is unaffected", async () => {
+      await pageA.evaluate((key) => {
+        const data = JSON.parse(window.localStorage.getItem(key) as string);
+        data.profiles[0].state.gear.legendarySlots.boots.selections[0] = { optionIndex: 0, corroded: false };
+        window.localStorage.setItem(key, JSON.stringify(data));
+      }, STORAGE_KEY);
+      await pageA.reload();
+
+      await pageB.reload();
+      const { profiles } = await readStoredProfiles(pageB);
+      const imported = profiles.find((p) => p.name === "QA-Legendary");
+      expect(imported?.state.gear?.legendarySlots.boots.selections[0]).toEqual({ optionIndex: 0, corroded: true });
     });
 
     await userA.close();
@@ -171,6 +257,10 @@ test.describe("profile export/import sharing semantics", () => {
 
     const { profiles } = await readStoredProfiles(page);
     const imported = profiles.find((p) => p.name === "Imported Profile");
-    expect(imported?.state.skills.activeSkillSelections[0]).toBe("legacy");
+    expect(imported?.state.skills?.activeSkillSelections[0]).toBe("legacy");
+    // This code predates the legendary-gear feature, so its gear object has no
+    // legendarySlots key at all — mergeBuildState should default it to {} rather
+    // than importing with a missing/undefined field.
+    expect(imported?.state.gear?.legendarySlots).toEqual({});
   });
 });

@@ -207,7 +207,7 @@ function GearCard() {
                   {pool ? (
                     <img src={getPoolIconPath(pool)} alt={pool.name} style={{ width: "78%", height: "78%", objectFit: "contain" }} />
                   ) : legendaryItem ? (
-                    <img src={getLegendaryIconPath(legendaryItem)} alt={parseLegendaryName(legendaryItem.name).displayName} style={{ width: "78%", height: "78%", objectFit: "contain" }} />
+                    <img src={getLegendaryIconPath(legendaryItem)} alt={parseLegendaryName(legendaryItem.name).displayName} style={{ width: "95%", height: "95%", objectFit: "contain" }} />
                   ) : (
                     <div style={{ transform: "scale(0.62)", transformOrigin: "center" }}>{SLOT_ICONS[slotId]}</div>
                   )}
