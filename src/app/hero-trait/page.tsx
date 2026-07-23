@@ -5,6 +5,7 @@ import { createPortal } from "react-dom";
 import { HERO_TRAIT_ORDER } from "./heroTraitOrder";
 import type { ActiveSlotId } from "../crafting/ItemCard";
 import { useHeroTraitBuild } from "@/app/state/BuildContext";
+import { getJSON } from "@/lib/apiCache";
 
 const BG_STYLE = {
   backgroundImage: [
@@ -942,9 +943,8 @@ function MemoryAffixPanel({
 
   useEffect(() => {
     setLoading(true);
-    fetch(`/api/hero-memory?item=${encodeURIComponent(memoryItem)}`)
-      .then((r) => r.json())
-      .then((data: MemoryAffix[]) => { setAffixes(data); setLoading(false); })
+    getJSON<MemoryAffix[]>(`/api/hero-memory?item=${encodeURIComponent(memoryItem)}`)
+      .then((data) => { setAffixes(data); setLoading(false); })
       .catch(() => setLoading(false));
   }, [memoryItem]);
 
@@ -1542,8 +1542,7 @@ export default function HeroTraitPage() {
   }, [craftPanelCol]);
 
   useEffect(() => {
-    fetch("/api/hero-traits")
-      .then((r) => r.json())
+    getJSON<HeroEntry[]>("/api/hero-traits")
       .then(setHeroes)
       .catch(console.error);
   }, []);
@@ -1570,8 +1569,7 @@ export default function HeroTraitPage() {
       setTraitSelections([null, null, null]);
     }
     if (!selectedHero) return;
-    fetch(`/api/hero-traits?hero=${encodeURIComponent(selectedHero.hero)}`)
-      .then((r) => r.json())
+    getJSON<HeroTrait[]>(`/api/hero-traits?hero=${encodeURIComponent(selectedHero.hero)}`)
       .then(setHeroTraits)
       .catch(console.error);
   }, [selectedHero?.hero]);

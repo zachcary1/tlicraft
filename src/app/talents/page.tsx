@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { TalentTree } from "@/components/TalentTree";
 import { TalentTrees } from "../../../data/crafted/torchcodex/talent-tree/talent-trees";
 import { useTalentsBuild } from "@/app/state/BuildContext";
@@ -174,6 +174,18 @@ export default function TalentsPage() {
   const [active,       setActive]       = useState<SlotIdx>(0);
   const [hoveredNode,  setHoveredNode]  = useState<string | null>(null);
   const [viewedTree,   setViewedTree]   = useState<Sel | null>(null);
+
+  // Jump straight into slot 0's tree on page entry if one's already picked, instead of
+  // landing on the selection grid. Runs once — guarded so it doesn't refire (and hijack
+  // the view) every time `slots` changes afterward, e.g. when the user reselects a tree.
+  // Waits for a non-null slots[0] because on a hard refresh the build is still hydrating
+  // from localStorage on the very first render.
+  const bootstrapped = useRef(false);
+  useEffect(() => {
+    if (bootstrapped.current || !slots[0]) return;
+    bootstrapped.current = true;
+    setViewedTree(slots[0]);
+  }, [slots]);
 
   function getProgress(name: string): TreeProgress {
     return progress[name] ?? EMPTY_PROGRESS;

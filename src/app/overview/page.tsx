@@ -2,7 +2,11 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { SLOT_ICONS, SLOT_LABELS, LAYOUT, getPoolIconPath, GearTooltipCard, getPSRarityColors, METALLIC_GRADIENTS, type GearSlotId, type PoolSummary } from "@/app/crafting/GearPanel";
+import {
+  SLOT_ICONS, SLOT_LABELS, LAYOUT, getPoolIconPath, GearTooltipCard, getPSRarityColors, METALLIC_GRADIENTS,
+  isLegendaryId, findLegendary, getLegendaryIconPath, parseLegendaryName, LegendaryTooltipCard, LEGENDARY_COLORS,
+  type GearSlotId, type PoolSummary, type LegendarySummary,
+} from "@/app/crafting/GearPanel";
 import { EMPTY_SLOTS, type ItemSlots } from "@/app/crafting/ItemCard";
 import type { CraftedPool } from "@/services/crafting/types";
 import { getTooltipIconPath, SkillTooltipCard, type Skill } from "@/app/skills/page";
@@ -27,6 +31,7 @@ import { SlateTooltipCard } from "@/app/divinity-slates/page";
 import {
   useGearBuild, useSkillsBuild, usePactspiritsBuild, useHeroTraitBuild, useTalentsBuild, useDivinitySlatesBuild,
 } from "@/app/state/BuildContext";
+import { getJSON } from "@/lib/apiCache";
 
 // ─── Shared chrome ────────────────────────────────────────────────────────────
 
@@ -118,6 +123,7 @@ const MEM_BG_STOPS: Record<MemoryQuality, [string, string]> = {
 function GearCard() {
   const [gearBuild] = useGearBuild();
   const [pools, setPools] = useState<PoolSummary[]>([]);
+  const [legendary, setLegendary] = useState<LegendarySummary[]>([]);
   const [poolDataCache, setPoolDataCache] = useState<Record<string, CraftedPool>>({});
   const [hovered, setHovered] = useState<GearSlotId | null>(null);
   const [tipPos, setTipPos] = useState<{ x: number; y: number } | null>(null);
@@ -125,7 +131,11 @@ function GearCard() {
   const gap = 10;
 
   useEffect(() => {
-    fetch("/api/pools").then((r) => r.json()).then(setPools).catch(console.error);
+    getJSON<PoolSummary[]>("/api/pools").then(setPools).catch(console.error);
+  }, []);
+
+  useEffect(() => {
+    getJSON<LegendarySummary[]>("/api/legendary").then(setLegendary).catch(console.error);
   }, []);
 
   // The tooltip needs each equipped item's full affix definitions (not just the summary
@@ -133,12 +143,11 @@ function GearCard() {
   // affix name — fetch and cache them per equipped pool id, matching what the crafting
   // page fetches per-slot when a pool is selected there.
   useEffect(() => {
-    const poolIds = new Set(Object.values(gearBuild.loadout).filter(Boolean));
+    const poolIds = new Set(Object.values(gearBuild.loadout).filter((id) => id && !isLegendaryId(id)));
     poolIds.forEach((poolId) => {
       if (poolDataCache[poolId]) return;
-      fetch(`/api/pools/${poolId}`)
-        .then((r) => r.json())
-        .then((data: CraftedPool) => setPoolDataCache((prev) => ({ ...prev, [poolId]: data })))
+      getJSON<CraftedPool>(`/api/pools/${poolId}`)
+        .then((data) => setPoolDataCache((prev) => ({ ...prev, [poolId]: data })))
         .catch(console.error);
     });
     // poolDataCache is intentionally excluded — this only needs to fire once per pool id
@@ -151,9 +160,11 @@ function GearCard() {
       .filter((k) => itemSlots[k] !== null).length;
   }
 
-  const hoveredPool = hovered ? pools.find((p) => p.id === gearBuild.loadout[hovered]) ?? null : null;
+  const hoveredId = hovered ? gearBuild.loadout[hovered] : "";
+  const hoveredPool = hoveredId && !isLegendaryId(hoveredId) ? pools.find((p) => p.id === hoveredId) ?? null : null;
+  const hoveredLegendary = hoveredId && isLegendaryId(hoveredId) ? findLegendary(hoveredId, legendary) ?? null : null;
   const hoveredItemSlots = hovered ? gearBuild.slots[hovered]?.itemSlots ?? EMPTY_SLOTS : EMPTY_SLOTS;
-  const hoveredPoolData = hovered ? poolDataCache[gearBuild.loadout[hovered]] ?? null : null;
+  const hoveredPoolData = hoveredPool ? poolDataCache[hoveredPool.id] ?? null : null;
 
   return (
     <CardShell>
@@ -162,21 +173,23 @@ function GearCard() {
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap }}>
         {LAYOUT.map(([left, right]) =>
           [left, right].map((slotId) => {
-            const poolId = gearBuild.loadout[slotId];
-            const pool = poolId ? pools.find((p) => p.id === poolId) ?? null : null;
+            const id = gearBuild.loadout[slotId];
+            const pool = id && !isLegendaryId(id) ? pools.find((p) => p.id === id) ?? null : null;
+            const legendaryItem = id && isLegendaryId(id) ? findLegendary(id, legendary) ?? null : null;
+            const hasSelection = Boolean(pool || legendaryItem);
             const psCount = pool ? psCountFor(gearBuild.slots[slotId]?.itemSlots ?? EMPTY_SLOTS) : 0;
-            const { gradientEnd, metallicKey } = getPSRarityColors(psCount);
-            const innerBg = pool ? `linear-gradient(to bottom, #1a1a1a 0%, ${gradientEnd} 100%)` : "#0a0a0a";
-            const border = pool ? "3px solid transparent" : "3px solid #3f3f46";
-            const background = pool ? `${innerBg} padding-box, ${METALLIC_GRADIENTS[metallicKey]} border-box` : innerBg;
+            const { gradientEnd, metallicKey } = legendaryItem ? LEGENDARY_COLORS : getPSRarityColors(psCount);
+            const innerBg = hasSelection ? `linear-gradient(to bottom, #1a1a1a 0%, ${gradientEnd} 100%)` : "#0a0a0a";
+            const border = hasSelection ? "3px solid transparent" : "3px solid #3f3f46";
+            const background = hasSelection ? `${innerBg} padding-box, ${METALLIC_GRADIENTS[metallicKey]} border-box` : innerBg;
             return (
               <div key={slotId} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 4 }}>
                 <span style={{ fontSize: "9px", color: "#52525b", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 600 }}>
                   {SLOT_LABELS[slotId]}
                 </span>
                 <div
-                  onMouseEnter={(e) => { if (pool) { setHovered(slotId); setTipPos({ x: e.clientX, y: e.clientY }); } }}
-                  onMouseMove={(e) => { if (pool) setTipPos({ x: e.clientX, y: e.clientY }); }}
+                  onMouseEnter={(e) => { if (hasSelection) { setHovered(slotId); setTipPos({ x: e.clientX, y: e.clientY }); } }}
+                  onMouseMove={(e) => { if (hasSelection) setTipPos({ x: e.clientX, y: e.clientY }); }}
                   onMouseLeave={() => setHovered(null)}
                   style={{
                     width: slotSize,
@@ -187,12 +200,14 @@ function GearCard() {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    opacity: pool ? 1 : 0.35,
-                    cursor: pool ? "pointer" : "default",
+                    opacity: hasSelection ? 1 : 0.35,
+                    cursor: hasSelection ? "pointer" : "default",
                   }}
                 >
                   {pool ? (
                     <img src={getPoolIconPath(pool)} alt={pool.name} style={{ width: "78%", height: "78%", objectFit: "contain" }} />
+                  ) : legendaryItem ? (
+                    <img src={getLegendaryIconPath(legendaryItem)} alt={parseLegendaryName(legendaryItem.name).displayName} style={{ width: "78%", height: "78%", objectFit: "contain" }} />
                   ) : (
                     <div style={{ transform: "scale(0.62)", transformOrigin: "center" }}>{SLOT_ICONS[slotId]}</div>
                   )}
@@ -204,6 +219,14 @@ function GearCard() {
       </div>
       {hoveredPool && tipPos && (
         <GearTooltipCard pool={hoveredPool} itemSlots={hoveredItemSlots} poolData={hoveredPoolData} psCount={psCountFor(hoveredItemSlots)} cx={tipPos.x} cy={tipPos.y} />
+      )}
+      {hoveredLegendary && tipPos && (
+        <LegendaryTooltipCard
+          item={hoveredLegendary}
+          selections={hovered ? gearBuild.legendarySlots[hovered]?.selections : undefined}
+          cx={tipPos.x}
+          cy={tipPos.y}
+        />
       )}
     </CardShell>
   );
@@ -276,8 +299,8 @@ function SkillsCard() {
   const [tipPos, setTipPos] = useState<{ x: number; y: number } | null>(null);
 
   useEffect(() => {
-    fetch("/api/skills?type=Active").then((r) => r.json()).then(setActiveCatalog).catch(console.error);
-    fetch("/api/skills?type=Passive").then((r) => r.json()).then(setPassiveCatalog).catch(console.error);
+    getJSON<Skill[]>("/api/skills?type=Active").then(setActiveCatalog).catch(console.error);
+    getJSON<Skill[]>("/api/skills?type=Passive").then(setPassiveCatalog).catch(console.error);
   }, []);
 
   const pad = 4;
@@ -365,8 +388,8 @@ function PactspiritsCard() {
   const [tipPos, setTipPos] = useState<{ x: number; y: number } | null>(null);
 
   useEffect(() => {
-    fetch("/api/pactspirits?category=battle").then((r) => r.json()).then(setBattleSpirits).catch(console.error);
-    fetch("/api/pactspirits?category=drop").then((r) => r.json()).then(setDropSpirits).catch(console.error);
+    getJSON<PactSpirit[]>("/api/pactspirits?category=battle").then(setBattleSpirits).catch(console.error);
+    getJSON<PactSpirit[]>("/api/pactspirits?category=drop").then(setDropSpirits).catch(console.error);
   }, []);
 
   const gap = 14;
@@ -424,8 +447,7 @@ function HeroTraitCard() {
   useEffect(() => {
     setHeroTraits([]);
     if (!selectedHero) return;
-    fetch(`/api/hero-traits?hero=${encodeURIComponent(selectedHero.hero)}`)
-      .then((r) => r.json())
+    getJSON<HeroTrait[]>(`/api/hero-traits?hero=${encodeURIComponent(selectedHero.hero)}`)
       .then(setHeroTraits)
       .catch(console.error);
   }, [selectedHero?.hero]);
@@ -755,7 +777,7 @@ function DivinitySlatesCard() {
   const [tipPos, setTipPos] = useState<{ x: number; y: number } | null>(null);
 
   useEffect(() => {
-    fetch("/api/talents").then((r) => r.json()).then(setTalents).catch(console.error);
+    getJSON<Talent[]>("/api/talents").then(setTalents).catch(console.error);
   }, []);
 
   const slot = 26;

@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { useSkillsBuild } from "@/app/state/BuildContext";
+import { getJSON } from "@/lib/apiCache";
 
 export interface Skill {
   name: string;
@@ -921,12 +922,10 @@ export default function SkillsPage() {
   useEffect(() => { setSearchQuery(""); }, [selectedActive, selectedPassive, selectedCenterSlot]);
 
   useEffect(() => {
-    fetch("/api/skills?type=Active")
-      .then((r) => r.json()).then(setActiveSkills).catch(console.error);
-    fetch("/api/skills?type=Passive")
-      .then((r) => r.json()).then(setPassiveSkills).catch(console.error);
-    fetch("/api/skills?types=Support,Support%20(Magnificent),Support%20(Noble),Activation%20Medium")
-      .then((r) => r.json()).then(setAllSupportSkills).catch(console.error);
+    getJSON<Skill[]>("/api/skills?type=Active").then(setActiveSkills).catch(console.error);
+    getJSON<Skill[]>("/api/skills?type=Passive").then(setPassiveSkills).catch(console.error);
+    getJSON<Skill[]>("/api/skills?types=Support,Support%20(Magnificent),Support%20(Noble),Activation%20Medium")
+      .then(setAllSupportSkills).catch(console.error);
   }, []);
 
   function selectSkillForActiveSlot(slotIdx: number, skillName: string) {

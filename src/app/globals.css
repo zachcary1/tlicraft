@@ -105,3 +105,15 @@ input[type="number"] {
   border-bottom: 1px dotted #6b6b6b;
   cursor: help;
 }
+
+.skill-effect span.corroded {
+  color: #c74a28;
+  font-weight: 600;
+}
+
+.skill-effect span.graftable {
+  color: #71717a;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}

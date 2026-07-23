@@ -20,9 +20,17 @@ export interface GearSlotBuildData {
   resourcePrices: ResourcePrices;
 }
 
+// A legendary item's affixes are fixed (nothing to craft) except: for a "Randomly Chosen"
+// line, which of its options is picked, and whether a line (up to 2 total on the item) has
+// been corroded to T0+. Keyed by the affix line's index in its parsed slot list.
+export interface LegendarySlotBuildData {
+  selections: Record<number, { optionIndex: number; corroded: boolean }>;
+}
+
 export interface GearBuild {
   loadout: GearLoadout;
   slots: Partial<Record<GearSlotId, GearSlotBuildData>>;
+  legendarySlots: Partial<Record<GearSlotId, LegendarySlotBuildData>>;
 }
 
 export interface SkillsBuild {
@@ -74,6 +82,7 @@ export const DEFAULT_BUILD_STATE: BuildState = {
   gear: {
     loadout: EMPTY_LOADOUT,
     slots: {},
+    legendarySlots: {},
   },
   skills: {
     activeSkillSelections: Array(5).fill(null),

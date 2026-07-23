@@ -14,11 +14,19 @@ import ItemCard, {
 } from "./ItemCard";
 import GearPanel, {
   EMPTY_LOADOUT,
+  isLegendaryId,
+  findLegendary,
+  parseLegendaryAffixSlots,
+  LegendaryItemCard,
+  LegendaryAffixPanel,
   type GearSlotId,
   type GearLoadout,
+  type LegendarySummary,
+  type LegendaryLineSelection,
 } from "./GearPanel";
 import AffixPanel from "./AffixPanel";
-import { useGearBuild, type GearSlotBuildData } from "@/app/state/BuildContext";
+import { useGearBuild, type GearSlotBuildData, type LegendarySlotBuildData } from "@/app/state/BuildContext";
+import { getJSON } from "@/lib/apiCache";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -75,6 +83,7 @@ const EMPTY_SLOT_DATA: SlotData = {
 export default function CraftingPage() {
   const [pools, setPools] = useState<PoolSummary[]>([]);
   const [loadingPools, setLoadingPools] = useState(true);
+  const [legendary, setLegendary] = useState<LegendarySummary[]>([]);
 
   const [gearBuild, setGearBuild] = useGearBuild();
   const loadout = gearBuild.loadout;
@@ -83,11 +92,18 @@ export default function CraftingPage() {
   const persistedSlots = gearBuild.slots;
   const setPersistedSlots: React.Dispatch<React.SetStateAction<Partial<Record<GearSlotId, GearSlotBuildData>>>> = (v) =>
     setGearBuild(prev => ({ ...prev, slots: typeof v === "function" ? (v as (p: Partial<Record<GearSlotId, GearSlotBuildData>>) => Partial<Record<GearSlotId, GearSlotBuildData>>)(prev.slots) : v }));
+  const legendarySlots = gearBuild.legendarySlots;
+  const setLegendarySlots: React.Dispatch<React.SetStateAction<Partial<Record<GearSlotId, LegendarySlotBuildData>>>> = (v) =>
+    setGearBuild(prev => ({ ...prev, legendarySlots: typeof v === "function" ? (v as (p: Partial<Record<GearSlotId, LegendarySlotBuildData>>) => Partial<Record<GearSlotId, LegendarySlotBuildData>>)(prev.legendarySlots) : v }));
 
   const [activeSlotId, setActiveSlotId] = useState<GearSlotId | null>(null);
   const [focusedSlotId, setFocusedSlotId] = useState<GearSlotId | null>(null);
 
   const [localSlotData, setLocalSlotData] = useState<Partial<Record<GearSlotId, LocalSlotData>>>({});
+
+  // Which affix line of the focused legendary item is active (its options shown in the right
+  // panel) — pure UI state, like activeAffixSlot for crafted items, so it resets on remount.
+  const [legendaryActiveLine, setLegendaryActiveLine] = useState<Partial<Record<GearSlotId, number>>>({});
 
   // Merged read view combining the persisted (context) and transient (local) halves of a slot's
   // data, so the rest of this file can keep reading a single SlotData shape per slot id.
@@ -101,12 +117,16 @@ export default function CraftingPage() {
   const slotDataMap = Object.fromEntries(slotIds.map((id) => [id, getSlotData(id)])) as Partial<Record<GearSlotId, SlotData>>;
 
   useEffect(() => {
-    fetch("/api/pools")
-      .then((r) => r.json())
+    getJSON<PoolSummary[]>("/api/pools")
       .then((data) => {
         setPools(data);
         setLoadingPools(false);
-      });
+      })
+      .catch(console.error);
+  }, []);
+
+  useEffect(() => {
+    getJSON<LegendarySummary[]>("/api/legendary").then(setLegendary).catch(console.error);
   }, []);
 
   // poolData lives in localSlotData (it's re-derived from the loadout's pool id, not part of
@@ -118,14 +138,8 @@ export default function CraftingPage() {
       [slotId]: { ...EMPTY_LOCAL_SLOT_DATA, loading: true },
     }));
 
-    fetch(`/api/pools/${poolId}`)
-      .then(async (r) => {
-        const text = await r.text();
-        if (!text) throw new Error(`Empty response (status ${r.status})`);
-        try { return JSON.parse(text); }
-        catch { throw new Error(`Invalid JSON (status ${r.status}): ${text.slice(0, 200)}`); }
-      })
-      .then((data: CraftedPool) => {
+    getJSON<CraftedPool>(`/api/pools/${poolId}`)
+      .then((data) => {
         setLocalSlotData((prev) => ({
           ...prev,
           [slotId]: { ...EMPTY_LOCAL_SLOT_DATA, poolData: data, loading: false },
@@ -148,7 +162,7 @@ export default function CraftingPage() {
   useEffect(() => {
     (Object.keys(loadout) as GearSlotId[]).forEach((slotId) => {
       const poolId = loadout[slotId];
-      if (!poolId) return;
+      if (!poolId || isLegendaryId(poolId)) return;
       if (localSlotData[slotId]?.poolData || localSlotData[slotId]?.loading) return;
       fetchPoolData(slotId, poolId);
     });
@@ -157,10 +171,10 @@ export default function CraftingPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loadout]);
 
-  function handleSlotSelect(slotId: GearSlotId, poolId: string) {
-    setLoadout((prev) => ({ ...prev, [slotId]: poolId }));
+  function handleSlotSelect(slotId: GearSlotId, id: string) {
+    setLoadout((prev) => ({ ...prev, [slotId]: id }));
 
-    if (!poolId) {
+    if (!id) {
       setLocalSlotData((prev) => {
         const next = { ...prev };
         delete next[slotId];
@@ -171,17 +185,66 @@ export default function CraftingPage() {
         delete next[slotId];
         return next;
       });
+      setLegendarySlots((prev) => {
+        const next = { ...prev };
+        delete next[slotId];
+        return next;
+      });
+      setLegendaryActiveLine((prev) => {
+        const next = { ...prev };
+        delete next[slotId];
+        return next;
+      });
       if (focusedSlotId === slotId) setFocusedSlotId(null);
       return;
     }
 
-    // Switching which pool/item is equipped resets that slot's crafted affixes and costs.
+    // Switching which item is equipped resets that slot's crafted affixes and costs — a
+    // legendary item has neither (only its corrosion selections, reset fresh below), so it
+    // just clears both and stops there (no pool fetch).
+    setLocalSlotData((prev) => {
+      const next = { ...prev };
+      delete next[slotId];
+      return next;
+    });
+    setPersistedSlots((prev) => {
+      const next = { ...prev };
+      delete next[slotId];
+      return next;
+    });
+    setFocusedSlotId(slotId);
+    setLegendaryActiveLine((prev) => {
+      const next = { ...prev };
+      delete next[slotId];
+      return next;
+    });
+
+    if (isLegendaryId(id)) {
+      setLegendarySlots((prev) => ({ ...prev, [slotId]: { selections: {} } }));
+      return;
+    }
+
+    setLegendarySlots((prev) => {
+      const next = { ...prev };
+      delete next[slotId];
+      return next;
+    });
     setPersistedSlots((prev) => ({
       ...prev,
       [slotId]: { ...EMPTY_GEAR_SLOT_BUILD_DATA },
     }));
-    setFocusedSlotId(slotId);
-    fetchPoolData(slotId, poolId);
+    fetchPoolData(slotId, id);
+  }
+
+  function handleActivateLegendaryLine(slotId: GearSlotId, lineIndex: number) {
+    setLegendaryActiveLine((prev) => ({ ...prev, [slotId]: lineIndex }));
+  }
+
+  function handleSelectLegendaryLine(slotId: GearSlotId, lineIndex: number, choice: LegendaryLineSelection) {
+    setLegendarySlots((prev) => ({
+      ...prev,
+      [slotId]: { selections: { ...(prev[slotId]?.selections ?? {}), [lineIndex]: choice } },
+    }));
   }
 
   // Deselect active affix slot when clicking outside any interactive element
@@ -233,6 +296,16 @@ export default function CraftingPage() {
       return next;
     });
     setLocalSlotData((prev) => {
+      const next = { ...prev };
+      delete next[slotId];
+      return next;
+    });
+    setLegendarySlots((prev) => {
+      const next = { ...prev };
+      delete next[slotId];
+      return next;
+    });
+    setLegendaryActiveLine((prev) => {
       const next = { ...prev };
       delete next[slotId];
       return next;
@@ -312,6 +385,22 @@ export default function CraftingPage() {
       }).length
     : 0;
 
+  // Legendary equivalent of `focused` — the parsed affix slots for the focused item and
+  // whichever line is currently active, for the right-hand affix panel.
+  const focusedLegendaryItem = focusedSlotId && isLegendaryId(loadout[focusedSlotId])
+    ? findLegendary(loadout[focusedSlotId], legendary)
+    : undefined;
+  const focusedLegendarySlots = focusedLegendaryItem ? parseLegendaryAffixSlots(focusedLegendaryItem.affixes) : null;
+  const focusedLegendaryLineIndex = focusedSlotId ? legendaryActiveLine[focusedSlotId] ?? null : null;
+  const focusedLegendarySlot = focusedLegendarySlots && focusedLegendaryLineIndex !== null
+    ? focusedLegendarySlots[focusedLegendaryLineIndex] ?? null
+    : null;
+  const focusedLegendarySelections = focusedSlotId ? legendarySlots[focusedSlotId]?.selections ?? {} : {};
+  const focusedLegendarySelection = focusedLegendaryLineIndex !== null ? focusedLegendarySelections[focusedLegendaryLineIndex] ?? null : null;
+  const focusedLegendaryOtherCorroded = focusedLegendarySlots
+    ? focusedLegendarySlots.filter((_, i) => focusedLegendarySelections[i]?.corroded).length - (focusedLegendarySelection?.corroded ? 1 : 0)
+    : 0;
+
   return (
     <div
       className="min-h-screen text-[#1a2028]"
@@ -332,6 +421,8 @@ export default function CraftingPage() {
         <div className="pr-12 pt-[35px]">
           <GearPanel
             pools={pools}
+            legendary={legendary}
+            legendarySlots={legendarySlots}
             loadout={loadout}
             activeSlotId={activeSlotId}
             focusedSlotId={focusedSlotId}
@@ -354,7 +445,22 @@ export default function CraftingPage() {
 
         {/* Item card */}
         <div className="w-[700px] shrink-0 pl-12 pr-4 self-center">
-          {!focusedSlotId || !focused ? (
+          {focusedSlotId && isLegendaryId(loadout[focusedSlotId]) ? (
+            (() => {
+              const item = findLegendary(loadout[focusedSlotId], legendary);
+              return item
+                ? (
+                  <LegendaryItemCard
+                    item={item}
+                    slotSelections={legendarySlots[focusedSlotId]?.selections ?? {}}
+                    activeLineIndex={legendaryActiveLine[focusedSlotId] ?? null}
+                    onActivateLine={(i) => handleActivateLegendaryLine(focusedSlotId, i)}
+                    onClear={() => clearSlot(focusedSlotId)}
+                  />
+                )
+                : <PlaceholderItemCard title="Loading legendary item…" />;
+            })()
+          ) : !focusedSlotId || !focused ? (
             <PlaceholderItemCard />
           ) : focused.loading ? (
             <PlaceholderItemCard title="Loading affix pools…" />
@@ -383,17 +489,26 @@ export default function CraftingPage() {
 
         {/* Affix panel */}
         <div className="w-[560px] shrink-0 pl-4" data-affix-panel>
-          <AffixPanel
-            pool={focused?.poolData ?? null}
-            slots={focused?.itemSlots ?? EMPTY_SLOTS}
-            activeSlot={focused?.activeAffixSlot ?? null}
-            onChange={(s) => focusedSlotId && updateSlotData(focusedSlotId, { itemSlots: s })}
-            dreamsFull={dreamCount >= 3 && !focused?.itemSlots.dream}
-            advancedCount={focusedAdvancedCount}
-            ultimateCount={focusedUltimateCount}
-            t0PlusCount={focusedT0PlusCount}
-            takenAffixIds={takenAffixIds}
-          />
+          {focusedSlotId && isLegendaryId(loadout[focusedSlotId]) ? (
+            <LegendaryAffixPanel
+              slot={focusedLegendarySlot}
+              selection={focusedLegendarySelection}
+              otherCorrodedCount={focusedLegendaryOtherCorroded}
+              onSelect={(choice) => focusedLegendaryLineIndex !== null && handleSelectLegendaryLine(focusedSlotId, focusedLegendaryLineIndex, choice)}
+            />
+          ) : (
+            <AffixPanel
+              pool={focused?.poolData ?? null}
+              slots={focused?.itemSlots ?? EMPTY_SLOTS}
+              activeSlot={focused?.activeAffixSlot ?? null}
+              onChange={(s) => focusedSlotId && updateSlotData(focusedSlotId, { itemSlots: s })}
+              dreamsFull={dreamCount >= 3 && !focused?.itemSlots.dream}
+              advancedCount={focusedAdvancedCount}
+              ultimateCount={focusedUltimateCount}
+              t0PlusCount={focusedT0PlusCount}
+              takenAffixIds={takenAffixIds}
+            />
+          )}
         </div>
       </div>
     </div>

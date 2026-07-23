@@ -31,6 +31,7 @@ import {
   type PlacedInstance,
 } from "./slateData";
 import { useDivinitySlatesBuild } from "@/app/state/BuildContext";
+import { getJSON } from "@/lib/apiCache";
 
 const BG_STYLE = {
   backgroundImage: [
@@ -283,7 +284,7 @@ export default function DivinitySlatesPage() {
   const suppressClickRef = useRef(false);
 
   useEffect(() => {
-    fetch("/api/talents").then((r) => r.json()).then(setTalents).catch(console.error);
+    getJSON<Talent[]>("/api/talents").then(setTalents).catch(console.error);
   }, []);
 
   const editingInstance = editingId ? placedInstances.find((i) => i.id === editingId) ?? null : null;

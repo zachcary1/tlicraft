@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { usePactspiritsBuild } from "@/app/state/BuildContext";
+import { getJSON } from "@/lib/apiCache";
 
 // ─── Layout constants ─────────────────────────────────────────────────────────
 
@@ -1355,9 +1356,9 @@ export default function PactspiritsPage() {
   }
 
   useEffect(() => {
-    fetch("/api/pactspirits?category=battle").then((r) => r.json()).then(setBattleSpirits).catch(console.error);
-    fetch("/api/pactspirits?category=drop").then((r) => r.json()).then(setDropSpirits).catch(console.error);
-    fetch("/api/destiny").then((r) => r.json()).then(setDestinyEntries).catch(console.error);
+    getJSON<PactSpirit[]>("/api/pactspirits?category=battle").then(setBattleSpirits).catch(console.error);
+    getJSON<PactSpirit[]>("/api/pactspirits?category=drop").then(setDropSpirits).catch(console.error);
+    getJSON<DestinyEntry[]>("/api/destiny").then(setDestinyEntries).catch(console.error);
   }, []);
 
   useEffect(() => {
@@ -1368,8 +1369,7 @@ export default function PactspiritsPage() {
         setTreeData((prev) => ({ ...prev, [armIdx]: null }));
         return;
       }
-      fetch(`/api/pactspirit-tree?name=${encodeURIComponent(spirit.name)}`)
-        .then((r) => r.json())
+      getJSON<SpiritTreeData>(`/api/pactspirit-tree?name=${encodeURIComponent(spirit.name)}`)
         .then((data) => setTreeData((prev) => ({ ...prev, [armIdx]: data })))
         .catch(() => setTreeData((prev) => ({ ...prev, [armIdx]: null })));
     });
