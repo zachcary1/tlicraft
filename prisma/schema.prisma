@@ -284,3 +284,33 @@ model RenewedMemory {
 
   @@index([type])
 }
+
+enum PricedItemType {
+  LEGENDARY_GEAR
+  PRECISE_SKILL
+  ACTIVATION_MEDIUM
+  MAGNIFICENT_SUPPORT
+  NOBLE_SUPPORT
+  DESTINY
+  HERO_MEMORY
+  DIVINITY_SLATE
+}
+
+// Append-only price observations. Each gather (manual or automated) inserts a new row rather
+// than updating in place, so "current price" is just the latest row per (itemType, itemId) and
+// history comes for free. itemId points at Legendary.id / Skill.id / Destiny.id / HeroMemory.id
+// for those types; for DIVINITY_SLATE it's the SLATE_DEFS key from slateData.ts, since slates
+// aren't a DB table. itemName is denormalized so slate prices are readable without that join.
+model Price {
+  id         String         @id @default(cuid())
+  itemType   PricedItemType
+  itemId     String
+  itemName   String
+  value      Float
+  currency   String         @default("FE")
+  source     String         @default("manual")
+  recordedAt DateTime       @default(now())
+
+  @@index([itemType, itemId])
+  @@index([itemType, recordedAt])
+}

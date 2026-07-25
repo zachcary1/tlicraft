@@ -4,6 +4,8 @@ import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { usePactspiritsBuild } from "@/app/state/BuildContext";
 import { getJSON } from "@/lib/apiCache";
+import { usePrices } from "@/lib/usePrices";
+import PriceBadge from "@/components/PriceBadge";
 
 // ─── Layout constants ─────────────────────────────────────────────────────────
 
@@ -1238,6 +1240,8 @@ export default function PactspiritsPage() {
   const setFateSelections: React.Dispatch<React.SetStateAction<Record<string, string>>> = (v) =>
     setPactspiritsBuild(prev => ({ ...prev, fateSelections: typeof v === "function" ? (v as (p: Record<string, string>) => Record<string, string>)(prev.fateSelections) : v }));
 
+  const { getPrice: getDestinyPrice, setPrice: setDestinyPrice } = usePrices(["DESTINY"]);
+
   const [battleSpirits,  setBattleSpirits]  = useState<PactSpirit[]>([]);
   const [dropSpirits,    setDropSpirits]    = useState<PactSpirit[]>([]);
   const [searchQuery,    setSearchQuery]    = useState("");
@@ -1623,6 +1627,16 @@ export default function PactspiritsPage() {
                         style={{ clipPath: `circle(${r}px at ${r * iconScale}px ${r * iconScale}px)`, pointerEvents: "none" }}
                       />
                       <circle cx={pos.cx} cy={pos.cy} r={r} fill="none" stroke={isPicking ? "#fbdb58" : "#c8cbd3"} strokeWidth={isPicking ? 3 : 1.5} />
+                      {entry && (
+                        <foreignObject
+                          x={pos.cx + r * 0.5} y={pos.cy - r - 20}
+                          width={80} height={26}
+                          style={{ overflow: "visible" }}
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <PriceBadge price={getDestinyPrice("DESTINY", entry.id)} onSave={(v) => setDestinyPrice("DESTINY", entry.id, entry.name, v)} />
+                        </foreignObject>
+                      )}
                     </g>
                   );
                 })}
@@ -1711,6 +1725,16 @@ export default function PactspiritsPage() {
               <circle cx={cx} cy={cy} r={r} fill="none"
                 stroke={isPicking ? "#fbdb58" : slot ? "#c8cbd3" : "#444444"}
                 strokeWidth={isPicking ? 3 : slot ? 1.5 : 2} />
+              {overrideEntry && (
+                <foreignObject
+                  x={cx + r * 0.5} y={cy - r - 20}
+                  width={80} height={26}
+                  style={{ overflow: "visible" }}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <PriceBadge price={getDestinyPrice("DESTINY", overrideEntry.id)} onSave={(v) => setDestinyPrice("DESTINY", overrideEntry.id, overrideEntry.name, v)} />
+                </foreignObject>
+              )}
             </g>
             );
           })}

@@ -21,6 +21,8 @@ import {
   type GodName,
   type QualityConfig,
 } from "./slateData";
+import { usePrices } from "@/lib/usePrices";
+import PriceBadge from "@/components/PriceBadge";
 
 function talentSummary(talent: Talent): string {
   const lines = parseTalentEffectLines(talent.effect);
@@ -187,6 +189,7 @@ export default function ItemCard({ slateName, def, config, talents, activeSlotKe
   const [imgErr, setImgErr] = useState(false);
   const quality = getSlateQuality(def);
   const iconPath = getInstanceIconPath(def, config);
+  const { getPrice, setPrice } = usePrices(["DIVINITY_SLATE"]);
 
   function setSlotActive(key: string) {
     onActiveSlotKeyChange(activeSlotKey === key ? null : key);
@@ -261,7 +264,14 @@ export default function ItemCard({ slateName, def, config, talents, activeSlotKe
         className="relative z-10 border border-[#bec4c9] bg-[#eaeaea] text-[#1a1a1a] px-5 pb-5 pt-1 overflow-y-auto"
         style={{ borderRadius: "0 36px 0 36px", maxHeight: "82vh" }}
       >
-        <div className="min-h-[52px]" />
+        {/* Header: spacer + price, same top-right spot used by every other item card */}
+        <div className="flex items-start gap-4 mb-2 min-h-[52px]">
+          <div className="w-32 shrink-0" />
+          <div className="flex-1 min-w-0 pt-1" />
+          <div className="flex flex-col items-end gap-0.5 pt-1">
+            <PriceBadge price={getPrice("DIVINITY_SLATE", slateName)} onSave={(v) => setPrice("DIVINITY_SLATE", slateName, slateName, v)} />
+          </div>
+        </div>
 
         {hasConflict && (
           <div

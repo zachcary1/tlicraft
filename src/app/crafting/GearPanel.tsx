@@ -4,6 +4,8 @@ import { useRef, useEffect, useLayoutEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { FEIcon, GroupDot, buildAffixLabel, TierBadge, type ItemSlots, type SlotValue } from "./ItemCard";
 import type { CraftedPool } from "@/services/crafting/types";
+import { usePrices } from "@/lib/usePrices";
+import PriceBadge from "@/components/PriceBadge";
 
 // Mirrors hero-trait/page.tsx's MEMORY_QUALITY_CONFIG.epic (gradient/border/accent) — kept as a
 // local literal (rather than imported) because hero-trait/page.tsx imports BuildContext.tsx,
@@ -558,7 +560,7 @@ export function LegendaryItemCard({ item, slotSelections, activeLineIndex, onAct
   const iconPath = getLegendaryIconPath(item);
   const slots = parseLegendaryAffixSlots(item.affixes);
   const epic = EPIC_QUALITY;
-  const corrodedCount = slots ? slots.filter((_, i) => slotSelections[i]?.corroded).length : 0;
+  const { getPrice, setPrice } = usePrices(["LEGENDARY_GEAR"]);
 
   return (
     <div className="relative max-w-3xl">
@@ -623,7 +625,7 @@ export function LegendaryItemCard({ item, slotSelections, activeLineIndex, onAct
       {/* Main card */}
       <div className="relative z-10 border border-[#bec4c9] bg-[#eaeaea] text-[#1a1a1a] px-5 pb-5 pt-1" style={{ borderRadius: "0 36px 0 36px" }}>
 
-        {/* Header: slot info + corrosion counter */}
+        {/* Header: slot info + price */}
         <div className="flex items-start gap-4 mb-2">
           <div className="w-32 shrink-0" />
           <div className="flex-1 min-w-0 pt-1">
@@ -631,14 +633,12 @@ export function LegendaryItemCard({ item, slotSelections, activeLineIndex, onAct
             <p className="text-sm text-[#1a1a1a]">Slot: {item.item}</p>
             {graftable && <p className="text-sm text-[#1a1a1a]">Graftable</p>}
           </div>
-          {slots && (
-            <div className="flex flex-col items-end gap-0.5 pt-1">
-              <span className="text-[10px] text-zinc-500 uppercase tracking-widest">Corroded</span>
-              <span className="text-[22px] font-bold tracking-[-0.02em]" style={{ color: epic.border }}>
-                {corrodedCount} / 2
-              </span>
-            </div>
-          )}
+          <div className="flex flex-col items-end gap-0.5 pt-1">
+            <PriceBadge
+              price={getPrice("LEGENDARY_GEAR", item.id)}
+              onSave={(v) => setPrice("LEGENDARY_GEAR", item.id, displayName, v)}
+            />
+          </div>
         </div>
 
         {/* Affixes — one flat section, no base/dream/sequence/prefix/suffix subgroups. Click a

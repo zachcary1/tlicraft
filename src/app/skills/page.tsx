@@ -4,6 +4,9 @@ import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { useSkillsBuild } from "@/app/state/BuildContext";
 import { getJSON } from "@/lib/apiCache";
+import { usePrices } from "@/lib/usePrices";
+import type { PricedItemType } from "@prisma/client";
+import PriceBadge from "@/components/PriceBadge";
 
 export interface Skill {
   name: string;
@@ -355,7 +358,7 @@ function HexCell({ onClick, selected, variant = "active", skillName, skill, onSk
 
 // ─── Center panel hex slot ────────────────────────────────────────────────────
 
-function SvgHexSlot({ x, y, variant, isSkillSlot = false, label, subLabel, energyCost, selected = false, hasSkill = false, skillName, iconPath, disabled = false, skill, onSkillHover, onSkillLeave, onClick }: {
+function SvgHexSlot({ x, y, variant, isSkillSlot = false, label, subLabel, energyCost, selected = false, hasSkill = false, skillName, iconPath, disabled = false, skill, onSkillHover, onSkillLeave, onClick, price, onPriceSave }: {
   x: number;
   y: number;
   variant: "active" | "passive";
@@ -372,6 +375,8 @@ function SvgHexSlot({ x, y, variant, isSkillSlot = false, label, subLabel, energ
   onSkillHover?: (skill: Skill, x: number, y: number) => void;
   onSkillLeave?: () => void;
   onClick?: () => void;
+  price?: import("@/lib/usePrices").PriceEntry;
+  onPriceSave?: (value: number) => void;
 }) {
   const [hovered, setHovered] = useState(false);
   const [cursorPos, setCursorPos] = useState<{ x: number; y: number } | null>(null);
@@ -439,6 +444,16 @@ function SvgHexSlot({ x, y, variant, isSkillSlot = false, label, subLabel, energ
         stroke={hasSkill ? "white" : "none"}
         strokeWidth={hasSkill ? "2" : "0"}
       />
+      {showIcon && onPriceSave && (
+        <foreignObject
+          x={x + 16} y={y - CENTER_HEX_R - 6}
+          width={80} height={26}
+          style={{ overflow: "visible" }}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <PriceBadge price={price} onSave={onPriceSave} />
+        </foreignObject>
+      )}
       {energyLabel && (
         <g style={{ pointerEvents: "none", userSelect: "none" }}>
           <path
@@ -624,7 +639,7 @@ export function SkillTooltipCard({ skill, cx: cursorX, cy: cursorY }: { skill: S
   useEffect(() => { setImgError(false); }, [skill.name]);
   useEffect(() => {
     if (cardRef.current) setCardH(cardRef.current.offsetHeight);
-  });
+  }, [skill.name]);
 
   const iconPath = getTooltipIconPath(skill);
   const clipId   = `tt-icon-${skill.name.replace(/[^a-zA-Z0-9]/g, "-")}`;
@@ -744,6 +759,16 @@ const CARD_HEX_PTS = Array.from({ length: 6 }, (_, i) => {
   const a = (Math.PI / 180) * (60 * i - 90);
   return `${CARD_HEX_W / 2 + CARD_HEX_R * Math.cos(a)},${CARD_HEX_H / 2 + CARD_HEX_R * Math.sin(a)}`;
 }).join(" ");
+
+// Only these 4 skill categories get a price badge — the rest (plain Active/Passive/Support)
+// aren't among the priced item types.
+function getPricedSkillType(skill: Skill): PricedItemType | null {
+  if (skill.type === "Activation Medium") return "ACTIVATION_MEDIUM";
+  if (skill.type === "Support (Magnificent)") return "MAGNIFICENT_SUPPORT";
+  if (skill.type === "Support (Noble)") return "NOBLE_SUPPORT";
+  if (skill.name.startsWith("Precise")) return "PRECISE_SKILL";
+  return null;
+}
 
 function SkillCard({ name, selected, onClick, iconPath, blockedReason, skill, onSkillHover, onSkillLeave }: {
   name: string;
@@ -916,6 +941,8 @@ export default function SkillsPage() {
   const [hoveredTooltip,         setHoveredTooltip]         = useState<{ skill: Skill; x: number; y: number } | null>(null);
   const [energyTipPos,           setEnergyTipPos]           = useState<{ x: number; y: number } | null>(null);
 
+  const { getPrice, setPrice } = usePrices(["PRECISE_SKILL", "ACTIVATION_MEDIUM", "MAGNIFICENT_SUPPORT", "NOBLE_SUPPORT"]);
+
   function handleSkillHover(skill: Skill, x: number, y: number) { setHoveredTooltip({ skill, x, y }); }
   function handleSkillLeave() { setHoveredTooltip(null); }
 
@@ -1073,12 +1100,15 @@ export default function SkillsPage() {
                 const skillName = selectedActive !== null ? activeSkillSelections[selectedActive] : null;
                 const iconPath = skillName ? `/icons/skills/active/${skillName}.webp` : undefined;
                 const skillObj = skillName ? activeSkills.find(s => s.name === skillName) ?? null : null;
+                const pricedType = skillObj ? getPricedSkillType(skillObj) : null;
                 return (
                   <SvgHexSlot x={cx} y={cy - 20} variant="active" isSkillSlot label="SKILL"
                     skillName={skillName} iconPath={iconPath}
                     hasSkill={skillName !== null}
                     skill={skillObj} onSkillHover={handleSkillHover} onSkillLeave={handleSkillLeave}
-                    selected={selectedCenterSlot === "skill"} onClick={() => selectCenterSlot("skill")} />
+                    selected={selectedCenterSlot === "skill"} onClick={() => selectCenterSlot("skill")}
+                    price={pricedType && skillName ? getPrice(pricedType, skillName) : undefined}
+                    onPriceSave={pricedType && skillName ? (v) => setPrice(pricedType, skillName, skillName, v) : undefined} />
                 );
               })()}
               {activeOuterSlots.map((slot) => {
@@ -1088,6 +1118,7 @@ export default function SkillsPage() {
                 const slotSkillName = noSkill ? undefined : (assignedSupport ?? null);
                 const supportSkill = assignedSupport ? allSupportSkills.find((s) => s.name === assignedSupport) : undefined;
                 const supportIconPath = supportSkill ? getSkillIconPath(supportSkill, false, "active") : undefined;
+                const pricedType = supportSkill ? getPricedSkillType(supportSkill) : null;
                 return (
                   <SvgHexSlot key={slot.slot} x={slot.x} y={slot.y} variant="active"
                     label={String(slot.slot)} subLabel={slot.specialLabel} energyCost={slot.energyCost}
@@ -1097,7 +1128,9 @@ export default function SkillsPage() {
                     iconPath={supportIconPath}
                     hasSkill={!noSkill && !!assignedSupport}
                     skill={supportSkill ?? null} onSkillHover={handleSkillHover} onSkillLeave={handleSkillLeave}
-                    onClick={() => selectCenterSlot(`support-${slot.slot}`)} />
+                    onClick={() => selectCenterSlot(`support-${slot.slot}`)}
+                    price={pricedType && assignedSupport ? getPrice(pricedType, assignedSupport) : undefined}
+                    onPriceSave={pricedType && assignedSupport ? (v) => setPrice(pricedType, assignedSupport, assignedSupport, v) : undefined} />
                 );
               })}
             </>
@@ -1112,12 +1145,15 @@ export default function SkillsPage() {
                 const skillName = selectedPassive !== null ? passiveSkillSelections[selectedPassive] : null;
                 const iconPath = skillName ? `/icons/skills/passive/${skillName.replace(": ", " - ")}.webp` : undefined;
                 const skillObj = skillName ? passiveSkills.find(s => s.name === skillName) ?? null : null;
+                const pricedType = skillObj ? getPricedSkillType(skillObj) : null;
                 return (
                   <SvgHexSlot x={cx} y={cy - 35} variant="passive" isSkillSlot label="SKILL"
                     skillName={skillName} iconPath={iconPath}
                     hasSkill={skillName !== null}
                     skill={skillObj} onSkillHover={handleSkillHover} onSkillLeave={handleSkillLeave}
-                    selected={selectedCenterSlot === "skill"} onClick={() => selectCenterSlot("skill")} />
+                    selected={selectedCenterSlot === "skill"} onClick={() => selectCenterSlot("skill")}
+                    price={pricedType && skillName ? getPrice(pricedType, skillName) : undefined}
+                    onPriceSave={pricedType && skillName ? (v) => setPrice(pricedType, skillName, skillName, v) : undefined} />
                 );
               })()}
               {passiveOuterSlots.map((pos) => {
@@ -1127,6 +1163,7 @@ export default function SkillsPage() {
                 const slotSkillName = noSkill ? undefined : (assignedSupport ?? null);
                 const supportSkill = assignedSupport ? allSupportSkills.find((s) => s.name === assignedSupport) : undefined;
                 const supportIconPath = supportSkill ? getSkillIconPath(supportSkill, false, "passive") : undefined;
+                const pricedType = supportSkill ? getPricedSkillType(supportSkill) : null;
                 return (
                   <SvgHexSlot key={pos.slot} x={pos.x} y={pos.y} variant="passive"
                     label={String(pos.slot)} energyCost={pos.energyCost}
@@ -1136,7 +1173,9 @@ export default function SkillsPage() {
                     iconPath={supportIconPath}
                     hasSkill={!noSkill && !!assignedSupport}
                     skill={supportSkill ?? null} onSkillHover={handleSkillHover} onSkillLeave={handleSkillLeave}
-                    onClick={() => selectCenterSlot(`support-${pos.slot}`)} />
+                    onClick={() => selectCenterSlot(`support-${pos.slot}`)}
+                    price={pricedType && assignedSupport ? getPrice(pricedType, assignedSupport) : undefined}
+                    onPriceSave={pricedType && assignedSupport ? (v) => setPrice(pricedType, assignedSupport, assignedSupport, v) : undefined} />
                 );
               })}
             </>

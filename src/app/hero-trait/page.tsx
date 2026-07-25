@@ -6,6 +6,14 @@ import { HERO_TRAIT_ORDER } from "./heroTraitOrder";
 import type { ActiveSlotId } from "../crafting/ItemCard";
 import { useHeroTraitBuild } from "@/app/state/BuildContext";
 import { getJSON } from "@/lib/apiCache";
+import { usePrices, type PriceEntry } from "@/lib/usePrices";
+import PriceBadge from "@/components/PriceBadge";
+
+// Hero memories have no fixed catalog (no db id) — price is keyed by a slugified
+// "label:quality" composite, e.g. "memory_of_origin:epic".
+function memoryPriceId(memoryLabel: string, quality: string): string {
+  return `${memoryLabel}:${quality}`.toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g, "");
+}
 
 const BG_STYLE = {
   backgroundImage: [
@@ -1202,7 +1210,7 @@ function MemorySlotRow({ slotKey, active, value, onClick }: {
   );
 }
 
-function MemorySectionBox({ label, children }: { label: string; children: React.ReactNode }) {
+function MemorySectionBox({ label, priceBadge, children }: { label: string; priceBadge?: React.ReactNode; children: React.ReactNode }) {
   return (
     <div
       className="relative border border-[#bec4c9] mt-6 pt-5 px-3 pb-3"
@@ -1210,10 +1218,11 @@ function MemorySectionBox({ label, children }: { label: string; children: React.
     >
       <div className="absolute top-0 left-[20px] right-[40px] -translate-y-1/2 z-[100]">
         <div
-          className="flex items-center px-3 py-0.5"
+          className="flex items-center justify-between px-3 py-0.5"
           style={{ background: "linear-gradient(to right, #bdc3c9, #eaeaea)" }}
         >
           <span className="font-semibold uppercase tracking-wider text-[16px] text-[#555]">{label}</span>
+          {priceBadge}
         </div>
       </div>
       {children}
@@ -1231,6 +1240,8 @@ function MemoryCraftPanel({
   selectedIds,
   onInsert,
   onRemove,
+  getPrice,
+  onPriceSave,
 }: {
   memoryLabel: string;
   filled: boolean;
@@ -1241,10 +1252,15 @@ function MemoryCraftPanel({
   selectedIds: MemorySlotSelections;
   onInsert: (quality: MemoryQuality) => void;
   onRemove: () => void;
+  getPrice: (itemId: string) => PriceEntry | undefined;
+  onPriceSave: (itemId: string, itemName: string, value: number) => void;
 }) {
   const [imgErr, setImgErr] = useState(false);
   const iconPath = `/icons/equipment/${memoryLabel}.webp`;
   const qc = MEMORY_QUALITY_CONFIG[quality];
+  const baseId = memoryPriceId(memoryLabel, quality);
+  const baseStatsId = `${baseId}:base_stats`;
+  const fixedAffixId = `${baseId}:fixed_affix`;
 
   return (
     <div
@@ -1389,7 +1405,10 @@ function MemoryCraftPanel({
             </div>
 
             {/* Base Stats — 1 slot */}
-            <MemorySectionBox label="Base Stats">
+            <MemorySectionBox
+              label="Base Stats"
+              priceBadge={<PriceBadge price={getPrice(baseStatsId)} onSave={(v) => onPriceSave(baseStatsId, `${memoryLabel} (${quality}) - Base Stats`, v)} />}
+            >
               <MemorySlotRow
                 slotKey="base"
                 active={activeSlot === "base"}
@@ -1403,7 +1422,10 @@ function MemoryCraftPanel({
             </MemorySectionBox>
 
             {/* Fixed Affix — 2 slots */}
-            <MemorySectionBox label="Fixed Affix">
+            <MemorySectionBox
+              label="Fixed Affix"
+              priceBadge={<PriceBadge price={getPrice(fixedAffixId)} onSave={(v) => onPriceSave(fixedAffixId, `${memoryLabel} (${quality}) - Fixed Affix`, v)} />}
+            >
               <MemorySlotRow slotKey="prefix1" active={activeSlot === "prefix1"} value={selectedIds.prefix1} onClick={() => onActiveSlotChange(activeSlot === "prefix1" ? null : "prefix1")} />
               <MemorySlotRow slotKey="prefix2" active={activeSlot === "prefix2"} value={selectedIds.prefix2} onClick={() => onActiveSlotChange(activeSlot === "prefix2" ? null : "prefix2")} />
             </MemorySectionBox>
@@ -1523,6 +1545,8 @@ export default function HeroTraitPage() {
   const traitSelections = heroTraitBuild.traitSelections;
   const setTraitSelections: React.Dispatch<React.SetStateAction<[string | null, string | null, string | null]>> = (v) =>
     setHeroTraitBuild(prev => ({ ...prev, traitSelections: typeof v === "function" ? (v as (p: [string | null, string | null, string | null]) => [string | null, string | null, string | null])(prev.traitSelections) : v }));
+
+  const { getPrice: getMemoryPrice, setPrice: setMemoryPrice } = usePrices(["HERO_MEMORY"]);
 
   const [heroes,         setHeroes]         = useState<HeroEntry[]>([]);
   const [heroTraits,     setHeroTraits]     = useState<HeroTrait[]>([]);
@@ -1680,6 +1704,8 @@ export default function HeroTraitPage() {
           onActiveSlotChange={setActiveMemorySlot}
           selectedIds={memorySelections[craftPanelCol]}
           onInsert={(quality) => insertMemory(craftPanelCol, quality)}
+          getPrice={(itemId) => getMemoryPrice("HERO_MEMORY", itemId)}
+          onPriceSave={(itemId, itemName, v) => setMemoryPrice("HERO_MEMORY", itemId, itemName, v)}
           onRemove={() => {
             toggleMemory(craftPanelCol);
             setMemoryQuality((prev) => {
