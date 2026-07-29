@@ -6,6 +6,7 @@ import { usePactspiritsBuild } from "@/app/state/BuildContext";
 import { getJSON } from "@/lib/apiCache";
 import { usePrices } from "@/lib/usePrices";
 import PriceBadge from "@/components/PriceBadge";
+import { FEIcon } from "@/app/crafting/ItemCard";
 
 // ─── Layout constants ─────────────────────────────────────────────────────────
 
@@ -1242,6 +1243,19 @@ export default function PactspiritsPage() {
 
   const { getPrice: getDestinyPrice, setPrice: setDestinyPrice } = usePrices(["DESTINY"]);
 
+  // Undetermined Fate base-slot unlocks (the 18/42/66 nodes) aren't a catalog item, so they're
+  // priced under the DESTINY type too, keyed by their micro/medium composition rather than a
+  // DB id — the same composition costs the same regardless of which arm it's unlocked on.
+  function undeterminedFateId(micro: number, medium: number): string {
+    return `undetermined:${micro}m_${medium}M`;
+  }
+  function undeterminedFateLabel(micro: number, medium: number): string {
+    const parts: string[] = [];
+    if (micro > 0) parts.push(`${micro} Micro`);
+    if (medium > 0) parts.push(`${medium} Medium`);
+    return `Undetermined Fate (${parts.join(" + ")})`;
+  }
+
   const [battleSpirits,  setBattleSpirits]  = useState<PactSpirit[]>([]);
   const [dropSpirits,    setDropSpirits]    = useState<PactSpirit[]>([]);
   const [searchQuery,    setSearchQuery]    = useState("");
@@ -1462,6 +1476,26 @@ export default function PactspiritsPage() {
     .filter(([id, entryId]) => entryId && getTreeNodeFateSize(id) === "micro").length;
   const socketedMediumCount = Object.entries(fateSelections)
     .filter(([id, entryId]) => entryId && getTreeNodeFateSize(id) === "medium").length;
+
+  // Total Destiny cost — every socketed Fate/Kismet (undetermined-fate slots and tree-node
+  // overrides alike, since both live in the same fateSelections map) plus the base unlock cost
+  // of each arm's Undetermined Fate configuration.
+  const totalDestinyCost = (() => {
+    let total = 0;
+    for (const entryId of Object.values(fateSelections)) {
+      if (!entryId) continue;
+      const entry = destinyEntries.find((e) => e.id === entryId);
+      if (entry) total += getDestinyPrice("DESTINY", entry.id)?.value ?? 0;
+    }
+    for (const key of ["left", "right", "bottom"] as FateKey[]) {
+      const nodes = fates[key].nodes;
+      if (nodes.length === 0) continue;
+      const micro = nodes.filter((n) => n === "micro").length;
+      const medium = nodes.filter((n) => n === "medium").length;
+      total += getDestinyPrice("DESTINY", undeterminedFateId(micro, medium))?.value ?? 0;
+    }
+    return total;
+  })();
 
   return (
     <div className="min-h-screen relative" style={BG_STYLE} onClick={() => { setSelectedSlot(null); setSelectedFate(null); setSelectedFateSlot(null); }}>
@@ -1742,8 +1776,12 @@ export default function PactspiritsPage() {
           {(["left", "right", "bottom"] as FateKey[]).map((key) => {
             const def = FATE_DEFS[key];
             const isSelected = selectedFate === key;
-            const hasNodes = fates[key].nodes.length > 0;
+            const nodes = fates[key].nodes;
+            const hasNodes = nodes.length > 0;
             const armHasSpirit = !!getAssignedSpirit("battle", FATE_KEY_TO_ARM[key]);
+            const microCount = nodes.filter((n) => n === "micro").length;
+            const mediumCount = nodes.filter((n) => n === "medium").length;
+            const undeterminedId = undeterminedFateId(microCount, mediumCount);
             return (
               <g key={key} style={{ pointerEvents: "all", cursor: armHasSpirit ? "pointer" : "default" }}
                 onClick={(e) => { if (!armHasSpirit) return; e.stopPropagation(); setSelectedFate(isSelected ? null : key); setSelectedSlot(null); setSelectedFateSlot(null); }}
@@ -1765,6 +1803,19 @@ export default function PactspiritsPage() {
                 <circle cx={def.nodeCx} cy={def.nodeCy} r={18}
                   fill="none"
                   stroke={isSelected ? "#fbdb58" : armHasSpirit ? "#c8cbd3" : "#444444"} strokeWidth={isSelected ? 3 : armHasSpirit ? 1.5 : 2} />
+                {armHasSpirit && hasNodes && (
+                  <foreignObject
+                    x={def.nodeCx + 9} y={def.nodeCy - 38}
+                    width={80} height={26}
+                    style={{ overflow: "visible" }}
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <PriceBadge
+                      price={getDestinyPrice("DESTINY", undeterminedId)}
+                      onSave={(v) => setDestinyPrice("DESTINY", undeterminedId, undeterminedFateLabel(microCount, mediumCount), v)}
+                    />
+                  </foreignObject>
+                )}
               </g>
             );
           })}
@@ -1857,6 +1908,30 @@ export default function PactspiritsPage() {
         highlightMicro={cappedHoverSize === "micro"}
         highlightMedium={cappedHoverSize === "medium"}
       />
+
+      {/* Total Destiny cost — pinned to the same screen position as every other page's
+          total-cost card (bottom: 20, left: half the skills-page diagram width + 16px), not a
+          position relative to this page's own (much wider) diagram. */}
+      <div
+        className="absolute"
+        style={{ bottom: 20, left: "calc(50% - 332px + 16px)", pointerEvents: "none" }}
+      >
+        <div style={{
+          background: "#161616",
+          border: "1px solid #2a2a2a",
+          borderRadius: "0 12px 0 12px",
+          padding: "10px 14px",
+          minWidth: 130,
+        }}>
+          <div style={{ color: "#52525b", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 5 }}>
+            Total Destiny Cost
+          </div>
+          <div style={{ display: "flex", alignItems: "center", gap: 6, color: "#e4e4e7", fontSize: 24, fontWeight: 600, lineHeight: 1 }}>
+            {Math.round(totalDestinyCost).toLocaleString("en-US")}
+            <FEIcon className="w-5 h-5" />
+          </div>
+        </div>
+      </div>
 
       {/* Left panel — top-left, height auto */}
       <div

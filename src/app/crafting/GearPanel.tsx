@@ -1192,6 +1192,7 @@ type SlotTileProps = {
   isFocused: boolean;
   craftTotal: number | null;
   corrosionTotal: number | null;
+  legendaryPrice: number | null;
   costSide: "left" | "right";
   hasDream: boolean;
   itemSlots?: ItemSlots | null;
@@ -1222,7 +1223,7 @@ export const METALLIC_GRADIENTS = {
 // affixes were rolled onto them.
 export const LEGENDARY_COLORS = { border: "#ff8c1a", gradientEnd: "#7a3d00", metallicKey: "orange" as const };
 
-function SlotTile({ slotId, pools, legendary, legendarySelections, loadout, psCount, isOpen, isFocused, craftTotal, corrosionTotal, costSide, hasDream, itemSlots, poolData, onOpen, onFocus, onSelect, onClose }: SlotTileProps) {
+function SlotTile({ slotId, pools, legendary, legendarySelections, loadout, psCount, isOpen, isFocused, craftTotal, corrosionTotal, legendaryPrice, costSide, hasDream, itemSlots, poolData, onOpen, onFocus, onSelect, onClose }: SlotTileProps) {
   const triggerRef = useRef<HTMLButtonElement>(null);
   const [isHovered, setIsHovered] = useState(false);
   const [tooltipPos, setTooltipPos] = useState<{ x: number; y: number } | null>(null);
@@ -1355,7 +1356,7 @@ function SlotTile({ slotId, pools, legendary, legendarySelections, loadout, psCo
           </span>
         )}
 
-        {(craftTotal !== null || corrosionTotal !== null) && (
+        {(craftTotal !== null || corrosionTotal !== null || legendaryPrice !== null) && (
           <div className={`absolute top-0 flex flex-col gap-1.5 pointer-events-none ${costSide === "right" ? "left-full ml-3 items-start" : "right-full mr-3 items-end"}`}>
             {craftTotal !== null && (
               <div className={`flex flex-col ${costSide === "right" ? "items-start" : "items-end"}`}>
@@ -1372,6 +1373,15 @@ function SlotTile({ slotId, pools, legendary, legendarySelections, loadout, psCo
                 <span className={`text-[22px] font-bold tracking-[-0.02em] flex items-center gap-1.5 ${Number.isNaN(corrosionTotal) ? "text-red-400" : "text-[#e0ddd8]"}`}>
                   {Number.isNaN(corrosionTotal) ? "NaN" : Math.round(corrosionTotal).toLocaleString("en-US")}
                   {!Number.isNaN(corrosionTotal) && <FEIcon className="w-5 h-5" />}
+                </span>
+              </div>
+            )}
+            {legendaryPrice !== null && (
+              <div className={`flex flex-col ${costSide === "right" ? "items-start" : "items-end"}`}>
+                <span className="text-[10px] text-zinc-500 uppercase tracking-widest mb-0.5">Cost</span>
+                <span className="text-[22px] font-bold tracking-[-0.02em] flex items-center gap-1.5 text-[#e0ddd8]">
+                  {Math.round(legendaryPrice).toLocaleString("en-US")}
+                  <FEIcon className="w-5 h-5" />
                 </span>
               </div>
             )}
@@ -1423,6 +1433,17 @@ type GearPanelProps = {
 
 export default function GearPanel({ pools, legendary, legendarySlots, loadout, activeSlotId, focusedSlotId, psCounts, costTotals, dreamCount, dreamFlags, slotItemSlots, slotPoolData, onSlotOpen, onSlotFocus, onSlotClose, onSelect }: GearPanelProps) {
   const allSlots = LAYOUT.flat();
+  const { getPrice: getLegendaryPrice } = usePrices(["LEGENDARY_GEAR"]);
+
+  // Resolves the equipped legendary's saved price for a slot, or null if the slot isn't
+  // holding a legendary (crafted-gear slots use craftTotal/corrosionTotal instead).
+  function legendaryPriceFor(slotId: GearSlotId): number | null {
+    const selectedId = loadout[slotId];
+    if (!selectedId || !isLegendaryId(selectedId)) return null;
+    const item = findLegendary(selectedId, legendary);
+    if (!item) return null;
+    return getLegendaryPrice("LEGENDARY_GEAR", item.id)?.value ?? 0;
+  }
 
   // Sum craft totals; NaN if any contributing slot is NaN
   const craftValues = allSlots.map((id) => costTotals[id]?.craft ?? null).filter((v) => v !== null) as number[];
@@ -1442,19 +1463,31 @@ export default function GearPanel({ pools, legendary, legendarySlots, loadout, a
     : withCorrValues.some(Number.isNaN) ? NaN
     : withCorrValues.reduce((a, b) => a + b, 0);
 
+  // Sum legendary prices across all slots, and fold them into both footer totals
+  const legendaryValues = allSlots.map((id) => legendaryPriceFor(id)).filter((v) => v !== null) as number[];
+  const totalLegendary: number | null = legendaryValues.length === 0 ? null : legendaryValues.reduce((a, b) => a + b, 0);
+
+  const grandTotal: number | null = totalCraft === null && totalLegendary === null ? null
+    : totalCraft !== null && Number.isNaN(totalCraft) ? NaN
+    : (totalCraft ?? 0) + (totalLegendary ?? 0);
+  const grandTotalWithCorrosion: number | null = totalWithCorrosion === null
+    ? null
+    : Number.isNaN(totalWithCorrosion) ? NaN
+    : totalWithCorrosion + (totalLegendary ?? 0);
+
   return (
     <div className="border border-[#1c1c1c] px-4 pt-4 pb-6 flex flex-col w-fit" style={{ borderRadius: "0 36px 0 36px", borderWidth: "1px", background: "linear-gradient(to bottom, #1d1e1e, #020202)", boxShadow: "0 8px 40px 8px rgba(0,0,0,0.6)" }}>
       <div className="flex gap-48 items-start px-2">
         {/* Left column — costs on right */}
         <div className="flex flex-col gap-12">
           {LAYOUT.map(([left]) => (
-            <SlotTile key={left} slotId={left} pools={pools} legendary={legendary} legendarySelections={legendarySlots?.[left]?.selections} loadout={loadout} psCount={psCounts[left] ?? 0} isOpen={activeSlotId === left} isFocused={focusedSlotId === left} craftTotal={costTotals[left]?.craft ?? null} corrosionTotal={costTotals[left]?.corrosion ?? null} costSide="right" hasDream={dreamFlags[left] ?? false} itemSlots={slotItemSlots?.[left]} poolData={slotPoolData?.[left]} onOpen={() => onSlotOpen(left)} onFocus={() => onSlotFocus(left)} onSelect={(id) => onSelect(left, id)} onClose={onSlotClose} />
+            <SlotTile key={left} slotId={left} pools={pools} legendary={legendary} legendarySelections={legendarySlots?.[left]?.selections} loadout={loadout} psCount={psCounts[left] ?? 0} isOpen={activeSlotId === left} isFocused={focusedSlotId === left} craftTotal={costTotals[left]?.craft ?? null} corrosionTotal={costTotals[left]?.corrosion ?? null} legendaryPrice={legendaryPriceFor(left)} costSide="right" hasDream={dreamFlags[left] ?? false} itemSlots={slotItemSlots?.[left]} poolData={slotPoolData?.[left]} onOpen={() => onSlotOpen(left)} onFocus={() => onSlotFocus(left)} onSelect={(id) => onSelect(left, id)} onClose={onSlotClose} />
           ))}
         </div>
         {/* Right column — costs on left */}
         <div className="flex flex-col gap-12">
           {LAYOUT.map(([, right]) => (
-            <SlotTile key={right} slotId={right} pools={pools} legendary={legendary} legendarySelections={legendarySlots?.[right]?.selections} loadout={loadout} psCount={psCounts[right] ?? 0} isOpen={activeSlotId === right} isFocused={focusedSlotId === right} craftTotal={costTotals[right]?.craft ?? null} corrosionTotal={costTotals[right]?.corrosion ?? null} costSide="left" hasDream={dreamFlags[right] ?? false} itemSlots={slotItemSlots?.[right]} poolData={slotPoolData?.[right]} onOpen={() => onSlotOpen(right)} onFocus={() => onSlotFocus(right)} onSelect={(id) => onSelect(right, id)} onClose={onSlotClose} />
+            <SlotTile key={right} slotId={right} pools={pools} legendary={legendary} legendarySelections={legendarySlots?.[right]?.selections} loadout={loadout} psCount={psCounts[right] ?? 0} isOpen={activeSlotId === right} isFocused={focusedSlotId === right} craftTotal={costTotals[right]?.craft ?? null} corrosionTotal={costTotals[right]?.corrosion ?? null} legendaryPrice={legendaryPriceFor(right)} costSide="left" hasDream={dreamFlags[right] ?? false} itemSlots={slotItemSlots?.[right]} poolData={slotPoolData?.[right]} onOpen={() => onSlotOpen(right)} onFocus={() => onSlotFocus(right)} onSelect={(id) => onSelect(right, id)} onClose={onSlotClose} />
           ))}
         </div>
       </div>
@@ -1485,16 +1518,16 @@ export default function GearPanel({ pools, legendary, legendarySlots, loadout, a
       <div className="mt-6 pt-5 border-t border-[#1c1c1c] flex justify-between items-start px-2">
         <div className="flex flex-col items-start gap-0.5">
           <span className="text-[10px] text-zinc-500 uppercase tracking-widest">Total Gear Cost</span>
-          <span className={`text-[22px] font-bold tracking-[-0.02em] flex items-center gap-1.5 ${totalCraft !== null && Number.isNaN(totalCraft) ? "text-red-400" : "text-[#e0ddd8]"}`}>
-            {totalCraft === null ? "—" : Number.isNaN(totalCraft) ? "NaN" : Math.round(totalCraft).toLocaleString("en-US")}
-            {totalCraft !== null && !Number.isNaN(totalCraft) && <FEIcon className="w-5 h-5" />}
+          <span className={`text-[22px] font-bold tracking-[-0.02em] flex items-center gap-1.5 ${grandTotal !== null && Number.isNaN(grandTotal) ? "text-red-400" : "text-[#e0ddd8]"}`}>
+            {grandTotal === null ? "—" : Number.isNaN(grandTotal) ? "NaN" : Math.round(grandTotal).toLocaleString("en-US")}
+            {grandTotal !== null && !Number.isNaN(grandTotal) && <FEIcon className="w-5 h-5" />}
           </span>
         </div>
         <div className="flex flex-col items-end gap-0.5">
           <span className="text-[10px] text-zinc-500 uppercase tracking-widest">Total Gear Cost with Corrosion</span>
-          <span className={`text-[22px] font-bold tracking-[-0.02em] flex items-center gap-1.5 ${totalWithCorrosion !== null && Number.isNaN(totalWithCorrosion) ? "text-red-400" : "text-[#e0ddd8]"}`}>
-            {totalWithCorrosion === null ? "—" : Number.isNaN(totalWithCorrosion) ? "NaN" : Math.round(totalWithCorrosion).toLocaleString("en-US")}
-            {totalWithCorrosion !== null && !Number.isNaN(totalWithCorrosion) && <FEIcon className="w-5 h-5" />}
+          <span className={`text-[22px] font-bold tracking-[-0.02em] flex items-center gap-1.5 ${grandTotalWithCorrosion !== null && Number.isNaN(grandTotalWithCorrosion) ? "text-red-400" : "text-[#e0ddd8]"}`}>
+            {grandTotalWithCorrosion === null ? "—" : Number.isNaN(grandTotalWithCorrosion) ? "NaN" : Math.round(grandTotalWithCorrosion).toLocaleString("en-US")}
+            {grandTotalWithCorrosion !== null && !Number.isNaN(grandTotalWithCorrosion) && <FEIcon className="w-5 h-5" />}
           </span>
         </div>
       </div>

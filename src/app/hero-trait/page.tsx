@@ -8,6 +8,7 @@ import { useHeroTraitBuild } from "@/app/state/BuildContext";
 import { getJSON } from "@/lib/apiCache";
 import { usePrices, type PriceEntry } from "@/lib/usePrices";
 import PriceBadge from "@/components/PriceBadge";
+import { FEIcon } from "@/app/crafting/ItemCard";
 
 // Hero memories have no fixed catalog (no db id) — price is keyed by a slugified
 // "label:quality" composite, e.g. "memory_of_origin:epic".
@@ -452,6 +453,7 @@ function MemorySlot({
   lockReason,
   onClick,
   selectedIds,
+  cost,
 }: {
   label: string;
   filled: boolean;
@@ -460,6 +462,7 @@ function MemorySlot({
   lockReason?: string;
   onClick: () => void;
   selectedIds?: MemorySlotSelections;
+  cost?: number | null;
 }) {
   const [hovered,    setHovered]    = useState(false);
   const [tipPos,     setTipPos]     = useState<{ x: number; y: number } | null>(null);
@@ -494,6 +497,7 @@ function MemorySlot({
       onMouseLeave={() => { setHovered(false); setTipPos(null); setTooltipPos(null); }}
       onClick={locked ? undefined : onClick}
       style={{
+        position: "relative",
         width: SLOT_SIZE, height: SLOT_SIZE,
         display: "flex", flexDirection: "column",
         alignItems: "center", justifyContent: "center",
@@ -503,6 +507,15 @@ function MemorySlot({
         transition: "opacity 0.2s",
       }}
     >
+      {filled && cost !== null && cost !== undefined && (
+        <div
+          className="flex items-center gap-1.5 text-[13px] font-semibold tracking-[-0.02em] bg-[#848485] text-[#e0ddd8] px-2 py-0.5"
+          style={{ position: "absolute", top: 0, right: 0, borderRadius: "0 4px 0 4px", boxShadow: "0 2px 6px rgba(0,0,0,0.35)", pointerEvents: "none" }}
+        >
+          <span className="font-bold">{Math.round(cost).toLocaleString("en-US")}</span>
+          <FEIcon className="w-4 h-4" />
+        </div>
+      )}
       <div style={{
         width: CIRCLE2_D, height: CIRCLE2_D,
         borderRadius: "50%",
@@ -1548,6 +1561,16 @@ export default function HeroTraitPage() {
 
   const { getPrice: getMemoryPrice, setPrice: setMemoryPrice } = usePrices(["HERO_MEMORY"]);
 
+  // Sums a memory's priced sections (Base Stats + Fixed Affix) for the slot in column `col`.
+  function getMemoryCost(col: number): number {
+    const quality = memoryQuality[col];
+    if (!memoryFilled[col] || !quality) return 0;
+    const baseId = memoryPriceId(MEMORY_LABELS[col], quality);
+    return (getMemoryPrice("HERO_MEMORY", `${baseId}:base_stats`)?.value ?? 0)
+      + (getMemoryPrice("HERO_MEMORY", `${baseId}:fixed_affix`)?.value ?? 0);
+  }
+  const totalMemoryCost = [0, 1, 2].reduce((sum, col) => sum + getMemoryCost(col), 0);
+
   const [heroes,         setHeroes]         = useState<HeroEntry[]>([]);
   const [heroTraits,     setHeroTraits]     = useState<HeroTrait[]>([]);
   const [searchQuery,    setSearchQuery]    = useState("");
@@ -1925,6 +1948,7 @@ export default function HeroTraitPage() {
                   locked={memLocked}
                   lockReason={memLocked ? "Select a hero first" : undefined}
                   selectedIds={memorySelections[col]}
+                  cost={memoryFilled[col] ? getMemoryCost(col) : null}
                   onClick={() => {
                     setPanelOpen(false);
                     setCraftPanelCol((prev) => prev === col ? null : col);
@@ -1973,6 +1997,28 @@ export default function HeroTraitPage() {
             </div>
           );
         })}
+      </div>
+
+      {/* Total memory cost — pinned to the same screen position as the Total Skill Cost card on
+          the skills page (bottom: 20, left: half the skills-page diagram width + 16px) rather
+          than a position relative to this page's own (much narrower) center circle, so every
+          page's total-cost card lands in the same spot. */}
+      <div className="absolute" style={{ bottom: 20, left: "calc(50% - 332px + 16px)", zIndex: 5 }}>
+        <div style={{
+          background: "#161616",
+          border: "1px solid #2a2a2a",
+          borderRadius: "0 12px 0 12px",
+          padding: "10px 14px",
+          minWidth: 130,
+        }}>
+          <div style={{ color: "#52525b", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 5 }}>
+            Total Memory Cost
+          </div>
+          <div style={{ display: "flex", alignItems: "center", gap: 6, color: "#e4e4e7", fontSize: 24, fontWeight: 600, lineHeight: 1 }}>
+            {Math.round(totalMemoryCost).toLocaleString("en-US")}
+            <FEIcon className="w-5 h-5" />
+          </div>
+        </div>
       </div>
 
     </div>

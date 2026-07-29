@@ -7,6 +7,7 @@ import { getJSON } from "@/lib/apiCache";
 import { usePrices } from "@/lib/usePrices";
 import type { PricedItemType } from "@prisma/client";
 import PriceBadge from "@/components/PriceBadge";
+import { FEIcon } from "@/app/crafting/ItemCard";
 
 export interface Skill {
   name: string;
@@ -282,7 +283,7 @@ function asymmetricPill(x: number, y: number, w: number, h: number, r: number): 
 
 // ─── Left panel hex cell ──────────────────────────────────────────────────────
 
-function HexCell({ onClick, selected, variant = "active", skillName, skill, onSkillHover, onSkillLeave }: {
+function HexCell({ onClick, selected, variant = "active", skillName, skill, onSkillHover, onSkillLeave, price, onPriceSave }: {
   onClick?: () => void;
   selected?: boolean;
   variant?: "active" | "passive";
@@ -290,6 +291,8 @@ function HexCell({ onClick, selected, variant = "active", skillName, skill, onSk
   skill?: Skill | null;
   onSkillHover?: (skill: Skill, x: number, y: number) => void;
   onSkillLeave?: () => void;
+  price?: import("@/lib/usePrices").PriceEntry;
+  onPriceSave?: (value: number) => void;
 }) {
   const [hovered, setHovered] = useState(false);
   const [imgError, setImgError] = useState(false);
@@ -351,6 +354,16 @@ function HexCell({ onClick, selected, variant = "active", skillName, skill, onSk
         >
           +
         </text>
+      )}
+      {iconPath && !imgError && onPriceSave && (
+        <foreignObject
+          x={hexW / 2 + 16} y={-6}
+          width={80} height={26}
+          style={{ overflow: "visible" }}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <PriceBadge price={price} onSave={onPriceSave} />
+        </foreignObject>
       )}
     </svg>
   );
@@ -1055,6 +1068,25 @@ export default function SkillsPage() {
   const totalEnergy = getTotalEnergy(supportSelections);
   const overLimit   = totalEnergy > MAX_ENERGY;
 
+  // Sums the priced skill categories (Precise/Activation Medium/Magnificent/Noble Support)
+  // across every active/passive skill slot and every support socket in the current build.
+  const totalSkillCost = (() => {
+    let total = 0;
+    for (const name of [...activeSkillSelections, ...passiveSkillSelections]) {
+      if (!name) continue;
+      const skillObj = activeSkills.find((s) => s.name === name) ?? passiveSkills.find((s) => s.name === name);
+      const type = skillObj ? getPricedSkillType(skillObj) : null;
+      if (type) total += getPrice(type, name)?.value ?? 0;
+    }
+    for (const name of Object.values(supportSelections)) {
+      if (!name) continue;
+      const skillObj = allSupportSkills.find((s) => s.name === name);
+      const type = skillObj ? getPricedSkillType(skillObj) : null;
+      if (type) total += getPrice(type, name)?.value ?? 0;
+    }
+    return total;
+  })();
+
   return (
     <div className="min-h-screen relative" onClick={clearAll}>
 
@@ -1260,6 +1292,28 @@ export default function SkillsPage() {
         </div>
       </div>
 
+      {/* Total skill cost — bottom-left of diagram, same spot as the other pages' total-cost cards */}
+      <div
+        className="absolute"
+        style={{ bottom: 20, left: `calc(50% - ${svgW / 2}px + 16px)`, pointerEvents: "none" }}
+      >
+        <div style={{
+          background: "#161616",
+          border: "1px solid #2a2a2a",
+          borderRadius: "0 12px 0 12px",
+          padding: "10px 14px",
+          minWidth: 130,
+        }}>
+          <div style={{ color: "#52525b", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 5 }}>
+            Total Skill Cost
+          </div>
+          <div style={{ display: "flex", alignItems: "center", gap: 6, color: "#e4e4e7", fontSize: 24, fontWeight: 600, lineHeight: 1 }}>
+            {Math.round(totalSkillCost).toLocaleString("en-US")}
+            <FEIcon className="w-5 h-5" />
+          </div>
+        </div>
+      </div>
+
       {/* Left panel */}
       <div
         className="absolute flex flex-col"
@@ -1276,18 +1330,32 @@ export default function SkillsPage() {
         </div>
         <div className="flex flex-col items-center pt-10 gap-2">
           <span className="text-[10px] uppercase tracking-widest mb-1" style={{ color: "#52525b" }}>Active</span>
-          {Array.from({ length: 5 }, (_, i) => (
-            <HexCell key={i} variant="active" onClick={() => selectActive(i)} selected={layoutMode === "active" && selectedActive === i} skillName={activeSkillSelections[i]}
-              skill={activeSkillSelections[i] ? activeSkills.find(s => s.name === activeSkillSelections[i]) ?? null : null}
-              onSkillHover={handleSkillHover} onSkillLeave={handleSkillLeave} />
-          ))}
+          {Array.from({ length: 5 }, (_, i) => {
+            const name = activeSkillSelections[i];
+            const skillObj = name ? activeSkills.find(s => s.name === name) ?? null : null;
+            const pricedType = skillObj ? getPricedSkillType(skillObj) : null;
+            return (
+              <HexCell key={i} variant="active" onClick={() => selectActive(i)} selected={layoutMode === "active" && selectedActive === i} skillName={name}
+                skill={skillObj}
+                onSkillHover={handleSkillHover} onSkillLeave={handleSkillLeave}
+                price={pricedType && name ? getPrice(pricedType, name) : undefined}
+                onPriceSave={pricedType && name ? (v) => setPrice(pricedType, name, name, v) : undefined} />
+            );
+          })}
           <div style={{ height: 40 }} />
           <span className="text-[10px] uppercase tracking-widest mb-1" style={{ color: "#52525b" }}>Passive</span>
-          {Array.from({ length: 4 }, (_, i) => (
-            <HexCell key={i} variant="passive" onClick={() => selectPassive(i)} selected={layoutMode === "passive" && selectedPassive === i} skillName={passiveSkillSelections[i]}
-              skill={passiveSkillSelections[i] ? passiveSkills.find(s => s.name === passiveSkillSelections[i]) ?? null : null}
-              onSkillHover={handleSkillHover} onSkillLeave={handleSkillLeave} />
-          ))}
+          {Array.from({ length: 4 }, (_, i) => {
+            const name = passiveSkillSelections[i];
+            const skillObj = name ? passiveSkills.find(s => s.name === name) ?? null : null;
+            const pricedType = skillObj ? getPricedSkillType(skillObj) : null;
+            return (
+              <HexCell key={i} variant="passive" onClick={() => selectPassive(i)} selected={layoutMode === "passive" && selectedPassive === i} skillName={name}
+                skill={skillObj}
+                onSkillHover={handleSkillHover} onSkillLeave={handleSkillLeave}
+                price={pricedType && name ? getPrice(pricedType, name) : undefined}
+                onPriceSave={pricedType && name ? (v) => setPrice(pricedType, name, name, v) : undefined} />
+            );
+          })}
         </div>
       </div>
 

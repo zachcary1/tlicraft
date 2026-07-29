@@ -32,6 +32,8 @@ import {
 } from "./slateData";
 import { useDivinitySlatesBuild } from "@/app/state/BuildContext";
 import { getJSON } from "@/lib/apiCache";
+import { usePrices } from "@/lib/usePrices";
+import { FEIcon } from "@/app/crafting/ItemCard";
 
 const BG_STYLE = {
   backgroundImage: [
@@ -347,6 +349,16 @@ export default function DivinitySlatesPage() {
     for (const inst of placedInstances) counts[inst.slateName] = (counts[inst.slateName] ?? 0) + 1;
     return counts;
   }, [placedInstances]);
+
+  // Slate prices are per type (same key ItemCard saves under), so the total is each type's
+  // price times how many copies are placed.
+  const { getPrice: getSlatePrice } = usePrices(["DIVINITY_SLATE"]);
+  const totalSlateCost = Object.entries(placedCounts).reduce((sum, [slateName, count]) => {
+    const def = SLATE_DEFS[slateName];
+    if (!def) return sum;
+    const name = getSlateDisplayName(def);
+    return sum + (getSlatePrice("DIVINITY_SLATE", name)?.value ?? 0) * count;
+  }, 0);
 
   // While placing — either a new draft or moving an already-placed instance — the footprint
   // anchored at the hovered cell. When dragging, `grabOffset` keeps whichever cell was
@@ -804,6 +816,26 @@ export default function DivinitySlatesPage() {
         style={{ left: `calc(50% - ${svgW / 2}px - ${PANEL_GAP}px - ${PANEL_W}px)`, top: 0, width: PANEL_W, height: "100vh" }}
       >
         <SlatesPanel selected={activeSlateName} counts={placedCounts} onSelect={handleSelectSlate} />
+      </div>
+
+      {/* Total slate cost — pinned to the same screen position as every other page's
+          total-cost card (bottom: 20, left: half the skills-page diagram width + 16px). */}
+      <div className="absolute" style={{ bottom: 20, left: "calc(50% - 332px + 16px)", zIndex: 5 }}>
+        <div style={{
+          background: "#161616",
+          border: "1px solid #2a2a2a",
+          borderRadius: "0 12px 0 12px",
+          padding: "10px 14px",
+          minWidth: 130,
+        }}>
+          <div style={{ color: "#52525b", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 5 }}>
+            Total Slate Cost
+          </div>
+          <div style={{ display: "flex", alignItems: "center", gap: 6, color: "#e4e4e7", fontSize: 24, fontWeight: 600, lineHeight: 1 }}>
+            {Math.round(totalSlateCost).toLocaleString("en-US")}
+            <FEIcon className="w-5 h-5" />
+          </div>
+        </div>
       </div>
 
       {/* Affix panel — right of the grid, same position the catalog used to occupy. Only
