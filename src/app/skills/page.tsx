@@ -1446,10 +1446,12 @@ export default function SkillsPage() {
             ? skillSelections[currentSlotIdx]
             : currentSupportKey ? (supportSelections[currentSupportKey] ?? null) : null;
 
+          const slotIdx: number = currentSlotIdx;
+
           function handleCardClick(skillName: string) {
             if (isSkillSlot) {
-              if (layoutMode === "active") selectSkillForActiveSlot(currentSlotIdx, skillName);
-              else                        selectSkillForPassiveSlot(currentSlotIdx, skillName);
+              if (layoutMode === "active") selectSkillForActiveSlot(slotIdx, skillName);
+              else                        selectSkillForPassiveSlot(slotIdx, skillName);
             } else if (currentSupportKey) {
               selectSkillForSupportSlot(currentSupportKey, skillName);
             }

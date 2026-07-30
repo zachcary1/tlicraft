@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect, useLayoutEffect, Fragment } from "react";
 import { createPortal } from "react-dom";
 import type { AffixGroupType } from "@prisma/client";
-import type { CraftedPool, PoolAffix, PoolTier } from "@/services/crafting/types";
+import type { CraftedPool, PoolAffix, PoolStat, PoolTier } from "@/services/crafting/types";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -2128,7 +2128,7 @@ export default function ItemCard({
           >
             <span className="text-[10px] text-zinc-500 uppercase tracking-widest mb-0.5">Craft</span>
             <span className={`text-[22px] font-bold tracking-[-0.02em] flex items-center gap-1.5 ${Number.isNaN(grandTotal) ? "text-red-400" : "text-[#1a1a1a]"}`}>
-              {Number.isNaN(grandTotal) ? "NaN" : Math.round(grandTotal).toLocaleString("en-US")}
+              {Number.isNaN(grandTotal) ? "NaN" : Math.round(grandTotal ?? 0).toLocaleString("en-US")}
               {!Number.isNaN(grandTotal) && <FEIcon className="w-5 h-5" />}
             </span>
             {grandTotalTooltipOpen && grandTotalPos && typeof document !== "undefined" && createPortal(
@@ -2157,7 +2157,7 @@ export default function ItemCard({
                     <span className="text-red-400 font-bold">NaN</span>
                   ) : (
                     <span className="text-[#e8e6e4] font-bold flex items-center gap-1">
-                      {Math.round(grandTotal).toLocaleString("en-US")} <FEIcon className="w-3 h-3" />
+                      {Math.round(grandTotal ?? 0).toLocaleString("en-US")} <FEIcon className="w-3 h-3" />
                     </span>
                   )}
                 </div>
@@ -2173,7 +2173,7 @@ export default function ItemCard({
           >
             <span className="text-[10px] text-zinc-500 uppercase tracking-widest mb-0.5">+Corrosion</span>
             <span className={`text-[22px] font-bold tracking-[-0.02em] flex items-center gap-1.5 ${Number.isNaN(corrosionTotal) ? "text-red-400" : "text-[#1a1a1a]"}`}>
-              {Number.isNaN(corrosionTotal) ? "NaN" : Math.round(corrosionTotal).toLocaleString("en-US")}
+              {Number.isNaN(corrosionTotal) ? "NaN" : Math.round(corrosionTotal ?? 0).toLocaleString("en-US")}
               {!Number.isNaN(corrosionTotal) && <FEIcon className="w-5 h-5" />}
             </span>
             {corrTooltipOpen && corrPos && typeof document !== "undefined" && createPortal(

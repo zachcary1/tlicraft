@@ -358,6 +358,7 @@ export default function AffixPanel({
     );
   }
 
+  const slot: ActiveSlotId = activeSlot;
   const groupDefs = getGroupDefs(activeSlot);
   const currentGroup = groupDefs[activeGroupIdx] ?? groupDefs[0];
   const isNightmare = activeSlot === "nightmare";
@@ -398,7 +399,7 @@ export default function AffixPanel({
 
     // Toggle off if already selected
     if (currentValue?.affixId === affixId) {
-      onChange({ ...slots, [activeSlot]: null });
+      onChange({ ...slots, [slot]: null });
       return;
     }
 
@@ -408,7 +409,7 @@ export default function AffixPanel({
     const defaultTier = sorted.find((t) => t.tier === "T1") ?? sorted[sorted.length - 1];
     onChange({
       ...slots,
-      [activeSlot]: {
+      [slot]: {
         affixId: opt.affix.id,
         affixName: opt.affix.name,
         tier: defaultTier?.tier ?? "",
@@ -421,7 +422,7 @@ export default function AffixPanel({
     if (isNightmare) {
       onChange({ ...slots, nightmare: [] });
     } else {
-      onChange({ ...slots, [activeSlot]: null });
+      onChange({ ...slots, [slot]: null });
     }
   }
 
@@ -717,7 +718,7 @@ export default function AffixPanel({
                   <InlineTierPicker
                     tiers={sortedTiers}
                     selectedTier={currentValue!.tier}
-                    onSelect={(t) => onChange({ ...slots, [activeSlot]: { ...currentValue!, tier: t } })}
+                    onSelect={(t) => onChange({ ...slots, [slot]: { ...currentValue!, tier: t } })}
                     disabledTiers={(() => {
                       if (!isPrefixSuffix || currentValue?.tier === "T0_PLUS") return [];
                       if (slots.base?.sourceGroup === "CORROSION_BASE_AFFIXES") return ["T0_PLUS"];

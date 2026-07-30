@@ -462,12 +462,12 @@ export const EMPTY_SLATE_CONFIG: SlateConfig = { shape: "Square", rotation: 0, s
 
 // ─── Constraints (panel footer) ───────────────────────────────────────────────────
 
-export const CONSTRAINTS = [
+export type Constraint = { label: string; max: number; graphic: "segments" | "pips" };
+
+export const CONSTRAINTS: Constraint[] = [
   { label: "Pedigree of Gods", max: 1, graphic: "segments" },
   { label: "Corner of Divinity", max: 3, graphic: "segments" },
   { label: "Fallen Starlight", max: 3, graphic: "segments" },
   { label: "Prairie", max: 1, graphic: "segments" },
   { label: "Sparks of Moth Fire", max: 3, graphic: "segments" },
-] as const;
-
-export type Constraint = (typeof CONSTRAINTS)[number];
+];
